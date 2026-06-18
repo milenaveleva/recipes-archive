@@ -39,3 +39,7 @@ Each recipe is one markdown file: rich YAML frontmatter (structured, metric ingr
 ## Disclaimer
 
 Nutrition, glycemic, and inflammation figures are **estimates for guidance only** — not medical or dietary advice.
+
+## References
+
+- **Wolever, T.M.S., et al.** (2025). *Equivalent Glycemic Load and Insulinemic Responses Elicited by Low-Carbohydrate Foods: A Randomized Trial in Healthy Adults*. Current Developments in Nutrition. https://consensus.app/papers/details/807276853d585f74af8bb955e19c84ff/ — basis for available carbohydrate = total carbohydrate − dietary fibre (− polyols), used in the macro engine (`src/core/nutrition.ts`).
