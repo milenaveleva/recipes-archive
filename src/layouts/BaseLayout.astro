@@ -15,7 +15,7 @@ const {
   ogImage,
 } = Astro.props;
 
-const siteName = 'The Pantry Archive';
+const siteName = 'mili’s hedonistic cookbook';
 const fullTitle = title ? `${title} — ${siteName}` : siteName;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 
@@ -54,7 +54,7 @@ const here = Astro.url.pathname.replace(/\/$/, '');
               class="font-display text-2xl sm:text-[1.7rem] font-medium tracking-tight text-ink"
               style="font-variation-settings:'SOFT' 40, 'WONK' 1;"
             >
-              The Pantry Archive
+              mili’s <s class="decoration-spice decoration-2">hedonistic</s> cookbook
             </span>
             <span
               class="hidden sm:inline-block h-2 w-2 rounded-full bg-spice transition-transform group-hover:scale-150"
@@ -101,7 +101,7 @@ const here = Astro.url.pathname.replace(/\/$/, '');
     <footer class="mt-20 border-t border-line">
       <div class="mx-auto max-w-6xl px-5 sm:px-8 py-10 font-ui text-xs text-ink-faint flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
         <p>
-          The Pantry Archive — recipes stored as uniform metric markdown.
+          mili’s <s class="decoration-spice">hedonistic</s> cookbook — recipes stored as uniform metric markdown.
         </p>
         <p class="max-w-md">
           Nutrition, glycemic & inflammation figures are estimates for guidance

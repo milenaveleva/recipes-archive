@@ -1,4 +1,4 @@
-# The Pantry Archive
+# mili’s ~~hedonistic~~ cookbook
 
 A personal recipe-management web app — import recipes by link or write them by hand, store each one as a **uniform metric markdown file**, and browse them as a beautiful recipe book. Every recipe shows its **macros, glycemic index (GI), glycemic load (GL), inflammation score, and nutrition score (Nutri-Score 2023)**.
 
