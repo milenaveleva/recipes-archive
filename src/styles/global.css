@@ -1,0 +1,235 @@
+@import "tailwindcss";
+
+/* Self-hosted variable fonts — no external requests, no layout shift. */
+@import "@fontsource-variable/fraunces";
+@import "@fontsource-variable/newsreader";
+@import "@fontsource-variable/hanken-grotesk";
+
+/*
+ * "Modern heirloom cookbook" — an editorial, paper-grounded aesthetic.
+ *   • Fraunces        → expressive display (recipe titles, numerals)
+ *   • Newsreader      → editorial reading serif (descriptions, steps)
+ *   • Hanken Grotesk  → small-caps UI chrome (labels, badges, nav, meta)
+ * Warm paper surfaces, ink-brown text, terracotta "spice" + herb-green accents.
+ * Tailwind v4 reads @theme tokens, so utilities like `font-display`,
+ * `bg-paper`, `text-spice`, `text-band-good` are generated automatically.
+ */
+@theme {
+  --font-display: "Fraunces Variable", ui-serif, Georgia, serif;
+  --font-body: "Newsreader Variable", ui-serif, Georgia, serif;
+  --font-ui: "Hanken Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+
+  /* Surfaces */
+  --color-paper: #f7f1e7;
+  --color-paper-2: #efe6d6;
+  --color-card: #fffdf8;
+
+  /* Ink (text) */
+  --color-ink: #2a2620;
+  --color-ink-soft: #6c6357;
+  --color-ink-faint: #9b9183;
+
+  /* Lines / borders */
+  --color-line: #e4d9c6;
+  --color-line-strong: #d4c5ab;
+
+  /* Accents */
+  --color-spice: #b1381a;       /* terracotta — primary */
+  --color-spice-soft: #cf6b4e;  /* soft terracotta */
+  --color-leaf: #3c6b48;        /* herb green — secondary */
+  --color-honey: #c08327;       /* honey — tertiary */
+
+  /* Score band colors (GI / GL / Nutri / inflammation badges) */
+  --color-band-good: #3c6b48;
+  --color-band-mid: #c08327;
+  --color-band-bad: #b1381a;
+}
+
+:root {
+  color-scheme: light;
+  --grain-opacity: 0.035;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  position: relative;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.65;
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle paper grain overlay for depth (SVG noise, no asset needed). */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  color: var(--color-ink);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+}
+
+/* small-caps editorial eyebrow label */
+@utility eyebrow {
+  font-family: var(--font-ui);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-ink-faint);
+}
+
+/* hairline divider with a centered ornament */
+@utility rule-ornament {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-line-strong);
+}
+
+/* focus ring consistent across interactive elements */
+@layer base {
+  :where(a, button, input, select, textarea):focus-visible {
+    outline: 2px solid var(--color-spice);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+}
+
+/* staggered fade-up reveal on page load */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: reveal-up 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Rendered markdown (recipe method + notes) */
+.recipe-prose {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  line-height: 1.7;
+}
+.recipe-prose > * + * {
+  margin-top: 1rem;
+}
+.recipe-prose h2,
+.recipe-prose h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  color: var(--color-ink);
+}
+.recipe-prose p {
+  font-size: 1.05rem;
+}
+.recipe-prose strong {
+  font-weight: 600;
+}
+.recipe-prose a {
+  color: var(--color-spice);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* numbered method steps with oversized display numerals */
+.recipe-prose ol {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.recipe-prose ol > li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 3.25rem;
+  min-height: 2.25rem;
+}
+.recipe-prose ol > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: -0.15em;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-spice);
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-line);
+  border-radius: 9999px;
+}
+
+/* bulleted lists (e.g. notes) */
+.recipe-prose ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.recipe-prose ul > li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+.recipe-prose ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0.1rem;
+  top: 0.7em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 9999px;
+  background: var(--color-leaf);
+}
+
+.recipe-prose blockquote {
+  border-left: 3px solid var(--color-line-strong);
+  padding-left: 1rem;
+  color: var(--color-ink-soft);
+  font-style: italic;
+}

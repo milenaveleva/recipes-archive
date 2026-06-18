@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import TermCloud from '../../components/TermCloud.astro';
+import { visibleRecipes, allCategories } from '../../lib/recipe';
+
+const recipes = visibleRecipes(await getCollection('recipes'));
+const categories = allCategories(recipes);
+---
+
+<BaseLayout title="Categories">
+  <PageHeader
+    eyebrow="Browse"
+    title="Categories"
+    subtitle="The main course of the archive — recipes sorted by what they are."
+  />
+  <section class="mx-auto max-w-6xl px-5 sm:px-8 pb-8">
+    {
+      categories.length ? (
+        <TermCloud terms={categories} basePath="/categories" />
+      ) : (
+        <p class="font-body text-ink-soft">No categories yet.</p>
+      )
+    }
+  </section>
+</BaseLayout>

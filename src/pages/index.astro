@@ -1,0 +1,57 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RecipeGrid from '../components/RecipeGrid.astro';
+import { visibleRecipes } from '../lib/recipe';
+import { withBase } from '../lib/url';
+
+const recipes = visibleRecipes(await getCollection('recipes'));
+const count = recipes.length;
+---
+
+<BaseLayout>
+  <section class="mx-auto max-w-6xl px-5 sm:px-8 pt-12 sm:pt-20 pb-10">
+    <div class="max-w-3xl reveal">
+      <p class="eyebrow mb-4">A personal cookbook · {count} {count === 1 ? 'recipe' : 'recipes'}</p>
+      <h1
+        class="font-display font-medium text-[2.6rem] leading-[1.04] sm:text-6xl text-ink"
+        style="font-variation-settings:'SOFT' 60, 'WONK' 1;"
+      >
+        Everything worth<br /><em class="text-spice not-italic">cooking twice.</em>
+      </h1>
+      <p class="mt-6 max-w-xl font-body text-lg text-ink-soft">
+        Recipes imported from anywhere or written by hand — all converted to metric,
+        stored in one tidy format, and scored for macros, glycemic impact, inflammation
+        and overall nutrition.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-5 sm:px-8 pb-8">
+    <div class="rule-ornament mb-8">
+      <span class="h-px flex-1 bg-line"></span>
+      <span class="font-ui text-xs uppercase tracking-[0.2em] text-ink-faint">The Collection</span>
+      <span class="h-px flex-1 bg-line"></span>
+    </div>
+
+    {
+      count === 0 ? (
+        <div class="rounded-2xl border border-dashed border-line-strong bg-card px-6 py-16 text-center">
+          <h2 class="font-display text-2xl text-ink">No recipes yet</h2>
+          <p class="mx-auto mt-3 max-w-md font-body text-ink-soft">
+            The shelf is empty. Add your first recipe — paste a link to import it,
+            or write one by hand.
+          </p>
+          <a
+            href={withBase('/add')}
+            class="mt-6 inline-block rounded-full bg-ink px-5 py-2 font-ui text-sm font-semibold text-paper no-underline transition-colors hover:bg-spice"
+          >
+            + Add a recipe
+          </a>
+        </div>
+      ) : (
+        <RecipeGrid recipes={recipes} />
+      )
+    }
+  </section>
+</BaseLayout>

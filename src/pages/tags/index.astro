@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import TermCloud from '../../components/TermCloud.astro';
+import { visibleRecipes, allTags } from '../../lib/recipe';
+
+const recipes = visibleRecipes(await getCollection('recipes'));
+const tags = allTags(recipes);
+---
+
+<BaseLayout title="Tags">
+  <PageHeader
+    eyebrow="Browse"
+    title="Tags"
+    subtitle="The little labels — diet, technique, mood. Follow a thread."
+  />
+  <section class="mx-auto max-w-6xl px-5 sm:px-8 pb-8">
+    {
+      tags.length ? (
+        <TermCloud terms={tags} basePath="/tags" prefix="#" />
+      ) : (
+        <p class="font-body text-ink-soft">No tags yet.</p>
+      )
+    }
+  </section>
+</BaseLayout>

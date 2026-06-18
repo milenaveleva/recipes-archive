@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import RecipeGrid from '../../components/RecipeGrid.astro';
+import { visibleRecipes, groupByTerm } from '../../lib/recipe';
+
+export async function getStaticPaths() {
+  const recipes = visibleRecipes(await getCollection('recipes'));
+  return groupByTerm(recipes, (r) => r.data.tags).map(({ slug, term, recipes }) => ({
+    params: { term: slug },
+    props: { term, recipes },
+  }));
+}
+
+const { term, recipes } = Astro.props;
+---
+
+<BaseLayout title={`#${term}`}>
+  <PageHeader
+    eyebrow="Tag"
+    title={`#${term}`}
+    subtitle={`${recipes.length} ${recipes.length === 1 ? 'recipe' : 'recipes'}`}
+  />
+  <section class="mx-auto max-w-6xl px-5 sm:px-8 pb-8">
+    <RecipeGrid recipes={recipes} />
+  </section>
+</BaseLayout>

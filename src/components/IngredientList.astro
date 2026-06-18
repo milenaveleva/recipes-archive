@@ -1,0 +1,67 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatGrams, round } from '../lib/recipe';
+
+type Ingredient = CollectionEntry<'recipes'>['data']['ingredients'][number];
+
+interface Props {
+  ingredients: Ingredient[];
+}
+const { ingredients } = Astro.props;
+
+/** Human metric amount for an ingredient (ml/grams/count), else null. */
+function amount(ing: Ingredient): string | null {
+  // Prefer volume for liquids: items measured by volume carry `milliliters`
+  // (and may also carry `grams` purely for nutrition math), so check ml first.
+  if (ing.milliliters != null && ing.milliliters > 0) {
+    const ml = ing.milliliters;
+    return ml >= 1000 ? `${round(ml / 1000, 2)} L` : `${round(ml, 0)} ml`;
+  }
+  if (ing.grams != null && ing.grams > 0) return formatGrams(ing.grams);
+  if (ing.quantity != null) {
+    const q = ing.quantity2 != null ? `${round(ing.quantity, 2)}–${round(ing.quantity2, 2)}` : `${round(ing.quantity, 2)}`;
+    return ing.unit ? `${q} ${ing.unit}` : q;
+  }
+  return null;
+}
+
+// Preserve order while grouping by optional `group` header.
+const groups: { name: string | null; items: Ingredient[] }[] = [];
+for (const ing of ingredients) {
+  const g = ing.group ?? null;
+  let bucket = groups.find((x) => x.name === g);
+  if (!bucket) groups.push((bucket = { name: g, items: [] }));
+  bucket.items.push(ing);
+}
+---
+
+<div class="flex flex-col gap-6">
+  {
+    groups.map((group) => (
+      <div>
+        {group.name && (
+          <h3 class="eyebrow mb-3 !text-ink-soft">{group.name}</h3>
+        )}
+        <ul class="flex flex-col">
+          {group.items.map((ing) => {
+            const amt = amount(ing);
+            return (
+              <li class="flex items-baseline gap-3 border-b border-line/70 py-2.5 last:border-0">
+                <span class="min-w-[4.5rem] shrink-0 font-ui text-sm font-semibold tabular-nums text-spice">
+                  {amt ?? ''}
+                </span>
+                <span class="font-body text-ink">
+                  {ing.item}
+                  {ing.note && <span class="text-ink-faint"> · {ing.note}</span>}
+                  {amt == null && (
+                    <span class="text-ink-faint"> {ing.raw}</span>
+                  )}
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    ))
+  }
+</div>

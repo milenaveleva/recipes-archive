@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+---
+
+<BaseLayout title="Add a recipe" description="Import a recipe by link or write one by hand.">
+  <PageHeader
+    eyebrow="Coming next"
+    title="Add a recipe"
+    subtitle="Paste a link to import a recipe, or write one by hand — all converted to metric and scored automatically."
+  />
+  <section class="mx-auto max-w-2xl px-5 sm:px-8 pb-16">
+    <div class="rounded-2xl border border-dashed border-line-strong bg-card p-6 sm:p-8">
+      <p class="font-body text-ink-soft">
+        The in-app importer is under construction. When it lands you'll be able to:
+      </p>
+      <ul class="recipe-prose mt-4">
+        <li>Paste a recipe URL and have it fetched, parsed, and converted to metric.</li>
+        <li>Review and confirm each ingredient's nutrition match for accuracy.</li>
+        <li>See macros, glycemic index &amp; load, inflammation and nutrition scores.</li>
+        <li>Save it straight to the archive with one click.</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

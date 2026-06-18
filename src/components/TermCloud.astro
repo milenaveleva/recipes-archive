@@ -1,0 +1,29 @@
+---
+import { withBase } from '../lib/url';
+import { slugifyTerm } from '../lib/recipe';
+
+interface Props {
+  /** [term, count] pairs. */
+  terms: [string, number][];
+  /** Base path for each term page, e.g. "/tags". */
+  basePath: string;
+  prefix?: string;
+}
+const { terms, basePath, prefix = '' } = Astro.props;
+---
+
+<ul class="flex flex-wrap gap-2.5">
+  {
+    terms.map(([term, count]) => (
+      <li>
+        <a
+          href={withBase(`${basePath}/${slugifyTerm(term)}`)}
+          class="inline-flex items-baseline gap-1.5 rounded-full border border-line bg-card px-3.5 py-1.5 font-ui text-sm text-ink no-underline transition-colors hover:border-spice hover:text-spice"
+        >
+          <span class="capitalize">{prefix}{term}</span>
+          <span class="font-ui text-xs text-ink-faint tabular-nums">{count}</span>
+        </a>
+      </li>
+    ))
+  }
+</ul>

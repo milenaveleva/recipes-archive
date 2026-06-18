@@ -1,0 +1,66 @@
+---
+import type { Recipe } from '../lib/recipe';
+
+interface Props {
+  recipe: Recipe;
+  steps: string[];
+}
+const { recipe, steps } = Astro.props;
+const { data } = recipe;
+
+function abs(url?: string): string | undefined {
+  if (!url) return undefined;
+  if (/^https?:\/\//.test(url)) return url;
+  return new URL(url, Astro.site).href;
+}
+
+const image = data.image ? abs(data.image.src) : data.imageUrl;
+const p = data.nutrition?.perServing;
+
+const jsonLd: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'Recipe',
+  name: data.title,
+  description: data.description,
+  image: image ? [image] : undefined,
+  author: data.author ? { '@type': 'Person', name: data.author } : undefined,
+  recipeYield: data.yield ?? `${data.servings} servings`,
+  recipeCategory: data.category,
+  recipeCuisine: data.cuisine,
+  keywords: data.tags.length ? data.tags.join(', ') : undefined,
+  prepTime: data.prepTime,
+  cookTime: data.cookTime,
+  totalTime: data.totalTime,
+  recipeIngredient: data.ingredients.map((i) => i.raw),
+  recipeInstructions: steps.length
+    ? steps.map((text, i) => ({ '@type': 'HowToStep', position: i + 1, text }))
+    : undefined,
+  nutrition: p
+    ? {
+        '@type': 'NutritionInformation',
+        calories: p.energyKcal != null ? `${Math.round(p.energyKcal)} kcal` : undefined,
+        proteinContent: p.protein_g != null ? `${Math.round(p.protein_g)} g` : undefined,
+        carbohydrateContent: p.carbs_g != null ? `${Math.round(p.carbs_g)} g` : undefined,
+        sugarContent: p.sugar_g != null ? `${Math.round(p.sugar_g)} g` : undefined,
+        fiberContent: p.fiber_g != null ? `${Math.round(p.fiber_g)} g` : undefined,
+        fatContent: p.fat_g != null ? `${Math.round(p.fat_g)} g` : undefined,
+        saturatedFatContent: p.satFat_g != null ? `${Math.round(p.satFat_g)} g` : undefined,
+        sodiumContent: p.sodium_mg != null ? `${Math.round(p.sodium_mg)} mg` : undefined,
+        servingSize: '1 serving',
+      }
+    : undefined,
+};
+
+// Drop undefined keys (and undefined nested object props) for clean output.
+const clean = JSON.parse(JSON.stringify(jsonLd));
+
+// `set:html` does not escape, and JSON.stringify leaves `<`/`>`/`&` intact, so a
+// recipe field containing `</script>` would close the tag and inject HTML.
+// Escape them to their \uXXXX forms (still valid JSON, safe inside <script>).
+const json = JSON.stringify(clean)
+  .replace(/</g, '\\u003c')
+  .replace(/>/g, '\\u003e')
+  .replace(/&/g, '\\u0026');
+---
+
+<script type="application/ld+json" set:html={json} is:inline />

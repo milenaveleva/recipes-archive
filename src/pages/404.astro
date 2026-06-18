@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/url';
+---
+
+<BaseLayout title="Not found">
+  <section class="mx-auto max-w-2xl px-5 sm:px-8 py-24 text-center reveal">
+    <p class="eyebrow mb-4">404</p>
+    <h1 class="font-display text-5xl text-ink" style="font-variation-settings:'SOFT' 60;">
+      Off the recipe.
+    </h1>
+    <p class="mt-4 font-body text-lg text-ink-soft">
+      This page isn't in the archive. Let's get you back to the kitchen.
+    </p>
+    <a
+      href={withBase('/')}
+      class="mt-8 inline-block rounded-full bg-ink px-5 py-2 font-ui text-sm font-semibold text-paper no-underline transition-colors hover:bg-spice"
+    >
+      ← Back to recipes
+    </a>
+  </section>
+</BaseLayout>

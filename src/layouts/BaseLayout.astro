@@ -1,0 +1,113 @@
+---
+import '../styles/global.css';
+import { withBase } from '../lib/url';
+
+interface Props {
+  title?: string;
+  description?: string;
+  /** Absolute or already-based URL for social preview image. */
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = 'A personal archive of recipes — imported or hand-written, stored in uniform metric, with macros, glycemic index & load, inflammation and nutrition scores.',
+  ogImage,
+} = Astro.props;
+
+const siteName = 'The Pantry Archive';
+const fullTitle = title ? `${title} — ${siteName}` : siteName;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+
+const nav = [
+  { label: 'Recipes', href: withBase('/') },
+  { label: 'Categories', href: withBase('/categories') },
+  { label: 'Tags', href: withBase('/tags') },
+  { label: 'Lists', href: withBase('/lists') },
+];
+const here = Astro.url.pathname.replace(/\/$/, '');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <header class="border-b border-line bg-paper/80 backdrop-blur-sm sticky top-0 z-40">
+      <div class="mx-auto max-w-6xl px-5 sm:px-8">
+        <div class="flex items-center justify-between gap-6 py-4">
+          <a href={withBase('/')} class="group flex items-baseline gap-2.5 no-underline">
+            <span
+              class="font-display text-2xl sm:text-[1.7rem] font-medium tracking-tight text-ink"
+              style="font-variation-settings:'SOFT' 40, 'WONK' 1;"
+            >
+              The Pantry Archive
+            </span>
+            <span
+              class="hidden sm:inline-block h-2 w-2 rounded-full bg-spice transition-transform group-hover:scale-150"
+            ></span>
+          </a>
+          <nav class="hidden md:flex items-center gap-7 font-ui text-sm">
+            {
+              nav.map((item) => {
+                const active = here === item.href.replace(/\/$/, '');
+                return (
+                  <a
+                    href={item.href}
+                    class:list={[
+                      'no-underline tracking-wide transition-colors hover:text-spice',
+                      active ? 'text-spice' : 'text-ink-soft',
+                    ]}
+                  >
+                    {item.label}
+                  </a>
+                );
+              })
+            }
+            <a
+              href={withBase('/add')}
+              class="font-ui text-sm font-semibold no-underline rounded-full bg-ink text-paper px-4 py-1.5 transition-colors hover:bg-spice"
+            >
+              + Add
+            </a>
+          </nav>
+          <a
+            href={withBase('/add')}
+            class="md:hidden font-ui text-sm font-semibold no-underline rounded-full bg-ink text-paper px-3.5 py-1.5"
+          >
+            + Add
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="mt-20 border-t border-line">
+      <div class="mx-auto max-w-6xl px-5 sm:px-8 py-10 font-ui text-xs text-ink-faint flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+        <p>
+          The Pantry Archive — recipes stored as uniform metric markdown.
+        </p>
+        <p class="max-w-md">
+          Nutrition, glycemic & inflammation figures are estimates for guidance
+          only, not medical or dietary advice.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

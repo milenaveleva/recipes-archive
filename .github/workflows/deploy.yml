@@ -1,0 +1,41 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Deploy on every push to the default branch (recipes are committed here).
+  push:
+    branches: [main]
+  # Allow manual runs from the Actions tab.
+  workflow_dispatch:
+
+# Permissions required by actions/deploy-pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment; let an in-progress run finish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Installs deps, runs `astro build`, and uploads the Pages artifact.
+      # `site` and `base` come from astro.config.mjs.
+      - name: Build with Astro
+        uses: withastro/action@v6
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

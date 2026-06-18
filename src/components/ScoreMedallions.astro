@@ -1,0 +1,113 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import {
+  giTone,
+  glTone,
+  nutriTone,
+  inflammationTone,
+  inflammationLabel,
+  type Tone,
+} from '../lib/recipe';
+
+interface Props {
+  nutrition: CollectionEntry<'recipes'>['data']['nutrition'];
+  /** 'lg' for the detail hero, 'sm' for compact rows on cards. */
+  size?: 'lg' | 'sm';
+}
+
+const { nutrition, size = 'lg' } = Astro.props;
+const gly = nutrition?.glycemic;
+const nutri = nutrition?.nutriScore;
+const inflam = nutrition?.inflammation;
+
+type Medallion = {
+  key: string;
+  label: string;
+  value: string;
+  sub?: string;
+  tone: Tone;
+};
+
+const medallions: Medallion[] = [
+  {
+    key: 'gi',
+    label: 'Glycemic Index',
+    value: gly?.gi != null ? String(Math.round(gly.gi)) : '—',
+    sub: gly?.giBand ?? undefined,
+    tone: giTone(gly?.gi),
+  },
+  {
+    key: 'gl',
+    label: 'Glycemic Load',
+    value: gly?.gl != null ? String(Math.round(gly.gl)) : '—',
+    sub: 'per serving',
+    tone: glTone(gly?.gl),
+  },
+  {
+    key: 'nutri',
+    label: 'Nutrition Score',
+    value: nutri?.grade ?? '—',
+    sub: nutri ? 'Nutri-Score' : undefined,
+    tone: nutriTone(nutri?.grade),
+  },
+  {
+    key: 'inflam',
+    label: 'Inflammation',
+    value: inflam ? (inflam.score > 0 ? `+${inflam.score}` : String(inflam.score)) : '—',
+    sub: inflam ? inflammationLabel(inflam.band) : undefined,
+    tone: inflammationTone(inflam?.band),
+  },
+];
+
+const toneRing: Record<Tone, string> = {
+  good: 'border-band-good text-band-good',
+  mid: 'border-band-mid text-band-mid',
+  bad: 'border-band-bad text-band-bad',
+  unknown: 'border-line-strong text-ink-faint',
+};
+const toneDot: Record<Tone, string> = {
+  good: 'bg-band-good',
+  mid: 'bg-band-mid',
+  bad: 'bg-band-bad',
+  unknown: 'bg-line-strong',
+};
+
+const isLg = size === 'lg';
+---
+
+{
+  isLg ? (
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      {medallions.map((m) => (
+        <div class="flex flex-col items-center text-center gap-2 rounded-xl bg-card border border-line px-3 py-4">
+          <div
+            class:list={[
+              'flex items-center justify-center rounded-full border-2 bg-paper',
+              'h-16 w-16 font-display font-semibold',
+              m.value.length > 3 ? 'text-xl' : 'text-2xl',
+              toneRing[m.tone],
+            ]}
+          >
+            {m.value}
+          </div>
+          <div class="eyebrow !text-[0.62rem] !tracking-[0.14em] leading-tight text-ink-soft">
+            {m.label}
+          </div>
+          {m.sub && (
+            <div class="font-ui text-[0.68rem] capitalize text-ink-faint -mt-1">{m.sub}</div>
+          )}
+        </div>
+      ))}
+    </div>
+  ) : (
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1 font-ui text-[0.72rem] text-ink-soft">
+      {medallions.map((m) => (
+        <span class="inline-flex items-center gap-1.5">
+          <span class:list={['inline-block h-1.5 w-1.5 rounded-full', toneDot[m.tone]]} />
+          <span class="font-semibold text-ink">{m.key === 'inflam' ? 'Inflam' : m.label.split(' ').map((w) => w[0]).join('')}</span>
+          <span>{m.value}</span>
+        </span>
+      ))}
+    </div>
+  )
+}

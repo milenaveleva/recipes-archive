@@ -1,0 +1,66 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { round } from '../lib/recipe';
+
+interface Props {
+  nutrition: CollectionEntry<'recipes'>['data']['nutrition'];
+}
+const { nutrition } = Astro.props;
+const p = nutrition?.perServing;
+
+type Row = { label: string; value: number | null | undefined; unit: string; em?: boolean };
+const rows: Row[] = p
+  ? [
+      { label: 'Energy', value: p.energyKcal, unit: 'kcal', em: true },
+      { label: 'Protein', value: p.protein_g, unit: 'g' },
+      { label: 'Carbs', value: p.carbs_g, unit: 'g' },
+      { label: '— of which sugars', value: p.sugar_g, unit: 'g' },
+      { label: '— fiber', value: p.fiber_g, unit: 'g' },
+      { label: 'Fat', value: p.fat_g, unit: 'g' },
+      { label: '— saturated', value: p.satFat_g, unit: 'g' },
+      { label: 'Sodium', value: p.sodium_mg, unit: 'mg' },
+    ]
+  : [];
+const visible = rows.filter((r) => r.value != null);
+---
+
+{
+  visible.length > 0 && (
+    <div class="rounded-xl border border-line bg-card p-5">
+      <div class="mb-3 flex items-baseline justify-between">
+        <h3 class="font-display text-lg text-ink">Nutrition</h3>
+        <span class="font-ui text-[0.66rem] uppercase tracking-[0.14em] text-ink-faint">
+          per serving
+        </span>
+      </div>
+      <dl class="flex flex-col">
+        {visible.map((r) => (
+          <div
+            class:list={[
+              'flex items-baseline justify-between border-b border-line/60 py-1.5 last:border-0',
+              r.label.startsWith('—') && 'pl-3',
+            ]}
+          >
+            <dt
+              class:list={[
+                'font-ui text-sm',
+                r.em ? 'font-semibold text-ink' : 'text-ink-soft',
+              ]}
+            >
+              {r.label}
+            </dt>
+            <dd
+              class:list={[
+                'font-ui tabular-nums',
+                r.em ? 'text-base font-semibold text-ink' : 'text-sm text-ink',
+              ]}
+            >
+              {round(r.value, r.unit === 'g' ? 1 : 0)}
+              <span class="text-ink-faint"> {r.unit}</span>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  )
+}
