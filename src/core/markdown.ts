@@ -1,0 +1,154 @@
+/**
+ * Recipe draft → committable markdown.
+ *
+ * Emits the exact frontmatter shape `src/content.config.ts` validates (so the
+ * authored file round-trips through Zod on rebuild) plus prose method steps in
+ * the body. YAML is produced with the `yaml` library for correct quoting of
+ * titles/notes containing colons, quotes, or ampersands. Pure + isomorphic, so
+ * it is unit-testable and runs in the authoring island.
+ */
+import { stringify } from 'yaml';
+import type { PerServingMacros } from './types';
+
+export interface DraftIngredient {
+  raw: string;
+  group?: string;
+  quantity?: number | null;
+  quantity2?: number | null;
+  unit?: string | null;
+  item: string;
+  note?: string;
+  grams?: number | null;
+  milliliters?: number | null;
+  fdcId?: number | null;
+  matchConfidence?: 'high' | 'medium' | 'low' | 'none';
+  excludeFromNutrition?: boolean;
+}
+
+export interface DraftNutrition {
+  perServing?: PerServingMacros;
+  computedAt?: string;
+  dataSources?: string[];
+}
+
+export interface RecipeDraft {
+  title: string;
+  slug?: string;
+  description?: string;
+  imageUrl?: string;
+  imageAlt?: string;
+  source?: { name?: string; url?: string };
+  author?: string;
+  servings: number;
+  yield?: string;
+  prepTime?: string;
+  cookTime?: string;
+  totalTime?: string;
+  difficulty?: 'easy' | 'medium' | 'hard';
+  cuisine?: string;
+  course?: string;
+  tags?: string[];
+  category?: string;
+  lists?: string[];
+  ingredients: DraftIngredient[];
+  instructions: string[];
+  nutrition?: DraftNutrition;
+  /** ISO date (YYYY-MM-DD); supplied by the caller to stay deterministic. */
+  createdAt?: string;
+}
+
+/** Slug for the recipe file/route, from an explicit slug or the title. */
+export function slugifyRecipe(title: string, explicit?: string): string {
+  const base = (explicit ?? title)
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+  return base || 'recipe';
+}
+
+/** Repo-relative path the recipe markdown should be committed to. */
+export function recipeFilename(draft: RecipeDraft): string {
+  return `src/content/recipes/${slugifyRecipe(draft.title, draft.slug)}.md`;
+}
+
+/** Recursively drop undefined/null, empty strings, empty arrays and objects. */
+function prune<T>(value: T): T {
+  if (Array.isArray(value)) {
+    const arr = value.map(prune).filter((v) => !isEmpty(v));
+    return arr as unknown as T;
+  }
+  if (value && typeof value === 'object') {
+    const out: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(value)) {
+      const pv = prune(v);
+      if (!isEmpty(pv)) out[k] = pv;
+    }
+    return out as T;
+  }
+  return value;
+}
+
+function isEmpty(v: unknown): boolean {
+  if (v == null || v === '') return true;
+  if (Array.isArray(v)) return v.length === 0;
+  if (typeof v === 'object') return Object.keys(v).length === 0;
+  return false;
+}
+
+function cleanIngredient(ing: DraftIngredient): Record<string, unknown> {
+  const out: Record<string, unknown> = {
+    raw: ing.raw,
+    group: ing.group,
+    quantity: ing.quantity,
+    quantity2: ing.quantity2,
+    unit: ing.unit,
+    item: ing.item,
+    note: ing.note,
+    grams: ing.grams,
+    milliliters: ing.milliliters,
+    fdcId: ing.fdcId,
+    matchConfidence: ing.matchConfidence,
+  };
+  // The schema defaults excludeFromNutrition to false — only emit when true.
+  if (ing.excludeFromNutrition) out.excludeFromNutrition = true;
+  return out;
+}
+
+function methodBody(instructions: string[]): string {
+  const steps = instructions
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .map((s, i) => `${i + 1}. ${s}`)
+    .join('\n');
+  return steps ? `## Method\n\n${steps}` : '## Method';
+}
+
+/** Serialize a draft to a complete markdown file (frontmatter + method body). */
+export function toRecipeMarkdown(draft: RecipeDraft): string {
+  const frontmatter: Record<string, unknown> = {
+    title: draft.title,
+    slug: draft.slug,
+    description: draft.description,
+    imageUrl: draft.imageUrl,
+    imageAlt: draft.imageAlt,
+    source: draft.source,
+    author: draft.author,
+    servings: draft.servings,
+    yield: draft.yield,
+    prepTime: draft.prepTime,
+    cookTime: draft.cookTime,
+    totalTime: draft.totalTime,
+    difficulty: draft.difficulty,
+    cuisine: draft.cuisine,
+    course: draft.course,
+    tags: draft.tags,
+    category: draft.category,
+    lists: draft.lists,
+    ingredients: draft.ingredients.map(cleanIngredient),
+    nutrition: draft.nutrition,
+    createdAt: draft.createdAt,
+  };
+  const yaml = stringify(prune(frontmatter), { lineWidth: 0 }).trimEnd();
+  return `---\n${yaml}\n---\n\n${methodBody(draft.instructions)}\n`;
+}

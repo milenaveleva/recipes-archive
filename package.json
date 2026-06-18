@@ -12,19 +12,27 @@
     "preview": "astro preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc -p tsconfig.core.json",
+    "typecheck": "astro check",
+    "typecheck:core": "tsc -p tsconfig.core.json",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^5.0.7",
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource-variable/fraunces": "^5.2.9",
     "@fontsource-variable/hanken-grotesk": "^5.2.8",
     "@fontsource-variable/newsreader": "^5.2.10",
     "astro": "^6.4.8",
-    "parse-ingredient": "^2.2.0"
+    "parse-ingredient": "^2.2.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "yaml": "^2.9.0"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.9",
     "@tailwindcss/vite": "^4.3.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
     "tailwindcss": "^4.3.1",
     "typescript": "^5.7.3",
     "vitest": "^4.1.9"

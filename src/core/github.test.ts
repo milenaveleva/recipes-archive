@@ -96,6 +96,7 @@ describe('commitTextFile', () => {
       path: 'src/content/recipes/x.md',
       sha: 'newsha',
       commitSha: 'csha',
+      updated: false,
       htmlUrl: 'http://x/y',
     });
     expect(calls[1].init?.method).toBe('PUT');
@@ -111,8 +112,9 @@ describe('commitTextFile', () => {
       res(200, { sha: 'oldsha' }), // file exists → update
       res(200, { content: { sha: 'newsha' }, commit: { sha: 'csha' } }),
     ];
-    await commitTextFile('tok', repo, { path: 'a.md', content: 'x', message: 'm' });
+    const result = await commitTextFile('tok', repo, { path: 'a.md', content: 'x', message: 'm' });
     expect(bodyOf(calls[1]).sha).toBe('oldsha');
+    expect(result.updated).toBe(true);
   });
 
   it('surfaces the GitHub error message on failure', async () => {

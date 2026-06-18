@@ -31,7 +31,7 @@ Each recipe is one markdown file: rich YAML frontmatter (structured, metric ingr
 ## Roadmap
 
 - **Phase 0 (done)** — static recipe book: schema, index/detail/taxonomy pages, score medallions, GitHub Pages deploy.
-- **Phase 1** — in-browser authoring: paste a URL (fetched via a Cloudflare Worker CORS proxy) or fill a form → review each ingredient's USDA match → auto-convert to metric → compute macros → commit markdown via the GitHub API.
+- **Phase 1** — in-browser authoring at [`/add`](https://milenaveleva.github.io/recipes-archive/add): paste a URL (fetched via a Cloudflare Worker CORS proxy) or fill a form → review each ingredient's USDA match → auto-convert to metric → compute macros → commit markdown via the GitHub API. URL import is enabled by setting `PUBLIC_IMPORT_PROXY` (the deployed Worker URL, see [`worker/`](worker/)) as a build environment variable; without it the manual form still works.
 - **Phase 2** — GI/GL + Nutri-Score 2023 + inflammation index, computed in-app.
 - **Phase 3** — search (Pagefind) + faceted filtering.
 - **Later** — shopping lists + kifli.hu purchasing.

@@ -55,19 +55,29 @@ export function isBlockedHost(hostname: string): boolean {
     if (v6 === '::1') return true; // loopback
     if (/^f[cd]/.test(v6)) return true; // fc00::/7 unique-local
     if (/^fe80/.test(v6)) return true; // link-local
+    // IPv4-mapped/embedded (e.g. ::ffff:127.0.0.1) — range-check the IPv4 tail.
+    const tail = /(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})$/.exec(v6);
+    if (tail && isBlockedIpv4(tail[1])) return true;
     return false;
   }
 
-  // IPv4 literal in a private / loopback / link-local / CGNAT range.
+  // Non-dotted numeric/hex hosts (decimal 2130706433, hex 0x7f000001) are
+  // alternative encodings of an IP — refuse rather than try to decode them.
+  if (/^(0x[0-9a-f]+|\d+)$/.test(h)) return true;
+
+  return isBlockedIpv4(h);
+}
+
+/** True when a dotted-decimal IPv4 string is loopback/private/link-local/CGNAT. */
+function isBlockedIpv4(h: string): boolean {
   const m = /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/.exec(h);
-  if (m) {
-    const a = Number(m[1]);
-    const b = Number(m[2]);
-    if (a === 0 || a === 127 || a === 10) return true;
-    if (a === 169 && b === 254) return true; // link-local (incl. cloud metadata 169.254.169.254)
-    if (a === 192 && b === 168) return true;
-    if (a === 172 && b >= 16 && b <= 31) return true;
-    if (a === 100 && b >= 64 && b <= 127) return true; // CGNAT
-  }
+  if (!m) return false;
+  const a = Number(m[1]);
+  const b = Number(m[2]);
+  if (a === 0 || a === 127 || a === 10) return true;
+  if (a === 169 && b === 254) return true; // link-local (incl. cloud metadata 169.254.169.254)
+  if (a === 192 && b === 168) return true;
+  if (a === 172 && b >= 16 && b <= 31) return true;
+  if (a === 100 && b >= 64 && b <= 127) return true; // CGNAT
   return false;
 }

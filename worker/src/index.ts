@@ -18,6 +18,7 @@ interface Env {
 const DEFAULT_ORIGINS = ['https://milenaveleva.github.io', 'http://localhost:4321'];
 const MAX_BYTES = 4 * 1024 * 1024; // 4 MB — recipe pages and hero images are small
 const FETCH_TIMEOUT_MS = 12_000;
+const MAX_REDIRECTS = 5;
 const ALLOWED_CONTENT = /^(text\/html|application\/xhtml|text\/plain|image\/)/i;
 
 export default {
@@ -38,22 +39,37 @@ export default {
 
     const controller = new AbortController();
     const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
-    let upstream: Response;
+    let upstream: Response | undefined;
     try {
-      upstream = await fetch(check.url.toString(), {
-        method: 'GET',
-        redirect: 'follow',
-        signal: controller.signal,
-        headers: {
-          'User-Agent': 'Mozilla/5.0 (compatible; recipes-archive importer)',
-          Accept: 'text/html,application/xhtml+xml,image/*;q=0.8,*/*;q=0.5',
-        },
-      });
-    } catch (err) {
-      return json(502, { error: 'upstream fetch failed', detail: String(err) }, cors);
+      // Follow redirects manually so each hop's Location is re-validated — a
+      // public URL must not be allowed to 30x-redirect into a private host.
+      let current = check.url;
+      for (let hop = 0; hop <= MAX_REDIRECTS; hop++) {
+        const res = await fetch(current.toString(), {
+          method: 'GET',
+          redirect: 'manual',
+          signal: controller.signal,
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (compatible; recipes-archive importer)',
+            Accept: 'text/html,application/xhtml+xml,image/*;q=0.8,*/*;q=0.5',
+          },
+        });
+        const location = res.status >= 300 && res.status < 400 ? res.headers.get('location') : null;
+        if (!location) {
+          upstream = res;
+          break;
+        }
+        const next = validateTargetUrl(new URL(location, current).toString());
+        if (!next.ok) return json(400, { error: `redirect ${next.reason}` }, cors);
+        current = next.url;
+      }
+    } catch {
+      // Generic message only — upstream error text can leak internal host info.
+      return json(502, { error: 'upstream fetch failed' }, cors);
     } finally {
       clearTimeout(timer);
     }
+    if (!upstream) return json(508, { error: 'too many redirects' }, cors);
 
     const contentType = upstream.headers.get('content-type') ?? 'application/octet-stream';
     if (!ALLOWED_CONTENT.test(contentType)) {

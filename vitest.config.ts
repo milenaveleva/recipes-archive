@@ -5,7 +5,7 @@ import { defineConfig } from 'vitest/config';
 // Astro/DOM dependencies, so a Node environment is all they need.
 export default defineConfig({
   test: {
-    include: ['src/core/**/*.test.ts', 'worker/src/**/*.test.ts'],
+    include: ['src/**/*.test.ts', 'worker/src/**/*.test.ts'],
     environment: 'node',
   },
 });

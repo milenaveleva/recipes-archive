@@ -30,6 +30,16 @@ describe('isBlockedHost', () => {
       expect(isBlockedHost(h), h).toBe(true);
     }
   });
+  it('blocks alternative IP encodings and IPv4-mapped IPv6', () => {
+    for (const h of [
+      '2130706433', // decimal 127.0.0.1
+      '0x7f000001', // hex 127.0.0.1
+      '::ffff:127.0.0.1',
+      '::ffff:169.254.169.254',
+    ]) {
+      expect(isBlockedHost(h), h).toBe(true);
+    }
+  });
   it('allows ordinary public hosts, including names that start with hex', () => {
     for (const h of ['example.com', 'cooking.nytimes.com', 'fc-barcelona.com', '172.32.0.1', '8.8.8.8']) {
       expect(isBlockedHost(h), h).toBe(false);

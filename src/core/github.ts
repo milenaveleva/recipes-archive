@@ -21,6 +21,8 @@ export interface CommitResult {
   sha: string;
   /** Sha of the commit that wrote it. */
   commitSha: string;
+  /** True when an existing file was overwritten rather than created. */
+  updated: boolean;
   htmlUrl?: string;
 }
 
@@ -130,6 +132,7 @@ async function putContents(
     path,
     sha: out.content?.sha ?? '',
     commitSha: out.commit?.sha ?? '',
+    updated: sha != null,
     htmlUrl: out.content?.html_url,
   };
 }
