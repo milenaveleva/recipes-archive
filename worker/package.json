@@ -1,0 +1,14 @@
+{
+  "name": "recipes-archive-proxy",
+  "private": true,
+  "version": "0.1.0",
+  "description": "CORS proxy Worker for in-app recipe import.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260617.1",
+    "wrangler": "^4.102.0"
+  }
+}

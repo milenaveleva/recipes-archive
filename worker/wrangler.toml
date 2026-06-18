@@ -1,0 +1,10 @@
+# Cloudflare Worker: CORS proxy for in-app recipe import.
+# Deploy with `npm run deploy` from this directory (see README.md).
+name = "recipes-archive-proxy"
+main = "src/index.ts"
+compatibility_date = "2024-11-01"
+
+# Origins permitted to call the proxy. Update if the site moves or you add a
+# custom domain; the running default (in src/index.ts) is used if this is unset.
+[vars]
+ALLOWED_ORIGINS = "https://milenaveleva.github.io,http://localhost:4321"
