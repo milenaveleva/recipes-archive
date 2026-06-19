@@ -1,16 +1,16 @@
 /**
  * In-browser recipe authoring wizard (a client-only React island).
  *
- * Flow: sign in with GitHub → import a URL (via the
- * CORS-proxy Worker) or write by hand → review each ingredient's USDA match and
- * metric weight → see live per-serving macros → preview the generated markdown
- * → commit it to the repo, which auto-redeploys. The compute logic lives in
- * ./addLib + src/core; this file is the UI and orchestration.
+ * Flow: import a URL (via the CORS-proxy Worker) or write by hand → review each
+ * ingredient's USDA match and metric weight → see live per-serving macros and
+ * scores → publish, which commits the markdown to the repo and auto-redeploys.
+ * Sign-in (in the header, or inline at publish time) gates only the commit. The
+ * compute logic lives in ./addLib + src/core; this file is the UI and orchestration.
  */
 import { useMemo, useState, useEffect } from 'react';
 import { extractRecipe } from '../../core/extract';
 import { toRecipeMarkdown, recipeFilename, type RecipeDraft } from '../../core/markdown';
-import { verifyAccess, commitTextFile, GitHubError, type GitHubRepo } from '../../core/github';
+import { commitTextFile, GitHubError, type GitHubRepo } from '../../core/github';
 import type { NutriCategory } from '../../core/nutriscore';
 import {
   EMPTY_FORM,
@@ -30,49 +30,36 @@ import {
   freshSession,
   loadSession,
   saveSession,
-  clearSession,
   notifyAuthChange,
   onAuthChange,
 } from './auth';
 import { GITHUB_MARK_PATH } from '../../lib/icons';
 
 const PROXY = (import.meta.env.PUBLIC_IMPORT_PROXY as string | undefined)?.trim();
-const LS = { owner: 'gh_owner', repo: 'gh_repo', branch: 'gh_branch' };
 
-type Step = 'auth' | 'compose' | 'publish';
+// Single-deployment app: recipes always commit to this repo's default branch.
+const OWNER = 'milenaveleva';
+const REPO = 'recipes-archive';
+const BRANCH = 'main';
 
 export default function AddRecipe() {
-  const [step, setStep] = useState<Step>('auth');
-
-  // Non-secret repo coordinates persist to localStorage; the GitHub session
-  // itself (tokens) lives in sessionStorage via auth.ts.
+  // The GitHub session (tokens) lives in sessionStorage via auth.ts.
   const [session, setSession] = useState<AuthSession | null>(null);
-  const [owner, setOwner] = useState('milenaveleva');
-  const [repo, setRepo] = useState('recipes-archive');
-  const [branch, setBranch] = useState('main');
-  const [authState, setAuthState] = useState<'idle' | 'checking' | 'ok' | 'error'>('idle');
+  const [authState, setAuthState] = useState<'idle' | 'checking' | 'error'>('idle');
   const [authMsg, setAuthMsg] = useState('');
 
+  // Restore a sign-in from this tab's sessionStorage on mount.
   useEffect(() => {
-    try {
-      setOwner(localStorage.getItem(LS.owner) ?? 'milenaveleva');
-      setRepo(localStorage.getItem(LS.repo) ?? 'recipes-archive');
-      setBranch(localStorage.getItem(LS.branch) ?? 'main');
-    } catch {
-      // localStorage may be unavailable (private mode); fields stay at defaults.
-    }
     const restored = loadSession();
     if (restored) setSession(restored);
   }, []);
 
-  // Reflect a sign-in/out done from the header widget (same tab): adopt the new
-  // session, and drop back to the auth step if the header signed out.
+  // Reflect a sign-in/out done from the header widget (same tab).
   useEffect(() => {
     return onAuthChange(() => {
       const s = loadSession();
       setSession(s);
       if (!s) {
-        setStep('auth');
         setAuthState('idle');
         setAuthMsg('');
       }
@@ -92,11 +79,10 @@ export default function AddRecipe() {
   const [publishMsg, setPublishMsg] = useState('');
   const [publishUrl, setPublishUrl] = useState('');
 
-  const ghRepo: GitHubRepo = { owner, repo, branch };
+  const ghRepo: GitHubRepo = { owner: OWNER, repo: REPO, branch: BRANCH };
   const macro = useMemo(() => computeNutrition(rows, form.servings), [rows, form.servings]);
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
   const draft = useMemo(() => buildDraft(form, rows, macro, today), [form, rows, macro, today]);
-  const markdown = useMemo(() => toRecipeMarkdown(draft), [draft]);
 
   function setField<K extends keyof FormState>(key: K, value: FormState[K]) {
     setForm((f) => ({ ...f, [key]: value }));
@@ -111,48 +97,8 @@ export default function AddRecipe() {
     notifyAuthChange(); // keep the header sign-in widget in sync
   };
 
-  // Editing the commit target invalidates the prior push-access check, so drop
-  // back to unverified — Continue then re-runs verifyAccess against the new repo.
-  function retargetRepo(setter: (v: string) => void, value: string) {
-    setter(value);
-    setAuthState((s) => (s === 'ok' ? 'idle' : s));
-    setAuthMsg('');
-  }
-
-  // Confirm the signed-in token can push to this repo (the publish gate — anyone
-  // may sign in, only a collaborator passes here), persist it, and move on.
-  async function proceed(candidate: AuthSession) {
-    setAuthState('checking');
-    setAuthMsg('');
-    try {
-      const { canPush, defaultBranch } = await verifyAccess(candidate.accessToken, ghRepo);
-      if (!canPush) {
-        setAuthState('error');
-        setAuthMsg(
-          candidate.login
-            ? `@${candidate.login} can’t push to ${owner}/${repo} — install the GitHub App there and confirm you have write access.`
-            : `You don’t have push access to ${owner}/${repo} — confirm you’re a collaborator with write access.`,
-        );
-        return;
-      }
-      const resolvedBranch = branch || defaultBranch;
-      setBranch(resolvedBranch);
-      persist(candidate);
-      try {
-        localStorage.setItem(LS.owner, owner);
-        localStorage.setItem(LS.repo, repo);
-        localStorage.setItem(LS.branch, resolvedBranch);
-      } catch {
-        /* persisting is best-effort */
-      }
-      setAuthState('ok');
-      setStep('compose');
-    } catch (err) {
-      setAuthState('error');
-      setAuthMsg(err instanceof Error ? err.message : String(err));
-    }
-  }
-
+  // Sign in with GitHub. Anyone may sign in; push access is enforced by GitHub
+  // at commit time (and surfaced as a friendly message in handlePublish).
   async function handleSignIn() {
     if (!PROXY) {
       setAuthState('error');
@@ -162,34 +108,12 @@ export default function AddRecipe() {
     setAuthState('checking');
     setAuthMsg('');
     try {
-      const signedIn = await signIn(PROXY);
-      persist(signedIn); // record the sign-in immediately, even if the repo check below fails
-      await proceed(signedIn);
+      persist(await signIn(PROXY));
+      setAuthState('idle');
     } catch (err) {
       setAuthState('error');
       setAuthMsg(err instanceof Error ? err.message : String(err));
     }
-  }
-
-  async function handleContinue() {
-    if (!session) return;
-    setAuthState('checking');
-    setAuthMsg('');
-    try {
-      await proceed(await ensureFresh(session));
-    } catch (err) {
-      setAuthState('error');
-      setAuthMsg(err instanceof Error ? err.message : String(err));
-    }
-  }
-
-  function handleSignOut() {
-    clearSession();
-    setSession(null);
-    setAuthState('idle');
-    setAuthMsg('');
-    setStep('auth');
-    notifyAuthChange(); // keep the header sign-in widget in sync
   }
 
   // Return a session with a currently-valid access token, refreshing (and
@@ -257,288 +181,212 @@ export default function AddRecipe() {
       setPublishMsg(result.updated ? 'Note: this overwrote an existing recipe at the same slug.' : '');
     } catch (err) {
       setPublishState('error');
-      setPublishMsg(err instanceof Error ? err.message : String(err));
+      if (err instanceof GitHubError && err.status === 403) {
+        setPublishMsg(
+          `No push access to ${OWNER}/${REPO}. Confirm the GitHub App is installed on the repo and you have write access.`,
+        );
+      } else {
+        setPublishMsg(err instanceof Error ? err.message : String(err));
+      }
     }
   }
 
   const hasIngredient = rows.some((r) => !r.parsed.isGroupHeader);
   const canPublish = draft.title.trim().length > 0 && hasIngredient && publishState !== 'saving';
 
-  const repoFields = (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-      <Field label="Owner">
-        <input value={owner} onChange={(e) => retargetRepo(setOwner, e.target.value)} className={inputCls} />
-      </Field>
-      <Field label="Repo">
-        <input value={repo} onChange={(e) => retargetRepo(setRepo, e.target.value)} className={inputCls} />
-      </Field>
-      <Field label="Branch">
-        <input value={branch} onChange={(e) => retargetRepo(setBranch, e.target.value)} className={inputCls} />
-      </Field>
-    </div>
-  );
-
   return (
-    <div className="font-body text-ink">
-      <StepNav step={step} setStep={setStep} authed={authState === 'ok'} />
-
-      {step === 'auth' && (
+    <div className="font-body text-ink grid gap-6">
+      {PROXY && (
         <Card>
-          <h2 className="font-display text-2xl text-ink">Connect to GitHub</h2>
-          <p className="mt-2 text-sm text-ink-soft">
-            Saving commits the recipe markdown to your repo. Sign in with GitHub — anyone can sign in, but only
-            collaborators on <code>{owner}/{repo}</code> can publish.
-          </p>
-
-          {session ? (
-            <div className="mt-5 grid gap-4">
-              <div className="rounded-lg border border-line bg-paper/60 px-4 py-3 text-sm text-ink">
-                Signed in{session.login ? <> as <strong>@{session.login}</strong></> : ''}.
-              </div>
-              {repoFields}
-              {authState === 'error' && <Alert tone="bad">{authMsg}</Alert>}
-              <p className="text-xs text-ink-faint">
-                Your GitHub session lasts only until you close this tab — it&rsquo;s never written to disk. Use Sign out
-                to end it now.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <button onClick={handleContinue} disabled={authState === 'checking'} className={primaryBtn}>
-                  {authState === 'checking' ? 'Checking…' : 'Continue →'}
-                </button>
-                <button onClick={handleSignOut} className={ghostBtn}>
-                  Sign out
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="mt-5 grid gap-4">
-              {repoFields}
-              {authState === 'error' && <Alert tone="bad">{authMsg}</Alert>}
-              <div>
-                <button
-                  onClick={handleSignIn}
-                  disabled={authState === 'checking' || !PROXY}
-                  className={`${primaryBtn} inline-flex items-center gap-2`}
-                >
-                  <GitHubMark />
-                  {authState === 'checking' ? 'Signing in…' : 'Sign in with GitHub'}
-                </button>
-                {PROXY ? (
-                  <p className="mt-3 text-xs text-ink-faint">
-                    A popup opens GitHub so you can authorise the app — no tokens to paste.
-                  </p>
-                ) : (
-                  <p className="mt-2 text-xs text-band-bad">
-                    Sign-in needs the import Worker configured (<code>PUBLIC_IMPORT_PROXY</code>).
-                  </p>
-                )}
-              </div>
-            </div>
-          )}
+          <h2 className="font-display text-xl text-ink">Import from a link</h2>
+          <div className="mt-3 flex flex-col sm:flex-row gap-3">
+            <input
+              value={importUrl}
+              onChange={(e) => setImportUrl(e.target.value)}
+              placeholder="https://example.com/recipe"
+              className={`${inputCls} flex-1`}
+            />
+            <button
+              onClick={handleImport}
+              disabled={!importUrl || importState === 'loading'}
+              className={primaryBtn}
+            >
+              {importState === 'loading' ? 'Fetching…' : 'Import'}
+            </button>
+          </div>
+          {importState === 'error' && <Alert tone="bad">{importMsg}</Alert>}
+          <p className="mt-2 text-xs text-ink-faint">Or just fill in the details below by hand.</p>
         </Card>
       )}
 
-      {step === 'compose' && (
-        <div className="grid gap-6">
-          {PROXY && (
-            <Card>
-              <h2 className="font-display text-xl text-ink">Import from a link</h2>
-              <div className="mt-3 flex flex-col sm:flex-row gap-3">
-                <input
-                  value={importUrl}
-                  onChange={(e) => setImportUrl(e.target.value)}
-                  placeholder="https://example.com/recipe"
-                  className={`${inputCls} flex-1`}
-                />
-                <button
-                  onClick={handleImport}
-                  disabled={!importUrl || importState === 'loading'}
-                  className={primaryBtn}
-                >
-                  {importState === 'loading' ? 'Fetching…' : 'Import'}
-                </button>
-              </div>
-              {importState === 'error' && <Alert tone="bad">{importMsg}</Alert>}
-              <p className="mt-2 text-xs text-ink-faint">Or just fill in the details below by hand.</p>
-            </Card>
-          )}
-
-          <Card>
-            <h2 className="font-display text-xl text-ink">Details</h2>
-            <div className="mt-4 grid gap-4">
-              <Field label="Title">
-                <input value={form.title} onChange={(e) => setField('title', e.target.value)} className={inputCls} />
-              </Field>
-              <Field label="Description">
-                <textarea
-                  value={form.description}
-                  onChange={(e) => setField('description', e.target.value)}
-                  rows={2}
-                  className={inputCls}
-                />
-              </Field>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <Field label="Servings">
-                  <input
-                    type="number"
-                    min={1}
-                    value={form.servings || ''}
-                    onChange={(e) => setField('servings', Math.max(0, Math.floor(Number(e.target.value)) || 0))}
-                    className={inputCls}
-                  />
-                </Field>
-                <Field label="Prep (min)">
-                  <input type="number" min={0} value={form.prepMin ?? ''} onChange={(e) => setField('prepMin', intOrNull(e.target.value))} className={inputCls} />
-                </Field>
-                <Field label="Cook (min)">
-                  <input type="number" min={0} value={form.cookMin ?? ''} onChange={(e) => setField('cookMin', intOrNull(e.target.value))} className={inputCls} />
-                </Field>
-                <Field label="Category">
-                  <input value={form.category} onChange={(e) => setField('category', e.target.value)} className={inputCls} />
-                </Field>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Field label="Tags (comma-separated)">
-                  <input value={form.tags} onChange={(e) => setField('tags', e.target.value)} className={inputCls} />
-                </Field>
-                <Field label="Lists (comma-separated)">
-                  <input value={form.lists} onChange={(e) => setField('lists', e.target.value)} className={inputCls} />
-                </Field>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Field label="Cuisine">
-                  <input value={form.cuisine} onChange={(e) => setField('cuisine', e.target.value)} className={inputCls} />
-                </Field>
-                <Field label="Course">
-                  <input value={form.course} onChange={(e) => setField('course', e.target.value)} className={inputCls} />
-                </Field>
-              </div>
-              <Field label="Nutri-Score category">
-                <select
-                  value={form.nutriCategory}
-                  onChange={(e) => setField('nutriCategory', e.target.value as NutriCategory)}
-                  className={inputCls}
-                >
-                  <option value="general">General food — most recipes (incl. soups &amp; composite dishes)</option>
-                  <option value="beverage">Beverage — drinks, incl. milk &amp; plant-based drinks</option>
-                  <option value="fat-oil-nut-seed">Fats, oils, nuts &amp; seeds</option>
-                </select>
-              </Field>
-              <p className="-mt-2 text-xs text-ink-faint">
-                Nutri-Score grades drinks and fats with stricter, category-specific rules. Match it to the finished
-                dish; leave it on “general” unless the recipe really is a drink or a fat/oil/nut product. (Alcoholic
-                drinks over 1.2% are outside Nutri-Score.)
-              </p>
-              {form.nutriCategory === 'beverage' && (
-                <label className="flex items-center gap-2 font-ui text-sm text-ink-soft">
-                  <input
-                    type="checkbox"
-                    checked={form.nnsPresent}
-                    onChange={(e) => setField('nnsPresent', e.target.checked)}
-                  />
-                  Contains a non-nutritive sweetener (stevia, sucralose, aspartame, …)
-                </label>
-              )}
-              <Field label="Image URL">
-                <input value={form.imageUrl} onChange={(e) => setField('imageUrl', e.target.value)} placeholder="https://…" className={inputCls} />
-              </Field>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <Field label="Source name">
-                  <input value={form.sourceName} onChange={(e) => setField('sourceName', e.target.value)} className={inputCls} />
-                </Field>
-                <Field label="Source URL">
-                  <input value={form.sourceUrl} onChange={(e) => setField('sourceUrl', e.target.value)} placeholder="https://…" className={inputCls} />
-                </Field>
-              </div>
-            </div>
-          </Card>
-
-          <Card>
-            <div className="flex items-center justify-between gap-4">
-              <h2 className="font-display text-xl text-ink">Ingredients</h2>
-              <button onClick={parseIngredients} className={ghostBtn}>
-                {rows.length ? 'Re-parse' : 'Parse'}
-              </button>
-            </div>
-            <p className="mt-1 text-xs text-ink-faint">One ingredient per line, e.g. “1 cup red lentils, rinsed”.</p>
+      <Card>
+        <h2 className="font-display text-xl text-ink">Details</h2>
+        <div className="mt-4 grid gap-4">
+          <Field label="Title">
+            <input value={form.title} onChange={(e) => setField('title', e.target.value)} className={inputCls} />
+          </Field>
+          <Field label="Description">
             <textarea
-              value={ingredientsText}
-              onChange={(e) => setIngredientsText(e.target.value)}
-              rows={6}
-              className={`${inputCls} mt-3 font-mono text-sm`}
-              placeholder={'1 cup red lentils, rinsed\n2 cloves garlic, minced\n1 tbsp olive oil'}
+              value={form.description}
+              onChange={(e) => setField('description', e.target.value)}
+              rows={2}
+              className={inputCls}
             />
+          </Field>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <Field label="Servings">
+              <input
+                type="number"
+                min={1}
+                value={form.servings || ''}
+                onChange={(e) => setField('servings', Math.max(0, Math.floor(Number(e.target.value)) || 0))}
+                className={inputCls}
+              />
+            </Field>
+            <Field label="Prep (min)">
+              <input type="number" min={0} value={form.prepMin ?? ''} onChange={(e) => setField('prepMin', intOrNull(e.target.value))} className={inputCls} />
+            </Field>
+            <Field label="Cook (min)">
+              <input type="number" min={0} value={form.cookMin ?? ''} onChange={(e) => setField('cookMin', intOrNull(e.target.value))} className={inputCls} />
+            </Field>
+            <Field label="Category">
+              <input value={form.category} onChange={(e) => setField('category', e.target.value)} className={inputCls} />
+            </Field>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Field label="Tags (comma-separated)">
+              <input value={form.tags} onChange={(e) => setField('tags', e.target.value)} className={inputCls} />
+            </Field>
+            <Field label="Lists (comma-separated)">
+              <input value={form.lists} onChange={(e) => setField('lists', e.target.value)} className={inputCls} />
+            </Field>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Field label="Cuisine">
+              <input value={form.cuisine} onChange={(e) => setField('cuisine', e.target.value)} className={inputCls} />
+            </Field>
+            <Field label="Course">
+              <input value={form.course} onChange={(e) => setField('course', e.target.value)} className={inputCls} />
+            </Field>
+          </div>
+          <Field label="Nutri-Score category">
+            <select
+              value={form.nutriCategory}
+              onChange={(e) => setField('nutriCategory', e.target.value as NutriCategory)}
+              className={inputCls}
+            >
+              <option value="general">General food — most recipes (incl. soups &amp; composite dishes)</option>
+              <option value="beverage">Beverage — drinks, incl. milk &amp; plant-based drinks</option>
+              <option value="fat-oil-nut-seed">Fats, oils, nuts &amp; seeds</option>
+            </select>
+          </Field>
+          <p className="-mt-2 text-xs text-ink-faint">
+            Nutri-Score grades drinks and fats with stricter, category-specific rules. Match it to the finished
+            dish; leave it on “general” unless the recipe really is a drink or a fat/oil/nut product. (Alcoholic
+            drinks over 1.2% are outside Nutri-Score.)
+          </p>
+          {form.nutriCategory === 'beverage' && (
+            <label className="flex items-center gap-2 font-ui text-sm text-ink-soft">
+              <input
+                type="checkbox"
+                checked={form.nnsPresent}
+                onChange={(e) => setField('nnsPresent', e.target.checked)}
+              />
+              Contains a non-nutritive sweetener (stevia, sucralose, aspartame, …)
+            </label>
+          )}
+          <Field label="Image URL">
+            <input value={form.imageUrl} onChange={(e) => setField('imageUrl', e.target.value)} placeholder="https://…" className={inputCls} />
+          </Field>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Field label="Source name">
+              <input value={form.sourceName} onChange={(e) => setField('sourceName', e.target.value)} className={inputCls} />
+            </Field>
+            <Field label="Source URL">
+              <input value={form.sourceUrl} onChange={(e) => setField('sourceUrl', e.target.value)} placeholder="https://…" className={inputCls} />
+            </Field>
+          </div>
+        </div>
+      </Card>
 
-            {rows.length > 0 && (
-              <div className="mt-5 grid gap-3">
-                {rows.filter((r) => !r.parsed.isGroupHeader).map((row) => (
-                  <IngredientRowEditor key={row.id} row={row} onPatch={(p) => patchRow(row.id, p)} />
-                ))}
-              </div>
+      <Card>
+        <div className="flex items-center justify-between gap-4">
+          <h2 className="font-display text-xl text-ink">Ingredients</h2>
+          <button onClick={parseIngredients} className={ghostBtn}>
+            {rows.length ? 'Re-parse' : 'Parse'}
+          </button>
+        </div>
+        <p className="mt-1 text-xs text-ink-faint">One ingredient per line, e.g. “1 cup red lentils, rinsed”.</p>
+        <textarea
+          value={ingredientsText}
+          onChange={(e) => setIngredientsText(e.target.value)}
+          rows={6}
+          className={`${inputCls} mt-3 font-mono text-sm`}
+          placeholder={'1 cup red lentils, rinsed\n2 cloves garlic, minced\n1 tbsp olive oil'}
+        />
+
+        {rows.length > 0 && (
+          <div className="mt-5 grid gap-3">
+            {rows.filter((r) => !r.parsed.isGroupHeader).map((row) => (
+              <IngredientRowEditor key={row.id} row={row} onPatch={(p) => patchRow(row.id, p)} />
+            ))}
+          </div>
+        )}
+      </Card>
+
+      <Card>
+        <h2 className="font-display text-xl text-ink">Method</h2>
+        <p className="mt-1 text-xs text-ink-faint">One step per line; numbered automatically.</p>
+        <textarea
+          value={form.instructions}
+          onChange={(e) => setField('instructions', e.target.value)}
+          rows={6}
+          className={`${inputCls} mt-3`}
+          placeholder={'Rinse the lentils.\nSimmer until soft.'}
+        />
+      </Card>
+
+      <MacroPanel macro={macro} servings={form.servings} />
+      <ScorePanel nutrition={draft.nutrition} />
+
+      <div className="grid gap-3">
+        {authState === 'error' && <Alert tone="bad">{authMsg}</Alert>}
+        {publishState === 'error' && <Alert tone="bad">{publishMsg}</Alert>}
+        {publishState === 'done' && (
+          <Alert tone="good">
+            Published. The site rebuilds in about a minute.{' '}
+            {publishUrl && (
+              <a className="underline" href={publishUrl} target="_blank" rel="noreferrer">
+                View the commit →
+              </a>
             )}
-          </Card>
-
-          <Card>
-            <h2 className="font-display text-xl text-ink">Method</h2>
-            <p className="mt-1 text-xs text-ink-faint">One step per line; numbered automatically.</p>
-            <textarea
-              value={form.instructions}
-              onChange={(e) => setField('instructions', e.target.value)}
-              rows={6}
-              className={`${inputCls} mt-3`}
-              placeholder={'Rinse the lentils.\nSimmer until soft.'}
-            />
-          </Card>
-
-          <MacroPanel macro={macro} servings={form.servings} />
-          <ScorePanel nutrition={draft.nutrition} />
-
-          <div className="flex justify-end">
-            <button onClick={() => setStep('publish')} disabled={!canPublish} className={primaryBtn}>
-              Preview &amp; publish →
-            </button>
-          </div>
-        </div>
-      )}
-
-      {step === 'publish' && (
-        <div className="grid gap-6">
-          <Card>
-            <h2 className="font-display text-xl text-ink">Generated markdown</h2>
-            <p className="mt-1 text-xs text-ink-faint">
-              Will be committed to <code>{recipeFilename(draft)}</code>.
-            </p>
-            <pre className="mt-3 max-h-96 overflow-auto rounded-lg bg-paper-2 p-4 text-xs leading-relaxed text-ink">
-              {markdown}
-            </pre>
-          </Card>
-
-          <MacroPanel macro={macro} servings={form.servings} />
-          <ScorePanel nutrition={draft.nutrition} />
-
-          {publishState === 'error' && <Alert tone="bad">{publishMsg}</Alert>}
-          {publishState === 'done' && (
-            <Alert tone="good">
-              Committed. The site rebuilds in ~1 minute.{' '}
-              {publishUrl && (
-                <a className="underline" href={publishUrl} target="_blank" rel="noreferrer">
-                  View the file →
-                </a>
-              )}
-              {publishMsg && <span className="block mt-1 text-band-mid">{publishMsg}</span>}
-            </Alert>
-          )}
-
-          <div className="flex justify-between">
-            <button onClick={() => setStep('compose')} className={ghostBtn}>
-              ← Back to edit
-            </button>
+            {publishMsg && <span className="block mt-1 text-band-mid">{publishMsg}</span>}
+          </Alert>
+        )}
+        <div className="flex items-center justify-end gap-3">
+          {session ? (
             <button onClick={handlePublish} disabled={!canPublish} className={primaryBtn}>
-              {publishState === 'saving' ? 'Saving…' : 'Commit to repo'}
+              {publishState === 'saving' ? 'Publishing…' : 'Publish recipe'}
             </button>
-          </div>
+          ) : (
+            <button
+              onClick={handleSignIn}
+              disabled={authState === 'checking' || !PROXY}
+              className={`${primaryBtn} inline-flex items-center gap-2`}
+            >
+              <GitHubMark />
+              {authState === 'checking' ? 'Signing in…' : 'Sign in with GitHub to publish'}
+            </button>
+          )}
         </div>
-      )}
+        {!session && (
+          <p className="text-right text-xs text-ink-faint">
+            {PROXY
+              ? 'Sign in to commit this recipe — it publishes straight to the archive.'
+              : 'Sign-in needs the import Worker configured (PUBLIC_IMPORT_PROXY).'}
+          </p>
+        )}
+      </div>
     </div>
   );
 }
@@ -667,34 +515,6 @@ function ScorePanel({ nutrition }: { nutrition: RecipeDraft['nutrition'] }) {
         follows the Nutri-Score 2023 method. The carb-weighted GI tends to over-predict mixed-meal GI.
       </p>
     </Card>
-  );
-}
-
-function StepNav({ step, setStep, authed }: { step: Step; setStep: (s: Step) => void; authed: boolean }) {
-  const steps: [Step, string][] = [
-    ['auth', '1 · Connect'],
-    ['compose', '2 · Compose'],
-    ['publish', '3 · Publish'],
-  ];
-  return (
-    <div className="mb-6 flex gap-2 font-ui text-xs uppercase tracking-wide">
-      {steps.map(([key, label]) => {
-        const active = step === key;
-        const reachable = key === 'auth' || authed;
-        return (
-          <button
-            key={key}
-            onClick={() => reachable && setStep(key)}
-            disabled={!reachable}
-            className={`rounded-full px-3 py-1 transition-colors ${
-              active ? 'bg-ink text-paper' : reachable ? 'bg-paper-2 text-ink-soft hover:text-ink' : 'bg-paper-2 text-ink-faint'
-            }`}
-          >
-            {label}
-          </button>
-        );
-      })}
-    </div>
   );
 }
 
