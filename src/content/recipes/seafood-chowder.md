@@ -1,6 +1,5 @@
 ---
 title: Seafood Chowder
-description: Recipe video above. This is a seafood soup so good, it's hard to believe it's made with cheap 'n cheerful marinara mix and store-bought stock. Using chicken rather than store-bought fish stock (awful stuff!), a cheeky dash of fish sauce rather than salt and bacon are some of the flavour enhancers we deploy here!Of course, if you use homemade fish stock and a hand-picked mix of fresh seafood, it will be upmarket-restaurant-worthy. :) Also see FAQ for more vegetable options.
 imageUrl: https://www.recipetineats.com/tachyon/2025/09/Seafood-chowder_9.jpg
 source:
   name: recipetineats.com
@@ -149,6 +148,7 @@ nutrition:
     - Nutri-Score 2023
     - Inflammation index (ingredient-tag v1)
 createdAt: "2026-06-19"
+updatedAt: "2026-06-19"
 ---
 
 ## Method
