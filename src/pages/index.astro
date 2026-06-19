@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import RecipeGrid from '../components/RecipeGrid.astro';
 import SearchFilter from '../components/SearchFilter.astro';
+import PendingOverlay from '../components/PendingOverlay.astro';
 import { visibleRecipes } from '../lib/recipe';
 import { buildSearchIndex } from '../lib/search-build';
 import { facetsOf } from '../lib/search';
@@ -61,4 +62,6 @@ const facets = facetsOf(docs);
       )
     }
   </section>
+
+  <PendingOverlay />
 </BaseLayout>

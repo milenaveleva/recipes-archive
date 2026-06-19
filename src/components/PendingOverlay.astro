@@ -1,0 +1,167 @@
+---
+/**
+ * Optimistic index overlay (bundled vanilla script, so the index stays
+ * React-free). After a recipe is committed or deleted the rebuild takes
+ * ~a minute; until the page catches up this reflects the change locally — a
+ * pending new recipe is injected as a "Publishing…" card, an edited one gets a
+ * "Saving…" ribbon, and a deleted one is removed.
+ *
+ * Reconciliation is by DOM presence (clock-independent): a create is done once
+ * the rebuilt card exists, a delete once it is gone. An edit (card present in
+ * both builds) falls back to the page's build time. Anything a failed build
+ * never lands ages out (see src/core/pending.ts). After mutating the grid it
+ * dispatches `recipes:grid-changed` so SearchFilter re-syncs its card map.
+ */
+---
+
+<script>
+  import { prunePending, dropPending, isBuildFresh, type PendingMutation } from '../core/pending';
+  import { formatDuration } from '../lib/recipe';
+
+  const grid = document.querySelector<HTMLElement>('[data-recipe-grid]');
+  if (grid) {
+    const buildTime =
+      Number(document.querySelector<HTMLMetaElement>('meta[name="x-build-time"]')?.content) || 0;
+    const pending = prunePending(Date.now());
+
+    const escapeSel = (s: string) =>
+      typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(s) : s.replace(/["\\]/g, '\\$&');
+    const cardFor = (slug: string) =>
+      grid.querySelector<HTMLElement>(`[data-recipe-slug="${escapeSel(slug)}"]`);
+
+    let changed = false;
+    for (const m of pending) {
+      const card = cardFor(m.slug);
+      if (m.kind === 'delete') {
+        // Present ⇒ this build still lists it: remove. Absent ⇒ rebuild landed.
+        if (card) {
+          card.remove();
+          changed = true;
+        } else {
+          dropPending(m.slug);
+        }
+      } else if (m.kind === 'create') {
+        // Present ⇒ the rebuilt card exists: done. Absent ⇒ inject a placeholder.
+        if (card) {
+          dropPending(m.slug);
+        } else {
+          grid.prepend(buildPendingCard(m));
+          changed = true;
+        }
+      } else {
+        // edit: the card exists in both builds, so presence can't tell them
+        // apart — use build time. Fresh ⇒ the rebuild reflects the edit.
+        if (card && isBuildFresh(m, buildTime)) {
+          dropPending(m.slug);
+        } else if (card) {
+          addRibbon(card, 'Saving…');
+          changed = true;
+        } else {
+          grid.prepend(buildPendingCard(m));
+          changed = true;
+        }
+      }
+    }
+
+    // Let SearchFilter rebuild its card map + counts against the mutated grid.
+    if (changed) document.dispatchEvent(new CustomEvent('recipes:grid-changed'));
+
+    function addRibbon(card: HTMLElement, label: string) {
+      const frame = card.querySelector<HTMLElement>('.relative') ?? card;
+      if (frame.querySelector('[data-pending-ribbon]')) return;
+      frame.appendChild(ribbon(label));
+    }
+
+    function ribbon(label: string): HTMLElement {
+      const span = el(
+        'span',
+        'absolute right-3 top-3 z-10 rounded-full bg-spice px-2.5 py-1 font-ui text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-paper shadow-sm',
+        label,
+      );
+      span.dataset.pendingRibbon = '';
+      return span;
+    }
+
+    /** A placeholder card for a recipe whose detail route is not built yet, so
+     *  it is intentionally non-clickable until the rebuild lands. */
+    function buildPendingCard(m: PendingMutation): HTMLElement {
+      const c = m.card;
+      const wrap = el('div', 'group block');
+      wrap.dataset.recipeSlug = m.slug;
+      wrap.dataset.pending = '';
+      wrap.title = 'Publishing — available once the site finishes rebuilding';
+
+      const article = el(
+        'article',
+        'h-full overflow-hidden rounded-2xl border border-dashed border-spice/50 bg-card opacity-95',
+      );
+
+      const media = el('div', 'relative aspect-[4/3] overflow-hidden bg-paper-2');
+      if (c?.imageUrl) {
+        const img = el('img', 'h-full w-full object-cover') as HTMLImageElement;
+        img.src = c.imageUrl;
+        img.alt = c.title;
+        img.loading = 'lazy';
+        media.appendChild(img);
+      } else {
+        const ph = el(
+          'div',
+          'flex h-full w-full items-center justify-center bg-gradient-to-br from-paper-2 to-paper',
+        );
+        ph.appendChild(
+          el('span', 'font-display text-5xl text-line-strong select-none', (c?.title ?? '·').slice(0, 1)),
+        );
+        media.appendChild(ph);
+      }
+      media.appendChild(ribbon('Publishing…'));
+      if (c?.category) {
+        media.appendChild(
+          el(
+            'span',
+            'absolute left-3 top-3 rounded-full bg-paper/90 px-2.5 py-1 font-ui text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-ink-soft backdrop-blur-sm',
+            c.category,
+          ),
+        );
+      }
+      article.appendChild(media);
+
+      const body = el('div', 'flex flex-col gap-3 p-4');
+      const head = el('div', '');
+      head.appendChild(
+        el('h3', 'font-display text-xl font-medium leading-snug text-ink', c?.title || 'Untitled'),
+      );
+      const meta = el('div', 'mt-1 flex items-center gap-2.5 font-ui text-xs text-ink-faint');
+      const time = formatDuration(c?.totalTime) ?? formatDuration(c?.cookTime);
+      if (time) {
+        meta.appendChild(el('span', '', time));
+        const dot = el('span', '', '·');
+        dot.setAttribute('aria-hidden', 'true');
+        meta.appendChild(dot);
+      }
+      meta.appendChild(el('span', '', `${c?.servings ?? 0} servings`));
+      head.appendChild(meta);
+      body.appendChild(head);
+
+      const tags = (c?.tags ?? []).slice(0, 3);
+      if (tags.length) {
+        const row = el('div', 'flex flex-wrap gap-1.5');
+        for (const t of tags) {
+          row.appendChild(
+            el('span', 'rounded-full border border-line px-2 py-0.5 font-ui text-[0.66rem] text-ink-soft', t),
+          );
+        }
+        body.appendChild(row);
+      }
+      article.appendChild(body);
+      wrap.appendChild(article);
+      return wrap;
+    }
+
+    function el(tag: string, className: string, text?: string): HTMLElement {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text != null) node.textContent = text;
+      return node;
+    }
+  }
+</script>

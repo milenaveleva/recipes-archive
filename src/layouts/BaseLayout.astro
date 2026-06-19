@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { withBase } from '../lib/url';
 import AuthButton from '../components/AuthButton.astro';
 import Fab from '../components/Fab.astro';
+import { PENDING_KEY, PENDING_MAX_AGE_MS } from '../core/pending';
 
 interface Props {
   title?: string;
@@ -28,6 +29,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 // in place there, so the header carries no section nav, only sign-in.
 const here = Astro.url.pathname.replace(/\/$/, '');
 const onAddPage = here === withBase('/add').replace(/\/$/, '');
+
+// Wall-clock moment this page was built. The optimistic overlay (src/core/pending.ts)
+// compares it against a mutation's commit time to know when the rebuild caught up.
+const buildTime = Date.now();
 ---
 
 <!doctype html>
@@ -35,6 +40,7 @@ const onAddPage = here === withBase('/add').replace(/\/$/, '');
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="x-build-time" content={String(buildTime)} />
     <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
@@ -46,6 +52,40 @@ const onAddPage = here === withBase('/add').replace(/\/$/, '');
     {ogImage && <meta property="og:image" content={ogImage} />}
     <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
     <slot name="head" />
+    <script is:inline define:vars={{ pendingKey: PENDING_KEY, maxAge: PENDING_MAX_AGE_MS }}>
+      // No-flash: before the grid paints, hide any card whose recipe has a fresh
+      // pending delete (the overlay script then removes it for good). An inline
+      // script can't import, so it reuses the shared key + max-age passed in.
+      // The age guard mirrors prunePending so a failed build can't keep a still-
+      // live card hidden forever.
+      try {
+        const raw = localStorage.getItem(pendingKey);
+        const list = raw ? JSON.parse(raw) : [];
+        if (Array.isArray(list)) {
+          const now = Date.now();
+          const slugs = list
+            .filter(
+              (m) =>
+                m &&
+                m.kind === 'delete' &&
+                typeof m.slug === 'string' &&
+                typeof m.committedAt === 'number' &&
+                now - m.committedAt <= maxAge,
+            )
+            .map((m) => m.slug);
+          if (slugs.length) {
+            const esc = (s) =>
+              window.CSS && CSS.escape ? CSS.escape(s) : String(s).replace(/["\\]/g, '\\$&');
+            const sel = slugs.map((s) => `[data-recipe-slug="${esc(s)}"]`).join(',');
+            const style = document.createElement('style');
+            style.textContent = sel + '{display:none !important}';
+            document.head.appendChild(style);
+          }
+        }
+      } catch (e) {
+        /* localStorage unavailable / corrupt — nothing to hide. */
+      }
+    </script>
   </head>
   <body class="min-h-screen flex flex-col">
     <header class="border-b border-line bg-paper/80 backdrop-blur-sm sticky top-0 z-40">

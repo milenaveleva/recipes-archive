@@ -127,11 +127,17 @@ const docsJson = JSON.stringify(docs)
     const chips = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-facet-value]'));
 
     // The cards are rendered by Astro (RecipeCard) and tagged with their slug.
+    // Rebuilt from the live DOM (not snapshotted) so the optimistic overlay's
+    // injected/removed cards are accounted for after `recipes:grid-changed`.
     const cards = new Map<string, HTMLElement>();
-    for (const el of document.querySelectorAll<HTMLElement>('[data-recipe-slug]')) {
-      const slug = el.dataset.recipeSlug;
-      if (slug) cards.set(slug, el);
+    function indexCards() {
+      cards.clear();
+      for (const el of document.querySelectorAll<HTMLElement>('[data-recipe-slug]')) {
+        const slug = el.dataset.recipeSlug;
+        if (slug) cards.set(slug, el);
+      }
     }
+    indexCards();
 
     const selected: Selected = {};
     const noun = (n: number) => (n === 1 ? 'recipe' : 'recipes');
@@ -153,7 +159,9 @@ const docsJson = JSON.stringify(docs)
 
       let shown = 0;
       for (const [slug, el] of cards) {
-        const vis = visible.has(slug);
+        // Optimistic placeholder cards (mid-publish) aren't in the search index;
+        // keep them visible regardless of the active query/facets.
+        const vis = el.dataset.pending != null || visible.has(slug);
         // Drop the one-shot load animation the first time a card is filtered out,
         // so re-showing it (Clear, backspace, deselect) doesn't replay reveal-up.
         if (!vis) el.classList.remove('reveal');
@@ -161,12 +169,14 @@ const docsJson = JSON.stringify(docs)
         if (vis) shown += 1;
       }
 
-      // Count/empty reflect *actual* filtering; Clear appears for any input.
+      // Count/empty reflect *actual* filtering against the live grid (cards.size
+      // tracks overlay inserts/removals); Clear appears for any input.
+      const total = cards.size;
       const activeFilter = textSlugs !== null || facetCount() > 0;
       announce(
         activeFilter
-          ? `Showing ${shown} of ${docs.length} ${noun(docs.length)}`
-          : `${docs.length} ${noun(docs.length)}`,
+          ? `Showing ${shown} of ${total} ${noun(total)}`
+          : `${total} ${noun(total)}`,
       );
       show(emptyEl, shown === 0);
       show(divider, shown > 0); // hide the "The Collection" rule when nothing shows
@@ -196,6 +206,13 @@ const docsJson = JSON.stringify(docs)
       for (const chip of chips) chip.setAttribute('aria-pressed', 'false');
       recompute();
       input?.focus();
+    });
+
+    // The optimistic overlay mutates the grid after this script runs; re-index
+    // and recompute so counts/filters track the injected/removed cards.
+    document.addEventListener('recipes:grid-changed', () => {
+      indexCards();
+      recompute();
     });
 
     show(root, true);

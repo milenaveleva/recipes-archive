@@ -7,6 +7,7 @@ import IngredientList from '../../components/IngredientList.astro';
 import NutritionPanel from '../../components/NutritionPanel.astro';
 import JsonLd from '../../components/JsonLd.astro';
 import RecipeActions from '../../components/RecipeActions.astro';
+import PendingRecipeBanner from '../../components/PendingRecipeBanner.astro';
 import {
   recipeSlug,
   formatDuration,
@@ -49,6 +50,7 @@ const hasScores = !!data.nutrition?.glycemic || !!data.nutrition?.nutriScore || 
 <BaseLayout title={data.title} description={data.description} ogImage={ogImage} hideAddFab>
   <JsonLd slot="head" recipe={recipe} steps={steps} />
   <RecipeActions id={recipe.id} slug={slug} title={data.title} />
+  <PendingRecipeBanner slug={slug} />
 
   <article class="mx-auto max-w-5xl px-5 sm:px-8 pt-8 pb-4">
     <a

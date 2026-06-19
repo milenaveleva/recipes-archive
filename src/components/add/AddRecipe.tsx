@@ -11,6 +11,7 @@ import { useMemo, useState, useEffect } from 'react';
 import { extractRecipe } from '../../core/extract';
 import { toRecipeMarkdown, recipeFilename, type RecipeDraft } from '../../core/markdown';
 import { commitTextFile, GitHubError, RECIPE_REPO } from '../../core/github';
+import { recordPending } from '../../core/pending';
 import type { NutriCategory } from '../../core/nutriscore';
 import {
   EMPTY_FORM,
@@ -252,6 +253,24 @@ export default function AddRecipe() {
         }
       }
       setPublishState('done');
+      // Optimistically reflect the change on the index/recipe pages until the
+      // rebuild lands — the static site otherwise won't show it for ~a minute.
+      const committedSlug =
+        isEdit && editSlug ? editSlug : file.path.replace(/^.*\//, '').replace(/\.md$/, '');
+      recordPending({
+        slug: committedSlug,
+        kind: isEdit ? 'edit' : 'create',
+        committedAt: Date.now(),
+        card: {
+          title: publishDraft.title,
+          servings: publishDraft.servings,
+          totalTime: publishDraft.totalTime,
+          cookTime: publishDraft.cookTime,
+          category: publishDraft.category,
+          tags: publishDraft.tags ?? [],
+          imageUrl: publishDraft.imageUrl,
+        },
+      });
       // An edit is expected to overwrite; only warn when a NEW recipe collides.
       setPublishMsg(result.updated && !isEdit ? 'Updated an existing recipe at the same slug.' : '');
     } catch (err) {

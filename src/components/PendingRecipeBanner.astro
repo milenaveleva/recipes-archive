@@ -1,0 +1,60 @@
+---
+/**
+ * Optimistic notice on a recipe detail page. While a just-saved edit or a
+ * just-deleted recipe waits for the rebuild (~a minute), the built page still
+ * shows the previous content; this banner tells the reader what they're looking
+ * at. A delete shows until the route 404s post-rebuild; an edit clears once the
+ * page's build time catches up (see src/core/pending.ts). Bundled vanilla script
+ * — recipe pages stay React-free.
+ */
+interface Props {
+  /** The route slug of the recipe shown on this page. */
+  slug: string;
+}
+const { slug } = Astro.props;
+---
+
+<div
+  data-pending-banner
+  data-slug={slug}
+  style="display:none"
+  class="mx-auto max-w-5xl px-5 sm:px-8 pt-6"
+>
+  <p
+    role="status"
+    class="rounded-lg border border-spice/40 bg-spice/5 px-4 py-3 font-ui text-sm text-ink-soft"
+  >
+    <span data-pending-text></span>
+  </p>
+</div>
+
+<script>
+  import { prunePending, dropPending, isBuildFresh } from '../core/pending';
+
+  const root = document.querySelector<HTMLElement>('[data-pending-banner]');
+  if (root) {
+    const slug = root.dataset.slug ?? '';
+    const buildTime =
+      Number(document.querySelector<HTMLMetaElement>('meta[name="x-build-time"]')?.content) || 0;
+    const mutation = prunePending(Date.now()).find((m) => m.slug === slug);
+    if (mutation) {
+      let message = '';
+      if (mutation.kind === 'delete') {
+        // We are still rendering this recipe, so the rebuild hasn't removed it yet.
+        message =
+          'This recipe has been deleted — it’ll disappear once the site finishes rebuilding (about a minute).';
+      } else if (isBuildFresh(mutation, buildTime)) {
+        // This page was rebuilt at/after the edit, so it already reflects it.
+        dropPending(slug);
+      } else {
+        message =
+          'You’re viewing the previously published version. Your latest changes are publishing and will appear after the rebuild (about a minute).';
+      }
+      if (message) {
+        const text = root.querySelector<HTMLElement>('[data-pending-text]');
+        if (text) text.textContent = message;
+        root.style.display = '';
+      }
+    }
+  }
+</script>

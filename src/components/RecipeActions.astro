@@ -27,6 +27,7 @@ const path = `src/content/recipes/${id}.md`;
   id="recipe-actions"
   data-title={title}
   data-path={path}
+  data-slug={slug}
   class="fixed bottom-6 right-6 z-50 hidden flex-col items-end gap-3 sm:bottom-8 sm:right-8"
 >
   <Fab id="recipe-delete-btn" tone="danger" label="Delete recipe">
@@ -79,6 +80,7 @@ const path = `src/content/recipes/${id}.md`;
 <script>
   import { loadSession, freshSession, refreshSession, saveSession, onAuthChange } from './add/auth';
   import { deleteFile, GitHubError, RECIPE_REPO } from '../core/github';
+  import { recordPending } from '../core/pending';
   import { withBase } from '../lib/url';
 
   const root = document.getElementById('recipe-actions');
@@ -88,6 +90,7 @@ const path = `src/content/recipes/${id}.md`;
     const PROXY = (import.meta.env.PUBLIC_IMPORT_PROXY as string | undefined)?.trim();
 
     const path = root.dataset.path ?? '';
+    const slug = root.dataset.slug ?? '';
     // `||` not `??`: an empty-string title is schema-valid but should still fall back.
     const title = root.dataset.title || 'This recipe';
 
@@ -148,7 +151,9 @@ const path = `src/content/recipes/${id}.md`;
             throw err;
           }
         }
-        // Gone — the index no longer lists it after the rebuild.
+        // Reflect the removal at once: the index drops the card until the
+        // rebuild lands (the static site otherwise still lists it for ~a minute).
+        if (slug) recordPending({ slug, kind: 'delete', committedAt: Date.now() });
         window.location.assign(withBase('/'));
       } catch (err) {
         confirmBtn.disabled = false;
