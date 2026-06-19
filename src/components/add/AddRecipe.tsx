@@ -9,7 +9,7 @@
  */
 import { useMemo, useState, useEffect } from 'react';
 import { extractRecipe } from '../../core/extract';
-import { toRecipeMarkdown, recipeFilename } from '../../core/markdown';
+import { toRecipeMarkdown, recipeFilename, type RecipeDraft } from '../../core/markdown';
 import { verifyAccess, commitTextFile, type GitHubRepo } from '../../core/github';
 import {
   EMPTY_FORM,
@@ -338,6 +338,7 @@ export default function AddRecipe() {
           </Card>
 
           <MacroPanel macro={macro} servings={form.servings} />
+          <ScorePanel nutrition={draft.nutrition} />
 
           <div className="flex justify-end">
             <button onClick={() => setStep('publish')} disabled={!canPublish} className={primaryBtn}>
@@ -360,6 +361,7 @@ export default function AddRecipe() {
           </Card>
 
           <MacroPanel macro={macro} servings={form.servings} />
+          <ScorePanel nutrition={draft.nutrition} />
 
           {publishState === 'error' && <Alert tone="bad">{publishMsg}</Alert>}
           {publishState === 'done' && (
@@ -475,6 +477,42 @@ function MacroPanel({ macro, servings }: { macro: ReturnType<typeof computeNutri
           toward nutrition.
         </p>
       )}
+    </Card>
+  );
+}
+
+function ScorePanel({ nutrition }: { nutrition: RecipeDraft['nutrition'] }) {
+  const gly = nutrition?.glycemic;
+  const nutri = nutrition?.nutriScore;
+  const inflam = nutrition?.inflammation;
+  if (!gly && !nutri && !inflam) return null;
+
+  const tiles: [string, string, string][] = [
+    ['Glycemic index', gly?.gi != null ? String(gly.gi) : '—', gly?.giBand ?? ''],
+    ['Glycemic load', gly?.gl != null ? String(gly.gl) : '—', 'per serving'],
+    ['Nutrition score', nutri?.grade ?? '—', nutri ? 'Nutri-Score 2023' : ''],
+    [
+      'Inflammation',
+      inflam ? (inflam.score > 0 ? `+${inflam.score}` : String(inflam.score)) : '—',
+      inflam ? inflam.band.replace(/-/g, ' ') : '',
+    ],
+  ];
+  return (
+    <Card>
+      <h2 className="font-display text-xl text-ink">Scores</h2>
+      <dl className="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {tiles.map(([label, value, sub]) => (
+          <div key={label} className="rounded-xl border border-line bg-paper/60 px-3 py-3 text-center">
+            <dd className="font-display text-2xl text-ink">{value}</dd>
+            <dt className="mt-1 font-ui text-[0.62rem] uppercase tracking-wide text-ink-faint">{label}</dt>
+            {sub && <div className="mt-0.5 font-ui text-[0.66rem] capitalize text-ink-soft">{sub}</div>}
+          </div>
+        ))}
+      </dl>
+      <p className="mt-3 text-xs text-ink-faint">
+        Glycemic and inflammation figures are estimates for comparison, not medical advice; the grade
+        follows the Nutri-Score 2023 method. The carb-weighted GI tends to over-predict mixed-meal GI.
+      </p>
     </Card>
   );
 }

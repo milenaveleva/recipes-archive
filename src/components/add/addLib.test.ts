@@ -52,6 +52,24 @@ describe('buildDraft → markdown', () => {
     expect(toRecipeMarkdown(draft)).toContain('title: Test Dahl');
   });
 
+  it('computes the glycemic, Nutri-Score and inflammation block from the matches', () => {
+    const form = { ...EMPTY_FORM, title: 'Scored Dahl', servings: 2 };
+    const rows = [buildRow('200 g red lentils'), buildRow('100 g spinach')];
+    const macro = computeNutrition(rows, form.servings);
+    const draft = buildDraft(form, rows, macro, '2026-06-19');
+
+    expect(draft.nutrition?.glycemic?.gi).toBe(32); // only lentils carry a GI
+    expect(draft.nutrition?.glycemic?.giBand).toBe('low');
+    expect(draft.nutrition?.nutriScore?.grade).toBe('A');
+    expect(draft.nutrition?.nutriScore?.points).toBe(-9); // pin the score, not just the band
+    expect(draft.nutrition?.inflammation?.band).toBe('anti-inflammatory');
+    expect(draft.nutrition?.inflammation?.method).toBe('ingredient-tag v1');
+    expect(draft.nutrition?.dataSources).toContain('Nutri-Score 2023');
+
+    // The score block round-trips into the serialized markdown.
+    expect(toRecipeMarkdown(draft)).toContain('nutriScore:');
+  });
+
   it('omits the nutrition block when nothing is matched', () => {
     const rows = [buildRow('1 pinch of magic')];
     const macro = computeNutrition(rows, 4);

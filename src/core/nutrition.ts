@@ -19,9 +19,10 @@ import type {
   ResolvedIngredient,
   SummableNutrient,
 } from './types';
+import { round } from './num';
 
 /** kJ per kcal (thermochemical) — used to derive energy in kJ from kcal. */
-const KJ_PER_KCAL = 4.184;
+export const KJ_PER_KCAL = 4.184;
 
 /** Nutrients summed by simple mass weighting (energy + polyols handled apart). */
 const SUMMABLE: readonly SummableNutrient[] = [
@@ -94,9 +95,9 @@ export function computeMacros(
         seen.add(key);
       }
     }
-    if (n.carbs_g != null && Number.isFinite(n.carbs_g)) {
-      const net = n.carbs_g - (n.fiber_g ?? 0) - (n.polyol_g ?? 0);
-      availableCarb += Math.max(0, net) * factor;
+    const avail = availableCarbOf(n);
+    if (avail != null) {
+      availableCarb += avail * factor;
       availableSeen = true;
     }
     totalGrams += ing.grams;
@@ -122,8 +123,20 @@ export function computeMacros(
   };
 }
 
+/**
+ * Available ("glycemic") carbohydrate per 100 g: total carbohydrate minus
+ * dietary fibre and any polyols, floored at zero (Wolever 2025; see README
+ * ## References). Returns null when the food has no carbohydrate datum. Shared
+ * by the macro engine and the glycemic-load engine so the definition is single-
+ * sourced.
+ */
+export function availableCarbOf(n: NutrientVector): number | null {
+  if (n.carbs_g == null || !Number.isFinite(n.carbs_g)) return null;
+  return Math.max(0, n.carbs_g - (n.fiber_g ?? 0) - (n.polyol_g ?? 0));
+}
+
 /** Energy in kcal from a vector, deriving from kJ when only kJ is present. */
-function energyKcalOf(n: NutrientVector): number | null {
+export function energyKcalOf(n: NutrientVector): number | null {
   if (n.energyKcal != null && Number.isFinite(n.energyKcal)) return n.energyKcal;
   if (n.energyKj != null && Number.isFinite(n.energyKj)) return n.energyKj / KJ_PER_KCAL;
   return null;
@@ -145,9 +158,4 @@ function mapMacros(
 /** Display precision: energy & sodium to whole units, grams to 0.1. */
 function dpFor(k: keyof PerServingMacros): number {
   return k === 'energyKcal' || k === 'energyKj' || k === 'sodium_mg' ? 0 : 1;
-}
-
-function round(n: number, dp: number): number {
-  const f = 10 ** dp;
-  return Math.round(n * f) / f;
 }

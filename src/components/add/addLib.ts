@@ -8,15 +8,31 @@
 import { parseIngredientLine, estimateMetric } from '../../core/parse';
 import { searchFoods, type FoodRecord, type FoodMatch, type MatchConfidence } from '../../core/match';
 import { computeMacros, type MacroComputation } from '../../core/nutrition';
+import { computeScores, type ScoredIngredient, type ScoreResult } from '../../core/score';
 import type { MetricAmount, ParsedLine, ResolvedIngredient } from '../../core/types';
 import type { DraftIngredient, RecipeDraft } from '../../core/markdown';
 import type { ExtractedRecipe } from '../../core/types';
 import foodsData from '../../data/usda-foods.json';
+import foodScoringData from '../../data/food-scoring.json';
 
 export const FOODS = foodsData as FoodRecord[];
 export const FOOD_BY_ID: Map<number, FoodRecord> = new Map(
   FOODS.filter((f) => f.fdcId != null).map((f) => [f.fdcId as number, f]),
 );
+
+/** Hand-curated, cited scoring metadata per USDA food (GI, inflammation tag, FVL). */
+interface FoodScoring {
+  gi?: number;
+  giSource?: string;
+  giConfidence?: string;
+  inflammation?: number;
+  fvl?: boolean;
+}
+const FOOD_SCORING = foodScoringData as Record<string, FoodScoring>;
+
+function scoringFor(fdcId: number | null): FoodScoring | undefined {
+  return fdcId != null ? FOOD_SCORING[String(fdcId)] : undefined;
+}
 
 /** One reviewable ingredient line in the wizard. */
 export interface IngredientRow {
@@ -112,6 +128,29 @@ export function computeNutrition(rows: IngredientRow[], servings: number): Macro
   return computeMacros(rowsToResolved(rows), clampServings(servings));
 }
 
+/** Map review rows to the scoring engine's shape (adds GI, tag, FVL per match). */
+export function rowsToScored(rows: IngredientRow[]): ScoredIngredient[] {
+  return rows
+    .filter((r) => !r.parsed.isGroupHeader)
+    .map((r) => {
+      const food = r.selectedFdcId != null ? FOOD_BY_ID.get(r.selectedFdcId) : undefined;
+      const s = scoringFor(r.selectedFdcId);
+      return {
+        grams: safeGrams(r.grams),
+        excludeFromNutrition: r.excludeFromNutrition,
+        nutrients: food?.n ?? null,
+        gi: s?.gi ?? null,
+        inflammationTag: s?.inflammation ?? null,
+        fvl: s?.fvl ?? false,
+      };
+    });
+}
+
+/** Compute the glycemic / Nutri-Score / inflammation block for the review rows. */
+export function computeRecipeScores(rows: IngredientRow[], servings: number): ScoreResult {
+  return computeScores(rowsToScored(rows), clampServings(servings));
+}
+
 function rowToDraftIngredient(row: IngredientRow): DraftIngredient {
   return {
     raw: row.raw || row.parsed.item,
@@ -190,6 +229,10 @@ export function buildDraft(
 ): RecipeDraft {
   const totalMin = (form.prepMin ?? 0) + (form.cookMin ?? 0);
   const sourceUrl = safeUrl(form.sourceUrl);
+  // Only score when a nutrition block will actually be emitted.
+  const scores: ScoreResult = macro.contributingCount
+    ? computeRecipeScores(rows, form.servings)
+    : {};
   return {
     title: form.title.trim(),
     description: form.description.trim() || undefined,
@@ -210,10 +253,28 @@ export function buildDraft(
     ingredients: rows.filter((r) => !r.parsed.isGroupHeader).map(rowToDraftIngredient),
     instructions: splitLines(form.instructions),
     nutrition: macro.contributingCount
-      ? { perServing: macro.perServing, computedAt: createdAt, dataSources: ['USDA FoodData Central'] }
+      ? {
+          perServing: macro.perServing,
+          glycemic: scores.glycemic,
+          nutriScore: scores.nutriScore,
+          inflammation: scores.inflammation
+            ? { ...scores.inflammation, method: 'ingredient-tag v1' }
+            : undefined,
+          computedAt: createdAt,
+          dataSources: dataSourcesFor(scores),
+        }
       : undefined,
     createdAt,
   };
+}
+
+/** Provenance strings for the scores actually present in the nutrition block. */
+function dataSourcesFor(scores: ScoreResult): string[] {
+  const sources = ['USDA FoodData Central'];
+  if (scores.glycemic) sources.push('Atkinson 2021 GI tables');
+  if (scores.nutriScore) sources.push('Nutri-Score 2023');
+  if (scores.inflammation) sources.push('Inflammation index (ingredient-tag v1)');
+  return sources;
 }
 
 /* ---- value sanitizers (keep emitted frontmatter schema-valid) ---- */

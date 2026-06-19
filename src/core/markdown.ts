@@ -27,6 +27,29 @@ export interface DraftIngredient {
 
 export interface DraftNutrition {
   perServing?: PerServingMacros;
+  glycemic?: {
+    gi: number | null;
+    gl: number | null;
+    giBand?: 'low' | 'medium' | 'high';
+    glBand?: 'low' | 'medium' | 'high';
+    gi_source?: string;
+  };
+  nutriScore?: {
+    grade: 'A' | 'B' | 'C' | 'D' | 'E';
+    points: number;
+    version?: string;
+    category?: 'general' | 'beverage' | 'fat-oil-nut-seed';
+  };
+  inflammation?: {
+    score: number;
+    band:
+      | 'anti-inflammatory'
+      | 'mildly-anti-inflammatory'
+      | 'neutral'
+      | 'mildly-pro-inflammatory'
+      | 'pro-inflammatory';
+    method?: string;
+  };
   computedAt?: string;
   dataSources?: string[];
 }
