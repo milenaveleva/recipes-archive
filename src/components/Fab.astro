@@ -1,0 +1,33 @@
+---
+/**
+ * A floating action button — the round, shadowed control used for Add (global)
+ * and Edit/Delete (on a recipe). Renders an `<a>` when `href` is set, else a
+ * `<button>`. The icon is passed as the default slot; the label doubles as the
+ * accessible name and the hover tooltip. Positioning is the parent's job.
+ */
+interface Props {
+  href?: string;
+  label: string;
+  tone?: 'default' | 'danger';
+  id?: string;
+  class?: string;
+}
+const { href, label, tone = 'default', id, class: extra = '' } = Astro.props;
+
+const base =
+  'group relative flex h-14 w-14 items-center justify-center rounded-full no-underline shadow-xl ring-1 transition-[transform,background-color] duration-200 hover:scale-110 active:scale-95';
+const tones = {
+  default: 'bg-ink text-paper shadow-ink/25 ring-ink/10 hover:bg-spice',
+  danger: 'bg-card text-spice shadow-ink/15 ring-spice/30 hover:bg-spice hover:text-paper',
+};
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag class={`${base} ${tones[tone]} ${extra}`} aria-label={label} id={id} {...(href ? { href } : { type: 'button' })}>
+  <span
+    class="pointer-events-none absolute right-full mr-3 hidden whitespace-nowrap rounded-full bg-ink px-3 py-1.5 font-ui text-xs text-paper opacity-0 shadow-md transition-opacity duration-200 group-hover:opacity-100 group-focus-within:opacity-100 sm:block"
+  >
+    {label}
+  </span>
+  <slot />
+</Tag>

@@ -231,12 +231,164 @@ export function formFromExtract(r: ExtractedRecipe): FormState {
   };
 }
 
-/** Assemble a committable draft from the form, rows, and computed macros. */
+/* ---- editing an existing recipe ---- */
+
+/** The stored ingredient shape (a subset of the frontmatter) needed to re-seed a row. */
+export interface StoredIngredient {
+  raw: string;
+  // Parsed provenance fields — restored verbatim so a re-parse can't overwrite
+  // author-corrected values (e.g. a hand-converted "1 tbsp" → quantity 14 g).
+  quantity?: number | null;
+  quantity2?: number | null;
+  unit?: string | null;
+  item?: string;
+  note?: string;
+  grams?: number | null;
+  milliliters?: number | null;
+  fdcId?: number | null;
+  matchConfidence?: MatchConfidence | 'none';
+  excludeFromNutrition?: boolean;
+}
+
+/** The stored recipe frontmatter fields the editor re-seeds the form from. */
+export interface StoredRecipe {
+  title?: string;
+  description?: string;
+  servings?: number;
+  prepTime?: string;
+  cookTime?: string;
+  cuisine?: string;
+  course?: string;
+  category?: string;
+  tags?: string[];
+  lists?: string[];
+  imageUrl?: string;
+  source?: { name?: string; url?: string };
+  ingredients?: StoredIngredient[];
+  nutrition?: { nutriScore?: { category?: NutriCategory; nnsPresent?: boolean } };
+}
+
+/** Seed the form fields from a stored recipe's frontmatter (for editing). */
+export function formFromRecipe(recipe: StoredRecipe, steps: string[]): FormState {
+  return {
+    ...EMPTY_FORM,
+    title: recipe.title ?? '',
+    description: recipe.description ?? '',
+    servings: clampServings(recipe.servings ?? 4),
+    prepMin: isoToMinutes(recipe.prepTime),
+    cookMin: isoToMinutes(recipe.cookTime),
+    cuisine: recipe.cuisine ?? '',
+    course: recipe.course ?? '',
+    category: recipe.category ?? '',
+    nutriCategory: recipe.nutrition?.nutriScore?.category ?? 'general',
+    nnsPresent: recipe.nutrition?.nutriScore?.nnsPresent ?? false,
+    tags: (recipe.tags ?? []).join(', '),
+    lists: (recipe.lists ?? []).join(', '),
+    imageUrl: recipe.imageUrl ?? '',
+    sourceName: recipe.source?.name ?? '',
+    sourceUrl: recipe.source?.url ?? '',
+    instructions: steps.join('\n'),
+  };
+}
+
+/** Rebuild review rows from stored ingredients, restoring each confirmed match + weight. */
+export function rowsFromIngredients(ingredients: StoredIngredient[]): IngredientRow[] {
+  return ingredients.map((ing) => {
+    const row = buildRow(ing.raw);
+    return {
+      ...row,
+      // Restore the stored parse so a re-seed doesn't overwrite author-corrected
+      // structured fields (a fresh parse of `raw` may differ). `undefined` (key
+      // absent) falls back to the fresh parse; an explicit null is honoured.
+      parsed: {
+        ...row.parsed,
+        quantity: ing.quantity !== undefined ? ing.quantity : row.parsed.quantity,
+        quantity2: ing.quantity2 !== undefined ? ing.quantity2 : row.parsed.quantity2,
+        unit: ing.unit !== undefined ? ing.unit : row.parsed.unit,
+        item: ing.item ?? row.parsed.item,
+        note: ing.note ?? row.parsed.note,
+      },
+      // Keep the stored match selectable even if today's search wouldn't surface it.
+      candidates: withStoredMatch(row.candidates, ing.fdcId ?? null, ing.matchConfidence),
+      selectedFdcId: ing.fdcId ?? null,
+      // Honor a stored value (incl. an explicit null) over a fresh estimate;
+      // only an absent field falls back to the re-parse.
+      grams: ing.grams !== undefined ? ing.grams : row.grams,
+      milliliters: ing.milliliters !== undefined ? ing.milliliters : row.milliliters,
+      excludeFromNutrition: ing.excludeFromNutrition ?? false,
+    };
+  });
+}
+
+/**
+ * Split a recipe body into numbered method steps (verbatim — keeping any inline
+ * markdown) and the surrounding markdown, so an edit can re-seed the step
+ * textarea yet preserve everything else **in place**. The method is the first
+ * run of numbered items up to the next "## " heading; content before it
+ * (intro prose) and after it ("## Notes", tips — including any numbered lines
+ * there) is kept verbatim and in order, not hoisted into the steps.
+ */
+export function splitMethodBody(body: string): { steps: string[]; before: string; after: string } {
+  const lines = (body ?? '').split('\n');
+  const stepRe = /^\s*\d+[.)]\s+(.*\S)\s*$/;
+  const firstStep = lines.findIndex((l) => stepRe.test(l));
+  if (firstStep === -1) {
+    // No numbered method — keep the whole body so nothing is dropped.
+    return { steps: [], before: (body ?? '').trim(), after: '' };
+  }
+  // The method block ends at the next "## " heading (or end of body).
+  let end = lines.length;
+  for (let i = firstStep + 1; i < lines.length; i++) {
+    if (/^\s*##\s+/.test(lines[i])) {
+      end = i;
+      break;
+    }
+  }
+  const steps = lines
+    .slice(firstStep, end)
+    .map((l) => stepRe.exec(l)?.[1].trim())
+    .filter((s): s is string => !!s);
+  // `before` drops a trailing "## Method" heading (the serializer re-adds it).
+  const beforeLines = lines.slice(0, firstStep);
+  while (
+    beforeLines.length &&
+    (beforeLines[beforeLines.length - 1].trim() === '' ||
+      /^\s*##\s+method\s*$/i.test(beforeLines[beforeLines.length - 1]))
+  ) {
+    beforeLines.pop();
+  }
+  return {
+    steps,
+    before: beforeLines.join('\n').trim(),
+    after: lines.slice(end).join('\n').replace(/\n{3,}/g, '\n\n').trim(),
+  };
+}
+
+/** Ensure the stored fdcId appears among candidates so the match <select> shows it. */
+function withStoredMatch(
+  candidates: FoodMatch[],
+  fdcId: number | null,
+  conf?: MatchConfidence | 'none',
+): FoodMatch[] {
+  if (fdcId == null || candidates.some((c) => c.food.fdcId === fdcId)) return candidates;
+  const food = FOOD_BY_ID.get(fdcId);
+  if (!food) return candidates;
+  const confidence: MatchConfidence = conf && conf !== 'none' ? conf : 'medium';
+  return [{ food, score: 0, confidence }, ...candidates];
+}
+
+/**
+ * Assemble a committable draft from the form, rows, and computed macros.
+ * `createdAt` is the recipe's birth date; on an edit, pass the original
+ * `createdAt` and supply `dates.updatedAt`/`dates.computedAt` (today) so the
+ * edit re-stamps the freshness without losing the original date.
+ */
 export function buildDraft(
   form: FormState,
   rows: IngredientRow[],
   macro: MacroComputation,
   createdAt: string,
+  dates: { computedAt?: string; updatedAt?: string } = {},
 ): RecipeDraft {
   const totalMin = (form.prepMin ?? 0) + (form.cookMin ?? 0);
   const sourceUrl = safeUrl(form.sourceUrl);
@@ -271,15 +423,22 @@ export function buildDraft(
       ? {
           perServing: macro.perServing,
           glycemic: scores.glycemic,
-          nutriScore: scores.nutriScore,
+          nutriScore: scores.nutriScore
+            ? {
+                ...scores.nutriScore,
+                // Retain the NNS flag so an edit recomputes the same beverage grade.
+                nnsPresent: form.nutriCategory === 'beverage' && form.nnsPresent ? true : undefined,
+              }
+            : undefined,
           inflammation: scores.inflammation
             ? { ...scores.inflammation, method: 'ingredient-tag v1' }
             : undefined,
-          computedAt: createdAt,
+          computedAt: dates.computedAt ?? createdAt,
           dataSources: dataSourcesFor(scores),
         }
       : undefined,
     createdAt,
+    updatedAt: dates.updatedAt,
   };
 }
 

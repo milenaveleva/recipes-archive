@@ -1,0 +1,166 @@
+---
+/**
+ * Floating Edit + Delete controls for a recipe detail page.
+ *
+ * Shown only to a signed-in user (the only one who can commit): a bundled
+ * vanilla script reveals them by reading the GitHub session from auth.ts, so
+ * recipe pages stay React-free. Edit links into the authoring island in edit
+ * mode; Delete opens a native confirm dialog and removes the markdown via the
+ * GitHub Contents API, then returns to the index.
+ */
+import Fab from './Fab.astro';
+import { withBase } from '../lib/url';
+
+interface Props {
+  /** Build-trusted entry id (the markdown filename) — the file to delete. */
+  id: string;
+  /** Route slug (may be an explicit override) — keys the edit data endpoint. */
+  slug: string;
+  title: string;
+}
+const { id, slug, title } = Astro.props;
+const editHref = withBase(`/add?edit=${encodeURIComponent(slug)}`);
+const path = `src/content/recipes/${id}.md`;
+---
+
+<div
+  id="recipe-actions"
+  data-title={title}
+  data-path={path}
+  class="fixed bottom-6 right-6 z-50 hidden flex-col items-end gap-3 sm:bottom-8 sm:right-8"
+>
+  <Fab id="recipe-delete-btn" tone="danger" label="Delete recipe">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="3 6 5 6 21 6" />
+      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+      <line x1="10" y1="11" x2="10" y2="17" />
+      <line x1="14" y1="11" x2="14" y2="17" />
+    </svg>
+  </Fab>
+  <Fab href={editHref} label="Edit recipe">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 20h9" />
+      <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
+    </svg>
+  </Fab>
+</div>
+
+<dialog
+  id="recipe-delete-dialog"
+  aria-labelledby="recipe-delete-heading"
+  class="m-auto w-[min(28rem,90vw)] rounded-2xl border border-line bg-card p-0 text-ink shadow-2xl backdrop:bg-ink/40 backdrop:backdrop-blur-sm"
+>
+  <div class="p-6">
+    <h2 id="recipe-delete-heading" class="font-display text-xl text-ink">Delete this recipe?</h2>
+    <p class="mt-2 font-body text-sm text-ink-soft">
+      <span id="recipe-delete-name" class="font-semibold text-ink"></span> will be removed from the
+      archive with a commit. It stays in git history, but disappears from the site after the rebuild.
+    </p>
+    <p id="recipe-delete-error" role="alert" class="mt-3 hidden font-ui text-sm text-band-bad"></p>
+    <div class="mt-5 flex justify-end gap-3">
+      <button
+        id="recipe-delete-cancel"
+        type="button"
+        class="rounded-full border border-line-strong px-4 py-1.5 font-ui text-sm text-ink-soft transition-colors hover:border-spice hover:text-spice"
+      >
+        Cancel
+      </button>
+      <button
+        id="recipe-delete-confirm"
+        type="button"
+        class="rounded-full bg-spice px-5 py-2 font-ui text-sm font-semibold text-paper transition-colors hover:bg-spice-soft disabled:opacity-40"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  import { loadSession, freshSession, refreshSession, saveSession, onAuthChange } from './add/auth';
+  import { deleteFile, GitHubError, RECIPE_REPO } from '../core/github';
+  import { withBase } from '../lib/url';
+
+  const root = document.getElementById('recipe-actions');
+  const dialog = document.getElementById('recipe-delete-dialog') as HTMLDialogElement | null;
+
+  if (root && dialog) {
+    const PROXY = (import.meta.env.PUBLIC_IMPORT_PROXY as string | undefined)?.trim();
+
+    const path = root.dataset.path ?? '';
+    // `||` not `??`: an empty-string title is schema-valid but should still fall back.
+    const title = root.dataset.title || 'This recipe';
+
+    const deleteBtn = document.getElementById('recipe-delete-btn');
+    const confirmBtn = document.getElementById('recipe-delete-confirm') as HTMLButtonElement | null;
+    const cancelBtn = document.getElementById('recipe-delete-cancel');
+    const errorEl = document.getElementById('recipe-delete-error');
+    const nameEl = document.getElementById('recipe-delete-name');
+    if (nameEl) nameEl.textContent = title;
+
+    // Reveal the floating actions only when a GitHub session is present.
+    const sync = () => {
+      const signedIn = !!loadSession();
+      root.classList.toggle('hidden', !signedIn);
+      root.classList.toggle('flex', signedIn);
+    };
+    sync();
+    onAuthChange(sync);
+
+    const showError = (msg: string) => {
+      if (!errorEl) return;
+      // Reveal the (role=alert) region first, then set its text on the next
+      // frame so assistive tech observes a content mutation and announces it.
+      errorEl.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        errorEl.textContent = msg;
+      });
+    };
+
+    deleteBtn?.addEventListener('click', () => {
+      errorEl?.classList.add('hidden');
+      if (!dialog.open) dialog.showModal();
+    });
+    cancelBtn?.addEventListener('click', () => dialog.close());
+
+    confirmBtn?.addEventListener('click', async () => {
+      const session = loadSession();
+      if (!session) {
+        dialog.close();
+        return;
+      }
+      confirmBtn.disabled = true;
+      confirmBtn.textContent = 'Deleting…';
+      errorEl?.classList.add('hidden');
+      const message = `Delete recipe: ${title}`;
+      try {
+        let active = await freshSession(PROXY, session, Date.now());
+        if (active !== session) saveSession(active);
+        try {
+          await deleteFile(active.accessToken, RECIPE_REPO, { path, message });
+        } catch (err) {
+          // One reactive retry if the token was revoked between checks.
+          if (active.refreshToken && PROXY && err instanceof GitHubError && err.status === 401) {
+            active = await refreshSession(PROXY, active.refreshToken);
+            saveSession(active);
+            await deleteFile(active.accessToken, RECIPE_REPO, { path, message });
+          } else {
+            throw err;
+          }
+        }
+        // Gone — the index no longer lists it after the rebuild.
+        window.location.assign(withBase('/'));
+      } catch (err) {
+        confirmBtn.disabled = false;
+        confirmBtn.textContent = 'Delete';
+        if (err instanceof GitHubError && err.status === 403) {
+          showError(
+            `No push access to ${RECIPE_REPO.owner}/${RECIPE_REPO.repo}. Confirm the GitHub App is installed on the repo and you have write access.`,
+          );
+        } else {
+          showError(err instanceof Error ? err.message : String(err));
+        }
+      }
+    });
+  }
+</script>

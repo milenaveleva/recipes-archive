@@ -39,6 +39,8 @@ export interface DraftNutrition {
     points: number;
     version?: string;
     category?: 'general' | 'beverage' | 'fat-oil-nut-seed';
+    /** Beverage NNS flag — persisted so an edit recomputes the same grade. */
+    nnsPresent?: boolean;
   };
   inflammation?: {
     score: number;
@@ -75,9 +77,15 @@ export interface RecipeDraft {
   lists?: string[];
   ingredients: DraftIngredient[];
   instructions: string[];
+  /** Body markdown before the numbered method (intro prose) — preserved across an edit. */
+  bodyBefore?: string;
+  /** Body markdown after the numbered method ("## Notes", tips) — preserved across an edit. */
+  bodyAfter?: string;
   nutrition?: DraftNutrition;
   /** ISO date (YYYY-MM-DD); supplied by the caller to stay deterministic. */
   createdAt?: string;
+  /** ISO date (YYYY-MM-DD) of the last edit; set when re-committing an edit. */
+  updatedAt?: string;
 }
 
 /** Slug for the recipe file/route, from an explicit slug or the title. */
@@ -171,15 +179,24 @@ export function toRecipeMarkdown(draft: RecipeDraft): string {
     ingredients: draft.ingredients.map(cleanIngredient),
     nutrition: draft.nutrition,
     createdAt: draft.createdAt,
+    updatedAt: draft.updatedAt,
   };
   const doc = new Document(prune(frontmatter));
   // A bare YYYY-MM-DD scalar is resolved back to a Date by the build's YAML
   // parser, which fails the string schema on rebuild; force the date fields to
   // quoted strings so they round-trip (matching the hand-authored recipes).
-  for (const path of [['createdAt'], ['nutrition', 'computedAt']]) {
+  for (const path of [['createdAt'], ['updatedAt'], ['nutrition', 'computedAt']]) {
     const node = doc.getIn(path, true);
     if (isScalar(node) && typeof node.value === 'string') node.type = 'QUOTE_DOUBLE';
   }
   const yaml = doc.toString({ lineWidth: 0 }).trimEnd();
-  return `---\n${yaml}\n---\n\n${methodBody(draft.instructions)}\n`;
+  // Compose the body in order: preserved intro → method → preserved notes/tips.
+  // The "## Method" block is included only when there are steps; otherwise a
+  // preserved body (e.g. a prose-only method) stands on its own.
+  const hasSteps = draft.instructions.some((s) => s.trim().length > 0);
+  const segments = [draft.bodyBefore?.trim(), hasSteps ? methodBody(draft.instructions) : '', draft.bodyAfter?.trim()]
+    .map((s) => s?.trim())
+    .filter(Boolean);
+  const body = segments.length ? segments.join('\n\n') : methodBody(draft.instructions);
+  return `---\n${yaml}\n---\n\n${body}\n`;
 }

@@ -5,6 +5,7 @@ import {
   verifyAccess,
   getFileSha,
   commitTextFile,
+  deleteFile,
 } from './github';
 
 const repo = { owner: 'milenaveleva', repo: 'recipes-archive', branch: 'main' };
@@ -122,5 +123,42 @@ describe('commitTextFile', () => {
     await expect(
       commitTextFile('tok', repo, { path: 'a.md', content: 'x', message: 'm' }),
     ).rejects.toThrow(/commit failed \(422\) — Invalid request/);
+  });
+});
+
+describe('deleteFile', () => {
+  it('resolves the current sha then sends a DELETE with it', async () => {
+    queue = [
+      res(200, { sha: 'oldsha' }), // getFileSha
+      res(200, { commit: { sha: 'delsha' } }),
+    ];
+    const result = await deleteFile('tok', repo, {
+      path: 'src/content/recipes/x.md',
+      message: 'delete x',
+    });
+    expect(result).toEqual({ path: 'src/content/recipes/x.md', commitSha: 'delsha' });
+    expect(calls[1].init?.method).toBe('DELETE');
+    // The DELETE hits the encoded contents path; branch goes in the body, never as ?ref=.
+    expect(calls[1].url).toContain('/contents/src/content/recipes/x.md');
+    expect(calls[1].url).not.toContain('ref=');
+    const sent = bodyOf(calls[1]);
+    expect(sent.message).toBe('delete x');
+    expect(sent.sha).toBe('oldsha');
+    expect(sent.branch).toBe('main');
+  });
+
+  it('throws a 404 GitHubError when the file is already gone', async () => {
+    queue = [res(404, {})]; // getFileSha → null, no DELETE attempted
+    await expect(
+      deleteFile('tok', repo, { path: 'a.md', message: 'm' }),
+    ).rejects.toThrow(/delete failed \(404\) — a\.md not found/);
+    expect(calls).toHaveLength(1); // never issued the DELETE
+  });
+
+  it('surfaces a GitHub error from the DELETE call', async () => {
+    queue = [res(200, { sha: 'oldsha' }), res(409, { message: 'Conflict' })];
+    await expect(
+      deleteFile('tok', repo, { path: 'a.md', message: 'm' }),
+    ).rejects.toThrow(/delete failed \(409\) — Conflict/);
   });
 });

@@ -96,6 +96,8 @@ const nutrition = z.object({
       category: z
         .enum(['general', 'beverage', 'fat-oil-nut-seed'])
         .default('general'),
+      /** Beverage non-nutritive-sweetener flag — a scoring input retained so an edit recomputes the same grade. */
+      nnsPresent: z.boolean().optional(),
     })
     .optional(),
   inflammation: z

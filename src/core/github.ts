@@ -15,6 +15,13 @@ export interface GitHubRepo {
   branch?: string;
 }
 
+/** This app commits to a single repo; commit/delete callers share this config. */
+export const RECIPE_REPO: GitHubRepo = {
+  owner: 'milenaveleva',
+  repo: 'recipes-archive',
+  branch: 'main',
+};
+
 export interface CommitResult {
   path: string;
   /** New blob sha of the committed file. */
@@ -164,4 +171,36 @@ export function commitBinaryFile(
   input: { path: string; bytes: Uint8Array; message: string },
 ): Promise<CommitResult> {
   return putContents(token, repo, input.path, input.message, bytesToBase64(input.bytes));
+}
+
+export interface DeleteResult {
+  path: string;
+  /** Sha of the commit that removed the file. */
+  commitSha: string;
+}
+
+/**
+ * Delete a file from the repo (e.g. when removing a published recipe). Resolves
+ * the file's current sha first — a 404 there means it is already gone, surfaced
+ * as a GitHubError so the caller can report it.
+ */
+export async function deleteFile(
+  token: string,
+  repo: GitHubRepo,
+  input: { path: string; message: string },
+): Promise<DeleteResult> {
+  const sha = await getFileSha(token, repo, input.path);
+  if (sha == null) {
+    throw new GitHubError(`GitHub delete failed (404) — ${input.path} not found`, 404);
+  }
+  const body: Record<string, unknown> = { message: input.message, sha };
+  if (repo.branch) body.branch = repo.branch;
+  const res = await fetch(contentsUrl(repo, input.path), {
+    method: 'DELETE',
+    headers: { ...headers(token), 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) return fail(res, 'delete');
+  const out = (await res.json()) as { commit?: { sha?: string } };
+  return { path: input.path, commitSha: out.commit?.sha ?? '' };
 }

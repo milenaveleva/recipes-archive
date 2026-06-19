@@ -10,7 +10,7 @@
 import { useMemo, useState, useEffect } from 'react';
 import { extractRecipe } from '../../core/extract';
 import { toRecipeMarkdown, recipeFilename, type RecipeDraft } from '../../core/markdown';
-import { commitTextFile, GitHubError, type GitHubRepo } from '../../core/github';
+import { commitTextFile, GitHubError, RECIPE_REPO } from '../../core/github';
 import type { NutriCategory } from '../../core/nutriscore';
 import {
   EMPTY_FORM,
@@ -19,9 +19,14 @@ import {
   buildDraft,
   computeNutrition,
   formFromExtract,
+  formFromRecipe,
+  rowsFromIngredients,
+  splitMethodBody,
   selectedConfidence,
   type FormState,
   type IngredientRow,
+  type StoredRecipe,
+  type StoredIngredient,
 } from './addLib';
 import {
   type AuthSession,
@@ -37,11 +42,6 @@ import { GITHUB_MARK_PATH } from '../../lib/icons';
 import { withBase } from '../../lib/url';
 
 const PROXY = (import.meta.env.PUBLIC_IMPORT_PROXY as string | undefined)?.trim();
-
-// Single-deployment app: recipes always commit to this repo's default branch.
-const OWNER = 'milenaveleva';
-const REPO = 'recipes-archive';
-const BRANCH = 'main';
 
 export default function AddRecipe() {
   // The GitHub session (tokens) lives in sessionStorage via auth.ts.
@@ -72,6 +72,55 @@ export default function AddRecipe() {
   const [ingredientsText, setIngredientsText] = useState('');
   const [rows, setRows] = useState<IngredientRow[]>([]);
 
+  // Edit mode: ?edit=<slug> loads an existing recipe to overwrite in place.
+  const [editSlug, setEditSlug] = useState<string | null>(null);
+  const [editPath, setEditPath] = useState<string | null>(null);
+  const [editCreatedAt, setEditCreatedAt] = useState<string | null>(null);
+  // Frontmatter fields the form doesn't manage + body content around the
+  // numbered method — carried through an edit so a save never strips them.
+  const [editPreserved, setEditPreserved] = useState<Partial<RecipeDraft>>({});
+  const [editBodyBefore, setEditBodyBefore] = useState('');
+  const [editBodyAfter, setEditBodyAfter] = useState('');
+  const [editError, setEditError] = useState('');
+
+  // Load the recipe to edit (its structured frontmatter) from the static
+  // /recipe-data endpoint, then seed the form + ingredient rows from it.
+  useEffect(() => {
+    const slug = new URLSearchParams(window.location.search).get('edit');
+    if (!slug) return;
+    setEditSlug(slug);
+    let ignore = false;
+    (async () => {
+      try {
+        const res = await fetch(withBase(`/recipe-data/${encodeURIComponent(slug)}.json`));
+        if (!res.ok) throw new Error(`Couldn’t load “${slug}” to edit (${res.status}).`);
+        const data = (await res.json()) as {
+          path: string;
+          createdAt: string | null;
+          body: string;
+          preserved: Partial<RecipeDraft>;
+          recipe: StoredRecipe & { ingredients?: StoredIngredient[] };
+        };
+        if (ignore) return;
+        const ings = data.recipe.ingredients ?? [];
+        const { steps, before, after } = splitMethodBody(data.body ?? '');
+        setForm(formFromRecipe(data.recipe, steps));
+        setIngredientsText(ings.map((i) => i.raw).join('\n'));
+        setRows(rowsFromIngredients(ings));
+        setEditCreatedAt(data.createdAt);
+        setEditPath(data.path);
+        setEditPreserved(data.preserved ?? {});
+        setEditBodyBefore(before);
+        setEditBodyAfter(after);
+      } catch (err) {
+        if (!ignore) setEditError(err instanceof Error ? err.message : String(err));
+      }
+    })();
+    return () => {
+      ignore = true;
+    };
+  }, []);
+
   // Import + publish status.
   const [importUrl, setImportUrl] = useState('');
   const [importState, setImportState] = useState<'idle' | 'loading' | 'error'>('idle');
@@ -87,7 +136,6 @@ export default function AddRecipe() {
     return () => clearTimeout(t);
   }, [publishState]);
 
-  const ghRepo: GitHubRepo = { owner: OWNER, repo: REPO, branch: BRANCH };
   const macro = useMemo(() => computeNutrition(rows, form.servings), [rows, form.servings]);
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
   const draft = useMemo(() => buildDraft(form, rows, macro, today), [form, rows, macro, today]);
@@ -163,34 +211,54 @@ export default function AddRecipe() {
     setPublishState('saving');
     setPublishMsg('');
     try {
-      // Stamp createdAt at publish time (not island mount).
-      const publishDraft = buildDraft(form, rows, macro, new Date().toISOString().slice(0, 10));
+      // Stamp dates at publish time (not island mount). An edit keeps the
+      // original createdAt and re-stamps updatedAt + computedAt to today; a
+      // fresh recipe is born today.
+      const stamp = new Date().toISOString().slice(0, 10);
+      const isEdit = editSlug != null;
+      const publishDraft = buildDraft(
+        form,
+        rows,
+        macro,
+        isEdit ? editCreatedAt ?? stamp : stamp,
+        isEdit ? { computedAt: stamp, updatedAt: stamp } : {},
+      );
+      if (isEdit) {
+        // Carry through fields the form doesn't manage so a save never strips them.
+        Object.assign(publishDraft, editPreserved);
+        publishDraft.bodyBefore = editBodyBefore;
+        publishDraft.bodyAfter = editBodyAfter;
+      }
       const file = {
-        path: recipeFilename(publishDraft),
+        // An edit overwrites the original file (its path comes from the loaded
+        // recipe data, so the slug stays stable even if the title changes); a
+        // fresh recipe derives its filename from the title.
+        path: isEdit && editPath ? editPath : recipeFilename(publishDraft),
         content: toRecipeMarkdown(publishDraft),
-        message: `Add recipe: ${publishDraft.title}`,
+        message: `${isEdit ? 'Update' : 'Add'} recipe: ${publishDraft.title}`,
       };
       const active = await ensureFresh(session);
       let result;
       try {
-        result = await commitTextFile(active.accessToken, ghRepo, file);
+        result = await commitTextFile(active.accessToken, RECIPE_REPO, file);
       } catch (err) {
         // One reactive retry if the token was revoked/expired between checks.
         if (active.refreshToken && PROXY && err instanceof GitHubError && err.status === 401) {
           const refreshed = await refreshSession(PROXY, active.refreshToken);
           persist(refreshed);
-          result = await commitTextFile(refreshed.accessToken, ghRepo, file);
+          result = await commitTextFile(refreshed.accessToken, RECIPE_REPO, file);
         } else {
           throw err;
         }
       }
       setPublishState('done');
-      setPublishMsg(result.updated ? 'Updated an existing recipe at the same slug.' : '');
+      // An edit is expected to overwrite; only warn when a NEW recipe collides.
+      setPublishMsg(result.updated && !isEdit ? 'Updated an existing recipe at the same slug.' : '');
     } catch (err) {
       setPublishState('error');
       if (err instanceof GitHubError && err.status === 403) {
         setPublishMsg(
-          `No push access to ${OWNER}/${REPO}. Confirm the GitHub App is installed on the repo and you have write access.`,
+          `No push access to ${RECIPE_REPO.owner}/${RECIPE_REPO.repo}. Confirm the GitHub App is installed on the repo and you have write access.`,
         );
       } else {
         setPublishMsg(err instanceof Error ? err.message : String(err));
@@ -199,11 +267,29 @@ export default function AddRecipe() {
   }
 
   const hasIngredient = rows.some((r) => !r.parsed.isGroupHeader);
-  const canPublish = draft.title.trim().length > 0 && hasIngredient && publishState !== 'saving';
+  // In edit mode, wait for the recipe to load (editPath) so a failed load can't
+  // commit the form to the wrong file.
+  const editReady = editSlug == null || editPath != null;
+  const canPublish =
+    draft.title.trim().length > 0 && hasIngredient && publishState !== 'saving' && editReady;
 
   return (
     <div className="font-body text-ink grid gap-6">
-      {publishState === 'done' && <PublishSuccessOverlay note={publishMsg} />}
+      {publishState === 'done' && (
+        <PublishSuccessOverlay note={publishMsg} title={editSlug ? 'Saved!' : 'Published!'} />
+      )}
+
+      {editSlug && (
+        <div className="rounded-2xl border border-spice/30 bg-spice/5 px-4 py-3 font-ui text-sm text-ink-soft">
+          Editing <span className="font-semibold text-ink">{form.title || editSlug}</span> — saving
+          overwrites the published recipe.
+          {editError && (
+            <span role="alert" className="mt-1 block text-band-bad">
+              {editError}
+            </span>
+          )}
+        </div>
+      )}
 
       {PROXY && (
         <Card>
@@ -364,7 +450,13 @@ export default function AddRecipe() {
         <div className="flex items-center justify-end gap-3">
           {session ? (
             <button onClick={handlePublish} disabled={!canPublish} className={primaryBtn}>
-              {publishState === 'saving' ? 'Publishing…' : 'Publish recipe'}
+              {publishState === 'saving'
+                ? editSlug
+                  ? 'Saving…'
+                  : 'Publishing…'
+                : editSlug
+                  ? 'Save changes'
+                  : 'Publish recipe'}
             </button>
           ) : (
             <button
@@ -373,7 +465,9 @@ export default function AddRecipe() {
               className={`${primaryBtn} inline-flex items-center gap-2`}
             >
               <GitHubMark />
-              {authState === 'checking' ? 'Signing in…' : 'Sign in with GitHub to publish'}
+              {authState === 'checking'
+                ? 'Signing in…'
+                : `Sign in with GitHub to ${editSlug ? 'save' : 'publish'}`}
             </button>
           )}
         </div>
@@ -543,9 +637,9 @@ function GitHubMark() {
   );
 }
 
-/** Full-screen confirmation shown after a successful publish, just before the
- *  island redirects back to the recipe index. */
-function PublishSuccessOverlay({ note }: { note?: string }) {
+/** Full-screen confirmation shown after a successful publish/save, just before
+ *  the island redirects back to the recipe index. */
+function PublishSuccessOverlay({ note, title = 'Published!' }: { note?: string; title?: string }) {
   return (
     <div
       role="alert"
@@ -554,7 +648,7 @@ function PublishSuccessOverlay({ note }: { note?: string }) {
       <div className="publish-badge flex w-full max-w-sm flex-col items-center gap-4 rounded-2xl border border-line bg-card px-8 py-9 text-center shadow-2xl">
         <SuccessCheck />
         <div>
-          <p className="font-display text-2xl text-ink">Published!</p>
+          <p className="font-display text-2xl text-ink">{title}</p>
           {note && <p className="mt-1 font-ui text-sm text-band-mid">{note}</p>}
           <p className="mt-1 font-ui text-sm text-ink-soft">Taking you back to your recipes…</p>
         </div>

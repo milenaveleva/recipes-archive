@@ -6,6 +6,7 @@ import ScoreMedallions from '../../components/ScoreMedallions.astro';
 import IngredientList from '../../components/IngredientList.astro';
 import NutritionPanel from '../../components/NutritionPanel.astro';
 import JsonLd from '../../components/JsonLd.astro';
+import RecipeActions from '../../components/RecipeActions.astro';
 import {
   recipeSlug,
   formatDuration,
@@ -26,6 +27,7 @@ export async function getStaticPaths() {
 
 const { recipe } = Astro.props;
 const { data } = recipe;
+const slug = recipeSlug(recipe);
 const { Content } = await render(recipe);
 const steps = extractSteps(recipe.body);
 
@@ -44,8 +46,9 @@ const ogImage = data.image
 const hasScores = !!data.nutrition?.glycemic || !!data.nutrition?.nutriScore || !!data.nutrition?.inflammation;
 ---
 
-<BaseLayout title={data.title} description={data.description} ogImage={ogImage}>
+<BaseLayout title={data.title} description={data.description} ogImage={ogImage} hideAddFab>
   <JsonLd slot="head" recipe={recipe} steps={steps} />
+  <RecipeActions id={recipe.id} slug={slug} title={data.title} />
 
   <article class="mx-auto max-w-5xl px-5 sm:px-8 pt-8 pb-4">
     <a
