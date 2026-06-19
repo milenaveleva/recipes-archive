@@ -2,11 +2,13 @@
  * Browser-side GitHub sign-in for the authoring island.
  *
  * Opens the Worker's /auth endpoint in a popup and waits for the user token to
- * arrive by postMessage, pinned to the Worker's origin. Tokens persist in
- * localStorage so a sign-in survives reloads; a short-lived access token is
- * refreshed against the Worker's /refresh endpoint when it nears expiry. The
- * resulting access token is what github.ts uses to commit — anyone may sign in,
- * but only a repo collaborator's token can actually push.
+ * arrive by postMessage, pinned to the Worker's origin. Tokens live in
+ * sessionStorage, so a sign-in survives reloads within the tab but is wiped when
+ * the tab/browser closes — a leak is bounded by the session, never written to
+ * disk for months. A short-lived access token is refreshed against the Worker's
+ * /refresh endpoint when it nears expiry. The resulting access token is what
+ * github.ts uses to commit — anyone may sign in, but only a repo collaborator's
+ * token can actually push.
  *
  * The pure helpers (URL/origin/message/expiry) are unit-tested; the popup and
  * storage wrappers touch browser globals and run only in the island.
@@ -26,8 +28,8 @@ export type AuthMessage = { ok: true; session: AuthSession } | { ok: false; erro
 
 /** Must match the Worker's MESSAGE_SOURCE (worker/src/oauth.ts). */
 const MESSAGE_SOURCE = 'recipes-archive-auth';
-/** gh_token is shared with the manual-PAT fallback: both fill the access slot. */
-const LS = { access: 'gh_token', refresh: 'gh_refresh', expires: 'gh_expires', login: 'gh_login' };
+/** sessionStorage keys; gh_token is shared with the manual-PAT fallback (both fill the access slot). */
+const KEYS = { access: 'gh_token', refresh: 'gh_refresh', expires: 'gh_expires', login: 'gh_login' };
 const EXPIRY_SKEW_MS = 60_000;
 
 /* ---- pure helpers ---- */
@@ -72,20 +74,20 @@ export function parseAuthMessage(data: unknown): AuthMessage | null {
   };
 }
 
-/* ---- localStorage persistence ---- */
+/* ---- sessionStorage persistence ---- */
 
 export function loadSession(): AuthSession | null {
   try {
-    const accessToken = localStorage.getItem(LS.access);
+    const accessToken = sessionStorage.getItem(KEYS.access);
     if (!accessToken) return null;
-    const expiresRaw = localStorage.getItem(LS.expires);
+    const expiresRaw = sessionStorage.getItem(KEYS.expires);
     const expiresAt = expiresRaw ? Number(expiresRaw) : null;
     return {
       accessToken,
-      refreshToken: localStorage.getItem(LS.refresh) || null,
+      refreshToken: sessionStorage.getItem(KEYS.refresh) || null,
       // Only a finite positive epoch is a real expiry; '0'/NaN/Infinity → never-expiring.
       expiresAt: expiresAt != null && Number.isFinite(expiresAt) && expiresAt > 0 ? expiresAt : null,
-      login: localStorage.getItem(LS.login) || '',
+      login: sessionStorage.getItem(KEYS.login) || '',
     };
   } catch {
     return null;
@@ -94,12 +96,12 @@ export function loadSession(): AuthSession | null {
 
 export function saveSession(session: AuthSession): void {
   try {
-    localStorage.setItem(LS.access, session.accessToken);
-    if (session.refreshToken) localStorage.setItem(LS.refresh, session.refreshToken);
-    else localStorage.removeItem(LS.refresh);
-    if (session.expiresAt != null) localStorage.setItem(LS.expires, String(session.expiresAt));
-    else localStorage.removeItem(LS.expires);
-    localStorage.setItem(LS.login, session.login);
+    sessionStorage.setItem(KEYS.access, session.accessToken);
+    if (session.refreshToken) sessionStorage.setItem(KEYS.refresh, session.refreshToken);
+    else sessionStorage.removeItem(KEYS.refresh);
+    if (session.expiresAt != null) sessionStorage.setItem(KEYS.expires, String(session.expiresAt));
+    else sessionStorage.removeItem(KEYS.expires);
+    sessionStorage.setItem(KEYS.login, session.login);
   } catch {
     /* persisting is best-effort */
   }
@@ -107,7 +109,7 @@ export function saveSession(session: AuthSession): void {
 
 export function clearSession(): void {
   try {
-    for (const k of Object.values(LS)) localStorage.removeItem(k);
+    for (const k of Object.values(KEYS)) sessionStorage.removeItem(k);
   } catch {
     /* ignore */
   }

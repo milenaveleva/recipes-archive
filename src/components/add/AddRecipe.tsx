@@ -32,7 +32,8 @@ type Step = 'auth' | 'compose' | 'publish';
 export default function AddRecipe() {
   const [step, setStep] = useState<Step>('auth');
 
-  // Auth / repo settings (persisted to localStorage).
+  // Non-secret repo coordinates persist to localStorage; the GitHub session
+  // itself (tokens) lives in sessionStorage via auth.ts.
   const [session, setSession] = useState<AuthSession | null>(null);
   const [patToken, setPatToken] = useState(''); // manual-token fallback input
   const [owner, setOwner] = useState('milenaveleva');
@@ -276,7 +277,8 @@ export default function AddRecipe() {
               {repoFields}
               {authState === 'error' && <Alert tone="bad">{authMsg}</Alert>}
               <p className="text-xs text-ink-faint">
-                Your GitHub session is stored only in this browser&rsquo;s localStorage — a real secret on this device.
+                Your GitHub session lasts only until you close this tab — it&rsquo;s never written to disk. Use Sign out
+                to end it now.
               </p>
               <div className="flex flex-wrap gap-3">
                 <button onClick={handleContinue} disabled={authState === 'checking'} className={primaryBtn}>
@@ -342,7 +344,8 @@ export default function AddRecipe() {
                     </button>
                   </div>
                   <p className="text-xs text-ink-faint">
-                    The token is stored only in this browser&rsquo;s localStorage — a real secret on this device.
+                    The token is kept only for this browser session (cleared when you close the tab) — a real secret on
+                    this device.
                   </p>
                 </div>
               </details>
