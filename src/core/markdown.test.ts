@@ -57,6 +57,13 @@ describe('toRecipeMarkdown', () => {
     expect(fm.nutrition.perServing.energyKcal).toBe(310);
   });
 
+  it('quotes date fields so they round-trip as strings, not YAML timestamps', () => {
+    // A bare YYYY-MM-DD is resolved to a Date by the build's frontmatter parser,
+    // which fails nutrition.computedAt's string schema — so they must be quoted.
+    expect(md).toContain('computedAt: "2026-06-19"');
+    expect(md).toContain('createdAt: "2026-06-19"');
+  });
+
   it('only emits excludeFromNutrition when true (schema default is false)', () => {
     const fm = frontmatter(md);
     expect('excludeFromNutrition' in fm.ingredients[0]).toBe(false);

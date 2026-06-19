@@ -7,7 +7,7 @@
  * titles/notes containing colons, quotes, or ampersands. Pure + isomorphic, so
  * it is unit-testable and runs in the authoring island.
  */
-import { stringify } from 'yaml';
+import { Document, isScalar } from 'yaml';
 import type { PerServingMacros } from './types';
 
 export interface DraftIngredient {
@@ -172,6 +172,14 @@ export function toRecipeMarkdown(draft: RecipeDraft): string {
     nutrition: draft.nutrition,
     createdAt: draft.createdAt,
   };
-  const yaml = stringify(prune(frontmatter), { lineWidth: 0 }).trimEnd();
+  const doc = new Document(prune(frontmatter));
+  // A bare YYYY-MM-DD scalar is resolved back to a Date by the build's YAML
+  // parser, which fails the string schema on rebuild; force the date fields to
+  // quoted strings so they round-trip (matching the hand-authored recipes).
+  for (const path of [['createdAt'], ['nutrition', 'computedAt']]) {
+    const node = doc.getIn(path, true);
+    if (isScalar(node) && typeof node.value === 'string') node.type = 'QUOTE_DOUBLE';
+  }
+  const yaml = doc.toString({ lineWidth: 0 }).trimEnd();
   return `---\n${yaml}\n---\n\n${methodBody(draft.instructions)}\n`;
 }
