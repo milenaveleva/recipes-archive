@@ -26,7 +26,7 @@ A fully static, **markdown-backed** recipe archive. Recipes are the source of tr
 
 ### Roadmap (so changes land in the right layer)
 
-Phase 0 (current): static recipe book. Phase 1: in-browser authoring — a React island that imports a URL (via a Cloudflare Worker CORS proxy in `worker/`), reviews each ingredient's USDA match, converts to metric, computes macros, and commits markdown via the GitHub API; the shared compute engine will live in `src/core/`. Phase 2: GI/GL + Nutri-Score 2023 + inflammation scoring. Phase 3: Pagefind search + faceted filtering. Later: shopping lists + kifli.hu. See `README.md` for the full plan.
+Phase 0: static recipe book. Phase 1: in-browser authoring — a React island that imports a URL (via a Cloudflare Worker CORS proxy in `worker/`), reviews each ingredient's USDA match, converts to metric, computes macros, and commits markdown via the GitHub API; the shared compute engine lives in `src/core/`. Phase 2: GI/GL + Nutri-Score 2023 + inflammation scoring. Phase 3: client-side fuzzy search (Fuse.js) + faceted filtering on the index, filtering the pre-rendered card grid in place (`src/lib/search.ts` engine + `SearchFilter.astro`). Later: shopping lists + kifli.hu. See `README.md` for the full plan.
 
 ### Domain conventions
 

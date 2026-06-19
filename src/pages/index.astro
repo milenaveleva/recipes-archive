@@ -2,11 +2,16 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import RecipeGrid from '../components/RecipeGrid.astro';
+import SearchFilter from '../components/SearchFilter.astro';
 import { visibleRecipes } from '../lib/recipe';
+import { buildSearchIndex } from '../lib/search-build';
+import { facetsOf } from '../lib/search';
 import { withBase } from '../lib/url';
 
 const recipes = visibleRecipes(await getCollection('recipes'));
 const count = recipes.length;
+const docs = buildSearchIndex(recipes);
+const facets = facetsOf(docs);
 ---
 
 <BaseLayout>
@@ -27,8 +32,10 @@ const count = recipes.length;
     </div>
   </section>
 
+  {count > 0 && <SearchFilter docs={docs} facets={facets} />}
+
   <section class="mx-auto max-w-6xl px-5 sm:px-8 pb-8">
-    <div class="rule-ornament mb-8">
+    <div data-collection-divider class="rule-ornament mb-8">
       <span class="h-px flex-1 bg-line"></span>
       <span class="font-ui text-xs uppercase tracking-[0.2em] text-ink-faint">The Collection</span>
       <span class="h-px flex-1 bg-line"></span>

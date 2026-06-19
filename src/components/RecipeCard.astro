@@ -13,13 +13,15 @@ interface Props {
 
 const { recipe, index = 0 } = Astro.props;
 const { data } = recipe;
-const href = withBase(`/recipes/${recipeSlug(recipe)}`);
+const slug = recipeSlug(recipe);
+const href = withBase(`/recipes/${slug}`);
 const time = formatDuration(data.totalTime) ?? formatDuration(data.cookTime);
 const tags = data.tags.slice(0, 3);
 ---
 
 <a
   href={href}
+  data-recipe-slug={slug}
   class="reveal group block no-underline"
   style={`animation-delay:${Math.min(index, 12) * 55}ms`}
 >
