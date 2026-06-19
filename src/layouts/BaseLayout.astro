@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { withBase } from '../lib/url';
+import AuthButton from '../components/AuthButton.astro';
 
 interface Props {
   title?: string;
@@ -19,13 +20,10 @@ const siteName = 'mili’s hedonistic cookbook';
 const fullTitle = title ? `${title} — ${siteName}` : siteName;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 
-const nav = [
-  { label: 'Recipes', href: withBase('/') },
-  { label: 'Categories', href: withBase('/categories') },
-  { label: 'Tags', href: withBase('/tags') },
-  { label: 'Lists', href: withBase('/lists') },
-];
+// The landing page is the whole app — tags, categories and lists are filtered
+// in place there, so the header carries no section nav, only sign-in.
 const here = Astro.url.pathname.replace(/\/$/, '');
+const onAddPage = here === withBase('/add').replace(/\/$/, '');
 ---
 
 <!doctype html>
@@ -60,36 +58,7 @@ const here = Astro.url.pathname.replace(/\/$/, '');
               class="hidden sm:inline-block h-2 w-2 rounded-full bg-spice transition-transform group-hover:scale-150"
             ></span>
           </a>
-          <nav class="hidden md:flex items-center gap-7 font-ui text-sm">
-            {
-              nav.map((item) => {
-                const active = here === item.href.replace(/\/$/, '');
-                return (
-                  <a
-                    href={item.href}
-                    class:list={[
-                      'no-underline tracking-wide transition-colors hover:text-spice',
-                      active ? 'text-spice' : 'text-ink-soft',
-                    ]}
-                  >
-                    {item.label}
-                  </a>
-                );
-              })
-            }
-            <a
-              href={withBase('/add')}
-              class="font-ui text-sm font-semibold no-underline rounded-full bg-ink text-paper px-4 py-1.5 transition-colors hover:bg-spice"
-            >
-              + Add
-            </a>
-          </nav>
-          <a
-            href={withBase('/add')}
-            class="md:hidden font-ui text-sm font-semibold no-underline rounded-full bg-ink text-paper px-3.5 py-1.5"
-          >
-            + Add
-          </a>
+          <AuthButton />
         </div>
       </div>
     </header>
@@ -109,5 +78,32 @@ const here = Astro.url.pathname.replace(/\/$/, '');
         </p>
       </div>
     </footer>
+
+    {
+      !onAddPage && (
+        <a
+          href={withBase('/add')}
+          aria-label="Add a recipe"
+          class="group fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-ink text-paper no-underline shadow-xl shadow-ink/25 ring-1 ring-ink/10 transition-[transform,background-color] duration-200 hover:scale-110 hover:bg-spice active:scale-95 sm:bottom-8 sm:right-8"
+        >
+          <span class="pointer-events-none absolute right-full mr-3 hidden whitespace-nowrap rounded-full bg-ink px-3 py-1.5 font-ui text-xs text-paper opacity-0 shadow-md transition-opacity duration-200 group-hover:opacity-100 sm:block">
+            Add a recipe
+          </span>
+          <svg
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            aria-hidden="true"
+          >
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </a>
+      )
+    }
   </body>
 </html>

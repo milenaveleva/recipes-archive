@@ -115,6 +115,33 @@ export function clearSession(): void {
   }
 }
 
+/* ---- in-tab sign-in/out broadcast ---- */
+
+/**
+ * The header sign-in widget and the /add authoring island are separate scripts
+ * sharing one sessionStorage; this window event lets a sign-in or sign-out in
+ * one update the other within the same tab (sessionStorage `storage` events
+ * don't fire in the originating document, and sessionStorage isn't shared across
+ * tabs anyway, so cross-tab sync is moot).
+ */
+const AUTH_CHANGE_EVENT = 'recipes-archive:auth-change';
+
+/** Announce that the stored session changed (after a sign-in or sign-out). */
+export function notifyAuthChange(): void {
+  try {
+    window.dispatchEvent(new Event(AUTH_CHANGE_EVENT));
+  } catch {
+    /* non-browser context */
+  }
+}
+
+/** Subscribe to in-tab session changes; returns an unsubscribe function. */
+export function onAuthChange(handler: () => void): () => void {
+  if (typeof window === 'undefined') return () => {};
+  window.addEventListener(AUTH_CHANGE_EVENT, handler);
+  return () => window.removeEventListener(AUTH_CHANGE_EVENT, handler);
+}
+
 /* ---- popup + refresh (browser only) ---- */
 
 /** Open the GitHub sign-in popup and resolve with the delivered session. */

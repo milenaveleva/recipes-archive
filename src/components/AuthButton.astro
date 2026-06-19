@@ -1,0 +1,191 @@
+---
+/**
+ * Global header sign-in widget. GitHub sign-in lives top-right on every page:
+ * anyone may sign in, but only a repo collaborator's token can actually publish
+ * (the /add wizard re-checks push access before committing). The token lives in
+ * sessionStorage via auth.ts — a sign-in survives reloads within the tab and is
+ * wiped when the tab closes.
+ *
+ * Implemented as a bundled script, not a React island, so the content pages stay
+ * free of the React runtime; it reuses the framework-agnostic helpers in auth.ts
+ * and keeps the /add island in sync through auth.ts's in-tab change event.
+ *
+ * The signed-out button is the server-rendered default (no flash, no layout
+ * shift); on load the script swaps in the account view when a session exists.
+ */
+import { GITHUB_MARK_PATH } from '../lib/icons';
+import { withBase } from '../lib/url';
+
+const addHref = withBase('/add');
+---
+
+<div data-auth-widget class="relative font-ui text-sm">
+  <button
+    data-auth-signin
+    type="button"
+    class="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-1.5 font-semibold text-paper no-underline transition-colors hover:bg-spice disabled:opacity-50"
+  >
+    <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true">
+      <path d={GITHUB_MARK_PATH}></path>
+    </svg>
+    <span data-auth-signin-label>Sign in</span>
+  </button>
+
+  <div data-auth-account style="display:none">
+    <button
+      data-auth-menu-trigger
+      type="button"
+      aria-haspopup="menu"
+      aria-expanded="false"
+      class="inline-flex items-center gap-2 rounded-full border border-line-strong px-3 py-1.5 text-ink-soft transition-colors hover:border-spice hover:text-spice"
+    >
+      <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true">
+        <path d={GITHUB_MARK_PATH}></path>
+      </svg>
+      <span data-auth-login class="sr-only max-w-[8rem] truncate sm:not-sr-only sm:inline">Account</span>
+      <svg
+        viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor"
+        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+      >
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
+
+    <div
+      data-auth-menu
+      role="menu"
+      style="display:none"
+      class="absolute right-0 z-50 mt-2 w-56 rounded-xl border border-line bg-card p-2 shadow-xl shadow-ink/10"
+    >
+      <p class="px-3 py-2 text-xs text-ink-faint">
+        Signed in as <span data-auth-login-full class="font-semibold text-ink-soft">your account</span>
+      </p>
+      <a
+        href={addHref}
+        role="menuitem"
+        class="block rounded-lg px-3 py-2 text-ink-soft no-underline transition-colors hover:bg-paper-2 hover:text-ink"
+      >
+        Add a recipe →
+      </a>
+      <button
+        data-auth-signout
+        type="button"
+        role="menuitem"
+        class="block w-full rounded-lg px-3 py-2 text-left text-ink-soft transition-colors hover:bg-paper-2 hover:text-spice"
+      >
+        Sign out
+      </button>
+    </div>
+  </div>
+
+  <div
+    data-auth-note
+    role="status"
+    style="display:none"
+    class="absolute right-0 z-50 mt-2 w-64 rounded-xl border border-line bg-card px-3 py-2 text-xs text-ink-soft shadow-xl shadow-ink/10"
+  >
+  </div>
+</div>
+
+<script>
+  import { loadSession, signIn, saveSession, clearSession, notifyAuthChange, onAuthChange } from './add/auth';
+  import type { AuthSession } from './add/auth';
+
+  const PROXY = (import.meta.env.PUBLIC_IMPORT_PROXY as string | undefined)?.trim();
+
+  const root = document.querySelector<HTMLElement>('[data-auth-widget]');
+  if (root) {
+    const signinBtn = root.querySelector<HTMLButtonElement>('[data-auth-signin]');
+    const signinLabel = root.querySelector<HTMLElement>('[data-auth-signin-label]');
+    const account = root.querySelector<HTMLElement>('[data-auth-account]');
+    const menuTrigger = root.querySelector<HTMLButtonElement>('[data-auth-menu-trigger]');
+    const menu = root.querySelector<HTMLElement>('[data-auth-menu]');
+    const signoutBtn = root.querySelector<HTMLButtonElement>('[data-auth-signout]');
+    const loginEl = root.querySelector<HTMLElement>('[data-auth-login]');
+    const loginFullEl = root.querySelector<HTMLElement>('[data-auth-login-full]');
+    const note = root.querySelector<HTMLElement>('[data-auth-note]');
+
+    const show = (el: HTMLElement | null, visible: boolean) => {
+      if (el) el.style.display = visible ? '' : 'none';
+    };
+
+    let menuOpen = false;
+    function setMenu(open: boolean) {
+      menuOpen = open;
+      show(menu, open);
+      menuTrigger?.setAttribute('aria-expanded', String(open));
+    }
+
+    function setNote(msg: string) {
+      if (!note) return;
+      note.textContent = msg;
+      show(note, msg !== '');
+    }
+
+    function render(session: AuthSession | null) {
+      show(signinBtn, !session);
+      show(account, !!session);
+      if (session) {
+        const handle = session.login ? `@${session.login}` : '';
+        if (loginEl) loginEl.textContent = handle || 'Account';
+        if (loginFullEl) loginFullEl.textContent = handle || 'your account';
+      }
+      setMenu(false);
+    }
+
+    let busy = false;
+    signinBtn?.addEventListener('click', async () => {
+      setNote('');
+      if (!PROXY) {
+        setNote('Sign-in needs the import Worker (PUBLIC_IMPORT_PROXY) deployed.');
+        return;
+      }
+      if (busy) return;
+      busy = true;
+      signinBtn.disabled = true;
+      if (signinLabel) signinLabel.textContent = 'Signing in…';
+      try {
+        const session = await signIn(PROXY);
+        saveSession(session);
+        render(session);
+        notifyAuthChange();
+      } catch (err) {
+        setNote(err instanceof Error ? err.message : 'Sign-in failed.');
+      } finally {
+        busy = false;
+        signinBtn.disabled = false;
+        if (signinLabel) signinLabel.textContent = 'Sign in';
+      }
+    });
+
+    menuTrigger?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setNote('');
+      setMenu(!menuOpen);
+    });
+
+    signoutBtn?.addEventListener('click', () => {
+      clearSession();
+      render(null);
+      notifyAuthChange();
+    });
+
+    // Dismiss the menu/note on an outside click or Escape.
+    document.addEventListener('click', (e) => {
+      if (!root.contains(e.target as Node)) {
+        setMenu(false);
+        setNote('');
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        setMenu(false);
+        setNote('');
+      }
+    });
+
+    // Reflect a sign-in/out that happened in the /add island (same tab).
+    onAuthChange(() => render(loadSession()));
+    render(loadSession());
+  }
+</script>
