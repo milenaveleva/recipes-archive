@@ -144,6 +144,48 @@ h1, h2, h3, h4 {
   }
 }
 
+/* publish-success confirmation: fade-in overlay + a drawn checkmark */
+@keyframes publish-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes publish-badge-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes publish-stroke-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+.publish-overlay {
+  animation: publish-overlay-in 0.25s ease-out both;
+}
+.publish-badge {
+  animation: publish-badge-in 0.35s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.publish-check-circle {
+  stroke-dasharray: 151; /* 2π·24 ≈ 150.8 */
+  stroke-dashoffset: 151;
+  animation: publish-stroke-draw 0.5s ease-out 0.1s both;
+}
+.publish-check-mark {
+  stroke-dasharray: 36;
+  stroke-dashoffset: 36;
+  animation: publish-stroke-draw 0.3s ease-out 0.5s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .publish-overlay,
+  .publish-badge {
+    animation: none;
+  }
+  .publish-check-circle,
+  .publish-check-mark {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
 /* Rendered markdown (recipe method + notes) */
 .recipe-prose {
   font-family: var(--font-body);

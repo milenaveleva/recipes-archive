@@ -34,6 +34,7 @@ import {
   onAuthChange,
 } from './auth';
 import { GITHUB_MARK_PATH } from '../../lib/icons';
+import { withBase } from '../../lib/url';
 
 const PROXY = (import.meta.env.PUBLIC_IMPORT_PROXY as string | undefined)?.trim();
 
@@ -77,7 +78,14 @@ export default function AddRecipe() {
   const [importMsg, setImportMsg] = useState('');
   const [publishState, setPublishState] = useState<'idle' | 'saving' | 'done' | 'error'>('idle');
   const [publishMsg, setPublishMsg] = useState('');
-  const [publishUrl, setPublishUrl] = useState('');
+
+  // On a successful publish, let the confirmation land, then return to the
+  // recipe index (the rebuild surfaces the new recipe within ~a minute).
+  useEffect(() => {
+    if (publishState !== 'done') return;
+    const t = setTimeout(() => window.location.assign(withBase('/')), 2200);
+    return () => clearTimeout(t);
+  }, [publishState]);
 
   const ghRepo: GitHubRepo = { owner: OWNER, repo: REPO, branch: BRANCH };
   const macro = useMemo(() => computeNutrition(rows, form.servings), [rows, form.servings]);
@@ -177,8 +185,7 @@ export default function AddRecipe() {
         }
       }
       setPublishState('done');
-      setPublishUrl(result.htmlUrl ?? '');
-      setPublishMsg(result.updated ? 'Note: this overwrote an existing recipe at the same slug.' : '');
+      setPublishMsg(result.updated ? 'Updated an existing recipe at the same slug.' : '');
     } catch (err) {
       setPublishState('error');
       if (err instanceof GitHubError && err.status === 403) {
@@ -196,6 +203,8 @@ export default function AddRecipe() {
 
   return (
     <div className="font-body text-ink grid gap-6">
+      {publishState === 'done' && <PublishSuccessOverlay note={publishMsg} />}
+
       {PROXY && (
         <Card>
           <h2 className="font-display text-xl text-ink">Import from a link</h2>
@@ -352,17 +361,6 @@ export default function AddRecipe() {
       <div className="grid gap-3">
         {authState === 'error' && <Alert tone="bad">{authMsg}</Alert>}
         {publishState === 'error' && <Alert tone="bad">{publishMsg}</Alert>}
-        {publishState === 'done' && (
-          <Alert tone="good">
-            Published. The site rebuilds in about a minute.{' '}
-            {publishUrl && (
-              <a className="underline" href={publishUrl} target="_blank" rel="noreferrer">
-                View the commit →
-              </a>
-            )}
-            {publishMsg && <span className="block mt-1 text-band-mid">{publishMsg}</span>}
-          </Alert>
-        )}
         <div className="flex items-center justify-end gap-3">
           {session ? (
             <button onClick={handlePublish} disabled={!canPublish} className={primaryBtn}>
@@ -541,6 +539,52 @@ function GitHubMark() {
   return (
     <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true">
       <path d={GITHUB_MARK_PATH} />
+    </svg>
+  );
+}
+
+/** Full-screen confirmation shown after a successful publish, just before the
+ *  island redirects back to the recipe index. */
+function PublishSuccessOverlay({ note }: { note?: string }) {
+  return (
+    <div
+      role="alert"
+      className="publish-overlay fixed inset-0 z-[60] flex items-center justify-center bg-ink/40 p-4 backdrop-blur-sm"
+    >
+      <div className="publish-badge flex w-full max-w-sm flex-col items-center gap-4 rounded-2xl border border-line bg-card px-8 py-9 text-center shadow-2xl">
+        <SuccessCheck />
+        <div>
+          <p className="font-display text-2xl text-ink">Published!</p>
+          {note && <p className="mt-1 font-ui text-sm text-band-mid">{note}</p>}
+          <p className="mt-1 font-ui text-sm text-ink-soft">Taking you back to your recipes…</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** An animated tick — circle and check draw themselves in on mount. */
+function SuccessCheck() {
+  return (
+    <svg viewBox="0 0 52 52" width="72" height="72" className="text-band-good" role="img" aria-label="Success">
+      <circle
+        className="publish-check-circle"
+        cx="26"
+        cy="26"
+        r="24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+      />
+      <path
+        className="publish-check-mark"
+        d="M15 27 l7.5 7.5 L37.5 18"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
