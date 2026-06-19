@@ -19,7 +19,7 @@
  */
 import { availableCarbOf, energyKcalOf, KJ_PER_KCAL } from './nutrition';
 import { computeGlycemics, type Glycemics } from './gi';
-import { computeNutriScore, type NutriResult } from './nutriscore';
+import { computeNutriScore, type NutriResult, type NutriCategory } from './nutriscore';
 import { computeInflammation, type Inflammation } from './inflammation';
 import type { NutrientVector } from './types';
 
@@ -52,17 +52,33 @@ export interface ScoreResult {
   inflammation?: Inflammation;
 }
 
-type NutriField = 'energyKcal' | 'sugar' | 'satFat' | 'salt' | 'protein' | 'fiber';
+/**
+ * Nutri-Score options for the recipe. Nutri-Score is a per-product model, so the
+ * category is a property of the *finished* dish, declared by the author (most
+ * recipes are general foods; beverages and fats/oils/nuts/seeds score under their
+ * own 2023 sub-algorithms). Defaults to general.
+ */
+export interface ScoreOptions {
+  nutriCategory?: NutriCategory;
+  /** Beverages: a non-nutritive sweetener is present. */
+  nnsPresent?: boolean;
+}
+
+type NutriField = 'energyKcal' | 'sugar' | 'satFat' | 'fat' | 'salt' | 'protein' | 'fiber';
 
 /** Compute the glycemic, Nutri-Score and inflammation block for a recipe. */
-export function computeScores(ingredients: ScoredIngredient[], servings: number): ScoreResult {
+export function computeScores(
+  ingredients: ScoredIngredient[],
+  servings: number,
+  options: ScoreOptions = {},
+): ScoreResult {
   const carbSources: { availableCarb_g: number; gi: number | null }[] = [];
   const inflammationItems: { grams: number; tag: number }[] = [];
 
   // Per-nutrient sums and the mass of foods that reported each (so a missing
   // field is excluded rather than counted as zero).
-  const sum: Record<NutriField, number> = { energyKcal: 0, sugar: 0, satFat: 0, salt: 0, protein: 0, fiber: 0 };
-  const mass: Record<NutriField, number> = { energyKcal: 0, sugar: 0, satFat: 0, salt: 0, protein: 0, fiber: 0 };
+  const sum: Record<NutriField, number> = { energyKcal: 0, sugar: 0, satFat: 0, fat: 0, salt: 0, protein: 0, fiber: 0 };
+  const mass: Record<NutriField, number> = { energyKcal: 0, sugar: 0, satFat: 0, fat: 0, salt: 0, protein: 0, fiber: 0 };
   let basisGrams = 0; // mass of foods in the Nutri-Score basis (those with energy)
   let fvlGrams = 0;
 
@@ -91,6 +107,7 @@ export function computeScores(ingredients: ScoredIngredient[], servings: number)
     addField(sum, mass, 'energyKcal', kcal, grams, factor);
     addField(sum, mass, 'sugar', n.sugar_g, grams, factor);
     addField(sum, mass, 'satFat', n.satFat_g, grams, factor);
+    addField(sum, mass, 'fat', n.fat_g, grams, factor); // total fat → SFA/total-fat ratio (fats category)
     addField(sum, mass, 'salt', saltGrams(n.sodium_mg), grams, factor);
     addField(sum, mass, 'protein', n.protein_g, grams, factor);
     addField(sum, mass, 'fiber', n.fiber_g, grams, factor);
@@ -105,15 +122,20 @@ export function computeScores(ingredients: ScoredIngredient[], servings: number)
 
   if (basisGrams > 0) {
     const per100 = (f: NutriField) => (mass[f] > 0 ? (sum[f] / mass[f]) * 100 : 0);
-    result.nutriScore = computeNutriScore({
-      energyKj: per100('energyKcal') * KJ_PER_KCAL,
-      sugars_g: per100('sugar'),
-      satFat_g: per100('satFat'),
-      salt_g: per100('salt'),
-      protein_g: per100('protein'),
-      fiber_g: per100('fiber'),
-      fvlPercent: (fvlGrams / basisGrams) * 100,
-    });
+    result.nutriScore = computeNutriScore(
+      {
+        energyKj: per100('energyKcal') * KJ_PER_KCAL,
+        sugars_g: per100('sugar'),
+        satFat_g: per100('satFat'),
+        salt_g: per100('salt'),
+        protein_g: per100('protein'),
+        fiber_g: per100('fiber'),
+        fvlPercent: (fvlGrams / basisGrams) * 100,
+        totalFat_g: per100('fat'),
+        nnsPresent: options.nnsPresent,
+      },
+      options.nutriCategory ?? 'general',
+    );
   }
 
   const inflammation = computeInflammation(inflammationItems);

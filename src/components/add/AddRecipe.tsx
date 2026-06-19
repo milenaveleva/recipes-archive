@@ -11,6 +11,7 @@ import { useMemo, useState, useEffect } from 'react';
 import { extractRecipe } from '../../core/extract';
 import { toRecipeMarkdown, recipeFilename, type RecipeDraft } from '../../core/markdown';
 import { verifyAccess, commitTextFile, GitHubError, type GitHubRepo } from '../../core/github';
+import type { NutriCategory } from '../../core/nutriscore';
 import {
   EMPTY_FORM,
   linesToRows,
@@ -384,6 +385,32 @@ export default function AddRecipe() {
                   <input value={form.course} onChange={(e) => setField('course', e.target.value)} className={inputCls} />
                 </Field>
               </div>
+              <Field label="Nutri-Score category">
+                <select
+                  value={form.nutriCategory}
+                  onChange={(e) => setField('nutriCategory', e.target.value as NutriCategory)}
+                  className={inputCls}
+                >
+                  <option value="general">General food — most recipes (incl. soups &amp; composite dishes)</option>
+                  <option value="beverage">Beverage — drinks, incl. milk &amp; plant-based drinks</option>
+                  <option value="fat-oil-nut-seed">Fats, oils, nuts &amp; seeds</option>
+                </select>
+              </Field>
+              <p className="-mt-2 text-xs text-ink-faint">
+                Nutri-Score grades drinks and fats with stricter, category-specific rules. Match it to the finished
+                dish; leave it on “general” unless the recipe really is a drink or a fat/oil/nut product. (Alcoholic
+                drinks over 1.2% are outside Nutri-Score.)
+              </p>
+              {form.nutriCategory === 'beverage' && (
+                <label className="flex items-center gap-2 font-ui text-sm text-ink-soft">
+                  <input
+                    type="checkbox"
+                    checked={form.nnsPresent}
+                    onChange={(e) => setField('nnsPresent', e.target.checked)}
+                  />
+                  Contains a non-nutritive sweetener (stevia, sucralose, aspartame, …)
+                </label>
+              )}
               <Field label="Image URL">
                 <input value={form.imageUrl} onChange={(e) => setField('imageUrl', e.target.value)} placeholder="https://…" className={inputCls} />
               </Field>

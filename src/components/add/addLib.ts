@@ -8,7 +8,8 @@
 import { parseIngredientLine, estimateMetric } from '../../core/parse';
 import { searchFoods, type FoodRecord, type FoodMatch, type MatchConfidence } from '../../core/match';
 import { computeMacros, type MacroComputation } from '../../core/nutrition';
-import { computeScores, type ScoredIngredient, type ScoreResult } from '../../core/score';
+import { computeScores, type ScoredIngredient, type ScoreResult, type ScoreOptions } from '../../core/score';
+import type { NutriCategory } from '../../core/nutriscore';
 import type { MetricAmount, ParsedLine, ResolvedIngredient } from '../../core/types';
 import type { DraftIngredient, RecipeDraft } from '../../core/markdown';
 import type { ExtractedRecipe } from '../../core/types';
@@ -147,8 +148,12 @@ export function rowsToScored(rows: IngredientRow[]): ScoredIngredient[] {
 }
 
 /** Compute the glycemic / Nutri-Score / inflammation block for the review rows. */
-export function computeRecipeScores(rows: IngredientRow[], servings: number): ScoreResult {
-  return computeScores(rowsToScored(rows), clampServings(servings));
+export function computeRecipeScores(
+  rows: IngredientRow[],
+  servings: number,
+  options: ScoreOptions = {},
+): ScoreResult {
+  return computeScores(rowsToScored(rows), clampServings(servings), options);
 }
 
 function rowToDraftIngredient(row: IngredientRow): DraftIngredient {
@@ -177,6 +182,10 @@ export interface FormState {
   cuisine: string;
   course: string;
   category: string;
+  /** Nutri-Score category of the finished dish (NOT the taxonomy `category` above). */
+  nutriCategory: NutriCategory;
+  /** Beverages: a non-nutritive sweetener is present (drives the Nutri-Score NNS penalty). */
+  nnsPresent: boolean;
   tags: string; // comma-separated
   lists: string; // comma-separated
   imageUrl: string;
@@ -194,6 +203,8 @@ export const EMPTY_FORM: FormState = {
   cuisine: '',
   course: '',
   category: '',
+  nutriCategory: 'general',
+  nnsPresent: false,
   tags: '',
   lists: '',
   imageUrl: '',
@@ -231,7 +242,11 @@ export function buildDraft(
   const sourceUrl = safeUrl(form.sourceUrl);
   // Only score when a nutrition block will actually be emitted.
   const scores: ScoreResult = macro.contributingCount
-    ? computeRecipeScores(rows, form.servings)
+    ? computeRecipeScores(rows, form.servings, {
+        nutriCategory: form.nutriCategory,
+        // Only beverages use the NNS penalty; ignore a stale flag if the category changed.
+        nnsPresent: form.nutriCategory === 'beverage' && form.nnsPresent,
+      })
     : {};
   return {
     title: form.title.trim(),

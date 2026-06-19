@@ -48,3 +48,39 @@ describe('computeScores (orchestration)', () => {
     expect(r.inflammation?.score).toBe(-1); // only the lentils counted
   });
 });
+
+// Per-100g/mL vectors for non-general categories.
+const COLA = { energyKcal: 43, protein_g: 0, fat_g: 0, satFat_g: 0, carbs_g: 10.6, fiber_g: 0, sugar_g: 10.6, sodium_mg: 4 };
+const DIET_DRINK = { energyKcal: 0.4, protein_g: 0, fat_g: 0, satFat_g: 0, carbs_g: 0, fiber_g: 0, sugar_g: 0, sodium_mg: 5 };
+const OLIVE_OIL = { energyKcal: 884, protein_g: 0, fat_g: 100, satFat_g: 13.8, carbs_g: 0, fiber_g: 0, sugar_g: 0, sodium_mg: 0 };
+
+describe('computeScores — Nutri-Score category dispatch', () => {
+  it('defaults to the general sub-algorithm', () => {
+    const r = computeScores([{ grams: 100, nutrients: COLA, gi: null, inflammationTag: 0 }], 1);
+    expect(r.nutriScore?.category).toBe('general');
+  });
+
+  it('scores a sugary drink far more strictly as a beverage than as a general food', () => {
+    const ing: ScoredIngredient[] = [{ grams: 100, nutrients: COLA, gi: null, inflammationTag: 0 }];
+    expect(computeScores(ing, 1).nutriScore?.grade).toBe('C'); // general default
+    const bev = computeScores(ing, 1, { nutriCategory: 'beverage' });
+    expect(bev.nutriScore?.category).toBe('beverage');
+    expect(bev.nutriScore?.grade).toBe('E'); // stricter beverage energy/sugar scales
+    expect(bev.nutriScore?.points).toBe(12);
+  });
+
+  it('applies the non-nutritive-sweetener penalty to beverages', () => {
+    const diet: ScoredIngredient[] = [{ grams: 100, nutrients: DIET_DRINK, gi: null, inflammationTag: 0 }];
+    expect(computeScores(diet, 1, { nutriCategory: 'beverage' }).nutriScore?.grade).toBe('B');
+    expect(computeScores(diet, 1, { nutriCategory: 'beverage', nnsPresent: true }).nutriScore?.grade).toBe('C');
+  });
+
+  it('uses the SFA/total-fat ratio for fats (olive oil B, not the general-food D)', () => {
+    const oil: ScoredIngredient[] = [{ grams: 100, nutrients: OLIVE_OIL, gi: null, inflammationTag: -1, fvl: true }];
+    expect(computeScores(oil, 1).nutriScore?.grade).toBe('D'); // general: penalised on energy + absolute satfat
+    const fat = computeScores(oil, 1, { nutriCategory: 'fat-oil-nut-seed' });
+    expect(fat.nutriScore?.category).toBe('fat-oil-nut-seed');
+    expect(fat.nutriScore?.points).toBe(0);
+    expect(fat.nutriScore?.grade).toBe('B'); // ratio-based scoring + olive-oil FVL credit
+  });
+});
