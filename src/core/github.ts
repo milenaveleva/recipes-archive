@@ -2,10 +2,10 @@
  * Minimal GitHub Contents API client for committing recipe markdown (and
  * images) to the repo straight from the browser during in-app authoring.
  *
- * Single-user by design: the caller supplies a fine-grained personal access
- * token (contents:write on this one repo), stored client-side. Isomorphic —
- * uses `fetch` + `btoa` + `TextEncoder`, available in the browser, Cloudflare
- * Workers, and Node 18+ — so it is unit-testable with a mocked fetch.
+ * Single-user by design: the caller supplies a GitHub access token (from
+ * sign-in, contents:write on this one repo), held only in the browser session.
+ * Isomorphic — uses `fetch` + `btoa` + `TextEncoder`, available in the browser,
+ * Cloudflare Workers, and Node 18+ — so it is unit-testable with a mocked fetch.
  */
 
 export interface GitHubRepo {

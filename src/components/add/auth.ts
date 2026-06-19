@@ -16,7 +16,7 @@
 
 export interface AuthSession {
   accessToken: string;
-  /** Present when the GitHub App expires user tokens; null for non-expiring/PAT. */
+  /** Present when the GitHub App expires user tokens; null when the token never expires. */
   refreshToken: string | null;
   /** Epoch ms when the access token expires, or null when it never does. */
   expiresAt: number | null;
@@ -28,7 +28,7 @@ export type AuthMessage = { ok: true; session: AuthSession } | { ok: false; erro
 
 /** Must match the Worker's MESSAGE_SOURCE (worker/src/oauth.ts). */
 const MESSAGE_SOURCE = 'recipes-archive-auth';
-/** sessionStorage keys; gh_token is shared with the manual-PAT fallback (both fill the access slot). */
+/** sessionStorage keys; gh_token holds the GitHub access token from sign-in. */
 const KEYS = { access: 'gh_token', refresh: 'gh_refresh', expires: 'gh_expires', login: 'gh_login' };
 const EXPIRY_SKEW_MS = 60_000;
 

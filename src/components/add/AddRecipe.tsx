@@ -1,7 +1,7 @@
 /**
  * In-browser recipe authoring wizard (a client-only React island).
  *
- * Flow: authenticate with a fine-grained GitHub PAT → import a URL (via the
+ * Flow: sign in with GitHub → import a URL (via the
  * CORS-proxy Worker) or write by hand → review each ingredient's USDA match and
  * metric weight → see live per-serving macros → preview the generated markdown
  * → commit it to the repo, which auto-redeploys. The compute logic lives in
@@ -35,7 +35,6 @@ export default function AddRecipe() {
   // Non-secret repo coordinates persist to localStorage; the GitHub session
   // itself (tokens) lives in sessionStorage via auth.ts.
   const [session, setSession] = useState<AuthSession | null>(null);
-  const [patToken, setPatToken] = useState(''); // manual-token fallback input
   const [owner, setOwner] = useState('milenaveleva');
   const [repo, setRepo] = useState('recipes-archive');
   const [branch, setBranch] = useState('main');
@@ -105,7 +104,7 @@ export default function AddRecipe() {
         setAuthMsg(
           candidate.login
             ? `@${candidate.login} can’t push to ${owner}/${repo} — install the GitHub App there and confirm you have write access.`
-            : 'That token cannot push to this repo. Use a token with Contents: write.',
+            : `You don’t have push access to ${owner}/${repo} — confirm you’re a collaborator with write access.`,
         );
         return;
       }
@@ -144,12 +143,6 @@ export default function AddRecipe() {
     }
   }
 
-  function handleVerifyPat() {
-    const t = patToken.trim();
-    if (!t) return;
-    void proceed({ accessToken: t, refreshToken: null, expiresAt: null, login: '' });
-  }
-
   async function handleContinue() {
     if (!session) return;
     setAuthState('checking');
@@ -165,7 +158,6 @@ export default function AddRecipe() {
   function handleSignOut() {
     clearSession();
     setSession(null);
-    setPatToken('');
     setAuthState('idle');
     setAuthMsg('');
     setStep('auth');
@@ -297,58 +289,21 @@ export default function AddRecipe() {
                 <button
                   onClick={handleSignIn}
                   disabled={authState === 'checking' || !PROXY}
-                  className={primaryBtn}
+                  className={`${primaryBtn} inline-flex items-center gap-2`}
                 >
+                  <GitHubMark />
                   {authState === 'checking' ? 'Signing in…' : 'Sign in with GitHub'}
                 </button>
-                {!PROXY && (
+                {PROXY ? (
+                  <p className="mt-3 text-xs text-ink-faint">
+                    A popup opens GitHub so you can authorise the app — no tokens to paste.
+                  </p>
+                ) : (
                   <p className="mt-2 text-xs text-band-bad">
                     Sign-in needs the import Worker configured (<code>PUBLIC_IMPORT_PROXY</code>).
                   </p>
                 )}
               </div>
-              <details>
-                <summary className="cursor-pointer font-ui text-xs uppercase tracking-wide text-ink-faint">
-                  Use a token instead
-                </summary>
-                <div className="mt-3 grid gap-3">
-                  <p className="text-xs text-ink-soft">
-                    Paste a{' '}
-                    <a
-                      className="text-spice underline"
-                      href="https://github.com/settings/tokens?type=beta"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      fine-grained personal access token
-                    </a>{' '}
-                    with <strong>Contents: write</strong> on this repository.
-                  </p>
-                  <Field label="Access token">
-                    <input
-                      type="password"
-                      value={patToken}
-                      onChange={(e) => setPatToken(e.target.value)}
-                      placeholder="github_pat_…"
-                      className={inputCls}
-                      autoComplete="off"
-                    />
-                  </Field>
-                  <div>
-                    <button
-                      onClick={handleVerifyPat}
-                      disabled={!patToken || authState === 'checking'}
-                      className={ghostBtn}
-                    >
-                      Verify token &amp; continue
-                    </button>
-                  </div>
-                  <p className="text-xs text-ink-faint">
-                    The token is kept only for this browser session (cleared when you close the tab) — a real secret on
-                    this device.
-                  </p>
-                </div>
-              </details>
             </div>
           )}
         </Card>
@@ -704,6 +659,15 @@ function ConfidenceBadge({ confidence }: { confidence: 'high' | 'medium' | 'low'
 
 function Card({ children }: { children: React.ReactNode }) {
   return <div className="rounded-2xl border border-line bg-card p-5 sm:p-6">{children}</div>;
+}
+
+/** The GitHub mark, for the sign-in button. Decorative — the button text labels it. */
+function GitHubMark() {
+  return (
+    <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+    </svg>
+  );
 }
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
