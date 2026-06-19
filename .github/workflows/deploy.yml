@@ -28,6 +28,11 @@ jobs:
       # `site` and `base` come from astro.config.mjs.
       - name: Build with Astro
         uses: withastro/action@v6
+        env:
+          # CORS-proxy / GitHub sign-in Worker URL, inlined into client JS at
+          # build. It is public, so it lives in a repo variable, not a secret.
+          # Unset → URL import and sign-in stay disabled (the intended fallback).
+          PUBLIC_IMPORT_PROXY: ${{ vars.PUBLIC_IMPORT_PROXY }}
 
   deploy:
     needs: build
