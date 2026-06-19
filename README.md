@@ -31,7 +31,7 @@ Each recipe is one markdown file: rich YAML frontmatter (structured, metric ingr
 ## Roadmap
 
 - **Phase 0 (done)** — static recipe book: schema, index/detail/taxonomy pages, score medallions, GitHub Pages deploy.
-- **Phase 1** — in-browser authoring at [`/add`](https://milenaveleva.github.io/recipes-archive/add): paste a URL (fetched via a Cloudflare Worker CORS proxy) or fill a form → review each ingredient's USDA match → auto-convert to metric → compute macros → commit markdown via the GitHub API. URL import is enabled by setting `PUBLIC_IMPORT_PROXY` (the deployed Worker URL, see [`worker/`](worker/)) as a build environment variable; without it the manual form still works.
+- **Phase 1** — in-browser authoring at [`/add`](https://milenaveleva.github.io/recipes-archive/add): sign in with GitHub, paste a URL (fetched via a Cloudflare Worker CORS proxy) or fill a form → review each ingredient's USDA match → auto-convert to metric → compute macros → commit the markdown to the repo. The Worker (see [`worker/`](worker/)) also runs the GitHub sign-in token exchange; set its URL as `PUBLIC_IMPORT_PROXY` at build time. Anyone can sign in, but only repository collaborators can publish; a manual fine-grained-token path is kept as a fallback.
 - **Phase 2 (done)** — every recipe is scored in-app: a carb-weighted composite **glycemic index/load** (GI values transcribed from Atkinson 2021), the general-foods **Nutri-Score 2023** grade, and an independent ingredient-tagged **inflammation index**. Scores are precomputed at author time into the markdown and shown as medallions, with estimate disclaimers throughout.
 - **Phase 3** — search (Pagefind) + faceted filtering.
 - **Later** — shopping lists + kifli.hu purchasing.

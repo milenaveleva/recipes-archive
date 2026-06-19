@@ -10,7 +10,7 @@
 import { useMemo, useState, useEffect } from 'react';
 import { extractRecipe } from '../../core/extract';
 import { toRecipeMarkdown, recipeFilename, type RecipeDraft } from '../../core/markdown';
-import { verifyAccess, commitTextFile, type GitHubRepo } from '../../core/github';
+import { verifyAccess, commitTextFile, GitHubError, type GitHubRepo } from '../../core/github';
 import {
   EMPTY_FORM,
   linesToRows,
@@ -22,9 +22,10 @@ import {
   type FormState,
   type IngredientRow,
 } from './addLib';
+import { type AuthSession, signIn, refreshSession, freshSession, loadSession, saveSession, clearSession } from './auth';
 
 const PROXY = (import.meta.env.PUBLIC_IMPORT_PROXY as string | undefined)?.trim();
-const LS = { token: 'gh_token', owner: 'gh_owner', repo: 'gh_repo', branch: 'gh_branch' };
+const LS = { owner: 'gh_owner', repo: 'gh_repo', branch: 'gh_branch' };
 
 type Step = 'auth' | 'compose' | 'publish';
 
@@ -32,7 +33,8 @@ export default function AddRecipe() {
   const [step, setStep] = useState<Step>('auth');
 
   // Auth / repo settings (persisted to localStorage).
-  const [token, setToken] = useState('');
+  const [session, setSession] = useState<AuthSession | null>(null);
+  const [patToken, setPatToken] = useState(''); // manual-token fallback input
   const [owner, setOwner] = useState('milenaveleva');
   const [repo, setRepo] = useState('recipes-archive');
   const [branch, setBranch] = useState('main');
@@ -41,13 +43,14 @@ export default function AddRecipe() {
 
   useEffect(() => {
     try {
-      setToken(localStorage.getItem(LS.token) ?? '');
       setOwner(localStorage.getItem(LS.owner) ?? 'milenaveleva');
       setRepo(localStorage.getItem(LS.repo) ?? 'recipes-archive');
       setBranch(localStorage.getItem(LS.branch) ?? 'main');
     } catch {
       // localStorage may be unavailable (private mode); fields stay at defaults.
     }
+    const restored = loadSession();
+    if (restored) setSession(restored);
   }, []);
 
   // Recipe content.
@@ -76,20 +79,39 @@ export default function AddRecipe() {
     setRows((rs) => rs.map((r) => (r.id === id ? { ...r, ...patch } : r)));
   }
 
-  async function handleVerify() {
+  const persist = (s: AuthSession) => {
+    setSession(s);
+    saveSession(s);
+  };
+
+  // Editing the commit target invalidates the prior push-access check, so drop
+  // back to unverified — Continue then re-runs verifyAccess against the new repo.
+  function retargetRepo(setter: (v: string) => void, value: string) {
+    setter(value);
+    setAuthState((s) => (s === 'ok' ? 'idle' : s));
+    setAuthMsg('');
+  }
+
+  // Confirm the signed-in token can push to this repo (the publish gate — anyone
+  // may sign in, only a collaborator passes here), persist it, and move on.
+  async function proceed(candidate: AuthSession) {
     setAuthState('checking');
     setAuthMsg('');
     try {
-      const { canPush, defaultBranch } = await verifyAccess(token, ghRepo);
+      const { canPush, defaultBranch } = await verifyAccess(candidate.accessToken, ghRepo);
       if (!canPush) {
         setAuthState('error');
-        setAuthMsg('That token cannot push to this repo. Use a fine-grained PAT with Contents: write.');
+        setAuthMsg(
+          candidate.login
+            ? `@${candidate.login} can’t push to ${owner}/${repo} — install the GitHub App there and confirm you have write access.`
+            : 'That token cannot push to this repo. Use a token with Contents: write.',
+        );
         return;
       }
       const resolvedBranch = branch || defaultBranch;
       setBranch(resolvedBranch);
+      persist(candidate);
       try {
-        localStorage.setItem(LS.token, token);
         localStorage.setItem(LS.owner, owner);
         localStorage.setItem(LS.repo, repo);
         localStorage.setItem(LS.branch, resolvedBranch);
@@ -102,6 +124,58 @@ export default function AddRecipe() {
       setAuthState('error');
       setAuthMsg(err instanceof Error ? err.message : String(err));
     }
+  }
+
+  async function handleSignIn() {
+    if (!PROXY) {
+      setAuthState('error');
+      setAuthMsg('Sign-in needs the import Worker configured (PUBLIC_IMPORT_PROXY).');
+      return;
+    }
+    setAuthState('checking');
+    setAuthMsg('');
+    try {
+      const signedIn = await signIn(PROXY);
+      await proceed(signedIn);
+    } catch (err) {
+      setAuthState('error');
+      setAuthMsg(err instanceof Error ? err.message : String(err));
+    }
+  }
+
+  function handleVerifyPat() {
+    const t = patToken.trim();
+    if (!t) return;
+    void proceed({ accessToken: t, refreshToken: null, expiresAt: null, login: '' });
+  }
+
+  async function handleContinue() {
+    if (!session) return;
+    setAuthState('checking');
+    setAuthMsg('');
+    try {
+      await proceed(await ensureFresh(session));
+    } catch (err) {
+      setAuthState('error');
+      setAuthMsg(err instanceof Error ? err.message : String(err));
+    }
+  }
+
+  function handleSignOut() {
+    clearSession();
+    setSession(null);
+    setPatToken('');
+    setAuthState('idle');
+    setAuthMsg('');
+    setStep('auth');
+  }
+
+  // Return a session with a currently-valid access token, refreshing (and
+  // persisting) when the stored one has expired.
+  async function ensureFresh(current: AuthSession): Promise<AuthSession> {
+    const fresh = await freshSession(PROXY, current, Date.now());
+    if (fresh !== current) persist(fresh);
+    return fresh;
   }
 
   function parseIngredients() {
@@ -131,16 +205,31 @@ export default function AddRecipe() {
   }
 
   async function handlePublish() {
+    if (!session) return;
     setPublishState('saving');
     setPublishMsg('');
     try {
       // Stamp createdAt at publish time (not island mount).
       const publishDraft = buildDraft(form, rows, macro, new Date().toISOString().slice(0, 10));
-      const result = await commitTextFile(token, ghRepo, {
+      const file = {
         path: recipeFilename(publishDraft),
         content: toRecipeMarkdown(publishDraft),
         message: `Add recipe: ${publishDraft.title}`,
-      });
+      };
+      const active = await ensureFresh(session);
+      let result;
+      try {
+        result = await commitTextFile(active.accessToken, ghRepo, file);
+      } catch (err) {
+        // One reactive retry if the token was revoked/expired between checks.
+        if (active.refreshToken && PROXY && err instanceof GitHubError && err.status === 401) {
+          const refreshed = await refreshSession(PROXY, active.refreshToken);
+          persist(refreshed);
+          result = await commitTextFile(refreshed.accessToken, ghRepo, file);
+        } else {
+          throw err;
+        }
+      }
       setPublishState('done');
       setPublishUrl(result.htmlUrl ?? '');
       setPublishMsg(result.updated ? 'Note: this overwrote an existing recipe at the same slug.' : '');
@@ -153,6 +242,20 @@ export default function AddRecipe() {
   const hasIngredient = rows.some((r) => !r.parsed.isGroupHeader);
   const canPublish = draft.title.trim().length > 0 && hasIngredient && publishState !== 'saving';
 
+  const repoFields = (
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <Field label="Owner">
+        <input value={owner} onChange={(e) => retargetRepo(setOwner, e.target.value)} className={inputCls} />
+      </Field>
+      <Field label="Repo">
+        <input value={repo} onChange={(e) => retargetRepo(setRepo, e.target.value)} className={inputCls} />
+      </Field>
+      <Field label="Branch">
+        <input value={branch} onChange={(e) => retargetRepo(setBranch, e.target.value)} className={inputCls} />
+      </Field>
+    </div>
+  );
+
   return (
     <div className="font-body text-ink">
       <StepNav step={step} setStep={setStep} authed={authState === 'ok'} />
@@ -161,53 +264,90 @@ export default function AddRecipe() {
         <Card>
           <h2 className="font-display text-2xl text-ink">Connect to GitHub</h2>
           <p className="mt-2 text-sm text-ink-soft">
-            Saving commits the recipe markdown to your repo. Paste a{' '}
-            <a
-              className="text-spice underline"
-              href="https://github.com/settings/tokens?type=beta"
-              target="_blank"
-              rel="noreferrer"
-            >
-              fine-grained personal access token
-            </a>{' '}
-            with <strong>Contents: write</strong> on this repository.
+            Saving commits the recipe markdown to your repo. Sign in with GitHub — anyone can sign in, but only
+            collaborators on <code>{owner}/{repo}</code> can publish.
           </p>
-          <div className="mt-5 grid gap-4">
-            <Field label="Access token">
-              <input
-                type="password"
-                value={token}
-                onChange={(e) => setToken(e.target.value)}
-                placeholder="github_pat_…"
-                className={inputCls}
-                autoComplete="off"
-              />
-            </Field>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <Field label="Owner">
-                <input value={owner} onChange={(e) => setOwner(e.target.value)} className={inputCls} />
-              </Field>
-              <Field label="Repo">
-                <input value={repo} onChange={(e) => setRepo(e.target.value)} className={inputCls} />
-              </Field>
-              <Field label="Branch">
-                <input value={branch} onChange={(e) => setBranch(e.target.value)} className={inputCls} />
-              </Field>
+
+          {session ? (
+            <div className="mt-5 grid gap-4">
+              <div className="rounded-lg border border-line bg-paper/60 px-4 py-3 text-sm text-ink">
+                Signed in{session.login ? <> as <strong>@{session.login}</strong></> : ''}.
+              </div>
+              {repoFields}
+              {authState === 'error' && <Alert tone="bad">{authMsg}</Alert>}
+              <p className="text-xs text-ink-faint">
+                Your GitHub session is stored only in this browser&rsquo;s localStorage — a real secret on this device.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <button onClick={handleContinue} disabled={authState === 'checking'} className={primaryBtn}>
+                  {authState === 'checking' ? 'Checking…' : 'Continue →'}
+                </button>
+                <button onClick={handleSignOut} className={ghostBtn}>
+                  Sign out
+                </button>
+              </div>
             </div>
-          </div>
-          <p className="mt-3 text-xs text-ink-faint">
-            The token is stored only in this browser&rsquo;s localStorage — it is a real secret on this device.
-          </p>
-          {authState === 'error' && <Alert tone="bad">{authMsg}</Alert>}
-          <div className="mt-5">
-            <button
-              onClick={handleVerify}
-              disabled={!token || authState === 'checking'}
-              className={primaryBtn}
-            >
-              {authState === 'checking' ? 'Verifying…' : 'Verify & continue'}
-            </button>
-          </div>
+          ) : (
+            <div className="mt-5 grid gap-4">
+              {repoFields}
+              {authState === 'error' && <Alert tone="bad">{authMsg}</Alert>}
+              <div>
+                <button
+                  onClick={handleSignIn}
+                  disabled={authState === 'checking' || !PROXY}
+                  className={primaryBtn}
+                >
+                  {authState === 'checking' ? 'Signing in…' : 'Sign in with GitHub'}
+                </button>
+                {!PROXY && (
+                  <p className="mt-2 text-xs text-band-bad">
+                    Sign-in needs the import Worker configured (<code>PUBLIC_IMPORT_PROXY</code>).
+                  </p>
+                )}
+              </div>
+              <details>
+                <summary className="cursor-pointer font-ui text-xs uppercase tracking-wide text-ink-faint">
+                  Use a token instead
+                </summary>
+                <div className="mt-3 grid gap-3">
+                  <p className="text-xs text-ink-soft">
+                    Paste a{' '}
+                    <a
+                      className="text-spice underline"
+                      href="https://github.com/settings/tokens?type=beta"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      fine-grained personal access token
+                    </a>{' '}
+                    with <strong>Contents: write</strong> on this repository.
+                  </p>
+                  <Field label="Access token">
+                    <input
+                      type="password"
+                      value={patToken}
+                      onChange={(e) => setPatToken(e.target.value)}
+                      placeholder="github_pat_…"
+                      className={inputCls}
+                      autoComplete="off"
+                    />
+                  </Field>
+                  <div>
+                    <button
+                      onClick={handleVerifyPat}
+                      disabled={!patToken || authState === 'checking'}
+                      className={ghostBtn}
+                    >
+                      Verify token &amp; continue
+                    </button>
+                  </div>
+                  <p className="text-xs text-ink-faint">
+                    The token is stored only in this browser&rsquo;s localStorage — a real secret on this device.
+                  </p>
+                </div>
+              </details>
+            </div>
+          )}
         </Card>
       )}
 

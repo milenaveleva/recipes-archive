@@ -28,6 +28,17 @@ export interface CommitResult {
 
 const API = 'https://api.github.com';
 
+/** A failed GitHub API call, carrying the HTTP status so callers branch on data, not message text. */
+export class GitHubError extends Error {
+  constructor(
+    message: string,
+    readonly status: number,
+  ) {
+    super(message);
+    this.name = 'GitHubError';
+  }
+}
+
 function headers(token: string): Record<string, string> {
   return {
     Authorization: `Bearer ${token}`,
@@ -66,7 +77,7 @@ async function fail(res: Response, action: string): Promise<never> {
   } catch {
     // No JSON body; the status code is enough.
   }
-  throw new Error(`GitHub ${action} failed (${res.status})${detail}`);
+  throw new GitHubError(`GitHub ${action} failed (${res.status})${detail}`, res.status);
 }
 
 /**

@@ -4,7 +4,20 @@ name = "recipes-archive-proxy"
 main = "src/index.ts"
 compatibility_date = "2024-11-01"
 
-# Origins permitted to call the proxy. Update if the site moves or you add a
-# custom domain; the running default (in src/index.ts) is used if this is unset.
+# Origins permitted to call the proxy / sign-in routes. Update if the site
+# moves or you add a custom domain; the running default (in src/index.ts) is
+# used if this is unset.
 [vars]
 ALLOWED_ORIGINS = "https://milenaveleva.github.io,http://localhost:4321"
+
+# Origins allowed to RECEIVE a sign-in token default to the https subset of
+# ALLOWED_ORIGINS, so a token is never delivered to http://localhost. Set this
+# only on a local dev worker to test sign-in from localhost:
+#   ALLOWED_AUTH_ORIGINS = "http://localhost:4321"
+
+# GitHub sign-in (/auth, /callback, /refresh) needs the GitHub App's OAuth
+# credentials. These are SECRETS — set them out of band, never in this file:
+#   wrangler secret put GITHUB_CLIENT_ID
+#   wrangler secret put GITHUB_CLIENT_SECRET
+# The App's callback URL must be https://<this-worker>/callback. Without these,
+# the proxy still works and sign-in reports "not configured".
