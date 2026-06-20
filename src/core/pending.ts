@@ -19,19 +19,9 @@
  * scripts); every localStorage touch is guarded, so private-mode / SSR is a no-op.
  */
 
-export type PendingKind = 'create' | 'edit' | 'delete';
+import type { RecipeDraft } from './markdown';
 
-/** Enough of a recipe to render or badge a card before the rebuild lands. */
-export interface PendingCard {
-  title: string;
-  servings: number;
-  /** ISO-8601 durations, formatted client-side for the card. */
-  totalTime?: string;
-  cookTime?: string;
-  category?: string;
-  tags: string[];
-  imageUrl?: string;
-}
+export type PendingKind = 'create' | 'edit' | 'delete';
 
 export interface PendingMutation {
   /** Route slug — the key a card/page is matched by. */
@@ -39,8 +29,13 @@ export interface PendingMutation {
   kind: PendingKind;
   /** Browser clock (epoch ms) at the moment the commit succeeded. */
   committedAt: number;
-  /** Card fields for a create/edit; absent for a delete. */
-  card?: PendingCard;
+  /**
+   * The full committed recipe (a create/edit; absent for a delete). It drives
+   * both the index card and the instant, full-fidelity detail preview, so every
+   * field reflects the edit before the rebuild lands. `import type` keeps this a
+   * pure type — no runtime dependency on markdown.ts in the consuming bundles.
+   */
+  recipe?: RecipeDraft;
 }
 
 /**
@@ -48,7 +43,7 @@ export interface PendingMutation {
  * script reads the same key (it can't import this module), passed through from
  * the `PENDING_KEY` export, so keep the two in sync via that import.
  */
-export const PENDING_KEY = 'recipes-archive:pending-v1';
+export const PENDING_KEY = 'recipes-archive:pending-v2';
 
 /** Drop a mutation once it is older than this even if no rebuild landed, so a
  *  failed build can't strand the overlay forever. */

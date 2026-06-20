@@ -29,7 +29,7 @@ const create = (slug: string, committedAt: number): PendingMutation => ({
   slug,
   kind: 'create',
   committedAt,
-  card: { title: slug, servings: 2, tags: [] },
+  recipe: { title: slug, servings: 1, ingredients: [], instructions: [] },
 });
 const del = (slug: string, committedAt: number): PendingMutation => ({
   slug,

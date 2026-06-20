@@ -86,7 +86,7 @@ export function inflammationLabel(band?: string | null): string {
   if (!band) return '—';
   return band
     .split('-')
-    .map((w) => w[0].toUpperCase() + w.slice(1))
+    .map((w) => (w ? w[0].toUpperCase() + w.slice(1) : w))
     .join('-')
     .replace('Inflammatory', 'Inflam.');
 }

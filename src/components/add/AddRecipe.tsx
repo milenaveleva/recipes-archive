@@ -129,13 +129,15 @@ export default function AddRecipe() {
   const [publishState, setPublishState] = useState<'idle' | 'saving' | 'done' | 'error'>('idle');
   const [publishMsg, setPublishMsg] = useState('');
 
-  // On a successful publish, let the confirmation land, then return to the
-  // recipe index (the rebuild surfaces the new recipe within ~a minute).
+  // On a successful publish, let the confirmation land, then navigate away. An
+  // edit returns to its own recipe page (where the full preview shows the change);
+  // a brand-new recipe has no page yet, so go to the index (its card is injected).
   useEffect(() => {
     if (publishState !== 'done') return;
-    const t = setTimeout(() => window.location.assign(withBase('/')), 2200);
+    const target = editSlug ? withBase(`/recipes/${editSlug}`) : withBase('/');
+    const t = setTimeout(() => window.location.assign(target), 2200);
     return () => clearTimeout(t);
-  }, [publishState]);
+  }, [publishState, editSlug]);
 
   const macro = useMemo(() => computeNutrition(rows, form.servings), [rows, form.servings]);
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
@@ -257,19 +259,13 @@ export default function AddRecipe() {
       // rebuild lands — the static site otherwise won't show it for ~a minute.
       const committedSlug =
         isEdit && editSlug ? editSlug : file.path.replace(/^.*\//, '').replace(/\.md$/, '');
+      // Store the whole committed draft so the index card and the detail page can
+      // render every edited field instantly until the rebuild lands.
       recordPending({
         slug: committedSlug,
         kind: isEdit ? 'edit' : 'create',
         committedAt: Date.now(),
-        card: {
-          title: publishDraft.title,
-          servings: publishDraft.servings,
-          totalTime: publishDraft.totalTime,
-          cookTime: publishDraft.cookTime,
-          category: publishDraft.category,
-          tags: publishDraft.tags ?? [],
-          imageUrl: publishDraft.imageUrl,
-        },
+        recipe: publishDraft,
       });
       // An edit is expected to overwrite; only warn when a NEW recipe collides.
       setPublishMsg(result.updated && !isEdit ? 'Updated an existing recipe at the same slug.' : '');

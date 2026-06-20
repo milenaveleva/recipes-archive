@@ -7,7 +7,7 @@ import IngredientList from '../../components/IngredientList.astro';
 import NutritionPanel from '../../components/NutritionPanel.astro';
 import JsonLd from '../../components/JsonLd.astro';
 import RecipeActions from '../../components/RecipeActions.astro';
-import PendingRecipeBanner from '../../components/PendingRecipeBanner.astro';
+import PendingDetailView from '../../components/add/PendingDetailView.tsx';
 import {
   recipeSlug,
   formatDuration,
@@ -15,6 +15,7 @@ import {
   slugifyTerm,
 } from '../../lib/recipe';
 import { withBase } from '../../lib/url';
+import { PENDING_KEY, PENDING_MAX_AGE_MS } from '../../core/pending';
 
 export async function getStaticPaths() {
   const recipes = (await getCollection('recipes')).filter(
@@ -50,8 +51,48 @@ const hasScores = !!data.nutrition?.glycemic || !!data.nutrition?.nutriScore || 
 <BaseLayout title={data.title} description={data.description} ogImage={ogImage} hideAddFab>
   <JsonLd slot="head" recipe={recipe} steps={steps} />
   <RecipeActions id={recipe.id} slug={slug} title={data.title} />
-  <PendingRecipeBanner slug={slug} />
 
+  {/* No-flash: if this page predates a still-pending edit of this recipe, hide
+      the stale static content before paint; the island below renders the preview. */}
+  <script is:inline define:vars={{ pendingKey: PENDING_KEY, maxAge: PENDING_MAX_AGE_MS, slug }}>
+    try {
+      const raw = localStorage.getItem(pendingKey);
+      const list = raw ? JSON.parse(raw) : [];
+      if (Array.isArray(list)) {
+        const now = Date.now();
+        const buildTime = Number(document.querySelector('meta[name="x-build-time"]')?.content) || 0;
+        const m = list.find(
+          (x) =>
+            x &&
+            x.slug === slug &&
+            (x.kind === 'edit' || x.kind === 'create') &&
+            typeof x.committedAt === 'number',
+        );
+        if (m && now - m.committedAt <= maxAge && buildTime < m.committedAt) {
+          const style = document.createElement('style');
+          style.id = 'pending-static-hide';
+          style.textContent = '#recipe-static{display:none}';
+          document.head.appendChild(style);
+          // Safety net: the static recipe is the source of truth and must never
+          // stay gated behind JS. If the preview island never confirms it took
+          // over (bundle blocked / offline / render error), reveal the static
+          // content so the page can't be left blank.
+          setTimeout(function () {
+            if (!window.__pendingPreviewReady) {
+              const s = document.getElementById('pending-static-hide');
+              if (s) s.remove();
+            }
+          }, 3000);
+        }
+      }
+    } catch (e) {
+      /* localStorage unavailable / corrupt — show the static content. */
+    }
+  </script>
+
+  <PendingDetailView slug={slug} client:only="react" />
+
+  <div id="recipe-static">
   <article class="mx-auto max-w-5xl px-5 sm:px-8 pt-8 pb-4">
     <a
       href={withBase('/')}
@@ -187,5 +228,6 @@ const hasScores = !!data.nutrition?.glycemic || !!data.nutrition?.nutriScore || 
         }
       </section>
     </div>
+  </div>
   </div>
 </BaseLayout>
