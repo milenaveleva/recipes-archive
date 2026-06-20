@@ -8,77 +8,16 @@
  */
 import { Fragment, useEffect } from 'react';
 import type { RecipeDraft, DraftIngredient } from '../../core/markdown';
-import {
-  formatDuration,
-  formatGrams,
-  round,
-  slugifyTerm,
-  giTone,
-  glTone,
-  nutriTone,
-  inflammationTone,
-  inflammationLabel,
-  type Tone,
-} from '../../lib/recipe';
+import { formatDuration, formatGrams, round, slugifyTerm, buildScoreDials, hasAnyScore } from '../../lib/recipe';
 import { withBase } from '../../lib/url';
-
-const toneRing: Record<Tone, string> = {
-  good: 'border-band-good text-band-good',
-  mid: 'border-band-mid text-band-mid',
-  bad: 'border-band-bad text-band-bad',
-  unknown: 'border-line-strong text-ink-faint',
-};
+import ScoreDial from './ScoreDial';
 
 function Medallions({ nutrition }: { nutrition: RecipeDraft['nutrition'] }) {
-  const gly = nutrition?.glycemic;
-  const nutri = nutrition?.nutriScore;
-  const inflam = nutrition?.inflammation;
-  if (!gly && !nutri && !inflam) return null;
-  const items = [
-    {
-      label: 'Glycemic Index',
-      value: gly?.gi != null ? String(Math.round(gly.gi)) : '—',
-      sub: gly?.giBand ?? undefined,
-      tone: giTone(gly?.gi),
-    },
-    {
-      label: 'Glycemic Load',
-      value: gly?.gl != null ? String(Math.round(gly.gl)) : '—',
-      sub: 'per serving',
-      tone: glTone(gly?.gl),
-    },
-    {
-      label: 'Nutrition Score',
-      value: nutri?.grade ?? '—',
-      sub: nutri ? 'Nutri-Score' : undefined,
-      tone: nutriTone(nutri?.grade),
-    },
-    {
-      label: 'Inflammation',
-      value: inflam ? (inflam.score > 0 ? `+${inflam.score}` : String(inflam.score)) : '—',
-      sub: inflam ? inflammationLabel(inflam.band) : undefined,
-      tone: inflammationTone(inflam?.band),
-    },
-  ];
+  if (!hasAnyScore(nutrition)) return null;
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-      {items.map((m) => (
-        <div
-          key={m.label}
-          className="flex flex-col items-center text-center gap-2 rounded-xl bg-card border border-line px-3 py-4"
-        >
-          <div
-            className={`flex items-center justify-center rounded-full border-2 bg-paper h-16 w-16 font-display font-semibold ${
-              m.value.length > 3 ? 'text-xl' : 'text-2xl'
-            } ${toneRing[m.tone]}`}
-          >
-            {m.value}
-          </div>
-          <div className="eyebrow !text-[0.62rem] !tracking-[0.14em] leading-tight text-ink-soft">
-            {m.label}
-          </div>
-          {m.sub && <div className="font-ui text-[0.68rem] capitalize text-ink-faint -mt-1">{m.sub}</div>}
-        </div>
+      {buildScoreDials(nutrition).map((d) => (
+        <ScoreDial key={d.key} dial={d} />
       ))}
     </div>
   );

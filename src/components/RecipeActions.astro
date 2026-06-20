@@ -77,6 +77,33 @@ const path = `src/content/recipes/${id}.md`;
   </div>
 </dialog>
 
+{/* Success feedback shown briefly after a delete commits, mirroring the
+    publish/save confirmation, before the redirect to the index. */}
+<div
+  id="recipe-delete-success"
+  role="alert"
+  class="publish-overlay fixed inset-0 z-[60] hidden items-center justify-center bg-ink/40 p-4 backdrop-blur-sm"
+>
+  <div class="publish-badge flex w-full max-w-sm flex-col items-center gap-4 rounded-2xl border border-line bg-card px-8 py-9 text-center shadow-2xl">
+    <svg viewBox="0 0 52 52" width="72" height="72" class="text-band-good" role="img" aria-label="Deleted">
+      <circle class="publish-check-circle" cx="26" cy="26" r="24" fill="none" stroke="currentColor" stroke-width="2.5" />
+      <path
+        class="publish-check-mark"
+        d="M15 27 l7.5 7.5 L37.5 18"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="3.2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+    <div>
+      <p class="font-display text-2xl text-ink">Deleted</p>
+      <p class="mt-1 font-ui text-sm text-ink-soft">Taking you back to your recipes…</p>
+    </div>
+  </div>
+</div>
+
 <script>
   import { loadSession, freshSession, refreshSession, saveSession, onAuthChange } from './add/auth';
   import { deleteFile, GitHubError, RECIPE_REPO } from '../core/github';
@@ -154,7 +181,14 @@ const path = `src/content/recipes/${id}.md`;
         // Reflect the removal at once: the index drops the card until the
         // rebuild lands (the static site otherwise still lists it for ~a minute).
         if (slug) recordPending({ slug, kind: 'delete', committedAt: Date.now() });
-        window.location.assign(withBase('/'));
+        // Confirm the delete the same way a publish/save does, then return home.
+        dialog.close();
+        const success = document.getElementById('recipe-delete-success');
+        if (success) {
+          success.classList.remove('hidden');
+          success.classList.add('flex');
+        }
+        setTimeout(() => window.location.assign(withBase('/')), 1500);
       } catch (err) {
         confirmBtn.disabled = false;
         confirmBtn.textContent = 'Delete';

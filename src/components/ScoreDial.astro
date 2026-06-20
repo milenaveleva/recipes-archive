@@ -1,0 +1,70 @@
+---
+/**
+ * One score "dial": a ring that fills to where a value sits on its reference
+ * scale (so a bare number is interpretable), with the value centred, a label,
+ * a band qualifier, and either a reference range or — for Nutri-Score — an A–E
+ * strip with the grade lit. Pure presentational; data comes from `buildScoreDials`.
+ */
+import { toneText, toneBg, type ScoreDial } from '../lib/recipe';
+
+interface Props {
+  dial: ScoreDial;
+}
+const { dial } = Astro.props;
+
+// r = 15.9155 → circumference ≈ 100, so the arc length is the fill percentage.
+const dash = `${Math.round(dial.fill * 100)} 100`;
+---
+
+<div class="flex flex-col items-center text-center gap-1.5 rounded-xl bg-card border border-line px-3 py-4">
+  <div class="relative h-16 w-16">
+    <svg viewBox="0 0 36 36" class="absolute inset-0 h-full w-full -rotate-90" aria-hidden="true">
+      <circle cx="18" cy="18" r="15.9155" fill="none" stroke="currentColor" stroke-width="2.5" class="text-line" />
+      {
+        dial.fill > 0 && (
+          <circle
+            cx="18"
+            cy="18"
+            r="15.9155"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-dasharray={dash}
+            class={toneText[dial.tone]}
+          />
+        )
+      }
+    </svg>
+    <div
+      class:list={[
+        'absolute inset-0 flex items-center justify-center font-display font-semibold text-ink',
+        dial.value.length > 3 ? 'text-xl' : 'text-2xl',
+      ]}
+    >
+      {dial.value}
+    </div>
+  </div>
+
+  <div class="eyebrow !text-[0.62rem] !tracking-[0.14em] leading-tight text-ink-soft">{dial.label}</div>
+  {dial.sub && <div class="font-ui text-[0.66rem] capitalize leading-tight text-ink-faint">{dial.sub}</div>}
+
+  {
+    dial.grades ? (
+      <div class="mt-0.5 flex gap-0.5" aria-hidden="true">
+        {dial.grades.map((g, i) => (
+          <span
+            class:list={[
+              'flex h-4 w-4 items-center justify-center rounded font-ui text-[0.6rem] font-semibold',
+              i === dial.activeGrade ? `${toneBg[dial.tone]} text-paper` : 'bg-paper-2 text-ink-faint',
+            ]}
+          >
+            {g}
+          </span>
+        ))}
+      </div>
+    ) : (
+      dial.scaleRef && <div class="font-ui text-[0.6rem] tabular-nums text-ink-faint">{dial.scaleRef}</div>
+    )
+  }
+</div>
