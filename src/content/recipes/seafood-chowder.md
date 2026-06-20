@@ -1,5 +1,6 @@
 ---
 title: Seafood Chowder
+description: testest
 imageUrl: https://www.recipetineats.com/tachyon/2025/09/Seafood-chowder_9.jpg
 source:
   name: recipetineats.com
@@ -141,14 +142,14 @@ nutrition:
     score: -1.6
     band: anti-inflammatory
     method: ingredient-tag v1
-  computedAt: "2026-06-19"
+  computedAt: "2026-06-20"
   dataSources:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Inflammation index (ingredient-tag v1)
 createdAt: "2026-06-19"
-updatedAt: "2026-06-19"
+updatedAt: "2026-06-20"
 ---
 
 ## Method
