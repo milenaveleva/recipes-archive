@@ -1,10 +1,56 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { withBase } from '../lib/url';
+import PendingFallback from '../components/add/PendingFallback.tsx';
+import { PENDING_KEY, PENDING_MAX_AGE_MS } from '../core/pending';
 ---
 
-<BaseLayout title="Not found">
-  <section class="mx-auto max-w-2xl px-5 sm:px-8 py-24 text-center reveal">
+{/* hideAddFab: the global Add FAB shares the bottom-right slot with the pending
+    preview's Edit FAB; suppress it here (a 404 routes home via the button below). */}
+<BaseLayout title="Not found" hideAddFab>
+  {/* No-flash: if this 404 is a just-published recipe (no built page yet) that we
+      hold a pending copy of, hide the "not found" message before paint; the island
+      renders the recipe. Reveal after a timeout if the island never confirms. */}
+  <script is:inline define:vars={{ pendingKey: PENDING_KEY, maxAge: PENDING_MAX_AGE_MS }}>
+    try {
+      const m = /\/recipes\/([^/]+)\/?$/.exec(window.location.pathname);
+      const slug = m ? decodeURIComponent(m[1]) : null;
+      if (slug) {
+        const raw = localStorage.getItem(pendingKey);
+        const list = raw ? JSON.parse(raw) : [];
+        const now = Date.now();
+        const hit =
+          Array.isArray(list) &&
+          list.find(
+            (x) =>
+              x &&
+              x.slug === slug &&
+              (x.kind === 'create' || x.kind === 'edit') &&
+              x.recipe &&
+              typeof x.committedAt === 'number' &&
+              now - x.committedAt <= maxAge,
+          );
+        if (hit) {
+          const style = document.createElement('style');
+          style.id = 'notfound-static-hide';
+          style.textContent = '#notfound-static{display:none}';
+          document.head.appendChild(style);
+          setTimeout(function () {
+            if (!window.__pendingFallbackReady) {
+              const s = document.getElementById('notfound-static-hide');
+              if (s) s.remove();
+            }
+          }, 3000);
+        }
+      }
+    } catch (e) {
+      /* localStorage unavailable / corrupt — show the static 404. */
+    }
+  </script>
+
+  <PendingFallback client:only="react" />
+
+  <section id="notfound-static" class="mx-auto max-w-2xl px-5 sm:px-8 py-24 text-center reveal">
     <p class="eyebrow mb-4">404</p>
     <h1 class="font-display text-5xl text-ink" style="font-variation-settings:'SOFT' 60;">
       Off the recipe.

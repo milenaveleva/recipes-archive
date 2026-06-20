@@ -13,9 +13,10 @@
  * this island never confirms it took over (bundle blocked / offline). The island
  * confirms by calling `markReady` once the preview actually renders.
  */
-import { Component, useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useState } from 'react';
 import { prunePending, dropPending, isBuildFresh, type PendingMutation } from '../../core/pending';
 import RecipePreview from './RecipePreview';
+import { PreviewBoundary } from './PreviewBoundary';
 
 type View =
   | { kind: 'none' }
@@ -46,21 +47,6 @@ function revealStatic() {
 }
 function markReady() {
   (window as unknown as { __pendingPreviewReady?: boolean }).__pendingPreviewReady = true;
-}
-
-/** If RecipePreview throws on an unexpected stored shape, fall back to the
- *  static (still-valid, if stale) recipe instead of a blank page. */
-class PreviewBoundary extends Component<{ onError: () => void; children: ReactNode }, { failed: boolean }> {
-  state = { failed: false };
-  static getDerivedStateFromError() {
-    return { failed: true };
-  }
-  componentDidCatch() {
-    this.props.onError();
-  }
-  render() {
-    return this.state.failed ? null : this.props.children;
-  }
 }
 
 export default function PendingDetailView({ slug }: { slug: string }) {

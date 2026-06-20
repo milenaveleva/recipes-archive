@@ -17,6 +17,7 @@
 <script>
   import { prunePending, dropPending, isBuildFresh, type PendingMutation } from '../core/pending';
   import { formatDuration } from '../lib/recipe';
+  import { withBase } from '../lib/url';
 
   const grid = document.querySelector<HTMLElement>('[data-recipe-grid]');
   if (grid) {
@@ -116,14 +117,16 @@
       return span;
     }
 
-    /** A placeholder card for a recipe whose detail route is not built yet, so
-     *  it is intentionally non-clickable until the rebuild lands. */
+    /** A placeholder card for a recipe whose detail route is not built yet. It
+     *  links to /recipes/<slug>, where the 404 page's PendingFallback renders
+     *  the stored copy until the rebuild lands, so it's viewable + editable now. */
     function buildPendingCard(m: PendingMutation): HTMLElement {
       const c = m.recipe;
-      const wrap = el('div', 'group block');
+      const wrap = el('a', 'group block no-underline') as HTMLAnchorElement;
+      wrap.href = withBase(`/recipes/${m.slug}`);
       wrap.dataset.recipeSlug = m.slug;
       wrap.dataset.pending = '';
-      wrap.title = 'Publishing — available once the site finishes rebuilding';
+      wrap.title = 'Publishing — view or edit now; live on the site in about a minute';
 
       const article = el(
         'article',

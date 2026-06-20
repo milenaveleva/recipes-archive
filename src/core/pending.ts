@@ -36,6 +36,12 @@ export interface PendingMutation {
    * pure type — no runtime dependency on markdown.ts in the consuming bundles.
    */
   recipe?: RecipeDraft;
+  /**
+   * The repo path the recipe was committed to (e.g. `src/content/recipes/x.md`).
+   * Captured so re-editing a not-yet-rebuilt recipe overwrites the right file
+   * even when an explicit frontmatter slug differs from the filename.
+   */
+  path?: string;
 }
 
 /**

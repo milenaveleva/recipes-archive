@@ -11,7 +11,7 @@ import { useMemo, useState, useEffect } from 'react';
 import { extractRecipe } from '../../core/extract';
 import { toRecipeMarkdown, recipeFilename, type RecipeDraft } from '../../core/markdown';
 import { commitTextFile, GitHubError, RECIPE_REPO } from '../../core/github';
-import { recordPending } from '../../core/pending';
+import { recordPending, prunePending, isBuildFresh } from '../../core/pending';
 import type { NutriCategory } from '../../core/nutriscore';
 import {
   EMPTY_FORM,
@@ -86,12 +86,45 @@ export default function AddRecipe() {
   const [editBodyAfter, setEditBodyAfter] = useState('');
   const [editError, setEditError] = useState('');
 
-  // Load the recipe to edit (its structured frontmatter) from the static
-  // /recipe-data endpoint, then seed the form + ingredient rows from it.
+  // Seed the form + ingredient rows + preserved fields from a stored draft (a
+  // just-published recipe whose rebuild hasn't landed, held in localStorage).
+  // RecipeDraft is a structural superset of StoredRecipe, so it feeds
+  // formFromRecipe / rowsFromIngredients directly (no field list to keep in sync).
+  function seedFromDraft(slug: string, d: RecipeDraft, path?: string) {
+    setForm(formFromRecipe(d, d.instructions));
+    setIngredientsText(d.ingredients.map((i) => i.raw).join('\n'));
+    setRows(rowsFromIngredients(d.ingredients));
+    setEditCreatedAt(d.createdAt ?? null);
+    setEditPath(path ?? `src/content/recipes/${slug}.md`);
+    setEditPreserved({
+      difficulty: d.difficulty,
+      imageAlt: d.imageAlt,
+      author: d.author,
+      yield: d.yield,
+      slug: d.slug,
+    });
+    setEditBodyBefore(d.bodyBefore ?? '');
+    setEditBodyAfter(d.bodyAfter ?? '');
+  }
+
+  // Load the recipe to edit. Prefer a pending local copy only while its rebuild
+  // hasn't landed (so a just-created/edited recipe is editable immediately);
+  // once the build is fresh, the static /recipe-data projection is authoritative.
   useEffect(() => {
     const slug = new URLSearchParams(window.location.search).get('edit');
     if (!slug) return;
     setEditSlug(slug);
+
+    const buildTime =
+      Number(document.querySelector<HTMLMetaElement>('meta[name="x-build-time"]')?.content) || 0;
+    const pending = prunePending(Date.now()).find(
+      (m) => m.slug === slug && (m.kind === 'create' || m.kind === 'edit') && m.recipe,
+    );
+    if (pending?.recipe && !isBuildFresh(pending, buildTime)) {
+      seedFromDraft(slug, pending.recipe, pending.path);
+      return;
+    }
+
     let ignore = false;
     (async () => {
       try {
@@ -268,6 +301,7 @@ export default function AddRecipe() {
         kind: isEdit ? 'edit' : 'create',
         committedAt: Date.now(),
         recipe: publishDraft,
+        path: file.path,
       });
       // An edit is expected to overwrite; only warn when a NEW recipe collides.
       setPublishMsg(result.updated && !isEdit ? 'Updated an existing recipe at the same slug.' : '');
