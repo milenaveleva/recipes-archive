@@ -1,6 +1,6 @@
 ---
 title: Seafood Chowder
-description: test again
+description: test now
 imageUrl: https://www.recipetineats.com/tachyon/2025/09/Seafood-chowder_9.jpg
 source:
   name: recipetineats.com
