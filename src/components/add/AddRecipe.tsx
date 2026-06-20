@@ -15,6 +15,7 @@ import { recordPending, prunePending, isBuildFresh } from '../../core/pending';
 import type { NutriCategory } from '../../core/nutriscore';
 import {
   EMPTY_FORM,
+  loadFoods,
   linesToRows,
   reparseRows,
   buildDraft,
@@ -70,6 +71,18 @@ export default function AddRecipe() {
     });
   }, []);
 
+  // The food database (~several MB) is fetched lazily, not bundled. The form is
+  // usable immediately; ingredient matching/parsing waits until it's ready.
+  const [foodsLoaded, setFoodsLoaded] = useState(false);
+  const [foodsError, setFoodsError] = useState(false);
+  const fetchFoods = () => {
+    setFoodsError(false);
+    loadFoods()
+      .then(() => setFoodsLoaded(true))
+      .catch(() => setFoodsError(true));
+  };
+  useEffect(fetchFoods, []);
+
   // Recipe content.
   const [form, setForm] = useState<FormState>(EMPTY_FORM);
   const [ingredientsText, setIngredientsText] = useState('');
@@ -111,6 +124,7 @@ export default function AddRecipe() {
   // hasn't landed (so a just-created/edited recipe is editable immediately);
   // once the build is fresh, the static /recipe-data projection is authoritative.
   useEffect(() => {
+    if (!foodsLoaded) return; // seeding builds ingredient rows, which need the food DB
     const slug = new URLSearchParams(window.location.search).get('edit');
     if (!slug) return;
     setEditSlug(slug);
@@ -155,7 +169,7 @@ export default function AddRecipe() {
     return () => {
       ignore = true;
     };
-  }, []);
+  }, [foodsLoaded]);
 
   // Import + publish status.
   const [importUrl, setImportUrl] = useState('');
@@ -219,12 +233,13 @@ export default function AddRecipe() {
   }
 
   function parseIngredients() {
+    if (!foodsLoaded) return; // matching needs the food DB
     // Re-parse, keeping match/weight/exclude edits for unchanged lines.
     setRows((prev) => reparseRows(ingredientsText, prev));
   }
 
   async function handleImport() {
-    if (!PROXY) return;
+    if (!PROXY || !foodsLoaded) return;
     setImportState('loading');
     setImportMsg('');
     try {
@@ -354,7 +369,7 @@ export default function AddRecipe() {
             />
             <button
               onClick={handleImport}
-              disabled={!importUrl || importState === 'loading'}
+              disabled={!importUrl || importState === 'loading' || !foodsLoaded}
               className={primaryBtn}
             >
               {importState === 'loading' ? 'Fetching…' : 'Import'}
@@ -458,10 +473,24 @@ export default function AddRecipe() {
       <Card>
         <div className="flex items-center justify-between gap-4">
           <h2 className="font-display text-xl text-ink">Ingredients</h2>
-          <button onClick={parseIngredients} className={ghostBtn}>
+          <button onClick={parseIngredients} disabled={!foodsLoaded} className={ghostBtn}>
             {rows.length ? 'Re-parse' : 'Parse'}
           </button>
         </div>
+        {!foodsLoaded && (
+          <p className="mt-1 text-xs text-ink-faint">
+            {foodsError ? (
+              <>
+                Couldn’t load the food database.{' '}
+                <button type="button" onClick={fetchFoods} className="underline hover:text-spice">
+                  Retry
+                </button>
+              </>
+            ) : (
+              'Loading food database…'
+            )}
+          </p>
+        )}
         <p className="mt-1 text-xs text-ink-faint">One ingredient per line, e.g. “1 cup red lentils, rinsed”.</p>
         <textarea
           value={ingredientsText}

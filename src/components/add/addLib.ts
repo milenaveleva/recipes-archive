@@ -13,13 +13,39 @@ import type { NutriCategory } from '../../core/nutriscore';
 import type { MetricAmount, ParsedLine, ResolvedIngredient } from '../../core/types';
 import type { DraftIngredient, RecipeDraft } from '../../core/markdown';
 import type { ExtractedRecipe } from '../../core/types';
-import foodsData from '../../data/usda-foods.json';
+// The full food dataset (~8k foods, several MB) is fetched lazily via its asset
+// URL rather than bundled into the /add island. `?url` makes Vite emit it as a
+// static asset and hand back the URL; `loadFoods()` fetches it once on demand.
+import foodsUrl from '../../data/usda-foods.json?url';
 import foodScoringData from '../../data/food-scoring.json';
 
-export const FOODS = foodsData as FoodRecord[];
-export const FOOD_BY_ID: Map<number, FoodRecord> = new Map(
-  FOODS.filter((f) => f.fdcId != null).map((f) => [f.fdcId as number, f]),
-);
+// In-memory food cache, populated by loadFoods() (browser) or primeFoods() (tests/SSR).
+let FOODS: FoodRecord[] = [];
+let FOOD_BY_ID = new Map<number, FoodRecord>();
+let loadPromise: Promise<void> | null = null;
+
+/** Populate the food cache from an in-memory list (tests/SSR). */
+export function primeFoods(foods: FoodRecord[]): void {
+  FOODS = foods;
+  FOOD_BY_ID = new Map(foods.filter((f) => f.fdcId != null).map((f) => [f.fdcId as number, f]));
+}
+
+/** Fetch + cache the food dataset once (browser). Resolves when matching is ready. */
+export function loadFoods(): Promise<void> {
+  if (!loadPromise) {
+    loadPromise = fetch(foodsUrl)
+      .then((r) => {
+        if (!r.ok) throw new Error(`food database ${r.status}`);
+        return r.json();
+      })
+      .then((data: FoodRecord[]) => primeFoods(data))
+      .catch((err) => {
+        loadPromise = null; // allow a retry on the next call
+        throw err;
+      });
+  }
+  return loadPromise;
+}
 
 /** Hand-curated, cited scoring metadata per USDA food (GI, inflammation tag, FVL). */
 interface FoodScoring {
@@ -30,9 +56,29 @@ interface FoodScoring {
   fvl?: boolean;
 }
 const FOOD_SCORING = foodScoringData as Record<string, FoodScoring>;
+// Foods we hold curated GI/inflammation/portion data for: preferred in matching
+// so a common ingredient still resolves to the richer-data food in the large set.
+const CURATED_IDS = new Set(Object.keys(FOOD_SCORING).map(Number));
 
 function scoringFor(fdcId: number | null): FoodScoring | undefined {
   return fdcId != null ? FOOD_SCORING[String(fdcId)] : undefined;
+}
+
+/** USDA categories whose foods count toward the Nutri-Score fruit/veg/legume share. */
+const FVL_CATEGORIES = ['Vegetables', 'Fruits', 'Legumes'];
+// Excluded from the FVL share per Nutri-Score 2023: starchy staples, nuts & oils
+// (scored separately / not FVL), juices (beverages), and obviously-processed
+// forms. Deliberately NOT excluding "seed(s)" — legumes are described as
+// "…mature seeds…". Coarse by nature; FVL is confirmed per-ingredient in review.
+const NON_FVL =
+  /\b(potato|potatoes|cassava|yam|yams|plantain|plantains|taro|juice|nectar|oil|nut|nuts|peanut|peanuts|fried|breaded|chip|chips|crisp|crisps|snack|candied|sauce|ketchup|jam|jelly)\b/i;
+
+/** Derive the Nutri-Score FVL flag from a food's USDA category (scales to all
+ *  foods); curated `fvl` always takes precedence over this heuristic. */
+function fvlFromCategory(food: FoodRecord | undefined): boolean {
+  if (!food?.category) return false;
+  if (!FVL_CATEGORIES.some((c) => food.category!.includes(c))) return false;
+  return !NON_FVL.test(food.description);
 }
 
 /** One reviewable ingredient line in the wizard. */
@@ -56,7 +102,7 @@ let rowCounter = 0;
 export function buildRow(raw: string): IngredientRow {
   const parsed = parseIngredientLine(raw);
   const est = estimateMetric(parsed);
-  const candidates = parsed.isGroupHeader ? [] : searchFoods(parsed.item, FOODS);
+  const candidates = parsed.isGroupHeader ? [] : searchFoods(parsed.item, FOODS, 6, CURATED_IDS);
   const top = candidates[0];
   const selectedFdcId = top && top.confidence !== 'low' ? top.food.fdcId ?? null : null;
   const selectedFood = selectedFdcId != null ? FOOD_BY_ID.get(selectedFdcId) ?? null : null;
@@ -142,7 +188,7 @@ export function rowsToScored(rows: IngredientRow[]): ScoredIngredient[] {
         nutrients: food?.n ?? null,
         gi: s?.gi ?? null,
         inflammationTag: s?.inflammation ?? null,
-        fvl: s?.fvl ?? false,
+        fvl: s?.fvl ?? fvlFromCategory(food),
       };
     });
 }

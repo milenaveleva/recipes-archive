@@ -67,9 +67,13 @@ function scoreMatch(queryTokens: string[], food: FoodRecord): number {
 
   const recall = matched / queryTokens.length; // share of the query covered
   const precision = matched / desc.length; // how focused the food name is
-  // The head noun (last query token) is usually the food itself.
-  const headBonus = descSet.has(queryTokens[queryTokens.length - 1]) ? 0.15 : 0;
-  return Math.min(1, recall * 0.8 + precision * 0.2 + headBonus);
+  const qHead = queryTokens[queryTokens.length - 1]; // the food noun
+  const headIn = descSet.has(qHead) ? 0.1 : 0;
+  // USDA descriptions lead with the food's identity ("Apples, raw" vs
+  // "Croissants, apple"), so a leading-token match strongly favours the base
+  // food over a product that merely contains it — essential at full-dataset scale.
+  const leads = desc[0] === qHead ? 0.3 : 0;
+  return Math.min(1, recall * 0.5 + precision * 0.25 + headIn + leads);
 }
 
 function confidenceFor(score: number): MatchConfidence {
@@ -80,17 +84,34 @@ function confidenceFor(score: number): MatchConfidence {
 
 /**
  * Rank the foods most likely to match an ingredient query (its item text),
- * best first. Returns an empty array when nothing overlaps.
+ * best first. Returns an empty array when nothing overlaps. `preferIds` nudges
+ * foods we hold richer curated data for (GI, portions) ahead of equally-good
+ * matches, so a common ingredient still resolves to the better-documented food
+ * in a large dataset; confidence reflects the textual match only (pre-bonus).
  */
-export function searchFoods(query: string, foods: FoodRecord[], limit = 6): FoodMatch[] {
+export function searchFoods(
+  query: string,
+  foods: FoodRecord[],
+  limit = 6,
+  preferIds?: Set<number>,
+): FoodMatch[] {
   const queryTokens = tokenize(query);
   if (!queryTokens.length) return [];
   return foods
-    .map((food) => ({ food, score: scoreMatch(queryTokens, food) }))
+    .map((food) => {
+      const score = scoreMatch(queryTokens, food);
+      // Small rank-only tie-breaker toward foods we hold curated data for, so a
+      // common ingredient lands on its better-documented food among equally-good
+      // matches. Gated on a non-low score so a weak curated match can't leapfrog
+      // a better one to the top (where it would block auto-selection); `score`/
+      // confidence stay the textual match.
+      const boosted = preferIds && food.fdcId != null && preferIds.has(food.fdcId) && score >= 0.55;
+      return { food, score, ranked: boosted ? score + 0.05 : score };
+    })
     .filter((m) => m.score > 0)
-    .sort((a, b) => b.score - a.score)
+    .sort((a, b) => b.ranked - a.ranked)
     .slice(0, limit)
-    .map((m) => ({ ...m, confidence: confidenceFor(m.score) }));
+    .map(({ food, score }) => ({ food, score, confidence: confidenceFor(score) }));
 }
 
 /** The per-100g nutrient vector for a matched food. */

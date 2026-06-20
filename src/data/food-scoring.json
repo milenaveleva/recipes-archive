@@ -1,5 +1,6 @@
 {
   "172420": { "gi": 32, "giSource": "Atkinson 2021 (lentils, ISO)", "giConfidence": "high", "inflammation": -1, "fvl": true },
+  "174284": { "gi": 32, "giSource": "Atkinson 2021 (lentils, ISO)", "giConfidence": "medium", "inflammation": -1, "fvl": true },
   "173757": { "gi": 28, "giSource": "Atkinson 2021 (chickpeas, ISO)", "giConfidence": "high", "inflammation": -1, "fvl": true },
   "173735": { "gi": 30, "giSource": "Atkinson 2021 (black beans, ISO)", "giConfidence": "high", "inflammation": -1, "fvl": true },
   "168462": { "inflammation": -2, "fvl": true },

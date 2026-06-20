@@ -9,13 +9,9 @@ const FOODS = foods as Food[];
 const SCORING = scoring as Record<string, Scoring>;
 
 describe('food-scoring.json integrity', () => {
-  it('has a scoring entry for every USDA food (no silent untagged matches)', () => {
-    const missing = FOODS.filter((f) => f.fdcId != null && !(String(f.fdcId) in SCORING)).map(
-      (f) => `${f.fdcId} ${f.description}`,
-    );
-    expect(missing).toEqual([]);
-  });
-
+  // Scoring is curated + cited per food, so it covers a subset of the full USDA
+  // dataset (foods without an entry contribute nutrients but no GI/inflammation
+  // tag). Each entry must still point at a real food and carry valid, cited values.
   it('has no orphan keys — every key is a real food fdcId', () => {
     const ids = new Set(FOODS.map((f) => String(f.fdcId)));
     const orphans = Object.keys(SCORING).filter((k) => !ids.has(k));
