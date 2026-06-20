@@ -54,6 +54,7 @@
         if (card && isBuildFresh(m, buildTime)) {
           dropPending(m.slug);
         } else if (card) {
+          patchCard(card, m.card); // show the edited title/meta right away
           addRibbon(card, 'Saving…');
           changed = true;
         } else {
@@ -70,6 +71,39 @@
       const frame = card.querySelector<HTMLElement>('.relative') ?? card;
       if (frame.querySelector('[data-pending-ribbon]')) return;
       frame.appendChild(ribbon(label));
+    }
+
+    /** Update an already-built card's visible fields in place for an edit, so
+     *  the new title/meta show immediately while the rebuild catches up. Only
+     *  patches elements that already exist (the rebuild handles added/removed
+     *  tag rows or category badges); the image is left untouched. */
+    function patchCard(card: HTMLElement, c: PendingMutation['card']) {
+      if (!c) return;
+      const h3 = card.querySelector('h3');
+      if (h3) h3.textContent = c.title || 'Untitled';
+      const meta = h3?.nextElementSibling as HTMLElement | null;
+      if (meta) {
+        meta.textContent = '';
+        const time = formatDuration(c.totalTime) ?? formatDuration(c.cookTime);
+        if (time) {
+          meta.appendChild(el('span', '', time));
+          const dot = el('span', '', '·');
+          dot.setAttribute('aria-hidden', 'true');
+          meta.appendChild(dot);
+        }
+        meta.appendChild(el('span', '', `${c.servings ?? 0} servings`));
+      }
+      const tagRow = card.querySelector('.flex-wrap');
+      if (tagRow) {
+        tagRow.textContent = '';
+        for (const t of (c.tags ?? []).slice(0, 3)) {
+          tagRow.appendChild(
+            el('span', 'rounded-full border border-line px-2 py-0.5 font-ui text-[0.66rem] text-ink-soft', t),
+          );
+        }
+      }
+      const cat = card.querySelector<HTMLElement>('.relative span.left-3');
+      if (cat && c.category) cat.textContent = c.category;
     }
 
     function ribbon(label: string): HTMLElement {

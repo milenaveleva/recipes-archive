@@ -47,8 +47,12 @@ const { slug } = Astro.props;
         // This page was rebuilt at/after the edit, so it already reflects it.
         dropPending(slug);
       } else {
+        // Show the edited title right away; the rest of the recipe (ingredients,
+        // method, scores) still reflects the previous build until the rebuild.
+        const h1 = document.querySelector<HTMLElement>('article h1');
+        if (h1 && mutation.card?.title) h1.textContent = mutation.card.title;
         message =
-          'You’re viewing the previously published version. Your latest changes are publishing and will appear after the rebuild (about a minute).';
+          'Your latest changes are publishing — the fully updated recipe appears after the rebuild (about a minute).';
       }
       if (message) {
         const text = root.querySelector<HTMLElement>('[data-pending-text]');
