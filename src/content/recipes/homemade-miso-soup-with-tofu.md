@@ -18,9 +18,8 @@ ingredients:
     item: water
     grams: 946.4
     milliliters: 946.352
-    fdcId: 170173
+    fdcId: 174158
     matchConfidence: high
-    excludeFromNutrition: true
   - raw: 1 piece kombu (dried kelp) ((⅓ oz, 10 g per piece; 4 x 4 inches or 10 x 10 cm))
     quantity: 1
     unit: piece
@@ -39,25 +38,50 @@ ingredients:
     item: soft/silken tofu
     note: kinugoshi dofu
     grams: 198.4
-    matchConfidence: none
+    fdcId: 172449
+    matchConfidence: medium
   - raw: 4 Tbsp miso ((use 1 Tbsp, 18 g for every 1 cup, 240 ml of dashi))
     quantity: 4
     unit: Tbsp
     item: miso ((use 1 Tbsp
     note: 18 g for every 1 cup, 240 ml of dashi))
     milliliters: 59.1472
-    matchConfidence: none
+    fdcId: 172442
+    matchConfidence: low
   - raw: 1 Tbsp dried wakame seaweed
     quantity: 1
     unit: Tbsp
     item: dried wakame seaweed
+    grams: 10
     milliliters: 14.7868
     matchConfidence: none
   - raw: 1 green onion/scallion
     quantity: 1
     item: green onion/scallion
     matchConfidence: none
+nutrition:
+  perServing:
+    energyKcal: 30
+    energyKj: 127
+    protein_g: 3.6
+    fat_g: 1.8
+    satFat_g: 0.3
+    carbs_g: 0.6
+    fiber_g: 0.1
+    sugar_g: 0.3
+    sodium_mg: 9
+    availableCarb_g: 0.5
+  nutriScore:
+    grade: A
+    points: 0
+    category: general
+    version: "2023"
+  computedAt: "2026-06-20"
+  dataSources:
+    - USDA FoodData Central
+    - Nutri-Score 2023
 createdAt: "2026-06-20"
+updatedAt: "2026-06-20"
 ---
 
 ## Method
