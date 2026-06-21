@@ -4,12 +4,11 @@
  * The genuinely hard part (mixed numbers, vulgar fractions, ranges, group
  * headers, trailing-quantity phrasings) is delegated to `parse-ingredient`;
  * this module adapts its output to our schema shape, splits the food from its
- * prep note, and produces a pre-match metric estimate via `units` + `density`.
+ * prep note, and produces a pre-match metric estimate via `units`.
  */
 import { parseIngredient } from 'parse-ingredient';
 import type { MetricAmount, ParsedLine } from './types';
 import { canonicalUnit, toMetric } from './units';
-import { volumeToGrams } from './density';
 
 /** Split a parsed description into the food item and an optional prep note. */
 export function splitDescription(description: string): { item: string; note?: string } {
@@ -80,9 +79,9 @@ export function parseIngredientLines(lines: string[]): ParsedLine[] {
 
 /**
  * Best-effort metric estimate for a parsed line, before a USDA match.
- * Mass units give grams directly; volume units give millilitres and — when the
- * ingredient's density is known — an estimated weight too. Count words
- * ("clove", "pinch") yield nulls, to be resolved from a matched food's portion.
+ * Mass units give grams directly; volume units give millilitres only. Volume
+ * weight and count words ("clove", "pinch") are resolved later from the matched
+ * food's USDA portion (see addLib's initialGrams), not estimated here.
  */
 export function estimateMetric(parsed: ParsedLine): MetricAmount {
   // For a range ("2–3 cups"), estimate from the midpoint of the two bounds.
@@ -90,9 +89,5 @@ export function estimateMetric(parsed: ParsedLine): MetricAmount {
     parsed.quantity != null && parsed.quantity2 != null
       ? (parsed.quantity + parsed.quantity2) / 2
       : parsed.quantity;
-  const amount = toMetric(quantity, parsed.unitId ?? parsed.unit);
-  if (amount.dimension === 'volume' && amount.milliliters != null && amount.grams == null) {
-    return { ...amount, grams: volumeToGrams(amount.milliliters, parsed.item) };
-  }
-  return amount;
+  return toMetric(quantity, parsed.unitId ?? parsed.unit);
 }

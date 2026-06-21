@@ -6,7 +6,6 @@
  */
 export * from './types';
 export * from './units';
-export * from './density';
 export * from './parse';
 export * from './nutrition';
 export * from './extract';

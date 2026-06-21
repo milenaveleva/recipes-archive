@@ -17,9 +17,11 @@ import {
   formFromRecipe,
   rowsFromIngredients,
   splitMethodBody,
+  initialGrams,
   EMPTY_FORM,
 } from './addLib';
 import { toRecipeMarkdown } from '../../core/markdown';
+import type { MetricAmount, ParsedLine } from '../../core/types';
 
 // The browser fetches the food dataset lazily; in Node prime the cache directly.
 beforeAll(() => primeFoods(foodsData as FoodRecord[]));
@@ -42,6 +44,66 @@ describe('buildRow', () => {
     const row = buildRow('8 ounces chicken breast');
     expect(row.selectedFdcId).toBe(2646170); // "Chicken, breast, boneless, skinless, raw"
     expect(row.grams).toBeCloseTo(226.8, 1);
+  });
+});
+
+describe('initialGrams (USDA portions, no density guessing)', () => {
+  const parsed = (over: Partial<ParsedLine>): ParsedLine => ({
+    raw: '', quantity: 1, quantity2: null, unit: null, unitId: null, item: 'x', isGroupHeader: false, ...over,
+  });
+  const food = (portions: { label: string; grams: number }[]) =>
+    ({ fdcId: 1, description: 'x', portions } as unknown as FoodRecord);
+  const volEst: MetricAmount = { grams: null, milliliters: 29.6, dimension: 'volume' };
+  const noEst: MetricAmount = { grams: null, milliliters: null, dimension: null };
+
+  it('takes grams directly from a mass estimate', () => {
+    expect(initialGrams({ grams: 200, milliliters: null, dimension: 'mass' }, parsed({ unit: 'g' }), null)).toBe(200);
+  });
+
+  it('normalises a non-1 volume portion and matches across label forms', () => {
+    // "2 tablespoon" = 30 g → 15 g per tbsp × 1
+    expect(
+      initialGrams(volEst, parsed({ quantity: 1, unit: 'tbsp', unitId: 'tablespoon' }), food([{ label: '2 tablespoon', grams: 30 }])),
+    ).toBe(15);
+    // canonicalises both sides: a "teaspoon" ingredient matches a "1 tsp" label
+    expect(
+      initialGrams(volEst, parsed({ quantity: 2, unit: 'tsp', unitId: 'teaspoon' }), food([{ label: '1 tsp', grams: 5 }])),
+    ).toBe(10);
+  });
+
+  it('returns null for a volume unit with no matching portion (manual entry, no guess)', () => {
+    expect(
+      initialGrams(volEst, parsed({ quantity: 1, unit: 'cup', unitId: 'cup' }), food([{ label: '1 slice', grams: 30 }])),
+    ).toBeNull();
+  });
+
+  it('uses the first count-style portion for count units, skipping volume/mass ones', () => {
+    expect(
+      initialGrams(noEst, parsed({ quantity: 1, unit: 'egg', item: 'egg' }), food([{ label: '1 large', grams: 50 }])),
+    ).toBe(50);
+    // skips the leading cup portion and uses the count portion deeper in the list
+    expect(
+      initialGrams(
+        noEst,
+        parsed({ quantity: 2, unit: 'egg', item: 'egg' }),
+        food([{ label: '1 cup', grams: 240 }, { label: '1 large', grams: 50 }]),
+      ),
+    ).toBe(100);
+  });
+
+  it('never weighs a count unit from a volume/mass portion (no dimension mismatch)', () => {
+    expect(
+      initialGrams(noEst, parsed({ quantity: 2, unit: 'can', item: 'tomatoes' }), food([{ label: '1 cup', grams: 240 }])),
+    ).toBeNull();
+  });
+
+  it('matches a volume portion despite a trailing descriptor or parenthetical', () => {
+    expect(
+      initialGrams(volEst, parsed({ quantity: 1, unit: 'cup', unitId: 'cup' }), food([{ label: '1 cup, chopped', grams: 120 }])),
+    ).toBe(120);
+    expect(
+      initialGrams(volEst, parsed({ quantity: 1, unit: 'cup', unitId: 'cup' }), food([{ label: '1 cup (8 fl oz)', grams: 236 }])),
+    ).toBe(236);
   });
 });
 

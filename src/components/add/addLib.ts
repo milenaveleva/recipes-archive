@@ -6,6 +6,7 @@
  * validates against the content schema on rebuild.
  */
 import { parseIngredientLine, estimateMetric } from '../../core/parse';
+import { canonicalUnit, classifyUnit } from '../../core/units';
 import { searchFoods, type FoodRecord, type FoodMatch, type MatchConfidence } from '../../core/match';
 import { computeMacros, type MacroComputation } from '../../core/nutrition';
 import { computeScores, type ScoredIngredient, type ScoreResult, type ScoreOptions } from '../../core/score';
@@ -137,19 +138,57 @@ export function reparseRows(text: string, existing: IngredientRow[]): Ingredient
   return splitLines(text).map((line) => pool.get(line)?.shift() ?? buildRow(line));
 }
 
-/** Best-effort starting weight: metric estimate, else a matched-food portion. */
+/** Split a USDA portion label ("2 tablespoon", "0.25 cup", "1 clove") into its
+ *  leading amount and unit phrase, so the gram weight can be normalised to one
+ *  unit. Null when the label has no leading number. */
+function parsePortion(p: { label: string; grams: number }): { amount: number; unit: string } | null {
+  const m = /^\s*([\d.]+(?:\s*\/\s*[\d.]+)?)\s+(.+?)\s*$/.exec(p.label);
+  if (!m) return null;
+  const raw = m[1].replace(/\s/g, '');
+  const amount = raw.includes('/')
+    ? Number(raw.split('/')[0]) / Number(raw.split('/')[1])
+    : Number(raw);
+  if (!Number.isFinite(amount) || amount <= 0) return null;
+  // Drop any descriptor after the unit ("cup, chopped", "cup (8 fl oz)") so the
+  // bare measure ("cup") canonicalises and matches the ingredient's unit.
+  const unit = m[2].split(/[,(]/)[0].trim();
+  return unit ? { amount, unit } : null;
+}
+
+/**
+ * Best-effort starting weight from the matched food's USDA portions (densities
+ * are never guessed). Mass units already carry grams from `est`. Otherwise: for
+ * a recognised volume unit, use the portion whose own unit canonicalises to the
+ * same measure (so "1 tsp"/"2 tablespoon"/"0.25 cup" labels all match), scaled
+ * to one unit × the quantity — and return null when the food has no matching
+ * volume portion, so the author enters the weight rather than seeing a guess.
+ * Count words ("clove", "1 egg") fall back to the food's first portion.
+ */
 export function initialGrams(
   est: MetricAmount,
   parsed: ParsedLine,
   food: FoodRecord | null,
 ): number | null {
   if (est.grams != null) return round1(est.grams);
-  if (food?.portions?.length && parsed.quantity != null && parsed.quantity > 0) {
-    const unit = (parsed.unitId ?? parsed.unit ?? '').toLowerCase();
-    const portion =
-      (unit && food.portions.find((p) => p.label.toLowerCase().includes(unit))) ||
-      food.portions[0];
-    return round1(portion.grams * parsed.quantity);
+  const qty = parsed.quantity;
+  if (qty == null || qty <= 0 || !food?.portions?.length) return null;
+
+  const want = canonicalUnit(parsed.unitId ?? parsed.unit);
+  if (want) {
+    for (const p of food.portions) {
+      const lp = parsePortion(p);
+      if (lp && canonicalUnit(lp.unit) === want) return round1((p.grams / lp.amount) * qty);
+    }
+  }
+  // A count word (clove, slice, "1 egg") has no recognised mass/volume unit: use
+  // the food's first count-style portion. A recognised volume/mass unit with no
+  // matching portion gets no guess (null → the author enters the weight), and a
+  // count never inherits a cup/oz portion's weight.
+  if (!classifyUnit(want)) {
+    for (const p of food.portions) {
+      const lp = parsePortion(p);
+      if (lp && !classifyUnit(lp.unit)) return round1((p.grams / lp.amount) * qty);
+    }
   }
   return null;
 }

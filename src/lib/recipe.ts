@@ -87,8 +87,8 @@ export interface IngredientAmountSource {
 
 /**
  * The amount shown beside an ingredient. Teaspoons and tablespoons keep their
- * original measure ("1 tbsp") — cooks dose those by spoon, and the gram weight
- * is a coarse density estimate there — while everything else shows the stored
+ * original measure ("1 tbsp") — that's how cooks dose them and the gram
+ * conversion is only approximate — while everything else shows the stored
  * metric (ml for liquids, else grams). Grams remain the basis for ALL nutrition
  * math regardless of what's shown. Returns null when no amount is known, so the
  * caller can fall back to the raw line.

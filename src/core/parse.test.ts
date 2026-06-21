@@ -51,10 +51,10 @@ describe('estimateMetric', () => {
     expect(r.grams).toBeCloseTo(226.8, 1);
     expect(r.milliliters).toBeNull();
   });
-  it('gives millilitres and a density-based weight for volume units', () => {
+  it('gives millilitres only for volume units (weight comes from the USDA portion)', () => {
     const r = estimateMetric(parseIngredientLine('2 tablespoons olive oil'));
     expect(r.milliliters).toBeCloseTo(29.57, 1);
-    expect(r.grams).toBeCloseTo(26.9, 1); // 29.57 ml × 0.91
+    expect(r.grams).toBeNull();
   });
   it('leaves count units unresolved', () => {
     const r = estimateMetric(parseIngredientLine('2 cloves garlic'));

@@ -70,7 +70,8 @@ export interface PerServingMacros {
 
 /** Result of a metric-conversion attempt for a quantity + unit. */
 export interface MetricAmount {
-  /** Weight in grams, when the unit is a mass (or volume resolved via density). */
+  /** Weight in grams, when the unit is a mass unit. Volume weight is resolved
+   *  later from the matched food's USDA portion, not estimated here. */
   grams: number | null;
   /** Volume in millilitres, when the unit is a volume. */
   milliliters: number | null;

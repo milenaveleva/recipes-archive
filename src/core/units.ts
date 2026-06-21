@@ -3,8 +3,8 @@
  *
  * Recipes are stored in metric (grams precomputed); this module converts the
  * handful of mass/volume/temperature units that appear in recipes to grams or
- * millilitres. Volume→weight needs an ingredient density and lives in
- * `density.ts`; here volume resolves to millilitres only.
+ * millilitres. Volume resolves to millilitres only; a volume's weight comes
+ * from the matched USDA food's portion (addLib's `initialGrams`), not here.
  *
  * The conversion factors are exact (US customary) constants — a self-contained
  * table is the right size for ~15 units and avoids a general-purpose
@@ -129,8 +129,8 @@ export function volumeToMilliliters(
 
 /**
  * Resolve a quantity + unit to a metric amount. Mass units yield grams; volume
- * units yield millilitres (weight needs an ingredient density, see
- * `density.ts`); anything else (count words like "clove", "pinch") yields a
+ * units yield millilitres (a volume's weight is resolved later from the matched
+ * food's portion); anything else (count words like "clove", "pinch") yields a
  * null amount with a null dimension.
  */
 export function toMetric(
