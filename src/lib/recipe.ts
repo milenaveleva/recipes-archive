@@ -1,4 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
+import { canonicalUnit } from '../core/units';
 
 export type Recipe = CollectionEntry<'recipes'>;
 export type Tone = 'good' | 'mid' | 'bad' | 'unknown';
@@ -72,6 +73,45 @@ export function buildRecipeMeta(data: RecipeMetaSource): RecipeMetaItem[] {
     },
     data.cuisine && { icon: 'cuisine', label: 'Cuisine', value: data.cuisine },
   ].filter(Boolean) as RecipeMetaItem[];
+}
+
+/** Fields formatIngredientAmount reads — common to a collection ingredient and
+ * an authoring DraftIngredient. */
+export interface IngredientAmountSource {
+  quantity?: number | null;
+  quantity2?: number | null;
+  unit?: string | null;
+  grams?: number | null;
+  milliliters?: number | null;
+}
+
+/**
+ * The amount shown beside an ingredient. Teaspoons and tablespoons keep their
+ * original measure ("1 tbsp") — cooks dose those by spoon, and the gram weight
+ * is a coarse density estimate there — while everything else shows the stored
+ * metric (ml for liquids, else grams). Grams remain the basis for ALL nutrition
+ * math regardless of what's shown. Returns null when no amount is known, so the
+ * caller can fall back to the raw line.
+ */
+export function formatIngredientAmount(ing: IngredientAmountSource): string | null {
+  const qtyText = () =>
+    ing.quantity2 != null
+      ? `${round(ing.quantity!, 2)}–${round(ing.quantity2, 2)}`
+      : `${round(ing.quantity!, 2)}`;
+
+  const canon = canonicalUnit(ing.unit);
+  if ((canon === 'teaspoon' || canon === 'tablespoon') && ing.quantity != null) {
+    return `${qtyText()} ${canon === 'tablespoon' ? 'tbsp' : 'tsp'}`;
+  }
+  // Prefer volume for liquids: items measured by volume carry `milliliters` (and
+  // may also carry `grams` purely for nutrition math), so check ml first.
+  if (ing.milliliters != null && ing.milliliters > 0) {
+    const ml = ing.milliliters;
+    return ml >= 1000 ? `${round(ml / 1000, 2)} L` : `${round(ml, 0)} ml`;
+  }
+  if (ing.grams != null && ing.grams > 0) return formatGrams(ing.grams);
+  if (ing.quantity != null) return ing.unit ? `${qtyText()} ${ing.unit}` : qtyText();
+  return null;
 }
 
 /* ---- number formatting ---- */

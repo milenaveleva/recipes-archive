@@ -7,7 +7,37 @@ import {
   hasAnyScore,
   nutriGrades,
   GL_DIAL_MAX,
+  formatIngredientAmount,
 } from './recipe';
+
+describe('formatIngredientAmount (display unit ≠ calc basis)', () => {
+  it('shows tsp/tbsp as written even when grams/ml are stored for the math', () => {
+    expect(formatIngredientAmount({ quantity: 1, unit: 'tbsp', grams: 13.6, milliliters: 14.8 })).toBe('1 tbsp');
+    expect(formatIngredientAmount({ quantity: 2, unit: 'tsp', grams: 9.2 })).toBe('2 tsp');
+    expect(formatIngredientAmount({ quantity: 0.5, unit: 'tbsp' })).toBe('0.5 tbsp');
+  });
+
+  it('normalises spoon aliases and casing/trailing dots', () => {
+    expect(formatIngredientAmount({ quantity: 1, unit: 'Tablespoon' })).toBe('1 tbsp');
+    expect(formatIngredientAmount({ quantity: 1, unit: 'tbsp.' })).toBe('1 tbsp');
+    expect(formatIngredientAmount({ quantity: 3, unit: 'teaspoons' })).toBe('3 tsp');
+  });
+
+  it('renders spoon ranges with both bounds', () => {
+    expect(formatIngredientAmount({ quantity: 1, quantity2: 2, unit: 'tbsp' })).toBe('1–2 tbsp');
+  });
+
+  it('keeps non-spoon volumes and weights in metric', () => {
+    expect(formatIngredientAmount({ quantity: 1, unit: 'cup', milliliters: 237, grams: 255 })).toBe('237 ml');
+    expect(formatIngredientAmount({ quantity: 9, unit: 'oz', grams: 255 })).toBe('255 g');
+    expect(formatIngredientAmount({ milliliters: 1500 })).toBe('1.5 L');
+  });
+
+  it('falls back to quantity+unit, then null', () => {
+    expect(formatIngredientAmount({ quantity: 2, unit: 'clove' })).toBe('2 clove');
+    expect(formatIngredientAmount({})).toBeNull();
+  });
+});
 
 describe('score dial fills (emptier ring = healthier)', () => {
   it('maps GI onto its 0–100 scale and clamps', () => {

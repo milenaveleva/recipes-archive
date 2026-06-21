@@ -8,7 +8,7 @@
  */
 import { Fragment, useEffect } from 'react';
 import type { RecipeDraft, DraftIngredient } from '../../core/markdown';
-import { formatGrams, round, slugifyTerm, buildScoreDials, hasAnyScore, buildRecipeMeta } from '../../lib/recipe';
+import { round, slugifyTerm, buildScoreDials, hasAnyScore, buildRecipeMeta, formatIngredientAmount } from '../../lib/recipe';
 import { META_ICONS } from '../../lib/icons';
 import { withBase } from '../../lib/url';
 import ScoreDial from './ScoreDial';
@@ -22,23 +22,6 @@ function Medallions({ nutrition }: { nutrition: RecipeDraft['nutrition'] }) {
       ))}
     </div>
   );
-}
-
-/** Human metric amount for an ingredient (ml/grams/count), else null. Mirrors IngredientList. */
-function amount(ing: DraftIngredient): string | null {
-  if (ing.milliliters != null && ing.milliliters > 0) {
-    const ml = ing.milliliters;
-    return ml >= 1000 ? `${round(ml / 1000, 2)} L` : `${round(ml, 0)} ml`;
-  }
-  if (ing.grams != null && ing.grams > 0) return formatGrams(ing.grams);
-  if (ing.quantity != null) {
-    const q =
-      ing.quantity2 != null
-        ? `${round(ing.quantity, 2)}–${round(ing.quantity2, 2)}`
-        : `${round(ing.quantity, 2)}`;
-    return ing.unit ? `${q} ${ing.unit}` : q;
-  }
-  return null;
 }
 
 function Ingredients({ ingredients }: { ingredients: DraftIngredient[] }) {
@@ -56,7 +39,7 @@ function Ingredients({ ingredients }: { ingredients: DraftIngredient[] }) {
           {group.name && <h3 className="eyebrow mb-3 !text-ink-soft">{group.name}</h3>}
           <ul className="flex flex-col">
             {group.items.map((ing, i) => {
-              const amt = amount(ing);
+              const amt = formatIngredientAmount(ing);
               return (
                 <li
                   key={i}
