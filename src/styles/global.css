@@ -198,9 +198,19 @@ h1, h2, h3, h4 {
 .recipe-prose h2,
 .recipe-prose h3 {
   font-family: var(--font-display);
-  font-size: 1.25rem;
   margin-top: 2rem;
   color: var(--color-ink);
+}
+.recipe-prose h2 {
+  font-size: 1.5rem;
+}
+.recipe-prose h3 {
+  font-size: 1.25rem;
+}
+/* The body's leading "## Method" heading is the section header — align its top
+   with the adjacent Ingredients header instead of inheriting the 2rem gap. */
+.recipe-prose > h2:first-child {
+  margin-top: 0;
 }
 .recipe-prose p {
   font-size: 1.05rem;

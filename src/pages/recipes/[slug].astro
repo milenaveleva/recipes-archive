@@ -46,6 +46,19 @@ const ogImage = data.image
   ? new URL(data.image.src, Astro.site).href
   : data.imageUrl;
 const hasScores = !!data.nutrition?.glycemic || !!data.nutrition?.nutriScore || !!data.nutrition?.inflammation;
+// Show the per-serving panel (and its rail column) only when there's a value to
+// show — mirrors NutritionPanel's own empty-state guard so an empty perServing
+// never reserves a blank rail.
+const hasNutritionPanel =
+  !!data.nutrition?.perServing &&
+  Object.values(data.nutrition.perServing).some((v) => v != null);
+// The floating rail collects every nutrition figure — score medallions and the
+// per-serving panel — so it appears whenever either has something to show.
+const hasNutritionRail = hasScores || hasNutritionPanel;
+// A serialized body opens with its own "## Method" heading; render a template
+// one only for a body that carries none (e.g. a prose-only method with no
+// numbered steps) so the page shows exactly one Method heading.
+const bodyHasMethodHeading = /^##\s+Method\b/im.test(recipe.body ?? '');
 ---
 
 <BaseLayout title={data.title} description={data.description} ogImage={ogImage} hideAddFab>
@@ -93,7 +106,12 @@ const hasScores = !!data.nutrition?.glycemic || !!data.nutrition?.nutriScore || 
   <PendingDetailView slug={slug} client:only="react" />
 
   <div id="recipe-static">
-  <article class="mx-auto max-w-5xl px-5 sm:px-8 pt-8 pb-4">
+  <div
+    class:list={[
+      'mx-auto max-w-5xl px-5 sm:px-8 pt-8 pb-12',
+      hasNutritionRail && 'xl:max-w-7xl',
+    ]}
+  >
     <a
       href={withBase('/')}
       class="font-ui text-sm text-ink-soft no-underline transition-colors hover:text-spice"
@@ -154,79 +172,96 @@ const hasScores = !!data.nutrition?.glycemic || !!data.nutrition?.nutriScore || 
       }
     </header>
 
-    {
-      (data.image || data.imageUrl) && (
-        <figure class="mt-8 overflow-hidden rounded-2xl border border-line">
-          {data.image ? (
-            <Image
-              src={data.image}
-              alt={data.imageAlt ?? data.title}
-              widths={[600, 900, 1280]}
-              sizes="(max-width: 960px) 100vw, 960px"
-              class="aspect-[16/9] w-full object-cover"
-            />
-          ) : (
-            <img
-              src={data.imageUrl}
-              alt={data.imageAlt ?? data.title}
-              class="aspect-[16/9] w-full object-cover"
-            />
-          )}
-        </figure>
-      )
-    }
+    {/* The hero image leads the main column; every nutrition figure — the score
+        medallions and the per-serving panel — floats in a right-hand rail
+        anchored level with the top of the image, pinned to the viewport once
+        you scroll past the picture (`xl:sticky`). The rail spans every row so
+        its inner card travels the full height of the recipe. Below xl it
+        collapses into the single-column flow, right under the image. */}
+    <div
+      class:list={[
+        'mt-8',
+        hasNutritionRail &&
+          'xl:grid xl:grid-cols-[minmax(0,1fr)_18rem] xl:grid-rows-[auto_auto] xl:gap-x-10',
+      ]}
+    >
+      {
+        (data.image || data.imageUrl) && (
+          <figure class="overflow-hidden rounded-2xl border border-line xl:col-start-1 xl:row-start-1">
+            {data.image ? (
+              <Image
+                src={data.image}
+                alt={data.imageAlt ?? data.title}
+                widths={[600, 900, 1280]}
+                sizes="(min-width: 1280px) 888px, (min-width: 960px) 960px, 100vw"
+                class="aspect-[16/9] w-full object-cover"
+              />
+            ) : (
+              <img
+                src={data.imageUrl}
+                alt={data.imageAlt ?? data.title}
+                class="aspect-[16/9] w-full object-cover"
+              />
+            )}
+          </figure>
+        )
+      }
 
-    {
-      data.nutrition && (
-        <section class="mt-8">
-          <ScoreMedallions nutrition={data.nutrition} size="lg" />
-        </section>
-      )
-    }
-  </article>
-
-  <div class="mx-auto max-w-5xl px-5 sm:px-8 pb-12">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-      <aside class="lg:col-span-5 lg:sticky lg:top-24 lg:self-start flex flex-col gap-6">
-        <div>
-          <h2 class="font-display text-2xl text-ink mb-4">Ingredients</h2>
-          <IngredientList ingredients={data.ingredients} />
-        </div>
-        {data.nutrition && <NutritionPanel nutrition={data.nutrition} />}
-      </aside>
-
-      <section class="lg:col-span-7">
-        <h2 class="font-display text-2xl text-ink mb-4">Method</h2>
-        <div class="recipe-prose">
-          <Content />
-        </div>
-
-        {
-          data.tags.length > 0 && (
-            <div class="mt-10 flex flex-wrap gap-2">
-              {data.tags.map((t) => (
-                <a
-                  href={withBase(`/tags/${slugifyTerm(t)}`)}
-                  class="rounded-full border border-line bg-card px-3 py-1 font-ui text-xs text-ink-soft no-underline transition-colors hover:border-spice hover:text-spice"
-                >
-                  #{t}
-                </a>
-              ))}
+      {
+        hasNutritionRail && (
+          <aside class="mt-8 max-w-md xl:mt-0 xl:max-w-none xl:col-start-2 xl:row-span-full">
+            <div class="flex flex-col gap-5 xl:sticky xl:top-24">
+              {hasScores && <ScoreMedallions nutrition={data.nutrition} size="lg" />}
+              {hasNutritionPanel && <NutritionPanel nutrition={data.nutrition} />}
+              {hasScores && (
+                <p class="rounded-lg border border-line bg-paper-2/60 px-4 py-3 font-ui text-xs leading-relaxed text-ink-faint">
+                  Glycemic index/load and the inflammation score are estimates derived
+                  from ingredient data and published references — useful for comparison,
+                  not a substitute for medical or dietary advice. The nutrition grade
+                  follows the Nutri-Score 2023 method.
+                </p>
+              )}
             </div>
-          )
-        }
+          </aside>
+        )
+      }
 
-        {
-          hasScores && (
-            <p class="mt-8 rounded-lg border border-line bg-paper-2/60 px-4 py-3 font-ui text-xs leading-relaxed text-ink-faint">
-              Glycemic index/load and the inflammation score are estimates derived
-              from ingredient data and published references — useful for comparison,
-              not a substitute for medical or dietary advice. The nutrition grade
-              follows the Nutri-Score 2023 method.
-            </p>
-          )
-        }
-      </section>
+      <div class="mt-8 min-w-0 xl:col-start-1 xl:row-start-2">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+          <aside class="lg:col-span-5 lg:sticky lg:top-24 lg:self-start">
+            <h2 class="font-display text-2xl text-ink mb-4">Ingredients</h2>
+            <IngredientList ingredients={data.ingredients} />
+          </aside>
+
+          <section class="lg:col-span-7">
+            {/* A serialized body opens with its own `## Method` heading (so the
+                markdown file reads as a standalone document); .recipe-prose
+                styles it to match the Ingredients header. Add a heading here
+                only when the body carries none, so the page shows exactly one. */}
+            {!bodyHasMethodHeading && (
+              <h2 class="font-display text-2xl text-ink mb-4">Method</h2>
+            )}
+            <div class="recipe-prose">
+              <Content />
+            </div>
+
+            {
+              data.tags.length > 0 && (
+                <div class="mt-10 flex flex-wrap gap-2">
+                  {data.tags.map((t) => (
+                    <a
+                      href={withBase(`/tags/${slugifyTerm(t)}`)}
+                      class="rounded-full border border-line bg-card px-3 py-1 font-ui text-xs text-ink-soft no-underline transition-colors hover:border-spice hover:text-spice"
+                    >
+                      #{t}
+                    </a>
+                  ))}
+                </div>
+              )
+            }
+          </section>
+        </div>
+      </div>
     </div>
   </div>
   </div>

@@ -5,7 +5,7 @@ import ScoreDial from './ScoreDial.astro';
 
 interface Props {
   nutrition: CollectionEntry<'recipes'>['data']['nutrition'];
-  /** 'lg' for the detail hero (ring dials), 'sm' for compact rows on cards. */
+  /** 'lg' for the detail page's nutrition rail (ring dials), 'sm' for compact rows on cards. */
   size?: 'lg' | 'sm';
 }
 
@@ -23,7 +23,7 @@ const abbrev = (d: (typeof dials)[number]) =>
 
 {
   size === 'lg' ? (
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <div class="grid grid-cols-2 gap-3">
       {dials.map((d) => (
         <ScoreDial dial={d} />
       ))}
