@@ -7,7 +7,10 @@
  * every food to the per-100g nutrient fields the compute engine reads, plus
  * named portions (for count-unit ingredients) and the USDA food category.
  * The Branded set (~400k branded products, ~3 GB) is intentionally excluded:
- * it is not useful for ingredient matching.
+ * it is not useful for ingredient matching. Commercial branded products that SR
+ * Legacy mixes into the generic data (candy bars, named smoothies, restaurant
+ * dishes, infant formula) are dropped via scripts/usda-brands.mjs, so a fresh
+ * ingest reproduces the cleaned dataset rather than reintroducing brands.
  *
  * Usage:
  *   node scripts/build-usda.mjs
@@ -22,6 +25,7 @@ import { promisify } from 'node:util';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { shouldDrop, assertCuratedPresent, serializeFoods } from './usda-brands.mjs';
 
 const execFileP = promisify(execFile);
 const OUT = fileURLToPath(new URL('../src/data/usda-foods.json', import.meta.url));
@@ -170,24 +174,29 @@ async function main() {
       }
       log(`${ds.name}: ${list.length} foods — pruning…`);
       let kept = 0;
+      let dropped = 0;
       for (let i = 0; i < list.length; i++) {
         const pruned = pruneFood(list[i]);
         if (pruned && pruned.fdcId != null && !byId.has(pruned.fdcId)) {
-          byId.set(pruned.fdcId, pruned);
-          kept++;
+          if (shouldDrop(pruned)) {
+            dropped++;
+          } else {
+            byId.set(pruned.fdcId, pruned);
+            kept++;
+          }
         }
-        if (i % 500 === 0) write(`\r  ${ds.name}: ${i}/${list.length} (${kept} kept)`);
+        if (i % 500 === 0) write(`\r  ${ds.name}: ${i}/${list.length} (${kept} kept, ${dropped} branded)`);
       }
-      write(`\r  ${ds.name}: ${list.length}/${list.length} (${kept} kept)\n`);
+      write(`\r  ${ds.name}: ${list.length}/${list.length} (${kept} kept, ${dropped} branded)\n`);
     } finally {
       await rm(dir, { recursive: true, force: true });
     }
   }
 
   const foods = [...byId.values()];
-  // One food per line keeps the (large) diff scannable.
-  const json = `[\n${foods.map((f) => `  ${JSON.stringify(f)}`).join(',\n')}\n]\n`;
-  await writeFile(OUT, json);
+  // Never orphan a curated food-scoring entry by filtering it out as branded.
+  assertCuratedPresent(foods);
+  await writeFile(OUT, serializeFoods(foods));
   log(`\nWrote ${foods.length} foods → ${path.relative(process.cwd(), OUT)}`);
 }
 

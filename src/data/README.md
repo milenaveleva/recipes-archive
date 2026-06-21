@@ -2,7 +2,7 @@
 
 ## `usda-foods.json`
 
-The USDA [FoodData Central](https://fdc.nal.usda.gov/) generic reference foods (public domain, CC0): the full **Foundation Foods + SR Legacy** datasets (~8k foods), each pruned to its per-100g nutrient profile (energy, macros, fat breakdown, and the FDA-label vitamins & minerals), its USDA food `category`, and named `portions` (e.g. "1 large" egg → 50 g) for count-unit ingredients. Each record keeps its `fdcId` for provenance. The Branded set (~400k branded products, ~3 GB) is intentionally excluded — it is not useful for ingredient matching.
+The USDA [FoodData Central](https://fdc.nal.usda.gov/) generic reference foods (public domain, CC0): the **Foundation Foods + SR Legacy** datasets (~7,100 foods), each pruned to its per-100g nutrient profile (energy, macros, fat breakdown, and the FDA-label vitamins & minerals), its USDA food `category`, and named `portions` (e.g. "1 large" egg → 50 g) for count-unit ingredients. Each record keeps its `fdcId` for provenance. The Branded set (~400k branded products, ~3 GB) is intentionally excluded — it is not useful for ingredient matching — and the commercial branded products that SR Legacy mixes into the generic data (candy bars, named smoothies, restaurant dishes, infant formula) are filtered out by `scripts/usda-brands.mjs`, so an "apple" query never lands on "Candies, NESTLE …".
 
 The file is several MB, so the authoring island fetches it **lazily** via its asset URL (a `?url` import in `addLib.ts`) rather than bundling it; it is never shipped to the public recipe pages.
 
@@ -12,7 +12,9 @@ Regenerate it (needs `curl` and `unzip`; no API key required) with:
 node scripts/build-usda.mjs
 ```
 
-The script downloads both bulk datasets, prunes them to the fields above, dedupes by `fdcId`, and overwrites this file. See the script header for the dataset URLs and the nutrient-number → field mapping.
+The script downloads both bulk datasets, prunes them to the fields above, dedupes by `fdcId`, drops branded products (`scripts/usda-brands.mjs`), and overwrites this file — so a re-ingest reproduces the cleaned dataset rather than reintroducing brands. See the script header for the dataset URLs and the nutrient-number → field mapping.
+
+To re-apply the brand filter to the committed file without re-downloading (e.g. after editing the filter, its denylist `usda-exclude.json`, or its keep-list), run `node scripts/prune-branded.mjs` (`--dry-run` to preview). Both entry points refuse to write if filtering would orphan a `food-scoring.json` entry.
 
 ## `food-scoring.json`
 
