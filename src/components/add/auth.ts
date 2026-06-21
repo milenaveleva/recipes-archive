@@ -142,6 +142,17 @@ export function onAuthChange(handler: () => void): () => void {
   return () => window.removeEventListener(AUTH_CHANGE_EVENT, handler);
 }
 
+/**
+ * Render the current session now and again on every in-tab sign-in/out — the
+ * one subscription point for UI that reflects auth state (the header widget,
+ * the recipe Edit/Delete actions, the add-recipe affordances). Returns an
+ * unsubscribe.
+ */
+export function onSession(render: (session: AuthSession | null) => void): () => void {
+  render(loadSession());
+  return onAuthChange(() => render(loadSession()));
+}
+
 /* ---- popup + refresh (browser only) ---- */
 
 /** Open the GitHub sign-in popup and resolve with the delivered session. */

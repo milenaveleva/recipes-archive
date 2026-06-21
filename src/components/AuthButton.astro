@@ -88,7 +88,7 @@ const addHref = withBase('/add');
 </div>
 
 <script>
-  import { loadSession, signIn, saveSession, clearSession, notifyAuthChange, onAuthChange } from './add/auth';
+  import { signIn, saveSession, clearSession, notifyAuthChange, onSession } from './add/auth';
   import type { AuthSession } from './add/auth';
 
   const PROXY = (import.meta.env.PUBLIC_IMPORT_PROXY as string | undefined)?.trim();
@@ -184,8 +184,7 @@ const addHref = withBase('/add');
       }
     });
 
-    // Reflect a sign-in/out that happened in the /add island (same tab).
-    onAuthChange(() => render(loadSession()));
-    render(loadSession());
+    // Reflect the current session now and any in-tab sign-in/out (e.g. the /add island).
+    onSession(render);
   }
 </script>

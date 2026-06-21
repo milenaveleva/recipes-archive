@@ -125,7 +125,7 @@ const buildTime = Date.now();
 
     {
       !onAddPage && !hideAddFab && (
-        <div class="fixed bottom-6 right-6 z-50 sm:bottom-8 sm:right-8">
+        <div data-auth-only class="fixed bottom-6 right-6 z-50 hidden sm:bottom-8 sm:right-8">
           <Fab href={withBase('/add')} label="Add a recipe">
             <svg
               viewBox="0 0 24 24"
@@ -144,5 +144,21 @@ const buildTime = Date.now();
         </div>
       )
     }
+
+    <script>
+      // Reveal "add a recipe" affordances (the global + FAB, the empty-shelf
+      // CTA) only to a signed-in user — the one who can commit. Mirrors the
+      // Edit/Delete reveal on recipe pages via auth.ts's onSession, so content
+      // pages stay React-free. Marked elements start hidden, so a signed-out
+      // visitor never sees a button they can't use.
+      import { onSession } from '../components/add/auth';
+
+      const gated = document.querySelectorAll<HTMLElement>('[data-auth-only]');
+      if (gated.length) {
+        onSession((session) =>
+          gated.forEach((el) => el.classList.toggle('hidden', !session)),
+        );
+      }
+    </script>
   </body>
 </html>

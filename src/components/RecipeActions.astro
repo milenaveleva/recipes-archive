@@ -105,7 +105,7 @@ const path = `src/content/recipes/${id}.md`;
 </div>
 
 <script>
-  import { loadSession, freshSession, refreshSession, saveSession, onAuthChange } from './add/auth';
+  import { loadSession, freshSession, refreshSession, saveSession, onSession } from './add/auth';
   import { deleteFile, GitHubError, RECIPE_REPO } from '../core/github';
   import { recordPending } from '../core/pending';
   import { withBase } from '../lib/url';
@@ -129,13 +129,11 @@ const path = `src/content/recipes/${id}.md`;
     if (nameEl) nameEl.textContent = title;
 
     // Reveal the floating actions only when a GitHub session is present.
-    const sync = () => {
-      const signedIn = !!loadSession();
+    onSession((session) => {
+      const signedIn = !!session;
       root.classList.toggle('hidden', !signedIn);
       root.classList.toggle('flex', signedIn);
-    };
-    sync();
-    onAuthChange(sync);
+    });
 
     const showError = (msg: string) => {
       if (!errorEl) return;
