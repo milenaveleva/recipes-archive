@@ -12,27 +12,27 @@ totalTime: PT50M
 cuisine: Japanese
 course: Side Dish
 ingredients:
-  - raw: 1½ cups uncooked Japanese short-grain white rice
+  - raw: 1½ cups Japanese short-grain white rice (uncooked)
     quantity: 1.5
     unit: cups
-    item: uncooked Japanese short-grain white rice
-    grams: 300
+    item: Japanese short-grain white rice
+    note: uncooked
+    grams: 279
     milliliters: 354.882
-    fdcId: 168881
+    fdcId: 168882
     matchConfidence: high
   - raw: 1 piece aburaage
     quantity: 1
     unit: piece
     item: aburaage
     matchConfidence: none
-  - raw: 2 inches ginger (preferably young ginger so it‘s less spicy)
-    quantity: 2
-    unit: inches
-    item: ginger
-    note: preferably young ginger so it‘s less spicy
-    grams: 4.4
+  - raw: 30g young ginger
+    quantity: 30
+    unit: g
+    item: young ginger
+    grams: 30
     fdcId: 169231
-    matchConfidence: high
+    matchConfidence: medium
   - raw: 1⅓ cups water
     quantity: 1.333
     unit: cups
@@ -72,23 +72,23 @@ ingredients:
     matchConfidence: high
 nutrition:
   perServing:
-    energyKcal: 284
-    energyKj: 1190
-    protein_g: 5.7
-    fat_g: 1.2
+    energyKcal: 112
+    energyKj: 468
+    protein_g: 2.6
+    fat_g: 0.9
     satFat_g: 0.2
-    carbs_g: 61.2
-    fiber_g: 2.6
-    sugar_g: 0.8
+    carbs_g: 22.9
+    fiber_g: 0.6
+    sugar_g: 0.9
     sodium_mg: 228
-    availableCarb_g: 58.6
+    availableCarb_g: 22.3
   nutriScore:
     grade: C
-    points: 6
+    points: 4
     category: general
     version: "2023"
   inflammation:
-    score: -1.5
+    score: -1.9
     band: anti-inflammatory
     method: ingredient-tag v1
   computedAt: "2026-06-21"
