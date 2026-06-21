@@ -20,34 +20,34 @@ ingredients:
     milliliters: 946.352
     fdcId: 174158
     matchConfidence: high
-  - raw: 1 piece kombu (dried kelp) ((⅓ oz, 10 g per piece; 4 x 4 inches or 10 x 10 cm))
+  - raw: 1 piece kombu (10 g per piece; 10 x 10 cm)
     quantity: 1
     unit: piece
-    item: kombu (dried kelp) ((⅓ oz
-    note: 10 g per piece; 4 x 4 inches or 10 x 10 cm))
+    item: kombu
+    note: 10 g per piece; 10 x 10 cm
     matchConfidence: none
-  - raw: 1 cup katsuobushi (dried bonito flakes) ((packed; I used a loosely packed 3 cups in the video for stronger flavor))
-    quantity: 1
+  - raw: 2 cup katsuobushi
+    quantity: 2
     unit: cup
-    item: katsuobushi (dried bonito flakes) ((packed; I used a loosely packed 3 cups in the video for stronger flavor))
-    milliliters: 236.588
+    item: katsuobushi
+    milliliters: 473.176
     matchConfidence: none
-  - raw: 7 oz soft/silken tofu (kinugoshi dofu)
+  - raw: 7 oz soft/silken tofu
     quantity: 7
     unit: oz
     item: soft/silken tofu
-    note: kinugoshi dofu
     grams: 198.4
     fdcId: 172449
     matchConfidence: medium
-  - raw: 4 Tbsp miso ((use 1 Tbsp, 18 g for every 1 cup, 240 ml of dashi))
+  - raw: 4 Tbsp miso (1 Tbsp, for every 240 ml of dashi)
     quantity: 4
     unit: Tbsp
-    item: miso ((use 1 Tbsp
-    note: 18 g for every 1 cup, 240 ml of dashi))
+    item: miso
+    note: 1 Tbsp, for every 240 ml of dashi
+    grams: 68
     milliliters: 59.1472
     fdcId: 172442
-    matchConfidence: low
+    matchConfidence: high
   - raw: 1 Tbsp dried wakame seaweed
     quantity: 1
     unit: Tbsp
@@ -61,19 +61,19 @@ ingredients:
     matchConfidence: none
 nutrition:
   perServing:
-    energyKcal: 30
-    energyKj: 127
-    protein_g: 3.6
-    fat_g: 1.8
-    satFat_g: 0.3
-    carbs_g: 0.6
-    fiber_g: 0.1
-    sugar_g: 0.3
-    sodium_mg: 9
-    availableCarb_g: 0.5
+    energyKcal: 64
+    energyKj: 267
+    protein_g: 5.7
+    fat_g: 2.9
+    satFat_g: 0.4
+    carbs_g: 4.9
+    fiber_g: 1
+    sugar_g: 1.4
+    sodium_mg: 643
+    availableCarb_g: 3.9
   nutriScore:
-    grade: A
-    points: 0
+    grade: B
+    points: 2
     category: general
     version: "2023"
   computedAt: "2026-06-21"
