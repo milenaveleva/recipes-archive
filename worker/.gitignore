@@ -1,0 +1,8 @@
+# Local Worker secrets (GITHUB_CLIENT_ID/SECRET, ALLOWED_AUTH_ORIGINS for dev) —
+# never commit these.
+.dev.vars
+.dev.vars.*
+
+# Wrangler build/cache state.
+.wrangler/
+dist/
