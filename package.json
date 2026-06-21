@@ -8,14 +8,17 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "npm run build && wrangler dev",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "astro check",
     "typecheck:core": "tsc -p tsconfig.core.json",
-    "astro": "astro"
+    "astro": "astro",
+    "generate-types": "wrangler types",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^13.7.0",
     "@astrojs/react": "^5.0.7",
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource-variable/fraunces": "^5.2.9",
@@ -35,7 +38,8 @@
     "@types/react-dom": "^19.2.3",
     "tailwindcss": "^4.3.1",
     "typescript": "^5.7.3",
-    "vitest": "^4.1.9"
+    "vitest": "^4.1.9",
+    "wrangler": "^4.103.0"
   },
   "overrides": {
     "vite": "7.3.5"

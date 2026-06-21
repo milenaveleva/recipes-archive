@@ -23,3 +23,9 @@ worker/node_modules/
 worker/.wrangler/
 # large raw datasets (we commit pruned JSON, not raw dumps)
 scripts/data-raw/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
