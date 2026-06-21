@@ -76,12 +76,12 @@ nutrition:
     points: 0
     category: general
     version: "2023"
-  computedAt: "2026-06-20"
+  computedAt: "2026-06-21"
   dataSources:
     - USDA FoodData Central
     - Nutri-Score 2023
 createdAt: "2026-06-20"
-updatedAt: "2026-06-20"
+updatedAt: "2026-06-21"
 ---
 
 ## Method
