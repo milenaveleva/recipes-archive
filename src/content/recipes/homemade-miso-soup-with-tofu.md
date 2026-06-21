@@ -20,17 +20,17 @@ ingredients:
     milliliters: 946.352
     fdcId: 174158
     matchConfidence: high
-  - raw: 1 piece kombu (10 g per piece; 10 x 10 cm)
+  - raw: 1 piece kombu (10 g per piece)
     quantity: 1
     unit: piece
     item: kombu
-    note: 10 g per piece; 10 x 10 cm
+    note: 10 g per piece
     matchConfidence: none
-  - raw: 2 cup katsuobushi
-    quantity: 2
-    unit: cup
+  - raw: 3 cups katsuobushi
+    quantity: 3
+    unit: cups
     item: katsuobushi
-    milliliters: 473.176
+    milliliters: 709.764
     matchConfidence: none
   - raw: 7 oz soft/silken tofu
     quantity: 7
@@ -39,11 +39,11 @@ ingredients:
     grams: 198.4
     fdcId: 172449
     matchConfidence: medium
-  - raw: 4 Tbsp miso (1 Tbsp, for every 240 ml of dashi)
+  - raw: 4 Tbsp miso (use 1 Tbsp for every 240 ml of dashi)
     quantity: 4
     unit: Tbsp
     item: miso
-    note: 1 Tbsp, for every 240 ml of dashi
+    note: use 1 Tbsp for every 240 ml of dashi
     grams: 68
     milliliters: 59.1472
     fdcId: 172442
