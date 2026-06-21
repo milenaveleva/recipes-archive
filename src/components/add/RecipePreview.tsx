@@ -8,7 +8,8 @@
  */
 import { Fragment, useEffect } from 'react';
 import type { RecipeDraft, DraftIngredient } from '../../core/markdown';
-import { formatDuration, formatGrams, round, slugifyTerm, buildScoreDials, hasAnyScore } from '../../lib/recipe';
+import { formatGrams, round, slugifyTerm, buildScoreDials, hasAnyScore, buildRecipeMeta } from '../../lib/recipe';
+import { META_ICONS } from '../../lib/icons';
 import { withBase } from '../../lib/url';
 import ScoreDial from './ScoreDial';
 
@@ -194,18 +195,9 @@ export default function RecipePreview({
     onReady?.();
   }, [onReady]);
   const data = recipe;
-  const meta = [
-    formatDuration(data.prepTime) && { label: 'Prep', value: formatDuration(data.prepTime)! },
-    formatDuration(data.cookTime) && { label: 'Cook', value: formatDuration(data.cookTime)! },
-    formatDuration(data.totalTime) && { label: 'Total', value: formatDuration(data.totalTime)! },
-    { label: 'Serves', value: String(data.servings) },
-    data.difficulty && { label: 'Difficulty', value: data.difficulty },
-    data.cuisine && { label: 'Cuisine', value: data.cuisine },
-  ].filter(Boolean) as { label: string; value: string }[];
+  const meta = buildRecipeMeta(data);
   const steps = data.instructions.filter((s) => s.trim());
   const tags = data.tags ?? [];
-  const hasScores =
-    !!data.nutrition?.glycemic || !!data.nutrition?.nutriScore || !!data.nutrition?.inflammation;
 
   return (
     <>
@@ -241,13 +233,22 @@ export default function RecipePreview({
             <p className="mt-4 max-w-2xl font-body text-lg text-ink-soft">{data.description}</p>
           )}
 
-          <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2">
+          <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
             {meta.map((m) => (
-              <div key={m.label} className="flex items-baseline gap-1.5">
-                <span className="font-ui text-[0.66rem] uppercase tracking-[0.14em] text-ink-faint">
-                  {m.label}
-                </span>
-                <span className="font-ui text-sm font-semibold capitalize text-ink">{m.value}</span>
+              <div key={m.icon} className="flex items-center gap-1.5">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-4 w-4 shrink-0 text-ink-faint"
+                  aria-hidden="true"
+                  dangerouslySetInnerHTML={{ __html: META_ICONS[m.icon] }}
+                />
+                <span className="sr-only">{m.label}:</span>
+                <span className="font-ui text-sm font-semibold text-ink">{m.value}</span>
               </div>
             ))}
           </div>
@@ -324,14 +325,6 @@ export default function RecipePreview({
                   </a>
                 ))}
               </div>
-            )}
-
-            {hasScores && (
-              <p className="mt-8 rounded-lg border border-line bg-paper-2/60 px-4 py-3 font-ui text-xs leading-relaxed text-ink-faint">
-                Glycemic index/load and the inflammation score are estimates derived from ingredient
-                data and published references — useful for comparison, not a substitute for medical or
-                dietary advice. The nutrition grade follows the Nutri-Score 2023 method.
-              </p>
             )}
           </section>
         </div>

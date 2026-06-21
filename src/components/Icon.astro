@@ -1,0 +1,24 @@
+---
+/** Inline Lucide glyph (24×24, stroke = currentColor) drawn from META_ICONS, so
+ * recipe-meta icons come from one source. Decorative by default (aria-hidden);
+ * pair with an sr-only label for meaning. */
+import { META_ICONS } from '../lib/icons';
+
+interface Props {
+  name: keyof typeof META_ICONS;
+  class?: string;
+}
+const { name, class: className } = Astro.props;
+---
+
+<svg
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class={className}
+  aria-hidden="true"
+  set:html={META_ICONS[name]}
+></svg>

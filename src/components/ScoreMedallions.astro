@@ -5,7 +5,7 @@ import ScoreDial from './ScoreDial.astro';
 
 interface Props {
   nutrition: CollectionEntry<'recipes'>['data']['nutrition'];
-  /** 'lg' for the detail page's nutrition rail (ring dials), 'sm' for compact rows on cards. */
+  /** 'lg' for the detail page's nutrition rail (ring dials), 'sm' for a compact inline summary. */
   size?: 'lg' | 'sm';
 }
 

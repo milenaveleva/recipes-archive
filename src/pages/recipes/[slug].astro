@@ -8,9 +8,10 @@ import NutritionPanel from '../../components/NutritionPanel.astro';
 import JsonLd from '../../components/JsonLd.astro';
 import RecipeActions from '../../components/RecipeActions.astro';
 import PendingDetailView from '../../components/add/PendingDetailView.tsx';
+import Icon from '../../components/Icon.astro';
 import {
   recipeSlug,
-  formatDuration,
+  buildRecipeMeta,
   extractSteps,
   slugifyTerm,
 } from '../../lib/recipe';
@@ -33,14 +34,7 @@ const slug = recipeSlug(recipe);
 const { Content } = await render(recipe);
 const steps = extractSteps(recipe.body);
 
-const meta = [
-  formatDuration(data.prepTime) && { label: 'Prep', value: formatDuration(data.prepTime) },
-  formatDuration(data.cookTime) && { label: 'Cook', value: formatDuration(data.cookTime) },
-  formatDuration(data.totalTime) && { label: 'Total', value: formatDuration(data.totalTime) },
-  { label: 'Serves', value: String(data.servings) },
-  data.difficulty && { label: 'Difficulty', value: data.difficulty },
-  data.cuisine && { label: 'Cuisine', value: data.cuisine },
-].filter(Boolean) as { label: string; value: string }[];
+const meta = buildRecipeMeta(data);
 
 const ogImage = data.image
   ? new URL(data.image.src, Astro.site).href
@@ -142,14 +136,13 @@ const bodyHasMethodHeading = /^##\s+Method\b/im.test(recipe.body ?? '');
         )
       }
 
-      <div class="mt-5 flex flex-wrap items-center gap-x-6 gap-y-2">
+      <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
         {
           meta.map((m) => (
-            <div class="flex items-baseline gap-1.5">
-              <span class="font-ui text-[0.66rem] uppercase tracking-[0.14em] text-ink-faint">
-                {m.label}
-              </span>
-              <span class="font-ui text-sm font-semibold capitalize text-ink">{m.value}</span>
+            <div class="flex items-center gap-1.5">
+              <Icon name={m.icon} class="h-4 w-4 shrink-0 text-ink-faint" />
+              <span class="sr-only">{m.label}:</span>
+              <span class="font-ui text-sm font-semibold text-ink">{m.value}</span>
             </div>
           ))
         }
@@ -213,14 +206,6 @@ const bodyHasMethodHeading = /^##\s+Method\b/im.test(recipe.body ?? '');
             <div class="flex flex-col gap-5 xl:sticky xl:top-24">
               {hasScores && <ScoreMedallions nutrition={data.nutrition} size="lg" />}
               {hasNutritionPanel && <NutritionPanel nutrition={data.nutrition} />}
-              {hasScores && (
-                <p class="rounded-lg border border-line bg-paper-2/60 px-4 py-3 font-ui text-xs leading-relaxed text-ink-faint">
-                  Glycemic index/load and the inflammation score are estimates derived
-                  from ingredient data and published references — useful for comparison,
-                  not a substitute for medical or dietary advice. The nutrition grade
-                  follows the Nutri-Score 2023 method.
-                </p>
-              )}
             </div>
           </aside>
         )

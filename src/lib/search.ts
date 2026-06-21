@@ -49,7 +49,7 @@ export interface FacetValue {
 export interface FacetGroup {
   key: string;
   label: string;
-  /** Primary groups show inline; the rest collapse under "More filters". */
+  /** Primary groups show inline; the rest collapse under the "Filters" disclosure. */
   primary: boolean;
   values: FacetValue[];
 }
@@ -102,7 +102,7 @@ interface FacetDef {
 export const FACET_DEFS: FacetDef[] = [
   { key: 'tag', label: 'Tags', primary: true, pick: (d) => d.tags },
   { key: 'category', label: 'Category', primary: true, pick: (d) => (d.category ? [d.category] : []) },
-  { key: 'course', label: 'Course', primary: true, pick: (d) => (d.course ? [d.course] : []), labelOf: titleCase },
+  { key: 'course', label: 'Course', primary: false, pick: (d) => (d.course ? [d.course] : []), labelOf: titleCase },
   { key: 'cuisine', label: 'Cuisine', primary: false, pick: (d) => (d.cuisine ? [d.cuisine] : []), labelOf: titleCase },
   { key: 'list', label: 'Lists', primary: false, pick: (d) => d.lists },
   { key: 'difficulty', label: 'Difficulty', primary: false, pick: (d) => (d.difficulty ? [d.difficulty] : []), labelOf: titleCase, order: ['easy', 'medium', 'hard'] },

@@ -16,7 +16,8 @@
 
 <script>
   import { prunePending, dropPending, isBuildFresh, type PendingMutation } from '../core/pending';
-  import { formatDuration } from '../lib/recipe';
+  import { buildRecipeMeta } from '../lib/recipe';
+  import { META_ICONS } from '../lib/icons';
   import { withBase } from '../lib/url';
 
   const grid = document.querySelector<HTMLElement>('[data-recipe-grid]');
@@ -84,15 +85,8 @@
       if (h3) h3.textContent = c.title || 'Untitled';
       const meta = h3?.nextElementSibling as HTMLElement | null;
       if (meta) {
-        meta.textContent = '';
-        const time = formatDuration(c.totalTime) ?? formatDuration(c.cookTime);
-        if (time) {
-          meta.appendChild(el('span', '', time));
-          const dot = el('span', '', '·');
-          dot.setAttribute('aria-hidden', 'true');
-          meta.appendChild(dot);
-        }
-        meta.appendChild(el('span', '', `${c.servings ?? 0} servings`));
+        meta.className = 'mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 font-ui text-xs text-ink-soft';
+        fillMeta(meta, c);
       }
       const tagRow = card.querySelector('.flex-wrap');
       if (tagRow) {
@@ -167,15 +161,8 @@
       head.appendChild(
         el('h3', 'font-display text-xl font-medium leading-snug text-ink', c?.title || 'Untitled'),
       );
-      const meta = el('div', 'mt-1 flex items-center gap-2.5 font-ui text-xs text-ink-faint');
-      const time = formatDuration(c?.totalTime) ?? formatDuration(c?.cookTime);
-      if (time) {
-        meta.appendChild(el('span', '', time));
-        const dot = el('span', '', '·');
-        dot.setAttribute('aria-hidden', 'true');
-        meta.appendChild(dot);
-      }
-      meta.appendChild(el('span', '', `${c?.servings ?? 0} servings`));
+      const meta = el('div', 'mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 font-ui text-xs text-ink-soft');
+      if (c) fillMeta(meta, c);
       head.appendChild(meta);
       body.appendChild(head);
 
@@ -199,6 +186,22 @@
       if (className) node.className = className;
       if (text != null) node.textContent = text;
       return node;
+    }
+
+    /** Fill a card's meta row with Lucide icon + value (Serves omitted), matching
+     *  RecipeCard so a patched/placeholder card is indistinguishable from a built one. */
+    function fillMeta(container: HTMLElement, c: NonNullable<PendingMutation['recipe']>) {
+      container.textContent = '';
+      for (const m of buildRecipeMeta(c).filter((x) => x.icon !== 'serves')) {
+        const span = el('span', 'inline-flex items-center gap-1');
+        span.insertAdjacentHTML(
+          'afterbegin',
+          `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5 shrink-0 text-ink-faint" aria-hidden="true">${META_ICONS[m.icon]}</svg>`,
+        );
+        span.appendChild(el('span', 'sr-only', `${m.label}:`));
+        span.appendChild(el('span', '', m.value));
+        container.appendChild(span);
+      }
     }
   }
 </script>

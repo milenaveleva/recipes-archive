@@ -30,7 +30,7 @@ Phase 0: static recipe book. Phase 1: in-browser authoring — a React island th
 
 ### Domain conventions
 
-- Scores are **estimates** — always surface the disclaimer near displayed figures, never imply medical/clinical precision. Don't ship the official Nutri-Score *logo* (trademark); don't label the inflammation score "DII" (a licensed methodology) — it is an independent, ingredient-tagged index.
+- Scores are **estimates** — never imply medical/clinical precision. Don't ship the official Nutri-Score *logo* (trademark); don't label the inflammation score "DII" (a licensed methodology) — it is an independent, ingredient-tagged index.
 - Store all quantities in metric; keep each ingredient's `raw` original line.
 
 ## Always Use consensus MCP for Research
