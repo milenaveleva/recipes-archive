@@ -12,14 +12,13 @@ totalTime: PT50M
 cuisine: Asian-Inspired
 course: Main Course
 ingredients:
-  - raw: 1 cup cooked rice (used sushi rice from ⅓ cup dry)
+  - raw: 1 cup cooked rice
     quantity: 1
     unit: cup
     item: cooked rice
-    note: used sushi rice from ⅓ cup dry
-    grams: 201.1
+    grams: 176
     milliliters: 236.588
-    fdcId: 169704
+    fdcId: 168914
     matchConfidence: high
   - raw: 1 tbsp chili oil
     quantity: 1
@@ -47,13 +46,14 @@ ingredients:
     item: gochujang paste
     milliliters: 7.3934
     matchConfidence: none
-  - raw: 2 tsp tamari (low sodium preferred)
+  - raw: 2 tsp tamari
     quantity: 2
     unit: tsp
     item: tamari
-    note: low sodium preferred
+    grams: 12
     milliliters: 9.85784
-    matchConfidence: none
+    fdcId: 174278
+    matchConfidence: medium
   - raw: 1/2 tbsp maple syrup
     quantity: 0.5
     unit: tbsp
@@ -66,6 +66,7 @@ ingredients:
     quantity: 1
     unit: tsp
     item: rice vinegar
+    grams: 5
     milliliters: 4.92892
     matchConfidence: none
   - raw: 1 tsp sesame oil
@@ -76,12 +77,14 @@ ingredients:
     milliliters: 4.92892
     fdcId: 171413
     matchConfidence: medium
-  - raw: 1 1/2 tbsp peanut butter ((or tahini for nut-free option))
+  - raw: 1 1/2 tbsp peanut butter
     quantity: 1.5
     unit: tbsp
-    item: peanut butter ((or tahini for nut-free option))
+    item: peanut butter
+    grams: 21.3
     milliliters: 22.1802
-    matchConfidence: none
+    fdcId: 173410
+    matchConfidence: medium
   - raw: 1 tbsp fresh ginger (finely grated)
     quantity: 1
     unit: tbsp
@@ -105,13 +108,14 @@ ingredients:
     milliliters: 29.5736
     fdcId: 167747
     matchConfidence: medium
-  - raw: 2 tsp tamari (low sodium preferred)
+  - raw: 2 tsp tamari
     quantity: 2
     unit: tsp
     item: tamari
-    note: low sodium preferred
+    grams: 12
     milliliters: 9.85784
-    matchConfidence: none
+    fdcId: 174278
+    matchConfidence: medium
   - raw: 2 tsp maple syrup
     quantity: 2
     unit: tsp
@@ -120,14 +124,14 @@ ingredients:
     milliliters: 9.85784
     fdcId: 169661
     matchConfidence: high
-  - raw: 1/4 cup dairy-free milk (I used soy)
+  - raw: 1/4 cup dairy-free milk
     quantity: 0.25
     unit: cup
     item: dairy-free milk
-    note: I used soy
-    grams: 60.9
+    grams: 34.3
     milliliters: 59.147
-    matchConfidence: none
+    fdcId: 167686
+    matchConfidence: medium
   - raw: 1 tsp gochujang paste
     quantity: 1
     unit: tsp
@@ -139,6 +143,7 @@ ingredients:
     unit: cups
     item: shelled frozen edamame
     note: thawed
+    grams: 177
     milliliters: 354.882
     matchConfidence: none
   - raw: 1 medium cucumbers (diced)
@@ -151,12 +156,14 @@ ingredients:
     quantity: 2
     item: spring onions
     note: finely chopped
+    grams: 10
     fdcId: 170000
-    matchConfidence: medium
+    matchConfidence: high
   - raw: 1 avocado (diced)
     quantity: 1
     item: avocado
     note: diced
+    grams: 50
     fdcId: 171705
     matchConfidence: high
   - raw: 1/4 cup fresh mint (finely chopped)
@@ -168,38 +175,39 @@ ingredients:
     matchConfidence: none
 nutrition:
   perServing:
-    energyKcal: 226
-    energyKj: 944
-    protein_g: 2.4
-    fat_g: 9.9
-    satFat_g: 1.4
-    carbs_g: 32
-    fiber_g: 1.8
-    sugar_g: 7.5
-    sodium_mg: 7
-    availableCarb_g: 30.2
+    energyKcal: 362
+    energyKj: 1515
+    protein_g: 4.3
+    fat_g: 21.7
+    satFat_g: 7.4
+    carbs_g: 39.3
+    fiber_g: 2.8
+    sugar_g: 14.2
+    sodium_mg: 776
+    availableCarb_g: 36.5
   glycemic:
-    gi: 64
-    gl: 19
-    giBand: medium
-    glBand: medium
+    gi: 54
+    gl: 4
+    giBand: low
+    glBand: low
     gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
   nutriScore:
-    grade: C
-    points: 4
+    grade: D
+    points: 13
     category: general
     version: "2023"
   inflammation:
-    score: -0.8
+    score: -0.3
     band: mildly-anti-inflammatory
     method: ingredient-tag v1
-  computedAt: "2026-06-20"
+  computedAt: "2026-06-21"
   dataSources:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Inflammation index (ingredient-tag v1)
 createdAt: "2026-06-20"
+updatedAt: "2026-06-21"
 ---
 
 ## Method
