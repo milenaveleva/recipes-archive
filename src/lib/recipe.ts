@@ -86,10 +86,13 @@ export interface IngredientAmountSource {
 }
 
 /**
- * The amount shown beside an ingredient. Teaspoons and tablespoons keep their
- * original measure ("1 tbsp") — that's how cooks dose them and the gram
- * conversion is only approximate — while everything else shows the stored
- * metric (ml for liquids, else grams). Grams remain the basis for ALL nutrition
+ * The amount shown beside an ingredient, the way a cook reads it: teaspoons and
+ * tablespoons keep their spoon measure ("1 tbsp"); a liquid metered in a metric
+ * volume (ml/cl/dl/l) stays in ml/L; everything else shows its metric weight in
+ * grams/kg. Only a metric *liquid* unit uses `milliliters` for display — an
+ * imperial volume like "cups" is how cooks measure solids too, so a cup of a
+ * dry good with no weight falls back to its written amount ("1½ cups") rather
+ * than a meaningless volume conversion. Grams remain the basis for ALL nutrition
  * math regardless of what's shown. Returns null when no amount is known, so the
  * caller can fall back to the raw line.
  */
@@ -103,9 +106,16 @@ export function formatIngredientAmount(ing: IngredientAmountSource): string | nu
   if ((canon === 'teaspoon' || canon === 'tablespoon') && ing.quantity != null) {
     return `${qtyText()} ${canon === 'tablespoon' ? 'tbsp' : 'tsp'}`;
   }
-  // Prefer volume for liquids: items measured by volume carry `milliliters` (and
-  // may also carry `grams` purely for nutrition math), so check ml first.
-  if (ing.milliliters != null && ing.milliliters > 0) {
+  // A liquid the cook metered in a metric volume keeps that volume — those units
+  // signal a deliberate liquid measure, unlike cups (used for solids too).
+  if (
+    (canon === 'milliliter' ||
+      canon === 'centiliter' ||
+      canon === 'deciliter' ||
+      canon === 'liter') &&
+    ing.milliliters != null &&
+    ing.milliliters > 0
+  ) {
     const ml = ing.milliliters;
     return ml >= 1000 ? `${round(ml / 1000, 2)} L` : `${round(ml, 0)} ml`;
   }

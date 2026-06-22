@@ -27,10 +27,23 @@ describe('formatIngredientAmount (display unit ≠ calc basis)', () => {
     expect(formatIngredientAmount({ quantity: 1, quantity2: 2, unit: 'tbsp' })).toBe('1–2 tbsp');
   });
 
-  it('keeps non-spoon volumes and weights in metric', () => {
-    expect(formatIngredientAmount({ quantity: 1, unit: 'cup', milliliters: 237, grams: 255 })).toBe('237 ml');
+  it('shows metric weight for mass units and for weighed volumes (cups → grams)', () => {
     expect(formatIngredientAmount({ quantity: 9, unit: 'oz', grams: 255 })).toBe('255 g');
-    expect(formatIngredientAmount({ milliliters: 1500 })).toBe('1.5 L');
+    // A cup that got matched + weighed shows the weight, not the derived ml.
+    expect(formatIngredientAmount({ quantity: 1, unit: 'cup', milliliters: 237, grams: 255 })).toBe('255 g');
+  });
+
+  it('keeps a liquid metered in a metric volume in ml/L', () => {
+    expect(formatIngredientAmount({ quantity: 500, unit: 'ml', milliliters: 500 })).toBe('500 ml');
+    expect(formatIngredientAmount({ quantity: 2, unit: 'dl', milliliters: 200 })).toBe('200 ml');
+    expect(formatIngredientAmount({ quantity: 1.5, unit: 'litre', milliliters: 1500 })).toBe('1.5 L');
+  });
+
+  it('shows an unweighed dry good measured in cups as cups, never ml', () => {
+    // A cup of a dry good with no USDA match carries only `milliliters`; it must
+    // read in cups (its written measure), not a meaningless volume conversion.
+    expect(formatIngredientAmount({ quantity: 1.5, unit: 'cups', milliliters: 354.882 })).toBe('1.5 cups');
+    expect(formatIngredientAmount({ quantity: 0.25, unit: 'cup', milliliters: 59.147 })).toBe('0.25 cup');
   });
 
   it('falls back to quantity+unit, then null', () => {
