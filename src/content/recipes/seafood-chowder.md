@@ -17,7 +17,8 @@ ingredients:
     unit: g
     item: seafood mix
     grams: 650
-    matchConfidence: none
+    fdcId: 9000001
+    matchConfidence: medium
   - raw: 50g butter
     quantity: 50
     unit: g
@@ -77,6 +78,7 @@ ingredients:
     quantity: 1
     unit: cup
     item: heavy cream
+    grams: 120
     milliliters: 236.588
     fdcId: 2346386
     matchConfidence: high
@@ -111,23 +113,18 @@ ingredients:
     milliliters: 44.3604
     fdcId: 169994
     matchConfidence: high
-  - raw: Crusty bread (or better yet, garlic bread!)
-    item: Crusty bread
-    note: or better yet, garlic bread!
-    fdcId: 172686
-    matchConfidence: medium
 nutrition:
   perServing:
-    energyKcal: 266
-    energyKj: 1114
-    protein_g: 4.7
-    fat_g: 11
-    satFat_g: 6.5
-    carbs_g: 33.8
+    energyKcal: 401
+    energyKj: 1679
+    protein_g: 27.6
+    fat_g: 24.2
+    satFat_g: 13.2
+    carbs_g: 39.1
     fiber_g: 3.8
     sugar_g: 5
-    sodium_mg: 638
-    availableCarb_g: 30
+    sodium_mg: 1129
+    availableCarb_g: 35.3
   glycemic:
     gi: 73
     gl: 17
@@ -135,8 +132,8 @@ nutrition:
     glBand: medium
     gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
   nutriScore:
-    grade: C
-    points: 5
+    grade: B
+    points: 2
     category: general
     version: "2023"
   inflammation:
