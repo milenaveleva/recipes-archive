@@ -47,13 +47,16 @@ ingredients:
     unit: cup
     item: flour
     note: all-purpose
+    grams: 41.6
     milliliters: 78.783804
-    fdcId: 2515382
-    matchConfidence: high
+    fdcId: 169761
+    matchConfidence: medium
   - raw: 1 litre vegetable broth
     quantity: 1
     item: litre vegetable broth
-    matchConfidence: none
+    grams: 390
+    fdcId: 171583
+    matchConfidence: low
   - raw: 2 medium carrots (peeled, cut into 7mm pieces)
     quantity: 2
     unit: medium
@@ -74,9 +77,8 @@ ingredients:
     quantity: 1
     unit: cup
     item: heavy cream
-    grams: 120
     milliliters: 236.588
-    fdcId: 170859
+    fdcId: 2346386
     matchConfidence: high
   - raw: 1 cup canned corn (drained)
     quantity: 1
@@ -112,32 +114,33 @@ ingredients:
   - raw: Crusty bread (or better yet, garlic bread!)
     item: Crusty bread
     note: or better yet, garlic bread!
-    matchConfidence: none
+    fdcId: 172686
+    matchConfidence: medium
 nutrition:
   perServing:
-    energyKcal: 326
-    energyKj: 1362
-    protein_g: 4.3
-    fat_g: 21.6
-    satFat_g: 13.4
-    carbs_g: 25.9
-    fiber_g: 3.5
-    sugar_g: 5.3
-    sodium_mg: 357
-    availableCarb_g: 22.3
+    energyKcal: 266
+    energyKj: 1114
+    protein_g: 4.7
+    fat_g: 11
+    satFat_g: 6.5
+    carbs_g: 33.8
+    fiber_g: 3.8
+    sugar_g: 5
+    sodium_mg: 638
+    availableCarb_g: 30
   glycemic:
     gi: 73
-    gl: 11
+    gl: 17
     giBand: high
     glBand: medium
     gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
   nutriScore:
     grade: C
-    points: 8
+    points: 5
     category: general
     version: "2023"
   inflammation:
-    score: -0.2
+    score: -0.1
     band: neutral
     method: ingredient-tag v1
   computedAt: "2026-06-23"
