@@ -25,6 +25,7 @@ import {
   rowsFromIngredients,
   splitMethodBody,
   selectedConfidence,
+  selectMatch,
   type FormState,
   type IngredientRow,
   type StoredRecipe,
@@ -582,7 +583,7 @@ function IngredientRowEditor({
       <div className="mt-2 grid grid-cols-1 sm:grid-cols-[1fr_7rem_auto] gap-2 items-center">
         <select
           value={row.selectedFdcId ?? ''}
-          onChange={(e) => onPatch({ selectedFdcId: e.target.value ? Number(e.target.value) : null })}
+          onChange={(e) => onPatch(selectMatch(row, e.target.value ? Number(e.target.value) : null))}
           className={`${inputCls} text-sm`}
         >
           <option value="">— no nutrition match —</option>

@@ -18,6 +18,7 @@ import {
   rowsFromIngredients,
   splitMethodBody,
   initialGrams,
+  selectMatch,
   EMPTY_FORM,
 } from './addLib';
 import { toRecipeMarkdown } from '../../core/markdown';
@@ -126,6 +127,32 @@ describe('initialGrams (USDA portions, no density guessing)', () => {
     const ginger = foodWithDensity({ cup: 1.042, flOz: 8.333, tsp: 50, tbsp: 16.67 });
     const tbsp1: MetricAmount = { grams: null, milliliters: 14.7868, dimension: 'volume' };
     expect(initialGrams(tbsp1, parsed({ quantity: 1, unit: 'tbsp', unitId: 'tablespoon' }), ginger)).toBeCloseTo(6, 1);
+  });
+});
+
+describe('selectMatch (re-derives weight when the match changes)', () => {
+  it('replaces a stale weight with one recomputed from the new match', () => {
+    // The bug: changing the match left grams untouched. A stale 999 must be
+    // recomputed from quantity + unit + the chosen food, not carried over.
+    const row = { ...buildRow('200 g red lentils'), grams: 999 };
+    const patch = selectMatch(row, 174284);
+    expect(patch.selectedFdcId).toBe(174284);
+    expect(patch.grams).toBe(200);
+  });
+
+  it('keeps absolute grams for a mass-unit ingredient across a match change', () => {
+    const row = buildRow('200 g red lentils');
+    const patch = selectMatch(row, 169230); // switch to garlic — mass is food-independent
+    expect(patch.selectedFdcId).toBe(169230);
+    expect(patch.grams).toBe(200);
+  });
+
+  it('clears the weight to null when the match is removed', () => {
+    const row = buildRow('2 cloves garlic, minced'); // 6 g from the clove portion
+    expect(row.grams).toBe(6);
+    const patch = selectMatch(row, null);
+    expect(patch.selectedFdcId).toBeNull();
+    expect(patch.grams).toBeNull(); // no food → no count-portion weight to derive
   });
 });
 

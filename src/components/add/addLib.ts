@@ -200,6 +200,19 @@ export function initialGrams(
   return null;
 }
 
+/**
+ * Patch for changing a row's chosen match: select the food AND re-derive the
+ * weight from that food's own portions/density. Grams is a function of (quantity,
+ * unit, food), so switching the match must recompute it rather than carry over the
+ * previous match's value. A mass-unit ingredient keeps its absolute grams; a
+ * volume/count one re-derives, or clears to null when the new food offers no usable
+ * portion (so the author enters it instead of seeing a stale weight).
+ */
+export function selectMatch(row: IngredientRow, fdcId: number | null): Partial<IngredientRow> {
+  const food = fdcId != null ? FOOD_BY_ID.get(fdcId) ?? null : null;
+  return { selectedFdcId: fdcId, grams: initialGrams(estimateMetric(row.parsed), row.parsed, food) };
+}
+
 /** Confidence of the row's selected match ('none' when unmatched). */
 export function selectedConfidence(row: IngredientRow): MatchConfidence | 'none' {
   if (row.selectedFdcId == null) return 'none';
