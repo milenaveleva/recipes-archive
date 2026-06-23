@@ -1,6 +1,6 @@
 ---
 title: Seafood Chowder
-description: This is a seafood soup so good, it's hard to believe it's made with cheap 'n cheerful marinara mix and store-bought stock. Of course, if you use homemade fish stock and a hand-picked mix of fresh seafood, it will be upmarket-restaurant-worthy. :)
+description: Recipe video above. This is a seafood soup so good, it's hard to believe it's made with cheap 'n cheerful marinara mix and store-bought stock. Using chicken rather than store-bought fish stock (awful stuff!), a cheeky dash of fish sauce rather than salt and bacon are some of the flavour enhancers we deploy here!Of course, if you use homemade fish stock and a hand-picked mix of fresh seafood, it will be upmarket-restaurant-worthy. :) Also see FAQ for more vegetable options.
 imageUrl: https://www.recipetineats.com/tachyon/2025/09/Seafood-chowder_9.jpg
 source:
   name: recipetineats.com
@@ -12,27 +12,19 @@ totalTime: PT40M
 cuisine: Western
 course: Mains
 ingredients:
-  - raw: 650g seafood marinara mix or mixed fresh seafood
+  - raw: 650g seafood mix
     quantity: 650
     unit: g
-    item: seafood marinara mix or mixed fresh seafood
+    item: seafood mix
     grams: 650
     matchConfidence: none
-  - raw: 50g unsalted butter
+  - raw: 50g butter
     quantity: 50
     unit: g
-    item: unsalted butter
+    item: butter
     grams: 50
-    fdcId: 789828
+    fdcId: 173430
     matchConfidence: high
-  - raw: 100g streaky bacon (chopped into 1.5cm squares)
-    quantity: 100
-    unit: g
-    item: streaky bacon
-    note: chopped into 1.5cm squares
-    grams: 100
-    fdcId: 172439
-    matchConfidence: medium
   - raw: 2 cloves garlic (finely minced)
     quantity: 2
     unit: cloves
@@ -50,21 +42,18 @@ ingredients:
     milliliters: 118.294
     fdcId: 174110
     matchConfidence: medium
-  - raw: 1/3 cup flour (plain/all-purpose)
+  - raw: 1/3 cup flour (all-purpose)
     quantity: 0.333
     unit: cup
     item: flour
-    note: plain/all-purpose
+    note: all-purpose
     milliliters: 78.783804
     fdcId: 2515382
     matchConfidence: high
-  - raw: 1 litre chicken broth (low sodium)
+  - raw: 1 litre vegetable broth
     quantity: 1
-    item: litre chicken broth
-    note: low sodium
-    grams: 125
-    fdcId: 171110
-    matchConfidence: medium
+    item: litre vegetable broth
+    matchConfidence: none
   - raw: 2 medium carrots (peeled, cut into 7mm pieces)
     quantity: 2
     unit: medium
@@ -89,15 +78,15 @@ ingredients:
     milliliters: 236.588
     fdcId: 170859
     matchConfidence: high
-  - raw: 1 cup corn (canned, drained))
+  - raw: 1 cup canned corn (drained)
     quantity: 1
     unit: cup
-    item: corn (canned
-    note: drained))
+    item: canned corn
+    note: drained
     grams: 164
     milliliters: 236.588
-    fdcId: 169361
-    matchConfidence: medium
+    fdcId: 169214
+    matchConfidence: high
   - raw: 2 tsp fish sauce
     quantity: 2
     unit: tsp
@@ -106,37 +95,36 @@ ingredients:
     milliliters: 9.85784
     fdcId: 174531
     matchConfidence: high
-  - raw: pinch white pepper
-    unit: pinch
+  - raw: Pinch white pepper
+    unit: Pinch
     item: white pepper
-    fdcId: 170108
+    fdcId: 170933
     matchConfidence: medium
-  - raw: 3 tbsp chives or parsley (finely chopped, for garnish)
+  - raw: 3 tbsp chives (or parsley, finely chopped, for garnish)
     quantity: 3
     unit: tbsp
-    item: chives or parsley
-    note: finely chopped, for garnish
-    grams: 11.4
+    item: chives
+    note: or parsley, finely chopped, for garnish
+    grams: 9
     milliliters: 44.3604
-    fdcId: 170416
+    fdcId: 169994
     matchConfidence: high
-  - raw: crusty bread (or garlic bread)
-    item: crusty bread
-    note: or garlic bread
-    fdcId: 174918
-    matchConfidence: medium
+  - raw: Crusty bread (or better yet, garlic bread!)
+    item: Crusty bread
+    note: or better yet, garlic bread!
+    matchConfidence: none
 nutrition:
   perServing:
-    energyKcal: 371
-    energyKj: 1554
-    protein_g: 15
-    fat_g: 31.6
-    satFat_g: 8.9
-    carbs_g: 27.5
-    fiber_g: 4.2
+    energyKcal: 326
+    energyKj: 1362
+    protein_g: 4.3
+    fat_g: 21.6
+    satFat_g: 13.4
+    carbs_g: 25.9
+    fiber_g: 3.5
     sugar_g: 5.3
-    sodium_mg: 874
-    availableCarb_g: 23.3
+    sodium_mg: 357
+    availableCarb_g: 22.3
   glycemic:
     gi: 73
     gl: 11
@@ -145,12 +133,12 @@ nutrition:
     gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
   nutriScore:
     grade: C
-    points: 5
+    points: 8
     category: general
     version: "2023"
   inflammation:
-    score: -0.3
-    band: mildly-anti-inflammatory
+    score: -0.2
+    band: neutral
     method: ingredient-tag v1
   computedAt: "2026-06-23"
   dataSources:
