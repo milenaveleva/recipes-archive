@@ -61,19 +61,35 @@ function scoreMatch(queryTokens: string[], food: FoodRecord): number {
   const desc = tokenize(food.description);
   if (!desc.length || !queryTokens.length) return 0;
   const descSet = new Set(desc);
-  let matched = 0;
-  for (const t of queryTokens) if (descSet.has(t)) matched++;
-  if (!matched) return 0;
+  let matched = 0; // exact token matches
+  let soft = 0; // compound-word reaches ("mint" → "peppermint")
+  for (const t of queryTokens) {
+    if (descSet.has(t)) {
+      matched++;
+    } else if (t.length >= 4 && desc.some((d) => d.length > t.length && d.endsWith(t))) {
+      // English food names are head-final, so the identity sits at the end of a
+      // compound ("pepperMINT", "butterMILK", "chickPEA"). Crediting a query
+      // token that's the suffix of a longer food token surfaces those foods that
+      // an exact-token match misses; the >=4 length floor keeps short tokens
+      // ("oil", "pea") from over-reaching.
+      soft++;
+    }
+  }
+  if (!matched && !soft) return 0;
 
-  const recall = matched / queryTokens.length; // share of the query covered
-  const precision = matched / desc.length; // how focused the food name is
+  const eff = matched + soft * 0.5; // a soft match counts for half an exact one
+  const recall = eff / queryTokens.length; // share of the query covered
+  const precision = eff / desc.length; // how focused the food name is
   const qHead = queryTokens[queryTokens.length - 1]; // the food noun
   const headIn = descSet.has(qHead) ? 0.1 : 0;
   // USDA descriptions lead with the food's identity ("Apples, raw" vs
   // "Croissants, apple"), so a leading-token match strongly favours the base
   // food over a product that merely contains it — essential at full-dataset scale.
   const leads = desc[0] === qHead ? 0.3 : 0;
-  return Math.min(1, recall * 0.5 + precision * 0.25 + headIn + leads);
+  const score = Math.min(1, recall * 0.5 + precision * 0.25 + headIn + leads);
+  // A purely-soft match (no exact token) is a guess — hold it in the 'low' band
+  // so it shows as a pickable candidate but never auto-selects.
+  return matched === 0 ? Math.min(score, 0.5) : score;
 }
 
 function confidenceFor(score: number): MatchConfidence {

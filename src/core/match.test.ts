@@ -45,6 +45,29 @@ describe('searchFoods', () => {
     expect(searchFoods(q, FOODS).length).toBe(3);
     expect(searchFoods(q, FOODS, 2).length).toBe(2);
   });
+
+  it('reaches a compound-word food via its suffix, kept low-confidence', () => {
+    // "mint" is a substring, not a token, of "Peppermint"/"Spearmint", so an
+    // exact-token match misses it; the suffix reach surfaces both as candidates.
+    const foods: FoodRecord[] = [
+      { fdcId: 10, description: 'Peppermint, fresh', n: {} },
+      { fdcId: 11, description: 'Spearmint, fresh', n: {} },
+      { fdcId: 12, description: 'Spinach, raw', n: {} },
+    ];
+    const matches = searchFoods('fresh mint', foods);
+    const ids = matches.map((m) => m.food.fdcId);
+    expect(ids).toContain(10);
+    expect(ids).toContain(11);
+    expect(ids).not.toContain(12);
+    // A guess never auto-selects: a purely-suffix match stays 'low'.
+    expect(matches.every((m) => m.confidence === 'low')).toBe(true);
+  });
+
+  it('does not let a short (<4 char) token over-reach', () => {
+    // "oil" must not suffix-match "broiled"/"aioli" etc.
+    const foods: FoodRecord[] = [{ fdcId: 20, description: 'Beef, tenderloin, broiled', n: {} }];
+    expect(searchFoods('oil', foods)).toEqual([]);
+  });
 });
 
 describe('foodToNutrientVector / portionGrams', () => {
