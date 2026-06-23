@@ -55,6 +55,19 @@ describe('buildRow', () => {
     const desc = (foodsData as FoodRecord[]).find((f) => f.fdcId === row.selectedFdcId)?.description ?? '';
     expect(desc.toLowerCase()).toContain('all-purpose');
   });
+
+  it('matches the curated "seafood mix" custom food and weighs it by mass', () => {
+    const row = buildRow('650g seafood mix');
+    expect(row.selectedFdcId).toBe(9000001); // src/data/custom-foods.json
+    expect(row.grams).toBe(650);
+  });
+
+  it('weighs a volume of peanut butter via its density', () => {
+    const row = buildRow('2 tbsp peanut butter');
+    const desc = (foodsData as FoodRecord[]).find((f) => f.fdcId === row.selectedFdcId)?.description ?? '';
+    expect(desc.toLowerCase()).toContain('peanut butter');
+    expect(row.grams).toBeCloseTo(32, 0); // ~16 g/tbsp
+  });
 });
 
 describe('initialGrams (USDA portions, no density guessing)', () => {

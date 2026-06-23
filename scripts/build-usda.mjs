@@ -196,8 +196,9 @@ async function main() {
   const foods = [...byId.values()];
   // Never orphan a curated food-scoring entry by filtering it out as branded.
   assertCuratedPresent(foods);
-  await writeFile(OUT, serializeFoods(foods));
-  log(`\nWrote ${foods.length} foods → ${path.relative(process.cwd(), OUT)}`);
+  const output = serializeFoods(foods); // merges curated custom foods (custom-foods.json)
+  await writeFile(OUT, output);
+  log(`\nWrote ${JSON.parse(output).length} foods → ${path.relative(process.cwd(), OUT)}`);
 }
 
 main().catch((err) => {

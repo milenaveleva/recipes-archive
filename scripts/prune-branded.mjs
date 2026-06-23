@@ -55,8 +55,9 @@ async function main() {
     return;
   }
 
-  await writeFile(OUT, serializeFoods(kept));
-  log(`Wrote ${kept.length} foods → ${path.relative(process.cwd(), OUT)}`);
+  const output = serializeFoods(kept); // merges curated custom foods (custom-foods.json)
+  await writeFile(OUT, output);
+  log(`Wrote ${JSON.parse(output).length} foods → ${path.relative(process.cwd(), OUT)}`);
 }
 
 main().catch((err) => {

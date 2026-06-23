@@ -346,6 +346,10 @@ const DENSITY_OVERRIDES = new Map([
   // mint. Chopped fresh mint is ~25 g/cup, matching peppermint (0.108 g/ml) and
   // culinary references (cookitsimply, coolconversion); use that.
   [173475, 0.108],
+  // "Peanut butter, creamy" (2262072, Foundation) lists no USDA volume portion, so
+  // a tbsp/cup amount can't be weighed; use the density its 10 SR Legacy peanut-
+  // butter siblings share (~1.082 g/ml ≈ 258 g/cup, e.g. 172471).
+  [2262072, 1.082],
 ]);
 
 /**
@@ -371,14 +375,25 @@ function normalizeFood(f) {
   return out;
 }
 
+// Curated non-USDA foods (synthetic fdcId ≥ 9_000_000, well above USDA's range):
+// composite ingredients USDA has no generic entry for, e.g. a "seafood mix" whose
+// nutrients are the equal-parts mean of real USDA components. They aren't in the
+// bulk archives, so serializeFoods re-injects them on every write — otherwise a
+// fresh build-usda ingest would drop them.
+const CUSTOM_PATH = fileURLToPath(new URL('../src/data/custom-foods.json', import.meta.url));
+const CUSTOM_FOODS = JSON.parse(readFileSync(CUSTOM_PATH, 'utf8'));
+
 /**
- * Serialize the food list to the committed JSON shape — normalised (burnt-in
- * density attached) and sorted alphabetically by name (fdcId tiebreaker), one
- * food object per line so the (large) diff stays scannable. Shared by both write
- * paths (build-usda.mjs, prune-branded.mjs) so they produce byte-identical output.
+ * Serialize the food list to the committed JSON shape — curated custom foods
+ * merged in (by fdcId, so a re-clean dedups against custom-foods.json), normalised
+ * (burnt-in density attached) and sorted alphabetically by name (fdcId tiebreaker),
+ * one food object per line so the (large) diff stays scannable. Shared by both
+ * write paths (build-usda.mjs, prune-branded.mjs) so they produce identical output.
  */
 export function serializeFoods(foods) {
-  const normalized = foods
+  const byId = new Map(foods.map((f) => [f.fdcId, f]));
+  for (const c of CUSTOM_FOODS) byId.set(c.fdcId, c);
+  const normalized = [...byId.values()]
     .map(normalizeFood)
     .sort((a, b) => (a.description || '').localeCompare(b.description || '', 'en') || (a.fdcId ?? 0) - (b.fdcId ?? 0));
   return `[\n${normalized.map((f) => `  ${JSON.stringify(f)}`).join(',\n')}\n]\n`;
