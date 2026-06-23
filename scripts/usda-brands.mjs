@@ -90,7 +90,8 @@ const EXCLUDED_CATEGORIES = new Set([
 //  - frog legs (the archive is plant + seafood; frog is neither)
 //  - lemonade (sugar-water drink / mix, incl. hard lemonade — not an ingredient)
 //  - meatless analogues (processed fake-meat: meatless bacon/sausage/chicken/…)
-const EXCLUDED_DESCRIPTION_RE = /macaroni and cheese|\bfast food\b|frog legs?|lemonade|meatless/i;
+//  - french fries (white + sweet potato; whole/baked/boiled potatoes stay)
+const EXCLUDED_DESCRIPTION_RE = /macaroni and cheese|\bfast food\b|frog legs?|lemonade|meatless|french fried/i;
 
 // Industrial fat products: margarine & margarine-like spreads (dropped wherever
 // the word appears, including foods made with margarine — banana bread, mashed
@@ -104,6 +105,14 @@ const EXCLUDED_FAT_RE = /margarine|^shortening/i;
 // renamed to "Milk, <plant>" for findability (see renamePlantMilk) and must
 // survive this rule even after the rename makes them lead with "Milk".
 const MILK_DROP_RE = /^milk\b|buttermilk/i;
+
+// Processed / prepared potato products (only applied to "Potato…" entries): hash
+// browns, tots/puffs, chips, frozen wedges, frozen-roasted, o'brien, au gratin,
+// scalloped, and instant dehydrated/granule/flake/ready-to-eat mash. French fries
+// are handled by EXCLUDED_DESCRIPTION_RE. Whole potato stays — raw, baked, boiled,
+// microwaved, canned, plain frozen-boiled, home-prepared mash, and potato flour.
+const POTATO_PRODUCT_RE =
+  /\b(hash brown|o'?brien|au gratin|scalloped|puffs?|chips?|tots?|roasted)\b|\bwedges,\s*frozen|\bmashed,\s*(dehydrated|granules|flakes|ready-to-eat)/i;
 
 // Plant-milk fdcIds: kept, and renamed to "Milk, <plant>, …" so they group with
 // (and are findable as) milk. USDA names them plant-first ("Soymilk", "Oat milk",
@@ -189,6 +198,7 @@ export function isExcludedFood(food) {
   // Drop dairy milk + all buttermilk, but keep curated plant milks (which are
   // renamed to lead with "Milk", so they would otherwise match here).
   if (MILK_DROP_RE.test(desc) && !PLANT_MILK_IDS.has(food.fdcId)) return true;
+  if (/^potato/i.test(desc) && POTATO_PRODUCT_RE.test(desc)) return true;
   if (GROUP_PRUNE_CATEGORIES.has(food.category) && isExcludedGroup(desc)) return true;
   // In "Soups, Sauces, and Gravies": drop gravies (often meat-based) and soups
   // (composite dishes) — but keep soup broths/stocks/bouillon (real cooking
