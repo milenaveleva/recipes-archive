@@ -107,7 +107,17 @@ function isExcludedGroup(desc) {
   return true;
 }
 
+// Hand-removed foods whose only USDA volume portion can't parse to a usable
+// density (labels like "1 serving 2 tbsp" or the broken "0 cup") — instant drink
+// powders, dry-mix flan/rennin, a few ice creams, ready-to-serve marinara — so
+// they would carry no per100g.
+const SCRAPPED_IDS = new Set([
+  174135, 173235, 174872, 173230, 168000, 169621, 168796, 169633, 167575,
+  167572, 169631, 167576, 168789, 169617, 168790, 171192, 332282,
+]);
+
 export function isExcludedFood(food) {
+  if (SCRAPPED_IDS.has(food.fdcId)) return true;
   if (EXCLUDED_CATEGORIES.has(food.category)) return true;
   const desc = food.description || '';
   if (EXCLUDED_DESCRIPTION_RE.test(desc)) return true;
