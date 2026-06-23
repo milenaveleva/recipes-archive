@@ -11,6 +11,7 @@ import { useMemo, useState, useEffect } from 'react';
 import { extractRecipe } from '../../core/extract';
 import { toRecipeMarkdown, recipeFilename, type RecipeDraft } from '../../core/markdown';
 import { commitTextFile, GitHubError, RECIPE_REPO } from '../../core/github';
+import { fetchAndCommitHeroImage } from '../../core/hero-image';
 import { recordPending, prunePending, isBuildFresh } from '../../core/pending';
 import type { NutriCategory } from '../../core/nutriscore';
 import {
@@ -98,6 +99,9 @@ export default function AddRecipe() {
   const [editPreserved, setEditPreserved] = useState<Partial<RecipeDraft>>({});
   const [editBodyBefore, setEditBodyBefore] = useState('');
   const [editBodyAfter, setEditBodyAfter] = useState('');
+  // The imageUrl as loaded, so an edit re-fetches the hero only when the user
+  // actually changes the URL (not on every save of an imported recipe).
+  const [editImageUrl, setEditImageUrl] = useState('');
   const [editError, setEditError] = useState('');
 
   // Seed the form + ingredient rows + preserved fields from a stored draft (a
@@ -110,8 +114,10 @@ export default function AddRecipe() {
     setRows(rowsFromIngredients(d.ingredients));
     setEditCreatedAt(d.createdAt ?? null);
     setEditPath(path ?? `src/content/recipes/${slug}.md`);
+    setEditImageUrl(d.imageUrl ?? '');
     setEditPreserved({
       difficulty: d.difficulty,
+      image: d.image,
       imageAlt: d.imageAlt,
       author: d.author,
       yield: d.yield,
@@ -160,6 +166,7 @@ export default function AddRecipe() {
         setRows(rowsFromIngredients(ings));
         setEditCreatedAt(data.createdAt);
         setEditPath(data.path);
+        setEditImageUrl(data.recipe.imageUrl ?? '');
         setEditPreserved(data.preserved ?? {});
         setEditBodyBefore(before);
         setEditBodyAfter(after);
@@ -278,20 +285,54 @@ export default function AddRecipe() {
         isEdit ? { computedAt: stamp, updatedAt: stamp } : {},
       );
       if (isEdit) {
-        // Carry through fields the form doesn't manage so a save never strips them.
+        // Carry through fields the form doesn't manage so a save never strips
+        // them (including any existing local `image`, kept if the re-fetch below
+        // fails or there's nothing to re-fetch).
         Object.assign(publishDraft, editPreserved);
         publishDraft.bodyBefore = editBodyBefore;
         publishDraft.bodyAfter = editBodyAfter;
       }
+      // An edit overwrites the original file (its path comes from the loaded
+      // recipe data, so the slug stays stable even if the title changes); a
+      // fresh recipe derives its filename from the title. The file id (not the
+      // routing slug) names the committed hero image alongside it.
+      const path = isEdit && editPath ? editPath : recipeFilename(publishDraft);
+      const slug = path.replace(/^.*\//, '').replace(/\.md$/, '');
+      const active = await ensureFresh(session);
+
+      // Hero image: fetch the source image through the proxy and commit it so
+      // the recipe points at a local, build-optimized asset rather than
+      // hot-linking the source. Commit it BEFORE the markdown that references
+      // it — `image()` validates the file exists at build. Best-effort: on any
+      // failure keep the remote imageUrl fallback (and an edit's prior image).
+      // An edit re-fetches only when the URL changed: an unchanged imageUrl on a
+      // recipe that already has a local image keeps that image (Object.assign
+      // above carried it) instead of re-downloading + re-committing every save.
+      const imageUnchanged =
+        isEdit && Boolean(publishDraft.image) && form.imageUrl.trim() === editImageUrl.trim();
+      let imageNote = '';
+      if (publishDraft.imageUrl && PROXY && !imageUnchanged) {
+        try {
+          const hero = await fetchAndCommitHeroImage({
+            imageUrl: publishDraft.imageUrl,
+            slug,
+            proxy: PROXY,
+            token: active.accessToken,
+            repo: RECIPE_REPO,
+            message: `${isEdit ? 'Update' : 'Add'} hero image: ${publishDraft.title}`,
+          });
+          if (hero) publishDraft.image = hero.frontmatterPath;
+          else imageNote = 'Couldn’t save the hero image locally; using the source URL.';
+        } catch {
+          imageNote = 'Couldn’t save the hero image locally; using the source URL.';
+        }
+      }
+
       const file = {
-        // An edit overwrites the original file (its path comes from the loaded
-        // recipe data, so the slug stays stable even if the title changes); a
-        // fresh recipe derives its filename from the title.
-        path: isEdit && editPath ? editPath : recipeFilename(publishDraft),
+        path,
         content: toRecipeMarkdown(publishDraft),
         message: `${isEdit ? 'Update' : 'Add'} recipe: ${publishDraft.title}`,
       };
-      const active = await ensureFresh(session);
       let result;
       try {
         result = await commitTextFile(active.accessToken, RECIPE_REPO, file);
@@ -308,8 +349,9 @@ export default function AddRecipe() {
       setPublishState('done');
       // Optimistically reflect the change on the index/recipe pages until the
       // rebuild lands — the static site otherwise won't show it for ~a minute.
-      const committedSlug =
-        isEdit && editSlug ? editSlug : file.path.replace(/^.*\//, '').replace(/\.md$/, '');
+      // The optimistic card uses imageUrl (the local image is a build-time
+      // asset), so a fresh recipe still shows its hero immediately.
+      const committedSlug = isEdit && editSlug ? editSlug : slug;
       // Store the whole committed draft so the index card and the detail page can
       // render every edited field instantly until the rebuild lands.
       recordPending({
@@ -320,7 +362,9 @@ export default function AddRecipe() {
         path: file.path,
       });
       // An edit is expected to overwrite; only warn when a NEW recipe collides.
-      setPublishMsg(result.updated && !isEdit ? 'Updated an existing recipe at the same slug.' : '');
+      const collisionNote =
+        result.updated && !isEdit ? 'Updated an existing recipe at the same slug.' : '';
+      setPublishMsg([collisionNote, imageNote].filter(Boolean).join(' '));
     } catch (err) {
       setPublishState('error');
       if (err instanceof GitHubError && err.status === 403) {

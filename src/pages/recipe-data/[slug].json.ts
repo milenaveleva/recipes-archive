@@ -6,6 +6,7 @@
  * `createdAt`), prerendered to `/recipe-data/<slug>.json`. The recipe markdown
  * stays the single source of truth — this is a build-time projection of it.
  */
+import { readFile } from 'node:fs/promises';
 import type { APIRoute, GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
@@ -20,7 +21,25 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const toISODate = (d: Date): string => d.toISOString().slice(0, 10);
 
-export const GET: APIRoute = ({ props }) => {
+/**
+ * The frontmatter `image:` value as originally written (e.g. "./images/x.jpg").
+ * `data.image` is resolved to hashed ImageMetadata by build, losing the source
+ * path, so read it from the file — letting an edit re-emit a local image that
+ * isn't backed by a remote imageUrl to re-fetch.
+ */
+async function rawImagePath(id: string): Promise<string | undefined> {
+  try {
+    const text = (await readFile(`src/content/recipes/${id}.md`, 'utf8')).replace(/^\uFEFF/, '');
+    const fm = /^---\r?\n([\s\S]*?)\r?\n---/.exec(text)?.[1] ?? '';
+    const m = /^image:[ \t]*(.+?)[ \t]*$/m.exec(fm);
+    if (!m) return undefined;
+    return m[1].replace(/^["']|["']$/g, '') || undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+export const GET: APIRoute = async ({ props }) => {
   const { recipe } = props as { recipe: CollectionEntry<'recipes'> };
   const d = recipe.data;
   const payload = {
@@ -34,6 +53,7 @@ export const GET: APIRoute = ({ props }) => {
     // edit verbatim so saving never strips them.
     preserved: {
       difficulty: d.difficulty,
+      image: d.image ? await rawImagePath(recipe.id) : undefined,
       imageAlt: d.imageAlt,
       author: d.author,
       yield: d.yield,

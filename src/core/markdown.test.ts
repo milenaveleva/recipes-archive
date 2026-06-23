@@ -70,6 +70,12 @@ describe('toRecipeMarkdown', () => {
     expect(fm.ingredients[1].excludeFromNutrition).toBe(true);
   });
 
+  it('emits a local image path when set, and omits it otherwise', () => {
+    expect('image' in frontmatter(md)).toBe(false); // base draft has no local image
+    const withImage = toRecipeMarkdown({ ...draft, image: './images/spinach-lentil-dahl.jpg' });
+    expect(frontmatter(withImage).image).toBe('./images/spinach-lentil-dahl.jpg');
+  });
+
   it('prunes absent optional fields rather than emitting nulls', () => {
     const fm = frontmatter(md);
     expect('cuisine' in fm).toBe(false);

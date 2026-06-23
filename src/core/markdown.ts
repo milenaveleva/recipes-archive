@@ -60,6 +60,8 @@ export interface RecipeDraft {
   title: string;
   slug?: string;
   description?: string;
+  /** Local committed hero image, src-relative (e.g. "./images/<slug>.jpg"). */
+  image?: string;
   imageUrl?: string;
   imageAlt?: string;
   source?: { name?: string; url?: string };
@@ -161,6 +163,7 @@ export function toRecipeMarkdown(draft: RecipeDraft): string {
     title: draft.title,
     slug: draft.slug,
     description: draft.description,
+    image: draft.image,
     imageUrl: draft.imageUrl,
     imageAlt: draft.imageAlt,
     source: draft.source,
