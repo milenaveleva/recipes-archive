@@ -12,10 +12,9 @@ totalTime: PT1H10M
 cuisine: American
 course: Side Dish
 ingredients:
-  - raw: 3 Beetroot (around 230g)
+  - raw: 3 beetroots
     quantity: 3
-    item: Beetroot
-    note: around 230g
+    item: beetroots
     matchConfidence: none
   - raw: 3/4 cup walnuts and pecans
     quantity: 0.75
@@ -77,21 +76,23 @@ ingredients:
     quantity: 1
     unit: teaspoon
     item: Dijon mustard
+    grams: 1.2
     milliliters: 4.92892
     fdcId: 169256
     matchConfidence: medium
-  - raw: A pinch of salt
-    item: A pinch of salt
+  - raw: pinch of salt
+    unit: pinch
+    item: salt
     fdcId: 173468
-    matchConfidence: medium
+    matchConfidence: high
 nutrition:
   perServing:
     energyKcal: 151
-    energyKj: 632
+    energyKj: 633
     protein_g: 3.9
     fat_g: 12.2
     satFat_g: 4.3
-    carbs_g: 7.2
+    carbs_g: 7.3
     fiber_g: 1.3
     sugar_g: 4
     sodium_mg: 292
@@ -111,6 +112,7 @@ nutrition:
     - Nutri-Score 2023
     - Inflammation index (ingredient-tag v1)
 createdAt: "2026-06-23"
+updatedAt: "2026-06-23"
 ---
 
 ## Method
