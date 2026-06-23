@@ -25,8 +25,9 @@ ingredients:
     quantity: 1
     unit: tbsp
     item: chili oil
+    grams: 13.4
     milliliters: 14.7868
-    fdcId: 330458
+    fdcId: 748608
     matchConfidence: medium
   - raw: 9 oz king oyster mushrooms
     quantity: 9
@@ -40,7 +41,7 @@ ingredients:
     unit: oz
     item: shimeji mushrooms
     grams: 170.1
-    fdcId: 1999627
+    fdcId: 169403
     matchConfidence: medium
   - raw: 1/2 tbsp gochujang paste
     quantity: 0.5
@@ -71,7 +72,7 @@ ingredients:
     item: rice vinegar
     grams: 5
     milliliters: 4.92892
-    fdcId: 172237
+    fdcId: 173469
     matchConfidence: medium
   - raw: 1 tsp sesame oil
     quantity: 1
@@ -85,14 +86,16 @@ ingredients:
     quantity: 1.5
     unit: tbsp
     item: peanut butter ((or tahini for nut-free option))
+    grams: 24
     milliliters: 22.1802
-    fdcId: 2262072
+    fdcId: 169869
     matchConfidence: low
   - raw: 1 tbsp fresh ginger (finely grated)
     quantity: 1
     unit: tbsp
     item: fresh ginger
     note: finely grated
+    grams: 6
     milliliters: 14.7868
     fdcId: 169231
     matchConfidence: high
@@ -108,6 +111,7 @@ ingredients:
     quantity: 2
     unit: tbsp
     item: lime juice
+    grams: 30.3
     milliliters: 29.5736
     fdcId: 168156
     matchConfidence: high
@@ -124,6 +128,7 @@ ingredients:
     quantity: 2
     unit: tsp
     item: maple syrup
+    grams: 13.3
     milliliters: 9.85784
     fdcId: 169661
     matchConfidence: high
@@ -132,9 +137,9 @@ ingredients:
     unit: cup
     item: dairy-free milk
     note: I used soy
-    grams: 34.3
+    grams: 60
     milliliters: 59.147
-    fdcId: 169868
+    fdcId: 171942
     matchConfidence: medium
   - raw: 1 tsp gochujang paste
     quantity: 1
@@ -147,16 +152,17 @@ ingredients:
     unit: cups
     item: shelled frozen edamame
     note: thawed
-    grams: 177
+    grams: 232.5
     milliliters: 354.882
-    fdcId: 168410
-    matchConfidence: medium
+    fdcId: 168411
+    matchConfidence: high
   - raw: 1 medium cucumbers (diced)
     quantity: 1
     unit: medium
     item: cucumbers
     note: diced
-    fdcId: 2346406
+    grams: 201
+    fdcId: 169225
     matchConfidence: high
   - raw: 2 spring onions (finely chopped)
     quantity: 2
@@ -177,34 +183,35 @@ ingredients:
     unit: cup
     item: fresh mint
     note: finely chopped
+    grams: 6.4
     milliliters: 59.147
-    fdcId: 173474
+    fdcId: 173475
     matchConfidence: low
 nutrition:
   perServing:
-    energyKcal: 282
-    energyKj: 1179
-    protein_g: 19.6
-    fat_g: 10.9
-    satFat_g: 0.9
-    carbs_g: 52.4
-    fiber_g: 13.3
-    sugar_g: 6.6
-    sodium_mg: 707
-    availableCarb_g: 39.1
+    energyKcal: 466
+    energyKj: 1951
+    protein_g: 25.9
+    fat_g: 19.2
+    satFat_g: 3.7
+    carbs_g: 69.4
+    fiber_g: 16.9
+    sugar_g: 16.3
+    sodium_mg: 740
+    availableCarb_g: 52.4
   glycemic:
     gi: 54
-    gl: 2
+    gl: 4
     giBand: low
     glBand: low
     gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: -1
     category: general
     version: "2023"
   inflammation:
-    score: -0.7
+    score: -0.5
     band: mildly-anti-inflammatory
     method: ingredient-tag v1
   computedAt: "2026-06-23"
