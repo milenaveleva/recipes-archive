@@ -43,7 +43,15 @@ const STOP = new Set([
   'whole', 'large', 'medium', 'small', 'chopped', 'minced', 'sliced', 'diced',
   'grated', 'crushed', 'peeled', 'rinsed', 'drained', 'finely', 'roughly',
   'ripe', 'organic', 'extra', 'virgin', 'for', 'into', 'cut', 'pieces',
+  'shelled', 'thawed', 'shredded', 'skinless', 'boneless', 'pitted', 'seeded',
+  'halved', 'quartered', 'softened', 'melted', 'beaten', 'packed', 'freshly',
+  'trimmed', 'cubed', 'crumbled', 'blanched', 'steamed', 'cooled', 'divided',
+  'leaf', 'leaves',
 ]);
+// NB: words that distinguish one food from another (e.g. "smoked", "toasted",
+// colours, "sweet") are NOT stopwords — they are identity, and under the
+// all-tokens-required rule they correctly steer "smoked salmon" to the smoked
+// entry rather than collapsing it onto the raw one.
 
 // Light singular/plural stemming so "onion" matches USDA's "Onions, raw" and
 // "tomatoes" matches "tomato". Applied to both query and food tokens, so even
@@ -81,7 +89,10 @@ function scoreMatch(queryTokens: string[], food: FoodRecord): number {
       soft++;
     }
   }
-  if (!matched && !soft) return 0;
+  // Every query token must be present (exact or compound-suffix). An ingredient's
+  // words are ALL required and order-independent, so "peanut butter" only matches
+  // foods carrying BOTH "peanut" and "butter" — never plain "Butter" or "Peanuts".
+  if (matched + soft < queryTokens.length) return 0;
 
   const eff = matched + soft * 0.5; // a soft match counts for half an exact one
   const recall = eff / queryTokens.length; // share of the query covered
@@ -106,7 +117,8 @@ function confidenceFor(score: number): MatchConfidence {
 
 /**
  * Rank the foods most likely to match an ingredient query (its item text),
- * best first. Returns an empty array when nothing overlaps. `preferIds` nudges
+ * best first. A food must contain EVERY query token (AND over tokens, see
+ * scoreMatch), so the list is empty when no food carries them all. `preferIds` nudges
  * foods we hold richer curated data for (GI, portions) ahead of equally-good
  * matches, so a common ingredient still resolves to the better-documented food
  * in a large dataset; confidence reflects the textual match only (pre-bonus).

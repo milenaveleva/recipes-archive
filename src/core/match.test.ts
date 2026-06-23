@@ -25,10 +25,20 @@ describe('searchFoods', () => {
     expect(searchFoods('crushed tomatoes', FOODS)[0].food.fdcId).toBe(4);
   });
 
-  it('ranks the carb-bearing food first and assigns medium confidence to a partial match', () => {
-    const matches = searchFoods('red lentils', FOODS);
-    expect(matches[0].food.fdcId).toBe(1);
-    expect(matches[0].confidence).toBe('medium'); // "red" not in the food name
+  it('requires every query token (AND) — "peanut butter" excludes plain butter or peanuts', () => {
+    const foods: FoodRecord[] = [
+      { fdcId: 1, description: 'Peanut butter, smooth style, with salt', n: {} },
+      { fdcId: 2, description: 'Butter, salted', n: {} },
+      { fdcId: 3, description: 'Peanuts, all types, raw', n: {} },
+    ];
+    const ids = searchFoods('peanut butter', foods).map((m) => m.food.fdcId);
+    expect(ids).toEqual([1]); // only the food carrying BOTH peanut AND butter
+  });
+
+  it('excludes a food missing any query token', () => {
+    // "red lentils" needs both "red" and "lentils"; the only lentil here lacks
+    // "red", so it is dropped rather than surfaced as a partial match.
+    expect(searchFoods('red lentils', FOODS)).toEqual([]);
   });
 
   it('gives an exact single-word match high confidence', () => {
@@ -41,9 +51,13 @@ describe('searchFoods', () => {
   });
 
   it('respects the result limit', () => {
-    const q = 'spinach onion tomato'; // overlaps three different foods
-    expect(searchFoods(q, FOODS).length).toBe(3);
-    expect(searchFoods(q, FOODS, 2).length).toBe(2);
+    const foods: FoodRecord[] = [
+      { fdcId: 1, description: 'Beans, black, mature seeds, raw', n: {} },
+      { fdcId: 2, description: 'Beans, kidney, mature seeds, raw', n: {} },
+      { fdcId: 3, description: 'Beans, pinto, mature seeds, raw', n: {} },
+    ];
+    expect(searchFoods('beans', foods).length).toBe(3); // all three carry "bean"
+    expect(searchFoods('beans', foods, 2).length).toBe(2);
   });
 
   it('reaches a compound-word food via its suffix, kept low-confidence', () => {
