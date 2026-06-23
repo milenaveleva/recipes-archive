@@ -112,14 +112,13 @@ export function isExcludedFood(food) {
   const desc = food.description || '';
   if (EXCLUDED_DESCRIPTION_RE.test(desc)) return true;
   if (GROUP_PRUNE_CATEGORIES.has(food.category) && isExcludedGroup(desc)) return true;
-  // Soups are composite dishes; drop them but keep broths/stocks/bouillon
-  // (real cooking liquids). Sauces, gravies and dips in this category stay.
-  if (
-    food.category === 'Soups, Sauces, and Gravies' &&
-    /\bsoups?\b/i.test(desc.split(/[,(]/)[0]) &&
-    !/\b(broth|stock|bouillon|consomm)/i.test(desc)
-  ) {
-    return true;
+  // In "Soups, Sauces, and Gravies": drop gravies (often meat-based) and soups
+  // (composite dishes) — but keep soup broths/stocks/bouillon (real cooking
+  // liquids). Sauces and dips stay.
+  if (food.category === 'Soups, Sauces, and Gravies') {
+    const lead = desc.split(/[,(]/)[0];
+    if (/\bgrav(y|ies)\b/i.test(lead)) return true;
+    if (/\bsoups?\b/i.test(lead) && !/\b(broth|stock|bouillon|consomm)/i.test(desc)) return true;
   }
   return false;
 }
