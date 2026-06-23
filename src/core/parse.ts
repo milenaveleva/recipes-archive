@@ -59,7 +59,9 @@ export function parseIngredientLine(raw: string): ParsedLine {
   const { item, note } = splitDescription(parsed.description);
   const line: ParsedLine = {
     raw,
-    quantity: parsed.quantity,
+    // An unquantified unit means one of it ("Pinch white pepper", "dash salt") —
+    // default the null quantity to 1 so it still carries a metric amount.
+    quantity: parsed.quantity ?? (parsed.unitOfMeasure ? 1 : null),
     quantity2: parsed.quantity2,
     unit: parsed.unitOfMeasure ?? null,
     unitId: parsed.unitOfMeasureID ?? canonicalUnit(parsed.unitOfMeasure),

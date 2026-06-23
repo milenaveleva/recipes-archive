@@ -27,6 +27,11 @@ const ML_PER: Record<string, number> = {
   pint: 473.176,
   quart: 946.353,
   gallon: 3785.41,
+  // Informal cooking volumes (standard measuring-spoon set): pinch = 1/16 tsp,
+  // dash = 1/8 tsp. Tiny, but let "pinch white pepper" weigh via the food's density
+  // rather than show a blank weight.
+  pinch: 4.92892 / 16,
+  dash: 4.92892 / 8,
 };
 
 /** Mass unit → grams. */
@@ -70,6 +75,8 @@ const UNIT_ALIASES: Record<string, string> = {
   quarts: 'quart',
   gal: 'gallon',
   gallons: 'gallon',
+  pinches: 'pinch',
+  dashes: 'dash',
   mcg: 'microgram',
   micrograms: 'microgram',
   mg: 'milligram',
@@ -130,7 +137,7 @@ export function volumeToMilliliters(
 /**
  * Resolve a quantity + unit to a metric amount. Mass units yield grams; volume
  * units yield millilitres (a volume's weight is resolved later from the matched
- * food's portion); anything else (count words like "clove", "pinch") yields a
+ * food's portion); anything else (count words like "clove", "slice") yields a
  * null amount with a null dimension.
  */
 export function toMetric(

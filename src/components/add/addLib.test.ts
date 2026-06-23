@@ -62,6 +62,15 @@ describe('buildRow', () => {
     expect(row.grams).toBe(650);
   });
 
+  it('weighs an unquantified "pinch" of a spice via its density', () => {
+    const row = buildRow('Pinch white pepper');
+    expect(row.parsed.item).toBe('white pepper');
+    expect(row.parsed.quantity).toBe(1); // unquantified unit defaults to 1
+    expect(row.grams).not.toBeNull();
+    expect(row.grams).toBeGreaterThan(0);
+    expect(row.grams).toBeLessThan(1); // a pinch is tiny
+  });
+
   it('weighs a volume of peanut butter via its density', () => {
     const row = buildRow('2 tbsp peanut butter');
     const desc = (foodsData as FoodRecord[]).find((f) => f.fdcId === row.selectedFdcId)?.description ?? '';
