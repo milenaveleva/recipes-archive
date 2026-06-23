@@ -46,6 +46,15 @@ describe('buildRow', () => {
     expect(row.selectedFdcId).toBe(174204); // "Crustaceans, crab, blue, raw"
     expect(row.grams).toBeCloseTo(226.8, 1);
   });
+
+  it('uses a descriptive note to disambiguate the match (flour → all-purpose)', () => {
+    const row = buildRow('1/3 cup flour (all-purpose)');
+    expect(row.parsed.item).toBe('flour');
+    expect(row.parsed.note).toBe('all-purpose');
+    // bare "flour" ranks specialty flours first; the note steers it to all-purpose.
+    const desc = (foodsData as FoodRecord[]).find((f) => f.fdcId === row.selectedFdcId)?.description ?? '';
+    expect(desc.toLowerCase()).toContain('all-purpose');
+  });
 });
 
 describe('initialGrams (USDA portions, no density guessing)', () => {

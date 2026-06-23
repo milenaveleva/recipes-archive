@@ -71,7 +71,7 @@ function tokenize(s: string): string[] {
     .map(stem);
 }
 
-function scoreMatch(queryTokens: string[], food: FoodRecord): number {
+function scoreMatch(queryTokens: string[], food: FoodRecord, requireAll: boolean): number {
   const desc = tokenize(food.description);
   if (!desc.length || !queryTokens.length) return 0;
   const descSet = new Set(desc);
@@ -89,10 +89,13 @@ function scoreMatch(queryTokens: string[], food: FoodRecord): number {
       soft++;
     }
   }
-  // Every query token must be present (exact or compound-suffix). An ingredient's
-  // words are ALL required and order-independent, so "peanut butter" only matches
-  // foods carrying BOTH "peanut" and "butter" — never plain "Butter" or "Peanuts".
-  if (matched + soft < queryTokens.length) return 0;
+  // Primary pass (requireAll): every query token must be present (exact or
+  // compound-suffix), order-independent, so "peanut butter" only matches foods
+  // carrying BOTH "peanut" and "butter" — never plain "Butter" or "Peanuts".
+  // Relaxed fallback pass (used by searchFoods only when the strict pass finds
+  // nothing): any token suffices, so a descriptor absent from every USDA name
+  // ("crusty bread") still surfaces the base food rather than an empty list.
+  if (requireAll ? matched + soft < queryTokens.length : !matched && !soft) return 0;
 
   const eff = matched + soft * 0.5; // a soft match counts for half an exact one
   const recall = eff / queryTokens.length; // share of the query covered
@@ -117,46 +120,62 @@ function confidenceFor(score: number): MatchConfidence {
 
 /**
  * Rank the foods most likely to match an ingredient query (its item text),
- * best first. A food must contain EVERY query token (AND over tokens, see
- * scoreMatch), so the list is empty when no food carries them all. `preferIds` nudges
- * foods we hold richer curated data for (GI, portions) ahead of equally-good
- * matches, so a common ingredient still resolves to the better-documented food
- * in a large dataset; confidence reflects the textual match only (pre-bonus).
+ * best first, in three tiers so precision is preferred but never leaves an empty
+ * list when a real food exists:
+ *   1. item + `note` tokens, every token required — a DESCRIPTIVE note
+ *      ("flour (all-purpose)", "broth (low sodium)") refines the match;
+ *   2. item tokens alone, every token required — used when the note is free-text
+ *      junk ("cream (for topping)") that tier 1 can't satisfy, so the note can
+ *      only ever HELP, never surface a wrong food;
+ *   3. item tokens, relaxed to a partial match — used when even the item alone
+ *      has no all-token match ("crusty bread"), so the base food still surfaces.
+ * Within a tier a food must contain EVERY token (AND, order-independent), so
+ * "peanut butter" never lists plain "Butter"/"Peanuts". `preferIds` nudges foods
+ * we hold richer curated data for ahead of equally-good matches; confidence
+ * reflects the textual match only (pre-bonus). Empty only when nothing matches.
  */
 export function searchFoods(
   query: string,
   foods: FoodRecord[],
   limit = 6,
   preferIds?: Set<number>,
+  note?: string,
 ): FoodMatch[] {
-  const queryTokens = tokenize(query);
-  if (!queryTokens.length) return [];
-  return foods
-    .map((food) => {
-      const score = scoreMatch(queryTokens, food);
-      // Small rank-only tie-breaker toward foods we hold curated data for, so a
-      // common ingredient lands on its better-documented food among equally-good
-      // matches. Gated on a non-low score so a weak curated match can't leapfrog
-      // a better one to the top (where it would block auto-selection); `score`/
-      // confidence stay the textual match.
-      const boosted = preferIds && food.fdcId != null && preferIds.has(food.fdcId) && score >= 0.55;
-      return { food, score, ranked: boosted ? score + 0.05 : score };
-    })
-    .filter((m) => m.score > 0)
-    // Tie-break deterministically so selection never depends on the dataset's
-    // file order: first prefer a food we can weigh by volume (one carrying a
-    // burnt-in density), then the higher fdcId — Foundation foods carry the larger
-    // ids and the fuller nutrient analyses. So an equal-scoring generic
-    // ("chicken breast", "cooked rice") lands on the weighable Foundation
-    // reference rather than an SR-Legacy processed cut ("…roll", "Rice crackers").
-    .sort(
-      (a, b) =>
-        b.ranked - a.ranked ||
-        (b.food.per100g ? 1 : 0) - (a.food.per100g ? 1 : 0) ||
-        (b.food.fdcId ?? 0) - (a.food.fdcId ?? 0),
-    )
-    .slice(0, limit)
-    .map(({ food, score }) => ({ food, score, confidence: confidenceFor(score) }));
+  const itemTokens = tokenize(query);
+  if (!itemTokens.length) return [];
+  const noteTokens = note ? tokenize(note) : [];
+  const rank = (tokens: string[], requireAll: boolean) =>
+    foods
+      .map((food) => {
+        const score = scoreMatch(tokens, food, requireAll);
+        // Small rank-only tie-breaker toward foods we hold curated data for, so a
+        // common ingredient lands on its better-documented food among equally-good
+        // matches. Gated on a non-low score so a weak curated match can't leapfrog
+        // a better one to the top (where it would block auto-selection); `score`/
+        // confidence stay the textual match.
+        const boosted = preferIds && food.fdcId != null && preferIds.has(food.fdcId) && score >= 0.55;
+        return { food, score, ranked: boosted ? score + 0.05 : score };
+      })
+      .filter((m) => m.score > 0)
+      // Tie-break deterministically so selection never depends on the dataset's
+      // file order: first prefer a food we can weigh by volume (one carrying a
+      // burnt-in density), then the higher fdcId — Foundation foods carry the larger
+      // ids and the fuller nutrient analyses. So an equal-scoring generic
+      // ("chicken breast", "cooked rice") lands on the weighable Foundation
+      // reference rather than an SR-Legacy processed cut ("…roll", "Rice crackers").
+      .sort(
+        (a, b) =>
+          b.ranked - a.ranked ||
+          (b.food.per100g ? 1 : 0) - (a.food.per100g ? 1 : 0) ||
+          (b.food.fdcId ?? 0) - (a.food.fdcId ?? 0),
+      );
+  // Note tokens go BEFORE item tokens so the item's last word stays the overall
+  // head-noun — the leads/head ranking then favours a food whose identity is the
+  // item ("Cream, …") over one led by the note word ("Toppings, … cream").
+  let ranked = noteTokens.length ? rank([...noteTokens, ...itemTokens], true) : [];
+  if (!ranked.length) ranked = rank(itemTokens, true);
+  if (!ranked.length) ranked = rank(itemTokens, false);
+  return ranked.slice(0, limit).map(({ food, score }) => ({ food, score, confidence: confidenceFor(score) }));
 }
 
 /** The per-100g nutrient vector for a matched food. */

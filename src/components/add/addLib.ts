@@ -103,7 +103,12 @@ let rowCounter = 0;
 export function buildRow(raw: string): IngredientRow {
   const parsed = parseIngredientLine(raw);
   const est = estimateMetric(parsed);
-  const candidates = parsed.isGroupHeader ? [] : searchFoods(parsed.item, FOODS, 6, CURATED_IDS);
+  // Pass the note as a refinement: searchFoods uses it only when item+note has an
+  // all-token match (a descriptive "flour (all-purpose)"), else falls back to the
+  // item alone — so a free-text note ("cream (for topping)") never mis-steers.
+  const candidates = parsed.isGroupHeader
+    ? []
+    : searchFoods(parsed.item, FOODS, 6, CURATED_IDS, parsed.note);
   const top = candidates[0];
   const selectedFdcId = top && top.confidence !== 'low' ? top.food.fdcId ?? null : null;
   const selectedFood = selectedFdcId != null ? FOOD_BY_ID.get(selectedFdcId) ?? null : null;

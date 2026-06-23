@@ -35,10 +35,28 @@ describe('searchFoods', () => {
     expect(ids).toEqual([1]); // only the food carrying BOTH peanut AND butter
   });
 
-  it('excludes a food missing any query token', () => {
-    // "red lentils" needs both "red" and "lentils"; the only lentil here lacks
-    // "red", so it is dropped rather than surfaced as a partial match.
-    expect(searchFoods('red lentils', FOODS)).toEqual([]);
+  it('drops a partial match when a full-token match coexists', () => {
+    const foods: FoodRecord[] = [
+      { fdcId: 1, description: 'Lentils, pink or red, raw', n: {} },
+      { fdcId: 2, description: 'Lentils, mature seeds, raw', n: {} },
+    ];
+    // #1 carries both "red" and "lentil", so the strict pass returns it and the
+    // partial #2 (missing "red") is never surfaced — no relaxation happens.
+    expect(searchFoods('red lentils', foods).map((m) => m.food.fdcId)).toEqual([1]);
+  });
+
+  it('relaxes to a partial match only when no food contains every token', () => {
+    const foods: FoodRecord[] = [
+      { fdcId: 1, description: 'Bread, white, commercially prepared', n: {} },
+      { fdcId: 2, description: 'Bread, whole-wheat, commercially prepared', n: {} },
+      { fdcId: 3, description: 'Spinach, raw', n: {} },
+    ];
+    // No food carries "crusty", so the strict pass is empty and search falls back
+    // to the "bread" partial — surfacing the breads, never the unrelated spinach.
+    const ids = searchFoods('crusty bread', foods).map((m) => m.food.fdcId);
+    expect(ids).toContain(1);
+    expect(ids).toContain(2);
+    expect(ids).not.toContain(3);
   });
 
   it('gives an exact single-word match high confidence', () => {
