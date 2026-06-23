@@ -41,8 +41,8 @@ describe('buildRow', () => {
   });
 
   it('matches a mass ingredient with a multi-word name', () => {
-    const row = buildRow('8 ounces chicken breast');
-    expect(row.selectedFdcId).toBe(2727569); // a Foundation "Chicken, breast, …, raw" (fdcId tie-break)
+    const row = buildRow('8 ounces blue crab');
+    expect(row.selectedFdcId).toBe(174204); // "Crustaceans, crab, blue, raw"
     expect(row.grams).toBeCloseTo(226.8, 1);
   });
 });
@@ -237,12 +237,12 @@ describe('editing round-trip (formFromRecipe / rowsFromIngredients)', () => {
   });
 
   it('keeps a stored match selectable even when search would not surface it', () => {
-    // chicken breast 171534 is not a plausible search hit for "mystery powder".
+    // garlic 169230 is not a plausible search hit for "mystery powder".
     const [row] = rowsFromIngredients([
-      { raw: '10 g mystery powder', fdcId: 171534, grams: 10, matchConfidence: 'low' },
+      { raw: '10 g mystery powder', fdcId: 169230, grams: 10, matchConfidence: 'low' },
     ]);
-    expect(row.selectedFdcId).toBe(171534);
-    expect(row.candidates.some((c) => c.food.fdcId === 171534)).toBe(true);
+    expect(row.selectedFdcId).toBe(169230);
+    expect(row.candidates.some((c) => c.food.fdcId === 169230)).toBe(true);
     expect(selectedConfidence(row)).toBe('low');
   });
 

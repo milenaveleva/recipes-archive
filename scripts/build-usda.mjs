@@ -185,9 +185,9 @@ async function main() {
             kept++;
           }
         }
-        if (i % 500 === 0) write(`\r  ${ds.name}: ${i}/${list.length} (${kept} kept, ${dropped} branded)`);
+        if (i % 500 === 0) write(`\r  ${ds.name}: ${i}/${list.length} (${kept} kept, ${dropped} dropped)`);
       }
-      write(`\r  ${ds.name}: ${list.length}/${list.length} (${kept} kept, ${dropped} branded)\n`);
+      write(`\r  ${ds.name}: ${list.length}/${list.length} (${kept} kept, ${dropped} dropped)\n`);
     } finally {
       await rm(dir, { recursive: true, force: true });
     }

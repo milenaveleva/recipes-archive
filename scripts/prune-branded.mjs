@@ -17,7 +17,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import {
   shouldDrop,
-  isBranded,
+  isExcludedFood,
   EXCLUDE_IDS,
   assertCuratedPresent,
   serializeFoods,
@@ -33,12 +33,16 @@ async function main() {
 
   const kept = foods.filter((f) => !shouldDrop(f));
   const dropped = foods.filter((f) => shouldDrop(f));
-  const byHeuristic = dropped.filter((f) => isBranded(f) && !EXCLUDE_IDS.has(f.fdcId)).length;
+  // Mutually exclusive, in shouldDrop's precedence order (denylist → exclusion
+  // rule → ALL-CAPS heuristic), so the three counts sum to dropped.length.
   const byDenylist = dropped.filter((f) => EXCLUDE_IDS.has(f.fdcId)).length;
+  const byExclusion = dropped.filter((f) => !EXCLUDE_IDS.has(f.fdcId) && isExcludedFood(f)).length;
+  const byHeuristic = dropped.length - byDenylist - byExclusion;
 
   log(
-    `Dropping ${dropped.length} branded foods ` +
-      `(${byHeuristic} by ALL-CAPS heuristic, ${byDenylist} by verified denylist) → ${kept.length} remain`,
+    `Dropping ${dropped.length} foods ` +
+      `(${byHeuristic} branded by ALL-CAPS heuristic, ${byDenylist} by verified denylist, ` +
+      `${byExclusion} by category/dish exclusion) → ${kept.length} remain`,
   );
 
   // Never orphan a curated food-scoring entry.

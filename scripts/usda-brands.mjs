@@ -64,10 +64,71 @@ export const EXCLUDE_IDS = new Set(
 // cultivated-seaweed variety name, not a manufacturer.
 export const KEEP_IDS = new Set([167602, 167603]);
 
+// USDA categories with no place in this archive. "Fast Foods" / composite dishes
+// pollute ingredient matching; all land-animal meat is excluded (the archive is
+// plant- and seafood-based) — only "Finfish and Shellfish Products" (seafood of
+// any kind) is kept among animal flesh, while eggs/dairy stay (not meat).
+const EXCLUDED_CATEGORIES = new Set([
+  'Fast Foods',
+  'Restaurant Foods',
+  'Meals, Entrees, and Side Dishes',
+  'Baby Foods',
+  'Beef Products',
+  'Pork Products',
+  'Poultry Products',
+  'Lamb, Veal, and Game Products',
+  'Sausages and Luncheon Meats',
+  'American Indian/Alaska Native Foods',
+]);
+// Specific dishes to drop regardless of category: macaroni and cheese (sits
+// under Baby Foods / Meals / Luncheon Meats), and fast-food items miscategorised
+// outside "Fast Foods" (e.g. "Shake, fast food, vanilla" filed under Beverages).
+const EXCLUDED_DESCRIPTION_RE = /macaroni and cheese|\bfast food\b/i;
+
+// Within Sweets / Baked Products, drop finished-dessert/junk leading-noun groups
+// (the noun before the first comma) — they are products, not cooking ingredients.
+// Scoped to those two categories so a "Pie"/"Cake"/"Rolls" elsewhere is untouched.
+const GROUP_PRUNE_CATEGORIES = new Set(['Sweets', 'Baked Products']);
+const EXCLUDED_GROUPS = new Set([
+  // Sweets
+  'candies', 'puddings', 'pudding', 'syrups', 'syrup', 'fruit syrup', 'frostings',
+  'frozen novelties', 'frozen yogurts', 'desserts', 'gelatin desserts', 'gelatins',
+  'pectin', 'chewing gum', 'gums', 'sherbet', 'pie fillings', 'jellies',
+  // Baked Products
+  'cake', 'doughnuts', 'leavening agents', 'rolls', 'sweet rolls', 'pie', 'pie crust',
+]);
+function isExcludedGroup(desc) {
+  const g = desc.split(/[,(]/)[0].trim().toLowerCase();
+  if (/\bmuffins?\b/.test(g)) return true; // Muffins / Muffin / English muffins / …Muffin Mix
+  if (!EXCLUDED_GROUPS.has(g)) return false;
+  // Keep real maple syrup — a cooking ingredient (used in recipes) — but not the
+  // "table blends, pancake, with 2% maple" imitations or other syrups.
+  if (/^syrups,\s*maple\b/i.test(desc)) return false;
+  return true;
+}
+
+export function isExcludedFood(food) {
+  if (EXCLUDED_CATEGORIES.has(food.category)) return true;
+  const desc = food.description || '';
+  if (EXCLUDED_DESCRIPTION_RE.test(desc)) return true;
+  if (GROUP_PRUNE_CATEGORIES.has(food.category) && isExcludedGroup(desc)) return true;
+  // Soups are composite dishes; drop them but keep broths/stocks/bouillon
+  // (real cooking liquids). Sauces, gravies and dips in this category stay.
+  if (
+    food.category === 'Soups, Sauces, and Gravies' &&
+    /\bsoups?\b/i.test(desc.split(/[,(]/)[0]) &&
+    !/\b(broth|stock|bouillon|consomm)/i.test(desc)
+  ) {
+    return true;
+  }
+  return false;
+}
+
 /** Final decision: drop this food from the generic dataset? */
 export function shouldDrop(food) {
   if (KEEP_IDS.has(food.fdcId)) return false;
   if (EXCLUDE_IDS.has(food.fdcId)) return true;
+  if (isExcludedFood(food)) return true;
   return isBranded(food);
 }
 
@@ -101,6 +162,37 @@ function canonVolUnit(phrase) {
   return c in ML_PER ? c : null;
 }
 
+const MASS_CANON = new Set(['gram', 'kilogram', 'ounce', 'pound', 'milligram', 'microgram']);
+const MASS_ALIASES = {
+  g: 'gram', grams: 'gram', gr: 'gram', gramme: 'gram', grammes: 'gram',
+  kg: 'kilogram', kilograms: 'kilogram', kilo: 'kilogram',
+  oz: 'ounce', ounces: 'ounce', lb: 'pound', lbs: 'pound', pounds: 'pound',
+  mg: 'milligram', milligrams: 'milligram', mcg: 'microgram', micrograms: 'microgram',
+};
+function isMassUnit(phrase) {
+  const u = phrase.trim().toLowerCase().replace(/\.+$/, '');
+  return MASS_CANON.has(MASS_ALIASES[u] ?? u);
+}
+
+/**
+ * Classify a portion label: 'volume' (cup/tbsp/…), 'mass' (oz/lb/…), or 'count'
+ * (everything else — "1 large", "1 clove", "1 slice"). Only count portions are
+ * kept in the dataset: volume is carried by the derived per100g density and mass
+ * portions are never read (a mass ingredient weighs straight from its unit).
+ */
+function portionDimension(label) {
+  const m = /^\s*([\d.]+(?:\s*\/\s*[\d.]+)?)\s+(.+?)\s*$/.exec(label);
+  if (!m) return 'count';
+  const phrase = m[2].split(/[,(]/)[0].trim();
+  // Scan the whole phrase and each word, so a unit anywhere is caught ("fl oz"
+  // as a phrase; "cup" inside "serving 1/4 cup"). Volume is tested before mass so
+  // "fl oz" reads as volume, not the "oz" → mass it also contains.
+  const tokens = [phrase, ...phrase.split(/\s+/)];
+  if (tokens.some((t) => canonVolUnit(t))) return 'volume';
+  if (tokens.some((t) => isMassUnit(t))) return 'mass';
+  return 'count';
+}
+
 /**
  * Density (g/ml) from a food's own USDA portions: the first portion that parses
  * to an amount + a volume unit fixes it (volume↔volume is exact, so the food's
@@ -123,29 +215,41 @@ function volumeDensity(portions) {
   return null;
 }
 
-/** Volume that 100 g occupies, in cup/fl-oz/tsp/tbsp (a burnt-in density table). */
+/**
+ * Volume that 100 g occupies, in cup/fl-oz/tsp/tbsp (a burnt-in density table).
+ * Stored at full precision — data is never rounded; any rounding happens only at
+ * display time. (Rounding here would both lose precision and drift the fields
+ * against each other on re-derivation.)
+ */
 function per100gFields(gPerMl) {
   const mlPer100g = 100 / gPerMl;
-  const sig4 = (x) => Number(x.toPrecision(4));
   return {
-    cup: sig4(mlPer100g / ML_PER.cup),
-    flOz: sig4(mlPer100g / ML_PER['fluid ounce']),
-    tsp: sig4(mlPer100g / ML_PER.teaspoon),
-    tbsp: sig4(mlPer100g / ML_PER.tablespoon),
+    cup: mlPer100g / ML_PER.cup,
+    flOz: mlPer100g / ML_PER['fluid ounce'],
+    tsp: mlPer100g / ML_PER.teaspoon,
+    tbsp: mlPer100g / ML_PER.tablespoon,
   };
 }
 
 /**
- * Compact food record with a deterministic key order and, when derivable, a
- * burnt-in `per100g` density. Re-running on an already-normalised food is
- * idempotent (per100g recomputes from the same portions to the same value).
+ * Compact food record with a deterministic key order, a burnt-in `per100g`
+ * density (when derivable), and only the COUNT portions retained — volume is
+ * carried by per100g and mass portions are never read, so dropping them sheds
+ * redundant data without losing any capability. Idempotent: on a food whose
+ * volume portions were already dropped, the stored per100g is carried through
+ * verbatim (re-deriving it from the rounded cup would drift the other fields).
  */
 function normalizeFood(f) {
   const out = { fdcId: f.fdcId, description: f.description, n: f.n };
   if (f.category) out.category = f.category;
-  if (f.portions?.length) out.portions = f.portions;
   const d = volumeDensity(f.portions);
   if (d && Number.isFinite(d) && d > 0) out.per100g = per100gFields(d);
+  // Once volume portions have been dropped there is nothing to re-derive from, so
+  // carry a previously-computed density through verbatim (keeps re-cleans idempotent
+  // and avoids precision loss from reconstructing it via the rounded cup value).
+  else if (f.per100g) out.per100g = f.per100g;
+  const counts = (f.portions ?? []).filter((p) => portionDimension(p.label) === 'count');
+  if (counts.length) out.portions = counts;
   return out;
 }
 
