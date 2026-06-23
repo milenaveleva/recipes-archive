@@ -76,25 +76,55 @@ export function buildRecipeMeta(data: RecipeMetaSource): RecipeMetaItem[] {
 }
 
 /** Fields formatIngredientAmount reads — common to a collection ingredient and
- * an authoring DraftIngredient. */
+ * an authoring DraftIngredient. `item` is the food name, used to spot liquids. */
 export interface IngredientAmountSource {
   quantity?: number | null;
   quantity2?: number | null;
   unit?: string | null;
+  item?: string | null;
   grams?: number | null;
   milliliters?: number | null;
 }
 
 /**
+ * Food-name head nouns that mark an ingredient as a liquid (incl. oils), so it
+ * displays in ml/L rather than grams. Matched against the LAST word of the name,
+ * which is where the liquid identity normally sits ("orange juice", "soy milk",
+ * "olive oil", "chicken stock") — so a modifier like "water" in "water chestnut"
+ * or "cream" in "cream cheese" doesn't trip it.
+ */
+const LIQUID_HEADS = new Set([
+  'milk', 'buttermilk', 'cream', 'water', 'stock', 'broth', 'bouillon',
+  'consomme', 'juice', 'wine', 'beer', 'ale', 'lager', 'cider', 'sake',
+  'mirin', 'liquor', 'liqueur', 'vinegar', 'sauce', 'oil', 'syrup', 'soda',
+  'brine', 'dashi', 'kombucha', 'kefir', 'coffee', 'tea', 'vermouth',
+  'brandy', 'rum', 'vodka', 'whiskey', 'whisky', 'gin', 'champagne', 'prosecco',
+]);
+
+/** Whether an ingredient name reads as a liquid (its head noun is a liquid). */
+function isLiquid(name?: string | null): boolean {
+  if (!name) return false;
+  // Drop any parenthetical/alternative descriptor so the head noun is the food
+  // itself ("heavy cream (sub milk)" → cream, "soy milk / oat milk" → milk),
+  // then match the last word.
+  const cleaned = name.replace(/\([^)]*\)/g, ' ').split(/[,/]/)[0];
+  const tokens = cleaned.toLowerCase().split(/[^a-z]+/).filter(Boolean);
+  const head = tokens[tokens.length - 1];
+  if (!head) return false;
+  const singular = head.length > 3 && head.endsWith('s') ? head.slice(0, -1) : head;
+  return LIQUID_HEADS.has(head) || LIQUID_HEADS.has(singular);
+}
+
+/**
  * The amount shown beside an ingredient, the way a cook reads it: teaspoons and
- * tablespoons keep their spoon measure ("1 tbsp"); a liquid metered in a metric
- * volume (ml/cl/dl/l) stays in ml/L; everything else shows its metric weight in
- * grams/kg. Only a metric *liquid* unit uses `milliliters` for display — an
- * imperial volume like "cups" is how cooks measure solids too, so a cup of a
- * dry good with no weight falls back to its written amount ("1½ cups") rather
- * than a meaningless volume conversion. Grams remain the basis for ALL nutrition
- * math regardless of what's shown. Returns null when no amount is known, so the
- * caller can fall back to the raw line.
+ * tablespoons keep their spoon measure ("1 tbsp"); a liquid (any drink, broth,
+ * juice, oil, etc., recognised by its name) or anything metered in a metric
+ * volume shows ml/L; everything else shows its metric weight in grams/kg. A
+ * non-liquid measured by an imperial volume like "cups" with no weight falls
+ * back to its written amount ("1½ cups") — cups measure solids too, so a bare
+ * volume conversion would be meaningless. Grams remain the basis for ALL
+ * nutrition math regardless of what's shown. Returns null when no amount is
+ * known, so the caller can fall back to the raw line.
  */
 export function formatIngredientAmount(ing: IngredientAmountSource): string | null {
   const qtyText = () =>
@@ -106,18 +136,15 @@ export function formatIngredientAmount(ing: IngredientAmountSource): string | nu
   if ((canon === 'teaspoon' || canon === 'tablespoon') && ing.quantity != null) {
     return `${qtyText()} ${canon === 'tablespoon' ? 'tbsp' : 'tsp'}`;
   }
-  // A liquid the cook metered in a metric volume keeps that volume — those units
-  // signal a deliberate liquid measure, unlike cups (used for solids too).
-  if (
-    (canon === 'milliliter' ||
-      canon === 'centiliter' ||
-      canon === 'deciliter' ||
-      canon === 'liter') &&
-    ing.milliliters != null &&
-    ing.milliliters > 0
-  ) {
-    const ml = ing.milliliters;
-    return ml >= 1000 ? `${round(ml / 1000, 2)} L` : `${round(ml, 0)} ml`;
+  // Liquids (recognised by name) and anything written in a metric volume show
+  // ml/L; a cup of a dry good is NOT a liquid and falls through to weight.
+  const metricVolume =
+    canon === 'milliliter' ||
+    canon === 'centiliter' ||
+    canon === 'deciliter' ||
+    canon === 'liter';
+  if (ing.milliliters != null && ing.milliliters > 0 && (metricVolume || isLiquid(ing.item))) {
+    return formatMilliliters(ing.milliliters);
   }
   if (ing.grams != null && ing.grams > 0) return formatGrams(ing.grams);
   if (ing.quantity != null) return ing.unit ? `${qtyText()} ${ing.unit}` : qtyText();
@@ -133,11 +160,28 @@ export function round(n: number | undefined | null, dp = 0): number | null {
   return Math.round(n * f) / f;
 }
 
-/** Format a metric weight: grams under 1000, else kg. */
+/**
+ * Round a displayed metric amount: anything over 10 g/ml snaps to the nearest
+ * 10 (so "196 g" reads "200 g", "34 g" reads "30 g") — recipe weights don't
+ * warrant single-gram precision — while a value at or under 10 keeps its exact
+ * figure, since small doses ("4.5 g") would be distorted by coarsening. Whole
+ * spoon measures bypass this (formatIngredientAmount handles tsp/tbsp first).
+ */
+function roundMetric(v: number): number {
+  return v > 10 ? Math.round(v / 10) * 10 : (round(v, 1) ?? v);
+}
+
+/** Format a metric weight: grams under 1000, else kg (rounded per roundMetric). */
 export function formatGrams(g?: number | null): string | null {
   if (g == null) return null;
-  if (g >= 1000) return `${round(g / 1000, 2)} kg`;
-  return `${round(g, g < 10 ? 1 : 0)} g`;
+  const v = roundMetric(g);
+  return v >= 1000 ? `${round(v / 1000, 2)} kg` : `${v} g`;
+}
+
+/** Format a metric liquid volume: millilitres under 1000, else litres (rounded per roundMetric). */
+function formatMilliliters(ml: number): string {
+  const v = roundMetric(ml);
+  return v >= 1000 ? `${round(v / 1000, 2)} L` : `${v} ml`;
 }
 
 /* ---- score → tone (color band) mapping ----

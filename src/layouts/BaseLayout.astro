@@ -21,7 +21,7 @@ const {
   hideAddFab = false,
 } = Astro.props;
 
-const siteName = 'mili’s hedonistic cookbook';
+const siteName = 'mili’s hedonistic longevity cookbook';
 const fullTitle = title ? `${title} — ${siteName}` : siteName;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 
@@ -96,7 +96,7 @@ const buildTime = Date.now();
               class="font-display text-2xl sm:text-[1.7rem] font-medium tracking-tight text-ink"
               style="font-variation-settings:'SOFT' 40, 'WONK' 1;"
             >
-              mili’s <s class="decoration-spice decoration-2">hedonistic</s> cookbook
+              mili’s <s class="decoration-spice decoration-2">hedonistic</s> longevity cookbook
             </span>
             <span
               class="hidden sm:inline-block h-2 w-2 rounded-full bg-spice transition-transform group-hover:scale-150"
@@ -114,7 +114,7 @@ const buildTime = Date.now();
     <footer class="mt-20 border-t border-line">
       <div class="mx-auto max-w-6xl px-5 sm:px-8 py-10 font-ui text-xs text-ink-faint flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
         <p>
-          mili’s <s class="decoration-spice">hedonistic</s> cookbook
+          mili’s <s class="decoration-spice">hedonistic</s> longevity cookbook
         </p>
       </div>
     </footer>

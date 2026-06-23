@@ -28,9 +28,20 @@ describe('formatIngredientAmount (display unit ≠ calc basis)', () => {
   });
 
   it('shows metric weight for mass units and for weighed volumes (cups → grams)', () => {
-    expect(formatIngredientAmount({ quantity: 9, unit: 'oz', grams: 255 })).toBe('255 g');
+    expect(formatIngredientAmount({ quantity: 9, unit: 'oz', grams: 250 })).toBe('250 g');
     // A cup that got matched + weighed shows the weight, not the derived ml.
-    expect(formatIngredientAmount({ quantity: 1, unit: 'cup', milliliters: 237, grams: 255 })).toBe('255 g');
+    expect(formatIngredientAmount({ quantity: 1, unit: 'cup', milliliters: 237, grams: 250 })).toBe('250 g');
+  });
+
+  it('snaps metric amounts over 10 g/ml to the nearest 10, keeps ≤10 exact', () => {
+    expect(formatIngredientAmount({ quantity: 9, unit: 'oz', grams: 196 })).toBe('200 g');
+    expect(formatIngredientAmount({ grams: 34 })).toBe('30 g');
+    expect(formatIngredientAmount({ grams: 35 })).toBe('40 g'); // half rounds up
+    expect(formatIngredientAmount({ grams: 4.5 })).toBe('4.5 g'); // ≤10: exact, never coarsened
+    expect(formatIngredientAmount({ grams: 3 })).toBe('3 g');
+    expect(formatIngredientAmount({ grams: 1234 })).toBe('1.23 kg');
+    expect(formatIngredientAmount({ quantity: 1, unit: 'ml', milliliters: 196 })).toBe('200 ml');
+    expect(formatIngredientAmount({ quantity: 1, unit: 'ml', milliliters: 5 })).toBe('5 ml'); // ≤10: exact
   });
 
   it('keeps a liquid metered in a metric volume in ml/L', () => {
@@ -39,11 +50,28 @@ describe('formatIngredientAmount (display unit ≠ calc basis)', () => {
     expect(formatIngredientAmount({ quantity: 1.5, unit: 'litre', milliliters: 1500 })).toBe('1.5 L');
   });
 
+  it('shows a liquid (recognised by name, incl. oils) in ml even when written in cups', () => {
+    // Milk in cups reads ml, not grams — the head noun marks it a liquid.
+    expect(
+      formatIngredientAmount({ quantity: 0.25, unit: 'cup', item: 'dairy-free milk', milliliters: 59.147, grams: 34.3 }),
+    ).toBe('60 ml');
+    // Oils are liquids too (display ml), not grams.
+    expect(
+      formatIngredientAmount({ quantity: 0.25, unit: 'cup', item: 'olive oil', milliliters: 59, grams: 54 }),
+    ).toBe('60 ml');
+    // Head-noun match: a modifier like "water"/"cream" doesn't make a solid a liquid.
+    expect(formatIngredientAmount({ quantity: 1, unit: 'cup', item: 'water chestnuts', milliliters: 237, grams: 250 })).toBe('250 g');
+    expect(formatIngredientAmount({ quantity: 1, unit: 'cup', item: 'cream cheese', milliliters: 237, grams: 250 })).toBe('250 g');
+    // A trailing parenthetical / alternative is stripped before reading the head.
+    expect(formatIngredientAmount({ quantity: 1, unit: 'cup', item: 'heavy cream ((sub milk for lighter option))', milliliters: 236.588 })).toBe('240 ml');
+    expect(formatIngredientAmount({ quantity: 1, unit: 'cup', item: 'oat milk (unsweetened)', milliliters: 237 })).toBe('240 ml');
+  });
+
   it('shows an unweighed dry good measured in cups as cups, never ml', () => {
-    // A cup of a dry good with no USDA match carries only `milliliters`; it must
-    // read in cups (its written measure), not a meaningless volume conversion.
-    expect(formatIngredientAmount({ quantity: 1.5, unit: 'cups', milliliters: 354.882 })).toBe('1.5 cups');
-    expect(formatIngredientAmount({ quantity: 0.25, unit: 'cup', milliliters: 59.147 })).toBe('0.25 cup');
+    // A dry good (not a liquid name) with no USDA match carries only `milliliters`;
+    // it must read in cups (its written measure), not a meaningless conversion.
+    expect(formatIngredientAmount({ quantity: 1.5, unit: 'cups', item: 'shelled edamame', milliliters: 354.882 })).toBe('1.5 cups');
+    expect(formatIngredientAmount({ quantity: 0.25, unit: 'cup', item: 'fresh mint', milliliters: 59.147 })).toBe('0.25 cup');
   });
 
   it('falls back to quantity+unit, then null', () => {
