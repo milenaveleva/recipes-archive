@@ -336,6 +336,18 @@ function per100gFields(gPerMl) {
   };
 }
 
+// Curated density overrides (g/ml) for the rare food whose only USDA volume
+// portion is a known-bad measure that volumeDensity can't otherwise avoid. Unlike
+// a derived density these come from external references, so each carries a source —
+// the one sanctioned exception to "density only from the food's own USDA portion".
+const DENSITY_OVERRIDES = new Map([
+  // Spearmint, fresh (173475): USDA's only volume portion, "2 tbsp = 11.4 g"
+  // (≈91 g/cup, 0.385 g/ml), is a packed/minced measure ~3× too dense for fresh
+  // mint. Chopped fresh mint is ~25 g/cup, matching peppermint (0.108 g/ml) and
+  // culinary references (cookitsimply, coolconversion); use that.
+  [173475, 0.108],
+]);
+
 /**
  * Compact food record with a deterministic key order, a burnt-in `per100g`
  * density (when derivable), and only the COUNT portions retained — volume is
@@ -348,7 +360,7 @@ function normalizeFood(f) {
   const description = PLANT_MILK_IDS.has(f.fdcId) ? renamePlantMilk(f.description) : f.description;
   const out = { fdcId: f.fdcId, description, n: f.n };
   if (f.category) out.category = f.category;
-  const d = volumeDensity(f.portions, f.description);
+  const d = DENSITY_OVERRIDES.get(f.fdcId) ?? volumeDensity(f.portions, f.description);
   if (d && Number.isFinite(d) && d > 0) out.per100g = per100gFields(d);
   // Once volume portions have been dropped there is nothing to re-derive from, so
   // carry a previously-computed density through verbatim (keeps re-cleans idempotent
