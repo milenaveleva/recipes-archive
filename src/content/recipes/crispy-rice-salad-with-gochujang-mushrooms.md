@@ -12,10 +12,11 @@ totalTime: PT50M
 cuisine: Asian-Inspired
 course: Main Course
 ingredients:
-  - raw: 1 cup cooked rice
+  - raw: 1 cup cooked rice (used sushi rice from ⅓ cup dry)
     quantity: 1
     unit: cup
     item: cooked rice
+    note: used sushi rice from ⅓ cup dry
     grams: 176
     milliliters: 236.588
     fdcId: 168914
@@ -24,32 +25,34 @@ ingredients:
     quantity: 1
     unit: tbsp
     item: chili oil
-    grams: 13.6
     milliliters: 14.7868
-    fdcId: 171413
+    fdcId: 330458
     matchConfidence: medium
   - raw: 9 oz king oyster mushrooms
     quantity: 9
     unit: oz
     item: king oyster mushrooms
     grams: 255.1
-    matchConfidence: none
+    fdcId: 2003599
+    matchConfidence: high
   - raw: 6 oz shimeji mushrooms
     quantity: 6
     unit: oz
     item: shimeji mushrooms
     grams: 170.1
-    matchConfidence: none
+    fdcId: 1999627
+    matchConfidence: medium
   - raw: 1/2 tbsp gochujang paste
     quantity: 0.5
     unit: tbsp
     item: gochujang paste
     milliliters: 7.3934
     matchConfidence: none
-  - raw: 2 tsp tamari
+  - raw: 2 tsp tamari (low sodium preferred)
     quantity: 2
     unit: tsp
     item: tamari
+    note: low sodium preferred
     grams: 12
     milliliters: 9.85784
     fdcId: 174278
@@ -58,7 +61,7 @@ ingredients:
     quantity: 0.5
     unit: tbsp
     item: maple syrup
-    grams: 10.1
+    grams: 10
     milliliters: 7.3934
     fdcId: 169661
     matchConfidence: high
@@ -68,23 +71,23 @@ ingredients:
     item: rice vinegar
     grams: 5
     milliliters: 4.92892
-    matchConfidence: none
+    fdcId: 172237
+    matchConfidence: medium
   - raw: 1 tsp sesame oil
     quantity: 1
     unit: tsp
     item: sesame oil
     grams: 4.5
     milliliters: 4.92892
-    fdcId: 171413
-    matchConfidence: medium
-  - raw: 1 1/2 tbsp peanut butter
+    fdcId: 171016
+    matchConfidence: high
+  - raw: 1 1/2 tbsp peanut butter ((or tahini for nut-free option))
     quantity: 1.5
     unit: tbsp
-    item: peanut butter
-    grams: 21.3
+    item: peanut butter ((or tahini for nut-free option))
     milliliters: 22.1802
-    fdcId: 173410
-    matchConfidence: medium
+    fdcId: 2262072
+    matchConfidence: low
   - raw: 1 tbsp fresh ginger (finely grated)
     quantity: 1
     unit: tbsp
@@ -106,12 +109,13 @@ ingredients:
     unit: tbsp
     item: lime juice
     milliliters: 29.5736
-    fdcId: 167747
-    matchConfidence: medium
-  - raw: 2 tsp tamari
+    fdcId: 168156
+    matchConfidence: high
+  - raw: 2 tsp tamari (low sodium preferred)
     quantity: 2
     unit: tsp
     item: tamari
+    note: low sodium preferred
     grams: 12
     milliliters: 9.85784
     fdcId: 174278
@@ -120,17 +124,17 @@ ingredients:
     quantity: 2
     unit: tsp
     item: maple syrup
-    grams: 13.5
     milliliters: 9.85784
     fdcId: 169661
     matchConfidence: high
-  - raw: 1/4 cup dairy-free milk
+  - raw: 1/4 cup dairy-free milk (I used soy)
     quantity: 0.25
     unit: cup
     item: dairy-free milk
+    note: I used soy
     grams: 34.3
     milliliters: 59.147
-    fdcId: 167686
+    fdcId: 169868
     matchConfidence: medium
   - raw: 1 tsp gochujang paste
     quantity: 1
@@ -145,19 +149,21 @@ ingredients:
     note: thawed
     grams: 177
     milliliters: 354.882
-    matchConfidence: none
+    fdcId: 168410
+    matchConfidence: medium
   - raw: 1 medium cucumbers (diced)
     quantity: 1
     unit: medium
     item: cucumbers
     note: diced
-    matchConfidence: none
+    fdcId: 2346406
+    matchConfidence: high
   - raw: 2 spring onions (finely chopped)
     quantity: 2
     item: spring onions
     note: finely chopped
     grams: 10
-    fdcId: 170000
+    fdcId: 170005
     matchConfidence: high
   - raw: 1 avocado (diced)
     quantity: 1
@@ -172,42 +178,43 @@ ingredients:
     item: fresh mint
     note: finely chopped
     milliliters: 59.147
-    matchConfidence: none
+    fdcId: 173474
+    matchConfidence: low
 nutrition:
   perServing:
-    energyKcal: 362
-    energyKj: 1515
-    protein_g: 4.3
-    fat_g: 21.7
-    satFat_g: 7.4
-    carbs_g: 39.3
-    fiber_g: 2.8
-    sugar_g: 14.2
-    sodium_mg: 776
-    availableCarb_g: 36.5
+    energyKcal: 282
+    energyKj: 1179
+    protein_g: 19.6
+    fat_g: 10.9
+    satFat_g: 0.9
+    carbs_g: 52.4
+    fiber_g: 13.3
+    sugar_g: 6.6
+    sodium_mg: 707
+    availableCarb_g: 39.1
   glycemic:
     gi: 54
-    gl: 4
+    gl: 2
     giBand: low
     glBand: low
     gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
   nutriScore:
-    grade: D
-    points: 13
+    grade: B
+    points: 1
     category: general
     version: "2023"
   inflammation:
-    score: -0.3
+    score: -0.7
     band: mildly-anti-inflammatory
     method: ingredient-tag v1
-  computedAt: "2026-06-21"
+  computedAt: "2026-06-23"
   dataSources:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Inflammation index (ingredient-tag v1)
 createdAt: "2026-06-20"
-updatedAt: "2026-06-21"
+updatedAt: "2026-06-23"
 ---
 
 ## Method
