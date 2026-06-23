@@ -108,11 +108,12 @@ const MILK_DROP_RE = /^milk\b|buttermilk/i;
 
 // Processed / prepared potato products (only applied to "Potato…" entries): hash
 // browns, tots/puffs, chips, frozen wedges, frozen-roasted, o'brien, au gratin,
-// scalloped, and instant dehydrated/granule/flake/ready-to-eat mash. French fries
-// are handled by EXCLUDED_DESCRIPTION_RE. Whole potato stays — raw, baked, boiled,
-// microwaved, canned, plain frozen-boiled, home-prepared mash, and potato flour.
+// scalloped, potato salad/pancakes, and instant dehydrated/granule/flake/ready-to-eat
+// mash. French fries are handled by EXCLUDED_DESCRIPTION_RE. Whole potato stays —
+// raw, baked, boiled, microwaved, canned, plain frozen-boiled, home-prepared mash,
+// and potato flour.
 const POTATO_PRODUCT_RE =
-  /\b(hash brown|o'?brien|au gratin|scalloped|puffs?|chips?|tots?|roasted)\b|\bwedges,\s*frozen|\bmashed,\s*(dehydrated|granules|flakes|ready-to-eat)/i;
+  /\b(hash brown|o'?brien|au gratin|scalloped|puffs?|chips?|tots?|roasted|pancakes?|salad)\b|\bwedges,\s*frozen|\bmashed,\s*(dehydrated|granules|flakes|ready-to-eat)/i;
 
 // Plant-milk fdcIds: kept, and renamed to "Milk, <plant>, …" so they group with
 // (and are findable as) milk. USDA names them plant-first ("Soymilk", "Oat milk",
