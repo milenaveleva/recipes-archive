@@ -19,6 +19,12 @@ export interface FoodRecord {
   n: NutrientVector;
   /** Named portion weights (e.g. "1 large" egg → 50 g) for count units. */
   portions?: { label: string; grams: number }[];
+  /**
+   * Burnt-in density: the volume 100 g of this food occupies, in each volume
+   * unit (a single density expressed four ways). Present only when derivable
+   * from the food's own USDA volume portions; lets any volume amount be weighed.
+   */
+  per100g?: { cup: number; flOz: number; tsp: number; tbsp: number };
 }
 
 export type MatchConfidence = 'high' | 'medium' | 'low';
@@ -125,7 +131,18 @@ export function searchFoods(
       return { food, score, ranked: boosted ? score + 0.05 : score };
     })
     .filter((m) => m.score > 0)
-    .sort((a, b) => b.ranked - a.ranked)
+    // Tie-break deterministically so selection never depends on the dataset's
+    // file order: first prefer a food we can weigh by volume (one carrying a
+    // burnt-in density), then the higher fdcId — Foundation foods carry the larger
+    // ids and the fuller nutrient analyses. So an equal-scoring generic
+    // ("chicken breast", "cooked rice") lands on the weighable Foundation
+    // reference rather than an SR-Legacy processed cut ("…roll", "Rice crackers").
+    .sort(
+      (a, b) =>
+        b.ranked - a.ranked ||
+        (b.food.per100g ? 1 : 0) - (a.food.per100g ? 1 : 0) ||
+        (b.food.fdcId ?? 0) - (a.food.fdcId ?? 0),
+    )
     .slice(0, limit)
     .map(({ food, score }) => ({ food, score, confidence: confidenceFor(score) }));
 }

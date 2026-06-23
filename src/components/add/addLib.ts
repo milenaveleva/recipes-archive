@@ -6,7 +6,7 @@
  * validates against the content schema on rebuild.
  */
 import { parseIngredientLine, estimateMetric } from '../../core/parse';
-import { canonicalUnit, classifyUnit } from '../../core/units';
+import { canonicalUnit, classifyUnit, volumeToMilliliters } from '../../core/units';
 import { searchFoods, type FoodRecord, type FoodMatch, type MatchConfidence } from '../../core/match';
 import { computeMacros, type MacroComputation } from '../../core/nutrition';
 import { computeScores, type ScoredIngredient, type ScoreResult, type ScoreOptions } from '../../core/score';
@@ -171,20 +171,27 @@ export function initialGrams(
 ): number | null {
   if (est.grams != null) return round1(est.grams);
   const qty = parsed.quantity;
-  if (qty == null || qty <= 0 || !food?.portions?.length) return null;
+  if (qty == null || qty <= 0) return null;
 
   const want = canonicalUnit(parsed.unitId ?? parsed.unit);
-  if (want) {
+  if (want && food?.portions?.length) {
     for (const p of food.portions) {
       const lp = parsePortion(p);
       if (lp && canonicalUnit(lp.unit) === want) return round1((p.grams / lp.amount) * qty);
     }
   }
+  // Volume unit with no exact-unit portion: weigh via the food's burnt-in
+  // density (the volume 100 g occupies). Volume↔volume is exact, so a "1 cup"
+  // portion can weigh "2 tbsp" — still the food's own USDA data, not a guess.
+  if (classifyUnit(want) === 'volume' && est.milliliters != null && est.milliliters > 0 && food?.per100g) {
+    const mlPer100g = volumeToMilliliters(food.per100g.cup, 'cup');
+    if (mlPer100g != null && mlPer100g > 0) return round1((est.milliliters * 100) / mlPer100g);
+  }
   // A count word (clove, slice, "1 egg") has no recognised mass/volume unit: use
-  // the food's first count-style portion. A recognised volume/mass unit with no
-  // matching portion gets no guess (null → the author enters the weight), and a
-  // count never inherits a cup/oz portion's weight.
-  if (!classifyUnit(want)) {
+  // the food's first count-style portion. A recognised volume unit with neither a
+  // matching portion nor a density gets no guess (null → the author enters the
+  // weight), and a count never inherits a cup/oz portion's weight.
+  if (!classifyUnit(want) && food?.portions?.length) {
     for (const p of food.portions) {
       const lp = parsePortion(p);
       if (lp && !classifyUnit(lp.unit)) return round1((p.grams / lp.amount) * qty);

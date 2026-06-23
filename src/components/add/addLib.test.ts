@@ -42,7 +42,7 @@ describe('buildRow', () => {
 
   it('matches a mass ingredient with a multi-word name', () => {
     const row = buildRow('8 ounces chicken breast');
-    expect(row.selectedFdcId).toBe(2646170); // "Chicken, breast, boneless, skinless, raw"
+    expect(row.selectedFdcId).toBe(2727569); // a Foundation "Chicken, breast, …, raw" (fdcId tie-break)
     expect(row.grams).toBeCloseTo(226.8, 1);
   });
 });
@@ -104,6 +104,28 @@ describe('initialGrams (USDA portions, no density guessing)', () => {
     expect(
       initialGrams(volEst, parsed({ quantity: 1, unit: 'cup', unitId: 'cup' }), food([{ label: '1 cup (8 fl oz)', grams: 236 }])),
     ).toBe(236);
+  });
+
+  const foodWithDensity = (
+    per100g: { cup: number; flOz: number; tsp: number; tbsp: number },
+    portions: { label: string; grams: number }[] = [],
+  ) => ({ fdcId: 1, description: 'x', portions, per100g } as unknown as FoodRecord);
+
+  it('weighs a volume unit from the burnt-in density when no exact portion matches', () => {
+    // maple syrup: 100 g ≈ 5 tbsp / 15 tsp (~1.353 g/ml); no tsp portion listed.
+    const maple = foodWithDensity({ cup: 0.3125, flOz: 2.5, tsp: 15, tbsp: 5 }, [{ label: '1 tbsp', grams: 20 }]);
+    const tsp2: MetricAmount = { grams: null, milliliters: 9.85784, dimension: 'volume' };
+    expect(initialGrams(tsp2, parsed({ quantity: 2, unit: 'tsp', unitId: 'teaspoon' }), maple)).toBeCloseTo(13.3, 1);
+    // …but an exact USDA-measured portion still wins over the derived density.
+    const tbsp1: MetricAmount = { grams: null, milliliters: 14.7868, dimension: 'volume' };
+    expect(initialGrams(tbsp1, parsed({ quantity: 1, unit: 'tbsp', unitId: 'tablespoon' }), maple)).toBe(20);
+  });
+
+  it('derives a volume weight from density even with no volume portion present', () => {
+    // ginger: ~0.406 g/ml; 1 tbsp → ~6 g, weighed purely from the density.
+    const ginger = foodWithDensity({ cup: 1.042, flOz: 8.333, tsp: 50, tbsp: 16.67 });
+    const tbsp1: MetricAmount = { grams: null, milliliters: 14.7868, dimension: 'volume' };
+    expect(initialGrams(tbsp1, parsed({ quantity: 1, unit: 'tbsp', unitId: 'tablespoon' }), ginger)).toBeCloseTo(6, 1);
   });
 });
 
