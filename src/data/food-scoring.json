@@ -18,7 +18,6 @@
   "170173": { "inflammation": 1, "fvl": false },
   "175168": { "inflammation": -2, "fvl": false },
   "171287": { "inflammation": 0, "fvl": false },
-  "746782": { "gi": 39, "giSource": "Atkinson 2021 (whole milk)", "giConfidence": "high", "inflammation": 0, "fvl": false },
   "170903": { "gi": 11, "giSource": "Atkinson 2021 (plain yogurt)", "giConfidence": "medium", "inflammation": 0, "fvl": false },
   "173410": { "inflammation": 1, "fvl": false },
   "169705": { "gi": 55, "giSource": "Atkinson 2021 (rolled oats, porridge)", "giConfidence": "high", "inflammation": -1, "fvl": false },

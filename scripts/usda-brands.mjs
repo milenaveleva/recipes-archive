@@ -68,11 +68,15 @@ export const KEEP_IDS = new Set([167602, 167603]);
 // pollute ingredient matching; all land-animal meat is excluded (the archive is
 // plant- and seafood-based) — only "Finfish and Shellfish Products" (seafood of
 // any kind) is kept among animal flesh, while eggs/dairy stay (not meat).
+// "Breakfast Cereals" (ready-to-eat boxed + instant hot cereals) are finished
+// products, not cooking ingredients; the raw grains they're milled from live in
+// "Cereal Grains and Pasta" (oats, rice, wheat, flour, …), which stays.
 const EXCLUDED_CATEGORIES = new Set([
   'Fast Foods',
   'Restaurant Foods',
   'Meals, Entrees, and Side Dishes',
   'Baby Foods',
+  'Breakfast Cereals',
   'Beef Products',
   'Pork Products',
   'Poultry Products',
@@ -80,10 +84,70 @@ const EXCLUDED_CATEGORIES = new Set([
   'Sausages and Luncheon Meats',
   'American Indian/Alaska Native Foods',
 ]);
-// Specific dishes to drop regardless of category: macaroni and cheese (sits
-// under Baby Foods / Meals / Luncheon Meats), and fast-food items miscategorised
-// outside "Fast Foods" (e.g. "Shake, fast food, vanilla" filed under Beverages).
-const EXCLUDED_DESCRIPTION_RE = /macaroni and cheese|\bfast food\b/i;
+// Products/dishes dropped wherever they sit (matched anywhere in the name):
+//  - macaroni and cheese (filed under Baby Foods / Meals / Luncheon Meats)
+//  - fast-food items miscategorised outside "Fast Foods" (e.g. "Shake, fast food")
+//  - frog legs (the archive is plant + seafood; frog is neither)
+//  - lemonade (sugar-water drink / mix, incl. hard lemonade — not an ingredient)
+//  - meatless analogues (processed fake-meat: meatless bacon/sausage/chicken/…)
+const EXCLUDED_DESCRIPTION_RE = /macaroni and cheese|\bfast food\b|frog legs?|lemonade|meatless/i;
+
+// Industrial fat products: margarine & margarine-like spreads (dropped wherever
+// the word appears, including foods made with margarine — banana bread, mashed
+// potatoes), and shortenings (dropped by leading noun, so a cooking oil that only
+// lists "tortilla shortening" as a use stays).
+const EXCLUDED_FAT_RE = /margarine|^shortening/i;
+
+// Animal/dairy milk: any name leading with "Milk" (fluid/dry/canned/condensed/
+// evaporated/shakes/desserts/filled/imitation) plus every buttermilk entry
+// (biscuits, dressings, waffles included). Plant milks are exempt by id — they're
+// renamed to "Milk, <plant>" for findability (see renamePlantMilk) and must
+// survive this rule even after the rename makes them lead with "Milk".
+const MILK_DROP_RE = /^milk\b|buttermilk/i;
+
+// Plant-milk fdcIds: kept, and renamed to "Milk, <plant>, …" so they group with
+// (and are findable as) milk. USDA names them plant-first ("Soymilk", "Oat milk",
+// "Beverages, almond/rice/coconut milk", "Nuts, coconut milk"); the fdcId is the
+// stable provenance key, so renaming the display label loses nothing traceable.
+const PLANT_MILK_IDS = new Set([
+  2257044, 1999630, 173765, 173769, 175216, 175215, 173767, 175217, 174293, 174295,
+  173768, 173766, 172446, 172456, // soy
+  2257045, 1999631, 174820, 168751, 174832, 173187, // almond
+  171942, // rice
+  174116, 170173, 169409, 170172, // coconut
+  2257046, // oat
+]);
+
+// Plant words the rename anchors on. Only consulted for the curated PLANT_MILK_IDS,
+// so the plant is always one of these; listing a few extra is harmless.
+const PLANT_WORDS = ['soy', 'almond', 'oat', 'rice', 'coconut', 'cashew', 'hemp', 'flax'];
+
+/**
+ * Reorder a plant-milk name to "Milk, <plant>, <rest>" (e.g. "Oat milk, unsweetened,
+ * plain" → "Milk, oat, unsweetened, plain"; "Beverages, chocolate almond milk, …" →
+ * "Milk, almond, chocolate, …"). Drops the "Beverages,"/"Nuts," catalog prefix, keys
+ * off the real plant word (so a leading flavour like "chocolate" lands in <rest>, not
+ * the plant slot), and folds any leftover head descriptor (e.g. "(All flavors)") into
+ * <rest>. Idempotent: after reorder the head segment is "Milk", which holds no plant
+ * word, so a re-run finds none and returns the name unchanged.
+ */
+function renamePlantMilk(desc) {
+  const s = desc.replace(/^(beverages|nuts),\s*/i, '').replace(/soymilk/gi, 'soy milk');
+  const segs = s.split(',').map((seg) => seg.trim());
+  const plant = PLANT_WORDS.find((p) => new RegExp(`\\b${p}\\b`, 'i').test(segs[0]));
+  if (!plant) return desc;
+  // Strip the plant word, the "milk" word and any parens from the head segment; what
+  // remains is a flavour/qualifier (e.g. "chocolate", "All flavors") that joins <rest>.
+  const headRest = segs[0]
+    .replace(new RegExp(`\\b${plant}\\b`, 'i'), '')
+    .replace(/\bmilk\b/i, '')
+    .replace(/[()]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
+  const rest = [headRest, ...segs.slice(1)].filter(Boolean).join(', ');
+  return rest ? `Milk, ${plant}, ${rest}` : `Milk, ${plant}`;
+}
 
 // Within Sweets / Baked Products, drop finished-dessert/junk leading-noun groups
 // (the noun before the first comma) — they are products, not cooking ingredients.
@@ -95,7 +159,7 @@ const EXCLUDED_GROUPS = new Set([
   'frozen novelties', 'frozen yogurts', 'desserts', 'gelatin desserts', 'gelatins',
   'pectin', 'chewing gum', 'gums', 'sherbet', 'pie fillings', 'jellies',
   // Baked Products
-  'cake', 'doughnuts', 'leavening agents', 'rolls', 'sweet rolls', 'pie', 'pie crust',
+  'cake', 'cookies', 'doughnuts', 'leavening agents', 'rolls', 'sweet rolls', 'pie', 'pie crust',
 ]);
 function isExcludedGroup(desc) {
   const g = desc.split(/[,(]/)[0].trim().toLowerCase();
@@ -121,6 +185,10 @@ export function isExcludedFood(food) {
   if (EXCLUDED_CATEGORIES.has(food.category)) return true;
   const desc = food.description || '';
   if (EXCLUDED_DESCRIPTION_RE.test(desc)) return true;
+  if (EXCLUDED_FAT_RE.test(desc)) return true;
+  // Drop dairy milk + all buttermilk, but keep curated plant milks (which are
+  // renamed to lead with "Milk", so they would otherwise match here).
+  if (MILK_DROP_RE.test(desc) && !PLANT_MILK_IDS.has(food.fdcId)) return true;
   if (GROUP_PRUNE_CATEGORIES.has(food.category) && isExcludedGroup(desc)) return true;
   // In "Soups, Sauces, and Gravies": drop gravies (often meat-based) and soups
   // (composite dishes) — but keep soup broths/stocks/bouillon (real cooking
@@ -249,7 +317,8 @@ function per100gFields(gPerMl) {
  * verbatim (re-deriving it from the rounded cup would drift the other fields).
  */
 function normalizeFood(f) {
-  const out = { fdcId: f.fdcId, description: f.description, n: f.n };
+  const description = PLANT_MILK_IDS.has(f.fdcId) ? renamePlantMilk(f.description) : f.description;
+  const out = { fdcId: f.fdcId, description, n: f.n };
   if (f.category) out.category = f.category;
   const d = volumeDensity(f.portions);
   if (d && Number.isFinite(d) && d > 0) out.per100g = per100gFields(d);
