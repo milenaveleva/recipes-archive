@@ -282,13 +282,30 @@ function portionDimension(label) {
 }
 
 /**
+ * A portion label that measures a different basis than the food's own volume — a
+ * yield/conversion reference ("1 cup, dry, yields"=cooked weight; "1 cup in shell,
+ * edible yield"; "1 pint as purchased, yields"; "1 cup, with pits, yields") rather
+ * than "X volume of THIS food weighs Y". These give wrong densities, so they're
+ * skipped in favour of a clean volume portion. A "dry" measure is a mismatch only
+ * for a food that is itself cooked/prepared — a genuinely-dry food's "dry" cup is
+ * its real density (crispy chow-mein noodles, instant-coffee powder).
+ */
+function isBasisMismatch(label, description) {
+  if (/\byields?\b|\bas purchased\b|\bin shell\b|\bwith pits\b/i.test(label)) return true;
+  if (/\bdry\b/i.test(label) && /\b(cooked|prepared)\b/i.test(description ?? '')) return true;
+  return false;
+}
+
+/**
  * Density (g/ml) from a food's own USDA portions: the first portion that parses
  * to an amount + a volume unit fixes it (volume↔volume is exact, so the food's
- * reference portion supplies the density for every other volume unit). Never
- * guessed — returns null when the food lists no usable volume portion.
+ * reference portion supplies the density for every other volume unit). Yield/basis
+ * references are skipped (see isBasisMismatch). Never guessed — returns null when
+ * the food lists no usable volume portion.
  */
-function volumeDensity(portions) {
+function volumeDensity(portions, description) {
   for (const p of portions ?? []) {
+    if (isBasisMismatch(p.label, description)) continue;
     const m = /^\s*([\d.]+(?:\s*\/\s*[\d.]+)?)\s+(.+?)\s*$/.exec(p.label);
     if (!m || !Number.isFinite(p.grams) || p.grams <= 0) continue;
     const raw = m[1].replace(/\s/g, '');
@@ -331,7 +348,7 @@ function normalizeFood(f) {
   const description = PLANT_MILK_IDS.has(f.fdcId) ? renamePlantMilk(f.description) : f.description;
   const out = { fdcId: f.fdcId, description, n: f.n };
   if (f.category) out.category = f.category;
-  const d = volumeDensity(f.portions);
+  const d = volumeDensity(f.portions, f.description);
   if (d && Number.isFinite(d) && d > 0) out.per100g = per100gFields(d);
   // Once volume portions have been dropped there is nothing to re-derive from, so
   // carry a previously-computed density through verbatim (keeps re-cleans idempotent
