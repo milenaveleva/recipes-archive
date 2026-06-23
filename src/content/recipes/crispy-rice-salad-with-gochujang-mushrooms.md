@@ -12,14 +12,13 @@ totalTime: PT50M
 cuisine: Asian-Inspired
 course: Main Course
 ingredients:
-  - raw: 1 cup cooked rice (used sushi rice from ⅓ cup dry)
+  - raw: 1 cup rice
     quantity: 1
     unit: cup
-    item: cooked rice
-    note: used sushi rice from ⅓ cup dry
-    grams: 176
+    item: rice
+    grams: 185
     milliliters: 236.588
-    fdcId: 168914
+    fdcId: 169756
     matchConfidence: high
   - raw: 1 tbsp chili oil
     quantity: 1
@@ -88,7 +87,7 @@ ingredients:
     item: peanut butter ((or tahini for nut-free option))
     grams: 24
     milliliters: 22.1802
-    fdcId: 169869
+    fdcId: 2262072
     matchConfidence: low
   - raw: 1 tbsp fresh ginger (finely grated)
     quantity: 1
@@ -161,8 +160,8 @@ ingredients:
     unit: medium
     item: cucumbers
     note: diced
-    grams: 201
-    fdcId: 169225
+    grams: 301
+    fdcId: 168409
     matchConfidence: high
   - raw: 2 spring onions (finely chopped)
     quantity: 2
@@ -189,21 +188,21 @@ ingredients:
     matchConfidence: low
 nutrition:
   perServing:
-    energyKcal: 466
-    energyKj: 1951
-    protein_g: 25.9
-    fat_g: 19.2
-    satFat_g: 3.7
-    carbs_g: 69.4
-    fiber_g: 16.9
-    sugar_g: 16.3
-    sodium_mg: 740
-    availableCarb_g: 52.4
+    energyKcal: 651
+    energyKj: 2722
+    protein_g: 31.3
+    fat_g: 19.6
+    satFat_g: 3.9
+    carbs_g: 125.6
+    fiber_g: 17.3
+    sugar_g: 16.4
+    sodium_mg: 731
+    availableCarb_g: 108.4
   glycemic:
-    gi: 54
-    gl: 4
-    giBand: low
-    glBand: low
+    gi: 71
+    gl: 57
+    giBand: high
+    glBand: high
     gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
   nutriScore:
     grade: A
@@ -211,8 +210,8 @@ nutrition:
     category: general
     version: "2023"
   inflammation:
-    score: -0.5
-    band: mildly-anti-inflammatory
+    score: 0.5
+    band: mildly-pro-inflammatory
     method: ingredient-tag v1
   computedAt: "2026-06-23"
   dataSources:
