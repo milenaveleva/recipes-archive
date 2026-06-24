@@ -4,6 +4,8 @@ import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // GitHub Pages project site: served at https://milenaveleva.github.io/recipes-archive/
 // `base` must be set and every internal link/asset prefixed with it (use src/lib/url.ts:withBase).
 const SITE = 'https://milenaveleva.github.io';
@@ -15,7 +17,10 @@ export default defineConfig({
   base: BASE,
   trailingSlash: 'ignore',
   integrations: [sitemap(), react()],
+
   vite: {
     plugins: [tailwindcss()],
   },
+
+  adapter: cloudflare(),
 });
