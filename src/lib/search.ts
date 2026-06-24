@@ -32,6 +32,7 @@ export interface SearchDoc {
   glBand: string | null;
   nutriGrade: string | null;
   inflammationBand: string | null;
+  balanceBand: string | null;
 }
 
 /** Active facet selection: facet-group key → chosen value slugs. */
@@ -110,6 +111,7 @@ export const FACET_DEFS: FacetDef[] = [
   { key: 'gl', label: 'Glycemic load', primary: false, pick: (d) => (d.glBand ? [d.glBand] : []), labelOf: bandLabel, order: ['low', 'medium', 'high'] },
   { key: 'nutri', label: 'Nutri-Score', primary: false, pick: (d) => (d.nutriGrade ? [d.nutriGrade] : []), order: ['a', 'b', 'c', 'd', 'e'] },
   { key: 'inflammation', label: 'Inflammation', primary: false, pick: (d) => (d.inflammationBand ? [d.inflammationBand] : []), labelOf: inflammationLabel, order: ['anti-inflammatory', 'mildly-anti-inflammatory', 'neutral', 'mildly-pro-inflammatory', 'pro-inflammatory'] },
+  { key: 'balance', label: 'Nutrient balance', primary: false, pick: (d) => (d.balanceBand ? [d.balanceBand] : []), labelOf: titleCase, order: ['excellent', 'high', 'moderate', 'low', 'poor'] },
 ];
 
 /**

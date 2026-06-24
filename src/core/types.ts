@@ -28,17 +28,33 @@ export interface NutrientVector {
   /** Sugar alcohols / polyols; subtracted from available carbohydrate when present. */
   polyol_g?: number;
   sodium_mg?: number;
+  /* Micronutrients to encourage, read by the NRF9.3 nutrient-balance score
+   * (src/core/balance.ts). Units match the USDA data and the FDA 2016 Daily
+   * Values (vitamin A as µg RAE, vitamin E as mg α-tocopherol). */
+  vitA_ug?: number;
+  vitC_mg?: number;
+  vitE_mg?: number;
+  calcium_mg?: number;
+  iron_mg?: number;
+  potassium_mg?: number;
+  magnesium_mg?: number;
 }
 
 /**
- * Nutrient fields aggregated by simple mass-weighted summation. Energy is
- * summed separately (kcal/kJ reconciliation) and polyols are read inline for
- * the available-carbohydrate derivation, so both are excluded here.
+ * Macro fields aggregated by simple mass-weighted summation into the per-serving
+ * panel. Energy is summed separately (kcal/kJ reconciliation) and polyols are
+ * read inline for the available-carbohydrate derivation; the micronutrients in
+ * NutrientVector are aggregated by the scoring engine (score.ts), not here, so
+ * this stays the explicit macro set the per-serving panel displays.
  */
-export type SummableNutrient = Exclude<
-  keyof NutrientVector,
-  'energyKcal' | 'energyKj' | 'polyol_g'
->;
+export type SummableNutrient =
+  | 'protein_g'
+  | 'fat_g'
+  | 'satFat_g'
+  | 'carbs_g'
+  | 'fiber_g'
+  | 'sugar_g'
+  | 'sodium_mg';
 
 /**
  * One recipe ingredient resolved to a metric weight and (optionally) the

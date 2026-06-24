@@ -28,6 +28,7 @@ export function buildSearchDoc(entry: Recipe): SearchDoc {
     glBand: n?.glycemic?.glBand ?? null,
     nutriGrade: n?.nutriScore?.grade ?? null,
     inflammationBand: n?.inflammation?.band ?? null,
+    balanceBand: n?.balance?.band ?? null,
   };
 }
 

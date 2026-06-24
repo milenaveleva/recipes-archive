@@ -21,6 +21,7 @@ import { availableCarbOf, energyKcalOf, KJ_PER_KCAL } from './nutrition';
 import { computeGlycemics, type Glycemics } from './gi';
 import { computeNutriScore, type NutriResult, type NutriCategory } from './nutriscore';
 import { computeInflammation, type Inflammation } from './inflammation';
+import { computeBalance, type BalanceResult } from './balance';
 import type { NutrientVector } from './types';
 
 /** Sodium (g) → salt (g) conversion used by Nutri-Score. */
@@ -50,6 +51,7 @@ export interface ScoreResult {
   glycemic?: Glycemics & { gi_source: string };
   nutriScore?: NutriResult;
   inflammation?: Inflammation;
+  balance?: BalanceResult;
 }
 
 /**
@@ -64,7 +66,18 @@ export interface ScoreOptions {
   nnsPresent?: boolean;
 }
 
-type NutriField = 'energyKcal' | 'sugar' | 'satFat' | 'fat' | 'salt' | 'protein' | 'fiber';
+/**
+ * Per-100g nutrient fields aggregated once and read by both sub-scores: the
+ * Nutri-Score basis (energy, sugar, satFat, total fat, salt, protein, fibre) and
+ * the NRF9.3 nutrient-balance basis (which also needs raw sodium and the 7
+ * encouraged micronutrients). One accumulation, one seen-mass treatment. The
+ * array is the single source; `Field` is derived from it so the two can't drift.
+ */
+const FIELDS = [
+  'energyKcal', 'sugar', 'satFat', 'fat', 'salt', 'protein', 'fiber',
+  'sodium', 'vitA', 'vitC', 'vitE', 'calcium', 'iron', 'potassium', 'magnesium',
+] as const;
+type Field = (typeof FIELDS)[number];
 
 /** Compute the glycemic, Nutri-Score and inflammation block for a recipe. */
 export function computeScores(
@@ -77,8 +90,8 @@ export function computeScores(
 
   // Per-nutrient sums and the mass of foods that reported each (so a missing
   // field is excluded rather than counted as zero).
-  const sum: Record<NutriField, number> = { energyKcal: 0, sugar: 0, satFat: 0, fat: 0, salt: 0, protein: 0, fiber: 0 };
-  const mass: Record<NutriField, number> = { energyKcal: 0, sugar: 0, satFat: 0, fat: 0, salt: 0, protein: 0, fiber: 0 };
+  const sum = Object.fromEntries(FIELDS.map((f) => [f, 0])) as Record<Field, number>;
+  const mass = Object.fromEntries(FIELDS.map((f) => [f, 0])) as Record<Field, number>;
   let basisGrams = 0; // mass of foods in the Nutri-Score basis (those with energy)
   let fvlGrams = 0;
 
@@ -111,6 +124,15 @@ export function computeScores(
     addField(sum, mass, 'salt', saltGrams(n.sodium_mg), grams, factor);
     addField(sum, mass, 'protein', n.protein_g, grams, factor);
     addField(sum, mass, 'fiber', n.fiber_g, grams, factor);
+    // Raw sodium + the 7 encouraged micronutrients feed the NRF9.3 balance score.
+    addField(sum, mass, 'sodium', n.sodium_mg, grams, factor);
+    addField(sum, mass, 'vitA', n.vitA_ug, grams, factor);
+    addField(sum, mass, 'vitC', n.vitC_mg, grams, factor);
+    addField(sum, mass, 'vitE', n.vitE_mg, grams, factor);
+    addField(sum, mass, 'calcium', n.calcium_mg, grams, factor);
+    addField(sum, mass, 'iron', n.iron_mg, grams, factor);
+    addField(sum, mass, 'potassium', n.potassium_mg, grams, factor);
+    addField(sum, mass, 'magnesium', n.magnesium_mg, grams, factor);
     basisGrams += grams;
     if (ing.fvl) fvlGrams += grams;
   }
@@ -121,7 +143,10 @@ export function computeScores(
   if (glycemic) result.glycemic = { ...glycemic, gi_source: GI_SOURCE };
 
   if (basisGrams > 0) {
-    const per100 = (f: NutriField) => (mass[f] > 0 ? (sum[f] / mass[f]) * 100 : 0);
+    // Nutri-Score reads each nutrient per 100 g of the foods that REPORT it
+    // (seen-mass), so one incomplete food can't dilute the density of the rest —
+    // correct for its per-nutrient thresholds.
+    const per100 = (f: Field) => (mass[f] > 0 ? (sum[f] / mass[f]) * 100 : 0);
     result.nutriScore = computeNutriScore(
       {
         energyKj: per100('energyKcal') * KJ_PER_KCAL,
@@ -136,6 +161,32 @@ export function computeScores(
       },
       options.nutriCategory ?? 'general',
     );
+
+    // NRF9.3 nutrient-balance is a per-100-kcal RATIO (nutrient ÷ energy), so
+    // every nutrient must share ONE mass basis with energy — the full
+    // nutrition-contributing mass. Using each nutrient's own reporting mass here
+    // (as Nutri-Score does) would divide it by an energy density over a
+    // different mass and over-credit a nutrient that only some foods report;
+    // over the full basis a missing nutrient correctly dilutes (biases the score
+    // down, never up). One unweighted formula for every dish — NRF has no
+    // per-category sub-algorithms.
+    const per100Basis = (f: Field) => (sum[f] / basisGrams) * 100;
+    const balance = computeBalance({
+      energyKcalPer100g: per100Basis('energyKcal'),
+      protein_g: per100Basis('protein'),
+      fiber_g: per100Basis('fiber'),
+      vitA_ug: per100Basis('vitA'),
+      vitC_mg: per100Basis('vitC'),
+      vitE_mg: per100Basis('vitE'),
+      calcium_mg: per100Basis('calcium'),
+      iron_mg: per100Basis('iron'),
+      potassium_mg: per100Basis('potassium'),
+      magnesium_mg: per100Basis('magnesium'),
+      satFat_g: per100Basis('satFat'),
+      sugar_g: per100Basis('sugar'),
+      sodium_mg: per100Basis('sodium'),
+    });
+    if (balance) result.balance = balance;
   }
 
   const inflammation = computeInflammation(inflammationItems);
@@ -151,9 +202,9 @@ export function computeScores(
  * missing field is excluded rather than averaged in as zero.
  */
 function addField(
-  sum: Record<NutriField, number>,
-  mass: Record<NutriField, number>,
-  field: NutriField,
+  sum: Record<Field, number>,
+  mass: Record<Field, number>,
+  field: Field,
   value: number | null | undefined,
   grams: number,
   factor: number,

@@ -27,6 +27,13 @@ describe('computeScores (orchestration)', () => {
     // Inflammation: (−1·100 + −2·100)/200 = −1.5 → anti-inflammatory.
     expect(r.inflammation?.score).toBe(-1.5);
     expect(r.inflammation?.band).toBe('anti-inflammatory');
+
+    // Balance (NRF9.3): macro-only vectors carry no micronutrients, so only
+    // protein + fibre earn points (the seen-mass rule keeps the rest unknown,
+    // never fabricated) → a moderate, conservative score.
+    expect(r.balance?.nrf).toBeCloseTo(36.9, 1);
+    expect(r.balance?.score).toBe(5);
+    expect(r.balance?.band).toBe('moderate');
   });
 
   it('omits glycemic when no carbohydrate source has a GI, but still scores the rest', () => {

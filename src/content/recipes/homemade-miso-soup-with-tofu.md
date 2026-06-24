@@ -76,10 +76,16 @@ nutrition:
     points: 2
     category: general
     version: "2023"
+  balance:
+    score: 2
+    band: poor
+    nrf: 4.5
+    version: NRF9.3
   computedAt: "2026-06-21"
   dataSources:
     - USDA FoodData Central
     - Nutri-Score 2023
+    - Nutrient-Rich Foods Index (NRF9.3)
 createdAt: "2026-06-20"
 updatedAt: "2026-06-21"
 ---

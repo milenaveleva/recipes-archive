@@ -543,6 +543,7 @@ export function buildDraft(
           inflammation: scores.inflammation
             ? { ...scores.inflammation, method: 'ingredient-tag v1' }
             : undefined,
+          balance: scores.balance,
           computedAt: dates.computedAt ?? createdAt,
           dataSources: dataSourcesFor(scores),
         }
@@ -558,6 +559,7 @@ function dataSourcesFor(scores: ScoreResult): string[] {
   if (scores.glycemic) sources.push('Atkinson 2021 GI tables');
   if (scores.nutriScore) sources.push('Nutri-Score 2023');
   if (scores.inflammation) sources.push('Inflammation index (ingredient-tag v1)');
+  if (scores.balance) sources.push('Nutrient-Rich Foods Index (NRF9.3)');
   return sources;
 }
 

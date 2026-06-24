@@ -91,11 +91,17 @@ nutrition:
     score: -1.9
     band: anti-inflammatory
     method: ingredient-tag v1
+  balance:
+    score: 4
+    band: low
+    nrf: 28
+    version: NRF9.3
   computedAt: "2026-06-21"
   dataSources:
     - USDA FoodData Central
     - Nutri-Score 2023
     - Inflammation index (ingredient-tag v1)
+    - Nutrient-Rich Foods Index (NRF9.3)
 createdAt: "2026-06-21"
 updatedAt: "2026-06-21"
 ---

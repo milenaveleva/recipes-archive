@@ -140,12 +140,18 @@ nutrition:
     score: -0.1
     band: neutral
     method: ingredient-tag v1
+  balance:
+    score: 4
+    band: low
+    nrf: 34.1
+    version: NRF9.3
   computedAt: "2026-06-23"
   dataSources:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Inflammation index (ingredient-tag v1)
+    - Nutrient-Rich Foods Index (NRF9.3)
 createdAt: "2026-06-19"
 updatedAt: "2026-06-23"
 ---

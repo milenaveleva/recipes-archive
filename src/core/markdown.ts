@@ -52,6 +52,12 @@ export interface DraftNutrition {
       | 'pro-inflammatory';
     method?: string;
   };
+  balance?: {
+    score: number;
+    band: 'poor' | 'low' | 'moderate' | 'high' | 'excellent';
+    nrf: number;
+    version?: string;
+  };
   computedAt?: string;
   dataSources?: string[];
 }

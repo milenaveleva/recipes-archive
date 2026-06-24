@@ -16,7 +16,7 @@ import ScoreDial from './ScoreDial';
 function Medallions({ nutrition }: { nutrition: RecipeDraft['nutrition'] }) {
   if (!hasAnyScore(nutrition)) return null;
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
       {buildScoreDials(nutrition).map((d) => (
         <ScoreDial key={d.key} dial={d} />
       ))}

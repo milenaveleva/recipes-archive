@@ -217,6 +217,14 @@ export function inflammationTone(band?: string | null): Tone {
   return 'bad';
 }
 
+/** Nutrient-balance (1–10) tone: 7–10 good, 4–6 mid, 1–3 bad. */
+export function balanceTone(score?: number | null): Tone {
+  if (score == null) return 'unknown';
+  if (score >= 7) return 'good';
+  if (score >= 4) return 'mid';
+  return 'bad';
+}
+
 export function inflammationLabel(band?: string | null): string {
   if (!band) return '—';
   return band
@@ -271,7 +279,7 @@ export function inflammationFill(score?: number | null): number {
 }
 
 export interface ScoreDial {
-  key: 'gi' | 'gl' | 'nutri' | 'inflam';
+  key: 'gi' | 'gl' | 'nutri' | 'balance' | 'inflam';
   label: string;
   /** Display value, e.g. "64", "C", "-0.8", or "—" when absent. */
   value: string;
@@ -299,6 +307,7 @@ type NutritionLike =
       } | null;
       nutriScore?: { grade?: string | null } | null;
       inflammation?: { score?: number | null; band?: string | null } | null;
+      balance?: { score?: number | null; band?: string | null } | null;
     }
   | null
   | undefined;
@@ -312,6 +321,7 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
   const gly = nutrition?.glycemic ?? undefined;
   const nutri = nutrition?.nutriScore ?? undefined;
   const inflam = nutrition?.inflammation ?? undefined;
+  const bal = nutrition?.balance ?? undefined;
   const grade = nutri?.grade ?? null;
   return [
     {
@@ -343,6 +353,15 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       activeGrade: grade ? nutriGrades.indexOf(grade as (typeof nutriGrades)[number]) : -1,
     },
     {
+      key: 'balance',
+      label: 'Nutrient Balance',
+      value: bal?.score != null ? String(bal.score) : '—',
+      sub: bal?.band || undefined,
+      scaleRef: '1–10',
+      tone: balanceTone(bal?.score),
+      fill: bal?.score != null ? clamp01(bal.score / 10) : 0,
+    },
+    {
       key: 'inflam',
       label: 'Inflammation',
       value: inflam?.score != null ? (inflam.score > 0 ? `+${inflam.score}` : String(inflam.score)) : '—',
@@ -354,9 +373,14 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
   ];
 }
 
-/** Whether a nutrition block carries any of the three scored figures. */
+/** Whether a nutrition block carries any of the scored figures. */
 export function hasAnyScore(nutrition: NutritionLike): boolean {
-  return !!(nutrition?.glycemic || nutrition?.nutriScore || nutrition?.inflammation);
+  return !!(
+    nutrition?.glycemic ||
+    nutrition?.nutriScore ||
+    nutrition?.inflammation ||
+    nutrition?.balance
+  );
 }
 
 /* ---- collection helpers ---- */

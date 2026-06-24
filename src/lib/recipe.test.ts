@@ -112,11 +112,12 @@ describe('buildScoreDials', () => {
   const nutrition = {
     glycemic: { gi: 64, gl: 19, giBand: 'medium', glBand: 'medium' },
     nutriScore: { grade: 'C' },
+    balance: { score: 8, band: 'high' },
     inflammation: { score: -0.8, band: 'mildly-anti-inflammatory' },
   };
 
-  it('returns the four dials with value, tone, fill and scale', () => {
-    const [gi, gl, nutri, inflam] = buildScoreDials(nutrition);
+  it('returns the five dials with value, tone, fill and scale', () => {
+    const [gi, gl, nutri, balance, inflam] = buildScoreDials(nutrition);
 
     expect(gi.value).toBe('64');
     expect(gi.tone).toBe('mid');
@@ -131,8 +132,22 @@ describe('buildScoreDials', () => {
     expect(nutri.grades).toEqual(nutriGrades);
     expect(nutri.activeGrade).toBe(2); // A,B,C → index 2
 
+    expect(balance.value).toBe('8');
+    expect(balance.sub).toBe('high');
+    expect(balance.tone).toBe('good'); // 7–10 → good
+    expect(balance.fill).toBeCloseTo(0.8);
+    expect(balance.scaleRef).toBe('1–10');
+
     expect(inflam.value).toBe('-0.8');
     expect(inflam.tone).toBe('good');
+  });
+
+  it('shows an em-dash balance dial with empty fill when absent', () => {
+    const [, , , balance] = buildScoreDials({ nutriScore: { grade: 'A' } });
+    expect(balance.key).toBe('balance');
+    expect(balance.value).toBe('—');
+    expect(balance.fill).toBe(0);
+    expect(balance.tone).toBe('unknown');
   });
 
   it('shows em-dash placeholders and an inactive grade when nutrition is empty', () => {
@@ -152,7 +167,7 @@ describe('buildScoreDials', () => {
   });
 
   it('prefixes positive inflammation scores with +', () => {
-    const [, , , inflam] = buildScoreDials({ inflammation: { score: 1.2, band: 'mildly-pro-inflammatory' } });
+    const [, , , , inflam] = buildScoreDials({ inflammation: { score: 1.2, band: 'mildly-pro-inflammatory' } });
     expect(inflam.value).toBe('+1.2');
     expect(inflam.tone).toBe('bad');
   });
@@ -163,6 +178,7 @@ describe('hasAnyScore', () => {
     expect(hasAnyScore({ nutriScore: { grade: 'A' } })).toBe(true);
     expect(hasAnyScore({ glycemic: { gi: 50 } })).toBe(true);
     expect(hasAnyScore({ inflammation: { score: 0, band: 'neutral' } })).toBe(true);
+    expect(hasAnyScore({ balance: { score: 5, band: 'moderate' } })).toBe(true);
   });
   it('is false for an empty or macros-only block', () => {
     expect(hasAnyScore(undefined)).toBe(false);

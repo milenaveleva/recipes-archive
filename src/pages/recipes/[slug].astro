@@ -14,6 +14,7 @@ import {
   buildRecipeMeta,
   extractSteps,
   slugifyTerm,
+  hasAnyScore,
 } from '../../lib/recipe';
 import { withBase } from '../../lib/url';
 import { PENDING_KEY, PENDING_MAX_AGE_MS } from '../../core/pending';
@@ -39,7 +40,7 @@ const meta = buildRecipeMeta(data);
 const ogImage = data.image
   ? new URL(data.image.src, Astro.site).href
   : data.imageUrl;
-const hasScores = !!data.nutrition?.glycemic || !!data.nutrition?.nutriScore || !!data.nutrition?.inflammation;
+const hasScores = hasAnyScore(data.nutrition);
 // Show the per-serving panel (and its rail column) only when there's a value to
 // show — mirrors NutritionPanel's own empty-state guard so an empty perServing
 // never reserves a blank rail.

@@ -704,14 +704,15 @@ function ScorePanel({ nutrition }: { nutrition: RecipeDraft['nutrition'] }) {
   return (
     <Card>
       <h2 className="font-display text-xl text-ink">Scores</h2>
-      <div className="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div className="mt-3 grid grid-cols-2 sm:grid-cols-5 gap-3">
         {buildScoreDials(nutrition).map((d) => (
           <ScoreDial key={d.key} dial={d} />
         ))}
       </div>
       <p className="mt-3 text-xs text-ink-faint">
-        Glycemic and inflammation figures are estimates for comparison, not medical advice; the grade
-        follows the Nutri-Score 2023 method. The carb-weighted GI tends to over-predict mixed-meal GI.
+        All figures are estimates for comparison, not medical advice. The grade follows the Nutri-Score
+        2023 method; the 1–10 nutrient balance is the NRF9.3 nutrient-density index (its sugar penalty
+        uses total sugar). The carb-weighted GI tends to over-predict mixed-meal GI.
       </p>
     </Card>
   );

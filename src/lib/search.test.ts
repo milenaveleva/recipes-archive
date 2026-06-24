@@ -19,6 +19,7 @@ function doc(slug: string, over: Partial<SearchDoc> = {}): SearchDoc {
     glBand: null,
     nutriGrade: null,
     inflammationBand: null,
+    balanceBand: null,
     ...over,
   };
 }
@@ -72,6 +73,17 @@ describe('facetsOf', () => {
     ]);
     expect(groups.find((g) => g.key === 'gi')!.values.map((v) => v.label)).toEqual(['Low', 'Medium', 'High']);
     expect(groups.find((g) => g.key === 'difficulty')!.values.map((v) => v.label)).toEqual(['Easy', 'Medium', 'Hard']);
+  });
+
+  it('exposes a nutrient-balance facet ordered best → worst', () => {
+    const groups = facetsOf([
+      doc('a', { balanceBand: 'excellent' }),
+      doc('b', { balanceBand: 'low' }),
+      doc('c', { balanceBand: 'moderate' }),
+    ]);
+    const balance = groups.find((g) => g.key === 'balance')!;
+    expect(balance.label).toBe('Nutrient balance');
+    expect(balance.values.map((v) => v.label)).toEqual(['Excellent', 'Moderate', 'Low']);
   });
 });
 

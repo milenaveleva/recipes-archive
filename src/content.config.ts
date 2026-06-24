@@ -33,6 +33,7 @@ const inflammationBand = z.enum([
   'mildly-pro-inflammatory',
   'pro-inflammatory',
 ]);
+const balanceBand = z.enum(['poor', 'low', 'moderate', 'high', 'excellent']);
 const matchConfidence = z.enum(['high', 'medium', 'low', 'none']);
 
 const ingredient = z.object({
@@ -105,6 +106,16 @@ const nutrition = z.object({
       score: z.number(),
       band: inflammationBand,
       method: z.string().default('ingredient-tag v1'),
+    })
+    .optional(),
+  /** Nutrient-balance score (NRF9.3 nutrient density, 1–10, higher = healthier). */
+  balance: z
+    .object({
+      score: z.number().int().min(1).max(10),
+      band: balanceBand,
+      /** Raw NRF9.3 per-100-kcal value retained for provenance. */
+      nrf: z.number(),
+      version: z.string().default('NRF9.3'),
     })
     .optional(),
   /** ISO date (YYYY-MM-DD) the values were computed. */
