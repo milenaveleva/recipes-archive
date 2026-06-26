@@ -103,9 +103,9 @@ nutrition:
     category: general
     version: "2023"
   inflammation:
-    score: -1.5
-    band: anti-inflammatory
-    method: ingredient-tag v1
+    score: 0.4
+    band: mildly-pro-inflammatory
+    method: fii v2
   balance:
     score: 2
     band: poor
@@ -115,7 +115,7 @@ nutrition:
   dataSources:
     - USDA FoodData Central
     - Nutri-Score 2023
-    - Inflammation index (ingredient-tag v1)
+    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
 createdAt: "2026-06-23"
 updatedAt: "2026-06-23"

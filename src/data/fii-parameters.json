@@ -1,0 +1,15 @@
+{
+  "_doc": "Food Inflammation Index (FII) parameter table — the single source of which per-100g signals enter the per-food inflammatory-potential score, each one's direction and weight. Adapted from the Food Inflammation Index idea (Wang 2024) to the composition columns this archive holds; directions are taken from open biomarker literature, NOT the licensed DII per-parameter effect scores. `dir` is +1 pro-inflammatory / -1 anti-inflammatory; `weight` scales a parameter's contribution. Read by src/core/fii.ts and scripts/build-inflammation-reference.mjs. The `fatQuality_g` parameter is DERIVED — (monoFat+polyFat) − (satFat+transFat) — so fat is scored once, by quality, instead of letting a food's saturated and unsaturated fractions cancel under independent z-scores.",
+  "clampZ": 3,
+  "fallbackMinN": 50,
+  "parameters": [
+    { "nutrient": "fatQuality_g", "dir": -1, "weight": 1.5, "cite": "fat quality (MUFA+PUFA − SFA−trans), derived from the fat fractions: Wang 2024 FII" },
+    { "nutrient": "fiber_g",       "dir": -1, "weight": 1, "cite": "fibre (favourable): Reyneke 2025" },
+    { "nutrient": "vitC_mg",       "dir": -1, "weight": 1, "cite": "antioxidant micronutrient" },
+    { "nutrient": "vitE_mg",       "dir": -1, "weight": 1, "cite": "antioxidant micronutrient" },
+    { "nutrient": "magnesium_mg",  "dir": -1, "weight": 1, "cite": "anti-inflammatory mineral (produce/whole-grain marker)" },
+    { "nutrient": "polyphenol_mg", "dir": -1, "weight": 2, "fallback": { "center": 0, "scale": 100 }, "cite": "polyphenols (key anti driver): Cassidy 2015; Dryer-Beers 2024; Wang 2024 FII; Phenol-Explorer. fallback referent (0, 100 mg/100g) used while corpus coverage is sparse — a food at ~100 mg/100g reads polyphenol-rich (Pérez-Jiménez 2010)" },
+    { "nutrient": "sugar_g",       "dir": 1,  "weight": 1, "cite": "free-sugar proxy (unfavourable): Reyneke 2025" },
+    { "nutrient": "sodium_mg",     "dir": 1,  "weight": 1, "cite": "high-sodium pro-inflammatory" }
+  ]
+}

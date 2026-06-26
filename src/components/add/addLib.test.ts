@@ -213,8 +213,8 @@ describe('buildDraft → markdown', () => {
     expect(draft.nutrition?.glycemic?.giBand).toBe('low');
     expect(draft.nutrition?.nutriScore?.grade).toMatch(/^[A-E]$/);
     expect(typeof draft.nutrition?.nutriScore?.points).toBe('number');
-    expect(draft.nutrition?.inflammation?.band).toContain('anti'); // lentils −1 + spinach −2
-    expect(draft.nutrition?.inflammation?.method).toBe('ingredient-tag v1');
+    expect(draft.nutrition?.inflammation?.band).toContain('anti'); // FII: fibre-rich lentils + spinach
+    expect(draft.nutrition?.inflammation?.method).toBe('fii v2');
     expect(draft.nutrition?.dataSources).toContain('Nutri-Score 2023');
 
     // The score block round-trips into the serialized markdown.

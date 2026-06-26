@@ -1,14 +1,19 @@
 import { describe, it, expect } from 'vitest';
 import { computeScores, type ScoredIngredient } from './score';
 
+const INFLAMMATION_BANDS = [
+  'anti-inflammatory', 'mildly-anti-inflammatory', 'neutral',
+  'mildly-pro-inflammatory', 'pro-inflammatory',
+];
+
 // Per-100g nutrient vectors mirroring the USDA seed data.
 const LENTILS = { energyKcal: 116, protein_g: 9.02, fat_g: 0.38, satFat_g: 0.05, carbs_g: 20.13, fiber_g: 7.9, sugar_g: 1.8, sodium_mg: 2 };
 const SPINACH = { energyKcal: 23, protein_g: 2.86, fat_g: 0.39, satFat_g: 0.06, carbs_g: 3.63, fiber_g: 2.2, sugar_g: 0.42, sodium_mg: 79 };
 
 describe('computeScores (orchestration)', () => {
   const ingredients: ScoredIngredient[] = [
-    { grams: 100, nutrients: LENTILS, gi: 32, inflammationTag: -1, fvl: true },
-    { grams: 100, nutrients: SPINACH, gi: null, inflammationTag: -2, fvl: true },
+    { grams: 100, nutrients: LENTILS, gi: 32, fvl: true },
+    { grams: 100, nutrients: SPINACH, gi: null, fvl: true },
   ];
 
   it('produces glycemic, Nutri-Score and inflammation together', () => {
@@ -24,9 +29,13 @@ describe('computeScores (orchestration)', () => {
     expect(r.nutriScore?.points).toBe(-9); // pinned so a basis-math regression can't hide in grade A
     expect(r.nutriScore?.category).toBe('general');
 
-    // Inflammation: (−1·100 + −2·100)/200 = −1.5 → anti-inflammatory.
-    expect(r.inflammation?.score).toBe(-1.5);
-    expect(r.inflammation?.band).toBe('anti-inflammatory');
+    // Inflammation: computed per-food by the FII (fii.ts) and energy-weighted — present,
+    // on the −2..+2 axis, with a valid band (exact values are pinned in fii.test.ts /
+    // inflammation.test.ts; here we assert the block is produced alongside the others).
+    expect(r.inflammation).toBeDefined();
+    expect(r.inflammation!.score).toBeGreaterThanOrEqual(-2);
+    expect(r.inflammation!.score).toBeLessThanOrEqual(2);
+    expect(INFLAMMATION_BANDS).toContain(r.inflammation!.band);
 
     // Balance (NRF9.3): macro-only vectors carry no micronutrients, so only
     // protein + fibre earn points (the seen-mass rule keeps the rest unknown,
@@ -37,22 +46,23 @@ describe('computeScores (orchestration)', () => {
   });
 
   it('omits glycemic when no carbohydrate source has a GI, but still scores the rest', () => {
-    const r = computeScores([{ grams: 100, nutrients: SPINACH, gi: null, inflammationTag: -2, fvl: true }], 2);
+    const r = computeScores([{ grams: 100, nutrients: SPINACH, gi: null, fvl: true }], 2);
     expect(r.glycemic).toBeUndefined();
     expect(r.nutriScore).toBeDefined(); // glycemic omission must not suppress Nutri-Score
-    expect(r.inflammation?.band).toBe('anti-inflammatory');
+    expect(r.inflammation).toBeDefined();
   });
 
   it('skips excluded ingredients (e.g. water) from every score', () => {
-    const r = computeScores(
-      [
-        { grams: 100, nutrients: LENTILS, gi: 32, inflammationTag: -1, fvl: true },
-        { grams: 600, excludeFromNutrition: true, nutrients: null, gi: null, inflammationTag: 0 },
-      ],
+    const lentils: ScoredIngredient = { grams: 100, nutrients: LENTILS, gi: 32, fvl: true };
+    const lentilsOnly = computeScores([lentils], 2);
+    const withWater = computeScores(
+      [lentils, { grams: 600, excludeFromNutrition: true, nutrients: null, gi: null }],
       2,
     );
-    expect(r.glycemic?.gi).toBe(32);
-    expect(r.inflammation?.score).toBe(-1); // only the lentils counted
+    expect(withWater.glycemic?.gi).toBe(32);
+    // Excluded water contributes to no score, so inflammation matches lentils alone.
+    expect(lentilsOnly.inflammation).toBeDefined();
+    expect(withWater.inflammation).toEqual(lentilsOnly.inflammation);
   });
 });
 
@@ -63,12 +73,12 @@ const OLIVE_OIL = { energyKcal: 884, protein_g: 0, fat_g: 100, satFat_g: 13.8, c
 
 describe('computeScores — Nutri-Score category dispatch', () => {
   it('defaults to the general sub-algorithm', () => {
-    const r = computeScores([{ grams: 100, nutrients: COLA, gi: null, inflammationTag: 0 }], 1);
+    const r = computeScores([{ grams: 100, nutrients: COLA, gi: null }], 1);
     expect(r.nutriScore?.category).toBe('general');
   });
 
   it('scores a sugary drink far more strictly as a beverage than as a general food', () => {
-    const ing: ScoredIngredient[] = [{ grams: 100, nutrients: COLA, gi: null, inflammationTag: 0 }];
+    const ing: ScoredIngredient[] = [{ grams: 100, nutrients: COLA, gi: null }];
     expect(computeScores(ing, 1).nutriScore?.grade).toBe('C'); // general default
     const bev = computeScores(ing, 1, { nutriCategory: 'beverage' });
     expect(bev.nutriScore?.category).toBe('beverage');
@@ -77,13 +87,13 @@ describe('computeScores — Nutri-Score category dispatch', () => {
   });
 
   it('applies the non-nutritive-sweetener penalty to beverages', () => {
-    const diet: ScoredIngredient[] = [{ grams: 100, nutrients: DIET_DRINK, gi: null, inflammationTag: 0 }];
+    const diet: ScoredIngredient[] = [{ grams: 100, nutrients: DIET_DRINK, gi: null }];
     expect(computeScores(diet, 1, { nutriCategory: 'beverage' }).nutriScore?.grade).toBe('B');
     expect(computeScores(diet, 1, { nutriCategory: 'beverage', nnsPresent: true }).nutriScore?.grade).toBe('C');
   });
 
   it('uses the SFA/total-fat ratio for fats (olive oil B, not the general-food D)', () => {
-    const oil: ScoredIngredient[] = [{ grams: 100, nutrients: OLIVE_OIL, gi: null, inflammationTag: -1, fvl: true }];
+    const oil: ScoredIngredient[] = [{ grams: 100, nutrients: OLIVE_OIL, gi: null, fvl: true }];
     expect(computeScores(oil, 1).nutriScore?.grade).toBe('D'); // general: penalised on energy + absolute satfat
     const fat = computeScores(oil, 1, { nutriCategory: 'fat-oil-nut-seed' });
     expect(fat.nutriScore?.category).toBe('fat-oil-nut-seed');

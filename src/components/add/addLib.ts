@@ -11,7 +11,7 @@ import { searchFoods, type FoodRecord, type FoodMatch, type MatchConfidence } fr
 import { computeMacros, type MacroComputation } from '../../core/nutrition';
 import { computeScores, type ScoredIngredient, type ScoreResult, type ScoreOptions } from '../../core/score';
 import type { NutriCategory } from '../../core/nutriscore';
-import type { MetricAmount, ParsedLine, ResolvedIngredient } from '../../core/types';
+import type { MetricAmount, NutrientVector, ParsedLine, ResolvedIngredient } from '../../core/types';
 import type { DraftIngredient, RecipeDraft } from '../../core/markdown';
 import type { ExtractedRecipe } from '../../core/types';
 // The full food dataset (~8k foods, several MB) is fetched lazily via its asset
@@ -19,6 +19,7 @@ import type { ExtractedRecipe } from '../../core/types';
 // static asset and hand back the URL; `loadFoods()` fetches it once on demand.
 import foodsUrl from '../../data/usda-foods.json?url';
 import foodScoringData from '../../data/food-scoring.json';
+import polyphenolData from '../../data/polyphenols.json';
 
 // In-memory food cache, populated by loadFoods() (browser) or primeFoods() (tests/SSR).
 let FOODS: FoodRecord[] = [];
@@ -48,15 +49,28 @@ export function loadFoods(): Promise<void> {
   return loadPromise;
 }
 
-/** Hand-curated, cited scoring metadata per USDA food (GI, inflammation tag, FVL). */
+/** Hand-curated, cited scoring metadata per USDA food (GI, FVL). Inflammation is
+ *  computed from composition by the FII (src/core/fii.ts), not curated here. */
 interface FoodScoring {
   gi?: number;
   giSource?: string;
   giConfidence?: string;
-  inflammation?: number;
   fvl?: boolean;
 }
 const FOOD_SCORING = foodScoringData as Record<string, FoodScoring>;
+
+/** Total polyphenols (mg/100g) per fdcId, merged into nutrients for the FII. */
+interface PolyphenolEntry {
+  polyphenol_mg?: number;
+}
+const POLYPHENOLS = polyphenolData as Record<string, PolyphenolEntry>;
+
+/** Per-100g nutrients for a matched food, with the merged polyphenol value (FII input). */
+function nutrientsFor(food: FoodRecord | undefined): NutrientVector | null {
+  if (!food?.n) return null;
+  const poly = food.fdcId != null ? POLYPHENOLS[String(food.fdcId)] : undefined;
+  return poly?.polyphenol_mg != null ? { ...food.n, polyphenol_mg: poly.polyphenol_mg } : food.n;
+}
 // Foods we hold curated GI/inflammation/portion data for: preferred in matching
 // so a common ingredient still resolves to the richer-data food in the large set.
 const CURATED_IDS = new Set(Object.keys(FOOD_SCORING).map(Number));
@@ -239,7 +253,8 @@ export function computeNutrition(rows: IngredientRow[], servings: number): Macro
   return computeMacros(rowsToResolved(rows), clampServings(servings));
 }
 
-/** Map review rows to the scoring engine's shape (adds GI, tag, FVL per match). */
+/** Map review rows to the scoring engine's shape (adds GI and FVL per match; the
+ *  inflammation tag is computed from nutrients by the FII). */
 export function rowsToScored(rows: IngredientRow[]): ScoredIngredient[] {
   return rows
     .filter((r) => !r.parsed.isGroupHeader)
@@ -249,9 +264,8 @@ export function rowsToScored(rows: IngredientRow[]): ScoredIngredient[] {
       return {
         grams: safeGrams(r.grams),
         excludeFromNutrition: r.excludeFromNutrition,
-        nutrients: food?.n ?? null,
+        nutrients: nutrientsFor(food),
         gi: s?.gi ?? null,
-        inflammationTag: s?.inflammation ?? null,
         fvl: s?.fvl ?? fvlFromCategory(food),
       };
     });
@@ -541,7 +555,7 @@ export function buildDraft(
               }
             : undefined,
           inflammation: scores.inflammation
-            ? { ...scores.inflammation, method: 'ingredient-tag v1' }
+            ? { ...scores.inflammation, method: 'fii v2' }
             : undefined,
           balance: scores.balance,
           computedAt: dates.computedAt ?? createdAt,
@@ -558,7 +572,7 @@ function dataSourcesFor(scores: ScoreResult): string[] {
   const sources = ['USDA FoodData Central'];
   if (scores.glycemic) sources.push('Atkinson 2021 GI tables');
   if (scores.nutriScore) sources.push('Nutri-Score 2023');
-  if (scores.inflammation) sources.push('Inflammation index (ingredient-tag v1)');
+  if (scores.inflammation) sources.push('Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols');
   if (scores.balance) sources.push('Nutrient-Rich Foods Index (NRF9.3)');
   return sources;
 }

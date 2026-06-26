@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { computeInflammation, inflammationBandOf } from './inflammation';
+import { computeInflammation, inflammationBandOf, FLOOR_KCAL_PER_G } from './inflammation';
 
 describe('inflammationBandOf', () => {
   it('maps a −2..+2 score onto five symmetric bands', () => {
@@ -13,32 +13,46 @@ describe('inflammationBandOf', () => {
     expect(inflammationBandOf(0.3)).toBe('mildly-pro-inflammatory');
     expect(inflammationBandOf(0.9)).toBe('mildly-pro-inflammatory');
     expect(inflammationBandOf(1.0)).toBe('pro-inflammatory');
-    expect(inflammationBandOf(1.5)).toBe('pro-inflammatory');
     expect(inflammationBandOf(2.0)).toBe('pro-inflammatory');
   });
 });
 
-describe('computeInflammation', () => {
-  it('mass-weights the ingredient tags', () => {
+describe('computeInflammation (energy-weighted)', () => {
+  it('weights equal-energy items as a simple mean', () => {
     const r = computeInflammation([
-      { grams: 100, tag: -2 },
-      { grams: 100, tag: 0 },
+      { grams: 100, energyKcal: 100, tag: -2 },
+      { grams: 100, energyKcal: 100, tag: 0 },
     ])!;
     expect(r.score).toBe(-1.0);
     expect(r.band).toBe('anti-inflammatory');
   });
 
-  it('lets a heavy pro-inflammatory ingredient dominate by mass', () => {
+  it('weights by energy, not mass: a small energy-dense pro item outweighs a bulky low-energy anti one', () => {
     const r = computeInflammation([
-      { grams: 50, tag: -2 },
-      { grams: 150, tag: 2 },
+      { grams: 200, energyKcal: 20, tag: -2 }, // bulky watery veg
+      { grams: 50, energyKcal: 400, tag: 2 }, // a splash of fat
     ])!;
-    expect(r.score).toBe(1.0); // (−100 + 300)/200
-    expect(r.band).toBe('pro-inflammatory');
+    // weights: max(20, 1·200)=200 vs max(400, 1·50)=400 → (−2·200 + 2·400)/600 = +0.67
+    expect(r.score).toBeCloseTo(0.7, 5);
+    expect(r.band).toBe('mildly-pro-inflammatory');
   });
 
-  it('returns null when no tagged ingredient has weight', () => {
+  it('floors weight by mass so a near-zero-calorie anti food still counts', () => {
+    const r = computeInflammation([{ grams: 100, energyKcal: 0, tag: -2 }])!;
+    expect(r.score).toBe(-2); // weight = max(0, 1·100) = 100
+  });
+
+  it('uses the mass floor when a food’s energy is unknown (null)', () => {
+    const r = computeInflammation([{ grams: 80, energyKcal: null, tag: 1 }])!;
+    expect(r.score).toBe(1);
+  });
+
+  it('returns null when no item carries weight', () => {
     expect(computeInflammation([])).toBeNull();
-    expect(computeInflammation([{ grams: 0, tag: -2 }])).toBeNull();
+    expect(computeInflammation([{ grams: 0, energyKcal: 0, tag: -2 }])).toBeNull();
+  });
+
+  it('pins the mass-floor calibration constant', () => {
+    expect(FLOOR_KCAL_PER_G).toBe(1);
   });
 });

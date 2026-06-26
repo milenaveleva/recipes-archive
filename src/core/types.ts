@@ -21,6 +21,12 @@ export interface NutrientVector {
   protein_g?: number;
   fat_g?: number;
   satFat_g?: number;
+  /** Monounsaturated fat (USDA #645). Anti-inflammatory fat-quality signal (fii.ts). */
+  monoFat_g?: number;
+  /** Polyunsaturated fat (USDA #646). Anti-inflammatory fat-quality signal (fii.ts). */
+  polyFat_g?: number;
+  /** Trans fat (USDA #605). Pro-inflammatory fat-quality signal (fii.ts). */
+  transFat_g?: number;
   /** Carbohydrate, by difference (USDA #205). */
   carbs_g?: number;
   fiber_g?: number;
@@ -28,6 +34,12 @@ export interface NutrientVector {
   /** Sugar alcohols / polyols; subtracted from available carbohydrate when present. */
   polyol_g?: number;
   sodium_mg?: number;
+  /**
+   * Total polyphenols (mg/100g), merged from Phenol-Explorer by fdcId — NOT a USDA
+   * datum. Absent for most foods; when present it adds an anti-inflammatory term in
+   * the FII (fii.ts) and raises the per-food confidence.
+   */
+  polyphenol_mg?: number;
   /* Micronutrients to encourage, read by the NRF9.3 nutrient-balance score
    * (src/core/balance.ts). Units match the USDA data and the FDA 2016 Daily
    * Values (vitamin A as µg RAE, vitamin E as mg α-tocopherol). */

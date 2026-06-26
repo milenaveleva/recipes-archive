@@ -1,0 +1,9 @@
+{
+  "_doc": "Total polyphenol content (mg/100g) per USDA fdcId, merged into NutrientVector.polyphenol_mg and read by the FII (src/core/fii.ts). Source is the Phenol-Explorer database. THIS IS A SEED: the values below are approximate, transcribed from the canonical Phenol-Explorer publication (Pérez-Jiménez 2010) for the foods this archive's recipes use, and are flagged confidence<=medium pending the official bulk export. Replace this file wholesale by running `node scripts/build-phenol-explorer.mjs <export.csv>` once the registration-gated Phenol-Explorer export is downloaded. Foods absent here simply contribute no polyphenol term (the FII downgrades their confidence).",
+  "_source": "Pérez-Jiménez J, Neveu V, Vos F, Scalbert A (2010). Identification of the 100 richest dietary sources of polyphenols. Eur J Clin Nutr 64:S112–S120 (Phenol-Explorer). Values are total polyphenols by Folin assay, approximate, pending official Phenol-Explorer export.",
+  "171711": { "polyphenol_mg": 525, "source": "Phenol-Explorer / Pérez-Jiménez 2010 (highbush blueberry)", "confidence": "medium" },
+  "167762": { "polyphenol_mg": 235, "source": "Phenol-Explorer / Pérez-Jiménez 2010 (strawberry)", "confidence": "medium" },
+  "171688": { "polyphenol_mg": 136, "source": "Phenol-Explorer / Pérez-Jiménez 2010 (apple)", "confidence": "medium" },
+  "168462": { "polyphenol_mg": 119, "source": "Phenol-Explorer / Pérez-Jiménez 2010 (spinach)", "confidence": "low" },
+  "171413": { "polyphenol_mg": 62, "source": "Phenol-Explorer / Pérez-Jiménez 2010 (extra-virgin olive oil; our food is generic olive oil)", "confidence": "low" }
+}

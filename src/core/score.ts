@@ -5,9 +5,9 @@
  * block stored in recipe frontmatter and shown by the score medallions.
  *
  * GI/GL is carb-weighted (gi.ts); Nutri-Score is the general-foods 2023
- * algorithm computed per 100 g (nutriscore.ts); inflammation is the
- * mass-weighted ingredient-tag index (inflammation.ts). All figures are
- * estimates.
+ * algorithm computed per 100 g (nutriscore.ts); inflammation is the energy-weighted
+ * mean of per-food Food Inflammation Index scores (fii.ts + inflammation.ts). All
+ * figures are estimates.
  *
  * Each Nutri-Score nutrient is summed only over the mass of foods that actually
  * report it — a food enters the per-100g basis only when it has a usable energy
@@ -20,7 +20,8 @@
 import { availableCarbOf, energyKcalOf, KJ_PER_KCAL } from './nutrition';
 import { computeGlycemics, type Glycemics } from './gi';
 import { computeNutriScore, type NutriResult, type NutriCategory } from './nutriscore';
-import { computeInflammation, type Inflammation } from './inflammation';
+import { computeInflammation, type Inflammation, type InflammationItem } from './inflammation';
+import { foodFII } from './fii';
 import { computeBalance, type BalanceResult } from './balance';
 import type { NutrientVector } from './types';
 
@@ -32,8 +33,9 @@ export const GI_SOURCE = 'Atkinson 2021 GI tables (carb-weighted composite estim
 
 /**
  * One recipe ingredient resolved for scoring: metric weight, the matched food's
- * per-100g nutrients, its published GI, inflammation tag, and whether it counts
- * toward Nutri-Score's fruit/vegetables/legumes share.
+ * per-100g nutrients, its published GI, and whether it counts toward Nutri-Score's
+ * fruit/vegetables/legumes share. The inflammation tag is computed from `nutrients`
+ * by the Food Inflammation Index (fii.ts), not carried here.
  */
 export interface ScoredIngredient {
   grams: number | null;
@@ -41,8 +43,6 @@ export interface ScoredIngredient {
   nutrients?: NutrientVector | null;
   /** Published GI of the matched food, or null when unknown. */
   gi?: number | null;
-  /** Inflammation tag (−2..+2) of the matched food, or null when untagged. */
-  inflammationTag?: number | null;
   /** Whether the matched food is a fruit/vegetable/legume (Nutri-Score FVL). */
   fvl?: boolean;
 }
@@ -86,7 +86,7 @@ export function computeScores(
   options: ScoreOptions = {},
 ): ScoreResult {
   const carbSources: { availableCarb_g: number; gi: number | null }[] = [];
-  const inflammationItems: { grams: number; tag: number }[] = [];
+  const inflammationItems: InflammationItem[] = [];
 
   // Per-nutrient sums and the mass of foods that reported each (so a missing
   // field is excluded rather than counted as zero).
@@ -100,8 +100,13 @@ export function computeScores(
     const grams = ing.grams;
     if (grams == null || !(grams > 0)) continue;
 
-    if (ing.inflammationTag != null) {
-      inflammationItems.push({ grams, tag: ing.inflammationTag });
+    // Inflammation: a per-food FII computed from composition (fii.ts), energy-weighted
+    // at the recipe level. Weight by the food's absolute energy contribution when known.
+    const fii = foodFII(ing.nutrients);
+    if (fii) {
+      const kcalPer100 = ing.nutrients ? energyKcalOf(ing.nutrients) : null;
+      const energyKcal = kcalPer100 != null ? (kcalPer100 * grams) / 100 : null;
+      inflammationItems.push({ grams, energyKcal, tag: fii.tag });
     }
 
     const n = ing.nutrients;
