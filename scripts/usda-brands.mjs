@@ -83,6 +83,7 @@ const EXCLUDED_CATEGORIES = new Set([
   'Lamb, Veal, and Game Products',
   'Sausages and Luncheon Meats',
   'American Indian/Alaska Native Foods',
+  'Snacks',
 ]);
 // Products/dishes dropped wherever they sit (matched anywhere in the name):
 //  - macaroni and cheese (filed under Baby Foods / Meals / Luncheon Meats)
@@ -206,6 +207,19 @@ const SCRAPPED_IDS = new Set([
 // fatty-acid breakdown and sugars.
 export const SUPERSEDED_IDS = new Set([2003603]);
 
+// Hand-curated removals: generic-table entries that aren't cooking ingredients —
+// spinach pasta, hydrolyzed-vegetable-protein soy sauce, and the processed
+// broth / bouillon / stock / consommé soup products (canned, condensed, dry,
+// cubed, powdered, ready-to-serve, and home-prepared stock). Ready-to-serve
+// vegetable broth used by recipes (e.g. 171583) is deliberately NOT here.
+export const CURATION_DROP_IDS = new Set([
+  168911, 168912, // Spaghetti, spinach (dry, cooked)
+  172474, // Soy sauce, reduced sodium, from hydrolyzed vegetable protein
+  171548, 171538, 171560, 172922, 174557, 171561, 172923, 172889, 171613, 171563,
+  174566, 171562, 172924, 171542, 174551, 172888, 171609, 174536, 171156, 174558,
+  172883, 172884, 171164, 172921, // processed broth / bouillon / stock soups
+]);
+
 export function isExcludedFood(food) {
   if (SCRAPPED_IDS.has(food.fdcId)) return true;
   if (EXCLUDED_CATEGORIES.has(food.category)) return true;
@@ -234,6 +248,7 @@ export function shouldDrop(food) {
   if (KEEP_IDS.has(food.fdcId)) return false;
   if (EXCLUDE_IDS.has(food.fdcId)) return true;
   if (SUPERSEDED_IDS.has(food.fdcId)) return true;
+  if (CURATION_DROP_IDS.has(food.fdcId)) return true;
   if (isExcludedFood(food)) return true;
   return isBranded(food);
 }
