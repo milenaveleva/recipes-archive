@@ -115,12 +115,12 @@ ingredients:
     matchConfidence: high
 nutrition:
   perServing:
-    energyKcal: 401
-    energyKj: 1679
+    energyKcal: 502
+    energyKj: 2101
     protein_g: 27.6
     fat_g: 24.2
     satFat_g: 13.2
-    carbs_g: 39.1
+    carbs_g: 39.2
     fiber_g: 3.8
     sugar_g: 5
     sodium_mg: 1129
@@ -132,20 +132,20 @@ nutrition:
     glBand: medium
     gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
   nutriScore:
-    grade: B
-    points: 2
+    grade: C
+    points: 3
     category: general
     version: "2023"
   inflammation:
-    score: 0.5
+    score: 0.7
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
     score: 4
     band: low
-    nrf: 34.1
+    nrf: 21.9
     version: NRF9.3
-  computedAt: "2026-06-23"
+  computedAt: "2026-06-26"
   dataSources:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
@@ -153,7 +153,7 @@ nutrition:
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
 createdAt: "2026-06-19"
-updatedAt: "2026-06-23"
+updatedAt: "2026-06-26"
 ---
 
 ## Method

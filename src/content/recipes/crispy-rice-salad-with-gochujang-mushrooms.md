@@ -26,7 +26,7 @@ ingredients:
     item: chili oil
     grams: 13.4
     milliliters: 14.7868
-    fdcId: 748608
+    fdcId: 171413
     matchConfidence: medium
   - raw: 9 oz king oyster mushrooms
     quantity: 9
@@ -188,15 +188,15 @@ ingredients:
     matchConfidence: low
 nutrition:
   perServing:
-    energyKcal: 651
-    energyKj: 2722
+    energyKcal: 830
+    energyKj: 3471
     protein_g: 31.3
-    fat_g: 19.6
-    satFat_g: 3.9
+    fat_g: 26.3
+    satFat_g: 3.8
     carbs_g: 125.6
     fiber_g: 17.3
     sugar_g: 16.4
-    sodium_mg: 731
+    sodium_mg: 732
     availableCarb_g: 108.4
   glycemic:
     gi: 71
@@ -210,15 +210,15 @@ nutrition:
     category: general
     version: "2023"
   inflammation:
-    score: -0.1
+    score: -0.2
     band: neutral
     method: fii v3
   balance:
     score: 4
     band: low
-    nrf: 25.9
+    nrf: 26.6
     version: NRF9.3
-  computedAt: "2026-06-23"
+  computedAt: "2026-06-26"
   dataSources:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
@@ -226,7 +226,7 @@ nutrition:
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
 createdAt: "2026-06-20"
-updatedAt: "2026-06-23"
+updatedAt: "2026-06-26"
 ---
 
 ## Method

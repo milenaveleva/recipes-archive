@@ -94,6 +94,27 @@ const EXCLUDED_CATEGORIES = new Set([
 //  - french fries (white + sweet potato; whole/baked/boiled potatoes stay)
 const EXCLUDED_DESCRIPTION_RE = /macaroni and cheese|\bfast food\b|frog legs?|lemonade|meatless|french fried/i;
 
+// "Snacks, …" finished products (chips, granola bars, fruit leather). The
+// `Snacks` category above catches most; a few (fruit leather) are mis-filed
+// under `Sweets`, so this leading-noun rule closes that gap regardless of category.
+const SNACK_LEAD_RE = /^snacks?,/i;
+
+// Processing/form descriptors that mark a non-ingredient variant wherever they
+// appear: microwaved and UV-light-treated lab forms, overripe produce,
+// restaurant-prepared dishes, instant (processed drink/mix) powders, flavoured
+// products (flavour mixes, flavoured drinks/crackers/creamers), and imitation
+// substitutes (cream/egg/meat substitutes) — the base food is kept. The `flavor`
+// lookbehind spares an "un"-attached base ("unflavored"), matching the
+// sweetened/fortified/enriched rules below.
+const EXCLUDED_PREP_RE =
+  /microwaved|exposed to ultraviolet light|overripe|restaurant|(?<![a-z])instant\b|(?<![a-z])flavor|substitute/i;
+
+// Added-sugar / added-nutrient forms. The lookbehind spares an "un"-attached
+// base ("unsweetened", "unfortified"); the "not sweetened" / "not fortified"
+// guards in isExcludedFood spare the separated phrasing too — both are kept.
+const SWEETENED_RE = /(?<![a-z])sweetened\b/i;
+const FORTIFIED_RE = /(?<![a-z])fortified/i;
+
 // Industrial fat products: margarine & margarine-like spreads (dropped wherever
 // the word appears, including foods made with margarine — banana bread, mashed
 // potatoes), and shortenings (dropped by leading noun, so a cooking oil that only
@@ -131,11 +152,9 @@ const POTATO_PRODUCT_RE =
 // "Beverages, almond/rice/coconut milk", "Nuts, coconut milk"); the fdcId is the
 // stable provenance key, so renaming the display label loses nothing traceable.
 const PLANT_MILK_IDS = new Set([
-  2257044, 1999630, 173765, 173769, 175216, 175215, 173767, 175217, 174293, 174295,
-  173768, 173766, 172446, 172456, // soy
-  2257045, 1999631, 174820, 168751, 174832, 173187, // almond
+  2257045, 1999631, 174820, 174832, // almond (unsweetened/plain + chocolate RTD)
   171942, // rice
-  174116, 170173, 169409, 170172, // coconut
+  170173, 169409, 170172, // coconut (raw/canned/frozen)
   2257046, // oat
 ]);
 
@@ -181,6 +200,7 @@ const EXCLUDED_GROUPS = new Set([
   'pectin', 'chewing gum', 'gums', 'sherbet', 'pie fillings', 'jellies',
   // Baked Products
   'cake', 'cookies', 'doughnuts', 'leavening agents', 'rolls', 'sweet rolls', 'pie', 'pie crust',
+  'toaster pastries', 'pancakes',
 ]);
 function isExcludedGroup(desc) {
   const g = desc.split(/[,(]/)[0].trim().toLowerCase();
@@ -208,16 +228,26 @@ const SCRAPPED_IDS = new Set([
 export const SUPERSEDED_IDS = new Set([2003603]);
 
 // Hand-curated removals: generic-table entries that aren't cooking ingredients —
-// spinach pasta, hydrolyzed-vegetable-protein soy sauce, and the processed
+// spinach pasta, hydrolyzed-vegetable-protein soy sauce, the processed
 // broth / bouillon / stock / consommé soup products (canned, condensed, dry,
-// cubed, powdered, ready-to-serve, and home-prepared stock). Ready-to-serve
-// vegetable broth used by recipes (e.g. 171583) is deliberately NOT here.
+// cubed, powdered, ready-to-serve, and home-prepared stock), and one-off
+// finished/processed products with no clean leading-noun group of their own.
+// Ready-to-serve vegetable broth used by recipes (e.g. 171583) is deliberately
+// NOT here. (Snacks and toaster pastries are dropped by rule above, not by id.)
 export const CURATION_DROP_IDS = new Set([
   168911, 168912, // Spaghetti, spinach (dry, cooked)
   172474, // Soy sauce, reduced sodium, from hydrolyzed vegetable protein
   171548, 171538, 171560, 172922, 174557, 171561, 172923, 172889, 171613, 171563,
   174566, 171562, 172924, 171542, 174551, 172888, 171609, 174536, 171156, 174558,
   172883, 172884, 171164, 172921, // processed broth / bouillon / stock soups
+  171409, // Sandwich spread, with chopped pickle
+  174869, // Strawberry-flavor beverage mix, powder
+  175032, // Strudel, apple
+  168175, // Sugar-apples (sweetsop), raw
+  173730, // Yokan (adzuki-bean-and-sugar jelly)
+  168478, 168479, 170540, 168477, 170131, 168481, 168480, 169300, // Succotash (corn + limas)
+  173765, 173769, 175216, 175215, 173767, 175217, 174293, 174295,
+  173768, 173766, 172446, 172456, 2257044, 1999630, // soy milk (all flavour/fortification variants)
 ]);
 
 export function isExcludedFood(food) {
@@ -225,6 +255,10 @@ export function isExcludedFood(food) {
   if (EXCLUDED_CATEGORIES.has(food.category)) return true;
   const desc = food.description || '';
   if (EXCLUDED_DESCRIPTION_RE.test(desc)) return true;
+  if (SNACK_LEAD_RE.test(desc)) return true;
+  if (EXCLUDED_PREP_RE.test(desc)) return true;
+  if (SWEETENED_RE.test(desc) && !/not\s+sweetened/i.test(desc)) return true;
+  if (FORTIFIED_RE.test(desc) && !/not\s+fortified/i.test(desc)) return true;
   if (EXCLUDED_FAT_RE.test(desc)) return true;
   if (ENRICHED_RE.test(desc)) return true;
   // Drop dairy milk + all buttermilk, but keep curated plant milks (which are
@@ -432,6 +466,64 @@ function normalizeFood(f) {
 // fresh build-usda ingest would drop them.
 const CUSTOM_PATH = fileURLToPath(new URL('../src/data/custom-foods.json', import.meta.url));
 const CUSTOM_FOODS = JSON.parse(readFileSync(CUSTOM_PATH, 'utf8'));
+
+/**
+ * Collapse exact-duplicate descriptions to a single record. USDA's newer
+ * Foundation analyses re-use the SR Legacy name of the same food (e.g.
+ * "Garlic, raw" ships as both 169230 and a Foundation twin), so without this the
+ * authoring picker lists the food twice. Keep the most useful twin, ranked:
+ *   1. a curated/scored food (never orphan its GI/FVL or a polyphenol value);
+ *   2. one carrying energy (a no-energy match silently contributes 0 kcal);
+ *   3. the fuller nutrient vector (more fields);
+ *   4. a weighable record (burnt-in per100g density);
+ *   5. the higher fdcId (Foundation's newer, more complete analysis).
+ * Descriptions compare case- and whitespace-insensitively; byte-identical USDA
+ * descriptions are the same food, so collapsing them loses no distinct food.
+ */
+export function dedupeByDescription(foods) {
+  const curated = curatedIds();
+  const norm = (s) => (s || '').trim().toLowerCase().replace(/\s+/g, ' ');
+  const rank = (f) => [
+    curated.has(f.fdcId) ? 1 : 0,
+    f.n?.energyKcal != null ? 1 : 0,
+    Object.keys(f.n || {}).length,
+    f.per100g ? 1 : 0,
+    f.fdcId || 0,
+  ];
+  const best = new Map();
+  for (const f of foods) {
+    const k = norm(f.description);
+    const cur = best.get(k);
+    if (!cur) {
+      best.set(k, f);
+      continue;
+    }
+    const a = rank(f);
+    const b = rank(cur);
+    for (let i = 0; i < a.length; i++) {
+      if (a[i] !== b[i]) {
+        if (a[i] > b[i]) best.set(k, f);
+        break;
+      }
+    }
+  }
+  return [...best.values()];
+}
+
+/**
+ * Drop records left with no energy even after the Atwater fallback in
+ * build-usda — specialised analytical references (a fatty-acid-only oil profile,
+ * "0% moisture" dry-basis lab entries) that carry no usable energy and would
+ * silently contribute 0 kcal if matched. Their complete sibling stays (e.g.
+ * "Oil, olive, salad or cooking" 171413 for olive oil), so no real food is lost.
+ * A curated/scored food is never dropped here (it would orphan its GI/FVL or
+ * polyphenol datum and abort the build); if one lacks energy, that is a data
+ * issue to surface, not a reason to silently remove a hand-chosen reference.
+ */
+export function dropEnergyless(foods) {
+  const curated = curatedIds();
+  return foods.filter((f) => f.n?.energyKcal != null || curated.has(f.fdcId));
+}
 
 /**
  * Serialize the food list to the committed JSON shape — curated custom foods

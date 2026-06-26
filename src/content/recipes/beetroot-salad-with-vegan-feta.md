@@ -63,7 +63,7 @@ ingredients:
     item: extra virgin olive oil
     grams: 26.8
     milliliters: 29.5736
-    fdcId: 748608
+    fdcId: 171413
     matchConfidence: high
   - raw: 1 tablespoon balsamic vinegar
     quantity: 1
@@ -85,7 +85,7 @@ ingredients:
     item: Dijon mustard
     grams: 5.2
     milliliters: 4.92892
-    fdcId: 326698
+    fdcId: 172234
     matchConfidence: medium
   - raw: A pinch of salt
     item: A pinch of salt
@@ -94,29 +94,29 @@ ingredients:
     excludeFromNutrition: true
 nutrition:
   perServing:
-    energyKcal: 191
-    energyKj: 797
+    energyKcal: 318
+    energyKj: 1331
     protein_g: 8
-    fat_g: 19.7
-    satFat_g: 5.1
+    fat_g: 26.4
+    satFat_g: 5
     carbs_g: 16
     fiber_g: 4.4
     sugar_g: 8.9
-    sodium_mg: 309
+    sodium_mg: 310
     availableCarb_g: 11.6
   nutriScore:
-    grade: A
-    points: 0
+    grade: C
+    points: 4
     category: general
     version: "2023"
   inflammation:
-    score: -0.8
+    score: -0.5
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
+    score: 3
     band: low
-    nrf: 20.4
+    nrf: 10.8
     version: NRF9.3
   computedAt: "2026-06-26"
   dataSources:

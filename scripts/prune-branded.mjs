@@ -22,6 +22,8 @@ import {
   SUPERSEDED_IDS,
   CURATION_DROP_IDS,
   assertCuratedPresent,
+  dedupeByDescription,
+  dropEnergyless,
   serializeFoods,
 } from './usda-brands.mjs';
 
@@ -35,9 +37,8 @@ async function main() {
 
   const kept = foods.filter((f) => !shouldDrop(f));
   const dropped = foods.filter((f) => shouldDrop(f));
-  // Mutually exclusive, in shouldDrop's precedence order (denylist → exclusion
-  // rule → ALL-CAPS heuristic), so the three counts sum to dropped.length.
-  // Attributed in shouldDrop's precedence order so the counts partition `dropped`.
+  // Attributed in shouldDrop's precedence order (denylist → superseded → curation
+  // → category/dish exclusion → ALL-CAPS brand heuristic) so the counts partition `dropped`.
   const byDenylist = dropped.filter((f) => EXCLUDE_IDS.has(f.fdcId)).length;
   const bySuperseded = dropped.filter((f) => !EXCLUDE_IDS.has(f.fdcId) && SUPERSEDED_IDS.has(f.fdcId)).length;
   const byCuration = dropped.filter(
@@ -56,8 +57,13 @@ async function main() {
       `${byCuration} by hand-curated removal) → ${kept.length} remain`,
   );
 
+  const deduped = dedupeByDescription(kept);
+  log(`Collapsing ${kept.length - deduped.length} exact-duplicate descriptions → ${deduped.length} foods`);
+  const withEnergy = dropEnergyless(deduped);
+  log(`Dropping ${deduped.length - withEnergy.length} energy-less analytical references → ${withEnergy.length} foods`);
+
   // Never orphan a curated food-scoring entry.
-  assertCuratedPresent(kept);
+  assertCuratedPresent(withEnergy);
 
   if (dryRun) {
     log('Dry run — no file written.');
@@ -66,7 +72,7 @@ async function main() {
     return;
   }
 
-  const output = serializeFoods(kept); // merges curated custom foods (custom-foods.json)
+  const output = serializeFoods(withEnergy); // merges curated custom foods (custom-foods.json)
   await writeFile(OUT, output);
   log(`Wrote ${JSON.parse(output).length} foods → ${path.relative(process.cwd(), OUT)}`);
 }

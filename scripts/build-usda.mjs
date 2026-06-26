@@ -25,7 +25,13 @@ import { promisify } from 'node:util';
 import { tmpdir } from 'node:os';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { shouldDrop, assertCuratedPresent, serializeFoods } from './usda-brands.mjs';
+import {
+  shouldDrop,
+  assertCuratedPresent,
+  serializeFoods,
+  dedupeByDescription,
+  dropEnergyless,
+} from './usda-brands.mjs';
 
 const execFileP = promisify(execFile);
 const OUT = fileURLToPath(new URL('../src/data/usda-foods.json', import.meta.url));
@@ -53,7 +59,12 @@ const DATASETS = [
 // the per-amino-acid / per-fatty-acid / phytochemical detail that would multiply
 // the file size for no scoring value.
 const NUTRIENT_BY_NUMBER = {
-  // Energy + macros
+  // Energy + macros. Newer Foundation foods report energy only under the Atwater
+  // factors (958 specific / 957 general — 2048/2047 in some dataset versions),
+  // not the legacy "Energy" number 208; pruneFood falls back to those so those
+  // foods aren't left with null energy (which silently contributes 0 kcal to a
+  // recipe). Specific factors are food-tailored, track measured energy more
+  // closely than general factors, and match SR Legacy's 208 basis, so they win.
   '208': 'energyKcal',
   '268': 'energyKj',
   '203': 'protein_g',
@@ -118,11 +129,33 @@ function portionLabel(p) {
 /** Prune one bulk-JSON food record to our compact shape. */
 function pruneFood(food) {
   const n = {};
+  let atwaterSpecific; // 958 (2048 in other dataset versions)
+  let atwaterGeneral; // 957 (2047 in other dataset versions)
   for (const fn of food.foodNutrients ?? []) {
-    const num = fn.nutrient?.number ?? fn.nutrientNumber;
+    const num = String(fn.nutrient?.number ?? fn.nutrientNumber ?? '');
     const amount = fn.amount ?? fn.value;
+    if (!Number.isFinite(amount)) continue;
+    if (num === '958' || num === '2048') atwaterSpecific = round2(amount);
+    else if (num === '957' || num === '2047') atwaterGeneral = round2(amount);
     const key = NUTRIENT_BY_NUMBER[num];
-    if (key && Number.isFinite(amount)) n[key] = round2(amount);
+    if (key) n[key] = round2(amount);
+  }
+  // Energy precedence: reported kcal (208) → Atwater specific (958) → Atwater
+  // general (957) → computed Atwater general from the food's own macros. The
+  // fallbacks recover energy for newer Foundation foods that omit 208 (avocado,
+  // raw fruits/vegetables, raw nuts, whole-milk yogurt); specific factors win
+  // because they are food-tailored and match SR Legacy's 208 basis.
+  if (n.energyKcal == null) {
+    if (atwaterSpecific != null) n.energyKcal = atwaterSpecific;
+    else if (atwaterGeneral != null) n.energyKcal = atwaterGeneral;
+    // Last resort: the standard Atwater general calculation (4·protein + 9·fat +
+    // 4·carbohydrate + 7·alcohol) from the food's own macros — applied only when
+    // the full macro panel is present, so a partial analysis carrying just a few
+    // minerals (some Foundation raw foods) is left null and dropped downstream
+    // rather than under-counted from missing macros.
+    else if (Number.isFinite(n.protein_g) && Number.isFinite(n.fat_g) && Number.isFinite(n.carbs_g)) {
+      n.energyKcal = round2(4 * n.protein_g + 9 * n.fat_g + 4 * n.carbs_g + 7 * (n.alcohol_g ?? 0));
+    }
   }
   if (Object.keys(n).length === 0) return null; // no usable nutrients — skip
 
@@ -194,11 +227,15 @@ async function main() {
   }
 
   const foods = [...byId.values()];
+  const deduped = dedupeByDescription(foods);
+  log(`\nCollapsed ${foods.length - deduped.length} exact-duplicate descriptions → ${deduped.length} foods`);
+  const withEnergy = dropEnergyless(deduped);
+  log(`Dropped ${deduped.length - withEnergy.length} energy-less analytical references → ${withEnergy.length} foods`);
   // Never orphan a curated food-scoring entry by filtering it out as branded.
-  assertCuratedPresent(foods);
-  const output = serializeFoods(foods); // merges curated custom foods (custom-foods.json)
+  assertCuratedPresent(withEnergy);
+  const output = serializeFoods(withEnergy); // merges curated custom foods (custom-foods.json)
   await writeFile(OUT, output);
-  log(`\nWrote ${JSON.parse(output).length} foods → ${path.relative(process.cwd(), OUT)}`);
+  log(`Wrote ${JSON.parse(output).length} foods → ${path.relative(process.cwd(), OUT)}`);
 }
 
 main().catch((err) => {

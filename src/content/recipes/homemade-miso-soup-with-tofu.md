@@ -63,7 +63,7 @@ ingredients:
   - raw: 1 green onion/scallion
     quantity: 1
     item: green onion/scallion
-    fdcId: 2727585
+    fdcId: 170005
     matchConfidence: medium
     excludeFromNutrition: true
 nutrition:
@@ -83,18 +83,23 @@ nutrition:
     points: 2
     category: general
     version: "2023"
+  inflammation:
+    score: 0.5
+    band: mildly-pro-inflammatory
+    method: fii v3
   balance:
     score: 2
     band: poor
     nrf: 5.1
     version: NRF9.3
-  computedAt: "2026-06-25"
+  computedAt: "2026-06-26"
   dataSources:
     - USDA FoodData Central
     - Nutri-Score 2023
+    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
 createdAt: "2026-06-20"
-updatedAt: "2026-06-25"
+updatedAt: "2026-06-26"
 ---
 
 ## Method
