@@ -1,6 +1,6 @@
 ---
-title: Beetroot Salad with Vegan Feta
-description: Our Festive Beetroot Salad topped with Vegan Feta Cheese and drizzled with a delicious Balsamic Vinaigrette, checks all the boxes to be on your special menus for this Holiday season.
+title: Beetroot Salad with Feta
+description: Our Festive Beetroot Salad topped with Feta Cheese and drizzled with a delicious Balsamic Vinaigrette, checks all the boxes to be on your special menus for this Holiday season.
 image: ./images/beetroot-salad-with-vegan-feta.jpg
 imageUrl: https://sixhungryfeet.com/wp-content/uploads/2023/09/Beetroot-Salad-7.jpg
 source:
@@ -26,13 +26,13 @@ ingredients:
     milliliters: 177.441
     fdcId: 170182
     matchConfidence: low
-  - raw: 100 g vegan feta
+  - raw: 100 g feta
     quantity: 100
     unit: g
-    item: vegan feta
+    item: feta
     grams: 100
     fdcId: 2259796
-    matchConfidence: low
+    matchConfidence: high
   - raw: 1 pear
     quantity: 1
     item: pear
@@ -123,7 +123,7 @@ nutrition:
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
 createdAt: "2026-06-23"
-updatedAt: "2026-06-25"
+updatedAt: "2026-06-26"
 ---
 
 ## Method
@@ -133,6 +133,6 @@ updatedAt: "2026-06-25"
 3. Place on a baking tray and bake for about an hour at 200C (400F). You may need to adjust the cooking time depending on the size of your beets. To make sure the beets are cooked, stick a knife. This should go all the way in easily.
 4. Allow the beets to cool down, then peel them using your hands. Cut the beets into small wedges or slices, or your preferred shape, and reserve.
 5. Combine all the dressing ingredients in a small mixing bowl. Mix well until all the ingredients are incorporated and you have a uniform sauce.
-6. Finely slice the pear, and crush the nuts. You can cut into cubes the vegan feta or crumble with your hands.
+6. Finely slice the pear, and crush the nuts. You can cut into cubes the feta or crumble with your hands.
 7. Using a big salad bowl, combine the fresh leaves, beetroot wedges, sliced pear, and chopped nuts. Add the vinaigrette, and crumbled feta cheese, and mix gently.
 8. Then transfer the salad to a serving plate. We recommend saving some feta cheese to add at the end, so it stays white and contrasts the rest of the colours.
