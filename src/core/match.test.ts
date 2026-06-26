@@ -100,6 +100,26 @@ describe('searchFoods', () => {
     const foods: FoodRecord[] = [{ fdcId: 20, description: 'Beef, tenderloin, broiled', n: {} }];
     expect(searchFoods('oil', foods)).toEqual([]);
   });
+
+  it('prefers a domestic record over a national-table one on an exact tie', () => {
+    // Identical descriptions ⇒ identical scores; the national food carries the
+    // higher fdcId (81M band) but must NOT win on it — domestic wins the tie.
+    const foods: FoodRecord[] = [
+      { fdcId: 81017016, source: 'JP-MEXT', description: 'Rice vinegar', n: {} },
+      { fdcId: 173469, description: 'Rice vinegar', n: {} },
+    ];
+    expect(searchFoods('rice vinegar', foods)[0].food.fdcId).toBe(173469);
+  });
+
+  it('lets a national-table food win a regional term by out-scoring', () => {
+    // "mirin" leads the national record (precision 1 + leads bonus); the USDA proxy
+    // doesn't carry the token at all, so the regional food wins on score, not id.
+    const foods: FoodRecord[] = [
+      { fdcId: 81016025, source: 'JP-MEXT', description: 'Mirin, hon-mirin (sweet rice seasoning)', n: {} },
+      { fdcId: 167723, description: 'Alcoholic beverage, rice wine, sake', n: {} },
+    ];
+    expect(searchFoods('mirin', foods)[0].food.fdcId).toBe(81016025);
+  });
 });
 
 describe('foodToNutrientVector / portionGrams', () => {

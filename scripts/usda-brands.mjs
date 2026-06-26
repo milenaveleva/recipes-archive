@@ -467,6 +467,7 @@ function normalizeFood(f) {
   const description = PLANT_MILK_IDS.has(f.fdcId) ? renamePlantMilk(f.description) : f.description;
   const out = { fdcId: f.fdcId, description, n: f.n };
   if (f.category) out.category = f.category;
+  if (f.source) out.source = f.source; // provenance for a non-USDA (national-table) record
   const d = DENSITY_OVERRIDES.get(f.fdcId) ?? volumeDensity(f.portions, f.description);
   if (d && Number.isFinite(d) && d > 0) out.per100g = per100gFields(d);
   // Once volume portions have been dropped there is nothing to re-derive from, so
@@ -485,6 +486,17 @@ function normalizeFood(f) {
 // fresh build-usda ingest would drop them.
 const CUSTOM_PATH = fileURLToPath(new URL('../src/data/custom-foods.json', import.meta.url));
 const CUSTOM_FOODS = JSON.parse(readFileSync(CUSTOM_PATH, 'utf8'));
+
+// Curated national-table foods merged into the bundled matcher dataset so the
+// authoring picker can match regional ingredients (mirin, shimeji, katsuobushi…)
+// against real national-composition data instead of a wrong USDA proxy. Only the
+// `enCurated` subset — foods with a hand-curated English name — is merged; their
+// romanised siblings carry no reliable English identity and would only add noise
+// (a short romaji name that happens to collide with an English word would even
+// out-rank the clean USDA generic). Like custom foods, they live outside the USDA
+// bulk archives, so serializeFoods re-injects them on every write.
+const JAPAN_PATH = fileURLToPath(new URL('../src/data/japan-foods.json', import.meta.url));
+const REGIONAL_FOODS = JSON.parse(readFileSync(JAPAN_PATH, 'utf8')).filter((f) => f.enCurated);
 
 /**
  * Collapse exact-duplicate descriptions to a single record. USDA's newer
@@ -545,15 +557,18 @@ export function dropEnergyless(foods) {
 }
 
 /**
- * Serialize the food list to the committed JSON shape — curated custom foods
- * merged in (by fdcId, so a re-clean dedups against custom-foods.json), normalised
- * (burnt-in density attached) and sorted alphabetically by name (fdcId tiebreaker),
- * one food object per line so the (large) diff stays scannable. Shared by both
- * write paths (build-usda.mjs, prune-branded.mjs) so they produce identical output.
+ * Serialize the food list to the committed JSON shape — curated custom foods and
+ * curated national-table foods merged in (by fdcId, so a re-clean dedups against
+ * custom-foods.json / the regional subset), normalised (burnt-in density attached)
+ * and sorted alphabetically by name (fdcId tiebreaker), one food object per line so
+ * the (large) diff stays scannable. Shared by both write paths (build-usda.mjs,
+ * prune-branded.mjs) so they produce identical output.
  */
 export function serializeFoods(foods) {
   const byId = new Map(foods.map((f) => [f.fdcId, f]));
   for (const c of CUSTOM_FOODS) byId.set(c.fdcId, c);
+  for (const r of REGIONAL_FOODS) byId.set(r.fdcId, r); // curated national-table foods
+
   const normalized = [...byId.values()]
     .map(normalizeFood)
     .sort((a, b) => (a.description || '').localeCompare(b.description || '', 'en') || (a.fdcId ?? 0) - (b.fdcId ?? 0));

@@ -15,6 +15,12 @@ export interface FoodRecord {
   fdcId?: number;
   description: string;
   category?: string;
+  /**
+   * Provenance of a non-USDA record (e.g. `'JP-MEXT'` for a Japanese national-table
+   * food); absent on USDA generics. Read by the `searchFoods` tie-break to keep a
+   * national record from displacing a USDA generic on an exact score tie.
+   */
+  source?: string;
   /** Per-100g nutrients. */
   n: NutrientVector;
   /** Named portion weights (e.g. "1 large" egg → 50 g) for count units. */
@@ -159,14 +165,19 @@ export function searchFoods(
       .filter((m) => m.score > 0)
       // Tie-break deterministically so selection never depends on the dataset's
       // file order: first prefer a food we can weigh by volume (one carrying a
-      // burnt-in density), then the higher fdcId — Foundation foods carry the larger
-      // ids and the fuller nutrient analyses. So an equal-scoring generic
-      // ("chicken breast", "cooked rice") lands on the weighable Foundation
-      // reference rather than an SR-Legacy processed cut ("…roll", "Rice crackers").
+      // burnt-in density); then, on an exact tie, a domestic (USDA) record over a
+      // national-table one, so a higher-band national fdcId (81_000_000+) never wins
+      // the id tie-break below and displaces the USDA generic (a regional food wins a
+      // regional term by out-scoring, not by id); then the higher fdcId — Foundation
+      // foods carry the larger ids and the fuller nutrient analyses. So an equal-
+      // scoring generic ("chicken breast", "cooked rice") lands on the weighable
+      // Foundation reference rather than an SR-Legacy processed cut ("…roll", "Rice
+      // crackers").
       .sort(
         (a, b) =>
           b.ranked - a.ranked ||
           (b.food.per100g ? 1 : 0) - (a.food.per100g ? 1 : 0) ||
+          (b.food.source ? 0 : 1) - (a.food.source ? 0 : 1) ||
           (b.food.fdcId ?? 0) - (a.food.fdcId ?? 0),
       );
   // Note tokens go BEFORE item tokens so the item's last word stays the overall

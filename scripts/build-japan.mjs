@@ -12,11 +12,13 @@
  * joined on the 5-digit food number (食品番号).
  *
  * Names are Japanese; MEXT ships no English names. Each food keeps its native
- * name (`nameJa`) and gets a searchable `description`: a curated English name for
- * the foods recipes use (CURATED_EN), else a Hepburn romanisation of the kana.
- * The matcher's regional-term preference keys off these. fdcId is namespaced into
- * the 81_000_000 band (81_000_000 + food number) to never collide with USDA or
- * custom ids; `source: 'JP-MEXT'` records provenance.
+ * name (`nameJa`) and gets a `description`: a curated English name for the foods
+ * recipes use (CURATED_EN), else a Hepburn romanisation of the kana. Foods with a
+ * curated English name are flagged `enCurated` — the matcher merges only those
+ * into the bundled dataset (the romanised siblings have no reliable English
+ * identity to match on). fdcId is namespaced into the 81_000_000 band (81_000_000
+ * + food number) to never collide with USDA or custom ids; `source: 'JP-MEXT'`
+ * records provenance.
  *
  * MEXT special values: "Tr" → 0 (trace), "(x)" → x (estimated), "-"/blank → unknown
  * (field omitted, the engine's contract for "not zero, just unmeasured").
@@ -68,9 +70,9 @@ const CATEGORY = {
 // kana; extend this as recipes need more foods.
 const CURATED_EN = {
   '16025': 'Mirin, hon-mirin (sweet rice seasoning)',
-  '08016': 'Shimeji, buna-shimeji, raw',
-  '08017': 'Shimeji, buna-shimeji, boiled',
-  '08015': 'Shimeji, hatake-shimeji, raw',
+  '08016': 'Shimeji, buna-shimeji mushroom, raw',
+  '08017': 'Shimeji, buna-shimeji mushroom, boiled',
+  '08015': 'Shimeji, hatake-shimeji mushroom, raw',
   '10091': 'Katsuobushi (dried bonito)',
   '10092': 'Katsuobushi, shaved flakes (kezuribushi)',
   '17016': 'Rice vinegar',
@@ -130,16 +132,22 @@ function main() {
     const nameJa = String(r[3] ?? '').replace(/\s+/g, ' ').trim();
     const n = buildVector(r, fatBy.get(no), carbBy.get(no));
     if (n.energyKcal == null && n.energyKj == null) continue; // skip rows with no energy basis
-    const description = CURATED_EN[no] ?? kanaToRomaji(nameJa);
-    foods.push({
+    const curatedEn = CURATED_EN[no];
+    const food = {
       fdcId: 81_000_000 + parseInt(no, 10),
       source: 'JP-MEXT',
       foodCode: no,
-      description,
+      description: curatedEn ?? kanaToRomaji(nameJa),
       nameJa,
       category: CATEGORY[no.slice(0, 2)] ?? 'Other',
       n,
-    });
+    };
+    // Only foods with a curated English name are match-ready: their romanised
+    // siblings carry no reliable English identity, so the matcher excludes them
+    // (it merges just the `enCurated` foods into the bundled dataset). The flag
+    // is the single source of truth for that subset, materialised from CURATED_EN.
+    if (curatedEn) food.enCurated = true;
+    foods.push(food);
   }
 
   foods.sort((a, b) => a.fdcId - b.fdcId);
