@@ -22,6 +22,7 @@ import { computeGlycemics, type Glycemics } from './gi';
 import { computeNutriScore, type NutriResult, type NutriCategory } from './nutriscore';
 import { computeInflammation, type Inflammation, type InflammationItem } from './inflammation';
 import { foodFII } from './fii';
+import { applyFoodForm } from './foodAdjust';
 import { computeBalance, type BalanceResult } from './balance';
 import type { NutrientVector } from './types';
 
@@ -35,12 +36,15 @@ export const GI_SOURCE = 'Atkinson 2021 GI tables (carb-weighted composite estim
  * One recipe ingredient resolved for scoring: metric weight, the matched food's
  * per-100g nutrients, its published GI, and whether it counts toward Nutri-Score's
  * fruit/vegetables/legumes share. The inflammation tag is computed from `nutrients`
- * by the Food Inflammation Index (fii.ts), not carried here.
+ * by the Food Inflammation Index (fii.ts), not carried here; `fdcId` lets the
+ * composition-blind food-form adjustment (foodAdjust.ts) find the matched food.
  */
 export interface ScoredIngredient {
   grams: number | null;
   excludeFromNutrition?: boolean;
   nutrients?: NutrientVector | null;
+  /** USDA fdcId of the matched food, for the food-form inflammation adjustment. */
+  fdcId?: number | null;
   /** Published GI of the matched food, or null when unknown. */
   gi?: number | null;
   /** Whether the matched food is a fruit/vegetable/legume (Nutri-Score FVL). */
@@ -104,9 +108,10 @@ export function computeScores(
     // at the recipe level. Weight by the food's absolute energy contribution when known.
     const fii = foodFII(ing.nutrients);
     if (fii) {
+      const tag = applyFoodForm(fii.tag, ing.fdcId);
       const kcalPer100 = ing.nutrients ? energyKcalOf(ing.nutrients) : null;
       const energyKcal = kcalPer100 != null ? (kcalPer100 * grams) / 100 : null;
-      inflammationItems.push({ grams, energyKcal, tag: fii.tag });
+      inflammationItems.push({ grams, energyKcal, tag });
     }
 
     const n = ing.nutrients;

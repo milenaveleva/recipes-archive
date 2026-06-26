@@ -56,10 +56,10 @@ describe('foodFII (per-food inflammatory potential)', () => {
       return foodFII(n)!.tag;
     };
     expect(tagOf(173410)).toBe(1.7); // butter, salted → pro
-    expect(tagOf(170173)).toBe(1.7); // coconut milk (saturated fat) → pro
-    expect(tagOf(169655)).toBe(1.5); // granulated sugar → pro
-    expect(tagOf(171413)).toBe(-1.2); // olive oil (MUFA) → anti
+    expect(tagOf(170173)).toBe(1.6); // coconut milk (saturated fat) → pro
+    expect(tagOf(169655)).toBe(1.4); // granulated sugar (no fibre → all free sugar) → pro
+    expect(tagOf(171413)).toBe(-1.1); // olive oil (MUFA) → anti
     expect(tagOf(170187)).toBe(-2); // walnuts (PUFA + fibre + Mg) → anti
-    expect(tagOf(168462)).toBe(-1.5); // spinach (+ polyphenol seed) → anti
+    expect(tagOf(168462)).toBe(-1.4); // spinach (+ polyphenol seed) → anti
   });
 });

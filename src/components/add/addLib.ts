@@ -264,6 +264,7 @@ export function rowsToScored(rows: IngredientRow[]): ScoredIngredient[] {
       return {
         grams: safeGrams(r.grams),
         excludeFromNutrition: r.excludeFromNutrition,
+        fdcId: r.selectedFdcId,
         nutrients: nutrientsFor(food),
         gi: s?.gi ?? null,
         fvl: s?.fvl ?? fvlFromCategory(food),
@@ -555,7 +556,7 @@ export function buildDraft(
               }
             : undefined,
           inflammation: scores.inflammation
-            ? { ...scores.inflammation, method: 'fii v2' }
+            ? { ...scores.inflammation, method: 'fii v3' }
             : undefined,
           balance: scores.balance,
           computedAt: dates.computedAt ?? createdAt,

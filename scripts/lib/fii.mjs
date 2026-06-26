@@ -19,6 +19,12 @@ export function valueOf(food, key, polyphenols) {
     if (!parts.some((k) => Number.isFinite(n[k]))) return undefined;
     return (n.monoFat_g || 0) + (n.polyFat_g || 0) - (n.satFat_g || 0) - (n.transFat_g || 0);
   }
+  if (key === 'freeSugar_g') {
+    // Free-sugar estimate from the 1:2 fibre:free-sugar dual ratio (mirror of src/core/fii.ts).
+    if (!Number.isFinite(n.sugar_g)) return undefined;
+    const fibre = Number.isFinite(n.fiber_g) ? n.fiber_g : 0;
+    return Math.max(0, n.sugar_g - 2 * fibre);
+  }
   const v = n[key];
   return Number.isFinite(v) ? v : undefined;
 }
@@ -68,20 +74,38 @@ export function energyKcalOf(n) {
   return null;
 }
 
-/** Map a −2..+2 score to the five-band scale (mirrors inflammationBandOf). */
-export function bandOf(score) {
-  return score <= -1.0 ? 'anti-inflammatory'
-    : score <= -0.3 ? 'mildly-anti-inflammatory'
-    : score < 0.3 ? 'neutral'
-    : score < 1.0 ? 'mildly-pro-inflammatory'
+/** Additive food-form delta for a food (mirrors src/core/foodAdjust.ts foodFormAdjustment).
+ *  `adjustments` is the src/data/food-adjustments.json map (fdcId → { delta }). */
+export function foodFormDelta(fdcId, adjustments) {
+  if (fdcId == null || !adjustments) return 0;
+  const a = adjustments[String(fdcId)];
+  return a && typeof a === 'object' && Number.isFinite(a.delta) ? a.delta : 0;
+}
+
+/** Apply the food-form delta to a per-food tag, re-clamped to ±2 (mirrors applyFoodForm). */
+export function applyFoodForm(tag, fdcId, adjustments) {
+  const d = foodFormDelta(fdcId, adjustments);
+  if (!d) return tag;
+  const t = Math.round((tag + d) * 10) / 10;
+  return t < -2 ? -2 : t > 2 ? 2 : t;
+}
+
+/** Map a −2..+2 score to the five-band scale via corpus-quantile edges (mirrors
+ *  inflammationBandOf). `bands` = { antiMax, mildlyAntiMax, neutralMax, mildlyProMax }. */
+export function bandOf(score, bands) {
+  return score <= bands.antiMax ? 'anti-inflammatory'
+    : score <= bands.mildlyAntiMax ? 'mildly-anti-inflammatory'
+    : score <= bands.neutralMax ? 'neutral'
+    : score <= bands.mildlyProMax ? 'mildly-pro-inflammatory'
     : 'pro-inflammatory';
 }
 
 /**
  * Energy-weighted mean of per-food tags (mirrors computeInflammation): each item
- * { grams, energyKcal, tag } weighted by max(energyKcal, FLOOR·grams). null when nothing weighs.
+ * { grams, energyKcal, tag } weighted by max(energyKcal, FLOOR·grams). null when nothing
+ * weighs. `bands` are the corpus-quantile band edges from inflammation-reference.json.
  */
-export function aggregateInflammation(items) {
+export function aggregateInflammation(items, bands) {
   let weighted = 0;
   let total = 0;
   for (const it of items) {
@@ -94,5 +118,5 @@ export function aggregateInflammation(items) {
   }
   if (total <= 0) return null;
   const score = Math.round((weighted / total) * 10) / 10;
-  return { score, band: bandOf(score) };
+  return { score, band: bandOf(score, bands) };
 }

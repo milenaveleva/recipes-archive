@@ -12,14 +12,32 @@
  * choice: energy weighting still under-credits those low-calorie foods relative to
  * mass, and the floor constant is a calibration value, not a biomarker-derived one.
  *
- * The five bands are read by quantile of the recipe corpus once it is large enough;
- * until then they sit at the fixed fallback cut-points below (a small-N corpus makes
- * empirical quantiles statistically empty). Labels are relative — "anti-inflammatory"
- * means more anti than a typical dish, never a clinical category. This is an estimate
- * for comparison only — deliberately NOT the licensed Dietary Inflammatory Index, and
- * never labelled "DII".
+ * The five bands are read by quantile of the USDA per-food reference distribution
+ * (inflammation-reference.json `bands`, regenerated with the reference): the bottom
+ * quintile of single foods is "anti-inflammatory", the top quintile "pro-inflammatory",
+ * so a recipe's band reflects where its energy-weighted score sits among foods. Labels
+ * are relative — "anti-inflammatory" means more anti than a typical food, never a
+ * clinical category. This is an estimate for comparison only — deliberately NOT the
+ * licensed Dietary Inflammatory Index, and never labelled "DII".
  */
 import { round } from './num';
+import referenceData from '../data/inflammation-reference.json';
+
+/** Quintile edges of the per-food tag distribution, from inflammation-reference.json. */
+interface InflammationBandEdges {
+  antiMax: number;
+  mildlyAntiMax: number;
+  neutralMax: number;
+  mildlyProMax: number;
+}
+const BANDS = (referenceData as { bands: InflammationBandEdges }).bands;
+if (!BANDS || typeof BANDS.antiMax !== 'number') {
+  // The band edges are generated as a unit with the rest of the reference; a file
+  // without them means a stale or partial regen, not a recoverable state.
+  throw new Error(
+    'inflammation-reference.json is missing band edges — run `node scripts/build-inflammation-reference.mjs`',
+  );
+}
 
 export type InflammationBand =
   | 'anti-inflammatory'
@@ -51,14 +69,15 @@ export interface Inflammation {
 export const FLOOR_KCAL_PER_G = 1;
 
 /**
- * Map a −2..+2 score to a five-band scale (symmetric around neutral). Fixed
- * small-N fallback cut-points, pending corpus-quantile calibration.
+ * Map a −2..+2 score to the five-band scale by quintile edges of the USDA per-food
+ * tag distribution (inflammation-reference.json `bands`): ≤ antiMax is the bottom
+ * quintile of foods, > mildlyProMax the top.
  */
 export function inflammationBandOf(score: number): InflammationBand {
-  if (score <= -1.0) return 'anti-inflammatory';
-  if (score <= -0.3) return 'mildly-anti-inflammatory';
-  if (score < 0.3) return 'neutral';
-  if (score < 1.0) return 'mildly-pro-inflammatory';
+  if (score <= BANDS.antiMax) return 'anti-inflammatory';
+  if (score <= BANDS.mildlyAntiMax) return 'mildly-anti-inflammatory';
+  if (score <= BANDS.neutralMax) return 'neutral';
+  if (score <= BANDS.mildlyProMax) return 'mildly-pro-inflammatory';
   return 'pro-inflammatory';
 }
 

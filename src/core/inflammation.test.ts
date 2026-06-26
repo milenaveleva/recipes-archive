@@ -1,19 +1,28 @@
 import { describe, it, expect } from 'vitest';
 import { computeInflammation, inflammationBandOf, FLOOR_KCAL_PER_G } from './inflammation';
+import referenceData from '../data/inflammation-reference.json';
 
-describe('inflammationBandOf', () => {
-  it('maps a −2..+2 score onto five symmetric bands', () => {
-    expect(inflammationBandOf(-1.5)).toBe('anti-inflammatory');
-    expect(inflammationBandOf(-1.0)).toBe('anti-inflammatory');
-    expect(inflammationBandOf(-0.5)).toBe('mildly-anti-inflammatory');
-    expect(inflammationBandOf(-0.3)).toBe('mildly-anti-inflammatory');
-    expect(inflammationBandOf(-0.2)).toBe('neutral');
+const BANDS = (referenceData as {
+  bands: { antiMax: number; mildlyAntiMax: number; neutralMax: number; mildlyProMax: number };
+}).bands;
+
+describe('inflammationBandOf (corpus-quantile bands)', () => {
+  // The band edges are the quintile cut-points of the USDA per-food tag distribution,
+  // generated into inflammation-reference.json. Pin them so a parameter/reference change
+  // that shifts the bands is caught (and the recipes get rescored to match).
+  it('pins the generated quintile band edges', () => {
+    expect(BANDS).toEqual({ antiMax: -1, mildlyAntiMax: -0.3, neutralMax: 0.2, mildlyProMax: 0.7 });
+  });
+
+  it('maps a score to the band whose quintile it falls in', () => {
+    expect(inflammationBandOf(BANDS.antiMax - 0.5)).toBe('anti-inflammatory');
+    expect(inflammationBandOf(BANDS.antiMax)).toBe('anti-inflammatory');
+    expect(inflammationBandOf(BANDS.mildlyAntiMax)).toBe('mildly-anti-inflammatory');
     expect(inflammationBandOf(0)).toBe('neutral');
-    expect(inflammationBandOf(0.2)).toBe('neutral');
-    expect(inflammationBandOf(0.3)).toBe('mildly-pro-inflammatory');
-    expect(inflammationBandOf(0.9)).toBe('mildly-pro-inflammatory');
-    expect(inflammationBandOf(1.0)).toBe('pro-inflammatory');
-    expect(inflammationBandOf(2.0)).toBe('pro-inflammatory');
+    expect(inflammationBandOf(BANDS.neutralMax)).toBe('neutral');
+    expect(inflammationBandOf(BANDS.mildlyProMax)).toBe('mildly-pro-inflammatory');
+    expect(inflammationBandOf(BANDS.mildlyProMax + 0.1)).toBe('pro-inflammatory');
+    expect(inflammationBandOf(2)).toBe('pro-inflammatory');
   });
 });
 

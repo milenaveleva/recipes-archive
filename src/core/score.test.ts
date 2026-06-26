@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { computeScores, type ScoredIngredient } from './score';
+import { foodFormAdjustment } from './foodAdjust';
 
 const INFLAMMATION_BANDS = [
   'anti-inflammatory', 'mildly-anti-inflammatory', 'neutral',
@@ -50,6 +51,21 @@ describe('computeScores (orchestration)', () => {
     expect(r.glycemic).toBeUndefined();
     expect(r.nutriScore).toBeDefined(); // glycemic omission must not suppress Nutri-Score
     expect(r.inflammation).toBeDefined();
+  });
+
+  it('applies the composition-blind food-form adjustment when the ingredient carries an adjusted fdcId', () => {
+    // A yogurt-like vector reads pro-inflammatory by composition (saturated fat + sodium +
+    // lactose-as-free-sugar); fdcId 171284 (plain whole-milk yogurt) carries a −1.3 delta.
+    const YOGURT = { energyKcal: 61, protein_g: 3.5, fat_g: 3.25, satFat_g: 2.1, monoFat_g: 0.9, polyFat_g: 0.1, carbs_g: 4.66, sugar_g: 4.66, sodium_mg: 46 };
+    const plain = computeScores([{ grams: 150, nutrients: YOGURT, gi: null }], 1);
+    const adjusted = computeScores([{ grams: 150, nutrients: YOGURT, gi: null, fdcId: 171284 }], 1);
+    expect(foodFormAdjustment(171284)).toBe(-1.3);
+    // One ingredient → the recipe score is its (adjusted) per-food tag, so the wiring +
+    // sign + clamp are pinned without hard-coding the composition tag (which fii.test pins).
+    const clamp = (n: number) => Math.max(-2, Math.min(2, n));
+    const expected = clamp(Math.round((plain.inflammation!.score - 1.3) * 10) / 10);
+    expect(adjusted.inflammation!.score).toBe(expected);
+    expect(adjusted.inflammation!.score).toBeLessThan(plain.inflammation!.score); // nudged anti
   });
 
   it('skips excluded ingredients (e.g. water) from every score', () => {

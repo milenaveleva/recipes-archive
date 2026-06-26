@@ -105,7 +105,7 @@ const nutrition = z.object({
     .object({
       score: z.number(),
       band: inflammationBand,
-      method: z.string().default('fii v2'),
+      method: z.string().default('fii v3'),
     })
     .optional(),
   /** Nutrient-balance score (NRF9.3 nutrient density, 1–10, higher = healthier). */

@@ -30,7 +30,7 @@ Phase 0: static recipe book. Phase 1: in-browser authoring — a React island th
 
 ### Domain conventions
 
-- Scores are **estimates** — never imply medical/clinical precision. Don't ship the official Nutri-Score *logo* (trademark); don't label the inflammation score "DII" (a licensed methodology) — it is an independent, composition-derived Food Inflammation Index (per-food potential from fat quality, fibre, antioxidant micronutrients and polyphenols, energy-weighted across the recipe).
+- Scores are **estimates** — never imply medical/clinical precision. Don't ship the official Nutri-Score *logo* (trademark); don't label the inflammation score "DII" (a licensed methodology) — it is an independent Food Inflammation Index: a per-food potential from fat quality, fibre, antioxidant micronutrients, polyphenols and an estimated free-sugar penalty (`max(0, sugar − 2·fibre)`), corrected by a small composition-blind food-form adjustment (e.g. fermented dairy) keyed by `fdcId`, energy-weighted across the recipe and banded by quantile of the USDA food reference distribution.
 - Store all quantities in metric; keep each ingredient's `raw` original line.
 
 ## Always Use consensus MCP for Research

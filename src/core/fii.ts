@@ -57,6 +57,16 @@ function valueOf(n: NutrientVector, key: string): number | undefined {
     if (!parts.some((v) => Number.isFinite(v))) return undefined;
     return (n.monoFat_g || 0) + (n.polyFat_g || 0) - (n.satFat_g || 0) - (n.transFat_g || 0);
   }
+  if (key === 'freeSugar_g') {
+    // Estimate the free (non-intrinsic) sugar from composition: a whole food's
+    // sugar travels with fibre, and the 1:2 fibre:free-sugar dual quality ratio
+    // treats up to 2 g sugar per 1 g fibre as matrix-bound — so only the excess
+    // beyond 2·fibre is scored as free sugar. Undefined when the food has no sugar
+    // datum (unknown, never zero); missing fibre is treated as 0 (no cover).
+    if (!Number.isFinite(n.sugar_g)) return undefined;
+    const fibre = Number.isFinite(n.fiber_g) ? (n.fiber_g as number) : 0;
+    return Math.max(0, (n.sugar_g as number) - 2 * fibre);
+  }
   const v = (n as Record<string, number | undefined>)[key];
   return Number.isFinite(v) ? (v as number) : undefined;
 }

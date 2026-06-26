@@ -214,7 +214,7 @@ describe('buildDraft → markdown', () => {
     expect(draft.nutrition?.nutriScore?.grade).toMatch(/^[A-E]$/);
     expect(typeof draft.nutrition?.nutriScore?.points).toBe('number');
     expect(draft.nutrition?.inflammation?.band).toContain('anti'); // FII: fibre-rich lentils + spinach
-    expect(draft.nutrition?.inflammation?.method).toBe('fii v2');
+    expect(draft.nutrition?.inflammation?.method).toBe('fii v3');
     expect(draft.nutrition?.dataSources).toContain('Nutri-Score 2023');
 
     // The score block round-trips into the serialized markdown.

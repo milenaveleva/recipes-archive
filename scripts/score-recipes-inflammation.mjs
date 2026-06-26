@@ -15,7 +15,7 @@ import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { parse as parseYaml } from 'yaml';
-import { foodTag, energyKcalOf, aggregateInflammation } from './lib/fii.mjs';
+import { foodTag, energyKcalOf, aggregateInflammation, applyFoodForm } from './lib/fii.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const log = (...a) => process.stderr.write(a.join(' ') + '\n');
@@ -28,11 +28,13 @@ const byId = new Map(read('src/data/usda-foods.json').map((f) => [f.fdcId, f]));
 const { parameters, clampZ } = read('src/data/fii-parameters.json');
 const reference = read('src/data/inflammation-reference.json');
 const polyphenols = read('src/data/polyphenols.json');
+const adjustments = read('src/data/food-adjustments.json');
 const ctx = { parameters, paramStats: reference.params, fiiRaw: reference.fiiRaw, polyphenols, clampZ };
 
 /** Energy-weighted recipe inflammation from resolved ingredients, or null. Mirrors the
- *  engine: per-food FII tag (foodTag) + absolute kcal (energyKcalOf), aggregated by
- *  aggregateInflammation — all from the shared scripts/lib/fii.mjs. */
+ *  engine: per-food FII tag (foodTag) + composition-blind food-form adjustment
+ *  (applyFoodForm) + absolute kcal (energyKcalOf), aggregated by quantile bands
+ *  (aggregateInflammation) — all from the shared scripts/lib/fii.mjs. */
 function recipeInflammation(ingredients) {
   const items = [];
   for (const ing of ingredients ?? []) {
@@ -43,11 +45,12 @@ function recipeInflammation(ingredients) {
     if (!food) continue;
     const t = foodTag(food, ctx);
     if (!t) continue;
+    const tag = applyFoodForm(t.tag, ing.fdcId, adjustments);
     const kcalPer100 = energyKcalOf(food.n);
     const energyKcal = kcalPer100 != null ? (kcalPer100 * grams) / 100 : null;
-    items.push({ grams, energyKcal, tag: t.tag });
+    items.push({ grams, energyKcal, tag });
   }
-  return aggregateInflammation(items);
+  return aggregateInflammation(items, reference.bands);
 }
 
 const dir = join(ROOT, 'src/content/recipes');
@@ -67,7 +70,7 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith('.md'))) {
     continue;
   }
   const block =
-    `  inflammation:\n    score: ${next.score}\n    band: ${next.band}\n    method: fii v2\n`;
+    `  inflammation:\n    score: ${next.score}\n    band: ${next.band}\n    method: fii v3\n`;
   // Replace the whole inflammation block (its 4-space-indented children), in place,
   // and refresh the inflammation provenance line so dataSources can't drift from method.
   const blockRe = /^  inflammation:\n(?:    .*(?:\n|$))*/m;
@@ -77,7 +80,7 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith('.md'))) {
   }
   const updated = text
     .replace(blockRe, block)
-    .replace(/^    - Inflammation index .*$/m, `    - ${DATA_SOURCE}`);
+    .replace(/^    - Food Inflammation Index .*$/m, `    - ${DATA_SOURCE}`);
   if (updated === text) {
     log(`  ${file}: unchanged (already current)`);
     continue;

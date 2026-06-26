@@ -110,7 +110,7 @@ nutrition:
   inflammation:
     score: -1
     band: anti-inflammatory
-    method: fii v2
+    method: fii v3
   balance:
     score: 3
     band: low

@@ -1,5 +1,5 @@
 {
-  "_doc": "Food Inflammation Index (FII) parameter table — the single source of which per-100g signals enter the per-food inflammatory-potential score, each one's direction and weight. Adapted from the Food Inflammation Index idea (Wang 2024) to the composition columns this archive holds; directions are taken from open biomarker literature, NOT the licensed DII per-parameter effect scores. `dir` is +1 pro-inflammatory / -1 anti-inflammatory; `weight` scales a parameter's contribution. Read by src/core/fii.ts and scripts/build-inflammation-reference.mjs. The `fatQuality_g` parameter is DERIVED — (monoFat+polyFat) − (satFat+transFat) — so fat is scored once, by quality, instead of letting a food's saturated and unsaturated fractions cancel under independent z-scores.",
+  "_doc": "Food Inflammation Index (FII) parameter table — the single source of which per-100g signals enter the per-food inflammatory-potential score, each one's direction and weight. Adapted from the Food Inflammation Index idea (Wang 2024) to the composition columns this archive holds; directions are taken from open biomarker literature, NOT the licensed DII per-parameter effect scores. `dir` is +1 pro-inflammatory / -1 anti-inflammatory; `weight` scales a parameter's contribution. Read by src/core/fii.ts and scripts/build-inflammation-reference.mjs. Two parameters are DERIVED, not read straight off the vector: `fatQuality_g` = (monoFat+polyFat) − (satFat+transFat) so fat is scored once by quality instead of letting a food's saturated and unsaturated fractions cancel under independent z-scores; `freeSugar_g` = max(0, sugar − 2·fibre) estimates the free-sugar fraction from the 1:2 fibre:free-sugar dual carbohydrate-quality ratio, so a whole food's intrinsic, matrix-bound sugar is not penalised the way a refined sugar is.",
   "clampZ": 3,
   "fallbackMinN": 50,
   "parameters": [
@@ -9,7 +9,7 @@
     { "nutrient": "vitE_mg",       "dir": -1, "weight": 1, "cite": "antioxidant micronutrient" },
     { "nutrient": "magnesium_mg",  "dir": -1, "weight": 1, "cite": "anti-inflammatory mineral (produce/whole-grain marker)" },
     { "nutrient": "polyphenol_mg", "dir": -1, "weight": 2, "fallback": { "center": 0, "scale": 100 }, "cite": "polyphenols (key anti driver): Cassidy 2015; Dryer-Beers 2024; Wang 2024 FII; Phenol-Explorer. fallback referent (0, 100 mg/100g) used while corpus coverage is sparse — a food at ~100 mg/100g reads polyphenol-rich (Pérez-Jiménez 2010)" },
-    { "nutrient": "sugar_g",       "dir": 1,  "weight": 1, "cite": "free-sugar proxy (unfavourable): Reyneke 2025" },
+    { "nutrient": "freeSugar_g",   "dir": 1,  "weight": 1, "cite": "free-sugar estimate = max(0, sugar − 2·fibre), the 1:2 fibre:free-sugar dual carbohydrate-quality ratio (Liu 2020; Drewnowski 2022); intrinsic matrix-bound sugar is not penalised (Della Corte 2025; Reyneke 2025)" },
     { "nutrient": "sodium_mg",     "dir": 1,  "weight": 1, "cite": "high-sodium pro-inflammatory" }
   ]
 }

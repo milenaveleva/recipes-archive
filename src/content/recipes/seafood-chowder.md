@@ -137,9 +137,9 @@ nutrition:
     category: general
     version: "2023"
   inflammation:
-    score: 0.5
+    score: 0.6
     band: mildly-pro-inflammatory
-    method: fii v2
+    method: fii v3
   balance:
     score: 4
     band: low
