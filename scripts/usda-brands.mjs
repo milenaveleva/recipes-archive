@@ -99,6 +99,16 @@ const EXCLUDED_DESCRIPTION_RE = /macaroni and cheese|\bfast food\b|frog legs?|le
 // lists "tortilla shortening" as a use stays).
 const EXCLUDED_FAT_RE = /margarine|^shortening/i;
 
+// Foods carrying the standalone word "enriched" (fortified): flour, bread,
+// cornmeal, pasta, rice — and processed foods made with enriched flour — all with
+// iron/folate/niacin/thiamin added back. The archive keeps the base food rather
+// than the fortified form, so the added synthetic micronutrients don't stand in
+// for intrinsic nutrient density. Matching is component-blind (a snack "made with
+// enriched masa flour" is dropped too). The negative lookbehind spares the
+// concatenated "unenriched" (its "enriched" is preceded by a letter), a distinct
+// food; the corpus carries no separated-negation forms ("un-enriched"/"not enriched").
+const ENRICHED_RE = /(?<![a-z])enriched\b/i;
+
 // Animal/dairy milk: any name leading with "Milk" (fluid/dry/canned/condensed/
 // evaporated/shakes/desserts/filled/imitation) plus every buttermilk entry
 // (biscuits, dressings, waffles included). Plant milks are exempt by id — they're
@@ -196,6 +206,7 @@ export function isExcludedFood(food) {
   const desc = food.description || '';
   if (EXCLUDED_DESCRIPTION_RE.test(desc)) return true;
   if (EXCLUDED_FAT_RE.test(desc)) return true;
+  if (ENRICHED_RE.test(desc)) return true;
   // Drop dairy milk + all buttermilk, but keep curated plant milks (which are
   // renamed to lead with "Milk", so they would otherwise match here).
   if (MILK_DROP_RE.test(desc) && !PLANT_MILK_IDS.has(food.fdcId)) return true;

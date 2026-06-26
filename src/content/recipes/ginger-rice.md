@@ -20,7 +20,7 @@ ingredients:
     note: uncooked
     grams: 300
     milliliters: 354.882
-    fdcId: 168881
+    fdcId: 168931
     matchConfidence: high
   - raw: 1 piece aburaage
     quantity: 1
@@ -80,32 +80,32 @@ nutrition:
     fat_g: 0.5
     satFat_g: 0.1
     carbs_g: 61.2
-    fiber_g: 2.3
+    fiber_g: 0.2
     sugar_g: 0.2
     sodium_mg: 400
-    availableCarb_g: 58.9
+    availableCarb_g: 61
   nutriScore:
     grade: C
     points: 3
     category: general
     version: "2023"
   inflammation:
-    score: 0.3
+    score: 0.4
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 3
-    band: low
-    nrf: 10.1
+    score: 2
+    band: poor
+    nrf: 2.4
     version: NRF9.3
-  computedAt: "2026-06-25"
+  computedAt: "2026-06-26"
   dataSources:
     - USDA FoodData Central
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
 createdAt: "2026-06-21"
-updatedAt: "2026-06-25"
+updatedAt: "2026-06-26"
 ---
 
 ## Method
