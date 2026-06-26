@@ -1,6 +1,7 @@
 ---
 title: Ginger Rice
 description: With zesty julienned ginger and deep-fried tofu strips, fragrant Japanese Ginger Rice is delicately seasoned with soy sauce and mirin. This authentic recipe has a wonderful aroma and spicy kick that pairs well with many Japanese dishes.
+image: ./images/ginger-rice.jpg
 imageUrl: https://www.justonecookbook.com/wp-content/uploads/2019/09/Ginger-Rice-0022-I.jpg
 source:
   name: justonecookbook.com
@@ -17,9 +18,9 @@ ingredients:
     unit: cups
     item: Japanese short-grain white rice
     note: uncooked
-    grams: 279
+    grams: 300
     milliliters: 354.882
-    fdcId: 168882
+    fdcId: 168881
     matchConfidence: high
   - raw: 1 piece aburaage
     quantity: 1
@@ -37,9 +38,9 @@ ingredients:
     quantity: 1.333
     unit: cups
     item: water
-    grams: 74.6
+    grams: 315.9
     milliliters: 315.371804
-    fdcId: 169301
+    fdcId: 174158
     matchConfidence: high
   - raw: 1 Tbsp soy sauce
     quantity: 1
@@ -47,12 +48,13 @@ ingredients:
     item: soy sauce
     grams: 18
     milliliters: 14.7868
-    fdcId: 174070
-    matchConfidence: high
+    fdcId: 174278
+    matchConfidence: medium
   - raw: 1 Tbsp sake
     quantity: 1
     unit: Tbsp
     item: sake
+    grams: 14.6
     milliliters: 14.7868
     fdcId: 167723
     matchConfidence: medium
@@ -72,19 +74,19 @@ ingredients:
     matchConfidence: high
 nutrition:
   perServing:
-    energyKcal: 112
-    energyKj: 468
-    protein_g: 2.6
-    fat_g: 0.9
-    satFat_g: 0.2
-    carbs_g: 22.9
-    fiber_g: 0.6
-    sugar_g: 0.9
-    sodium_mg: 228
-    availableCarb_g: 22.3
+    energyKcal: 282
+    energyKj: 1180
+    protein_g: 5.5
+    fat_g: 0.5
+    satFat_g: 0.1
+    carbs_g: 61.2
+    fiber_g: 2.3
+    sugar_g: 0.2
+    sodium_mg: 400
+    availableCarb_g: 58.9
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
   inflammation:
@@ -92,18 +94,18 @@ nutrition:
     band: neutral
     method: fii v2
   balance:
-    score: 4
+    score: 3
     band: low
-    nrf: 28
+    nrf: 10.1
     version: NRF9.3
-  computedAt: "2026-06-21"
+  computedAt: "2026-06-25"
   dataSources:
     - USDA FoodData Central
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
 createdAt: "2026-06-21"
-updatedAt: "2026-06-21"
+updatedAt: "2026-06-25"
 ---
 
 ## Method

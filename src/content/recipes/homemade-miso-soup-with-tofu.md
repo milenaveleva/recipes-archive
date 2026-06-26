@@ -1,6 +1,7 @@
 ---
 title: Homemade Miso Soup with Tofu
 description: It‘s super easy to make authentic and homemade Japanese Miso Soup! In this recipe, I show you how to make quick and easy soup stock (dashi) from scratch, then make classic miso soup with tofu and wakame seaweed. It‘s delicious and has many health benefits.
+image: ./images/homemade-miso-soup-with-tofu.jpg
 imageUrl: https://www.justonecookbook.com/wp-content/uploads/2022/06/Miso-Soup-8297-I.jpg
 source:
   name: justonecookbook.com
@@ -26,12 +27,14 @@ ingredients:
     item: kombu
     grams: 10
     matchConfidence: none
+    excludeFromNutrition: true
   - raw: 3 cups katsuobushi
     quantity: 3
     unit: cups
     item: katsuobushi
     milliliters: 709.764
     matchConfidence: none
+    excludeFromNutrition: true
   - raw: 7 oz soft/silken tofu
     quantity: 7
     unit: oz
@@ -52,25 +55,28 @@ ingredients:
     quantity: 1
     unit: Tbsp
     item: dried wakame seaweed
-    grams: 10
+    grams: 5
     milliliters: 14.7868
-    matchConfidence: none
+    fdcId: 170496
+    matchConfidence: high
   - raw: 1 green onion/scallion
     quantity: 1
     item: green onion/scallion
-    matchConfidence: none
+    fdcId: 2727585
+    matchConfidence: medium
+    excludeFromNutrition: true
 nutrition:
   perServing:
     energyKcal: 64
-    energyKj: 267
-    protein_g: 5.7
+    energyKj: 270
+    protein_g: 5.8
     fat_g: 2.9
     satFat_g: 0.4
-    carbs_g: 4.9
+    carbs_g: 5
     fiber_g: 1
     sugar_g: 1.4
-    sodium_mg: 643
-    availableCarb_g: 3.9
+    sodium_mg: 654
+    availableCarb_g: 4
   nutriScore:
     grade: B
     points: 2
@@ -79,15 +85,15 @@ nutrition:
   balance:
     score: 2
     band: poor
-    nrf: 4.5
+    nrf: 5.1
     version: NRF9.3
-  computedAt: "2026-06-21"
+  computedAt: "2026-06-25"
   dataSources:
     - USDA FoodData Central
     - Nutri-Score 2023
     - Nutrient-Rich Foods Index (NRF9.3)
 createdAt: "2026-06-20"
-updatedAt: "2026-06-21"
+updatedAt: "2026-06-25"
 ---
 
 ## Method
