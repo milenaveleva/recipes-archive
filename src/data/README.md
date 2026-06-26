@@ -16,6 +16,18 @@ The script downloads both bulk datasets, prunes them to the fields above, dedupe
 
 To re-apply the brand filter to the committed file without re-downloading (e.g. after editing the filter, its denylist `usda-exclude.json`, or its keep-list), run `node scripts/prune-branded.mjs` (`--dry-run` to preview). Both entry points refuse to write if filtering would orphan a `food-scoring.json` entry.
 
+## `japan-foods.json`
+
+The Japanese national reference foods — MEXT [Standard Tables of Food Composition in Japan – 2020 – Eighth Revised Edition (Supplement 2023)](https://www.mext.go.jp/a_menu/syokuhinseibun/mext_00001.html), ~2,500 generic foods — pruned to the same per-100g nutrient shape as `usda-foods.json` and tagged `source: "JP-MEXT"`. fdcIds are namespaced into the `81_000_000` band (`81_000_000 + MEXT food number`) so they never collide with USDA or custom ids; each food keeps its MEXT `foodCode` and native `nameJa`. MEXT ships no English names, so `description` is a curated English name for the foods recipes use, otherwise a Hepburn romanisation of the kana (`scripts/lib/romaji.mjs`) — kanji-heavy names keep their native form, and English coverage grows as recipes need it. It is a generic reference table with no branded entries, so it needs no brand filter.
+
+Regenerate it from three git-ignored MEXT Excel inputs in `scripts/data-raw/` (the main table plus the fatty-acids and carbohydrates supplements, joined on food number) with:
+
+```sh
+node scripts/build-japan.mjs
+```
+
+satFat/MUFA/PUFA come from the fatty-acids supplement and total sugars from the carbohydrates supplement (summed from the component mono/di-saccharides). MEXT's special values map as `Tr` → 0, `(x)` → estimated `x`, `-`/blank → unknown (field omitted).
+
 ## `food-scoring.json`
 
 Hand-curated, cited scoring metadata for a **subset** of the foods above, keyed by `fdcId` and merged at author time by the glycemic engine (`src/core/gi.ts`) and the matcher. It covers the common ingredients we hold cited values for; foods without an entry still contribute nutrients (and macros/Nutri-Score/inflammation), just no GI. Kept separate from `usda-foods.json` so regenerating the USDA nutrients never wipes the curated values. Per food, optional:
