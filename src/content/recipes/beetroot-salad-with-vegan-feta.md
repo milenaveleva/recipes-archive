@@ -34,7 +34,7 @@ ingredients:
     item: feta
     grams: 100
     fdcId: 2259796
-    matchConfidence: high
+    matchConfidence: medium
   - raw: 1 pear
     quantity: 1
     item: pear
@@ -61,9 +61,9 @@ ingredients:
     quantity: 2
     unit: tablespoon
     item: extra virgin olive oil
-    grams: 27
+    grams: 26.8
     milliliters: 29.5736
-    fdcId: 171413
+    fdcId: 748608
     matchConfidence: high
   - raw: 1 tablespoon balsamic vinegar
     quantity: 1
@@ -94,19 +94,19 @@ ingredients:
     excludeFromNutrition: true
 nutrition:
   perServing:
-    energyKcal: 250
-    energyKj: 1047
+    energyKcal: 191
+    energyKj: 797
     protein_g: 8
-    fat_g: 26.5
-    satFat_g: 5
+    fat_g: 19.7
+    satFat_g: 5.1
     carbs_g: 16
     fiber_g: 4.4
     sugar_g: 8.9
-    sodium_mg: 310
+    sodium_mg: 309
     availableCarb_g: 11.6
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: 0
     category: general
     version: "2023"
   inflammation:
@@ -114,9 +114,9 @@ nutrition:
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 16.3
+    nrf: 20.4
     version: NRF9.3
   computedAt: "2026-06-26"
   dataSources:
