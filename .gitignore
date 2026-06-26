@@ -23,3 +23,8 @@ worker/node_modules/
 worker/.wrangler/
 # large raw datasets (we commit pruned JSON, not raw dumps)
 scripts/data-raw/
+# Phenol-Explorer raw export — a local build input for scripts/build-phenol-explorer.mjs.
+# We commit the derived src/data/polyphenols.json + src/data/phenol-crosswalk.json, not
+# the full upstream database (whose redistribution is gated).
+src/data/complete_composition_data.csv
+src/data/foods_having_composition_data.csv

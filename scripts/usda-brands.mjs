@@ -221,10 +221,27 @@ export function shouldDrop(food) {
 }
 
 const SCORING_PATH = fileURLToPath(new URL('../src/data/food-scoring.json', import.meta.url));
+const POLYPHENOL_PATH = fileURLToPath(new URL('../src/data/polyphenols.json', import.meta.url));
+const CROSSWALK_PATH = fileURLToPath(new URL('../src/data/phenol-crosswalk.json', import.meta.url));
 
-/** The fdcIds carrying curated GI/inflammation/FVL — these must never be dropped. */
+/** fdcIds carrying a curated score datum — GI/FVL (food-scoring.json) or a polyphenol
+ *  value (polyphenols.json, and the phenol-crosswalk.json that generates it) — which the
+ *  branded/category filter must never drop, or that datum would be orphaned. The data
+ *  files also hold `_doc`/`_source` meta keys; those are non-integer and skipped. */
 export function curatedIds() {
-  return new Set(Object.keys(JSON.parse(readFileSync(SCORING_PATH, 'utf8'))).map(Number));
+  const ids = new Set();
+  const add = (path, fromValues) => {
+    let obj;
+    try { obj = JSON.parse(readFileSync(path, 'utf8')); } catch { return; }
+    for (const x of fromValues ? Object.values(obj) : Object.keys(obj)) {
+      const n = Number(x);
+      if (Number.isInteger(n)) ids.add(n);
+    }
+  };
+  add(SCORING_PATH, false);    // keys: fdcId → { gi, fvl }
+  add(POLYPHENOL_PATH, false); // keys: fdcId → { polyphenol_mg }
+  add(CROSSWALK_PATH, true);   // values: Phenol-Explorer name → fdcId
+  return ids;
 }
 
 // Volume unit → millilitres (mirror of src/core/units.ts ML_PER, US customary)
@@ -399,14 +416,15 @@ export function serializeFoods(foods) {
   return `[\n${normalized.map((f) => `  ${JSON.stringify(f)}`).join(',\n')}\n]\n`;
 }
 
-/** Throw if the filtered set would orphan any curated food-scoring entry. */
+/** Throw if the filtered set would orphan any curated/scored entry. */
 export function assertCuratedPresent(foods) {
   const have = new Set(foods.map((f) => f.fdcId));
   const missing = [...curatedIds()].filter((id) => !have.has(id));
   if (missing.length) {
     throw new Error(
-      `branded filter would orphan curated food-scoring ids: ${missing.join(', ')} — ` +
-        `add them to KEEP_IDS in scripts/usda-brands.mjs or remove them from food-scoring.json`,
+      `branded filter would orphan curated ids: ${missing.join(', ')} — add them to ` +
+        `KEEP_IDS in scripts/usda-brands.mjs, or remove them from ` +
+        `food-scoring.json / polyphenols.json / phenol-crosswalk.json`,
     );
   }
 }

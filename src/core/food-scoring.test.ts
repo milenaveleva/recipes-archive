@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import foods from '../data/usda-foods.json';
 import scoring from '../data/food-scoring.json';
 import polyphenols from '../data/polyphenols.json';
+import crosswalk from '../data/phenol-crosswalk.json';
 
 type Food = { fdcId?: number; description: string };
 type Scoring = { gi?: number; giConfidence?: string; fvl?: boolean };
@@ -53,5 +54,22 @@ describe('polyphenols.json integrity', () => {
       expect(p.polyphenol_mg, `polyphenol_mg ${id}`).toBeGreaterThan(0);
       expect(p.source, `source ${id}`).toBeTruthy();
     }
+  });
+});
+
+describe('phenol-crosswalk.json integrity', () => {
+  // The crosswalk (Phenol-Explorer name → fdcId) generates polyphenols.json. Guard it so a
+  // typo or a USDA re-ingest that drops a food can't silently orphan a polyphenol mapping.
+  const ids = Object.entries(crosswalk as Record<string, unknown>)
+    .filter(([k]) => !k.startsWith('_'))
+    .map(([, v]) => v as number);
+
+  it('maps every entry to a real food fdcId', () => {
+    const real = new Set(FOODS.map((f) => String(f.fdcId)));
+    expect(ids.filter((id) => !real.has(String(id)))).toEqual([]);
+  });
+
+  it('has no duplicate fdcId targets (one food per entry)', () => {
+    expect([...new Set(ids.filter((id, i) => ids.indexOf(id) !== i))]).toEqual([]);
   });
 });

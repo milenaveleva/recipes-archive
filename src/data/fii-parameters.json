@@ -8,7 +8,7 @@
     { "nutrient": "vitC_mg",       "dir": -1, "weight": 1, "cite": "antioxidant micronutrient" },
     { "nutrient": "vitE_mg",       "dir": -1, "weight": 1, "cite": "antioxidant micronutrient" },
     { "nutrient": "magnesium_mg",  "dir": -1, "weight": 1, "cite": "anti-inflammatory mineral (produce/whole-grain marker)" },
-    { "nutrient": "polyphenol_mg", "dir": -1, "weight": 2, "fallback": { "center": 0, "scale": 100 }, "cite": "polyphenols (key anti driver): Cassidy 2015; Dryer-Beers 2024; Wang 2024 FII; Phenol-Explorer. fallback referent (0, 100 mg/100g) used while corpus coverage is sparse — a food at ~100 mg/100g reads polyphenol-rich (Pérez-Jiménez 2010)" },
+    { "nutrient": "polyphenol_mg", "dir": -1, "weight": 2, "oneSided": true, "fallback": { "center": 0, "scale": 100 }, "cite": "polyphenols (key anti driver): Cassidy 2015; Dryer-Beers 2024; Wang 2024 FII. One-sided: referent centre pinned at 0 (no measurable polyphenols = baseline, so a low-polyphenol food never reads pro) and scale = the median content of the foods that carry a Phenol-Explorer value (the typical polyphenol-bearing food ≈ 1 unit anti); fixed 100 mg/100g scale only while coverage is <50 foods (Pérez-Jiménez 2010)" },
     { "nutrient": "freeSugar_g",   "dir": 1,  "weight": 1, "cite": "free-sugar estimate = max(0, sugar − 2·fibre), the 1:2 fibre:free-sugar dual carbohydrate-quality ratio (Liu 2020; Drewnowski 2022); intrinsic matrix-bound sugar is not penalised (Della Corte 2025; Reyneke 2025)" },
     { "nutrient": "sodium_mg",     "dir": 1,  "weight": 1, "cite": "high-sodium pro-inflammatory" }
   ]

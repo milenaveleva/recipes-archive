@@ -30,9 +30,9 @@
     },
     "polyphenol_mg": {
       "center": 0,
-      "scale": 100,
-      "n": 5,
-      "fallback": true
+      "scale": 175.8,
+      "n": 108,
+      "oneSided": true
     },
     "freeSugar_g": {
       "center": 0,
@@ -46,8 +46,8 @@
     }
   },
   "fiiRaw": {
-    "center": -0.1532125526747747,
-    "scale": 0.5822451286459683,
+    "center": -0.15859537256515666,
+    "scale": 0.5826694677347276,
     "n": 3303
   },
   "bands": {

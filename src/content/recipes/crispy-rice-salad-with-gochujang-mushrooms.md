@@ -210,7 +210,7 @@ nutrition:
     category: general
     version: "2023"
   inflammation:
-    score: 0
+    score: -0.1
     band: neutral
     method: fii v3
   balance:

@@ -68,17 +68,26 @@ for (const p of parameters) {
     if (v !== undefined) vals.push(v);
   }
   const stats = robustStats(vals);
-  // When corpus coverage is too sparse to estimate a robust referent (e.g. polyphenols,
-  // seeded for only a handful of foods), use the parameter's fixed open fallback so the
-  // signal is normalised against a sensible absolute, not a tiny cherry-picked sample.
-  if (p.fallback && stats.n < fallbackMinN) {
+  if (p.oneSided) {
+    // A one-sided anti signal (polyphenols): pin the centre at 0 so absence is the
+    // baseline and a below-typical food never flips pro, and use the median content as
+    // the scale — the typical food that carries the datum reads ≈ 1 unit. While coverage
+    // is too sparse to estimate a median (or it degenerates to 0), fall back to the
+    // parameter's fixed scale, and mark the referent so the fixed case is visible.
+    const usingFallback = !(stats.n >= fallbackMinN && stats.center > 0);
+    const scale = usingFallback ? (p.fallback?.scale ?? 1) : stats.center;
+    params[p.nutrient] = { center: 0, scale, n: stats.n, oneSided: true, ...(usingFallback ? { fallback: true } : {}) };
+  } else if (p.fallback && stats.n < fallbackMinN) {
+    // Coverage too sparse for a robust referent: normalise against the fixed open
+    // fallback, not a tiny cherry-picked sample.
     params[p.nutrient] = { center: p.fallback.center, scale: p.fallback.scale, n: stats.n, fallback: true };
   } else {
     params[p.nutrient] = stats;
   }
   const pr = params[p.nutrient];
   log(`  ${p.nutrient.padEnd(13)} n=${String(pr.n).padStart(4)}  ` +
-    `center=${pr.center.toFixed(2)}  scale=${pr.scale.toFixed(2)}${pr.fallback ? '  (fallback)' : ''}`);
+    `center=${pr.center.toFixed(2)}  scale=${pr.scale.toFixed(2)}` +
+    `${pr.fallback ? '  (fallback)' : pr.oneSided ? '  (one-sided)' : ''}`);
 }
 
 log('→ corpus distribution of the raw FII…');
