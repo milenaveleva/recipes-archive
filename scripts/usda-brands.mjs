@@ -200,6 +200,12 @@ const SCRAPPED_IDS = new Set([
   167572, 169631, 167576, 168789, 169617, 168790, 171192, 332282,
 ]);
 
+// Generic USDA foods dropped because a national table carries a more complete
+// record of the same food. 2003603 "Mushroom, beech" (no energy, sparse vector)
+// is superseded by MEXT's buna-shimeji (81008016), which carries energy, fibre,
+// fatty-acid breakdown and sugars.
+export const SUPERSEDED_IDS = new Set([2003603]);
+
 export function isExcludedFood(food) {
   if (SCRAPPED_IDS.has(food.fdcId)) return true;
   if (EXCLUDED_CATEGORIES.has(food.category)) return true;
@@ -227,6 +233,7 @@ export function isExcludedFood(food) {
 export function shouldDrop(food) {
   if (KEEP_IDS.has(food.fdcId)) return false;
   if (EXCLUDE_IDS.has(food.fdcId)) return true;
+  if (SUPERSEDED_IDS.has(food.fdcId)) return true;
   if (isExcludedFood(food)) return true;
   return isBranded(food);
 }

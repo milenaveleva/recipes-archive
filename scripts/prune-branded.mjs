@@ -19,6 +19,7 @@ import {
   shouldDrop,
   isExcludedFood,
   EXCLUDE_IDS,
+  SUPERSEDED_IDS,
   assertCuratedPresent,
   serializeFoods,
 } from './usda-brands.mjs';
@@ -36,13 +37,16 @@ async function main() {
   // Mutually exclusive, in shouldDrop's precedence order (denylist → exclusion
   // rule → ALL-CAPS heuristic), so the three counts sum to dropped.length.
   const byDenylist = dropped.filter((f) => EXCLUDE_IDS.has(f.fdcId)).length;
-  const byExclusion = dropped.filter((f) => !EXCLUDE_IDS.has(f.fdcId) && isExcludedFood(f)).length;
-  const byHeuristic = dropped.length - byDenylist - byExclusion;
+  const bySuperseded = dropped.filter((f) => !EXCLUDE_IDS.has(f.fdcId) && SUPERSEDED_IDS.has(f.fdcId)).length;
+  const byExclusion = dropped.filter(
+    (f) => !EXCLUDE_IDS.has(f.fdcId) && !SUPERSEDED_IDS.has(f.fdcId) && isExcludedFood(f),
+  ).length;
+  const byHeuristic = dropped.length - byDenylist - bySuperseded - byExclusion;
 
   log(
     `Dropping ${dropped.length} foods ` +
       `(${byHeuristic} branded by ALL-CAPS heuristic, ${byDenylist} by verified denylist, ` +
-      `${byExclusion} by category/dish exclusion) → ${kept.length} remain`,
+      `${byExclusion} by category/dish exclusion, ${bySuperseded} superseded by a national table) → ${kept.length} remain`,
   );
 
   // Never orphan a curated food-scoring entry.
