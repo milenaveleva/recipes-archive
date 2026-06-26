@@ -156,6 +156,7 @@ const PLANT_MILK_IDS = new Set([
   171942, // rice
   170173, 169409, 170172, // coconut (raw/canned/frozen)
   2257046, // oat
+  1999630, // soy (plain, unsweetened, shelf stable — the one kept variant)
 ]);
 
 // Plant words the rename anchors on. Only consulted for the curated PLANT_MILK_IDS,
@@ -247,7 +248,7 @@ export const CURATION_DROP_IDS = new Set([
   173730, // Yokan (adzuki-bean-and-sugar jelly)
   168478, 168479, 170540, 168477, 170131, 168481, 168480, 169300, // Succotash (corn + limas)
   173765, 173769, 175216, 175215, 173767, 175217, 174293, 174295,
-  173768, 173766, 172446, 172456, 2257044, 1999630, // soy milk (all flavour/fortification variants)
+  173768, 173766, 172446, 172456, 2257044, // soy milk (flavour/fortification variants; plain unsweetened 1999630 kept)
 ]);
 
 export function isExcludedFood(food) {
