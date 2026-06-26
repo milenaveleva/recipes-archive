@@ -115,6 +115,13 @@ const EXCLUDED_PREP_RE =
 const SWEETENED_RE = /(?<![a-z])sweetened\b/i;
 const FORTIFIED_RE = /(?<![a-z])fortified/i;
 
+// Finished/processed product forms from the curation sweep: carbonated drinks,
+// sweetened fruit nectars, imitation products (surimi seafood, imitation
+// vanilla), breaded/batter-dipped/par-fried items, and drink/cocktail mixes.
+// `\bnectar\b` spares "nectarine"; none of these collide with a kept base food.
+const EXCLUDED_FORM_RE =
+  /\bcarbonated\b|\bnectar\b|\bimitation\b|onion rings|breaded|batter-dipped|\bpar fried\b|energy drink|sports drink|soft drink|cocktail mix|drink mix/i;
+
 // Industrial fat products: margarine & margarine-like spreads (dropped wherever
 // the word appears, including foods made with margarine — banana bread, mashed
 // potatoes), and shortenings (dropped by leading noun, so a cooking oil that only
@@ -228,6 +235,15 @@ const SCRAPPED_IDS = new Set([
 // fatty-acid breakdown and sugars.
 export const SUPERSEDED_IDS = new Set([2003603]);
 
+// Bulk curation-sweep removals: finished/processed/composite foods (specific
+// alcoholic drinks, ice creams, prepared dishes, candied/cured items) with no
+// clean reusable pattern of their own. Kept in usda-curation-drop.json with each
+// food's description + sweep group for provenance and auditability, like
+// usda-exclude.json. Foods that DO share a clean pattern (carbonated, nectar,
+// imitation, breaded, drink mixes) are dropped by EXCLUDED_FORM_RE, not listed here.
+const CURATION_DROP_PATH = fileURLToPath(new URL('./usda-curation-drop.json', import.meta.url));
+const SWEEP_DROP_IDS = JSON.parse(readFileSync(CURATION_DROP_PATH, 'utf8')).map((r) => r.fdcId);
+
 // Hand-curated removals: generic-table entries that aren't cooking ingredients —
 // spinach pasta, hydrolyzed-vegetable-protein soy sauce, the processed
 // broth / bouillon / stock / consommé soup products (canned, condensed, dry,
@@ -249,6 +265,7 @@ export const CURATION_DROP_IDS = new Set([
   168478, 168479, 170540, 168477, 170131, 168481, 168480, 169300, // Succotash (corn + limas)
   173765, 173769, 175216, 175215, 173767, 175217, 174293, 174295,
   173768, 173766, 172446, 172456, 2257044, // soy milk (flavour/fortification variants; plain unsweetened 1999630 kept)
+  ...SWEEP_DROP_IDS, // curation-sweep removals (usda-curation-drop.json)
 ]);
 
 export function isExcludedFood(food) {
@@ -260,6 +277,7 @@ export function isExcludedFood(food) {
   if (EXCLUDED_PREP_RE.test(desc)) return true;
   if (SWEETENED_RE.test(desc) && !/not\s+sweetened/i.test(desc)) return true;
   if (FORTIFIED_RE.test(desc) && !/not\s+fortified/i.test(desc)) return true;
+  if (EXCLUDED_FORM_RE.test(desc)) return true;
   if (EXCLUDED_FAT_RE.test(desc)) return true;
   if (ENRICHED_RE.test(desc)) return true;
   // Drop dairy milk + all buttermilk, but keep curated plant milks (which are
