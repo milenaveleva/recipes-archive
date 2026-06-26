@@ -16,8 +16,10 @@ ingredients:
   - raw: 3 beetroots
     quantity: 3
     item: beetroots
-    matchConfidence: none
-    excludeFromNutrition: true
+    note: roasted
+    grams: 150
+    fdcId: 169146
+    matchConfidence: high
   - raw: 3/4 cup walnuts and pecans
     quantity: 0.75
     unit: cup
@@ -92,31 +94,31 @@ ingredients:
     excludeFromNutrition: true
 nutrition:
   perServing:
-    energyKcal: 234
-    energyKj: 978
-    protein_g: 7.4
-    fat_g: 26.4
+    energyKcal: 250
+    energyKj: 1047
+    protein_g: 8
+    fat_g: 26.5
     satFat_g: 5
-    carbs_g: 12.2
-    fiber_g: 3.7
-    sugar_g: 5.9
-    sodium_mg: 281
-    availableCarb_g: 8.6
+    carbs_g: 16
+    fiber_g: 4.4
+    sugar_g: 8.9
+    sodium_mg: 310
+    availableCarb_g: 11.6
   nutriScore:
     grade: B
     points: 1
     category: general
     version: "2023"
   inflammation:
-    score: -1
-    band: anti-inflammatory
+    score: -0.8
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
     score: 3
     band: low
-    nrf: 15.4
+    nrf: 16.3
     version: NRF9.3
-  computedAt: "2026-06-25"
+  computedAt: "2026-06-26"
   dataSources:
     - USDA FoodData Central
     - Nutri-Score 2023

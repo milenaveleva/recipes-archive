@@ -26,7 +26,8 @@ ingredients:
     unit: g
     item: kombu
     grams: 10
-    matchConfidence: none
+    fdcId: 168457
+    matchConfidence: high
     excludeFromNutrition: true
   - raw: 3 cups katsuobushi
     quantity: 3
