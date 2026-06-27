@@ -120,6 +120,64 @@ describe('searchFoods', () => {
     ];
     expect(searchFoods('mirin', foods)[0].food.fdcId).toBe(81016025);
   });
+
+  it('canonicalises Commonwealth ingredient names to the USDA term (synonyms)', () => {
+    const foods: FoodRecord[] = [
+      { fdcId: 1, description: 'Beets, cooked, boiled, drained', n: {} },
+      { fdcId: 2, description: 'Eggplant, raw', n: {} },
+      { fdcId: 3, description: 'Arugula, raw', n: {} },
+      { fdcId: 4, description: 'Squash, summer, zucchini, includes skin, raw', n: {} },
+      { fdcId: 5, description: 'Spinach, raw', n: {} },
+    ];
+    expect(searchFoods('beetroot', foods)[0].food.fdcId).toBe(1); // → "beet"
+    expect(searchFoods('beetroots', foods)[0].food.fdcId).toBe(1);
+    expect(searchFoods('aubergine', foods)[0].food.fdcId).toBe(2); // → "eggplant"
+    expect(searchFoods('rocket', foods)[0].food.fdcId).toBe(3); // → "arugula"
+    expect(searchFoods('courgette', foods)[0].food.fdcId).toBe(4); // → "zucchini"
+    expect(searchFoods('spinach', foods)[0].food.fdcId).toBe(5); // non-synonym unaffected
+  });
+
+  it('ranks a focused name above one that merely leads with the same noun', () => {
+    // Both saturate the displayed 1.0 score; the uncapped-score tie-break must
+    // surface "Beets" over "Beet greens" instead of letting the higher fdcId decide.
+    const foods: FoodRecord[] = [
+      { fdcId: 170375, description: 'Beet greens, raw', n: {} }, // higher id — would win the id tie-break
+      { fdcId: 169146, description: 'Beets, cooked, boiled, drained', n: {} },
+    ];
+    expect(searchFoods('beets', foods)[0].food.fdcId).toBe(169146);
+    expect(searchFoods('beetroot', foods)[0].food.fdcId).toBe(169146); // and via the synonym
+  });
+
+  it('matches a singular query against an "-e + s" plural without over-stemming', () => {
+    const foods: FoodRecord[] = [
+      { fdcId: 1, description: 'Apples, raw, fuji, with skin', n: {} },
+      { fdcId: 2, description: 'Apple juice, canned or bottled, unsweetened', n: {} },
+      { fdcId: 3, description: 'Oranges, raw, with peel', n: {} },
+    ];
+    // "apples"→"apple" must equal "apple" (not "appl"), so "fuji apple" reaches the
+    // whole fruit and not apple juice (which lacks "fuji", sharing only the noun).
+    expect(searchFoods('fuji apple', foods)[0].food.fdcId).toBe(1);
+    expect(searchFoods('orange', foods)[0].food.fdcId).toBe(3); // "oranges"→"orange"
+  });
+
+  it('ignores a parenthetical provenance aside when matching', () => {
+    const foods: FoodRecord[] = [
+      { fdcId: 1, description: "Cheese, cheddar (Includes foods for USDA's Food Distribution Program)", n: {} },
+      { fdcId: 2, description: 'Cheese, cheddar, sharp, sliced', n: {} },
+    ];
+    // The aside's ~5 tokens must not sink #1's precision below the sharp/sliced cut.
+    expect(searchFoods('cheddar cheese', foods)[0].food.fdcId).toBe(1);
+  });
+
+  it('keeps a parenthetical common name (only provenance asides are dropped)', () => {
+    const foods: FoodRecord[] = [
+      { fdcId: 1, description: 'Alcoholic beverage, rice (sake)', n: {} },
+      { fdcId: 2, description: 'Spinach, raw', n: {} },
+    ];
+    // "(sake)" is the food's common name, not a provenance note, so it stays matchable
+    // — unlike "(Includes foods for USDA's Food Distribution Program)".
+    expect(searchFoods('sake', foods)[0].food.fdcId).toBe(1);
+  });
 });
 
 describe('foodToNutrientVector / portionGrams', () => {

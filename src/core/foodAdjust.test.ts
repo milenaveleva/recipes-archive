@@ -13,7 +13,7 @@ describe('foodFormAdjustment (composition-blind FII correction)', () => {
 
   it('returns the cited delta for a fermented-dairy food', () => {
     expect(foodFormAdjustment(171284)).toBe(-1.3); // plain whole-milk yogurt
-    expect(foodFormAdjustment(328637)).toBe(-0.4); // cheddar
+    expect(foodFormAdjustment(173414)).toBe(-0.4); // cheddar
   });
 });
 
@@ -25,7 +25,7 @@ describe('applyFoodForm', () => {
 
   it('shifts an adjusted food’s tag by its delta (rounded to 0.1)', () => {
     expect(applyFoodForm(1.3, 171284)).toBe(0); // 1.3 + (−1.3) → neutral
-    expect(applyFoodForm(2, 328637)).toBe(1.6); // 2 + (−0.4)
+    expect(applyFoodForm(2, 173414)).toBe(1.6); // 2 + (−0.4)
   });
 
   it('re-clamps to the −2…+2 axis after adjusting', () => {

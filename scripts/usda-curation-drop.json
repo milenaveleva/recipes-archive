@@ -365,5 +365,20 @@
 {"fdcId":169888,"description":"Vegetarian meatloaf or patties","group":"processed/imitation product"},
 {"fdcId":174287,"description":"Veggie burgers or soyburgers, unprepared","group":"processed/imitation product"},
 {"fdcId":167687,"description":"Whipped topping, frozen, low fat","group":"processed/imitation product"},
-{"fdcId":167717,"description":"Yeast extract spread","group":"processed/imitation product"}
+{"fdcId":167717,"description":"Yeast extract spread","group":"processed/imitation product"},
+{"fdcId":173725,"description":"Fish, pollock, Alaska, raw","group":"data-poor duplicate (portionless twin of a richer record)"},
+{"fdcId":1750339,"description":"Apples, red delicious, with skin, raw","group":"data-poor duplicate (portionless twin of a richer record)"},
+{"fdcId":1750340,"description":"Apples, fuji, with skin, raw","group":"data-poor duplicate (portionless twin of a richer record)"},
+{"fdcId":1750341,"description":"Apples, gala, with skin, raw","group":"data-poor duplicate (portionless twin of a richer record)"},
+{"fdcId":1750342,"description":"Apples, granny smith, with skin, raw","group":"data-poor duplicate (portionless twin of a richer record)"},
+{"fdcId":1104812,"description":"Flour, rice, brown","group":"data-poor duplicate (portionless twin of a richer record)"},
+{"fdcId":334194,"description":"Fish, tuna, light, canned in water, drained solids","group":"data-poor duplicate (portionless twin of a richer record)"},
+{"fdcId":746764,"description":"Carrots, frozen, unprepared","group":"data-poor duplicate (portionless twin of a richer record)"},
+{"fdcId":328637,"description":"Cheese, cheddar","group":"data-poor duplicate (portionless twin of a richer record)"},
+{"fdcId":1104705,"description":"Flour, soy, defatted","group":"data-poor duplicate (portionless twin of a richer record)"},
+{"fdcId":2261422,"description":"Flour, potato","group":"data-poor duplicate (portionless twin of a richer record)"},
+{"fdcId":790214,"description":"Flour, rice, white, unenriched","group":"data-poor duplicate (portionless twin of a richer record)"},
+{"fdcId":2346391,"description":"Lettuce, leaf, green, raw","group":"data-poor duplicate (portionless twin of a richer record)"},
+{"fdcId":2346388,"description":"Lettuce, iceberg, raw","group":"data-poor duplicate (portionless twin of a richer record)"},
+{"fdcId":2346390,"description":"Lettuce, leaf, red, raw","group":"data-poor duplicate (portionless twin of a richer record)"}
 ]

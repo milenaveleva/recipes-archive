@@ -63,18 +63,43 @@ const STOP = new Set([
 // "tomatoes" matches "tomato". Applied to both query and food tokens, so even
 // imperfect stems still match consistently on each side.
 function stem(w: string): string {
-  if (w.length > 4 && w.endsWith('ies')) return `${w.slice(0, -3)}y`;
-  if (w.length > 3 && w.endsWith('es')) return w.slice(0, -2);
+  if (w.length > 4 && w.endsWith('ies')) return `${w.slice(0, -3)}y`; // berries → berry
+  // Strip "es" only for a genuine "-es" plural — a sibilant (boxes, dishes,
+  // churches) or a consonant+o (tomatoes, potatoes). An "-e + s" plural (apples,
+  // grapes, oranges) must lose only the "s" (→ apple, grape, orange), never the
+  // "e" too ("appl"/"grap"), or a singular query never matches the plural USDA name.
+  if (w.length > 4 && (w.endsWith('oes') || /(s|x|z|ch|sh)es$/.test(w))) return w.slice(0, -2);
   if (w.length > 3 && w.endsWith('s') && !w.endsWith('ss')) return w.slice(0, -1);
   return w;
 }
 
+// Alternate ingredient names mapped to the word USDA actually uses, so a
+// Commonwealth/regional term still finds the food (USDA names are US English).
+// Keyed and valued in STEMMED form and applied to query AND food tokens, so the
+// mapping is symmetric; the keys don't appear in USDA names, so food-side
+// application is a no-op and only the query is canonicalised.
+const SYNONYMS = new Map<string, string>([
+  ['beetroot', 'beet'], // British "beetroot(s)" → USDA "Beets"
+  ['aubergine', 'eggplant'],
+  ['courgette', 'zucchini'],
+  ['rocket', 'arugula'],
+]);
+
 function tokenize(s: string): string[] {
   return s
     .toLowerCase()
+    // Drop only PROVENANCE/processing parentheticals — those opening with "includes"
+    // or "may contain" (e.g. "(Includes foods for USDA's Food Distribution Program)",
+    // "(includes crisphead types)", "(may contain additives to retain moisture)").
+    // Their ~5 noise tokens otherwise sink a food's precision so a query lands on an
+    // unrelated food. A parenthetical that holds a COMMON NAME — "(fava beans)",
+    // "(ghee)", "(sake)", "(pak-choi)" — is kept; it's often the only token a user
+    // searches by, and USDA does not always put the identity before the parens.
+    .replace(/\((?:includes|may contain)[^)]*\)/g, ' ')
     .split(/[^a-z]+/)
     .filter((w) => w.length > 1 && !STOP.has(w))
-    .map(stem);
+    .map(stem)
+    .map((w) => SYNONYMS.get(w) ?? w);
 }
 
 function scoreMatch(queryTokens: string[], food: FoodRecord, requireAll: boolean): number {
@@ -112,10 +137,14 @@ function scoreMatch(queryTokens: string[], food: FoodRecord, requireAll: boolean
   // "Croissants, apple"), so a leading-token match strongly favours the base
   // food over a product that merely contains it — essential at full-dataset scale.
   const leads = desc[0] === qHead ? 0.3 : 0;
-  const score = Math.min(1, recall * 0.5 + precision * 0.25 + headIn + leads);
+  // Uncapped: returned so the caller can tie-break by the TRUE score among
+  // candidates whose displayed score saturates at 1 — the precision term then
+  // favours a focused name ("Beets", raw 1.15) over one that merely leads with
+  // the same noun ("Beet greens", 1.025), which the cap would otherwise collapse.
+  const raw = recall * 0.5 + precision * 0.25 + headIn + leads;
   // A purely-soft match (no exact token) is a guess — hold it in the 'low' band
   // so it shows as a pickable candidate but never auto-selects.
-  return matched === 0 ? Math.min(score, 0.5) : score;
+  return matched === 0 ? Math.min(raw, 0.5) : raw;
 }
 
 function confidenceFor(score: number): MatchConfidence {
@@ -153,30 +182,32 @@ export function searchFoods(
   const rank = (tokens: string[], requireAll: boolean) =>
     foods
       .map((food) => {
-        const score = scoreMatch(tokens, food, requireAll);
+        const raw = scoreMatch(tokens, food, requireAll);
+        const score = Math.min(1, raw); // displayed score + confidence basis, capped to 0..1
         // Small rank-only tie-breaker toward foods we hold curated data for, so a
         // common ingredient lands on its better-documented food among equally-good
         // matches. Gated on a non-low score so a weak curated match can't leapfrog
         // a better one to the top (where it would block auto-selection); `score`/
         // confidence stay the textual match.
         const boosted = preferIds && food.fdcId != null && preferIds.has(food.fdcId) && score >= 0.55;
-        return { food, score, ranked: boosted ? score + 0.05 : score };
+        return { food, score, raw, ranked: boosted ? score + 0.05 : score };
       })
       .filter((m) => m.score > 0)
       // Tie-break deterministically so selection never depends on the dataset's
       // file order: first prefer a food we can weigh by volume (one carrying a
-      // burnt-in density); then, on an exact tie, a domestic (USDA) record over a
+      // burnt-in density), so a volume amount always converts to grams; then the
+      // higher TRUE (uncapped) score, so a focused name ("Beets") outranks one that
+      // merely leads with the same noun ("Beet greens") once both saturate the
+      // displayed 1.0 cap; then, on an exact tie, a domestic (USDA) record over a
       // national-table one, so a higher-band national fdcId (81_000_000+) never wins
       // the id tie-break below and displaces the USDA generic (a regional food wins a
       // regional term by out-scoring, not by id); then the higher fdcId — Foundation
-      // foods carry the larger ids and the fuller nutrient analyses. So an equal-
-      // scoring generic ("chicken breast", "cooked rice") lands on the weighable
-      // Foundation reference rather than an SR-Legacy processed cut ("…roll", "Rice
-      // crackers").
+      // foods carry the larger ids and the fuller nutrient analyses.
       .sort(
         (a, b) =>
           b.ranked - a.ranked ||
           (b.food.per100g ? 1 : 0) - (a.food.per100g ? 1 : 0) ||
+          b.raw - a.raw ||
           (b.food.source ? 0 : 1) - (a.food.source ? 0 : 1) ||
           (b.food.fdcId ?? 0) - (a.food.fdcId ?? 0),
       );
