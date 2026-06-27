@@ -31,7 +31,7 @@ const abbrev = (d: (typeof dials)[number]) =>
   ) : (
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1 font-ui text-[0.72rem] text-ink-soft">
       {dials.map((d) => (
-        <span class="inline-flex items-center gap-1.5">
+        <span class="inline-flex items-center gap-1.5" title={`${d.label}: ${d.blurb}`}>
           <span class:list={['inline-block h-1.5 w-1.5 rounded-full', toneBg[d.tone]]} />
           <span class="font-semibold text-ink">{abbrev(d)}</span>
           <span>{d.value}</span>

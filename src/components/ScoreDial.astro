@@ -16,7 +16,11 @@ const { dial } = Astro.props;
 const dash = `${Math.round(dial.fill * 100)} 100`;
 ---
 
-<div class="flex flex-col items-center text-center gap-1.5 rounded-xl bg-card border border-line px-3 py-4">
+<div
+  class="group relative flex flex-col items-center text-center gap-1.5 rounded-xl bg-card border border-line px-3 py-4 outline-none focus-visible:ring-2 focus-visible:ring-line"
+  tabindex="0"
+  aria-label={`${dial.label}: ${dial.value}. ${dial.blurb}`}
+>
   <div class="relative h-16 w-16">
     <svg viewBox="0 0 36 36" class="absolute inset-0 h-full w-full -rotate-90" aria-hidden="true">
       <circle cx="18" cy="18" r="15.9155" fill="none" stroke="currentColor" stroke-width="2.5" class="text-line" />
@@ -47,4 +51,11 @@ const dash = `${Math.round(dial.fill * 100)} 100`;
   </div>
 
   <div class="eyebrow !text-[0.62rem] !tracking-[0.14em] leading-tight text-ink-soft">{dial.label}</div>
+
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute bottom-full left-1/2 z-30 mb-2 w-56 max-w-[78vw] -translate-x-1/2 rounded-lg bg-ink px-3 py-2 text-left font-ui text-[0.7rem] font-normal normal-case leading-snug tracking-normal text-paper opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100"
+  >
+    {dial.blurb}
+  </div>
 </div>

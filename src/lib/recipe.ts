@@ -281,6 +281,8 @@ export function inflammationFill(score?: number | null): number {
 export interface ScoreDial {
   key: 'gi' | 'gl' | 'nutri' | 'balance' | 'inflam';
   label: string;
+  /** One-line explanation of what the score measures, shown as a hover/focus tooltip. */
+  blurb: string;
   /** Display value, e.g. "64", "C", "-0.8", or "—" when absent. */
   value: string;
   /** Band word / qualifier shown under the label (CSS-capitalized). */
@@ -327,6 +329,8 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
     {
       key: 'gi',
       label: 'Glycemic Index',
+      blurb:
+        'How quickly this dish’s carbohydrate raises blood glucose (0–100, glucose = 100), carb-weighted from published values. An estimate that tends to read high for mixed meals.',
       value: gly?.gi != null ? String(Math.round(gly.gi)) : '—',
       sub: gly?.giBand || undefined,
       scaleRef: '0–100',
@@ -336,6 +340,8 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
     {
       key: 'gl',
       label: 'Glycemic Load',
+      blurb:
+        'Glycemic index scaled by the available carbohydrate in one serving — the total blood-glucose impact of a portion, not just its speed. Low ≤10, high ≥20.',
       value: gly?.gl != null ? String(Math.round(gly.gl)) : '—',
       sub: gly?.glBand || undefined,
       scaleRef: 'per serving',
@@ -345,6 +351,8 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
     {
       key: 'nutri',
       label: 'Nutrition Score',
+      blurb:
+        'Nutri-Score 2023 (A–E): fibre, protein and fruit/vegetables/legumes weighed against energy, sugar, saturated fat and salt. Built for packaged products, applied to the dish as an estimate.',
       value: grade ?? '—',
       sub: nutri ? 'Nutri-Score' : undefined,
       tone: nutriTone(grade),
@@ -355,6 +363,8 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
     {
       key: 'balance',
       label: 'Nutrient Balance',
+      blurb:
+        'Nutrient density (NRF9.3, 1–10): nine nutrients to encourage — protein, fibre, vitamins, minerals — minus three to limit (saturated fat, sugar, sodium), per 100 kcal.',
       value: bal?.score != null ? String(bal.score) : '—',
       sub: bal?.band || undefined,
       scaleRef: '1–10',
@@ -364,6 +374,8 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
     {
       key: 'inflam',
       label: 'Inflammation',
+      blurb:
+        'Food Inflammation Index (−2 anti to +2 pro): inflammatory potential from fat quality, fibre, antioxidants and polyphenols, energy-weighted across the dish. An estimate, not a clinical measure.',
       value: inflam?.score != null ? (inflam.score > 0 ? `+${inflam.score}` : String(inflam.score)) : '—',
       sub: inflam ? inflammationLabel(inflam.band) : undefined,
       scaleRef: '−2 … +2',
