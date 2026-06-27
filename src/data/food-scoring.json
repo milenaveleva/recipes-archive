@@ -39,5 +39,13 @@
   "170923": { "fvl": false },
   "172231": { "fvl": false },
   "173468": { "fvl": false },
-  "170931": { "fvl": false }
+  "170931": { "fvl": false },
+  "168931": { "gi": 78, "giSource": "Atkinson 2021 (white rice, short-grain, high amylopectin)", "giConfidence": "medium" },
+  "169146": { "gi": 64, "giSource": "Atkinson 2021 (beetroot, boiled)", "giConfidence": "medium" },
+  "169118": { "gi": 38, "giSource": "Atkinson 2021 (pear, raw)", "giConfidence": "high" },
+  "169214": { "gi": 52, "giSource": "Atkinson 2021 (sweet corn, boiled/canned)", "giConfidence": "medium" },
+  "168411": { "gi": 18, "giSource": "Atkinson 2021 (soybeans, boiled, edamame proxy)", "giConfidence": "low" },
+  "2262072": { "gi": 14, "giSource": "Atkinson 2021 (peanuts)", "giConfidence": "medium" },
+  "171942": { "gi": 85, "giSource": "Atkinson 2021 (rice beverage, hydrolyzed starch)", "giConfidence": "medium" },
+  "172442": { "gi": 32, "giSource": "Atkinson 2021 (soybeans, fermented-soy proxy)", "giConfidence": "low" }
 }

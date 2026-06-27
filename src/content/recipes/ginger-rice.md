@@ -88,6 +88,12 @@ nutrition:
     sugar_g: 1.4
     sodium_mg: 401
     availableCarb_g: 62.9
+  glycemic:
+    gi: 78
+    gl: 46
+    giBand: high
+    glBand: high
+    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
   nutriScore:
     grade: C
     points: 3
@@ -106,6 +112,7 @@ nutrition:
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
+    - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
