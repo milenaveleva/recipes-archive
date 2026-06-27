@@ -560,7 +560,7 @@ export function buildDraft(
             : undefined,
           balance: scores.balance,
           computedAt: dates.computedAt ?? createdAt,
-          dataSources: dataSourcesFor(scores),
+          dataSources: dataSourcesFor(scores, rows),
         }
       : undefined,
     createdAt,
@@ -568,9 +568,23 @@ export function buildDraft(
   };
 }
 
-/** Provenance strings for the scores actually present in the nutrition block. */
-function dataSourcesFor(scores: ScoreResult): string[] {
+/** Provenance strings for the scores actually present in the nutrition block, plus
+ *  the food-composition table each contributing ingredient draws on. */
+function dataSourcesFor(scores: ScoreResult, rows: IngredientRow[]): string[] {
   const sources = ['USDA FoodData Central'];
+  // Credit a national table when a *contributing* (non-excluded) ingredient is matched
+  // to one of its foods — the bundled dataset carries USDA generics plus curated
+  // national-table records (e.g. JP-MEXT for mirin/shimeji/katsuobushi).
+  if (
+    rows.some(
+      (r) =>
+        !r.excludeFromNutrition &&
+        r.selectedFdcId != null &&
+        FOOD_BY_ID.get(r.selectedFdcId)?.source === 'JP-MEXT',
+    )
+  ) {
+    sources.push('MEXT Standard Tables of Food Composition in Japan 2020');
+  }
   if (scores.glycemic) sources.push('Atkinson 2021 GI tables');
   if (scores.nutriScore) sources.push('Nutri-Score 2023');
   if (scores.inflammation) sources.push('Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols');

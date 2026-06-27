@@ -40,8 +40,8 @@ ingredients:
     unit: oz
     item: shimeji mushrooms
     grams: 170.1
-    fdcId: 169403
-    matchConfidence: medium
+    fdcId: 81008016
+    matchConfidence: high
   - raw: 1/2 tbsp gochujang paste
     quantity: 0.5
     unit: tbsp
@@ -71,8 +71,8 @@ ingredients:
     item: rice vinegar
     grams: 5
     milliliters: 4.92892
-    fdcId: 173469
-    matchConfidence: medium
+    fdcId: 81017016
+    matchConfidence: high
   - raw: 1 tsp sesame oil
     quantity: 1
     unit: tsp
@@ -188,16 +188,16 @@ ingredients:
     matchConfidence: low
 nutrition:
   perServing:
-    energyKcal: 830
-    energyKj: 3471
-    protein_g: 31.3
-    fat_g: 26.3
+    energyKcal: 826
+    energyKj: 3456
+    protein_g: 31.9
+    fat_g: 26.6
     satFat_g: 3.8
-    carbs_g: 125.6
-    fiber_g: 17.3
-    sugar_g: 16.4
-    sodium_mg: 732
-    availableCarb_g: 108.4
+    carbs_g: 124
+    fiber_g: 17.5
+    sugar_g: 15.6
+    sodium_mg: 733
+    availableCarb_g: 106.4
   glycemic:
     gi: 71
     gl: 57
@@ -216,17 +216,18 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 26.6
+    nrf: 27.6
     version: NRF9.3
-  computedAt: "2026-06-26"
+  computedAt: "2026-06-27"
   dataSources:
     - USDA FoodData Central
+    - MEXT Standard Tables of Food Composition in Japan 2020
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
 createdAt: "2026-06-20"
-updatedAt: "2026-06-26"
+updatedAt: "2026-06-27"
 ---
 
 ## Method

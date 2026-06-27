@@ -26,7 +26,9 @@ ingredients:
     quantity: 1
     unit: piece
     item: aburaage
-    matchConfidence: none
+    grams: 30
+    fdcId: 81004040
+    matchConfidence: high
   - raw: 30g young ginger
     quantity: 30
     unit: g
@@ -62,8 +64,10 @@ ingredients:
     quantity: 1
     unit: Tbsp
     item: mirin
+    grams: 18
     milliliters: 14.7868
-    matchConfidence: none
+    fdcId: 81016025
+    matchConfidence: high
   - raw: ¼ tsp salt
     quantity: 0.25
     unit: tsp
@@ -74,38 +78,39 @@ ingredients:
     matchConfidence: high
 nutrition:
   perServing:
-    energyKcal: 282
-    energyKj: 1180
-    protein_g: 5.5
-    fat_g: 0.5
-    satFat_g: 0.1
-    carbs_g: 61.2
-    fiber_g: 0.2
-    sugar_g: 0.2
-    sodium_mg: 400
-    availableCarb_g: 61
+    energyKcal: 321
+    energyKj: 1344
+    protein_g: 7.3
+    fat_g: 3
+    satFat_g: 0.4
+    carbs_g: 63.1
+    fiber_g: 0.3
+    sugar_g: 1.4
+    sodium_mg: 401
+    availableCarb_g: 62.9
   nutriScore:
     grade: C
     points: 3
     category: general
     version: "2023"
   inflammation:
-    score: 0.4
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
     score: 2
     band: poor
-    nrf: 2.4
+    nrf: 4.2
     version: NRF9.3
-  computedAt: "2026-06-26"
+  computedAt: "2026-06-27"
   dataSources:
     - USDA FoodData Central
+    - MEXT Standard Tables of Food Composition in Japan 2020
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
 createdAt: "2026-06-21"
-updatedAt: "2026-06-26"
+updatedAt: "2026-06-27"
 ---
 
 ## Method

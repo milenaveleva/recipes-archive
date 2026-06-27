@@ -34,7 +34,8 @@ ingredients:
     unit: cups
     item: katsuobushi
     milliliters: 709.764
-    matchConfidence: none
+    fdcId: 81010091
+    matchConfidence: high
     excludeFromNutrition: true
   - raw: 7 oz soft/silken tofu
     quantity: 7
@@ -99,7 +100,7 @@ nutrition:
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
 createdAt: "2026-06-20"
-updatedAt: "2026-06-26"
+updatedAt: "2026-06-27"
 ---
 
 ## Method

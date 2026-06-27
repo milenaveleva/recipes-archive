@@ -227,6 +227,19 @@ describe('buildDraft → markdown', () => {
     const draft = buildDraft({ ...EMPTY_FORM, title: 'X' }, rows, macro, '2026-06-19');
     expect(draft.nutrition).toBeUndefined();
   });
+
+  it('credits the MEXT national table when a contributing ingredient draws on it', () => {
+    const rows = [buildRow('30 g mirin')];
+    expect(rows[0].selectedFdcId).toBe(81016025); // matched the JP-MEXT mirin record
+    const draft = buildDraft({ ...EMPTY_FORM, title: 'Mirin test', servings: 2 }, rows, computeNutrition(rows, 2), '2026-06-27');
+    expect(draft.nutrition?.dataSources).toContain('MEXT Standard Tables of Food Composition in Japan 2020');
+  });
+
+  it('omits the MEXT source when no contributing ingredient draws on a national table', () => {
+    const rows = [buildRow('100 g spinach')];
+    const draft = buildDraft({ ...EMPTY_FORM, title: 'Spinach', servings: 2 }, rows, computeNutrition(rows, 2), '2026-06-27');
+    expect(draft.nutrition?.dataSources ?? []).not.toContain('MEXT Standard Tables of Food Composition in Japan 2020');
+  });
 });
 
 describe('buildDraft dates (edit)', () => {
