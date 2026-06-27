@@ -50,16 +50,16 @@ ingredients:
     item: soy sauce
     grams: 18
     milliliters: 14.7868
-    fdcId: 174278
-    matchConfidence: medium
+    fdcId: 81017007
+    matchConfidence: high
   - raw: 1 Tbsp sake
     quantity: 1
     unit: Tbsp
     item: sake
     grams: 14.6
     milliliters: 14.7868
-    fdcId: 167723
-    matchConfidence: medium
+    fdcId: 81016023
+    matchConfidence: high
   - raw: 1 Tbsp mirin
     quantity: 1
     unit: Tbsp
@@ -79,15 +79,15 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 321
-    energyKj: 1344
-    protein_g: 7.3
+    energyKj: 1343
+    protein_g: 7.1
     fat_g: 3
     satFat_g: 0.4
-    carbs_g: 63.1
-    fiber_g: 0.3
+    carbs_g: 63.3
+    fiber_g: 0.2
     sugar_g: 1.4
-    sodium_mg: 401
-    availableCarb_g: 62.9
+    sodium_mg: 406
+    availableCarb_g: 63.1
   glycemic:
     gi: 78
     gl: 46
@@ -106,7 +106,7 @@ nutrition:
   balance:
     score: 2
     band: poor
-    nrf: 4.2
+    nrf: 4
     version: NRF9.3
   computedAt: "2026-06-27"
   dataSources:
