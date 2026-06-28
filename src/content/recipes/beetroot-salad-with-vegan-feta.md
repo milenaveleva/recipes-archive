@@ -124,15 +124,21 @@ nutrition:
     band: low
     nrf: 10.8
     version: NRF9.3
-  computedAt: "2026-06-27"
+  processing:
+    minimallyProcessedPct: 78.3
+    ultraProcessedPct: 0
+    band: minimally-processed
+    method: NOVA (energy-weighted)
+  computedAt: "2026-06-28"
   dataSources:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
+    - NOVA food classification (energy-weighted)
 createdAt: "2026-06-23"
-updatedAt: "2026-06-27"
+updatedAt: "2026-06-28"
 ---
 
 ## Method

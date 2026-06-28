@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { classifyNova } from './nova.mjs';
 
 /**
  * Commercial-brand filter for the USDA generic-ingredient dataset.
@@ -468,6 +469,10 @@ function normalizeFood(f) {
   const out = { fdcId: f.fdcId, description, n: f.n };
   if (f.category) out.category = f.category;
   if (f.source) out.source = f.source; // provenance for a non-USDA (national-table) record
+  // Burnt-in NOVA processing group (1–4): a curated override, else the rule-based
+  // estimate from the (possibly renamed) name + category. Always present so the
+  // recipe processing score can energy-weight every matched food.
+  out.nova = NOVA_OVERRIDES[f.fdcId]?.nova ?? classifyNova(out);
   const d = DENSITY_OVERRIDES.get(f.fdcId) ?? volumeDensity(f.portions, f.description);
   if (d && Number.isFinite(d) && d > 0) out.per100g = per100gFields(d);
   // Once volume portions have been dropped there is nothing to re-derive from, so
@@ -486,6 +491,13 @@ function normalizeFood(f) {
 // fresh build-usda ingest would drop them.
 const CUSTOM_PATH = fileURLToPath(new URL('../src/data/custom-foods.json', import.meta.url));
 const CUSTOM_FOODS = JSON.parse(readFileSync(CUSTOM_PATH, 'utf8'));
+
+// Per-food NOVA processing-group corrections (fdcId → { nova }), layered over the
+// rule-based estimate in nova.mjs. Only foods whose name carries no marker the
+// rules can see are listed (national-table ferments, plant-milk drink substitutes,
+// prepared condiments). The `_doc` meta key is ignored — its value has no `nova`.
+const NOVA_OVERRIDE_PATH = fileURLToPath(new URL('../src/data/food-nova-overrides.json', import.meta.url));
+const NOVA_OVERRIDES = JSON.parse(readFileSync(NOVA_OVERRIDE_PATH, 'utf8'));
 
 // Curated national-table foods merged into the bundled matcher dataset so the
 // authoring picker can match regional ingredients (mirin, shimeji, katsuobushi…)

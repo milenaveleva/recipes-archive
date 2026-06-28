@@ -15,10 +15,12 @@ const dials = buildScoreDials(nutrition);
 const abbrev = (d: (typeof dials)[number]) =>
   d.key === 'inflam'
     ? 'Inflam'
-    : d.label
-        .split(' ')
-        .map((w) => w[0])
-        .join('');
+    : d.key === 'processing'
+      ? 'Proc'
+      : d.label
+          .split(' ')
+          .map((w) => w[0])
+          .join('');
 ---
 
 {

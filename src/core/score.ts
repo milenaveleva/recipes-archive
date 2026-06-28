@@ -24,6 +24,7 @@ import { computeInflammation, type Inflammation, type InflammationItem } from '.
 import { foodFII } from './fii';
 import { applyFoodForm } from './foodAdjust';
 import { computeBalance, type BalanceResult } from './balance';
+import { computeProcessing, type ProcessingItem, type ProcessingResult, type NovaGroup } from './processing';
 import type { NutrientVector } from './types';
 
 /** Sodium (g) → salt (g) conversion used by Nutri-Score. */
@@ -49,6 +50,8 @@ export interface ScoredIngredient {
   gi?: number | null;
   /** Whether the matched food is a fruit/vegetable/legume (Nutri-Score FVL). */
   fvl?: boolean;
+  /** Matched food's NOVA processing group, energy-weighted into the processing score. */
+  nova?: NovaGroup | null;
 }
 
 export interface ScoreResult {
@@ -56,6 +59,7 @@ export interface ScoreResult {
   nutriScore?: NutriResult;
   inflammation?: Inflammation;
   balance?: BalanceResult;
+  processing?: ProcessingResult;
 }
 
 /**
@@ -91,6 +95,7 @@ export function computeScores(
 ): ScoreResult {
   const carbSources: { availableCarb_g: number; gi: number | null }[] = [];
   const inflammationItems: InflammationItem[] = [];
+  const processingItems: ProcessingItem[] = [];
 
   // Per-nutrient sums and the mass of foods that reported each (so a missing
   // field is excluded rather than counted as zero).
@@ -104,15 +109,21 @@ export function computeScores(
     const grams = ing.grams;
     if (grams == null || !(grams > 0)) continue;
 
+    // The food's absolute energy contribution (kcal), shared by the two
+    // energy-weighted scores below; null when the food carries no usable energy.
+    const kcalPer100 = ing.nutrients ? energyKcalOf(ing.nutrients) : null;
+    const energyKcal = kcalPer100 != null ? (kcalPer100 * grams) / 100 : null;
+
     // Inflammation: a per-food FII computed from composition (fii.ts), energy-weighted
     // at the recipe level. Weight by the food's absolute energy contribution when known.
     const fii = foodFII(ing.nutrients);
     if (fii) {
       const tag = applyFoodForm(fii.tag, ing.fdcId);
-      const kcalPer100 = ing.nutrients ? energyKcalOf(ing.nutrients) : null;
-      const energyKcal = kcalPer100 != null ? (kcalPer100 * grams) / 100 : null;
       inflammationItems.push({ grams, energyKcal, tag });
     }
+
+    // Processing: the food's NOVA group, energy-weighted into the recipe distribution.
+    if (ing.nova != null) processingItems.push({ energyKcal, nova: ing.nova });
 
     const n = ing.nutrients;
     if (!n) continue;
@@ -201,6 +212,9 @@ export function computeScores(
 
   const inflammation = computeInflammation(inflammationItems);
   if (inflammation) result.inflammation = inflammation;
+
+  const processing = computeProcessing(processingItems);
+  if (processing) result.processing = processing;
 
   return result;
 }

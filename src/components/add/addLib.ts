@@ -268,6 +268,7 @@ export function rowsToScored(rows: IngredientRow[]): ScoredIngredient[] {
         nutrients: nutrientsFor(food),
         gi: s?.gi ?? null,
         fvl: s?.fvl ?? fvlFromCategory(food),
+        nova: food?.nova ?? null,
       };
     });
 }
@@ -559,6 +560,14 @@ export function buildDraft(
             ? { ...scores.inflammation, method: 'fii v3' }
             : undefined,
           balance: scores.balance,
+          processing: scores.processing
+            ? {
+                minimallyProcessedPct: scores.processing.minimallyProcessedPct,
+                ultraProcessedPct: scores.processing.ultraProcessedPct,
+                band: scores.processing.band,
+                method: 'NOVA (energy-weighted)',
+              }
+            : undefined,
           computedAt: dates.computedAt ?? createdAt,
           dataSources: dataSourcesFor(scores, rows),
         }
@@ -589,6 +598,7 @@ function dataSourcesFor(scores: ScoreResult, rows: IngredientRow[]): string[] {
   if (scores.nutriScore) sources.push('Nutri-Score 2023');
   if (scores.inflammation) sources.push('Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols');
   if (scores.balance) sources.push('Nutrient-Rich Foods Index (NRF9.3)');
+  if (scores.processing) sources.push('NOVA food classification (energy-weighted)');
   return sources;
 }
 

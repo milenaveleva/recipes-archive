@@ -34,6 +34,11 @@ const inflammationBand = z.enum([
   'pro-inflammatory',
 ]);
 const balanceBand = z.enum(['poor', 'low', 'moderate', 'high', 'excellent']);
+const processingBand = z.enum([
+  'minimally-processed',
+  'moderately-processed',
+  'highly-processed',
+]);
 const matchConfidence = z.enum(['high', 'medium', 'low', 'none']);
 
 const ingredient = z.object({
@@ -116,6 +121,17 @@ const nutrition = z.object({
       /** Raw NRF9.3 per-100-kcal value retained for provenance. */
       nrf: z.number(),
       version: z.string().default('NRF9.3'),
+    })
+    .optional(),
+  /** Food-processing score (NOVA, energy-weighted): % of dish energy from minimally
+   *  processed foods + culinary ingredients (groups 1+2), higher = healthier, with
+   *  the ultra-processed (group 4) share shown alongside. */
+  processing: z
+    .object({
+      minimallyProcessedPct: z.number(),
+      ultraProcessedPct: z.number(),
+      band: processingBand,
+      method: z.string().default('NOVA (energy-weighted)'),
     })
     .optional(),
   /** ISO date (YYYY-MM-DD) the values were computed. */

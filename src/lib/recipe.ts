@@ -234,6 +234,25 @@ export function inflammationLabel(band?: string | null): string {
     .replace('Inflammatory', 'Inflam.');
 }
 
+/** Food-processing tone from the engine's band string, so the ring colour and the
+ *  band label never disagree and the 70/40 thresholds live only in `processing.ts`
+ *  (the inflammation dial derives its tone from its band the same way). */
+export function processingTone(band?: string | null): Tone {
+  if (!band) return 'unknown';
+  if (band === 'minimally-processed') return 'good';
+  if (band === 'moderately-processed') return 'mid';
+  return 'bad';
+}
+
+/** Display label for a processing band ('minimally-processed' → 'Minimally Processed'). */
+export function processingLabel(band?: string | null): string {
+  if (!band) return '—';
+  return band
+    .split('-')
+    .map((w) => (w ? w[0].toUpperCase() + w.slice(1) : w))
+    .join(' ');
+}
+
 /* ---- score dials (value → position on its reference scale) ----
  * Each medallion is a ring that fills to where the value sits on its scale, so a
  * bare number is interpretable at a glance ("64 out of 100", not just "64"). The
@@ -279,7 +298,7 @@ export function inflammationFill(score?: number | null): number {
 }
 
 export interface ScoreDial {
-  key: 'gi' | 'gl' | 'nutri' | 'balance' | 'inflam';
+  key: 'gi' | 'gl' | 'nutri' | 'balance' | 'inflam' | 'processing';
   label: string;
   /** One-line explanation of what the score measures, shown as a hover/focus tooltip. */
   blurb: string;
@@ -310,6 +329,11 @@ type NutritionLike =
       nutriScore?: { grade?: string | null } | null;
       inflammation?: { score?: number | null; band?: string | null } | null;
       balance?: { score?: number | null; band?: string | null } | null;
+      processing?: {
+        minimallyProcessedPct?: number | null;
+        ultraProcessedPct?: number | null;
+        band?: string | null;
+      } | null;
     }
   | null
   | undefined;
@@ -324,6 +348,7 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
   const nutri = nutrition?.nutriScore ?? undefined;
   const inflam = nutrition?.inflammation ?? undefined;
   const bal = nutrition?.balance ?? undefined;
+  const proc = nutrition?.processing ?? undefined;
   const grade = nutri?.grade ?? null;
   return [
     {
@@ -382,6 +407,17 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       tone: inflammationTone(inflam?.band),
       fill: inflammationFill(inflam?.score),
     },
+    {
+      key: 'processing',
+      label: 'Processing',
+      blurb:
+        'Share of the dish’s energy from minimally processed foods and basic culinary ingredients (NOVA groups 1–2), with the ultra-processed share (NOVA 4) shown beneath. Higher = less processed. A rough estimate — processing is judged by food type.',
+      value: proc?.minimallyProcessedPct != null ? `${Math.round(proc.minimallyProcessedPct)}%` : '—',
+      sub: proc ? processingLabel(proc.band) : undefined,
+      scaleRef: proc?.ultraProcessedPct != null ? `UPF ${Math.round(proc.ultraProcessedPct)}%` : undefined,
+      tone: processingTone(proc?.band),
+      fill: proc?.minimallyProcessedPct != null ? clamp01(proc.minimallyProcessedPct / 100) : 0,
+    },
   ];
 }
 
@@ -391,7 +427,8 @@ export function hasAnyScore(nutrition: NutritionLike): boolean {
     nutrition?.glycemic ||
     nutrition?.nutriScore ||
     nutrition?.inflammation ||
-    nutrition?.balance
+    nutrition?.balance ||
+    nutrition?.processing
   );
 }
 

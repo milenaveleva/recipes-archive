@@ -5,7 +5,7 @@
  * with the value centred and a label beneath. Pure presentational; data comes
  * from `buildScoreDials`.
  */
-import { toneText, type ScoreDial } from '../lib/recipe';
+import { toneText, toneBg, type ScoreDial } from '../lib/recipe';
 
 interface Props {
   dial: ScoreDial;
@@ -51,6 +51,26 @@ const dash = `${Math.round(dial.fill * 100)} 100`;
   </div>
 
   <div class="eyebrow !text-[0.62rem] !tracking-[0.14em] leading-tight text-ink-soft">{dial.label}</div>
+  {dial.sub && <div class="font-ui text-[0.66rem] capitalize leading-tight text-ink-faint">{dial.sub}</div>}
+
+  {
+    dial.grades ? (
+      <div class="mt-0.5 flex gap-0.5" aria-hidden="true">
+        {dial.grades.map((g, i) => (
+          <span
+            class:list={[
+              'flex h-4 w-4 items-center justify-center rounded font-ui text-[0.6rem] font-semibold',
+              i === dial.activeGrade ? `${toneBg[dial.tone]} text-paper` : 'bg-paper-2 text-ink-faint',
+            ]}
+          >
+            {g}
+          </span>
+        ))}
+      </div>
+    ) : (
+      dial.scaleRef && <div class="font-ui text-[0.6rem] tabular-nums text-ink-faint">{dial.scaleRef}</div>
+    )
+  }
 
   <div
     aria-hidden="true"

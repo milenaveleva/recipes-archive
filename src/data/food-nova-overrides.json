@@ -1,0 +1,17 @@
+{
+  "_doc": "Per-food NOVA processing-group corrections, keyed by USDA/national-table fdcId. Layered on top of the rule-based estimate in scripts/nova.mjs (override wins) and stamped into usda-foods.json by serializeFoods. Only foods whose name carries no marker the rules can see are listed here — national-table ferments, prepared condiments, ready-to-serve broths, and formulated plant-milk drink substitutes (whose rename to 'Milk, <plant>' strips the signal). NOVA assignment has low inter-rater agreement; these are estimates. Group: 1 minimally processed, 2 culinary ingredient, 3 processed, 4 ultra-processed.",
+  "81004040": { "nova": 3, "reason": "aburaage — deep-fried tofu pouch (processed)" },
+  "81010091": { "nova": 3, "reason": "katsuobushi — dried, smoked, fermented bonito (processed)" },
+  "81016023": { "nova": 3, "reason": "sake — fermented rice wine (processed alcoholic drink)" },
+  "81016025": { "nova": 3, "reason": "mirin — fermented sweet rice seasoning (processed)" },
+  "81017007": { "nova": 3, "reason": "soy sauce, koikuchi — fermented condiment (processed)" },
+  "172234": { "nova": 3, "reason": "Dijon mustard — prepared condiment (processed)" },
+  "171583": { "nova": 3, "reason": "vegetable broth, ready-to-serve — processed cooking liquid" },
+  "2257045": { "nova": 4, "reason": "almond drink, unsweetened — formulated plant-milk substitute (ultra-processed)" },
+  "1999631": { "nova": 4, "reason": "almond drink, plain — formulated plant-milk substitute (ultra-processed)" },
+  "174820": { "nova": 4, "reason": "almond drink, chocolate RTD — formulated plant-milk substitute (ultra-processed)" },
+  "174832": { "nova": 4, "reason": "almond drink, chocolate RTD — formulated plant-milk substitute (ultra-processed)" },
+  "171942": { "nova": 4, "reason": "rice drink — formulated plant-milk substitute, hydrolyzed starch (ultra-processed)" },
+  "2257046": { "nova": 4, "reason": "oat drink — formulated plant-milk substitute (ultra-processed)" },
+  "1999630": { "nova": 4, "reason": "soy drink, unsweetened — formulated plant-milk substitute (ultra-processed)" }
+}

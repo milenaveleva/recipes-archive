@@ -31,6 +31,12 @@ export interface FoodRecord {
    * from the food's own USDA volume portions; lets any volume amount be weighed.
    */
   per100g?: { cup: number; flOz: number; tsp: number; tbsp: number };
+  /**
+   * NOVA processing group (1 minimally processed, 2 culinary ingredient,
+   * 3 processed, 4 ultra-processed), stamped at build time by scripts/nova.mjs.
+   * Energy-weighted across a recipe into the processing score (core/processing.ts).
+   */
+  nova?: 1 | 2 | 3 | 4;
 }
 
 export type MatchConfidence = 'high' | 'medium' | 'low';
