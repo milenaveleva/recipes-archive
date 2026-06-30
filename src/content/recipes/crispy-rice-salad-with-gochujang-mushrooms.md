@@ -219,11 +219,11 @@ nutrition:
     nrf: 27.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 97.4
-    ultraProcessedPct: 1.7
+    minimallyProcessedPct: 88.9
+    ultraProcessedPct: 10.3
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-06-28"
+  computedAt: "2026-06-30"
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
@@ -233,7 +233,7 @@ nutrition:
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-06-20"
-updatedAt: "2026-06-28"
+updatedAt: "2026-06-30"
 ---
 
 ## Method

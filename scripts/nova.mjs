@@ -27,6 +27,16 @@
 const RE_NOVA4 =
   /\b(imitation|analog(?:ue)?s?|meatless|substitutes?|instant|hydrolyzed|hydrolysed|textured vegetable protein|infant formula|soft drink|energy drink|sports drink|margarine|shortening|flavored|flavoured)\b/i;
 
+// Nut & seed butters/pastes (peanut, almond, cashew, tahini, sunflower, sesame)
+// are ground-and-emulsified spreads — as sold they carry added oils, emulsifiers
+// and sugar — so they read as ultra-processed, not as the raw nut. "tahini" names
+// the sesame paste directly; the "<nut|seed> butter" shape catches the rest. It
+// does NOT touch dairy "Butter, …" (no nut/seed word in front), the
+// cocoa/nutmeg/ucuhuba "… butter" oils (no standalone "nut" token), "Fruit
+// butters, …", or "butternut" squash (one word, no " butter" suffix).
+const RE_NUT_BUTTER =
+  /\b(?:peanut|almond|cashew|hazelnut|walnut|pecan|macadamia|pistachio|sunflower|sesame|nut|seed)\s+butter\b|\btahini\b/i;
+
 // NOVA 3 — processed-food markers: preservation/transformation that turns a whole
 // food into a durable processed one. Word-bounded to avoid sub-word hits ("bread"
 // must not fire on "breadfruit"; "ham" must not fire on "graham"; "sauce" stays
@@ -69,8 +79,10 @@ export function classifyNova(food) {
   const lead = leadNoun(desc);
 
   // Ultra-processed markers win over everything (an imitation/instant form of an
-  // otherwise-whole food is still ultra-processed).
+  // otherwise-whole food is still ultra-processed; so is a nut/seed butter, which
+  // must be caught before the NOVA-2 "butter" leading-noun rule below).
   if (RE_NOVA4.test(desc)) return 4;
+  if (RE_NUT_BUTTER.test(desc)) return 4;
 
   // Culinary ingredients: the Fats and Oils category, sugar/salt/butter-type
   // leading nouns, and vinegar anywhere. Checked before NOVA 3 so a "salted"
