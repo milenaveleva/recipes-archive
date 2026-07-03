@@ -6,7 +6,7 @@ imageUrl: https://media.thisislagom.com/images/how-to-make-almond-millk-05.2e16d
 source:
   name: thisislagom.com
   url: https://www.thisislagom.com/vegan-recipes/smoothies-and-drinks/milk-recipes/how-make-almond-milk/
-servings: 4
+servings: 1
 prepTime: PT12H
 cookTime: PT15M
 totalTime: PT12H15M
@@ -44,16 +44,16 @@ ingredients:
     matchConfidence: medium
 nutrition:
   perServing:
-    energyKcal: 252
-    energyKj: 1055
-    protein_g: 8.3
-    fat_g: 19.2
-    satFat_g: 1.4
-    carbs_g: 16.5
-    fiber_g: 4.9
-    sugar_g: 8
-    sodium_mg: 53
-    availableCarb_g: 11.6
+    energyKcal: 1009
+    energyKj: 4221
+    protein_g: 33.1
+    fat_g: 76.7
+    satFat_g: 5.7
+    carbs_g: 66
+    fiber_g: 19.4
+    sugar_g: 31.9
+    sodium_mg: 212
+    availableCarb_g: 46.6
   nutriScore:
     grade: A
     points: 0
