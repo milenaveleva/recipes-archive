@@ -7,9 +7,9 @@ source:
   name: thisislagom.com
   url: https://www.thisislagom.com/vegan-recipes/smoothies-and-drinks/milk-recipes/how-make-almond-milk/
 servings: 4
-prepTime: PT120H
+prepTime: PT12H
 cookTime: PT15M
-totalTime: PT120H15M
+totalTime: PT12H15M
 ingredients:
   - raw: 2 cups raw almonds (soaked overnight and rinsed)
     quantity: 2
