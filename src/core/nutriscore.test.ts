@@ -111,6 +111,15 @@ describe('computeNutriScore — protein-exclusion rule', () => {
     expect(r.points).toBe(-1);
     expect(r.grade).toBe('A');
   });
+
+  it('caps red-meat protein at 2 points (2023 rule)', () => {
+    // energy 1046 kJ → 3; satfat 7 → 6; salt 0.1 → 0; negatives = 9 (<11); protein 26 → 7 pts.
+    const beef: NutriInput = { energyKj: 1046, sugars_g: 0, satFat_g: 7, salt_g: 0.1, protein_g: 26, fiber_g: 0, fvlPercent: 0 };
+    expect(computeNutriScore(beef).points).toBe(2); // 9 − 7 → B
+    const red = computeNutriScore({ ...beef, isRedMeat: true });
+    expect(red.points).toBe(7); // protein capped at 2: 9 − 2 → C
+    expect(red.grade).toBe('C');
+  });
 });
 
 describe('beverages 2023 sub-algorithm', () => {

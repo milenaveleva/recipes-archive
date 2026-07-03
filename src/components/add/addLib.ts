@@ -10,6 +10,7 @@ import { canonicalUnit, classifyUnit, volumeToMilliliters } from '../../core/uni
 import { searchFoods, type FoodRecord, type FoodMatch, type MatchConfidence } from '../../core/match';
 import { computeMacros, type MacroComputation } from '../../core/nutrition';
 import { computeScores, type ScoredIngredient, type ScoreResult, type ScoreOptions } from '../../core/score';
+import { nutrientsFor as nutrientsForShared, fvlFromCategory } from '../../core/recipeScore';
 import type { NutriCategory } from '../../core/nutriscore';
 import type { MetricAmount, NutrientVector, ParsedLine, ResolvedIngredient } from '../../core/types';
 import type { DraftIngredient, RecipeDraft } from '../../core/markdown';
@@ -65,11 +66,11 @@ interface PolyphenolEntry {
 }
 const POLYPHENOLS = polyphenolData as Record<string, PolyphenolEntry>;
 
-/** Per-100g nutrients for a matched food, with the merged polyphenol value (FII input). */
+/** Per-100g nutrients for a matched food, with the merged polyphenol value (FII input).
+ *  The FVL heuristic + polyphenol merge live in core/recipeScore.ts so the authoring
+ *  island and the rescorer/reproducibility check assemble every score identically. */
 function nutrientsFor(food: FoodRecord | undefined): NutrientVector | null {
-  if (!food?.n) return null;
-  const poly = food.fdcId != null ? POLYPHENOLS[String(food.fdcId)] : undefined;
-  return poly?.polyphenol_mg != null ? { ...food.n, polyphenol_mg: poly.polyphenol_mg } : food.n;
+  return nutrientsForShared(food, POLYPHENOLS);
 }
 // Foods we hold curated GI/inflammation/portion data for: preferred in matching
 // so a common ingredient still resolves to the richer-data food in the large set.
@@ -77,23 +78,6 @@ const CURATED_IDS = new Set(Object.keys(FOOD_SCORING).map(Number));
 
 function scoringFor(fdcId: number | null): FoodScoring | undefined {
   return fdcId != null ? FOOD_SCORING[String(fdcId)] : undefined;
-}
-
-/** USDA categories whose foods count toward the Nutri-Score fruit/veg/legume share. */
-const FVL_CATEGORIES = ['Vegetables', 'Fruits', 'Legumes'];
-// Excluded from the FVL share per Nutri-Score 2023: starchy staples, nuts & oils
-// (scored separately / not FVL), juices (beverages), and obviously-processed
-// forms. Deliberately NOT excluding "seed(s)" — legumes are described as
-// "…mature seeds…". Coarse by nature; FVL is confirmed per-ingredient in review.
-const NON_FVL =
-  /\b(potato|potatoes|cassava|yam|yams|plantain|plantains|taro|juice|nectar|oil|nut|nuts|peanut|peanuts|fried|breaded|chip|chips|crisp|crisps|snack|candied|sauce|ketchup|jam|jelly)\b/i;
-
-/** Derive the Nutri-Score FVL flag from a food's USDA category (scales to all
- *  foods); curated `fvl` always takes precedence over this heuristic. */
-function fvlFromCategory(food: FoodRecord | undefined): boolean {
-  if (!food?.category) return false;
-  if (!FVL_CATEGORIES.some((c) => food.category!.includes(c))) return false;
-  return !NON_FVL.test(food.description);
 }
 
 /** One reviewable ingredient line in the wizard. */
@@ -312,6 +296,12 @@ export interface FormState {
   nutriCategory: NutriCategory;
   /** Beverages: a non-nutritive sweetener is present (drives the Nutri-Score NNS penalty). */
   nnsPresent: boolean;
+  /** Beverages: the drink is plain water (Nutri-Score forces grade A). */
+  isWater: boolean;
+  /** General food: the dish IS a cheese (Nutri-Score keeps its protein points past the negative cap). */
+  isCheese: boolean;
+  /** General food: red/processed meat is the main protein (caps Nutri-Score protein points, Merz 2024). */
+  redMeat: boolean;
   tags: string; // comma-separated
   lists: string; // comma-separated
   imageUrl: string;
@@ -331,6 +321,9 @@ export const EMPTY_FORM: FormState = {
   category: '',
   nutriCategory: 'general',
   nnsPresent: false,
+  isWater: false,
+  isCheese: false,
+  redMeat: false,
   tags: '',
   lists: '',
   imageUrl: '',
@@ -391,7 +384,15 @@ export interface StoredRecipe {
   imageUrl?: string;
   source?: { name?: string; url?: string };
   ingredients?: StoredIngredient[];
-  nutrition?: { nutriScore?: { category?: NutriCategory; nnsPresent?: boolean } };
+  nutrition?: {
+    nutriScore?: {
+      category?: NutriCategory;
+      nnsPresent?: boolean;
+      isWater?: boolean;
+      isCheese?: boolean;
+      redMeat?: boolean;
+    };
+  };
 }
 
 /** Seed the form fields from a stored recipe's frontmatter (for editing). */
@@ -408,6 +409,9 @@ export function formFromRecipe(recipe: StoredRecipe, steps: string[]): FormState
     category: recipe.category ?? '',
     nutriCategory: recipe.nutrition?.nutriScore?.category ?? 'general',
     nnsPresent: recipe.nutrition?.nutriScore?.nnsPresent ?? false,
+    isWater: recipe.nutrition?.nutriScore?.isWater ?? false,
+    isCheese: recipe.nutrition?.nutriScore?.isCheese ?? false,
+    redMeat: recipe.nutrition?.nutriScore?.redMeat ?? false,
     tags: (recipe.tags ?? []).join(', '),
     lists: (recipe.lists ?? []).join(', '),
     imageUrl: recipe.imageUrl ?? '',
@@ -522,10 +526,29 @@ export function buildDraft(
   const scores: ScoreResult = macro.contributingCount
     ? computeRecipeScores(rows, form.servings, {
         nutriCategory: form.nutriCategory,
-        // Only beverages use the NNS penalty; ignore a stale flag if the category changed.
+        // Each flag is gated to the category it applies to, so a stale toggle left over
+        // from a category switch never reaches the engine.
         nnsPresent: form.nutriCategory === 'beverage' && form.nnsPresent,
+        isWater: form.nutriCategory === 'beverage' && form.isWater,
+        isCheese: form.nutriCategory === 'general' && form.isCheese,
+        redMeat: form.nutriCategory === 'general' && form.redMeat,
       })
     : {};
+  // Assemble the Nutri-Score block with the retained scoring inputs (flags) BEFORE the
+  // computed `coverage` — the same field order scripts/rescore-recipes.mjs emits — so an
+  // /add-authored block and a rescored one serialize identically (no spurious churn).
+  const nutriScoreDraft = (() => {
+    if (!scores.nutriScore) return undefined;
+    const { coverage, ...base } = scores.nutriScore;
+    return {
+      ...base,
+      nnsPresent: form.nutriCategory === 'beverage' && form.nnsPresent ? true : undefined,
+      isWater: form.nutriCategory === 'beverage' && form.isWater ? true : undefined,
+      isCheese: form.nutriCategory === 'general' && form.isCheese ? true : undefined,
+      redMeat: form.nutriCategory === 'general' && form.redMeat ? true : undefined,
+      coverage,
+    };
+  })();
   return {
     title: form.title.trim(),
     description: form.description.trim() || undefined,
@@ -549,13 +572,7 @@ export function buildDraft(
       ? {
           perServing: macro.perServing,
           glycemic: scores.glycemic,
-          nutriScore: scores.nutriScore
-            ? {
-                ...scores.nutriScore,
-                // Retain the NNS flag so an edit recomputes the same beverage grade.
-                nnsPresent: form.nutriCategory === 'beverage' && form.nnsPresent ? true : undefined,
-              }
-            : undefined,
+          nutriScore: nutriScoreDraft,
           inflammation: scores.inflammation
             ? { ...scores.inflammation, method: 'fii v3' }
             : undefined,

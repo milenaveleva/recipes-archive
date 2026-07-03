@@ -343,6 +343,24 @@ describe('editing round-trip (formFromRecipe / rowsFromIngredients)', () => {
     expect(form.nutriCategory).toBe('beverage');
     expect(form.nnsPresent).toBe(true);
   });
+
+  it('restores isCheese/redMeat (general) and isWater (beverage) from the stored nutriScore', () => {
+    const cheese = formFromRecipe(
+      { title: 'Halloumi bake', nutrition: { nutriScore: { category: 'general', isCheese: true } } },
+      [],
+    );
+    expect(cheese.isCheese).toBe(true);
+    const beef = formFromRecipe(
+      { title: 'Beef ragu', nutrition: { nutriScore: { category: 'general', redMeat: true } } },
+      [],
+    );
+    expect(beef.redMeat).toBe(true);
+    const water = formFromRecipe(
+      { title: 'Infused water', nutrition: { nutriScore: { category: 'beverage', isWater: true } } },
+      [],
+    );
+    expect(water.isWater).toBe(true);
+  });
 });
 
 describe('splitMethodBody', () => {
@@ -408,6 +426,20 @@ describe('edit preserves nnsPresent + surrounding body through serialization', (
     expect(body.indexOf('An intro line.')).toBeLessThan(body.indexOf('## Method'));
     expect(body.indexOf('## Method')).toBeLessThan(body.indexOf('## Notes'));
     expect(md.trimEnd().endsWith('- Shake well.')).toBe(true);
+  });
+
+  it('serializes a retained general-food flag BEFORE the computed coverage (matches the rescorer field order)', () => {
+    const rows = [buildRow('200 g red lentils')];
+    const draft = buildDraft(
+      { ...EMPTY_FORM, title: 'Lentil ragu', servings: 2, nutriCategory: 'general', redMeat: true },
+      rows,
+      computeNutrition(rows, 2),
+      '2026-06-20',
+    );
+    const md = toRecipeMarkdown(draft);
+    expect(md).toContain('redMeat: true');
+    expect(md).toContain('coverage:');
+    expect(md.indexOf('redMeat: true')).toBeLessThan(md.indexOf('coverage:'));
   });
 });
 

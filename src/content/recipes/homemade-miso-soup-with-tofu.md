@@ -64,43 +64,45 @@ ingredients:
   - raw: 1 green onion/scallion
     quantity: 1
     item: green onion/scallion
+    grams: 15
     fdcId: 170005
     matchConfidence: medium
-    excludeFromNutrition: true
 nutrition:
   perServing:
-    energyKcal: 64
-    energyKj: 270
+    energyKcal: 66
+    energyKj: 275
     protein_g: 5.8
     fat_g: 2.9
     satFat_g: 0.4
-    carbs_g: 5
-    fiber_g: 1
-    sugar_g: 1.4
+    carbs_g: 5.3
+    fiber_g: 1.1
+    sugar_g: 1.5
     sodium_mg: 654
-    availableCarb_g: 4
+    availableCarb_g: 4.2
   glycemic:
     gi: 32
     gl: 1
     giBand: low
     glBand: low
     gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    carbCoveragePct: 84
   nutriScore:
     grade: B
     points: 2
     category: general
     version: "2023"
+    coverage: 1
   inflammation:
-    score: 0.5
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
     score: 2
     band: poor
-    nrf: 5.1
+    nrf: 8.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 0.9
+    minimallyProcessedPct: 2.7
     ultraProcessedPct: 0
     band: highly-processed
     method: NOVA (energy-weighted)

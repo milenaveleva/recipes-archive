@@ -29,9 +29,10 @@ export type BalanceBand = 'poor' | 'low' | 'moderate' | 'high' | 'excellent';
 /**
  * Per-100g aggregate nutrient concentrations of the finished dish plus its
  * energy density (kcal/100g), the basis the NRF9.3 per-100-kcal figure is
- * derived from. Each value is a concentration over the mass of the foods that
- * reported it (a nutrient no contributing food carries arrives as 0 — unknown,
- * never fabricated), mirroring the Nutri-Score basis in score.ts.
+ * derived from. The caller (score.ts) supplies encouraged nutrients over the
+ * full dish mass (a nutrient no food carries arrives as 0, biasing the score
+ * down, never up) and the nutrients-to-limit over their seen mass (a food that
+ * omits one imputes the typical amount, so missing data can't inflate the score).
  */
 export interface BalanceInput {
   energyKcalPer100g: number;
@@ -82,12 +83,13 @@ const MRV = {
 const LIMITING_KEYS = Object.keys(MRV) as (keyof typeof MRV)[];
 
 /**
- * Raw-NRF breakpoints for the integer score, anchored to the bundled food
- * dataset's per-100-kcal percentile distribution (p50 ≈ 39 → 5, p90 ≈ 181 → 8,
- * p95 ≈ 265 → 9). A net-negative balance (limits outweigh the encouraged
- * nutrients) maps to 1; only top-decile nutrient density reaches 10.
+ * Raw-NRF breakpoints for the integer score, anchored to the shipped food
+ * dataset's per-100-kcal percentile distribution (p50 ≈ 46 → 5, p90 ≈ 198 → 8,
+ * p95 ≈ 290 → 9; regenerate with scripts/build-nrf-anchors.mjs). A net-negative
+ * balance (limits outweigh the encouraged nutrients, ≈ 11% of foods) maps to 1;
+ * only the top few % of nutrient density reaches 10.
  */
-const SCORE_BREAKPOINTS = [0, 10, 20, 35, 55, 85, 125, 185, 280];
+const SCORE_BREAKPOINTS = [0, 10, 22, 36, 56, 90, 140, 210, 340];
 
 /** Integer 1–10 from a raw NRF value: 1 + how many breakpoints it reaches. */
 export function balanceScoreOf(nrf: number): number {

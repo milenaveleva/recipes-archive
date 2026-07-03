@@ -137,6 +137,22 @@ describe('searchFoods', () => {
     expect(searchFoods('spinach', foods)[0].food.fdcId).toBe(5); // non-synonym unaffected
   });
 
+  it('treats "whole" as soft-optional: "whole onion" still resolves to the base food at full confidence', () => {
+    // No plain onion food carries "whole", so requiring it would drop to the relaxed
+    // pass at a lower confidence; the soft-optional retry requires only "onion".
+    const top = searchFoods('1 whole onion', FOODS)[0];
+    expect(top.food.fdcId).toBe(3); // Onions, raw
+    expect(top.confidence).toBe('high');
+  });
+
+  it('still lets "whole" steer grains — prefers the whole-grain flour over the refined one', () => {
+    const foods: FoodRecord[] = [
+      { fdcId: 10, description: 'Wheat flour, white, all-purpose, enriched', n: {} },
+      { fdcId: 11, description: 'Wheat flour, whole-grain', n: {} },
+    ];
+    expect(searchFoods('whole wheat flour', foods)[0].food.fdcId).toBe(11);
+  });
+
   it('ranks a focused name above one that merely leads with the same noun', () => {
     // Both saturate the displayed 1.0 score; the uncapped-score tie-break must
     // surface "Beets" over "Beet greens" instead of letting the higher fdcId decide.

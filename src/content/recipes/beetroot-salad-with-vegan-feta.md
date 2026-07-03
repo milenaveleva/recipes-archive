@@ -1,6 +1,6 @@
 ---
-title: Beetroot Salad with Feta
-description: Our Festive Beetroot Salad topped with Feta Cheese and drizzled with a delicious Balsamic Vinaigrette, checks all the boxes to be on your special menus for this Holiday season.
+title: Beetroot Salad with Vegan Feta
+description: Our Festive Beetroot Salad topped with plant-based Feta and drizzled with a delicious Balsamic Vinaigrette, checks all the boxes to be on your special menus for this Holiday season.
 image: ./images/beetroot-salad-with-vegan-feta.jpg
 imageUrl: https://sixhungryfeet.com/wp-content/uploads/2023/09/Beetroot-Salad-7.jpg
 source:
@@ -17,7 +17,7 @@ ingredients:
     quantity: 3
     item: beetroots
     note: roasted
-    grams: 150
+    grams: 250
     fdcId: 169146
     matchConfidence: high
   - raw: 3/4 cup walnuts and pecans
@@ -33,8 +33,8 @@ ingredients:
     unit: g
     item: feta
     grams: 100
-    fdcId: 2259796
-    matchConfidence: medium
+    fdcId: 9000003
+    matchConfidence: high
   - raw: 1 pear
     quantity: 1
     item: pear
@@ -94,39 +94,41 @@ ingredients:
     excludeFromNutrition: true
 nutrition:
   perServing:
-    energyKcal: 318
-    energyKj: 1331
-    protein_g: 8
-    fat_g: 26.4
-    satFat_g: 5
-    carbs_g: 16
-    fiber_g: 4.4
-    sugar_g: 8.9
-    sodium_mg: 310
-    availableCarb_g: 11.6
+    energyKcal: 319
+    energyKj: 1334
+    protein_g: 3.6
+    fat_g: 27
+    satFat_g: 7
+    carbs_g: 20.1
+    fiber_g: 5
+    sugar_g: 11
+    sodium_mg: 246
+    availableCarb_g: 15
   glycemic:
-    gi: 47
-    gl: 4
+    gi: 50
+    gl: 5
     giBand: low
     glBand: low
     gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    carbCoveragePct: 70
   nutriScore:
     grade: C
-    points: 4
+    points: 5
     category: general
     version: "2023"
+    coverage: 0.98
   inflammation:
     score: -0.5
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 3
-    band: low
-    nrf: 10.8
+    score: 2
+    band: poor
+    nrf: 4.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 78.3
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 81.6
+    ultraProcessedPct: 18.2
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-06-28"

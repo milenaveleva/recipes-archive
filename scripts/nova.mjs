@@ -23,9 +23,14 @@
 // pruned from the dataset already; this catches the stragglers (and any future
 // national-table/custom additions). Carbonated/soft drinks are pruned by name
 // already, so no bare "soda" marker here — it would mis-fire on "soda bread" and
-// "baking soda". Word-bounded so "analog" never hits "analogous" prose.
+// "baking soda". Confectionery and industrial condiments (candy, ketchup) are
+// formulations, not preserved whole foods, so they belong here, not in NOVA 3;
+// `confectionery|confections?` is bounded so it can't reach "confectioners' " (icing)
+// sugar, a NOVA-2 culinary ingredient. Chocolate is handled by a dedicated rule below
+// (its NOVA group turns on sweetened-vs-unsweetened, which a flat marker can't express).
+// Word-bounded so "analog" never hits "analogous" prose and "cocoa" stays lower.
 const RE_NOVA4 =
-  /\b(imitation|analog(?:ue)?s?|meatless|substitutes?|instant|hydrolyzed|hydrolysed|textured vegetable protein|infant formula|soft drink|energy drink|sports drink|margarine|shortening|flavored|flavoured)\b/i;
+  /\b(imitation|analog(?:ue)?s?|meatless|substitutes?|instant|hydrolyzed|hydrolysed|textured vegetable protein|infant formula|soft drink|energy drink|sports drink|margarine|shortening|flavored|flavoured|candies|candy|confectionery|confections?|ketchup|catsup)\b/i;
 
 // Nut & seed butters/pastes (peanut, almond, cashew, tahini, sunflower, sesame)
 // are ground-and-emulsified spreads — as sold they carry added oils, emulsifiers
@@ -42,7 +47,7 @@ const RE_NUT_BUTTER =
 // must not fire on "breadfruit"; "ham" must not fire on "graham"; "sauce" stays
 // off "applesauce" because the joined token has no boundary).
 const RE_NOVA3 =
-  /\b(cheese|tofu|tempeh|natto|miso|gochujang|doenjang|kimchi|sauerkraut|pickled?|canned|cured|smoked|salted|corned|brined|fermented|sausages?|bacon|hams?|salami|pastrami|prosciutto|jerky|anchov\w*|sardines?|lox|bread|tortillas?|pita|naan|crackers?|sauces?|paste|relish|fish sauce|oyster sauce|soy sauce|tamari|shoyu|in syrup)\b/i;
+  /\b(cheese|tofu|tempeh|natto|miso|gochujang|doenjang|kimchi|sauerkraut|pickle[sd]?|canned|cured|smoked|salted|corned|brined|fermented|sausages?|bacon|hams?|salami|pastrami|prosciutto|jerky|anchov\w*|sardines?|lox|bread|tortillas?|pita|naan|crackers?|sauces?|paste|relish|jams?|jelly|jellies|marmalade|preserves|fish sauce|oyster sauce|soy sauce|tamari|shoyu|in syrup)\b/i;
 
 // Alcoholic drinks (wine, beer, spirits) are processed/ultra-processed, matched by
 // USDA's "Alcoholic beverage[s], …" leading phrase rather than the bare words
@@ -83,6 +88,11 @@ export function classifyNova(food) {
   // must be caught before the NOVA-2 "butter" leading-noun rule below).
   if (RE_NOVA4.test(desc)) return 4;
   if (RE_NUT_BUTTER.test(desc)) return 4;
+  // Chocolate: a SWEETENED chocolate (dark/milk bars, the sugar-laden "mexican" baking
+  // tablet) is a NOVA-4 confection; UNSWEETENED baking chocolate / cocoa liquor is pure
+  // cocoa mass — a culinary ingredient that stays low, like cocoa powder. The split can't
+  // live in RE_NOVA4 (a flat marker can't read the sweetened/unsweetened distinction).
+  if (/\bchocolate\b/i.test(desc) && !/\bunsweetened\b/i.test(desc)) return 4;
 
   // Culinary ingredients: the Fats and Oils category, sugar/salt/butter-type
   // leading nouns, and vinegar anywhere. Checked before NOVA 3 so a "salted"

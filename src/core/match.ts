@@ -52,7 +52,7 @@ export interface FoodMatch {
 const STOP = new Set([
   'the', 'a', 'an', 'of', 'and', 'or', 'with', 'without', 'to', 'taste',
   'fresh', 'frozen', 'dried', 'raw', 'cooked', 'boiled', 'roasted', 'ground',
-  'whole', 'large', 'medium', 'small', 'chopped', 'minced', 'sliced', 'diced',
+  'large', 'medium', 'small', 'chopped', 'minced', 'sliced', 'diced',
   'grated', 'crushed', 'peeled', 'rinsed', 'drained', 'finely', 'roughly',
   'ripe', 'organic', 'extra', 'virgin', 'for', 'into', 'cut', 'pieces',
   'shelled', 'thawed', 'shredded', 'skinless', 'boneless', 'pitted', 'seeded',
@@ -60,6 +60,12 @@ const STOP = new Set([
   'trimmed', 'cubed', 'crumbled', 'blanched', 'steamed', 'cooled', 'divided',
   'leaf', 'leaves',
 ]);
+// Soft-optional tokens: kept (not stopped) so they still steer RANKING — "whole" is
+// identity for grains and dairy ("whole wheat" vs refined, "whole milk" vs skim) — but
+// NOT required in the all-tokens pass, so a quantity-descriptor use ("1 whole onion")
+// still resolves to the base food ("Onions, raw") at full confidence instead of dropping
+// to the relaxed pass. searchFoods retries requiring only the non-optional tokens.
+const OPTIONAL = new Set(['whole']);
 // NB: words that distinguish one food from another (e.g. "smoked", "toasted",
 // colours, "sweet") are NOT stopwords — they are identity, and under the
 // all-tokens-required rule they correctly steer "smoked salmon" to the smoked
@@ -89,6 +95,13 @@ const SYNONYMS = new Map<string, string>([
   ['aubergine', 'eggplant'],
   ['courgette', 'zucchini'],
   ['rocket', 'arugula'],
+  ['prawn', 'shrimp'], // British "prawns" → USDA "Shrimp"
+  ['sultana', 'raisin'],
+  ['swede', 'rutabaga'],
+  ['maize', 'corn'],
+  ['groundnut', 'peanut'],
+  ['yoghurt', 'yogurt'], // British spelling → USDA "Yogurt"
+  ['chilli', 'chili'], // British spelling → USDA "chili"
 ]);
 
 function tokenize(s: string): string[] {
@@ -184,7 +197,12 @@ export function searchFoods(
 ): FoodMatch[] {
   const itemTokens = tokenize(query);
   if (!itemTokens.length) return [];
-  const noteTokens = note ? tokenize(note) : [];
+  // An "or …" clause in the note names an ALTERNATIVE ingredient ("chardonnay",
+  // note "or other dry white wine"), not a refinement of this one — drop it from
+  // the tokens that steer the match so it can't pull the result toward the
+  // substitute, while the full note is still retained on the ingredient.
+  const matchNote = note ? note.replace(/\bor\b[\s\S]*$/i, '').trim() : '';
+  const noteTokens = matchNote ? tokenize(matchNote) : [];
   const rank = (tokens: string[], requireAll: boolean) =>
     foods
       .map((food) => {
@@ -221,7 +239,21 @@ export function searchFoods(
   // head-noun — the leads/head ranking then favours a food whose identity is the
   // item ("Cream, …") over one led by the note word ("Toppings, … cream").
   let ranked = noteTokens.length ? rank([...noteTokens, ...itemTokens], true) : [];
+  // Soft re-rank: the note may carry identity ("milk", note "…I used soy") that no
+  // single food satisfies together with the item under the strict AND rule. Before
+  // dropping the note entirely, try a relaxed note+item match so that identity still
+  // steers ranking ("soy" → "Soy milk" over plain dairy "Milk"). Only runs when the
+  // strict note pass found nothing, so it can never override a clean full match.
+  if (!ranked.length && noteTokens.length) ranked = rank([...noteTokens, ...itemTokens], false);
   if (!ranked.length) ranked = rank(itemTokens, true);
+  // Soft-optional retry: a descriptor like "whole" ("whole onion") ranked in the passes
+  // above (so "whole wheat" already preferred the whole-grain food) but no base food
+  // carries it. Before relaxing to a partial match, require only the identity tokens so
+  // the base food ("Onions, raw") still resolves under the strict AND rule at full score.
+  if (!ranked.length) {
+    const required = itemTokens.filter((t) => !OPTIONAL.has(t));
+    if (required.length && required.length < itemTokens.length) ranked = rank(required, true);
+  }
   if (!ranked.length) ranked = rank(itemTokens, false);
   return ranked.slice(0, limit).map(({ food, score }) => ({ food, score, confidence: confidenceFor(score) }));
 }

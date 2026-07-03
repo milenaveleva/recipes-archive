@@ -43,6 +43,15 @@ describe('foodFII (per-food inflammatory potential)', () => {
     expect(sparse.coverage).toBeCloseTo(1 / 8, 5);
   });
 
+  it('shrinks a data-poor food toward neutral: below quorum coverage it can not reach ±2', () => {
+    // Only free-sugar + sodium present → 2/8 params (0.25 coverage); the tag bound is
+    // 2·(0.25/0.5) = 1.0, so even overwhelming pro signals can't pin it to the +2 extreme.
+    const sparse = foodFII({ sugar_g: 90, sodium_mg: 5000 })!;
+    expect(sparse.coverage).toBeCloseTo(2 / 8, 5);
+    expect(sparse.tag).toBeGreaterThan(0);
+    expect(sparse.tag).toBeLessThanOrEqual(1.0);
+  });
+
   // Pin the whole pipeline (parameters + committed reference distribution + engine) to a
   // few real foods, so re-tuning weights or regenerating the reference can't silently
   // shift recipe scores without updating these expectations (and rescoring recipes).
@@ -55,11 +64,11 @@ describe('foodFII (per-food inflammatory potential)', () => {
       const n: NutrientVector = p != null ? { ...food.n, polyphenol_mg: p } : food.n;
       return foodFII(n)!.tag;
     };
-    expect(tagOf(173410)).toBe(1.7); // butter, salted → pro
+    expect(tagOf(173410)).toBe(1.6); // butter, salted → pro
     expect(tagOf(170173)).toBe(1.7); // coconut milk (saturated fat) → pro
     expect(tagOf(169655)).toBe(1.4); // granulated sugar (no fibre → all free sugar) → pro
-    expect(tagOf(171413)).toBe(-1); // olive oil (MUFA + Phenol-Explorer polyphenol) → anti
-    expect(tagOf(170187)).toBe(-2); // walnuts (PUFA + fibre + Mg) → anti
-    expect(tagOf(168462)).toBe(-1.5); // spinach (+ Phenol-Explorer polyphenol) → anti
+    expect(tagOf(171413)).toBe(-0.9); // olive oil (MUFA + Phenol-Explorer polyphenol) → anti
+    expect(tagOf(170187)).toBe(-1.8); // walnuts (PUFA + fibre + Mg) → anti
+    expect(tagOf(168462)).toBe(-1.4); // spinach (+ Phenol-Explorer polyphenol) → anti
   });
 });

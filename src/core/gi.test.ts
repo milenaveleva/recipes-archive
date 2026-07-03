@@ -60,4 +60,21 @@ describe('computeGlycemics', () => {
     )!;
     expect(g.gi).toBe(50);
   });
+
+  it('rejects a negative GI as invalid data but still counts its carb toward coverage', () => {
+    const g = computeGlycemics(
+      [
+        { availableCarb_g: 40, gi: 50 },
+        { availableCarb_g: 60, gi: -5 }, // invalid → dropped from the composite
+      ],
+      1,
+    )!;
+    expect(g.gi).toBe(50); // composite ignores the negative-GI source
+    expect(g.carbCoveragePct).toBe(40); // but its 60 g of carb is untabulated → 40/100 covered
+  });
+
+  it('reports carbCoveragePct: full when every carb source has a GI, partial otherwise', () => {
+    expect(computeGlycemics([{ availableCarb_g: 30, gi: 78 }, { availableCarb_g: 20, gi: 32 }], 2)!.carbCoveragePct).toBe(100);
+    expect(computeGlycemics([{ availableCarb_g: 25, gi: 70 }, { availableCarb_g: 75, gi: null }], 1)!.carbCoveragePct).toBe(25);
+  });
 });

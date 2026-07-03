@@ -454,6 +454,11 @@ const DENSITY_OVERRIDES = new Map([
   // a tbsp/cup amount can't be weighed; use the density its 10 SR Legacy peanut-
   // butter siblings share (~1.082 g/ml ≈ 258 g/cup, e.g. 172471).
   [2262072, 1.082],
+  // "Cream, heavy" (2346386, Foundation) lists no usable volume portion, so a "1 cup"
+  // amount can't be weighed and defaulted far too light (whipped-cream density). Heavy
+  // cream (~36% fat) is a fluid ~0.994 g/ml ≈ 235 g/cup (USDA SR "Cream, fluid, heavy
+  // whipping" 170859; engineeringtoolbox); use the fluid density, not the whipped one.
+  [2346386, 0.994],
 ]);
 
 /**

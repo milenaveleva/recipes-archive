@@ -92,6 +92,8 @@ const nutrition = z.object({
       giBand: band3.optional(),
       glBand: band3.optional(),
       gi_source: z.string().optional(),
+      /** % of the recipe's available carbohydrate that carried a published GI (<100 → GL biased low). */
+      carbCoveragePct: z.number().optional(),
     })
     .optional(),
   nutriScore: z
@@ -104,6 +106,14 @@ const nutrition = z.object({
         .default('general'),
       /** Beverage non-nutritive-sweetener flag — a scoring input retained so an edit recomputes the same grade. */
       nnsPresent: z.boolean().optional(),
+      /** Plain-water flag (beverages graded A) — retained scoring input. */
+      isWater: z.boolean().optional(),
+      /** Cheese flag (protein kept past the negative cap) — retained scoring input. */
+      isCheese: z.boolean().optional(),
+      /** Red-meat flag (protein capped at 2 points, 2023 rule) — retained scoring input. */
+      redMeat: z.boolean().optional(),
+      /** Least-reported share (0–1) of the profiling basis behind the grade. */
+      coverage: z.number().optional(),
     })
     .optional(),
   inflammation: z

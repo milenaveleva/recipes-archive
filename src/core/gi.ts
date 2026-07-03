@@ -34,6 +34,13 @@ export interface Glycemics {
   gl: number;
   giBand: Band;
   glBand: Band;
+  /**
+   * Share (%) of the recipe's available carbohydrate that came from a food with a
+   * published GI. Below ~100 the composite GI/GL is derived from only part of the
+   * carbohydrate, so the GL is biased LOW (untabulated carbohydrate adds nothing);
+   * surfaced so a low-coverage figure can be flagged as the estimate it is.
+   */
+  carbCoveragePct: number;
 }
 
 /** Below this, a food carries too little available carbohydrate to affect GI. */
@@ -61,10 +68,14 @@ export function computeGlycemics(sources: GiCarbSource[], servings: number): Gly
 
   let weightedGi = 0; // Σ(GIᵢ·availCarbᵢ)
   let carb = 0; // Σ availCarbᵢ (GI-known sources only)
+  let totalCarb = 0; // Σ availCarbᵢ over ALL meaningful carb sources (GI known or not)
   for (const s of sources) {
-    if (s.gi == null || !Number.isFinite(s.gi)) continue;
     const c = s.availableCarb_g;
     if (!Number.isFinite(c) || c <= CARB_EPSILON_G) continue;
+    totalCarb += c;
+    // GI is a 0–100+ scale; a negative value is invalid data, not a low GI — drop it
+    // (its carbohydrate still counts toward totalCarb, so coverage reflects the gap).
+    if (s.gi == null || !Number.isFinite(s.gi) || s.gi < 0) continue;
     weightedGi += s.gi * c;
     carb += c;
   }
@@ -72,5 +83,7 @@ export function computeGlycemics(sources: GiCarbSource[], servings: number): Gly
 
   const gi = round(weightedGi / carb, 0);
   const gl = round(weightedGi / 100 / perServings, 0);
-  return { gi, gl, giBand: giBandOf(gi), glBand: glBandOf(gl) };
+  // What fraction of the meaningful carbohydrate the GI/GL actually saw; totalCarb ≥ carb > 0.
+  const carbCoveragePct = round((carb / totalCarb) * 100, 0);
+  return { gi, gl, giBand: giBandOf(gi), glBand: glBandOf(gl), carbCoveragePct };
 }

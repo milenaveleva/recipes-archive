@@ -26,8 +26,8 @@ ingredients:
     item: chili oil
     grams: 13.4
     milliliters: 14.7868
-    fdcId: 171413
-    matchConfidence: medium
+    fdcId: 9000004
+    matchConfidence: high
   - raw: 9 oz king oyster mushrooms
     quantity: 9
     unit: oz
@@ -46,8 +46,10 @@ ingredients:
     quantity: 0.5
     unit: tbsp
     item: gochujang paste
+    grams: 9
     milliliters: 7.3934
-    matchConfidence: none
+    fdcId: 9000002
+    matchConfidence: high
   - raw: 2 tsp tamari (low sodium preferred)
     quantity: 2
     unit: tsp
@@ -136,16 +138,18 @@ ingredients:
     unit: cup
     item: dairy-free milk
     note: I used soy
-    grams: 60
+    grams: 61
     milliliters: 59.147
-    fdcId: 171942
-    matchConfidence: medium
+    fdcId: 1999630
+    matchConfidence: high
   - raw: 1 tsp gochujang paste
     quantity: 1
     unit: tsp
     item: gochujang paste
+    grams: 6
     milliliters: 4.92892
-    matchConfidence: none
+    fdcId: 9000002
+    matchConfidence: high
   - raw: 1 1/2 cups shelled frozen edamame (thawed)
     quantity: 1.5
     unit: cups
@@ -174,7 +178,7 @@ ingredients:
     quantity: 1
     item: avocado
     note: diced
-    grams: 50
+    grams: 150
     fdcId: 171705
     matchConfidence: high
   - raw: 1/4 cup fresh mint (finely chopped)
@@ -188,39 +192,41 @@ ingredients:
     matchConfidence: low
 nutrition:
   perServing:
-    energyKcal: 826
-    energyKj: 3456
-    protein_g: 31.9
-    fat_g: 26.6
-    satFat_g: 3.8
-    carbs_g: 124
-    fiber_g: 17.5
-    sugar_g: 15.6
-    sodium_mg: 733
-    availableCarb_g: 106.4
+    energyKcal: 920
+    energyKj: 3850
+    protein_g: 34.3
+    fat_g: 34.3
+    satFat_g: 5
+    carbs_g: 129.3
+    fiber_g: 21.1
+    sugar_g: 16
+    sodium_mg: 931
+    availableCarb_g: 108.2
   glycemic:
-    gi: 68
-    gl: 61
+    gi: 67
+    gl: 58
     giBand: medium
     glBand: high
     gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    carbCoveragePct: 81
   nutriScore:
     grade: A
     points: -1
     category: general
     version: "2023"
+    coverage: 0.77
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.4
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
     score: 4
     band: low
-    nrf: 27.6
+    nrf: 26.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88.9
-    ultraProcessedPct: 10.3
+    minimallyProcessedPct: 88.5
+    ultraProcessedPct: 9
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-06-30"

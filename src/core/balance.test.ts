@@ -19,21 +19,25 @@ const base = (over: Partial<BalanceInput>): BalanceInput => ({
   ...over,
 });
 
-describe('balanceScoreOf (NRF → 1–10 breakpoints [0,10,20,35,55,85,125,185,280])', () => {
+describe('balanceScoreOf (NRF → 1–10 breakpoints [0,10,22,36,56,90,140,210,340])', () => {
   it('maps a net-negative balance to 1 and climbs by breakpoint', () => {
     expect(balanceScoreOf(-1)).toBe(1);
     expect(balanceScoreOf(-500)).toBe(1);
     expect(balanceScoreOf(0)).toBe(2);
     expect(balanceScoreOf(9.9)).toBe(2);
     expect(balanceScoreOf(10)).toBe(3);
-    expect(balanceScoreOf(34)).toBe(4);
-    expect(balanceScoreOf(35)).toBe(5); // p50≈39 of the food set → mid-scale
-    expect(balanceScoreOf(84)).toBe(6);
-    expect(balanceScoreOf(85)).toBe(7);
-    expect(balanceScoreOf(184)).toBe(8);
-    expect(balanceScoreOf(185)).toBe(9);
-    expect(balanceScoreOf(279)).toBe(9);
-    expect(balanceScoreOf(280)).toBe(10);
+    expect(balanceScoreOf(35)).toBe(4);
+    expect(balanceScoreOf(36)).toBe(5); // p50≈40 of the food set → mid-scale
+    expect(balanceScoreOf(55)).toBe(5);
+    expect(balanceScoreOf(56)).toBe(6);
+    expect(balanceScoreOf(89)).toBe(6);
+    expect(balanceScoreOf(90)).toBe(7);
+    expect(balanceScoreOf(139)).toBe(7);
+    expect(balanceScoreOf(140)).toBe(8); // ≈ p83
+    expect(balanceScoreOf(209)).toBe(8);
+    expect(balanceScoreOf(210)).toBe(9); // ≈ p91
+    expect(balanceScoreOf(339)).toBe(9);
+    expect(balanceScoreOf(340)).toBe(10);
     expect(balanceScoreOf(10_000)).toBe(10); // clamped by the breakpoint count
   });
 

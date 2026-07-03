@@ -54,8 +54,9 @@ ingredients:
     matchConfidence: medium
   - raw: 1 litre vegetable broth
     quantity: 1
-    item: litre vegetable broth
-    grams: 390
+    unit: litre
+    item: vegetable broth
+    grams: 1000
     fdcId: 171583
     matchConfidence: low
   - raw: 2 medium carrots (peeled, cut into 7mm pieces)
@@ -78,7 +79,7 @@ ingredients:
     quantity: 1
     unit: cup
     item: heavy cream
-    grams: 120
+    grams: 235
     milliliters: 236.588
     fdcId: 2346386
     matchConfidence: high
@@ -115,38 +116,40 @@ ingredients:
     matchConfidence: high
 nutrition:
   perServing:
-    energyKcal: 502
-    energyKj: 2101
-    protein_g: 27.6
-    fat_g: 24.2
-    satFat_g: 13.2
-    carbs_g: 39.2
+    energyKcal: 606
+    energyKj: 2537
+    protein_g: 28.5
+    fat_g: 34.5
+    satFat_g: 19.1
+    carbs_g: 41.7
     fiber_g: 3.8
-    sugar_g: 5
-    sodium_mg: 1129
-    availableCarb_g: 35.3
+    sugar_g: 5.8
+    sodium_mg: 1587
+    availableCarb_g: 37.8
   glycemic:
     gi: 70
     gl: 19
     giBand: high
     glBand: medium
     gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    carbCoveragePct: 74
   nutriScore:
     grade: C
-    points: 3
+    points: 4
     category: general
     version: "2023"
+    coverage: 0.91
   inflammation:
-    score: 0.7
-    band: mildly-pro-inflammatory
+    score: 0.8
+    band: pro-inflammatory
     method: fii v3
   balance:
-    score: 4
+    score: 3
     band: low
-    nrf: 21.9
+    nrf: 10.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88.4
+    minimallyProcessedPct: 89.2
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

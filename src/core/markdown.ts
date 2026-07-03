@@ -33,14 +33,21 @@ export interface DraftNutrition {
     giBand?: 'low' | 'medium' | 'high';
     glBand?: 'low' | 'medium' | 'high';
     gi_source?: string;
+    /** % of the recipe's available carbohydrate that carried a published GI. */
+    carbCoveragePct?: number;
   };
   nutriScore?: {
     grade: 'A' | 'B' | 'C' | 'D' | 'E';
     points: number;
     version?: string;
     category?: 'general' | 'beverage' | 'fat-oil-nut-seed';
-    /** Beverage NNS flag — persisted so an edit recomputes the same grade. */
+    /** Retained scoring inputs — persisted so an edit recomputes the same grade. */
     nnsPresent?: boolean;
+    isWater?: boolean;
+    isCheese?: boolean;
+    redMeat?: boolean;
+    /** Least-reported share (0–1) of the profiling basis behind the grade. */
+    coverage?: number;
   };
   inflammation?: {
     score: number;
@@ -57,6 +64,13 @@ export interface DraftNutrition {
     band: 'poor' | 'low' | 'moderate' | 'high' | 'excellent';
     nrf: number;
     version?: string;
+  };
+  /** Food-processing score (NOVA, energy-weighted). */
+  processing?: {
+    minimallyProcessedPct: number;
+    ultraProcessedPct: number;
+    band: 'minimally-processed' | 'moderately-processed' | 'highly-processed';
+    method?: string;
   };
   computedAt?: string;
   dataSources?: string[];

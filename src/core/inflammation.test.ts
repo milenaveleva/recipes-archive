@@ -41,14 +41,14 @@ describe('computeInflammation (energy-weighted)', () => {
       { grams: 200, energyKcal: 20, tag: -2 }, // bulky watery veg
       { grams: 50, energyKcal: 400, tag: 2 }, // a splash of fat
     ])!;
-    // weights: max(20, 1·200)=200 vs max(400, 1·50)=400 → (−2·200 + 2·400)/600 = +0.67
-    expect(r.score).toBeCloseTo(0.7, 5);
-    expect(r.band).toBe('mildly-pro-inflammatory');
+    // weights: max(20, 0.3·200)=60 vs max(400, 0.3·50)=400 → (−2·60 + 2·400)/460 = +1.48
+    expect(r.score).toBeCloseTo(1.5, 5);
+    expect(r.band).toBe('pro-inflammatory');
   });
 
   it('floors weight by mass so a near-zero-calorie anti food still counts', () => {
     const r = computeInflammation([{ grams: 100, energyKcal: 0, tag: -2 }])!;
-    expect(r.score).toBe(-2); // weight = max(0, 1·100) = 100
+    expect(r.score).toBe(-2); // weight = max(0, 0.3·100) = 30
   });
 
   it('uses the mass floor when a food’s energy is unknown (null)', () => {
@@ -62,6 +62,6 @@ describe('computeInflammation (energy-weighted)', () => {
   });
 
   it('pins the mass-floor calibration constant', () => {
-    expect(FLOOR_KCAL_PER_G).toBe(1);
+    expect(FLOOR_KCAL_PER_G).toBe(0.3);
   });
 });

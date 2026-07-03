@@ -9,15 +9,21 @@
  * mean of per-food Food Inflammation Index scores (fii.ts + inflammation.ts). All
  * figures are estimates.
  *
- * Each Nutri-Score nutrient is summed only over the mass of foods that actually
- * report it — a food enters the per-100g basis only when it has a usable energy
- * value, and a missing macro field is treated as unknown rather than silently
- * zero (the contract in types.ts), so an incomplete imported food cannot dilute
- * the density of the foods that do carry data. Foods flagged excludeFromNutrition
- * (water, stock) are left out entirely; this slightly concentrates brothy
- * recipes versus an as-consumed basis, which is acceptable for an estimate.
+ * Nutri-Score and NRF9.3 both profile the finished dish as one per-100 g
+ * composition over the full nutrition-contributing mass (`basisGrams`, the mass of
+ * foods carrying a usable energy value) — the single-basis model Nutri-Score
+ * applies to a labelled product. A food that omits a field contributes 0 to that
+ * field's sum but still counts in the basis, so its concentration is diluted
+ * rather than re-based per nutrient. The one exception is NRF's nutrients-to-limit
+ * (sat fat, sugar, sodium): those read a seen-mass concentration (over only the
+ * mass that reported them) so a food omitting a limit datum imputes the typical
+ * amount instead of a 0 that would flatter the score. `nutriScore.coverage` records
+ * how much of the basis actually reported the profiling nutrients. Foods flagged
+ * excludeFromNutrition (water, stock) are left out entirely; this slightly
+ * concentrates brothy recipes versus an as-consumed basis, acceptable for an estimate.
  */
 import { availableCarbOf, energyKcalOf, KJ_PER_KCAL } from './nutrition';
+import { round } from './num';
 import { computeGlycemics, type Glycemics } from './gi';
 import { computeNutriScore, type NutriResult, type NutriCategory } from './nutriscore';
 import { computeInflammation, type Inflammation, type InflammationItem } from './inflammation';
@@ -56,7 +62,8 @@ export interface ScoredIngredient {
 
 export interface ScoreResult {
   glycemic?: Glycemics & { gi_source: string };
-  nutriScore?: NutriResult;
+  /** Nutri-Score plus `coverage`: the least-reported share of the profiling basis. */
+  nutriScore?: NutriResult & { coverage?: number };
   inflammation?: Inflammation;
   balance?: BalanceResult;
   processing?: ProcessingResult;
@@ -72,6 +79,12 @@ export interface ScoreOptions {
   nutriCategory?: NutriCategory;
   /** Beverages: a non-nutritive sweetener is present. */
   nnsPresent?: boolean;
+  /** Beverages: the dish is plain water (graded A). */
+  isWater?: boolean;
+  /** General foods: the dish is a cheese (keeps protein past the negative cap). */
+  isCheese?: boolean;
+  /** General foods: the dish is red meat (protein points capped at 2, 2023 rule). */
+  redMeat?: boolean;
 }
 
 /**
@@ -164,34 +177,49 @@ export function computeScores(
   if (glycemic) result.glycemic = { ...glycemic, gi_source: GI_SOURCE };
 
   if (basisGrams > 0) {
-    // Nutri-Score reads each nutrient per 100 g of the foods that REPORT it
-    // (seen-mass), so one incomplete food can't dilute the density of the rest —
-    // correct for its per-nutrient thresholds.
-    const per100 = (f: Field) => (mass[f] > 0 ? (sum[f] / mass[f]) * 100 : 0);
-    result.nutriScore = computeNutriScore(
+    // Single per-100 g basis over the full nutrition-contributing mass: the finished
+    // dish profiled as one composition, the way Nutri-Score profiles a product.
+    const per100Basis = (f: Field) => (sum[f] / basisGrams) * 100;
+    // Seen-mass concentration: a nutrient over only the mass that reported it — used
+    // for NRF's nutrients-to-limit so a missing datum imputes the typical amount.
+    const per100Seen = (f: Field) => (mass[f] > 0 ? (sum[f] / mass[f]) * 100 : 0);
+    // Share of the basis that reported a nutrient (energy defines the basis → 1).
+    const coverageOf = (f: Field) => (basisGrams > 0 ? mass[f] / basisGrams : 0);
+
+    const totalFat = per100Basis('fat');
+    // Saturated fat can't exceed total fat; clamp to guard a data/rounding error, but
+    // only when total fat is actually reported (else an unreported fat would zero it).
+    const satFat = mass['fat'] > 0 ? Math.min(per100Basis('satFat'), totalFat) : per100Basis('satFat');
+
+    const nutri = computeNutriScore(
       {
-        energyKj: per100('energyKcal') * KJ_PER_KCAL,
-        sugars_g: per100('sugar'),
-        satFat_g: per100('satFat'),
-        salt_g: per100('salt'),
-        protein_g: per100('protein'),
-        fiber_g: per100('fiber'),
+        energyKj: per100Basis('energyKcal') * KJ_PER_KCAL,
+        sugars_g: per100Basis('sugar'),
+        satFat_g: satFat,
+        salt_g: per100Basis('salt'),
+        protein_g: per100Basis('protein'),
+        fiber_g: per100Basis('fiber'),
         fvlPercent: (fvlGrams / basisGrams) * 100,
-        totalFat_g: per100('fat'),
+        totalFat_g: totalFat,
         nnsPresent: options.nnsPresent,
+        isWater: options.isWater,
+        isCheese: options.isCheese,
+        isRedMeat: options.redMeat,
       },
       options.nutriCategory ?? 'general',
     );
+    // Weakest-link data completeness behind the grade (energy is always present).
+    const coverage = Math.min(
+      coverageOf('sugar'), coverageOf('satFat'), coverageOf('salt'),
+      coverageOf('protein'), coverageOf('fiber'),
+    );
+    result.nutriScore = { ...nutri, coverage: round(coverage, 2) };
 
-    // NRF9.3 nutrient-balance is a per-100-kcal RATIO (nutrient ÷ energy), so
-    // every nutrient must share ONE mass basis with energy — the full
-    // nutrition-contributing mass. Using each nutrient's own reporting mass here
-    // (as Nutri-Score does) would divide it by an energy density over a
-    // different mass and over-credit a nutrient that only some foods report;
-    // over the full basis a missing nutrient correctly dilutes (biases the score
-    // down, never up). One unweighted formula for every dish — NRF has no
-    // per-category sub-algorithms.
-    const per100Basis = (f: Field) => (sum[f] / basisGrams) * 100;
+    // NRF9.3 nutrient-balance is a per-100-kcal RATIO (nutrient ÷ energy). Encouraged
+    // nutrients use the full basis, so a missing one dilutes (biases the score DOWN,
+    // never up — we don't credit a nutrient no food confirms). The nutrients-to-limit
+    // use seen-mass, so a food omitting sat-fat/sugar/sodium imputes the typical
+    // concentration rather than a 0 that would shrink the penalty and inflate the score.
     const balance = computeBalance({
       energyKcalPer100g: per100Basis('energyKcal'),
       protein_g: per100Basis('protein'),
@@ -203,9 +231,9 @@ export function computeScores(
       iron_mg: per100Basis('iron'),
       potassium_mg: per100Basis('potassium'),
       magnesium_mg: per100Basis('magnesium'),
-      satFat_g: per100Basis('satFat'),
-      sugar_g: per100Basis('sugar'),
-      sodium_mg: per100Basis('sodium'),
+      satFat_g: per100Seen('satFat'),
+      sugar_g: per100Seen('sugar'),
+      sodium_mg: per100Seen('sodium'),
     });
     if (balance) result.balance = balance;
   }

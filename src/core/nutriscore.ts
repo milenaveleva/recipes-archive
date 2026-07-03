@@ -19,7 +19,8 @@
  * sweetener penalty for beverages. Positives are protein, fibre and the
  * %fruit/vegetables/legumes (FVL) share. Protein drops out of the positives once
  * the negative total reaches the category cap (general ≥ 11, except cheese; fats
- * ≥ 7; beverages have no cap). All figures are estimates.
+ * ≥ 7; beverages have no cap); red meat may count at most 2 protein points. All
+ * figures are estimates.
  */
 import { round } from './num';
 
@@ -48,7 +49,16 @@ export interface NutriInput {
   isWater?: boolean;
   /** General foods: cheese keeps its protein points past the negative cap. */
   isCheese?: boolean;
+  /**
+   * General foods: red meat (beef/veal/pork/lamb and their products). Its protein
+   * points are capped at 2 under the 2023 algorithm, so a high-protein red meat is
+   * not over-rewarded against dietary guidelines that advise limiting it.
+   */
+  isRedMeat?: boolean;
 }
+
+/** Max protein points red meat may count under the Nutri-Score 2023 rule. */
+const RED_MEAT_PROTEIN_CAP = 2;
 
 export type NutriGrade = 'A' | 'B' | 'C' | 'D' | 'E';
 
@@ -82,19 +92,31 @@ const KJ_PER_G_SATFAT = 37; // energy from saturates = saturates (g) × 37 kJ/g
 // SFA-to-total-fat ratio (%): banded <10→0 … <64→9, ≥64→10, so these are "≥" breakpoints.
 const SFA_RATIO_PCT = [10, 16, 22, 28, 34, 40, 46, 52, 58, 64]; // 0–10
 
+/**
+ * Snap a computed input to 6 dp before threshold comparison, so floating-point
+ * drift from the per-100g aggregation (e.g. 3.4000000000000004 vs a 3.4 breakpoint)
+ * cannot earn or lose a spurious point. 6 dp is far finer than any threshold's 0.1 g
+ * granularity, so it removes only noise, never a real difference.
+ */
+function snap(value: number): number {
+  return Math.round(value * 1e6) / 1e6;
+}
+
 /** Points = how many ">" thresholds the value exceeds (already capped by length). */
 function pointsFor(value: number, thresholds: number[]): number {
   if (!Number.isFinite(value)) return 0;
+  const v = snap(value);
   let p = 0;
-  for (const t of thresholds) if (value > t) p++;
+  for (const t of thresholds) if (v > t) p++;
   return p;
 }
 
 /** Points = how many "≥" thresholds the value reaches (the SFA/total-fat ratio band). */
 function pointsForAtLeast(value: number, thresholds: number[]): number {
   if (!Number.isFinite(value)) return 0;
+  const v = snap(value);
   let p = 0;
-  for (const t of thresholds) if (value >= t) p++;
+  for (const t of thresholds) if (v >= t) p++;
   return p;
 }
 
@@ -162,7 +184,11 @@ function generalScore(input: NutriInput): NutriResult {
     pointsFor(input.satFat_g, SATFAT_G) +
     pointsFor(input.salt_g, SALT_G);
 
-  const proteinPts = pointsFor(input.protein_g, PROTEIN_G);
+  // Red meat may count at most 2 protein points (2023 rule) so its protein doesn't
+  // offset the components-of-concern that dietary guidelines flag it for.
+  const proteinPts = input.isRedMeat === true
+    ? Math.min(pointsFor(input.protein_g, PROTEIN_G), RED_MEAT_PROTEIN_CAP)
+    : pointsFor(input.protein_g, PROTEIN_G);
   const fiberPts = pointsFor(input.fiber_g, FIBER_G);
   const fvlPts = fvlPoints(input.fvlPercent);
 

@@ -75,19 +75,21 @@ nutrition:
     giBand: medium
     glBand: low
     gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    carbCoveragePct: 69
   nutriScore:
     grade: A
     points: 0
     category: general
     version: "2023"
+    coverage: 0.4
   inflammation:
-    score: 0.6
-    band: mildly-pro-inflammatory
+    score: 0.8
+    band: pro-inflammatory
     method: fii v3
   balance:
     score: 2
     band: poor
-    nrf: 2.5
+    nrf: 2.4
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

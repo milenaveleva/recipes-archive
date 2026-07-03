@@ -7,9 +7,10 @@
  * energy-adjustment is how every biomarker-validated dietary inflammation index is
  * computed (EDIP servings/1000 kcal; energy-adjusted DII per 1000 kcal), and it stops a
  * watery, voluminous ingredient from dominating a raw-gram mean. A small mass floor
- * (`FLOOR_KCAL_PER_G`) keeps near-zero-calorie anti-inflammatory foods — leafy greens,
- * tea, most spices — from vanishing under pure energy weighting. Honest limit of the
- * choice: energy weighting still under-credits those low-calorie foods relative to
+ * (`FLOOR_KCAL_PER_G` = 0.3 kcal/g) keeps near-zero-calorie anti-inflammatory foods —
+ * leafy greens, tea, most spices, broth — from vanishing under pure energy weighting,
+ * while foods above ~30 kcal/100 g are weighted by their actual energy. Honest limit of
+ * the choice: energy weighting still under-credits those low-calorie foods relative to
  * mass, and the floor constant is a calibration value, not a biomarker-derived one.
  *
  * The five bands are read by quantile of the USDA per-food reference distribution
@@ -63,10 +64,12 @@ export interface Inflammation {
 
 /**
  * Energy-per-gram floor: a food contributes at least this much weight per gram even
- * when nearly calorie-free, so leafy greens / tea / spices still register without a
- * pinch dominating. A calibration constant, not a biomarker-derived value.
+ * when nearly calorie-free, so leafy greens / tea / spices / broth still register
+ * without a pinch dominating. At 0.3 kcal/g the floor binds only below ~30 kcal/100 g,
+ * so energy weighting governs everything above it. A calibration constant, not a
+ * biomarker-derived value.
  */
-export const FLOOR_KCAL_PER_G = 1;
+export const FLOOR_KCAL_PER_G = 0.3;
 
 /**
  * Map a −2..+2 score to the five-band scale by quintile edges of the USDA per-food

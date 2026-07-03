@@ -492,14 +492,32 @@ export default function AddRecipe() {
             drinks over 1.2% are outside Nutri-Score.)
           </p>
           {form.nutriCategory === 'beverage' && (
-            <label className="flex items-center gap-2 font-ui text-sm text-ink-soft">
-              <input
-                type="checkbox"
-                checked={form.nnsPresent}
-                onChange={(e) => setField('nnsPresent', e.target.checked)}
-              />
-              Contains a non-nutritive sweetener (stevia, sucralose, aspartame, …)
-            </label>
+            <div className="flex flex-col gap-2">
+              <label className="flex items-center gap-2 font-ui text-sm text-ink-soft">
+                <input
+                  type="checkbox"
+                  checked={form.nnsPresent}
+                  onChange={(e) => setField('nnsPresent', e.target.checked)}
+                />
+                Contains a non-nutritive sweetener (stevia, sucralose, aspartame, …)
+              </label>
+              <label className="flex items-center gap-2 font-ui text-sm text-ink-soft">
+                <input type="checkbox" checked={form.isWater} onChange={(e) => setField('isWater', e.target.checked)} />
+                This drink is plain water (Nutri-Score grades it A)
+              </label>
+            </div>
+          )}
+          {form.nutriCategory === 'general' && (
+            <div className="flex flex-col gap-2">
+              <label className="flex items-center gap-2 font-ui text-sm text-ink-soft">
+                <input type="checkbox" checked={form.isCheese} onChange={(e) => setField('isCheese', e.target.checked)} />
+                The dish itself is a cheese (Nutri-Score keeps its protein score)
+              </label>
+              <label className="flex items-center gap-2 font-ui text-sm text-ink-soft">
+                <input type="checkbox" checked={form.redMeat} onChange={(e) => setField('redMeat', e.target.checked)} />
+                Red or processed meat is the main protein (caps the protein score)
+              </label>
+            </div>
           )}
           <Field label="Image URL">
             <input value={form.imageUrl} onChange={(e) => setField('imageUrl', e.target.value)} placeholder="https://…" className={inputCls} />

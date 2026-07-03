@@ -15,8 +15,9 @@ export function valueOf(food, key, polyphenols) {
   }
   const n = food.n ?? {};
   if (key === 'fatQuality_g') {
-    const parts = ['monoFat_g', 'polyFat_g', 'satFat_g', 'transFat_g'];
-    if (!parts.some((k) => Number.isFinite(n[k]))) return undefined;
+    // Require a known unsaturated fraction (mirror of src/core/fii.ts): a food with
+    // only a saturated figure is unknown quality, not maximally saturated.
+    if (!Number.isFinite(n.monoFat_g) && !Number.isFinite(n.polyFat_g)) return undefined;
     return (n.monoFat_g || 0) + (n.polyFat_g || 0) - (n.satFat_g || 0) - (n.transFat_g || 0);
   }
   if (key === 'freeSugar_g') {
@@ -37,7 +38,6 @@ export const makeClamp = (clampZ) => (z) => (z < -clampZ ? -clampZ : z > clampZ 
  * `paramStats` is the per-nutrient { center, scale } map.
  */
 export function rawFII(food, { parameters, paramStats, polyphenols, clampZ }) {
-  const clamp = makeClamp(clampZ);
   let sum = 0;
   let wsum = 0;
   let present = 0;
@@ -46,12 +46,20 @@ export function rawFII(food, { parameters, paramStats, polyphenols, clampZ }) {
     if (v === undefined) continue;
     const r = paramStats[p.nutrient];
     if (!r) continue;
-    sum += p.dir * p.weight * clamp((v - r.center) / r.scale);
+    // A one-sided anti parameter clamps to [0, clampZ] so a below-referent value
+    // can't read pro (mirror of src/core/fii.ts).
+    const z = (v - r.center) / r.scale;
+    const lo = p.oneSided ? 0 : -clampZ;
+    const zc = z < lo ? lo : z > clampZ ? clampZ : z;
+    sum += p.dir * p.weight * zc;
     wsum += p.weight;
     present += 1;
   }
   return wsum > 0 ? { raw: sum / wsum, present, total: parameters.length } : null;
 }
+
+/** Coverage at/above which the full ±2 tag range is available (mirror of src/core/fii.ts). */
+export const QUORUM_COVERAGE = 0.5;
 
 /** Standardised per-food tag in −2 (anti) … +2 (pro), with parameter coverage. */
 export function foodTag(food, ctx) {
@@ -59,12 +67,16 @@ export function foodTag(food, ctx) {
   if (!r) return null;
   const std = (r.raw - ctx.fiiRaw.center) / ctx.fiiRaw.scale;
   if (!Number.isFinite(std)) return null;
-  return { tag: Math.max(-2, Math.min(2, Math.round(std * 10) / 10)), coverage: r.present / r.total };
+  const coverage = r.present / r.total;
+  // Shrink data-poor foods toward neutral: ±2 is reachable only at quorum coverage.
+  const bound = 2 * Math.min(1, coverage / QUORUM_COVERAGE);
+  const tag = Math.max(-bound, Math.min(bound, Math.round(std * 10) / 10));
+  return { tag, coverage };
 }
 
 // ---- recipe-level aggregation — mirrors src/core/inflammation.ts + nutrition.ts ----
 
-export const FLOOR_KCAL_PER_G = 1; // mirror src/core/inflammation.ts FLOOR_KCAL_PER_G
+export const FLOOR_KCAL_PER_G = 0.3; // mirror src/core/inflammation.ts FLOOR_KCAL_PER_G
 const KJ_PER_KCAL = 4.184; // mirror src/core/nutrition.ts
 
 /** Per-100g kcal for a food, deriving from energyKj when energyKcal is absent (mirrors energyKcalOf). */
