@@ -8,6 +8,8 @@ import {
   nutriGrades,
   GL_DIAL_MAX,
   formatIngredientAmount,
+  processingTone,
+  UPF_ALARM_PCT,
 } from './recipe';
 
 describe('formatIngredientAmount (display unit ≠ calc basis)', () => {
@@ -170,6 +172,45 @@ describe('buildScoreDials', () => {
     const [, , , , inflam] = buildScoreDials({ inflammation: { score: 1.2, band: 'mildly-pro-inflammatory' } });
     expect(inflam.value).toBe('+1.2');
     expect(inflam.tone).toBe('bad');
+  });
+
+  it('does not flash a low-UPF fermented dish alarming red (miso soup case)', () => {
+    // Mostly NOVA-3 fermented foods → low NOVA 1+2 share, ~0% ultra-processed.
+    const [, , , , , proc] = buildScoreDials({
+      processing: { minimallyProcessedPct: 22, ultraProcessedPct: 0, band: 'highly-processed' },
+    });
+    expect(proc.key).toBe('processing');
+    expect(proc.tone).toBe('mid'); // caution, not the critical red
+  });
+
+  it('reserves the critical processing tone for genuinely ultra-processed dishes', () => {
+    const [, , , , , proc] = buildScoreDials({
+      processing: { minimallyProcessedPct: 22, ultraProcessedPct: 55, band: 'highly-processed' },
+    });
+    expect(proc.tone).toBe('bad');
+  });
+});
+
+describe('processingTone', () => {
+  it('keys the critical tone on the ultra-processed share, not merely a low whole-food share', () => {
+    expect(processingTone('minimally-processed', 0)).toBe('good');
+    // Highly-processed by NOVA 1+2 share, but ultra-processed content decides the alarm.
+    expect(processingTone('highly-processed', 0)).toBe('mid');
+    expect(processingTone('highly-processed', UPF_ALARM_PCT - 1)).toBe('mid');
+    expect(processingTone('highly-processed', UPF_ALARM_PCT)).toBe('bad');
+    expect(processingTone('moderately-processed', UPF_ALARM_PCT + 20)).toBe('bad');
+  });
+
+  it('alarms a high ultra-processed share regardless of the whole-food band', () => {
+    // Reaching the minimally-processed band on NOVA 1+2 share does not excuse a real UPF share.
+    expect(processingTone('minimally-processed', UPF_ALARM_PCT)).toBe('bad');
+  });
+
+  it('returns unknown for a missing band and falls back to the band when the UPF share is unknown', () => {
+    expect(processingTone(null)).toBe('unknown');
+    expect(processingTone('highly-processed')).toBe('bad');
+    expect(processingTone('moderately-processed')).toBe('mid');
+    expect(processingTone('minimally-processed')).toBe('good');
   });
 });
 

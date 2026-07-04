@@ -39,10 +39,14 @@
   --color-leaf: #3c6b48;        /* herb green — secondary */
   --color-honey: #c08327;       /* honey — tertiary */
 
-  /* Score band colors (GI / GL / Nutri / inflammation badges) */
-  --color-band-good: #3c6b48;
-  --color-band-mid: #c08327;
-  --color-band-bad: #b1381a;
+  /* Severity scale for the score medallions (and form status text). A semantic
+   * good / caution / critical signal kept independent of the brand accents above
+   * so a "bad" score never reads as an interactive/terracotta brand element. Each
+   * clears 4.5:1 on paper, so the same token works as text and as a badge fill
+   * under paper-coloured text. */
+  --color-band-good: #2f6a41;   /* deep green */
+  --color-band-mid: #8a5e12;    /* dark ochre */
+  --color-band-bad: #9b1f1c;    /* deep brick red */
 }
 
 :root {

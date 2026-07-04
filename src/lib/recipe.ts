@@ -236,11 +236,26 @@ export function inflammationLabel(band?: string | null): string {
     .replace('Inflammatory', 'Inflam.');
 }
 
-/** Food-processing tone from the engine's band string, so the ring colour and the
- *  band label never disagree and the 70/40 thresholds live only in `processing.ts`
- *  (the inflammation dial derives its tone from its band the same way). */
-export function processingTone(band?: string | null): Tone {
+/** Ultra-processed (NOVA 4) energy share at/above which the processing dial reads as a
+ *  genuine ultra-processed concern. A presentation cut-off, not a clinical one — UPF risk
+ *  is dose-response with no established threshold (Barbaresko 2024). */
+export const UPF_ALARM_PCT = 30;
+
+/**
+ * Processing tone. When the ultra-processed (NOVA 4) share is known it governs the alarm:
+ * it is the health-relevant NOVA signal (Lane 2024), not merely a low share of whole foods,
+ * so a dish reads critical red only when a real share of its energy is ultra-processed —
+ * regardless of the NOVA 1–2 band — while a low-UPF dish that is only fermented/processed
+ * (NOVA 3: miso, cheese, cured fish) reads as a caution, not an alarm. When the share is
+ * unknown (a partially-populated nutrition object), fall back to the band alone.
+ */
+export function processingTone(band?: string | null, ultraProcessedPct?: number | null): Tone {
   if (!band) return 'unknown';
+  if (ultraProcessedPct != null) {
+    if (ultraProcessedPct >= UPF_ALARM_PCT) return 'bad';
+    return band === 'minimally-processed' ? 'good' : 'mid';
+  }
+  // UPF share unknown → band alone: minimally good, moderately caution, highly critical.
   if (band === 'minimally-processed') return 'good';
   if (band === 'moderately-processed') return 'mid';
   return 'bad';
@@ -424,7 +439,7 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       value: proc?.minimallyProcessedPct != null ? `${Math.round(proc.minimallyProcessedPct)}%` : '—',
       sub: proc ? processingLabel(proc.band) : undefined,
       scaleRef: proc?.ultraProcessedPct != null ? `UPF ${Math.round(proc.ultraProcessedPct)}%` : undefined,
-      tone: processingTone(proc?.band),
+      tone: processingTone(proc?.band, proc?.ultraProcessedPct),
       fill: proc?.minimallyProcessedPct != null ? clamp01(proc.minimallyProcessedPct / 100) : 0,
     },
   ];
