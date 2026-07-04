@@ -138,7 +138,7 @@ describe('buildScoreDials', () => {
     expect(balance.fill).toBeCloseTo(0.8);
     expect(balance.scaleRef).toBe('1–10');
 
-    expect(inflam.value).toBe('-0.8');
+    expect(inflam.value).toBe('−0.8'); // typographic minus (U+2212), matching the −2…+2 scaleRef
     expect(inflam.tone).toBe('good');
   });
 

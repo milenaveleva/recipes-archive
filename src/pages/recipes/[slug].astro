@@ -203,8 +203,14 @@ const bodyHasMethodHeading = /^##\s+Method\b/im.test(recipe.body ?? '');
 
       {
         hasNutritionRail && (
-          <aside class="mt-8 max-w-md xl:mt-0 xl:max-w-none xl:col-start-2 xl:row-span-full">
+          <aside
+            class="mt-8 max-w-md xl:mt-0 xl:max-w-none xl:col-start-2 xl:row-span-full"
+            aria-labelledby="scores-heading"
+          >
             <div class="flex flex-col gap-5 xl:sticky xl:top-24">
+              <h2 id="scores-heading" class="sr-only">
+                Nutrition scores &amp; facts
+              </h2>
               {hasScores && <ScoreMedallions nutrition={data.nutrition} size="lg" />}
               {hasNutritionPanel && <NutritionPanel nutrition={data.nutrition} />}
             </div>

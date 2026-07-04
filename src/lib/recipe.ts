@@ -217,11 +217,13 @@ export function inflammationTone(band?: string | null): Tone {
   return 'bad';
 }
 
-/** Nutrient-balance (1–10) tone: 7–10 good, 4–6 mid, 1–3 bad. */
-export function balanceTone(score?: number | null): Tone {
-  if (score == null) return 'unknown';
-  if (score >= 7) return 'good';
-  if (score >= 4) return 'mid';
+/** Nutrient-balance tone from the engine's band word, so the ring colour and the band
+ *  label never disagree (excellent/high → good, moderate → mid, low/poor → bad) — the
+ *  same band-derived pattern as the inflammation and processing dials. */
+export function balanceTone(band?: string | null): Tone {
+  if (!band) return 'unknown';
+  if (band === 'excellent' || band === 'high') return 'good';
+  if (band === 'moderate') return 'mid';
   return 'bad';
 }
 
@@ -254,11 +256,13 @@ export function processingLabel(band?: string | null): string {
 }
 
 /* ---- score dials (value → position on its reference scale) ----
- * Each medallion is a ring that fills to where the value sits on its scale, so a
- * bare number is interpretable at a glance ("64 out of 100", not just "64"). The
- * fill is oriented so an EMPTIER ring always means healthier — lower GI/GL, more
- * anti-inflammatory. Nutri-Score is categorical, so it shows an A–E strip with
- * the grade lit instead of a partial fill (its ring is drawn full).
+ * Each medallion is a ring that fills to where the value sits on its OWN scale, so a
+ * bare number is interpretable at a glance ("64 out of 100", not just "64"). Fill is
+ * magnitude, not health: a fuller ring means "higher on this scale", which is worse
+ * for GI/GL/inflammation but better for nutrient balance/processing — so healthy-vs-not
+ * is carried by the ring's TONE colour (good/mid/bad), consistently across all six, and
+ * spelled out by each blurb's "lower/higher is better" line. Nutri-Score is categorical,
+ * so it shows an A–E strip with the grade lit instead of a partial fill (ring drawn full).
  */
 
 /** Glycemic load has no fixed maximum; the dial saturates here (≥ this reads "high"). */
@@ -302,7 +306,7 @@ export interface ScoreDial {
   label: string;
   /** One-line explanation of what the score measures, shown as a hover/focus tooltip. */
   blurb: string;
-  /** Display value, e.g. "64", "C", "-0.8", or "—" when absent. */
+  /** Display value, e.g. "64", "C", "−0.8" (typographic minus), or "—" when absent. */
   value: string;
   /** Band word / qualifier shown under the label (CSS-capitalized). */
   sub?: string;
@@ -355,7 +359,7 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       key: 'gi',
       label: 'Glycemic Index',
       blurb:
-        'How quickly this dish’s carbohydrate raises blood glucose (0–100, glucose = 100), carb-weighted from published values. An estimate that tends to read high for mixed meals.',
+        'How quickly this dish’s carbohydrate raises blood glucose (0–100, glucose = 100), carb-weighted from published values. Lower is better. An estimate that tends to read high for mixed meals.',
       value: gly?.gi != null ? String(Math.round(gly.gi)) : '—',
       sub: gly?.giBand || undefined,
       scaleRef: '0–100',
@@ -366,7 +370,7 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       key: 'gl',
       label: 'Glycemic Load',
       blurb:
-        'Glycemic index scaled by the available carbohydrate in one serving — the total blood-glucose impact of a portion, not just its speed. Low ≤10, high ≥20.',
+        'Glycemic index scaled by the available carbohydrate in one serving — the total blood-glucose impact of a portion, not just its speed. Lower is better (low ≤10, high ≥20). An estimate.',
       value: gly?.gl != null ? String(Math.round(gly.gl)) : '—',
       sub: gly?.glBand || undefined,
       scaleRef: 'per serving',
@@ -377,7 +381,7 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       key: 'nutri',
       label: 'Nutrition Score',
       blurb:
-        'Nutri-Score 2023 (A–E): fibre, protein and fruit/vegetables/legumes weighed against energy, sugar, saturated fat and salt. Built for packaged products, applied to the dish as an estimate.',
+        'Nutri-Score 2023 (A–E): fibre, protein and fruit/vegetables/legumes weighed against energy, sugar, saturated fat and salt. A is best, E is worst. Built for packaged products, applied to the dish as an estimate.',
       value: grade ?? '—',
       sub: nutri ? 'Nutri-Score' : undefined,
       tone: nutriTone(grade),
@@ -389,19 +393,24 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       key: 'balance',
       label: 'Nutrient Balance',
       blurb:
-        'Nutrient density (NRF9.3, 1–10): nine nutrients to encourage — protein, fibre, vitamins, minerals — minus three to limit (saturated fat, sugar, sodium), per 100 kcal.',
+        'Nutrient density (NRF9.3, 1–10): nine nutrients to encourage — protein, fibre, vitamins, minerals — minus three to limit (saturated fat, sugar, sodium), per 100 kcal. Higher is better. An estimate.',
       value: bal?.score != null ? String(bal.score) : '—',
       sub: bal?.band || undefined,
       scaleRef: '1–10',
-      tone: balanceTone(bal?.score),
+      tone: balanceTone(bal?.band),
       fill: bal?.score != null ? clamp01(bal.score / 10) : 0,
     },
     {
       key: 'inflam',
       label: 'Inflammation',
       blurb:
-        'Food Inflammation Index (−2 anti to +2 pro): inflammatory potential from fat quality, fibre, antioxidants and polyphenols, energy-weighted across the dish. An estimate, not a clinical measure.',
-      value: inflam?.score != null ? (inflam.score > 0 ? `+${inflam.score}` : String(inflam.score)) : '—',
+        'Food Inflammation Index (−2 anti to +2 pro): inflammatory potential from fat quality, fibre, antioxidants and polyphenols, energy-weighted across the dish. Lower (more anti-inflammatory) is better. An estimate, not a clinical measure.',
+      value:
+        inflam?.score != null
+          ? inflam.score > 0
+            ? `+${inflam.score}`
+            : String(inflam.score).replace('-', '−') // typographic minus, matching the scaleRef
+          : '—',
       sub: inflam ? inflammationLabel(inflam.band) : undefined,
       scaleRef: '−2 … +2',
       tone: inflammationTone(inflam?.band),
@@ -411,7 +420,7 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       key: 'processing',
       label: 'Processing',
       blurb:
-        'Share of the dish’s energy from minimally processed foods and basic culinary ingredients (NOVA groups 1–2), with the ultra-processed share (NOVA 4) shown beneath. Higher = less processed. A rough estimate — processing is judged by food type.',
+        'Share of the dish’s energy from minimally processed foods and basic culinary ingredients (NOVA groups 1–2), with the ultra-processed share (NOVA 4) shown beneath. Higher = less processed is better. A rough estimate — processing is judged by food type.',
       value: proc?.minimallyProcessedPct != null ? `${Math.round(proc.minimallyProcessedPct)}%` : '—',
       sub: proc ? processingLabel(proc.band) : undefined,
       scaleRef: proc?.ultraProcessedPct != null ? `UPF ${Math.round(proc.ultraProcessedPct)}%` : undefined,
