@@ -9,11 +9,17 @@ import { toneText, toneBg, type ScoreDial as ScoreDialData } from '../../lib/rec
 export default function ScoreDial({ dial }: { dial: ScoreDialData }) {
   // r = 15.9155 → circumference ≈ 100, so the arc length is the fill percentage.
   const dash = `${Math.round(dial.fill * 100)} 100`;
+  // The visible value uses a typographic minus (U+2212) to match the "−2 … +2"
+  // scaleRef, but some screen readers don't voice U+2212 as "minus" — swap it for
+  // an ASCII hyphen in the accessible name so a negative score is never heard as
+  // positive.
+  const ariaValue = dial.value.replace('−', '-');
   return (
     <div
-      className="group relative flex flex-col items-center text-center gap-1.5 rounded-xl bg-card border border-line px-3 py-4 outline-none focus-visible:ring-2 focus-visible:ring-line"
+      className="group relative flex flex-col items-center text-center gap-1.5 rounded-xl bg-card border border-line px-3 py-4 outline-none focus-visible:ring-2 focus-visible:ring-spice focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+      role="img"
       tabIndex={0}
-      aria-label={`${dial.label}: ${dial.value}. ${dial.blurb}`}
+      aria-label={`${dial.label}: ${ariaValue}. ${dial.blurb}`}
     >
       <div className="relative h-16 w-16">
         <svg viewBox="0 0 36 36" className="absolute inset-0 h-full w-full -rotate-90" aria-hidden="true">
