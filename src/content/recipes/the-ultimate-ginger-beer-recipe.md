@@ -6,7 +6,9 @@ imageUrl: https://media.thisislagom.com/images/how-to-make-ginger-beer-23.2e16d0
 source:
   name: thisislagom.com
   url: https://www.thisislagom.com/vegan-recipes/smoothies-and-drinks/soda/the-ultimate-ginger-beer-recipe/
-servings: 4
+servings: 6
+prepTime: PT40M
+totalTime: PT40M
 ingredients:
   - raw: 8 cm fresh ginger
     quantity: 8
@@ -35,48 +37,49 @@ ingredients:
     milliliters: 473.176
     fdcId: 168833
     matchConfidence: medium
-  - raw: Handful of ginger (approximately 400 g), chopped
-    item: Handful of ginger (approximately 400 g)
+  - raw: Handful of ginger (chopped)
+    item: Handful of ginger
     note: chopped
+    grams: 400
     fdcId: 169231
-    matchConfidence: low
+    matchConfidence: medium
   - raw: filtered water
     item: filtered water
     fdcId: 175103
     matchConfidence: low
 nutrition:
   perServing:
-    energyKcal: 494
-    energyKj: 2067
-    protein_g: 0.2
-    fat_g: 0
-    satFat_g: 0
-    carbs_g: 127.4
-    fiber_g: 0.1
-    sugar_g: 125.5
-    sodium_mg: 32
-    availableCarb_g: 127.4
+    energyKcal: 383
+    energyKj: 1601
+    protein_g: 1.4
+    fat_g: 0.5
+    satFat_g: 0.1
+    carbs_g: 96.8
+    fiber_g: 1.4
+    sugar_g: 84.8
+    sodium_mg: 30
+    availableCarb_g: 95.4
   glycemic:
     gi: 65
-    gl: 12
+    gl: 8
     giBand: medium
-    glBand: medium
-    carbCoveragePct: 15
+    glBand: low
+    carbCoveragePct: 13
     gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
   nutriScore:
     grade: E
-    points: 20
+    points: 18
     category: beverage
     version: "2023"
     coverage: 1
   inflammation:
-    score: 1.4
+    score: 1.2
     band: pro-inflammatory
     method: fii v3
   balance:
     score: 1
     band: poor
-    nrf: -47.2
+    nrf: -34.3
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -92,6 +95,7 @@ nutrition:
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-07-05"
+updatedAt: "2026-07-05"
 ---
 
 ## Method
