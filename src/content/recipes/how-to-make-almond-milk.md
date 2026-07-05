@@ -28,12 +28,12 @@ ingredients:
     milliliters: 1892.704
     fdcId: 175103
     matchConfidence: low
-  - raw: 2 Medjool dates optional
+  - raw: 2 Medjool dates
     quantity: 2
-    item: Medjool dates optional
+    item: Medjool dates
     grams: 48
     fdcId: 168191
-    matchConfidence: medium
+    matchConfidence: high
   - raw: pinch of sea salt
     quantity: 1
     unit: pinch
@@ -74,7 +74,7 @@ nutrition:
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-07-03"
+  computedAt: "2026-07-05"
   dataSources:
     - USDA FoodData Central
     - Nutri-Score 2023
@@ -82,7 +82,7 @@ nutrition:
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-07-03"
-updatedAt: "2026-07-03"
+updatedAt: "2026-07-05"
 ---
 
 ## Method
