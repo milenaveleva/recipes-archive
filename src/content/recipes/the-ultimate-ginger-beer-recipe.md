@@ -2,7 +2,7 @@
 title: The ultimate ginger beer recipe
 description: This one-step fermentation ginger beer with its ginger bug recipe is the ultimate cheerful drink, spicy and pleasantly sweet. To sip cold with good company!
 image: ./images/the-ultimate-ginger-beer-recipe.jpg
-imageUrl: https://media.thisislagom.com/images/how-to-make-ginger-beer-23.2e16d0ba.fill-1080x1080.jpg
+imageUrl: https://media.thisislagom.com/images/how-to-make-ginger-beer-10.height-600.jpg
 source:
   name: thisislagom.com
   url: https://www.thisislagom.com/vegan-recipes/smoothies-and-drinks/soda/the-ultimate-ginger-beer-recipe/
