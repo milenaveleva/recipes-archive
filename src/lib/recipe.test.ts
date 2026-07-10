@@ -1,15 +1,16 @@
 import { describe, it, expect } from 'vitest';
 import {
-  giFill,
-  glFill,
-  inflammationFill,
   buildScoreDials,
   hasAnyScore,
   hasDisplayableScore,
-  nutriGrades,
-  GL_DIAL_MAX,
   formatIngredientAmount,
-  processingTone,
+  ratingTone,
+  giRating,
+  glRating,
+  nutriRating,
+  balanceRating,
+  inflammationRating,
+  processingRating,
   UPF_ALARM_PCT,
 } from './recipe';
 
@@ -83,31 +84,61 @@ describe('formatIngredientAmount (display unit ≠ calc basis)', () => {
   });
 });
 
-describe('score dial fills (emptier ring = healthier)', () => {
-  it('maps GI onto its 0–100 scale and clamps', () => {
-    expect(giFill(0)).toBe(0);
-    expect(giFill(64)).toBeCloseTo(0.64);
-    expect(giFill(100)).toBe(1);
-    expect(giFill(140)).toBe(1); // clamp above
-    expect(giFill(null)).toBe(0);
-    expect(giFill(undefined)).toBe(0);
+describe('score rating normalization (1–10, 1 = healthiest)', () => {
+  it('bands every rating the same way: 1–3 good, 4–6 mid, 7–10 bad', () => {
+    expect(ratingTone(1)).toBe('good');
+    expect(ratingTone(3)).toBe('good');
+    expect(ratingTone(4)).toBe('mid');
+    expect(ratingTone(6)).toBe('mid');
+    expect(ratingTone(7)).toBe('bad');
+    expect(ratingTone(10)).toBe('bad');
+    expect(ratingTone(null)).toBe('unknown');
+    expect(ratingTone(undefined)).toBe('unknown');
   });
 
-  it('saturates GL at GL_DIAL_MAX', () => {
-    expect(glFill(0)).toBe(0);
-    expect(glFill(10)).toBeCloseTo(0.5);
-    expect(glFill(GL_DIAL_MAX)).toBe(1);
-    expect(glFill(40)).toBe(1); // clamp above the cap
-    expect(glFill(null)).toBe(0);
+  it('maps GI so its low/medium/high bands land on 1–3 / 4–6 / 7–10', () => {
+    expect(giRating(0)).toBe(1);
+    expect(giRating(55)).toBe(3); // top of the low band → still good
+    expect(giRating(64)).toBe(5); // medium
+    expect(giRating(70)).toBe(7); // just into high → bad
+    expect(giRating(100)).toBe(10);
+    expect(giRating(140)).toBe(10); // clamped
+    expect(giRating(null)).toBeNull();
   });
 
-  it('centres inflammation on its −2 … +2 range', () => {
-    expect(inflammationFill(-2)).toBe(0); // most anti → empty (best)
-    expect(inflammationFill(0)).toBeCloseTo(0.5);
-    expect(inflammationFill(2)).toBe(1); // most pro → full (worst)
-    expect(inflammationFill(-0.8)).toBeCloseTo(0.3);
-    expect(inflammationFill(-5)).toBe(0); // clamp below
-    expect(inflammationFill(null)).toBe(0);
+  it('maps GL so ≤10 / 11–19 / ≥20 land on 1–3 / 4–6 / 7–10', () => {
+    expect(glRating(0)).toBe(1);
+    expect(glRating(10)).toBe(3);
+    expect(glRating(19)).toBe(6);
+    expect(glRating(20)).toBe(7);
+    expect(glRating(40)).toBe(10); // clamped
+    expect(glRating(null)).toBeNull();
+  });
+
+  it('maps Nutri-Score A…E onto 1…10 (A best, E worst)', () => {
+    expect(nutriRating('A')).toBe(1);
+    expect(nutriRating('B')).toBe(3);
+    expect(nutriRating('C')).toBe(6);
+    expect(nutriRating('D')).toBe(8);
+    expect(nutriRating('E')).toBe(10);
+    expect(nutriRating(null)).toBeNull();
+    expect(nutriRating('Z')).toBeNull(); // unknown grade
+  });
+
+  it('inverts nutrient balance so a denser dish rates lower (better)', () => {
+    expect(balanceRating(10)).toBe(1); // densest → best
+    expect(balanceRating(8)).toBe(3);
+    expect(balanceRating(5)).toBe(6);
+    expect(balanceRating(1)).toBe(10); // poorest → worst
+    expect(balanceRating(null)).toBeNull();
+  });
+
+  it('maps inflammation from −2…+2 onto 1…10 (most anti = best)', () => {
+    expect(inflammationRating(-2)).toBe(1);
+    expect(inflammationRating(-1)).toBe(3); // anti-inflammatory band edge → still good
+    expect(inflammationRating(0)).toBe(6); // neutral → mid
+    expect(inflammationRating(2)).toBe(10);
+    expect(inflammationRating(null)).toBeNull();
   });
 });
 
@@ -119,60 +150,71 @@ describe('buildScoreDials', () => {
     inflammation: { score: -0.8, band: 'mildly-anti-inflammatory' },
   };
 
-  it('returns the five dials with value, tone, fill and scale', () => {
+  it('returns each dial as a 1–10 rating with matching tone, fill and native value', () => {
     const [gi, gl, nutri, balance, inflam] = buildScoreDials(nutrition);
 
-    expect(gi.value).toBe('64');
+    expect(gi.value).toBe('5');
     expect(gi.tone).toBe('mid');
-    expect(gi.fill).toBeCloseTo(0.64);
-    expect(gi.scaleRef).toBe('0–100');
+    expect(gi.fill).toBeCloseTo(0.5);
+    expect(gi.scaleRef).toBe('GI 64');
+    expect(gi.sub).toBe('medium');
 
-    expect(gl.value).toBe('19');
+    expect(gl.value).toBe('6');
+    expect(gl.tone).toBe('mid');
+    expect(gl.scaleRef).toBe('GL 19');
     expect(gl.sub).toBe('medium');
 
-    expect(nutri.value).toBe('C');
-    expect(nutri.fill).toBe(1); // categorical → full ring
-    expect(nutri.grades).toEqual(nutriGrades);
-    expect(nutri.activeGrade).toBe(2); // A,B,C → index 2
+    expect(nutri.value).toBe('6'); // grade C → 6
+    expect(nutri.tone).toBe('mid');
+    expect(nutri.fill).toBeCloseTo(0.6);
+    expect(nutri.scaleRef).toBe('Grade C');
 
-    expect(balance.value).toBe('8');
+    expect(balance.value).toBe('3'); // NRF 8 inverted → 3 (good)
+    expect(balance.tone).toBe('good');
+    expect(balance.fill).toBeCloseTo(0.3);
+    expect(balance.scaleRef).toBe('NRF 8');
     expect(balance.sub).toBe('high');
-    expect(balance.tone).toBe('good'); // 7–10 → good
-    expect(balance.fill).toBeCloseTo(0.8);
-    expect(balance.scaleRef).toBe('1–10');
 
-    expect(inflam.value).toBe('−0.8'); // typographic minus (U+2212), matching the −2…+2 scaleRef
-    expect(inflam.tone).toBe('good');
+    expect(inflam.value).toBe('4'); // −0.8 → 4 (mid)
+    expect(inflam.tone).toBe('mid');
+    expect(inflam.scaleRef).toBe('−0.8'); // native value keeps a typographic minus (U+2212)
+    expect(inflam.sub).toBe('Mildly-Anti-Inflam.');
   });
 
   it('shows an em-dash balance dial with empty fill when absent', () => {
     const [, , , balance] = buildScoreDials({ nutriScore: { grade: 'A' } });
     expect(balance.key).toBe('balance');
     expect(balance.value).toBe('—');
+    expect(balance.present).toBe(false);
     expect(balance.fill).toBe(0);
     expect(balance.tone).toBe('unknown');
   });
 
-  it('shows em-dash placeholders and an inactive grade when nutrition is empty', () => {
+  it('shows em-dash placeholders for every dial when nutrition is empty', () => {
     const [gi, , nutri] = buildScoreDials(undefined);
     expect(gi.value).toBe('—');
+    expect(gi.present).toBe(false);
     expect(gi.fill).toBe(0);
     expect(nutri.value).toBe('—');
-    expect(nutri.activeGrade).toBe(-1);
+    expect(nutri.present).toBe(false);
+    expect(nutri.scaleRef).toBeUndefined();
   });
 
-  it('leaves the GL sub empty (no duplicate "per serving") when glBand is absent or blank', () => {
+  it('keeps the native value beneath the rating and no band sub when the band is absent', () => {
     const [, gl] = buildScoreDials({ glycemic: { gl: 12 } });
+    expect(gl.value).toBe('4'); // GL 12 → 4
     expect(gl.sub).toBeUndefined();
-    expect(gl.scaleRef).toBe('per serving'); // shown once, via scaleRef only
+    expect(gl.scaleRef).toBe('GL 12');
     const [giBlank] = buildScoreDials({ glycemic: { gi: 50, giBand: '' } });
     expect(giBlank.sub).toBeUndefined();
+    expect(giBlank.scaleRef).toBe('GI 50');
   });
 
-  it('prefixes positive inflammation scores with +', () => {
+  it('prefixes positive inflammation native values with +', () => {
     const [, , , , inflam] = buildScoreDials({ inflammation: { score: 1.2, band: 'mildly-pro-inflammatory' } });
-    expect(inflam.value).toBe('+1.2');
+    expect(inflam.value).toBe('8'); // +1.2 → 8 (bad)
     expect(inflam.tone).toBe('bad');
+    expect(inflam.scaleRef).toBe('+1.2');
   });
 
   it('does not flash a low-UPF fermented dish alarming red (miso soup case)', () => {
@@ -181,10 +223,11 @@ describe('buildScoreDials', () => {
       processing: { minimallyProcessedPct: 22, ultraProcessedPct: 0, band: 'highly-processed' },
     });
     expect(proc.key).toBe('processing');
-    expect(proc.tone).toBe('mid'); // caution, not the critical red
+    expect(proc.tone).toBe('mid'); // caution (4–6), not the critical red
+    expect(proc.scaleRef).toBe('22% whole');
   });
 
-  it('reserves the critical processing tone for genuinely ultra-processed dishes', () => {
+  it('reserves the critical processing rating for genuinely ultra-processed dishes', () => {
     const [, , , , , proc] = buildScoreDials({
       processing: { minimallyProcessedPct: 22, ultraProcessedPct: 55, band: 'highly-processed' },
     });
@@ -192,26 +235,27 @@ describe('buildScoreDials', () => {
   });
 });
 
-describe('processingTone', () => {
-  it('keys the critical tone on the ultra-processed share, not merely a low whole-food share', () => {
-    expect(processingTone('minimally-processed', 0)).toBe('good');
+describe('processingRating', () => {
+  it('keys the poor band on the ultra-processed share, not merely a low whole-food share', () => {
+    expect(ratingTone(processingRating(95, 0, 'minimally-processed'))).toBe('good');
     // Highly-processed by NOVA 1+2 share, but ultra-processed content decides the alarm.
-    expect(processingTone('highly-processed', 0)).toBe('mid');
-    expect(processingTone('highly-processed', UPF_ALARM_PCT - 1)).toBe('mid');
-    expect(processingTone('highly-processed', UPF_ALARM_PCT)).toBe('bad');
-    expect(processingTone('moderately-processed', UPF_ALARM_PCT + 20)).toBe('bad');
+    expect(ratingTone(processingRating(22, 0, 'highly-processed'))).toBe('mid');
+    expect(ratingTone(processingRating(22, UPF_ALARM_PCT - 1, 'highly-processed'))).toBe('mid');
+    expect(ratingTone(processingRating(22, UPF_ALARM_PCT, 'highly-processed'))).toBe('bad');
+    expect(ratingTone(processingRating(30, UPF_ALARM_PCT + 20, 'moderately-processed'))).toBe('bad');
   });
 
   it('alarms a high ultra-processed share regardless of the whole-food band', () => {
     // Reaching the minimally-processed band on NOVA 1+2 share does not excuse a real UPF share.
-    expect(processingTone('minimally-processed', UPF_ALARM_PCT)).toBe('bad');
+    expect(ratingTone(processingRating(80, UPF_ALARM_PCT, 'minimally-processed'))).toBe('bad');
   });
 
-  it('returns unknown for a missing band and falls back to the band when the UPF share is unknown', () => {
-    expect(processingTone(null)).toBe('unknown');
-    expect(processingTone('highly-processed')).toBe('bad');
-    expect(processingTone('moderately-processed')).toBe('mid');
-    expect(processingTone('minimally-processed')).toBe('good');
+  it('is null for a missing band or share, and falls back to the band when the UPF share is unknown', () => {
+    expect(processingRating(50, 0, null)).toBeNull();
+    expect(processingRating(null, 0, 'minimally-processed')).toBeNull();
+    expect(ratingTone(processingRating(10, null, 'highly-processed'))).toBe('bad');
+    expect(ratingTone(processingRating(40, null, 'moderately-processed'))).toBe('mid');
+    expect(ratingTone(processingRating(90, null, 'minimally-processed'))).toBe('good');
   });
 });
 

@@ -4,17 +4,18 @@
  * client-rendered scores match the static detail page exactly. Data comes from
  * `buildScoreDials`; this file is purely presentational.
  */
-import { toneText, toneBg, tipAlignClass, type ScoreDial as ScoreDialData, type TooltipAlign } from '../../lib/recipe';
+import { toneText, tipAlignClass, type ScoreDial as ScoreDialData, type TooltipAlign } from '../../lib/recipe';
 
 export default function ScoreDial({ dial, align = 'center' }: { dial: ScoreDialData; align?: TooltipAlign }) {
   // r = 15.9155 → circumference ≈ 100, so the arc length is the fill percentage.
   const dash = `${Math.round(dial.fill * 100)} 100`;
   const tipAlign = tipAlignClass(align);
-  // The visible value uses a typographic minus (U+2212) to match the "−2 … +2"
-  // scaleRef, but some screen readers don't voice U+2212 as "minus" — swap it for
-  // an ASCII hyphen in the accessible name so a negative score is never heard as
-  // positive.
-  const ariaValue = dial.value.replace('−', '-');
+  // The native value may carry a typographic minus (U+2212, e.g. "−0.8"), which some
+  // screen readers don't voice as "minus" — swap it for an ASCII hyphen in the accessible
+  // name so a negative inflammation value is never heard as positive.
+  const ariaValue = dial.present
+    ? `${dial.value} out of 10${dial.scaleRef ? ` (${dial.scaleRef.replace('−', '-')})` : ''}`
+    : 'not available';
   return (
     <div
       className="group relative flex flex-col items-center text-center gap-1.5 rounded-xl bg-card border border-line px-3 py-4 outline-none focus-visible:ring-2 focus-visible:ring-spice focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
@@ -51,22 +52,7 @@ export default function ScoreDial({ dial, align = 'center' }: { dial: ScoreDialD
       <div className="eyebrow !text-[0.62rem] !tracking-[0.14em] leading-tight text-ink-soft">{dial.label}</div>
       {dial.sub && <div className="font-ui text-[0.66rem] capitalize leading-tight text-ink-faint">{dial.sub}</div>}
 
-      {dial.grades ? (
-        <div className="mt-0.5 flex gap-0.5" aria-hidden="true">
-          {dial.grades.map((g, i) => (
-            <span
-              key={g}
-              className={`flex h-4 w-4 items-center justify-center rounded font-ui text-[0.6rem] font-semibold ${
-                i === dial.activeGrade ? `${toneBg[dial.tone]} text-paper` : 'bg-paper-2 text-ink-faint'
-              }`}
-            >
-              {g}
-            </span>
-          ))}
-        </div>
-      ) : (
-        dial.scaleRef && <div className="font-ui text-[0.6rem] tabular-nums text-ink-faint">{dial.scaleRef}</div>
-      )}
+      {dial.scaleRef && <div className="font-ui text-[0.6rem] tabular-nums text-ink-faint">{dial.scaleRef}</div>}
 
       <div
         aria-hidden="true"

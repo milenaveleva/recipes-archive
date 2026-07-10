@@ -184,47 +184,60 @@ function formatMilliliters(ml: number): string {
   return v >= 1000 ? `${round(v / 1000, 2)} L` : `${v} ml`;
 }
 
-/* ---- score → tone (color band) mapping ----
- * For GI/GL: low values are good. For Nutri-Score: A is good.
- * For inflammation: anti-inflammatory is good.
+/* ---- score normalization: every metric → a 1–10 rating ----
+ * The six scores live on different native scales (GI 0–100, GL 0–20+, Nutri A–E,
+ * NRF 1–10, inflammation −2…+2, processing %). To read as one coherent wall they
+ * are each normalized to a 1–10 rating where 1 = healthiest and 10 = least healthy
+ * — lower is always better. Each metric's own good/medium/high bands land on
+ * 1–3 / 4–6 / 7–10, so the shared `ratingTone` colour always agrees with the number,
+ * and the ring fills with the rating (empty + green = great, full + red = poor). The
+ * two "more is better" metrics — Nutri-Score and nutrient balance — are inverted onto
+ * the same scale. Raw values are kept for display, not discarded.
  */
 
-export function giTone(gi?: number | null): Tone {
-  if (gi == null) return 'unknown';
-  if (gi <= 55) return 'good';
-  if (gi <= 69) return 'mid';
+const clampRating = (n: number): number => Math.min(10, Math.max(1, Math.round(n)));
+
+/** 1–10 rating → tone. One banding for every dial: 1–3 good, 4–6 moderate, 7–10 poor. */
+export function ratingTone(rating?: number | null): Tone {
+  if (rating == null) return 'unknown';
+  if (rating <= 3) return 'good';
+  if (rating <= 6) return 'mid';
   return 'bad';
 }
 
-export function glTone(gl?: number | null): Tone {
-  if (gl == null) return 'unknown';
-  if (gl <= 10) return 'good';
-  if (gl <= 19) return 'mid';
-  return 'bad';
+/** Glycemic index → 1–10 (low ≤55 → 1–3, medium 56–69 → 4–6, high ≥70 → 7–10). */
+export function giRating(gi?: number | null): number | null {
+  if (gi == null) return null;
+  if (gi <= 55) return clampRating(1 + (gi / 55) * 2);
+  if (gi <= 69) return clampRating(4 + ((gi - 55) / 14) * 2);
+  return clampRating(7 + ((gi - 69) / 31) * 3);
 }
 
-export function nutriTone(grade?: string | null): Tone {
-  if (!grade) return 'unknown';
-  if (grade === 'A' || grade === 'B') return 'good';
-  if (grade === 'C') return 'mid';
-  return 'bad';
+/** Glycemic load → 1–10 (low ≤10 → 1–3, medium 11–19 → 4–6, high ≥20 → 7–10). */
+export function glRating(gl?: number | null): number | null {
+  if (gl == null) return null;
+  if (gl <= 10) return clampRating(1 + (gl / 10) * 2);
+  if (gl <= 19) return clampRating(4 + ((gl - 10) / 9) * 2);
+  return clampRating(7 + ((gl - 19) / 11) * 3);
 }
 
-export function inflammationTone(band?: string | null): Tone {
-  if (!band) return 'unknown';
-  if (band.includes('anti')) return 'good';
-  if (band === 'neutral') return 'mid';
-  return 'bad';
+/** Inflammation index (−2 anti … +2 pro) → 1–10, most anti-inflammatory = best. */
+export function inflammationRating(score?: number | null): number | null {
+  if (score == null) return null;
+  return clampRating(1 + ((score + 2) / 4) * 9);
 }
 
-/** Nutrient-balance tone from the engine's band word, so the ring colour and the band
- *  label never disagree (excellent/high → good, moderate → mid, low/poor → bad) — the
- *  same band-derived pattern as the inflammation and processing dials. */
-export function balanceTone(band?: string | null): Tone {
-  if (!band) return 'unknown';
-  if (band === 'excellent' || band === 'high') return 'good';
-  if (band === 'moderate') return 'mid';
-  return 'bad';
+/** Nutrient balance (NRF 1–10, higher better) → 1–10 concern, inverted so denser = better. */
+export function balanceRating(score?: number | null): number | null {
+  if (score == null) return null;
+  return clampRating(11 - score);
+}
+
+/** Nutri-Score grade → 1–10 (A → 1 … E → 10), so A/B land green, C amber, D/E red. */
+export function nutriRating(grade?: string | null): number | null {
+  if (!grade) return null;
+  const idx = nutriGrades.indexOf(grade as (typeof nutriGrades)[number]);
+  return idx < 0 ? null : clampRating(1 + idx * 2.25);
 }
 
 export function inflammationLabel(band?: string | null): string {
@@ -242,23 +255,33 @@ export function inflammationLabel(band?: string | null): string {
 export const UPF_ALARM_PCT = 30;
 
 /**
- * Processing tone. When the ultra-processed (NOVA 4) share is known it governs the alarm:
- * it is the health-relevant NOVA signal (Lane 2024), not merely a low share of whole foods,
- * so a dish reads critical red only when a real share of its energy is ultra-processed —
- * regardless of the NOVA 1–2 band — while a low-UPF dish that is only fermented/processed
- * (NOVA 3: miso, cheese, cured fish) reads as a caution, not an alarm. When the share is
- * unknown (a partially-populated nutrition object), fall back to the band alone.
+ * Processing → 1–10 rating (1 = least processed, 10 = most). When the ultra-processed
+ * (NOVA 4) share is known it governs the alarm: it is the health-relevant NOVA signal
+ * (Lane 2024), not merely a low share of whole foods, so a dish lands in the 7–10 poor
+ * band only when a real share of its energy is ultra-processed — regardless of the NOVA
+ * 1–2 band — while a low-UPF dish that is only fermented/processed (NOVA 3: miso, cheese,
+ * cured fish) sits in the 4–6 caution band, not the alarm. When the share is unknown (a
+ * partially-populated nutrition object), fall back to the band alone. Within each band the
+ * whole-food share positions the exact rating. The band choice is kept identical to the
+ * old tone split, so `ratingTone(processingRating(…))` always agrees with the band word.
  */
-export function processingTone(band?: string | null, ultraProcessedPct?: number | null): Tone {
-  if (!band) return 'unknown';
-  if (ultraProcessedPct != null) {
-    if (ultraProcessedPct >= UPF_ALARM_PCT) return 'bad';
-    return band === 'minimally-processed' ? 'good' : 'mid';
+export function processingRating(
+  minimallyProcessedPct?: number | null,
+  ultraProcessedPct?: number | null,
+  band?: string | null,
+): number | null {
+  if (minimallyProcessedPct == null || !band) return null;
+  const upfKnown = ultraProcessedPct != null;
+  // Poor (7–10): a real ultra-processed share, or — when UPF is unknown — a highly-processed dish.
+  if (upfKnown ? ultraProcessedPct! >= UPF_ALARM_PCT : band === 'highly-processed') {
+    const over = upfKnown ? Math.min(ultraProcessedPct!, 100) - UPF_ALARM_PCT : 100 - minimallyProcessedPct;
+    const span = upfKnown ? 100 - UPF_ALARM_PCT : 100;
+    return clampRating(7 + (over / span) * 3);
   }
-  // UPF share unknown → band alone: minimally good, moderately caution, highly critical.
-  if (band === 'minimally-processed') return 'good';
-  if (band === 'moderately-processed') return 'mid';
-  return 'bad';
+  // Good (1–3): minimally processed with a low/unknown ultra-processed share.
+  if (band === 'minimally-processed') return clampRating(1 + ((100 - minimallyProcessedPct) / 30) * 2);
+  // Caution (4–6): everything else — moderately processed, or NOVA-3 fermented foods (miso, cheese).
+  return clampRating(4 + ((70 - minimallyProcessedPct) / 70) * 2);
 }
 
 /** Display label for a processing band ('minimally-processed' → 'Minimally Processed'). */
@@ -270,22 +293,17 @@ export function processingLabel(band?: string | null): string {
     .join(' ');
 }
 
-/* ---- score dials (value → position on its reference scale) ----
- * Each medallion is a ring that fills to where the value sits on its OWN scale, so a
- * bare number is interpretable at a glance ("64 out of 100", not just "64"). Fill is
- * magnitude, not health: a fuller ring means "higher on this scale", which is worse
- * for GI/GL/inflammation but better for nutrient balance/processing — so healthy-vs-not
- * is carried by the ring's TONE colour (good/mid/bad), consistently across all six, and
- * spelled out by each blurb's "lower/higher is better" line. Nutri-Score is categorical,
- * so it shows an A–E strip with the grade lit instead of a partial fill (ring drawn full).
+/* ---- score dials (every metric → the same 1–10 dial) ----
+ * Each medallion shows one 1–10 rating (see the normalization block above): the number in
+ * the centre, the ring filled to `rating / 10`, and both tinted by `ratingTone`. Because 1
+ * is always healthiest and 10 always least healthy, every dial reads the same way — a small
+ * green ring is good, a full red ring is poor, lower is better — with no per-metric direction
+ * to remember. The metric's native value (GI 64, Grade C, −0.8, 89% whole …) is kept beneath
+ * as `scaleRef` so nothing is hidden; the band word sits above it as `sub`.
  */
 
-/** Glycemic load has no fixed maximum; the dial saturates here (≥ this reads "high"). */
-export const GL_DIAL_MAX = 20;
-/** Nutri-Score grades, best → worst, for the A–E strip. */
+/** Nutri-Score grades, best → worst — indexed to map a grade to its 1–10 rating. */
 export const nutriGrades = ['A', 'B', 'C', 'D', 'E'] as const;
-
-const clamp01 = (n: number) => (n < 0 ? 0 : n > 1 ? 1 : n);
 
 /** Tone → Tailwind text color (ring arc, accents). Shared so the three renderers
  *  can't drift; the literal class strings keep them in Tailwind's content scan. */
@@ -313,40 +331,24 @@ export function tipAlignClass(align: TooltipAlign): string {
   return align === 'left' ? 'left-0' : align === 'right' ? 'right-0' : 'left-1/2 -translate-x-1/2';
 }
 
-/** Ring fill (0..1) for the glycemic index on its 0–100 scale. */
-export function giFill(gi?: number | null): number {
-  return gi == null ? 0 : clamp01(gi / 100);
-}
-/** Ring fill (0..1) for the glycemic load, saturating at `GL_DIAL_MAX`. */
-export function glFill(gl?: number | null): number {
-  return gl == null ? 0 : clamp01(gl / GL_DIAL_MAX);
-}
-/** Ring fill (0..1) for inflammation across its −2 (most anti) … +2 (most pro) range. */
-export function inflammationFill(score?: number | null): number {
-  return score == null ? 0 : clamp01((score + 2) / 4);
-}
-
 export interface ScoreDial {
   key: 'gi' | 'gl' | 'nutri' | 'balance' | 'inflam' | 'processing';
   label: string;
   /** One-line explanation of what the score measures, shown as a hover/focus tooltip. */
   blurb: string;
-  /** Display value, e.g. "64", "C", "−0.8" (typographic minus), or "—" when absent. */
+  /** The 1–10 rating as a string ("1" … "10"), or "—" when the score is absent. */
   value: string;
   /** Whether this score has a real value; when false, `value` is the "—" placeholder.
    *  The compact strip filters on this so it never carries a dangling "GI —" chip. */
   present: boolean;
   /** Band word / qualifier shown under the label (CSS-capitalized). */
   sub?: string;
-  /** Reference scale or basis shown beneath ring metrics, e.g. "0–100" or "per serving". */
+  /** The metric's native value, shown beneath the dial so nothing is hidden — e.g.
+   *  "GI 64", "Grade C", "−0.8", "89% whole". */
   scaleRef?: string;
   tone: Tone;
-  /** Ring fill 0..1 (1 = full ring, used for the categorical Nutri-Score). */
+  /** Ring fill 0..1 = `rating / 10`; 0 when the score is absent. */
   fill: number;
-  /** Present only for Nutri-Score → render an A–E strip rather than `scaleRef`. */
-  grades?: readonly string[];
-  /** Index into `grades` of the active grade (−1 when none). */
-  activeGrade?: number;
 }
 
 /** Minimal structural shape shared by the collection entry and the authoring draft. */
@@ -371,9 +373,11 @@ type NutritionLike =
   | undefined;
 
 /**
- * Build the four score dials from a nutrition block — the single source of the
- * value/tone/fill logic shared by the Astro detail page, the React edit preview,
- * and the authoring panel (so the three renderers never drift).
+ * Build the six score dials from a nutrition block — the single source of the
+ * rating/tone/fill logic shared by the Astro detail page, the React edit preview,
+ * and the authoring panel (so the three renderers never drift). Every dial is the
+ * same shape: `value` is the metric's 1–10 rating, `fill` is `rating / 10`, `tone`
+ * is `ratingTone(rating)`, and `scaleRef` keeps the native value in view.
  */
 export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
   const gly = nutrition?.glycemic ?? undefined;
@@ -382,84 +386,79 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
   const bal = nutrition?.balance ?? undefined;
   const proc = nutrition?.processing ?? undefined;
   const grade = nutri?.grade ?? null;
+
+  const gi = giRating(gly?.gi);
+  const gl = glRating(gly?.gl);
+  const nu = nutriRating(grade);
+  const ba = balanceRating(bal?.score);
+  const inf = inflammationRating(inflam?.score);
+  const pr = processingRating(proc?.minimallyProcessedPct, proc?.ultraProcessedPct, proc?.band);
+
+  // Native inflammation value with a typographic minus (−2 … +2), kept beneath the dial.
+  const inflamRaw =
+    inflam?.score != null ? (inflam.score > 0 ? `+${inflam.score}` : String(inflam.score).replace('-', '−')) : undefined;
+
+  const dial = (rating: number | null) => ({
+    value: rating != null ? String(rating) : '—',
+    present: rating != null,
+    tone: ratingTone(rating),
+    fill: rating != null ? rating / 10 : 0,
+  });
+
   return [
     {
       key: 'gi',
       label: 'Glycemic Index',
       blurb:
-        'How quickly this dish’s carbohydrate raises blood glucose (0–100, glucose = 100), carb-weighted from published values. Lower is better. An estimate that tends to read high for mixed meals.',
-      value: gly?.gi != null ? String(Math.round(gly.gi)) : '—',
-      present: gly?.gi != null,
+        'How quickly this dish’s carbohydrate raises blood glucose (native 0–100, glucose = 100), carb-weighted from published values. Shown as 1 (best) to 10 — lower is better. An estimate that tends to read high for mixed meals.',
       sub: gly?.giBand || undefined,
-      scaleRef: '0–100',
-      tone: giTone(gly?.gi),
-      fill: giFill(gly?.gi),
+      scaleRef: gly?.gi != null ? `GI ${Math.round(gly.gi)}` : undefined,
+      ...dial(gi),
     },
     {
       key: 'gl',
       label: 'Glycemic Load',
       blurb:
-        'Glycemic index scaled by the available carbohydrate in one serving — the total blood-glucose impact of a portion, not just its speed. Lower is better (low ≤10, high ≥20). An estimate.',
-      value: gly?.gl != null ? String(Math.round(gly.gl)) : '—',
-      present: gly?.gl != null,
+        'Glycemic index scaled by the available carbohydrate in one serving — the total blood-glucose impact of a portion, not just its speed (native low ≤10, high ≥20). Shown as 1 (best) to 10 — lower is better. An estimate.',
       sub: gly?.glBand || undefined,
-      scaleRef: 'per serving',
-      tone: glTone(gly?.gl),
-      fill: glFill(gly?.gl),
+      scaleRef: gly?.gl != null ? `GL ${Math.round(gly.gl)}` : undefined,
+      ...dial(gl),
     },
     {
       key: 'nutri',
       label: 'Nutrition Score',
       blurb:
-        'Nutri-Score 2023 (A–E): fibre, protein and fruit/vegetables/legumes weighed against energy, sugar, saturated fat and salt. A is best, E is worst. Built for packaged products, applied to the dish as an estimate.',
-      value: grade ?? '—',
-      present: grade != null,
-      sub: nutri ? 'Nutri-Score' : undefined,
-      tone: nutriTone(grade),
-      fill: 1,
-      grades: nutriGrades,
-      activeGrade: grade ? nutriGrades.indexOf(grade as (typeof nutriGrades)[number]) : -1,
+        'Nutri-Score 2023 (native A best … E worst): fibre, protein and fruit/vegetables/legumes weighed against energy, sugar, saturated fat and salt. Mapped to 1 (grade A) … 10 (grade E) — lower is better. Built for packaged products, applied to the dish as an estimate.',
+      sub: undefined,
+      scaleRef: grade ? `Grade ${grade}` : undefined,
+      ...dial(nu),
     },
     {
       key: 'balance',
       label: 'Nutrient Balance',
       blurb:
-        'Nutrient density (NRF9.3, 1–10): nine nutrients to encourage — protein, fibre, vitamins, minerals — minus three to limit (saturated fat, sugar, sodium), per 100 kcal. Higher is better. An estimate.',
-      value: bal?.score != null ? String(bal.score) : '—',
-      present: bal?.score != null,
+        'Nutrient density (native NRF9.3, 1–10, where more is denser): nine nutrients to encourage — protein, fibre, vitamins, minerals — minus three to limit (saturated fat, sugar, sodium), per 100 kcal. Inverted here to 1 (best) … 10 so every dial reads the same way — lower is better. An estimate.',
       sub: bal?.band || undefined,
-      scaleRef: '1–10',
-      tone: balanceTone(bal?.band),
-      fill: bal?.score != null ? clamp01(bal.score / 10) : 0,
+      scaleRef: bal?.score != null ? `NRF ${bal.score}` : undefined,
+      ...dial(ba),
     },
     {
       key: 'inflam',
       label: 'Inflammation',
       blurb:
-        'Food Inflammation Index (−2 anti to +2 pro): inflammatory potential from fat quality, fibre, antioxidants and polyphenols, energy-weighted across the dish. Lower (more anti-inflammatory) is better. An estimate, not a clinical measure.',
-      value:
-        inflam?.score != null
-          ? inflam.score > 0
-            ? `+${inflam.score}`
-            : String(inflam.score).replace('-', '−') // typographic minus, matching the scaleRef
-          : '—',
-      present: inflam?.score != null,
+        'Food Inflammation Index (native −2 anti to +2 pro): inflammatory potential from fat quality, fibre, antioxidants and polyphenols, energy-weighted across the dish. Shown as 1 (most anti-inflammatory) to 10 — lower is better. An estimate, not a clinical measure.',
       sub: inflam ? inflammationLabel(inflam.band) : undefined,
-      scaleRef: '−2 … +2',
-      tone: inflammationTone(inflam?.band),
-      fill: inflammationFill(inflam?.score),
+      scaleRef: inflamRaw,
+      ...dial(inf),
     },
     {
       key: 'processing',
       label: 'Processing',
       blurb:
-        'Share of the dish’s energy from minimally processed foods and basic culinary ingredients (NOVA groups 1–2), with the ultra-processed share (NOVA 4) shown beneath. Higher = less processed is better. A rough estimate — processing is judged by food type.',
-      value: proc?.minimallyProcessedPct != null ? `${Math.round(proc.minimallyProcessedPct)}%` : '—',
-      present: proc?.minimallyProcessedPct != null,
+        'How processed the dish is (NOVA): its whole-food share (groups 1–2) set against the ultra-processed share (group 4), which drives the rating when it climbs. Shown as 1 (least processed) to 10 — lower is better. A rough estimate — processing is judged by food type.',
       sub: proc ? processingLabel(proc.band) : undefined,
-      scaleRef: proc?.ultraProcessedPct != null ? `UPF ${Math.round(proc.ultraProcessedPct)}%` : undefined,
-      tone: processingTone(proc?.band, proc?.ultraProcessedPct),
-      fill: proc?.minimallyProcessedPct != null ? clamp01(proc.minimallyProcessedPct / 100) : 0,
+      scaleRef: pr != null ? `${Math.round(proc!.minimallyProcessedPct!)}% whole` : undefined,
+      ...dial(pr),
     },
   ];
 }
