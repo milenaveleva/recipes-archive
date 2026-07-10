@@ -64,8 +64,8 @@ nutrition:
     gl: 8
     giBand: medium
     glBand: low
-    carbCoveragePct: 13
     gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    carbCoveragePct: 13
   nutriScore:
     grade: E
     points: 18

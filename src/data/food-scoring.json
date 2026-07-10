@@ -45,6 +45,7 @@
   "169118": { "gi": 38, "giSource": "Atkinson 2021 (pear, raw)", "giConfidence": "high" },
   "169214": { "gi": 52, "giSource": "Atkinson 2021 (sweet corn, boiled/canned)", "giConfidence": "medium" },
   "168411": { "gi": 18, "giSource": "Atkinson 2021 (soybeans, boiled, edamame proxy)", "giConfidence": "low" },
+  "168191": { "gi": 50, "giSource": "Atkinson 2021 (dates, dried)", "giConfidence": "medium" },
   "2262072": { "gi": 14, "giSource": "Atkinson 2021 (peanuts)", "giConfidence": "medium" },
   "171942": { "gi": 85, "giSource": "Atkinson 2021 (rice beverage, hydrolyzed starch)", "giConfidence": "medium" },
   "172442": { "gi": 32, "giSource": "Atkinson 2021 (soybeans, fermented-soy proxy)", "giConfidence": "low" }

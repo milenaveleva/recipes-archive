@@ -54,6 +54,13 @@ nutrition:
     sugar_g: 31.9
     sodium_mg: 212
     availableCarb_g: 46.6
+  glycemic:
+    gi: 50
+    gl: 16
+    giBand: low
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    carbCoveragePct: 70
   nutriScore:
     grade: A
     points: 0
@@ -77,6 +84,7 @@ nutrition:
   computedAt: "2026-07-05"
   dataSources:
     - USDA FoodData Central
+    - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
