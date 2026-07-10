@@ -45,7 +45,6 @@ export default function ScoreDial({ dial, align = 'center' }: { dial: ScoreDialD
       </div>
 
       <div className="eyebrow !text-[0.62rem] !tracking-[0.14em] leading-tight text-ink-soft">{dial.label}</div>
-      {dial.sub && <div className="font-ui text-[0.66rem] capitalize leading-tight text-ink-faint">{dial.sub}</div>}
 
       <div
         aria-hidden="true"

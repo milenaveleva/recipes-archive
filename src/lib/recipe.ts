@@ -298,7 +298,7 @@ export function processingLabel(band?: string | null): string {
  * the centre, the ring filled to `rating / 10`, and both tinted by `ratingTone`. Because 1
  * is always healthiest and 10 always least healthy, every dial reads the same way — a small
  * green ring is good, a full red ring is poor, lower is better — with no per-metric direction
- * to remember. The band word (Low, Minimally Processed …) sits under the label as `sub`.
+ * to remember. Each dial shows only the number, its name, and a hover tooltip (`blurb`).
  */
 
 /** Nutri-Score grades, best → worst — indexed to map a grade to its 1–10 rating. */
@@ -340,8 +340,6 @@ export interface ScoreDial {
   /** Whether this score has a real value; when false, `value` is the "—" placeholder.
    *  The compact strip filters on this so it never carries a dangling "GI —" chip. */
   present: boolean;
-  /** Band word / qualifier shown under the label (CSS-capitalized). */
-  sub?: string;
   tone: Tone;
   /** Ring fill 0..1 = `rating / 10`; 0 when the score is absent. */
   fill: number;
@@ -403,7 +401,6 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       label: 'Glycemic Index',
       blurb:
         'How quickly this dish’s carbohydrate raises blood glucose (native 0–100, glucose = 100), carb-weighted from published values. Shown as 1 (best) to 10 — lower is better. An estimate that tends to read high for mixed meals.',
-      sub: gly?.giBand || undefined,
       ...dial(gi),
     },
     {
@@ -411,7 +408,6 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       label: 'Glycemic Load',
       blurb:
         'Glycemic index scaled by the available carbohydrate in one serving — the total blood-glucose impact of a portion, not just its speed (native low ≤10, high ≥20). Shown as 1 (best) to 10 — lower is better. An estimate.',
-      sub: gly?.glBand || undefined,
       ...dial(gl),
     },
     {
@@ -419,7 +415,6 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       label: 'Nutrition Score',
       blurb:
         'Nutri-Score 2023 (native A best … E worst): fibre, protein and fruit/vegetables/legumes weighed against energy, sugar, saturated fat and salt. Mapped to 1 (grade A) … 10 (grade E) — lower is better. Built for packaged products, applied to the dish as an estimate.',
-      sub: undefined,
       ...dial(nu),
     },
     {
@@ -427,7 +422,6 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       label: 'Nutrient Balance',
       blurb:
         'Nutrient density (native NRF9.3, 1–10, where more is denser): nine nutrients to encourage — protein, fibre, vitamins, minerals — minus three to limit (saturated fat, sugar, sodium), per 100 kcal. Inverted here to 1 (best) … 10 so every dial reads the same way — lower is better. An estimate.',
-      sub: bal?.band || undefined,
       ...dial(ba),
     },
     {
@@ -435,7 +429,6 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       label: 'Inflammation',
       blurb:
         'Food Inflammation Index (native −2 anti to +2 pro): inflammatory potential from fat quality, fibre, antioxidants and polyphenols, energy-weighted across the dish. Shown as 1 (most anti-inflammatory) to 10 — lower is better. An estimate, not a clinical measure.',
-      sub: inflam ? inflammationLabel(inflam.band) : undefined,
       ...dial(inf),
     },
     {
@@ -443,7 +436,6 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       label: 'Processing',
       blurb:
         'How processed the dish is (NOVA): its whole-food share (groups 1–2) set against the ultra-processed share (group 4), which drives the rating when it climbs. Shown as 1 (least processed) to 10 — lower is better. A rough estimate — processing is judged by food type.',
-      sub: proc ? processingLabel(proc.band) : undefined,
       ...dial(pr),
     },
   ];

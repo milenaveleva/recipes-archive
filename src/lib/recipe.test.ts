@@ -150,17 +150,15 @@ describe('buildScoreDials', () => {
     inflammation: { score: -0.8, band: 'mildly-anti-inflammatory' },
   };
 
-  it('returns each dial as a 1–10 rating with matching tone, fill and band sub', () => {
+  it('returns each dial as a 1–10 rating with matching tone and fill', () => {
     const [gi, gl, nutri, balance, inflam] = buildScoreDials(nutrition);
 
     expect(gi.value).toBe('5');
     expect(gi.tone).toBe('mid');
     expect(gi.fill).toBeCloseTo(0.5);
-    expect(gi.sub).toBe('medium');
 
     expect(gl.value).toBe('6');
     expect(gl.tone).toBe('mid');
-    expect(gl.sub).toBe('medium');
 
     expect(nutri.value).toBe('6'); // grade C → 6
     expect(nutri.tone).toBe('mid');
@@ -169,11 +167,9 @@ describe('buildScoreDials', () => {
     expect(balance.value).toBe('3'); // NRF 8 inverted → 3 (good)
     expect(balance.tone).toBe('good');
     expect(balance.fill).toBeCloseTo(0.3);
-    expect(balance.sub).toBe('high');
 
     expect(inflam.value).toBe('4'); // −0.8 → 4 (mid)
     expect(inflam.tone).toBe('mid');
-    expect(inflam.sub).toBe('Mildly-Anti-Inflam.');
   });
 
   it('shows an em-dash balance dial with empty fill when absent', () => {
@@ -194,12 +190,12 @@ describe('buildScoreDials', () => {
     expect(nutri.present).toBe(false);
   });
 
-  it('leaves the band sub undefined when the band is absent', () => {
+  it('rates a partial nutrition block (only glycemic load present)', () => {
     const [, gl] = buildScoreDials({ glycemic: { gl: 12 } });
     expect(gl.value).toBe('4'); // GL 12 → 4
-    expect(gl.sub).toBeUndefined();
+    expect(gl.present).toBe(true);
     const [giBlank] = buildScoreDials({ glycemic: { gi: 50, giBand: '' } });
-    expect(giBlank.sub).toBeUndefined();
+    expect(giBlank.value).toBe('3'); // GI 50 → 3
   });
 
   it('maps a positive (pro-inflammatory) score to a poor rating', () => {
