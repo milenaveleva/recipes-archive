@@ -291,3 +291,67 @@ h1, h2, h3, h4 {
   color: var(--color-ink-soft);
   font-style: italic;
 }
+
+/* ── Floating chrome: shrink-on-scroll header + compacting search bar ──────────
+   A scroll listener (BaseLayout) sets `data-scrolled` on <html> past a small
+   threshold and publishes the header height as `--nav-h`. The header shrinks;
+   the index search bar (sticky under the header) collapses to a slim row whose
+   only filter affordance is the icon rail — until the user focuses it or taps a
+   rail icon, which sets `data-expanded` to restore the full toolbar. */
+.site-header-row {
+  transition: padding-top 0.28s ease, padding-bottom 0.28s ease;
+}
+.site-title {
+  transition: font-size 0.28s ease;
+}
+.site-dot {
+  transition: opacity 0.28s ease, transform 0.2s ease;
+}
+:root[data-scrolled] .site-header-row {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+:root[data-scrolled] .site-title {
+  font-size: 1.3rem;
+}
+:root[data-scrolled] .site-dot {
+  opacity: 0;
+}
+
+/* The search bar shares the header's shrink cue; the card animates its padding
+   and the facet block collapses to the rail. */
+[data-search-card] {
+  transition: padding 0.28s ease;
+}
+[data-facet-rail] {
+  display: none;
+}
+:root[data-scrolled] [data-search-root]:not([data-expanded]) [data-search-card] {
+  padding: 0.5rem 0.75rem;
+}
+:root[data-scrolled] [data-search-root]:not([data-expanded]) [data-search-facets] {
+  display: none;
+}
+:root[data-scrolled] [data-search-root]:not([data-expanded]) [data-facet-rail] {
+  display: flex;
+}
+/* Clip (don't display:none) the result count when collapsed so its aria-live
+   announcements keep reaching screen readers while the bar is slim. */
+:root[data-scrolled] [data-search-root]:not([data-expanded]) [data-search-count] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header-row,
+  .site-title,
+  .site-dot,
+  [data-search-card] {
+    transition: none;
+  }
+}

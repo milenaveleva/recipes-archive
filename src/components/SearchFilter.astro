@@ -11,7 +11,9 @@
  * native <details> so the bar stays calm.
  */
 import type { SearchDoc, FacetGroup } from '../lib/search';
+import { facetIconName } from '../lib/icons';
 import FacetChips from './FacetChips.astro';
+import Icon from './Icon.astro';
 
 interface Props {
   docs: SearchDoc[];
@@ -20,6 +22,11 @@ interface Props {
 const { docs, facets } = Astro.props;
 const primary = facets.filter((g) => g.primary);
 const more = facets.filter((g) => !g.primary);
+// The compact rail mirrors every facet group as an icon-only toggle; groups
+// without a glyph are skipped (their chips still appear in the expanded card).
+const railGroups = facets
+  .map((g) => ({ group: g, icon: facetIconName(g.key) }))
+  .filter((r): r is { group: FacetGroup; icon: NonNullable<typeof r.icon> } => r.icon != null);
 
 // Escape <, > and & to \uXXXX so the JSON stays inert inside the <script>
 // element (same convention as JsonLd.astro); read back via textContent + JSON.parse.
@@ -32,12 +39,15 @@ const docsJson = JSON.stringify(docs)
 <section
   data-search-root
   style="display:none"
-  class="mx-auto max-w-6xl px-5 sm:px-8 pb-8"
+  class="sticky top-[var(--nav-h,4.5rem)] z-30 mx-auto max-w-6xl px-5 sm:px-8 pb-8"
   aria-label="Search and filter recipes"
 >
-  <div class="flex flex-col gap-4 rounded-2xl border border-line bg-card/60 p-4 sm:p-5">
-    <div class="flex items-center gap-3">
-      <div class="relative flex-1">
+  <div
+    data-search-card
+    class="flex flex-col gap-4 rounded-2xl border border-line bg-card/80 p-4 shadow-sm backdrop-blur-sm sm:p-5"
+  >
+    <div class="flex flex-wrap items-center gap-3">
+      <div class="relative min-w-[10rem] flex-1">
         <svg
           class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-faint"
           viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"
@@ -62,28 +72,53 @@ const docsJson = JSON.stringify(docs)
       >
         Clear
       </button>
+
+      {railGroups.length > 0 && (
+        <div data-facet-rail role="group" aria-label="Filters" class="flex-wrap items-center gap-0.5">
+          {railGroups.map(({ group, icon }) => (
+            <button
+              type="button"
+              data-rail-group={group.key}
+              aria-label={`${group.label} filters`}
+              class="group/rail relative inline-flex h-7 w-7 items-center justify-center rounded-full text-ink-faint transition-colors hover:bg-paper hover:text-spice [&[data-active]]:text-spice"
+            >
+              <Icon name={icon} class="h-4 w-4" />
+              <span
+                data-rail-count
+                hidden
+                aria-hidden="true"
+                class="absolute -right-0.5 -top-0.5 min-w-3.5 rounded-full bg-spice px-1 text-center font-ui text-[0.6rem] font-semibold leading-[0.875rem] text-paper"
+              ></span>
+            </button>
+          ))}
+        </div>
+      )}
     </div>
 
-    {primary.length > 0 && (
-      <div class="flex flex-col gap-3">
-        {primary.map((group) => <FacetChips group={group} />)}
-      </div>
-    )}
-
-    {more.length > 0 && (
-      <details class="group/more border-t border-line pt-3">
-        <summary
-          class="flex cursor-pointer list-none items-center gap-1.5 font-ui text-sm text-ink-soft transition-colors hover:text-spice [&::-webkit-details-marker]:hidden"
-        >
-          <span class="eyebrow">Filters</span>
-          <span class="text-ink-faint transition-transform group-open/more:rotate-90" aria-hidden="true">›</span>
-        </summary>
-        <div class="mt-3 flex flex-col gap-3">
-          {more.map((group) => <FacetChips group={group} />)}
+    <div data-search-facets class="flex flex-col gap-4">
+      {primary.length > 0 && (
+        <div class="flex flex-col gap-3">
+          {primary.map((group) => <FacetChips group={group} />)}
         </div>
-      </details>
-    )}
+      )}
 
+      {more.length > 0 && (
+        <details class="group/more border-t border-line pt-3">
+          <summary
+            class="flex cursor-pointer list-none items-center gap-1.5 font-ui text-sm text-ink-soft transition-colors hover:text-spice [&::-webkit-details-marker]:hidden"
+          >
+            <span class="eyebrow">Filters</span>
+            <span class="text-ink-faint transition-transform group-open/more:rotate-90" aria-hidden="true">›</span>
+          </summary>
+          <div class="mt-3 flex flex-col gap-3">
+            {more.map((group) => <FacetChips group={group} />)}
+          </div>
+        </details>
+      )}
+    </div>
+
+    <!-- Outside [data-search-facets] so the collapsed bar keeps this live region
+         in the a11y tree (clipped, not display:none) and still announces counts. -->
     <p data-search-count aria-live="polite" class="font-ui text-xs text-ink-faint"></p>
   </div>
 
@@ -125,6 +160,11 @@ const docsJson = JSON.stringify(docs)
     const emptyEl = root.querySelector<HTMLElement>('[data-search-empty]');
     const divider = document.querySelector<HTMLElement>('[data-collection-divider]');
     const chips = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-facet-value]'));
+    // The compact icon rail: each button expands the toolbar for its group and
+    // carries a badge of that group's active selections. `details` is the
+    // secondary-facet disclosure a rail click needs to open.
+    const railBtns = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-rail-group]'));
+    const details = root.querySelector<HTMLDetailsElement>('details');
 
     // The cards are rendered by Astro (RecipeCard) and tagged with their slug.
     // Rebuilt from the live DOM (not snapshotted) so the optimistic overlay's
@@ -181,7 +221,72 @@ const docsJson = JSON.stringify(docs)
       show(emptyEl, shown === 0);
       show(divider, shown > 0); // hide the "The Collection" rule when nothing shows
       show(clearBtn, q !== '' || facetCount() > 0);
+      updateRail();
     }
+
+    // Reflect each group's active-selection count on its rail icon, so the
+    // collapsed bar still shows where filters are applied.
+    function updateRail() {
+      for (const btn of railBtns) {
+        const key = btn.dataset.railGroup;
+        const n = key ? selected[key]?.length ?? 0 : 0;
+        btn.toggleAttribute('data-active', n > 0);
+        const badge = btn.querySelector<HTMLElement>('[data-rail-count]');
+        if (badge) {
+          badge.textContent = n ? String(n) : '';
+          badge.hidden = n === 0;
+        }
+      }
+    }
+
+    // Expansion: focusing the search or tapping a rail icon restores the full
+    // toolbar; Escape or any interaction outside collapses it back to the rail.
+    const setExpanded = (on: boolean) => root.toggleAttribute('data-expanded', on);
+    for (const btn of railBtns) {
+      btn.addEventListener('click', () => {
+        setExpanded(true);
+        const key = btn.dataset.railGroup;
+        const target = key
+          ? root.querySelector<HTMLButtonElement>(`[data-facet-group="${key}"]`)
+          : null;
+        // Open the disclosure first if this group lives inside it, else the
+        // focus below can't land on a display:none chip.
+        if (details && target && details.contains(target)) details.open = true;
+        target?.focus();
+      });
+    }
+    input?.addEventListener('focus', () => setExpanded(true));
+    root.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      const compact = document.documentElement.hasAttribute('data-scrolled');
+      const active = document.activeElement as HTMLElement | null;
+      setExpanded(false);
+      // Collapsing while scrolled sends [data-search-facets] to display:none; if
+      // a chip inside it held focus it would drop to <body>, so hand focus to
+      // that group's rail button, which stays visible on the collapsed bar.
+      if (!compact) return;
+      if (active === input) {
+        input.blur();
+        return;
+      }
+      const group = active?.closest<HTMLElement>('[data-facet-group]')?.dataset.facetGroup;
+      const railBtn = group
+        ? root.querySelector<HTMLButtonElement>(`[data-rail-group="${group}"]`)
+        : null;
+      railBtn?.focus();
+    });
+    for (const evt of ['pointerdown', 'focusin'] as const) {
+      document.addEventListener(evt, (e) => {
+        if (!root.contains(e.target as Node)) setExpanded(false);
+      });
+    }
+    // `data-expanded` is only meaningful while scrolled (the compact bar). When
+    // the page returns to the top, the scroll script drops `data-scrolled`;
+    // clear the now-inert expanded flag too, so the next scroll-down collapses
+    // to the rail instead of staying stuck open.
+    new MutationObserver(() => {
+      if (!document.documentElement.hasAttribute('data-scrolled')) setExpanded(false);
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-scrolled'] });
 
     input?.addEventListener('input', recompute);
 

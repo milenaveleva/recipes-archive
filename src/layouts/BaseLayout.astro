@@ -94,18 +94,18 @@ const buildTime = Date.now();
     >
       Skip to content
     </a>
-    <header class="border-b border-line bg-paper/80 backdrop-blur-sm sticky top-0 z-40">
+    <header data-site-header class="border-b border-line bg-paper/80 backdrop-blur-sm sticky top-0 z-40">
       <div class="mx-auto max-w-6xl px-5 sm:px-8">
-        <div class="flex items-center justify-between gap-6 py-4">
+        <div class="site-header-row flex items-center justify-between gap-6 py-4">
           <a href={withBase('/')} class="group flex items-baseline gap-2.5 no-underline">
             <span
-              class="font-display text-2xl sm:text-[1.7rem] font-medium tracking-tight text-ink"
+              class="site-title font-display text-2xl sm:text-[1.7rem] font-medium tracking-tight text-ink"
               style="font-variation-settings:'SOFT' 40, 'WONK' 1;"
             >
               mili’s <s class="decoration-spice decoration-2">hedonistic</s> longevity cookbook
             </span>
             <span
-              class="hidden sm:inline-block h-2 w-2 rounded-full bg-spice transition-transform group-hover:scale-150"
+              class="site-dot hidden sm:inline-block h-2 w-2 rounded-full bg-spice transition-transform group-hover:scale-150"
             ></span>
           </a>
           <AuthButton />
@@ -161,6 +161,58 @@ const buildTime = Date.now();
           gated.forEach((el) => el.classList.toggle('hidden', !session)),
         );
       }
+    </script>
+
+    <script>
+      // Floating chrome: mark `data-scrolled` on <html> once the page scrolls
+      // past a small threshold so the header (and the index search bar) shrink,
+      // and publish the header's live height as `--nav-h` so the sticky search
+      // bar docks flush beneath it.
+      const root = document.documentElement;
+      const header = document.querySelector<HTMLElement>('[data-site-header]');
+      const THRESHOLD = 24;
+      let ticking = false;
+      let wasScrolled = false;
+
+      const measure = () => {
+        if (header) root.style.setProperty('--nav-h', `${header.offsetHeight}px`);
+      };
+
+      // Follow the header through its 0.28s shrink/grow so `--nav-h` (and the
+      // sticky search bar docked to it) stay flush the whole time, not just at
+      // the settled endpoints. rAF loop bounded to just past the transition.
+      let trackId = 0;
+      let trackUntil = 0;
+      function track() {
+        measure();
+        if (performance.now() < trackUntil) trackId = requestAnimationFrame(track);
+      }
+
+      function apply() {
+        ticking = false;
+        const scrolled = window.scrollY > THRESHOLD;
+        root.toggleAttribute('data-scrolled', scrolled);
+        // Only the threshold crossing changes the header height; re-measure
+        // through the resulting transition rather than on every scroll frame.
+        if (scrolled !== wasScrolled) {
+          wasScrolled = scrolled;
+          cancelAnimationFrame(trackId);
+          trackUntil = performance.now() + 320;
+          track();
+        }
+      }
+      function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(apply);
+      }
+
+      measure();
+      apply();
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', measure, { passive: true });
+      // The web font swaps in after first paint and shifts the header height.
+      document.fonts?.ready.then(measure);
     </script>
   </body>
 </html>

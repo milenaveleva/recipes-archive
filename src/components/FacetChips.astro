@@ -6,15 +6,21 @@
  * look right and stay accessible.
  */
 import type { FacetGroup } from '../lib/search';
+import { facetIconName } from '../lib/icons';
+import Icon from './Icon.astro';
 
 interface Props {
   group: FacetGroup;
 }
 const { group } = Astro.props;
+const icon = facetIconName(group.key);
 ---
 
 <div role="group" aria-label={group.label} class="flex flex-wrap items-center gap-1.5">
-  <span class="eyebrow mr-1 shrink-0">{group.label}</span>
+  <span class="eyebrow mr-1 flex shrink-0 items-center gap-1.5">
+    {icon && <Icon name={icon} class="h-3.5 w-3.5 text-ink-faint" />}
+    {group.label}
+  </span>
   {
     group.values.map((v) => (
       <button
@@ -23,8 +29,14 @@ const { group } = Astro.props;
         data-facet-value={v.value}
         aria-pressed="false"
         aria-label={`${v.label}, ${v.count} ${v.count === 1 ? 'recipe' : 'recipes'}`}
-        class="group/chip inline-flex items-baseline gap-1.5 rounded-full border border-line bg-card px-3 py-1 font-ui text-sm text-ink-soft transition-colors hover:border-spice hover:text-spice aria-pressed:border-spice aria-pressed:bg-spice aria-pressed:text-paper"
+        class="group/chip inline-flex items-center gap-1.5 rounded-full border border-line bg-card px-3 py-1 font-ui text-sm text-ink-soft transition-colors hover:border-spice hover:text-spice aria-pressed:border-spice aria-pressed:bg-spice aria-pressed:text-paper"
       >
+        {icon && (
+          <Icon
+            name={icon}
+            class="h-3 w-3 shrink-0 text-ink-faint group-aria-pressed/chip:text-paper/75"
+          />
+        )}
         {v.label}
         <span aria-hidden="true" class="font-ui text-xs text-ink-faint tabular-nums group-aria-pressed/chip:text-paper/75">
           {v.count}
