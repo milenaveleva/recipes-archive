@@ -4,11 +4,12 @@
  * client-rendered scores match the static detail page exactly. Data comes from
  * `buildScoreDials`; this file is purely presentational.
  */
-import { toneText, toneBg, type ScoreDial as ScoreDialData } from '../../lib/recipe';
+import { toneText, toneBg, tipAlignClass, type ScoreDial as ScoreDialData, type TooltipAlign } from '../../lib/recipe';
 
-export default function ScoreDial({ dial }: { dial: ScoreDialData }) {
+export default function ScoreDial({ dial, align = 'center' }: { dial: ScoreDialData; align?: TooltipAlign }) {
   // r = 15.9155 → circumference ≈ 100, so the arc length is the fill percentage.
   const dash = `${Math.round(dial.fill * 100)} 100`;
+  const tipAlign = tipAlignClass(align);
   // The visible value uses a typographic minus (U+2212) to match the "−2 … +2"
   // scaleRef, but some screen readers don't voice U+2212 as "minus" — swap it for
   // an ASCII hyphen in the accessible name so a negative score is never heard as
@@ -69,7 +70,7 @@ export default function ScoreDial({ dial }: { dial: ScoreDialData }) {
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-full left-1/2 z-30 mb-2 w-56 max-w-[78vw] -translate-x-1/2 rounded-lg bg-ink px-3 py-2 text-left font-ui text-[0.7rem] font-normal normal-case leading-snug tracking-normal text-paper opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100"
+        className={`pointer-events-none absolute bottom-full z-30 mb-2 w-56 max-w-[78vw] rounded-lg bg-ink px-3 py-2 text-left font-ui text-[0.7rem] font-normal normal-case leading-snug tracking-normal text-paper opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 group-focus-within:opacity-100 ${tipAlign}`}
       >
         {dial.blurb}
       </div>

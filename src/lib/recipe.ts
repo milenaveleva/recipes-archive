@@ -303,6 +303,16 @@ export const toneBg: Record<Tone, string> = {
   unknown: 'bg-line-strong',
 };
 
+/** Horizontal anchor for a score dial's hover tooltip. */
+export type TooltipAlign = 'left' | 'center' | 'right';
+/** Tooltip anchor → Tailwind position class. Shared so the Astro dial and its React
+ *  mirror can't drift (same pattern as `toneText`/`toneBg`). In a 2-column grid the
+ *  left/right columns anchor to their outer edge so the tooltip grows inward and can't
+ *  overflow the viewport; anything else stays centred. */
+export function tipAlignClass(align: TooltipAlign): string {
+  return align === 'left' ? 'left-0' : align === 'right' ? 'right-0' : 'left-1/2 -translate-x-1/2';
+}
+
 /** Ring fill (0..1) for the glycemic index on its 0–100 scale. */
 export function giFill(gi?: number | null): number {
   return gi == null ? 0 : clamp01(gi / 100);

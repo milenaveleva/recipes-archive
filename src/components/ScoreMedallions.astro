@@ -48,8 +48,8 @@ const abbrev = (d: (typeof dials)[number]) =>
             <div class="grid grid-cols-2 gap-3">
               {dials
                 .filter((d) => g.keys.includes(d.key))
-                .map((d) => (
-                  <ScoreDial dial={d} />
+                .map((d, i) => (
+                  <ScoreDial dial={d} align={i === 0 ? 'left' : 'right'} />
                 ))}
             </div>
           </section>
