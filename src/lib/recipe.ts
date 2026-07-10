@@ -298,8 +298,7 @@ export function processingLabel(band?: string | null): string {
  * the centre, the ring filled to `rating / 10`, and both tinted by `ratingTone`. Because 1
  * is always healthiest and 10 always least healthy, every dial reads the same way — a small
  * green ring is good, a full red ring is poor, lower is better — with no per-metric direction
- * to remember. The metric's native value (GI 64, Grade C, −0.8, 89% whole …) is kept beneath
- * as `scaleRef` so nothing is hidden; the band word sits above it as `sub`.
+ * to remember. The band word (Low, Minimally Processed …) sits under the label as `sub`.
  */
 
 /** Nutri-Score grades, best → worst — indexed to map a grade to its 1–10 rating. */
@@ -343,9 +342,6 @@ export interface ScoreDial {
   present: boolean;
   /** Band word / qualifier shown under the label (CSS-capitalized). */
   sub?: string;
-  /** The metric's native value, shown beneath the dial so nothing is hidden — e.g.
-   *  "GI 64", "Grade C", "−0.8", "89% whole". */
-  scaleRef?: string;
   tone: Tone;
   /** Ring fill 0..1 = `rating / 10`; 0 when the score is absent. */
   fill: number;
@@ -376,8 +372,8 @@ type NutritionLike =
  * Build the six score dials from a nutrition block — the single source of the
  * rating/tone/fill logic shared by the Astro detail page, the React edit preview,
  * and the authoring panel (so the three renderers never drift). Every dial is the
- * same shape: `value` is the metric's 1–10 rating, `fill` is `rating / 10`, `tone`
- * is `ratingTone(rating)`, and `scaleRef` keeps the native value in view.
+ * same shape: `value` is the metric's 1–10 rating, `fill` is `rating / 10`, and
+ * `tone` is `ratingTone(rating)`.
  */
 export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
   const gly = nutrition?.glycemic ?? undefined;
@@ -394,10 +390,6 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
   const inf = inflammationRating(inflam?.score);
   const pr = processingRating(proc?.minimallyProcessedPct, proc?.ultraProcessedPct, proc?.band);
 
-  // Native inflammation value with a typographic minus (−2 … +2), kept beneath the dial.
-  const inflamRaw =
-    inflam?.score != null ? (inflam.score > 0 ? `+${inflam.score}` : String(inflam.score).replace('-', '−')) : undefined;
-
   const dial = (rating: number | null) => ({
     value: rating != null ? String(rating) : '—',
     present: rating != null,
@@ -412,7 +404,6 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       blurb:
         'How quickly this dish’s carbohydrate raises blood glucose (native 0–100, glucose = 100), carb-weighted from published values. Shown as 1 (best) to 10 — lower is better. An estimate that tends to read high for mixed meals.',
       sub: gly?.giBand || undefined,
-      scaleRef: gly?.gi != null ? `GI ${Math.round(gly.gi)}` : undefined,
       ...dial(gi),
     },
     {
@@ -421,7 +412,6 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       blurb:
         'Glycemic index scaled by the available carbohydrate in one serving — the total blood-glucose impact of a portion, not just its speed (native low ≤10, high ≥20). Shown as 1 (best) to 10 — lower is better. An estimate.',
       sub: gly?.glBand || undefined,
-      scaleRef: gly?.gl != null ? `GL ${Math.round(gly.gl)}` : undefined,
       ...dial(gl),
     },
     {
@@ -430,7 +420,6 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       blurb:
         'Nutri-Score 2023 (native A best … E worst): fibre, protein and fruit/vegetables/legumes weighed against energy, sugar, saturated fat and salt. Mapped to 1 (grade A) … 10 (grade E) — lower is better. Built for packaged products, applied to the dish as an estimate.',
       sub: undefined,
-      scaleRef: grade ? `Grade ${grade}` : undefined,
       ...dial(nu),
     },
     {
@@ -439,7 +428,6 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       blurb:
         'Nutrient density (native NRF9.3, 1–10, where more is denser): nine nutrients to encourage — protein, fibre, vitamins, minerals — minus three to limit (saturated fat, sugar, sodium), per 100 kcal. Inverted here to 1 (best) … 10 so every dial reads the same way — lower is better. An estimate.',
       sub: bal?.band || undefined,
-      scaleRef: bal?.score != null ? `NRF ${bal.score}` : undefined,
       ...dial(ba),
     },
     {
@@ -448,7 +436,6 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       blurb:
         'Food Inflammation Index (native −2 anti to +2 pro): inflammatory potential from fat quality, fibre, antioxidants and polyphenols, energy-weighted across the dish. Shown as 1 (most anti-inflammatory) to 10 — lower is better. An estimate, not a clinical measure.',
       sub: inflam ? inflammationLabel(inflam.band) : undefined,
-      scaleRef: inflamRaw,
       ...dial(inf),
     },
     {
@@ -457,7 +444,6 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       blurb:
         'How processed the dish is (NOVA): its whole-food share (groups 1–2) set against the ultra-processed share (group 4), which drives the rating when it climbs. Shown as 1 (least processed) to 10 — lower is better. A rough estimate — processing is judged by food type.',
       sub: proc ? processingLabel(proc.band) : undefined,
-      scaleRef: pr != null ? `${Math.round(proc!.minimallyProcessedPct!)}% whole` : undefined,
       ...dial(pr),
     },
   ];

@@ -10,12 +10,7 @@ export default function ScoreDial({ dial, align = 'center' }: { dial: ScoreDialD
   // r = 15.9155 → circumference ≈ 100, so the arc length is the fill percentage.
   const dash = `${Math.round(dial.fill * 100)} 100`;
   const tipAlign = tipAlignClass(align);
-  // The native value may carry a typographic minus (U+2212, e.g. "−0.8"), which some
-  // screen readers don't voice as "minus" — swap it for an ASCII hyphen in the accessible
-  // name so a negative inflammation value is never heard as positive.
-  const ariaValue = dial.present
-    ? `${dial.value} out of 10${dial.scaleRef ? ` (${dial.scaleRef.replace('−', '-')})` : ''}`
-    : 'not available';
+  const ariaValue = dial.present ? `${dial.value} out of 10` : 'not available';
   return (
     <div
       className="group relative flex flex-col items-center text-center gap-1.5 rounded-xl bg-card border border-line px-3 py-4 outline-none focus-visible:ring-2 focus-visible:ring-spice focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
@@ -51,8 +46,6 @@ export default function ScoreDial({ dial, align = 'center' }: { dial: ScoreDialD
 
       <div className="eyebrow !text-[0.62rem] !tracking-[0.14em] leading-tight text-ink-soft">{dial.label}</div>
       {dial.sub && <div className="font-ui text-[0.66rem] capitalize leading-tight text-ink-faint">{dial.sub}</div>}
-
-      {dial.scaleRef && <div className="font-ui text-[0.6rem] tabular-nums text-ink-faint">{dial.scaleRef}</div>}
 
       <div
         aria-hidden="true"

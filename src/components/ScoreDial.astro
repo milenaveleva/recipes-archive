@@ -18,12 +18,7 @@ const dash = `${Math.round(dial.fill * 100)} 100`;
 
 const tipAlign = tipAlignClass(align);
 
-// The native value may carry a typographic minus (U+2212, e.g. "−0.8"), which some
-// screen readers don't voice as "minus" — swap it for an ASCII hyphen in the accessible
-// name so a negative inflammation value is never heard as positive.
-const ariaValue = dial.present
-  ? `${dial.value} out of 10${dial.scaleRef ? ` (${dial.scaleRef.replace('−', '-')})` : ''}`
-  : 'not available';
+const ariaValue = dial.present ? `${dial.value} out of 10` : 'not available';
 ---
 
 <div
@@ -63,8 +58,6 @@ const ariaValue = dial.present
 
   <div class="eyebrow !text-[0.62rem] !tracking-[0.14em] leading-tight text-ink-soft">{dial.label}</div>
   {dial.sub && <div class="font-ui text-[0.66rem] capitalize leading-tight text-ink-faint">{dial.sub}</div>}
-
-  {dial.scaleRef && <div class="font-ui text-[0.6rem] tabular-nums text-ink-faint">{dial.scaleRef}</div>}
 
   <div
     aria-hidden="true"

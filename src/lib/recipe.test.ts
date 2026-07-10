@@ -150,34 +150,29 @@ describe('buildScoreDials', () => {
     inflammation: { score: -0.8, band: 'mildly-anti-inflammatory' },
   };
 
-  it('returns each dial as a 1–10 rating with matching tone, fill and native value', () => {
+  it('returns each dial as a 1–10 rating with matching tone, fill and band sub', () => {
     const [gi, gl, nutri, balance, inflam] = buildScoreDials(nutrition);
 
     expect(gi.value).toBe('5');
     expect(gi.tone).toBe('mid');
     expect(gi.fill).toBeCloseTo(0.5);
-    expect(gi.scaleRef).toBe('GI 64');
     expect(gi.sub).toBe('medium');
 
     expect(gl.value).toBe('6');
     expect(gl.tone).toBe('mid');
-    expect(gl.scaleRef).toBe('GL 19');
     expect(gl.sub).toBe('medium');
 
     expect(nutri.value).toBe('6'); // grade C → 6
     expect(nutri.tone).toBe('mid');
     expect(nutri.fill).toBeCloseTo(0.6);
-    expect(nutri.scaleRef).toBe('Grade C');
 
     expect(balance.value).toBe('3'); // NRF 8 inverted → 3 (good)
     expect(balance.tone).toBe('good');
     expect(balance.fill).toBeCloseTo(0.3);
-    expect(balance.scaleRef).toBe('NRF 8');
     expect(balance.sub).toBe('high');
 
     expect(inflam.value).toBe('4'); // −0.8 → 4 (mid)
     expect(inflam.tone).toBe('mid');
-    expect(inflam.scaleRef).toBe('−0.8'); // native value keeps a typographic minus (U+2212)
     expect(inflam.sub).toBe('Mildly-Anti-Inflam.');
   });
 
@@ -197,24 +192,20 @@ describe('buildScoreDials', () => {
     expect(gi.fill).toBe(0);
     expect(nutri.value).toBe('—');
     expect(nutri.present).toBe(false);
-    expect(nutri.scaleRef).toBeUndefined();
   });
 
-  it('keeps the native value beneath the rating and no band sub when the band is absent', () => {
+  it('leaves the band sub undefined when the band is absent', () => {
     const [, gl] = buildScoreDials({ glycemic: { gl: 12 } });
     expect(gl.value).toBe('4'); // GL 12 → 4
     expect(gl.sub).toBeUndefined();
-    expect(gl.scaleRef).toBe('GL 12');
     const [giBlank] = buildScoreDials({ glycemic: { gi: 50, giBand: '' } });
     expect(giBlank.sub).toBeUndefined();
-    expect(giBlank.scaleRef).toBe('GI 50');
   });
 
-  it('prefixes positive inflammation native values with +', () => {
+  it('maps a positive (pro-inflammatory) score to a poor rating', () => {
     const [, , , , inflam] = buildScoreDials({ inflammation: { score: 1.2, band: 'mildly-pro-inflammatory' } });
     expect(inflam.value).toBe('8'); // +1.2 → 8 (bad)
     expect(inflam.tone).toBe('bad');
-    expect(inflam.scaleRef).toBe('+1.2');
   });
 
   it('does not flash a low-UPF fermented dish alarming red (miso soup case)', () => {
@@ -224,7 +215,6 @@ describe('buildScoreDials', () => {
     });
     expect(proc.key).toBe('processing');
     expect(proc.tone).toBe('mid'); // caution (4–6), not the critical red
-    expect(proc.scaleRef).toBe('22% whole');
   });
 
   it('reserves the critical processing rating for genuinely ultra-processed dishes', () => {
