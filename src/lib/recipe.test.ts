@@ -5,6 +5,7 @@ import {
   inflammationFill,
   buildScoreDials,
   hasAnyScore,
+  hasDisplayableScore,
   nutriGrades,
   GL_DIAL_MAX,
   formatIngredientAmount,
@@ -224,5 +225,21 @@ describe('hasAnyScore', () => {
   it('is false for an empty or macros-only block', () => {
     expect(hasAnyScore(undefined)).toBe(false);
     expect(hasAnyScore({})).toBe(false);
+  });
+});
+
+describe('hasDisplayableScore', () => {
+  it('is true only when at least one score has a real value, not merely a present block', () => {
+    expect(hasDisplayableScore({ nutriScore: { grade: 'B' } })).toBe(true);
+    // A present-but-empty block leaves hasAnyScore true yet has nothing to show.
+    expect(hasAnyScore({ glycemic: { gi: null, gl: null } })).toBe(true);
+    expect(hasDisplayableScore({ glycemic: { gi: null, gl: null } })).toBe(false);
+    expect(hasDisplayableScore(undefined)).toBe(false);
+  });
+
+  it('mirrors the dial present flags that the compact strip filters on', () => {
+    const dials = buildScoreDials({ nutriScore: { grade: 'B' }, glycemic: { gi: null } });
+    expect(dials.find((d) => d.key === 'nutri')?.present).toBe(true);
+    expect(dials.find((d) => d.key === 'gi')?.present).toBe(false);
   });
 });

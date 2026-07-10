@@ -11,6 +11,10 @@ interface Props {
 
 const { nutrition, size = 'lg' } = Astro.props;
 const dials = buildScoreDials(nutrition);
+// The lg grid always shows all six medallion slots (an absent score reads as an
+// em-dash ring); the compact strip drops absent scores so it never carries a
+// dangling "GI —" chip.
+const stripDials = dials.filter((d) => d.present);
 
 const abbrev = (d: (typeof dials)[number]) =>
   d.key === 'inflam'
@@ -37,7 +41,7 @@ const abbrev = (d: (typeof dials)[number]) =>
     </div>
   ) : (
     <div class="flex flex-wrap items-center gap-x-3 gap-y-1 font-ui text-[0.72rem] text-ink-soft">
-      {dials.map((d) => (
+      {stripDials.map((d) => (
         <span class="inline-flex items-center gap-1.5" title={`${d.label}: ${d.blurb}`}>
           <span class:list={['inline-block h-1.5 w-1.5 rounded-full', toneBg[d.tone]]} />
           <span class="font-semibold text-ink">{abbrev(d)}</span>

@@ -323,6 +323,9 @@ export interface ScoreDial {
   blurb: string;
   /** Display value, e.g. "64", "C", "−0.8" (typographic minus), or "—" when absent. */
   value: string;
+  /** Whether this score has a real value; when false, `value` is the "—" placeholder.
+   *  The compact strip filters on this so it never carries a dangling "GI —" chip. */
+  present: boolean;
   /** Band word / qualifier shown under the label (CSS-capitalized). */
   sub?: string;
   /** Reference scale or basis shown beneath ring metrics, e.g. "0–100" or "per serving". */
@@ -376,6 +379,7 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       blurb:
         'How quickly this dish’s carbohydrate raises blood glucose (0–100, glucose = 100), carb-weighted from published values. Lower is better. An estimate that tends to read high for mixed meals.',
       value: gly?.gi != null ? String(Math.round(gly.gi)) : '—',
+      present: gly?.gi != null,
       sub: gly?.giBand || undefined,
       scaleRef: '0–100',
       tone: giTone(gly?.gi),
@@ -387,6 +391,7 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       blurb:
         'Glycemic index scaled by the available carbohydrate in one serving — the total blood-glucose impact of a portion, not just its speed. Lower is better (low ≤10, high ≥20). An estimate.',
       value: gly?.gl != null ? String(Math.round(gly.gl)) : '—',
+      present: gly?.gl != null,
       sub: gly?.glBand || undefined,
       scaleRef: 'per serving',
       tone: glTone(gly?.gl),
@@ -398,6 +403,7 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       blurb:
         'Nutri-Score 2023 (A–E): fibre, protein and fruit/vegetables/legumes weighed against energy, sugar, saturated fat and salt. A is best, E is worst. Built for packaged products, applied to the dish as an estimate.',
       value: grade ?? '—',
+      present: grade != null,
       sub: nutri ? 'Nutri-Score' : undefined,
       tone: nutriTone(grade),
       fill: 1,
@@ -410,6 +416,7 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       blurb:
         'Nutrient density (NRF9.3, 1–10): nine nutrients to encourage — protein, fibre, vitamins, minerals — minus three to limit (saturated fat, sugar, sodium), per 100 kcal. Higher is better. An estimate.',
       value: bal?.score != null ? String(bal.score) : '—',
+      present: bal?.score != null,
       sub: bal?.band || undefined,
       scaleRef: '1–10',
       tone: balanceTone(bal?.band),
@@ -426,6 +433,7 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
             ? `+${inflam.score}`
             : String(inflam.score).replace('-', '−') // typographic minus, matching the scaleRef
           : '—',
+      present: inflam?.score != null,
       sub: inflam ? inflammationLabel(inflam.band) : undefined,
       scaleRef: '−2 … +2',
       tone: inflammationTone(inflam?.band),
@@ -437,6 +445,7 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       blurb:
         'Share of the dish’s energy from minimally processed foods and basic culinary ingredients (NOVA groups 1–2), with the ultra-processed share (NOVA 4) shown beneath. Higher = less processed is better. A rough estimate — processing is judged by food type.',
       value: proc?.minimallyProcessedPct != null ? `${Math.round(proc.minimallyProcessedPct)}%` : '—',
+      present: proc?.minimallyProcessedPct != null,
       sub: proc ? processingLabel(proc.band) : undefined,
       scaleRef: proc?.ultraProcessedPct != null ? `UPF ${Math.round(proc.ultraProcessedPct)}%` : undefined,
       tone: processingTone(proc?.band, proc?.ultraProcessedPct),
@@ -445,7 +454,8 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
   ];
 }
 
-/** Whether a nutrition block carries any of the scored figures. */
+/** Whether a nutrition block carries any of the scored figures. Gates the detail-page
+ *  rail, whose lg grid shows all six slots (an absent one as an "—" ring). */
 export function hasAnyScore(nutrition: NutritionLike): boolean {
   return !!(
     nutrition?.glycemic ||
@@ -454,6 +464,13 @@ export function hasAnyScore(nutrition: NutritionLike): boolean {
     nutrition?.balance ||
     nutrition?.processing
   );
+}
+
+/** Whether at least one score has a real value. Gates the compact card strip, which
+ *  drops absent scores — so the strip is shown only when it will have a chip to render
+ *  (a block present but all-null would leave `hasAnyScore` true yet the strip empty). */
+export function hasDisplayableScore(nutrition: NutritionLike): boolean {
+  return buildScoreDials(nutrition).some((d) => d.present);
 }
 
 /* ---- collection helpers ---- */
