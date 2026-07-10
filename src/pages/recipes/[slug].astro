@@ -201,23 +201,6 @@ const bodyHasMethodHeading = /^##\s+Method\b/im.test(recipe.body ?? '');
         )
       }
 
-      {
-        hasNutritionRail && (
-          <aside
-            class="mt-8 max-w-md xl:mt-0 xl:max-w-none xl:col-start-2 xl:row-span-full"
-            aria-labelledby="scores-heading"
-          >
-            <div class="flex flex-col gap-5 xl:sticky xl:top-24">
-              <h2 id="scores-heading" class="sr-only">
-                Nutrition scores &amp; facts
-              </h2>
-              {hasScores && <ScoreMedallions nutrition={data.nutrition} size="lg" />}
-              {hasNutritionPanel && <NutritionPanel nutrition={data.nutrition} />}
-            </div>
-          </aside>
-        )
-      }
-
       <div class="mt-8 min-w-0 xl:col-start-1 xl:row-start-2">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           <aside class="lg:col-span-5 lg:sticky lg:top-24 lg:self-start">
@@ -254,6 +237,27 @@ const bodyHasMethodHeading = /^##\s+Method\b/im.test(recipe.body ?? '');
           </section>
         </div>
       </div>
+
+      {/* Scores render last in the DOM so that below xl — where the grid
+          collapses to a single column — the recipe itself leads and the score
+          wall follows it. At xl the explicit column/row placement lifts this
+          aside back into the sticky right-hand rail level with the image. */}
+      {
+        hasNutritionRail && (
+          <aside
+            class="mt-8 max-w-md xl:mt-0 xl:max-w-none xl:col-start-2 xl:row-span-full"
+            aria-labelledby="scores-heading"
+          >
+            <div class="flex flex-col gap-5 xl:sticky xl:top-24">
+              <h2 id="scores-heading" class="sr-only">
+                Nutrition scores &amp; facts
+              </h2>
+              {hasScores && <ScoreMedallions nutrition={data.nutrition} size="lg" />}
+              {hasNutritionPanel && <NutritionPanel nutrition={data.nutrition} />}
+            </div>
+          </aside>
+        )
+      }
     </div>
   </div>
   </div>

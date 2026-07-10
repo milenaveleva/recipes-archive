@@ -88,6 +88,12 @@ const buildTime = Date.now();
     </script>
   </head>
   <body class="min-h-screen flex flex-col">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:border focus:border-line-strong focus:bg-card focus:px-4 focus:py-2 focus:font-ui focus:text-sm focus:font-semibold focus:text-ink focus:no-underline focus:shadow-lg"
+    >
+      Skip to content
+    </a>
     <header class="border-b border-line bg-paper/80 backdrop-blur-sm sticky top-0 z-40">
       <div class="mx-auto max-w-6xl px-5 sm:px-8">
         <div class="flex items-center justify-between gap-6 py-4">
@@ -107,7 +113,7 @@ const buildTime = Date.now();
       </div>
     </header>
 
-    <main class="flex-1">
+    <main id="main-content" tabindex="-1" class="flex-1 outline-none">
       <slot />
     </main>
 
