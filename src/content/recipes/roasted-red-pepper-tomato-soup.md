@@ -7,6 +7,10 @@ source:
   name: medicalmedium.com
   url: https://www.medicalmedium.com/blog/roasted-red-pepper-and-tomato-soup
 servings: 4
+prepTime: PT20M
+cookTime: PT25M
+totalTime: PT45M
+category: Soups
 ingredients:
   - raw: 1 lb red bell peppers (roughly chopped)
     quantity: 1
@@ -72,9 +76,9 @@ ingredients:
     milliliters: 1301.234
     fdcId: 174158
     matchConfidence: high
-  - raw: Fresh basil (to serve)
-    item: Fresh basil
-    note: to serve
+  - raw: basil (fresh)
+    item: basil
+    note: fresh
     grams: 5
     fdcId: 172232
     matchConfidence: high
@@ -123,11 +127,11 @@ updatedAt: "2026-07-11"
 
 ## Method
 
-## Method
-
-1. Preheat oven to 200°C. Line a baking dish with parchment paper. Add the chopped peppers, tomatoes, diced onion, garlic, celery, thyme, and red pepper flakes to the baking dish. Mix well. Place in the oven and roast for 20-25 minutes, until browned and tender.
-2. Remove from the oven and add to a blender together with the water.
-3. Blend until smooth.
-4. Pour into a pot and heat until simmering.
-5. Ladle into soup bowls and garnish with fresh basil.
-6. Serve immediately.
+1. Preheat oven to 200°C. Line a baking dish with parchment paper.
+2. Add the chopped peppers, tomatoes, diced onion, garlic, celery, thyme, and red pepper flakes to the baking dish. Mix well.
+3. Place in the oven and roast for 20-25 minutes, until browned and tender.
+4. Remove from the oven and add to a blender together with the water.
+5. Blend until smooth.
+6. Pour into a pot and heat until simmering.
+7. Ladle into soup bowls and garnish with fresh basil.
+8. Serve immediately with basil on top.
