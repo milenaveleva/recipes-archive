@@ -7,6 +7,10 @@ source:
   name: medicalmedium.com
   url: https://www.medicalmedium.com/blog/roasted-red-pepper-and-tomato-soup
 servings: 4
+prepTime: PT20M
+cookTime: PT25M
+totalTime: PT45M
+category: Soups
 ingredients:
   - raw: 1 lb red bell peppers (roughly chopped)
     quantity: 1
@@ -16,10 +20,11 @@ ingredients:
     grams: 453.6
     fdcId: 2258590
     matchConfidence: high
-  - raw: 1 lb plum tomatoes
+  - raw: 1 lb plum tomatoes (roughly chopped)
     quantity: 1
     unit: lb
     item: plum tomatoes
+    note: roughly chopped
     grams: 453.6
     fdcId: 321360
     matchConfidence: medium
@@ -48,10 +53,11 @@ ingredients:
     milliliters: 118.294
     fdcId: 169988
     matchConfidence: high
-  - raw: 1 tsp dried thyme
+  - raw: 1 tsp thyme (dried)
     quantity: 1
     unit: tsp
-    item: dried thyme
+    item: thyme
+    note: dried
     grams: 0.8
     milliliters: 4.92892
     fdcId: 173470
@@ -76,13 +82,13 @@ ingredients:
   - raw: Fresh basil (to serve)
     item: Fresh basil
     note: to serve
-    grams: 5
+    grams: 1
     fdcId: 172232
     matchConfidence: high
 nutrition:
   perServing:
     energyKcal: 84
-    energyKj: 351
+    energyKj: 350
     protein_g: 2.7
     fat_g: 1
     satFat_g: 0
@@ -90,7 +96,7 @@ nutrition:
     fiber_g: 4.8
     sugar_g: 1.9
     sodium_mg: 27
-    availableCarb_g: 14.2
+    availableCarb_g: 14.1
   nutriScore:
     grade: A
     points: -1
@@ -104,7 +110,7 @@ nutrition:
   balance:
     score: 8
     band: high
-    nrf: 170.6
+    nrf: 169.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -119,6 +125,18 @@ nutrition:
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-07-11"
+updatedAt: "2026-07-11"
 ---
 
 ## Method
+
+## Method
+
+1. Preheat oven to 400°F/200°C. Line a baking dish with parchment paper.
+2. Add the chopped peppers, tomatoes, diced onion, garlic, celery, thyme, and red pepper flakes (if desired) to the baking dish. Mix well.
+3. Place in the oven and roast for 20-25 minutes, until browned and tender.
+4. Remove from the oven and add to a blender together with the water or Liver Rescue Broth.
+5. Blend until smooth.
+6. Pour into a pot and heat until simmering.
+7. Ladle into soup bowls and garnish with fresh basil.
+8. Serve immediately.
