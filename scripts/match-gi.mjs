@@ -32,7 +32,6 @@ const reference = read('src/data/gi-reference.json');
 const scoring = read('src/data/food-scoring.json');
 
 const CARB_MIN = 2.5; // g available carb / 100 g below which GI is undefined (Lin 2012)
-const GI_SOURCE_2021 = 'Atkinson 2021';
 
 /** Map a USDA `category` string to the reference table's category, for scoping. */
 const CAT_MAP = [
@@ -49,7 +48,10 @@ const refCategoryFor = (usdaCat = '') => CAT_MAP.find(([re]) => re.test(usdaCat)
 
 const STOP = new Set(['raw', 'cooked', 'boiled', 'prepared', 'with', 'without', 'and', 'or', 'the',
   'of', 'in', 'all', 'commercial', 'varieties', 'includes', 'usda', 'ns', 'as', 'to', 'from', 'made',
-  'unenriched', 'enriched', 'regular', 'plain', 'fresh', 'whole', 'generic', 'drained', 'salt', 'added']);
+  'unenriched', 'enriched', 'regular', 'plain', 'fresh', 'whole', 'generic', 'drained', 'salt', 'added',
+  // fat-level qualifiers describe fat content, not food identity — matching on these
+  // alone pairs unrelated foods ("low fat yogurt" ↔ "low-fat apricot cake").
+  'low', 'fat', 'reduced', 'skim', 'nonfat', 'lowfat']);
 const toks = (s) => new Set(
   s.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter((w) => w.length > 2 && !STOP.has(w)));
 const jaccard = (a, b) => {
@@ -84,8 +86,9 @@ function assign(food) {
   }
   // Conservative: only auto-assign a strong, same-category match. Anything weaker
   // is left for human curation rather than guessed (a wrong GI is worse than none).
-  if (best && best.score >= 0.6) return { gi: best.r.gi, source: `Atkinson 2021 (${best.r.food})`, conf: 'high' };
-  if (best && best.score >= 0.45) return { gi: best.r.gi, source: `Atkinson 2021 (${best.r.food})`, conf: 'medium' };
+  const cite = (r) => `Atkinson 2021 (${r.food.slice(0, 60).trim()})`;
+  if (best && best.score >= 0.6) return { gi: best.r.gi, source: cite(best.r), conf: 'high' };
+  if (best && best.score >= 0.45) return { gi: best.r.gi, source: cite(best.r), conf: 'medium' };
   return { worklist: true };
 }
 

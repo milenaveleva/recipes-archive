@@ -41,7 +41,7 @@ A build-time guard (`src/core/recipeScore.repro.test.ts`) fails if any recipe ha
 
 ## `gi-reference.json`
 
-**Generated** GI reference table parsed from the Atkinson 2021 international tables — Supplemental Table 1, the ISO 26642:2010-compliant (higher-reliability) list — by `scripts/build-gi.mjs`. Each entry is `{ category, food, gi, kind }` on the 100-point glucose scale, drawn from the table's aggregate "mean of N foods" rows and its single-study rows. It is the source `scripts/match-gi.mjs` matches every carbohydrate-bearing `usda-foods.json` food against to fill `food-scoring.json` GI values.
+**Generated** GI reference table parsed from the Atkinson 2021 international tables — Supplemental Table 1, the ISO 26642:2010-compliant (higher-reliability) list — by `scripts/build-gi.mjs`. Each entry is `{ category, food, gi }` on the 100-point glucose scale. Every numbered study row is read: because a long food name wraps onto the lines above and below its numbered row in the layout-preserved PDF, each name is reconstructed by gluing the row's own name cell to the nearest numberless name fragments in the same food category, then the GI is averaged across all study rows that resolve to the same name (an official "mean of N foods" aggregate row, where present, overrides the average). A `.xlsx` supplement in `scripts/data-raw/`, if provided, is preferred and read column-by-header instead. It is the source `scripts/match-gi.mjs` matches every carbohydrate-bearing `usda-foods.json` food against to fill `food-scoring.json` GI values.
 
 Rebuild the GI assignments (the source PDF lives git-ignored in `scripts/data-raw/`) with:
 
