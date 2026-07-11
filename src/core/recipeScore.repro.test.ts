@@ -109,3 +109,29 @@ describe('recipe nutrition blocks reproduce from the engine', () => {
     });
   }
 });
+
+/**
+ * GI-coverage guard: a recipe with meaningful available carbohydrate MUST produce a
+ * glycemic block. A blank GI/GL dial means a carbohydrate ingredient carries no GI in
+ * food-scoring.json — the recurring "why is GI missing" bug. This fails the build so a
+ * new recipe can't ship a blank dial silently: fix by adding the food's GI (run
+ * scripts/build-gi.mjs + scripts/match-gi.mjs, or curate) then rescore.
+ */
+describe('every carb-bearing recipe has a glycemic block', () => {
+  const MIN_CARB_G = 5; // available carb / serving above which a GI is expected
+  for (const file of files) {
+    const data = frontmatter(RECIPE_FILES[file]);
+    if (!data?.nutrition) continue;
+    const ns = data.nutrition.nutriScore ?? {};
+    it(`${file.split('/').pop()}`, () => {
+      const { macro, scores } = scoreRecipe(
+        (data.ingredients ?? []).map((i) => ({ grams: i.grams, fdcId: i.fdcId, excludeFromNutrition: i.excludeFromNutrition })),
+        { servings: data.servings ?? 4, nutriCategory: ns.category ?? 'general', nnsPresent: ns.nnsPresent, isWater: ns.isWater, isCheese: ns.isCheese, redMeat: ns.redMeat },
+        foodById, foodScoring, polyphenols,
+      );
+      if ((macro.perServing.availableCarb_g ?? 0) >= MIN_CARB_G) {
+        expect(scores.glycemic, `${file.split('/').pop()} has ${macro.perServing.availableCarb_g} g available carb/serving but no GI — a carb ingredient is missing a GI in food-scoring.json`).toBeTruthy();
+      }
+    });
+  }
+});

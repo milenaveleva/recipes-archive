@@ -32,12 +32,26 @@ satFat/MUFA/PUFA come from the fatty-acids supplement and total sugars from the 
 
 ## `food-scoring.json`
 
-Hand-curated, cited scoring metadata for a **subset** of the foods above, keyed by `fdcId` and merged at author time by the glycemic engine (`src/core/gi.ts`) and the matcher. It covers the common ingredients we hold cited values for; foods without an entry still contribute nutrients (and macros/Nutri-Score/inflammation), just no GI. Kept separate from `usda-foods.json` so regenerating the USDA nutrients never wipes the curated values. Per food, optional:
+Cited scoring metadata keyed by `fdcId`, merged at author time by the glycemic engine (`src/core/gi.ts`) and the matcher. Foods without an entry still contribute nutrients (and macros/Nutri-Score/inflammation), just no GI. Kept separate from `usda-foods.json` so regenerating the USDA nutrients never wipes the values. Per food, optional:
 
-- `gi` + `giSource` + `giConfidence` — the food's glycemic index, transcribed and cited per value (Atkinson 2021 international GI tables). Only carbohydrate-bearing foods carry a GI.
+- `gi` + `giSource` + `giConfidence` — the food's glycemic index, on the 100-point glucose scale, sourced from the Atkinson 2021 international tables (see `gi-reference.json` below). Assigned by `scripts/match-gi.mjs` at a confidence tier: **high** (strong same-category match to a specific reference food), **medium** (partial same-category match), or **low** (a hand-set nominal/proxy value). `giSource` names the exact reference food (or proxy) each value came from. Only carbohydrate-bearing foods (≥ 2.5 g available carb/100 g) carry a GI; near-carb-free foods (oils, water, salt, herbs) have none by design and never affect the composite. Hand-set values are preserved across re-runs — the matcher never overwrites an existing `gi`.
 - `fvl` — whether the food counts toward Nutri-Score's fruit/vegetables/legumes share. Curated `fvl` takes precedence; otherwise it is approximated from the USDA category (fruits/vegetables/legumes, excluding starchy tubers, nuts, oils, juices and obviously-processed forms). This category heuristic is coarse — like all scores it is an estimate, confirmed per-ingredient in the review step.
 
-The matcher prefers foods we hold curated data for among equally-good text matches, so a common ingredient lands on its better-documented food. When `food-scoring.json` gains a new carbohydrate-bearing food, add its GI here so the glycemic composite stays complete. (Inflammation is computed from composition by the FII, below, not curated here.)
+A build-time guard (`src/core/recipeScore.repro.test.ts`) fails if any recipe has meaningful available carbohydrate but no glycemic block, so a new recipe whose carb ingredient lacks a GI can't ship a blank dial silently — fix by re-running the GI pipeline (below) or hand-setting the value, then rescoring. (Inflammation is computed from composition by the FII, below, not curated here.)
+
+## `gi-reference.json`
+
+**Generated** GI reference table parsed from the Atkinson 2021 international tables — Supplemental Table 1, the ISO 26642:2010-compliant (higher-reliability) list — by `scripts/build-gi.mjs`. Each entry is `{ category, food, gi, kind }` on the 100-point glucose scale, drawn from the table's aggregate "mean of N foods" rows and its single-study rows. It is the source `scripts/match-gi.mjs` matches every carbohydrate-bearing `usda-foods.json` food against to fill `food-scoring.json` GI values.
+
+Rebuild the GI assignments (the source PDF lives git-ignored in `scripts/data-raw/`) with:
+
+```sh
+node scripts/build-gi.mjs      # parse the tables → gi-reference.json
+node scripts/match-gi.mjs --write   # assign GI + confidence into food-scoring.json (dry-run without --write)
+node scripts/rescore-recipes.mjs    # regenerate recipe blocks
+```
+
+The matcher only auto-assigns strong, same-category matches (cross-category token matches produce nonsense, e.g. "rice vinegar" ↔ "rice"); weaker candidates are reported as a curation worklist rather than guessed. Citation: **Atkinson FS, Brand-Miller JC, Foster-Powell K, Buyken AE, Goletzke J.** International tables of glycemic index and glycemic load values 2021: a systematic review. *Am J Clin Nutr* 2021 (DOI 10.1093/ajcn/nqab233).
 
 All values are **estimates for guidance only** and are confirmed per-ingredient in the authoring review step.
 
