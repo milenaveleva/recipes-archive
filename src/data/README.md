@@ -14,7 +14,7 @@ node scripts/old/build-usda.mjs
 
 The script downloads both bulk datasets and prunes them to the fields above. Energy comes from USDA's reported value (nutrient 208) when present, else the Atwater **specific** factor (958), else the **general** factor (957), else the standard 4·protein + 9·fat + 4·carb + 7·alcohol calculation from the food's own macros — so newer Foundation foods that ship no pre-computed energy row still carry one. It then dedupes by `fdcId`, collapses exact-duplicate descriptions to the most-complete record, drops energy-less analytical references and the branded/curated/enriched forms (`scripts/usda-brands.mjs`), and overwrites this file — so a re-ingest reproduces the cleaned dataset rather than reintroducing them. See the script header for the dataset URLs and the nutrient-number → field mapping.
 
-To re-apply the brand filter to the committed file without re-downloading (e.g. after editing the filter, its denylist `usda-exclude.json`, or its keep-list), run `node scripts/prune-branded.mjs` (`--dry-run` to preview). Both entry points refuse to write if filtering would orphan a `food-scoring.json` entry.
+To re-apply the brand filter to the committed file without re-downloading (e.g. after editing the filter, its denylist `usda-exclude.json`, or its keep-list, or to cut a food via `usda-curation-drop.json`), run `node scripts/old/prune-branded.mjs` (`--dry-run` to preview). Both entry points refuse to write if filtering would orphan a `food-scoring.json` entry.
 
 ## `japan-foods.json`
 

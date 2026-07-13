@@ -9,8 +9,8 @@
  * or its denylist/keep-list to the existing file.
  *
  * Usage:
- *   node scripts/prune-branded.mjs            # write the cleaned file
- *   node scripts/prune-branded.mjs --dry-run  # report what would be dropped
+ *   node scripts/old/prune-branded.mjs            # write the cleaned file
+ *   node scripts/old/prune-branded.mjs --dry-run  # report what would be dropped
  */
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
@@ -25,9 +25,9 @@ import {
   dedupeByDescription,
   dropEnergyless,
   serializeFoods,
-} from './usda-brands.mjs';
+} from '../usda-brands.mjs';
 
-const OUT = fileURLToPath(new URL('../src/data/usda-foods.json', import.meta.url));
+const OUT = fileURLToPath(new URL('../../src/data/usda-foods.json', import.meta.url));
 const log = (msg) => process.stderr.write(`${msg}\n`);
 const dryRun = process.argv.includes('--dry-run');
 
