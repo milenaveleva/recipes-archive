@@ -6,10 +6,10 @@ The USDA [FoodData Central](https://fdc.nal.usda.gov/) generic reference foods (
 
 The file is several MB, so the authoring island fetches it **lazily** via its asset URL (a `?url` import in `addLib.ts`) rather than bundling it; it is never shipped to the public recipe pages.
 
-Regenerate it (needs `curl` and `unzip`; no API key required) with:
+A full re-ingest from source is rare (needs `curl` and `unzip`; no API key required); its script is archived under `scripts/old/`:
 
 ```sh
-node scripts/build-usda.mjs
+node scripts/old/build-usda.mjs
 ```
 
 The script downloads both bulk datasets and prunes them to the fields above. Energy comes from USDA's reported value (nutrient 208) when present, else the Atwater **specific** factor (958), else the **general** factor (957), else the standard 4·protein + 9·fat + 4·carb + 7·alcohol calculation from the food's own macros — so newer Foundation foods that ship no pre-computed energy row still carry one. It then dedupes by `fdcId`, collapses exact-duplicate descriptions to the most-complete record, drops energy-less analytical references and the branded/curated/enriched forms (`scripts/usda-brands.mjs`), and overwrites this file — so a re-ingest reproduces the cleaned dataset rather than reintroducing them. See the script header for the dataset URLs and the nutrient-number → field mapping.

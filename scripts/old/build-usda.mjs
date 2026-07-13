@@ -13,7 +13,7 @@
  * ingest reproduces the cleaned dataset rather than reintroducing brands.
  *
  * Usage:
- *   node scripts/build-usda.mjs
+ *   node scripts/old/build-usda.mjs
  *
  * Needs `curl` and `unzip` on PATH. Progress streams to stderr; the JSON is
  * written at the end. Override a dataset URL via FDC_FOUNDATION_URL /
@@ -31,10 +31,10 @@ import {
   serializeFoods,
   dedupeByDescription,
   dropEnergyless,
-} from './usda-brands.mjs';
+} from '../usda-brands.mjs';
 
 const execFileP = promisify(execFile);
-const OUT = fileURLToPath(new URL('../src/data/usda-foods.json', import.meta.url));
+const OUT = fileURLToPath(new URL('../../src/data/usda-foods.json', import.meta.url));
 
 const DATASETS = [
   {
