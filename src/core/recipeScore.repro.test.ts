@@ -117,6 +117,23 @@ describe('recipe nutrition blocks reproduce from the engine', () => {
  * new recipe can't ship a blank dial silently: fix by adding the food's GI (run
  * scripts/build-gi.mjs + scripts/match-gi.mjs, or curate) then rescore.
  */
+/**
+ * Full-coverage guard: every food in the bundled USDA set must carry a GI in
+ * food-scoring.json, so no recipe — present or future — can pull in an ingredient
+ * that produces a blank GI/GL dial. `scripts/match-gi.mjs` assigns one to every food
+ * (measured match → composition estimate → category median/nominal → 0 for carb-free);
+ * this fails the build if that invariant ever breaks (a new food added without a
+ * re-run, or a matcher regression that drops a tier).
+ */
+describe('every USDA food carries a GI', () => {
+  it('food-scoring.json has a GI for every bundled food', () => {
+    const missing = foods
+      .filter((f) => foodScoring[String(f.fdcId)]?.gi == null)
+      .map((f) => f.fdcId);
+    expect(missing).toEqual([]);
+  });
+});
+
 describe('every carb-bearing recipe has a glycemic block', () => {
   const MIN_CARB_G = 5; // available carb / serving above which a GI is expected
   for (const file of files) {
