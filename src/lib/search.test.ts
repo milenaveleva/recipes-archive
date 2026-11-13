@@ -9,7 +9,6 @@ function doc(slug: string, over: Partial<SearchDoc> = {}): SearchDoc {
     description: '',
     ingredients: [],
     steps: [],
-    category: null,
     lists: [],
     cuisine: null,
     course: null,
@@ -28,7 +27,6 @@ describe('facetsOf', () => {
     const groups = facetsOf([doc('a', { lists: ['vegan'] })]);
     const keys = groups.map((g) => g.key);
     expect(keys).toContain('list');
-    expect(keys).not.toContain('category'); // no recipe has a category
     expect(keys).not.toContain('cuisine');
   });
 
@@ -87,7 +85,7 @@ describe('facetsOf', () => {
 });
 
 describe('matchesFacets', () => {
-  const d = doc('a', { lists: ['vegan', 'one-pot'], category: 'Mains', course: 'main', giBand: 'low' });
+  const d = doc('a', { lists: ['vegan', 'one-pot'], course: 'Main Course', giBand: 'low' });
 
   it('matches everything when nothing is selected', () => {
     expect(matchesFacets(d, {})).toBe(true);
@@ -100,12 +98,12 @@ describe('matchesFacets', () => {
   });
 
   it('ANDs across groups', () => {
-    expect(matchesFacets(d, { list: ['vegan'], course: ['main'] })).toBe(true);
+    expect(matchesFacets(d, { list: ['vegan'], course: ['main-course'] })).toBe(true);
     expect(matchesFacets(d, { list: ['vegan'], course: ['dessert'] })).toBe(false);
   });
 
   it('normalizes the doc side to slugs before comparing', () => {
-    expect(matchesFacets(d, { category: ['mains'] })).toBe(true); // "Mains" → "mains"
+    expect(matchesFacets(d, { course: ['main-course'] })).toBe(true); // "Main Course" → "main-course"
   });
 });
 

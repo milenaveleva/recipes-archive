@@ -22,7 +22,6 @@ export interface SearchDoc {
   ingredients: string[];
   steps: string[];
   // Facet fields.
-  category: string | null;
   lists: string[];
   cuisine: string | null;
   course: string | null;
@@ -59,7 +58,6 @@ export const FUSE_KEYS = [
   { name: 'title', weight: 3 },
   { name: 'description', weight: 1.6 },
   { name: 'ingredients', weight: 1.2 },
-  { name: 'category', weight: 1 },
   { name: 'cuisine', weight: 0.8 },
   { name: 'course', weight: 0.8 },
   { name: 'lists', weight: 0.6 },
@@ -99,8 +97,7 @@ interface FacetDef {
  * grows into (or out of) using a given field.
  */
 export const FACET_DEFS: FacetDef[] = [
-  { key: 'category', label: 'Category', primary: true, pick: (d) => (d.category ? [d.category] : []) },
-  { key: 'course', label: 'Course', primary: false, pick: (d) => (d.course ? [d.course] : []), labelOf: titleCase },
+  { key: 'course', label: 'Course', primary: true, pick: (d) => (d.course ? [d.course] : []), labelOf: titleCase },
   { key: 'cuisine', label: 'Cuisine', primary: false, pick: (d) => (d.cuisine ? [d.cuisine] : []), labelOf: titleCase },
   { key: 'list', label: 'Lists', primary: false, pick: (d) => d.lists },
   { key: 'difficulty', label: 'Difficulty', primary: false, pick: (d) => (d.difficulty ? [d.difficulty] : []), labelOf: titleCase, order: ['easy', 'medium', 'hard'] },
