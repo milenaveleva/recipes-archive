@@ -13,10 +13,6 @@ prepTime: PT10M
 totalTime: PT10M
 cuisine: International
 course: Drink
-tags:
-  - vegan
-  - smoothie
-  - drink
 lists:
   - Kifli favourites
 ingredients:
@@ -24,14 +20,16 @@ ingredients:
     quantity: 1
     item: beetroot
     grams: 150
-    fdcId: 169146
+    fdcId: 169145
     matchConfidence: high
+    cooking: raw
   - raw: 2 carrots
     quantity: 2
     item: carrots
     grams: 120
     fdcId: 170393
     matchConfidence: high
+    cooking: raw
   - raw: 5 cm ginger
     quantity: 5
     unit: cm
@@ -39,42 +37,46 @@ ingredients:
     grams: 12
     fdcId: 169231
     matchConfidence: high
+    cooking: raw
   - raw: 1 apple
     quantity: 1
     item: apple
     grams: 180
-    fdcId: 173928
+    fdcId: 171688
     matchConfidence: high
+    cooking: raw
   - raw: juice of ½ orange
     item: juice of ½ orange
     grams: 50
     fdcId: 169098
     matchConfidence: high
+    cooking: raw
   - raw: juice of 1 lime
     quantity: 1
     item: juice of lime
     grams: 30
     fdcId: 168156
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 125
-    energyKj: 523
-    protein_g: 2.4
-    fat_g: 0.7
+    energyKcal: 123
+    energyKj: 517
+    protein_g: 2.3
+    fat_g: 0.5
     satFat_g: 0.1
-    carbs_g: 30.4
-    fiber_g: 5.6
-    sugar_g: 21.2
-    sodium_mg: 101
-    availableCarb_g: 24.8
+    carbs_g: 30.3
+    fiber_g: 6.2
+    sugar_g: 19.7
+    sodium_mg: 102
+    availableCarb_g: 24.1
   glycemic:
-    gi: 49
-    gl: 12
+    gi: 46
+    gl: 11
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 59
   nutriScore:
     grade: C
     points: 3
@@ -82,13 +84,13 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.8
-    band: pro-inflammatory
+    score: 0.3
+    band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 74.6
+    score: 9
+    band: excellent
+    nrf: 85.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

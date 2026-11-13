@@ -32,24 +32,43 @@
 const RE_NOVA4 =
   /\b(imitation|analog(?:ue)?s?|meatless|substitutes?|instant|hydrolyzed|hydrolysed|textured vegetable protein|infant formula|soft drink|energy drink|sports drink|margarine|shortening|flavored|flavoured|candies|candy|confectionery|confections?|ketchup|catsup)\b/i;
 
-// Nut & seed butters/pastes (peanut, almond, cashew, tahini, sunflower, sesame)
-// are ground-and-emulsified spreads — as sold they carry added oils, emulsifiers
-// and sugar — so they read as ultra-processed, not as the raw nut. "tahini" names
-// the sesame paste directly; the "<nut|seed> butter" shape catches the rest. It
-// does NOT touch dairy "Butter, …" (no nut/seed word in front), the
-// cocoa/nutmeg/ucuhuba "… butter" oils (no standalone "nut" token), "Fruit
-// butters, …", or "butternut" squash (one word, no " butter" suffix).
+// Nut & seed butters/pastes (peanut, almond, cashew, tahini, sunflower, sesame) are
+// graded by what is added to the ground nut — grinding itself is a NOVA-1 process
+// (Monteiro 2019), so a plain paste stays with the nut:
+//   - sweetened, honey, hydrogenated/added-oil, omega-3 or reduced-fat/-sodium
+//     reformulations → 4 (industrial formulations);
+//   - salted, or a retail butter with no stated recipe (which conventionally carries
+//     salt) → 3;
+//   - tahini / sesame paste, or a butter stated plain / unsalted / stone-ground → 1.
+// RE_NUT_BUTTER does NOT touch dairy "Butter, …" (no nut/seed word in front), the
+// cocoa/nutmeg/ucuhuba "… butter" oils (no standalone "nut" token), "Fruit butters, …",
+// or "butternut" squash (one word, no " butter" suffix).
 const RE_NUT_BUTTER =
-  /\b(?:peanut|almond|cashew|hazelnut|walnut|pecan|macadamia|pistachio|sunflower|sesame|nut|seed)\s+butter\b|\btahini\b/i;
+  /\b(?:peanut|almond|cashew|hazelnut|walnut|pecan|macadamia|pistachio|sunflower|sesame|nut|seed)\s+(?:butter|paste)\b|\btahini\b/i;
+const RE_NUT_BUTTER_UPF = /\b(sweetened|honey|sugar|hydrogenated|with added|omega-3|reduced fat|reduced sodium|chocolate|spread)\b/i;
+const RE_NUT_BUTTER_SALTED = /\bwith salt\b|\bsalted\b/i;
+const RE_NUT_BUTTER_PLAIN = /\b(tahini|sesame butter, paste|without salt|unsalted|no salt|plain|stone ground|natural)\b/i;
+
+// Further NOVA-4 product types the generic markers cannot see (Monteiro 2019 lists each
+// as ultra-processed): distilled spirits; mass-produced packaged bread
+// ("commercially prepared"); industrial pastry and wafer cones; pressurised whipped-cream
+// toppings (emulsifiers, stabilisers); flavoured/fruit yoghurts; non-sugar sweeteners.
+const RE_NOVA4_PRODUCT =
+  /^alcoholic beverages?, distilled\b|\bbread\b.*\bcommercially prepared\b|\bpuff pastry\b|\bice cream cones?\b|\bcream topping\b|\bpressurized\b|^sweetener, (?!syrup)|\b(stevia|sucralose|aspartame|saccharin|acesulfame)\b/i;
+const RE_FLAVOURED_YOGURT = /\byogh?urt\b.*\b(strawberr\w*|vanilla|fruit|blueberr\w*|raspberr\w*|peach|cherry|lemon|coffee|chocolate)\b/i;
 
 // NOVA 3 — processed-food markers: preservation/transformation that turns a whole
 // food into a durable processed one. Word-bounded to avoid sub-word hits ("bread"
 // must not fire on "breadfruit"; "ham" must not fire on "graham"; "sauce" stays
 // off "applesauce" because the joined token has no boundary).
+// Table olives are always cured/brined (raw olives are inedibly bitter); nuts and
+// seeds roasted in oil carry an added NOVA-2 fat.
+const RE_NOVA3_FORM = /^olives?\b|\boil roasted\b/i;
 const RE_NOVA3 =
   /\b(cheese|tofu|tempeh|natto|miso|gochujang|doenjang|kimchi|sauerkraut|pickle[sd]?|canned|cured|smoked|salted|corned|brined|fermented|sausages?|bacon|hams?|salami|pastrami|prosciutto|jerky|anchov\w*|sardines?|lox|bread|tortillas?|pita|naan|crackers?|sauces?|paste|relish|jams?|jelly|jellies|marmalade|preserves|fish sauce|oyster sauce|soy sauce|tamari|shoyu|in syrup)\b/i;
 
-// Alcoholic drinks (wine, beer, spirits) are processed/ultra-processed, matched by
+// Fermented alcoholic drinks (wine, beer, cider, sake) are processed foods (NOVA 3;
+// distilled spirits are caught as NOVA 4 by RE_NOVA4_PRODUCT first), matched by
 // USDA's "Alcoholic beverage[s], …" leading phrase rather than the bare words
 // "wine"/"beer"/"cider" — those also name the raw fruit/grain a drink is made from
 // ("Grapes, wine, raw"), non-alcoholic "apple cider", and "root beer", which are
@@ -67,6 +86,9 @@ const RE_ALCOHOL = /^alcoholic beverages?\b/i;
 // national-table "Rice vinegar" both name it, lead-first or not).
 const RE_NOVA2_DESC =
   /^(sugars?|honey|syrups?|molasses|salt|sea salt|table salt|cornstarch|starch|baking soda|baking powder|cream of tartar|leavening|yeast|butter|ghee|lard|tallow|suet)\b/i;
+// Culinary ingredients USDA names under another lead noun: plant syrups filed as
+// "Sweetener, syrup, …" (agave) and flavouring extracts (vanilla) used in cooking.
+const RE_NOVA2_OTHER = /^sweetener, syrup\b|^vanilla extract\b/i;
 const RE_VINEGAR = /\bvinegar\b/i;
 
 /** Leading noun of a USDA description (the food group token before the first comma). */
@@ -84,10 +106,14 @@ export function classifyNova(food) {
   const lead = leadNoun(desc);
 
   // Ultra-processed markers win over everything (an imitation/instant form of an
-  // otherwise-whole food is still ultra-processed; so is a nut/seed butter, which
-  // must be caught before the NOVA-2 "butter" leading-noun rule below).
+  // otherwise-whole food is still ultra-processed). Nut/seed butters are graded here,
+  // before the NOVA-2 "butter" leading-noun rule below could read them as dairy fat.
   if (RE_NOVA4.test(desc)) return 4;
-  if (RE_NUT_BUTTER.test(desc)) return 4;
+  if (RE_NUT_BUTTER.test(desc)) {
+    if (RE_NUT_BUTTER_UPF.test(desc)) return 4;
+    return !RE_NUT_BUTTER_SALTED.test(desc) && RE_NUT_BUTTER_PLAIN.test(desc) ? 1 : 3;
+  }
+  if (RE_NOVA4_PRODUCT.test(desc) || RE_FLAVOURED_YOGURT.test(desc)) return 4;
   // Chocolate: a SWEETENED chocolate (dark/milk bars, the sugar-laden "mexican" baking
   // tablet) is a NOVA-4 confection; UNSWEETENED baking chocolate / cocoa liquor is pure
   // cocoa mass — a culinary ingredient that stays low, like cocoa powder. The split can't
@@ -99,12 +125,13 @@ export function classifyNova(food) {
   // butter or an aged vinegar isn't read as a NOVA-3 ferment.
   if (category === 'Fats and Oils') return 2;
   if (RE_NOVA2_DESC.test(lead)) return 2;
+  if (RE_NOVA2_OTHER.test(desc)) return 2;
   if (RE_VINEGAR.test(desc)) return 2;
 
   // Processed foods: alcoholic drinks, then preservation/transformation markers
   // anywhere in the name.
   if (RE_ALCOHOL.test(desc)) return 3;
-  if (RE_NOVA3.test(desc)) return 3;
+  if (RE_NOVA3.test(desc) || RE_NOVA3_FORM.test(desc)) return 3;
 
   // Everything else is a generic whole / minimally processed reference food.
   return 1;

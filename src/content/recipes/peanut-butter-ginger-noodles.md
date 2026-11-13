@@ -1,6 +1,6 @@
 ---
 title: Peanut Butter Ginger Noodles
-description: Pasta and fresh vegetables in a creamy peanut butter, ginger and citrus sauce, ready in 25 minutes.
+description: Whole-wheat pasta and fresh vegetables in a creamy peanut butter, ginger and citrus sauce, ready in 25 minutes.
 image: ./images/peanut-butter-ginger-noodles.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10566_1787928296685_peanut-ginger-noodles_b4c7258c.jpg
 imageAlt: Peanut Butter Ginger Noodles
@@ -14,10 +14,6 @@ cookTime: PT15M
 totalTime: PT25M
 cuisine: Asian
 course: Main Course
-tags:
-  - vegetarian
-  - pasta
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -25,10 +21,11 @@ ingredients:
     quantity: 2.5
     unit: tsp
     item: grated lemon zest and 60 ml lemon juice
-    grams: 12.7
+    grams: 62
     milliliters: 12.322299999999998
     fdcId: 167747
-    matchConfidence: high
+    matchConfidence: medium
+    cooking: raw
   - raw: 2 tbsp soy sauce
     quantity: 2
     unit: tbsp
@@ -37,6 +34,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 81017008
     matchConfidence: medium
+    cooking: raw
   - raw: 1 tsp sesame oil
     quantity: 1
     unit: tsp
@@ -45,6 +43,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 171016
     matchConfidence: high
+    cooking: raw
   - raw: 115 g peanut butter
     quantity: 115
     unit: g
@@ -52,6 +51,7 @@ ingredients:
     grams: 115
     fdcId: 2262072
     matchConfidence: medium
+    cooking: raw
   - raw: 2½ tsp finely chopped ginger
     quantity: 2.5
     unit: tsp
@@ -60,6 +60,7 @@ ingredients:
     milliliters: 12.322299999999998
     fdcId: 169231
     matchConfidence: high
+    cooking: raw
   - raw: 2 cloves garlic, minced
     quantity: 2
     unit: cloves
@@ -68,13 +69,15 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
-  - raw: 300 g dried pasta
+    cooking: raw
+  - raw: 300 g dried whole-wheat pasta
     quantity: 300
     unit: g
-    item: dried pasta
+    item: dried whole-wheat pasta
     grams: 300
-    fdcId: 168927
+    fdcId: 169738
     matchConfidence: high
+    cooking: boiled
   - raw: 400 g broccoli
     quantity: 400
     unit: g
@@ -82,6 +85,7 @@ ingredients:
     grams: 400
     fdcId: 170379
     matchConfidence: high
+    cooking: boiled
   - raw: 2 medium carrots, grated
     quantity: 2
     unit: medium
@@ -90,6 +94,7 @@ ingredients:
     grams: 120
     fdcId: 170393
     matchConfidence: high
+    cooking: raw
   - raw: 1 red bell pepper, cut into strips
     quantity: 1
     item: red bell pepper
@@ -97,6 +102,7 @@ ingredients:
     grams: 150
     fdcId: 2258590
     matchConfidence: high
+    cooking: raw
   - raw: 2 spring onions, chopped
     quantity: 2
     item: spring onions
@@ -104,6 +110,7 @@ ingredients:
     grams: 30
     fdcId: 170005
     matchConfidence: high
+    cooking: raw
   - raw: 2 tbsp chopped fresh basil
     quantity: 2
     unit: tbsp
@@ -112,6 +119,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 172232
     matchConfidence: high
+    cooking: raw
   - raw: ¼ tsp salt
     quantity: 0.25
     unit: tsp
@@ -120,6 +128,7 @@ ingredients:
     milliliters: 1.23223
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
   - raw: ¼ tsp black pepper
     quantity: 0.25
     unit: tsp
@@ -128,49 +137,51 @@ ingredients:
     milliliters: 1.23223
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 526
-    energyKj: 2200
-    protein_g: 20.9
-    fat_g: 17
-    satFat_g: 2.9
-    carbs_g: 76.6
-    fiber_g: 8.4
-    sugar_g: 5.6
-    sodium_mg: 773
-    availableCarb_g: 68.2
+    energyKcal: 514
+    energyKj: 2152
+    protein_g: 21.6
+    fat_g: 18.1
+    satFat_g: 3.1
+    carbs_g: 76.5
+    fiber_g: 12.9
+    sugar_g: 9.4
+    sodium_mg: 769
+    availableCarb_g: 63.2
   glycemic:
-    gi: 50
-    gl: 34
+    gi: 43
+    gl: 27
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 87
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: 0
     category: general
     version: "2023"
-    coverage: 0.78
+    coverage: 1
   inflammation:
-    score: -0.7
-    band: mildly-anti-inflammatory
+    score: -1.5
+    band: anti-inflammatory
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 56
+    score: 8
+    band: high
+    nrf: 62.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 66.9
-    ultraProcessedPct: 32.2
+    minimallyProcessedPct: 66.1
+    ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

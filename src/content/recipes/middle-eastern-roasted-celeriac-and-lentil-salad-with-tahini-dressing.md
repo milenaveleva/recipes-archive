@@ -14,10 +14,6 @@ cookTime: PT30M
 totalTime: PT45M
 cuisine: Middle Eastern
 course: Salad
-tags:
-  - vegetarian
-  - legumes
-  - salad
 lists:
   - Kifli favourites
 ingredients:
@@ -28,13 +24,16 @@ ingredients:
     grams: 600
     fdcId: 170400
     matchConfidence: high
-  - raw: 480 g canned lentils
+    cooking: baked
+  - raw: 480 g canned lentils (≈ 159 g uncooked)
     quantity: 480
     unit: g
     item: canned lentils
-    grams: 480
-    fdcId: 175254
-    matchConfidence: high
+    note: ≈ 159 g uncooked
+    grams: 159
+    fdcId: 172420
+    matchConfidence: medium
+    cooking: raw
   - raw: 40 ml extra virgin olive oil
     quantity: 40
     unit: ml
@@ -43,13 +42,16 @@ ingredients:
     milliliters: 40
     fdcId: 171413
     matchConfidence: high
-  - raw: 5 g ground cumin
-    quantity: 5
-    unit: g
+    cooking: baked
+  - raw: 2½ tsp ground cumin
+    quantity: 2.5
+    unit: tsp
     item: ground cumin
     grams: 5
+    milliliters: 12.322299999999998
     fdcId: 170923
     matchConfidence: medium
+    cooking: baked
   - raw: 50 g tahini
     quantity: 50
     unit: g
@@ -57,12 +59,14 @@ ingredients:
     grams: 50
     fdcId: 169410
     matchConfidence: medium
+    cooking: raw
   - raw: juice of 1 lemon
     quantity: 1
     item: juice of lemon
     grams: 45
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -70,20 +74,25 @@ ingredients:
     grams: 8
     fdcId: 169230
     matchConfidence: high
-  - raw: 5 g salt
-    quantity: 5
-    unit: g
+    cooking: raw
+  - raw: ¾ tsp salt
+    quantity: 0.75
+    unit: tsp
     item: salt
     grams: 5
+    milliliters: 3.69669
     fdcId: 173468
     matchConfidence: high
-  - raw: 2 g ground black pepper
-    quantity: 2
-    unit: g
+    cooking: baked
+  - raw: ¾ tsp ground black pepper
+    quantity: 0.75
+    unit: tsp
     item: ground black pepper
     grams: 2
+    milliliters: 3.69669
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
   - raw: 150 g feta cheese
     quantity: 150
     unit: g
@@ -91,6 +100,7 @@ ingredients:
     grams: 150
     fdcId: 173420
     matchConfidence: high
+    cooking: raw
   - raw: 80 g pomegranate seeds
     quantity: 80
     unit: g
@@ -98,6 +108,7 @@ ingredients:
     grams: 80
     fdcId: 169134
     matchConfidence: high
+    cooking: raw
   - raw: 40 g sliced almonds
     quantity: 40
     unit: g
@@ -105,6 +116,7 @@ ingredients:
     grams: 40
     fdcId: 170568
     matchConfidence: high
+    cooking: fried
   - raw: 20 g fresh parsley
     quantity: 20
     unit: g
@@ -112,48 +124,50 @@ ingredients:
     grams: 20
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 540
-    energyKj: 2259
-    protein_g: 23.7
+    energyKcal: 543
+    energyKj: 2272
+    protein_g: 22.6
     fat_g: 29.9
     satFat_g: 7.7
-    carbs_g: 50.2
-    fiber_g: 15.6
-    sugar_g: 8.1
-    sodium_mg: 1365
-    availableCarb_g: 34.5
+    carbs_g: 52
+    fiber_g: 10.4
+    sugar_g: 6.8
+    sodium_mg: 1082
+    availableCarb_g: 41.6
   glycemic:
-    gi: 33
-    gl: 11
+    gi: 29
+    gl: 12
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 50
   nutriScore:
-    grade: A
-    points: -2
+    grade: B
+    points: 2
     category: general
     version: "2023"
-    coverage: 0.97
+    coverage: 0.95
   inflammation:
-    score: -0.3
+    score: -0.7
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 33.9
+    score: 5
+    band: moderate
+    nrf: 28.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 68.4
-    ultraProcessedPct: 13.2
+    minimallyProcessedPct: 55.9
+    ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

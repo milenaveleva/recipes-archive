@@ -13,10 +13,6 @@ prepTime: PT10M
 totalTime: PT10M
 cuisine: International
 course: Breakfast
-tags:
-  - vegetarian
-  - overnight-oats
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +23,7 @@ ingredients:
     grams: 40
     fdcId: 169705
     matchConfidence: medium
+    cooking: raw
   - raw: 2 tsp chia seeds
     quantity: 2
     unit: tsp
@@ -35,6 +32,7 @@ ingredients:
     milliliters: 9.85784
     fdcId: 170554
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp desiccated coconut
     quantity: 1
     unit: tbsp
@@ -43,27 +41,31 @@ ingredients:
     milliliters: 14.7868
     fdcId: 170170
     matchConfidence: medium
-  - raw: 100 ml plant-based milk (or water), enough for a creamy texture
+    cooking: raw
+  - raw: 100 ml unsweetened oat milk (or water), enough for a creamy texture
     quantity: 100
     unit: ml
-    item: plant-based milk (or water)
+    item: unsweetened oat milk (or water)
     note: enough for a creamy texture
-    grams: 101
+    grams: 103
     milliliters: 100
-    fdcId: 1999630
-    matchConfidence: medium
+    fdcId: 82018905
+    matchConfidence: high
+    cooking: raw
   - raw: a few nuts, finely chopped (walnuts, hazelnuts, almonds, etc.)
     item: a few nuts, finely chopped
     note: walnuts, hazelnuts, almonds, etc.
     grams: 10
     fdcId: 170581
     matchConfidence: high
+    cooking: raw
   - raw: "a handful of mixed berries: strawberries, raspberries, blackberries, blueberries, currants"
     item: "a handful of mixed berries: strawberries"
     note: raspberries, blackberries, blueberries, currants
     grams: 75
     fdcId: 167762
     matchConfidence: high
+    cooking: raw
   - raw: extra nuts and seeds (optional)
     group: Other things you might need
     item: extra nuts and seeds
@@ -71,48 +73,50 @@ ingredients:
     grams: 10
     fdcId: 170588
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 421
-    energyKj: 1763
-    protein_g: 15.6
-    fat_g: 23.2
-    satFat_g: 5.9
-    carbs_g: 42.3
+    energyKcal: 426
+    energyKj: 1783
+    protein_g: 12
+    fat_g: 22.1
+    satFat_g: 5.8
+    carbs_g: 49
     fiber_g: 11
-    sugar_g: 4.5
-    sodium_mg: 41
-    availableCarb_g: 31.3
+    sugar_g: 10.7
+    sodium_mg: 33
+    availableCarb_g: 38
   glycemic:
     gi: 49
-    gl: 15
+    gl: 18
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 75
   nutriScore:
-    grade: A
-    points: -2
+    grade: B
+    points: 2
     category: general
     version: "2023"
-    coverage: 0.36
+    coverage: 0.59
   inflammation:
-    score: -1.5
+    score: -1.3
     band: anti-inflammatory
     method: fii v3
   balance:
-    score: 5
+    score: 6
     band: moderate
-    nrf: 42.6
+    nrf: 37.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 90.8
-    ultraProcessedPct: 9.2
+    minimallyProcessedPct: 75.3
+    ultraProcessedPct: 10.3
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

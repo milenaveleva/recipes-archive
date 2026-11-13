@@ -68,7 +68,6 @@ export const GET: APIRoute = async ({ props }) => {
       cuisine: d.cuisine,
       course: d.course,
       category: d.category,
-      tags: d.tags,
       lists: d.lists,
       imageUrl: d.imageUrl,
       source: d.source,

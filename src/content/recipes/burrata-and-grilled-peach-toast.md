@@ -1,6 +1,6 @@
 ---
 title: Burrata and Grilled Peach Toast
-description: Crisp sourdough toast topped with creamy burrata, arugula, caramelised peach wedges and fresh basil, finished with a balsamic glaze.
+description: Crisp whole-wheat sourdough toast topped with creamy burrata, arugula, caramelised peach wedges and fresh basil, finished with a balsamic glaze.
 image: ./images/burrata-and-grilled-peach-toast.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_11720_1777023233224_toast-with-burrata-and-peaches_5fd27eef.jpg
 imageAlt: Burrata and Grilled Peach Toast
@@ -11,10 +11,6 @@ author: Kifli Kukták
 servings: 2
 cuisine: Italian
 course: Appetizer
-tags:
-  - vegetarian
-  - toast
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -24,30 +20,35 @@ ingredients:
     grams: 125
     fdcId: 170845
     matchConfidence: high
+    cooking: raw
   - raw: 2 peaches
     quantity: 2
     item: peaches
     grams: 300
     fdcId: 169928
     matchConfidence: high
-  - raw: 2 slices sourdough bread
+    cooking: fried
+  - raw: 2 slices whole-wheat sourdough bread
     quantity: 2
-    item: slices sourdough bread
+    item: slices whole-wheat sourdough bread
     grams: 90
-    fdcId: 174918
-    matchConfidence: medium
+    fdcId: 172688
+    matchConfidence: high
+    cooking: fried
   - raw: 1 handful arugula
     quantity: 1
     item: handful arugula
     grams: 20
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful fresh basil
     quantity: 1
     item: handful fresh basil
     grams: 10
     fdcId: 172232
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp vegetable oil
     quantity: 1
     unit: tbsp
@@ -56,6 +57,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 172370
     matchConfidence: high
+    cooking: fried
   - raw: 1 tbsp balsamic glaze
     quantity: 1
     unit: tbsp
@@ -63,49 +65,51 @@ ingredients:
     grams: 16
     milliliters: 14.7868
     fdcId: 172241
-    matchConfidence: high
+    matchConfidence: low
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 429
-    energyKj: 1794
-    protein_g: 19.6
-    fat_g: 22.5
-    satFat_g: 10
-    carbs_g: 39
-    fiber_g: 5.4
-    sugar_g: 14.2
-    sodium_mg: 577
-    availableCarb_g: 33.6
+    energyKcal: 430
+    energyKj: 1797
+    protein_g: 21.3
+    fat_g: 22.7
+    satFat_g: 10.1
+    carbs_g: 36.9
+    fiber_g: 5.2
+    sugar_g: 16
+    sodium_mg: 513
+    availableCarb_g: 31.7
   glycemic:
-    gi: 57
-    gl: 19
-    giBand: medium
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi: 54
+    gl: 17
+    giBand: low
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
-    coverage: 0.97
+    coverage: 1
   inflammation:
-    score: 0.6
-    band: mildly-pro-inflammatory
+    score: 0.2
+    band: neutral
     method: fii v3
   balance:
     score: 3
     band: low
-    nrf: 15.6
+    nrf: 17.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 30.2
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 30.1
+    ultraProcessedPct: 26.4
     band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

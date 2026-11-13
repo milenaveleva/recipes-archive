@@ -13,11 +13,6 @@ prepTime: PT15M
 totalTime: PT15M
 cuisine: Hungarian
 course: Soup
-tags:
-  - vegan
-  - gluten-free
-  - cold-soup
-  - fruit
 lists:
   - Kifli favourites
 ingredients:
@@ -29,12 +24,14 @@ ingredients:
     grams: 500
     fdcId: 173954
     matchConfidence: high
+    cooking: raw
   - raw: 1 tub coconut yogurt
     quantity: 1
     item: tub coconut yogurt
     grams: 150
-    fdcId: 2647437
+    fdcId: 170173
     matchConfidence: medium
+    cooking: raw
   - raw: 1 carton (plant-based) whipping cream
     quantity: 1
     unit: carton
@@ -42,6 +39,7 @@ ingredients:
     grams: 200
     fdcId: 170859
     matchConfidence: high
+    cooking: raw
   - raw: 6–8 dates
     quantity: 6
     quantity2: 8
@@ -49,6 +47,7 @@ ingredients:
     grams: 55
     fdcId: 168191
     matchConfidence: high
+    cooking: raw
   - raw: ½ tsp ground vanilla
     quantity: 0.5
     unit: tsp
@@ -57,48 +56,50 @@ ingredients:
     milliliters: 2.46446
     fdcId: 173471
     matchConfidence: high
+    cooking: raw
   - raw: a few pistachios, for serving
     item: a few pistachios
     note: for serving
     grams: 10
     fdcId: 170184
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 305
-    energyKj: 1276
-    protein_g: 5
-    fat_g: 19.6
-    satFat_g: 11.7
-    carbs_g: 30.8
+    energyKcal: 360
+    energyKj: 1506
+    protein_g: 4.2
+    fat_g: 27.6
+    satFat_g: 18.8
+    carbs_g: 28.8
     fiber_g: 3.2
     sugar_g: 21.5
-    sodium_mg: 37
-    availableCarb_g: 27.6
+    sodium_mg: 22
+    availableCarb_g: 25.6
   glycemic:
-    gi: 50
-    gl: 14
+    gi: 53
+    gl: 13
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 37
   nutriScore:
     grade: C
-    points: 6
+    points: 9
     category: general
     version: "2023"
-    coverage: 0.78
+    coverage: 0.84
   inflammation:
-    score: 1.2
+    score: 1.1
     band: pro-inflammatory
     method: fii v3
   balance:
     score: 1
     band: poor
-    nrf: -8.5
+    nrf: -12.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 100
+    minimallyProcessedPct: 79.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

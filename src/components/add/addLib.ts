@@ -10,7 +10,14 @@ import { canonicalUnit, classifyUnit, volumeToMilliliters } from '../../core/uni
 import { searchFoods, type FoodRecord, type FoodMatch, type MatchConfidence } from '../../core/match';
 import { computeMacros, type MacroComputation } from '../../core/nutrition';
 import { computeScores, type ScoredIngredient, type ScoreResult, type ScoreOptions } from '../../core/score';
-import { nutrientsFor as nutrientsForShared, fvlFromCategory } from '../../core/recipeScore';
+import {
+  nutrientsFor as nutrientsForShared,
+  fvlFromCategory,
+  isMeasuredGi,
+  cookIngredient,
+  dataSourcesFor as dataSourcesForShared,
+} from '../../core/recipeScore';
+import { suggestCooking, isCookingMethod, type CookingMethod } from '../../core/cooking';
 import type { NutriCategory } from '../../core/nutriscore';
 import type { MetricAmount, NutrientVector, ParsedLine, ResolvedIngredient } from '../../core/types';
 import type { DraftIngredient, RecipeDraft } from '../../core/markdown';
@@ -93,6 +100,10 @@ export interface IngredientRow {
   /** Volume of the original measure (provenance), when measured by volume. */
   milliliters: number | null;
   excludeFromNutrition: boolean;
+  /** How the ingredient is cooked; scores read its cooked, as-eaten state. */
+  cooking: CookingMethod;
+  /** The author chose `cooking` (or it was stored): a match change keeps it instead of re-suggesting. */
+  userSetCooking: boolean;
 }
 
 let rowCounter = 0;
@@ -119,6 +130,8 @@ export function buildRow(raw: string): IngredientRow {
     grams: initialGrams(est, parsed, selectedFood),
     milliliters: est.milliliters,
     excludeFromNutrition: false,
+    cooking: parsed.isGroupHeader ? 'raw' : suggestCooking(raw, selectedFood),
+    userSetCooking: false,
   };
 }
 
@@ -209,11 +222,18 @@ export function initialGrams(
  * unit, food), so switching the match must recompute it rather than carry over the
  * previous match's value. A mass-unit ingredient keeps its absolute grams; a
  * volume/count one re-derives, or clears to null when the new food offers no usable
- * portion (so the author enters it instead of seeing a stale weight).
+ * portion (so the author enters it instead of seeing a stale weight). The cooking
+ * suggestion depends on the food too (a dry staple is boiled), so it is re-suggested for
+ * the new match — unless the author set the method, which is kept.
  */
 export function selectMatch(row: IngredientRow, fdcId: number | null): Partial<IngredientRow> {
   const food = fdcId != null ? FOOD_BY_ID.get(fdcId) ?? null : null;
-  return { selectedFdcId: fdcId, grams: initialGrams(estimateMetric(row.parsed), row.parsed, food) };
+  const patch: Partial<IngredientRow> = {
+    selectedFdcId: fdcId,
+    grams: initialGrams(estimateMetric(row.parsed), row.parsed, food),
+  };
+  if (!row.userSetCooking && !row.parsed.isGroupHeader) patch.cooking = suggestCooking(row.raw, food);
+  return patch;
 }
 
 /** Confidence of the row's selected match ('none' when unmatched). */
@@ -226,33 +246,49 @@ export function selectedConfidence(row: IngredientRow): MatchConfidence | 'none'
 export function rowsToResolved(rows: IngredientRow[]): ResolvedIngredient[] {
   return rows
     .filter((r) => !r.parsed.isGroupHeader)
-    .map((r) => ({
-      grams: safeGrams(r.grams),
-      excludeFromNutrition: r.excludeFromNutrition,
-      nutrients: r.selectedFdcId != null ? FOOD_BY_ID.get(r.selectedFdcId)?.n ?? null : null,
-    }));
+    .map((r) => {
+      const food = r.selectedFdcId != null ? FOOD_BY_ID.get(r.selectedFdcId) : undefined;
+      const cooked = cookIngredient(safeGrams(r.grams), food?.n ?? null, food, r.cooking, r.excludeFromNutrition);
+      return {
+        grams: cooked.grams,
+        excludeFromNutrition: r.excludeFromNutrition,
+        nutrients: cooked.nutrients,
+      };
+    });
 }
 
 export function computeNutrition(rows: IngredientRow[], servings: number): MacroComputation {
   return computeMacros(rowsToResolved(rows), clampServings(servings));
 }
 
-/** Map review rows to the scoring engine's shape (adds GI and FVL per match; the
- *  inflammation tag is computed from nutrients by the FII). */
+/** The stored `raw` text of a row (falls back to the parsed food name). */
+function rowRaw(r: IngredientRow): string {
+  return r.raw || r.parsed.item;
+}
+
+/** Map review rows to the scoring engine's shape (adds GI, measured-GI flag, FVL and the
+ *  NOVA marker text per match; the inflammation tag is computed from nutrients by the FII). */
 export function rowsToScored(rows: IngredientRow[]): ScoredIngredient[] {
   return rows
     .filter((r) => !r.parsed.isGroupHeader)
     .map((r) => {
       const food = r.selectedFdcId != null ? FOOD_BY_ID.get(r.selectedFdcId) : undefined;
       const s = scoringFor(r.selectedFdcId);
+      // Same cooked view as the rescorer (recipeScore.toScored), so the authored block reproduces.
+      const cooked = cookIngredient(safeGrams(r.grams), nutrientsFor(food), food, r.cooking, r.excludeFromNutrition);
       return {
-        grams: safeGrams(r.grams),
+        grams: cooked.grams,
         excludeFromNutrition: r.excludeFromNutrition,
         fdcId: r.selectedFdcId,
-        nutrients: nutrientsFor(food),
+        nutrients: cooked.nutrients,
+        fiiNutrients: cooked.fiiNutrients,
         gi: s?.gi ?? null,
+        giMeasured: isMeasuredGi(s),
         fvl: s?.fvl ?? fvlFromCategory(food),
         nova: food?.nova ?? null,
+        // Same text the draft stores as `raw` (rowToDraftIngredient), so a rescore of
+        // the committed markdown reads the identical processing markers.
+        raw: rowRaw(r),
       };
     });
 }
@@ -268,7 +304,7 @@ export function computeRecipeScores(
 
 function rowToDraftIngredient(row: IngredientRow): DraftIngredient {
   return {
-    raw: row.raw || row.parsed.item,
+    raw: rowRaw(row),
     quantity: row.parsed.quantity,
     quantity2: row.parsed.quantity2,
     unit: row.parsed.unit,
@@ -279,6 +315,7 @@ function rowToDraftIngredient(row: IngredientRow): DraftIngredient {
     fdcId: row.selectedFdcId,
     matchConfidence: selectedConfidence(row),
     excludeFromNutrition: row.excludeFromNutrition,
+    cooking: row.cooking,
   };
 }
 
@@ -302,7 +339,6 @@ export interface FormState {
   isCheese: boolean;
   /** General food: red/processed meat is the main protein (caps Nutri-Score protein points, Merz 2024). */
   redMeat: boolean;
-  tags: string; // comma-separated
   lists: string; // comma-separated
   imageUrl: string;
   sourceName: string;
@@ -324,7 +360,6 @@ export const EMPTY_FORM: FormState = {
   isWater: false,
   isCheese: false,
   redMeat: false,
-  tags: '',
   lists: '',
   imageUrl: '',
   sourceName: '',
@@ -367,6 +402,7 @@ export interface StoredIngredient {
   fdcId?: number | null;
   matchConfidence?: MatchConfidence | 'none';
   excludeFromNutrition?: boolean;
+  cooking?: CookingMethod;
 }
 
 /** The stored recipe frontmatter fields the editor re-seeds the form from. */
@@ -379,7 +415,6 @@ export interface StoredRecipe {
   cuisine?: string;
   course?: string;
   category?: string;
-  tags?: string[];
   lists?: string[];
   imageUrl?: string;
   source?: { name?: string; url?: string };
@@ -412,7 +447,6 @@ export function formFromRecipe(recipe: StoredRecipe, steps: string[]): FormState
     isWater: recipe.nutrition?.nutriScore?.isWater ?? false,
     isCheese: recipe.nutrition?.nutriScore?.isCheese ?? false,
     redMeat: recipe.nutrition?.nutriScore?.redMeat ?? false,
-    tags: (recipe.tags ?? []).join(', '),
     lists: (recipe.lists ?? []).join(', '),
     imageUrl: recipe.imageUrl ?? '',
     sourceName: recipe.source?.name ?? '',
@@ -446,6 +480,9 @@ export function rowsFromIngredients(ingredients: StoredIngredient[]): Ingredient
       grams: ing.grams !== undefined ? ing.grams : row.grams,
       milliliters: ing.milliliters !== undefined ? ing.milliliters : row.milliliters,
       excludeFromNutrition: ing.excludeFromNutrition ?? false,
+      // A stored method is honoured as-is; an absent one is raw (never re-suggested).
+      cooking: isCookingMethod(ing.cooking) ? ing.cooking : 'raw',
+      userSetCooking: true,
     };
   });
 }
@@ -564,7 +601,6 @@ export function buildDraft(
     cuisine: form.cuisine.trim() || undefined,
     course: form.course.trim() || undefined,
     category: form.category.trim() || undefined,
-    tags: splitCsv(form.tags),
     lists: splitCsv(form.lists),
     ingredients: rows.filter((r) => !r.parsed.isGroupHeader).map(rowToDraftIngredient),
     instructions: splitLines(form.instructions),
@@ -594,29 +630,21 @@ export function buildDraft(
   };
 }
 
-/** Provenance strings for the scores actually present in the nutrition block, plus
- *  the food-composition table each contributing ingredient draws on. */
+/** Provenance strings for the nutrition block — the shared recipeScore.dataSourcesFor,
+ *  fed the same stored-ingredient fields the rescorer reads. */
 function dataSourcesFor(scores: ScoreResult, rows: IngredientRow[]): string[] {
-  const sources = ['USDA FoodData Central'];
-  // Credit a national table when a *contributing* (non-excluded) ingredient is matched
-  // to one of its foods — the bundled dataset carries USDA generics plus curated
-  // national-table records (e.g. JP-MEXT for mirin/shimeji/katsuobushi).
-  if (
-    rows.some(
-      (r) =>
-        !r.excludeFromNutrition &&
-        r.selectedFdcId != null &&
-        FOOD_BY_ID.get(r.selectedFdcId)?.source === 'JP-MEXT',
-    )
-  ) {
-    sources.push('MEXT Standard Tables of Food Composition in Japan 2020');
-  }
-  if (scores.glycemic) sources.push('Atkinson 2021 GI tables');
-  if (scores.nutriScore) sources.push('Nutri-Score 2023');
-  if (scores.inflammation) sources.push('Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols');
-  if (scores.balance) sources.push('Nutrient-Rich Foods Index (NRF9.3)');
-  if (scores.processing) sources.push('NOVA food classification (energy-weighted)');
-  return sources;
+  return dataSourcesForShared(
+    scores,
+    rows
+      .filter((r) => !r.parsed.isGroupHeader)
+      .map((r) => ({
+        grams: safeGrams(r.grams),
+        fdcId: r.selectedFdcId,
+        excludeFromNutrition: r.excludeFromNutrition,
+        cooking: r.cooking,
+      })),
+    FOOD_BY_ID,
+  );
 }
 
 /* ---- value sanitizers (keep emitted frontmatter schema-valid) ---- */

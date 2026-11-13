@@ -1,0 +1,321 @@
+{
+  "_doc": "Hand-curated input to scripts/build-retention.mjs. Maps each cooking factor group (the food → group lookup lives in src/core/cooking.ts) × cooking method to (1) a USDA Table of Nutrient Retention Factors Release 6 (2007) retention code, (2) the Bognár 2002 (BFE-R-02-03) Part 2 retention column used for the nutrients USDA Release 6 does not tabulate (vitamins D, E, K, pantothenic acid; Mn and Se via Bognár's 'other minerals' row), and (3) Bognár 2002 Part 1 weight-yield rows, USDA raw/cooked record pairs (yield = (100 − water_raw) / (100 − water_cooked), i.e. assuming no dry-matter loss), or an explicit assumption. A method absent from a group falls back along PROXY_CHAIN in the build script (blanched → boiled, microwaved → steamed, grilled → baked, …) and the output records which entry it borrowed. `usda` values are retn06 codes; a code borrowed from another food group carries a `usdaNote`. Bognár values were transcribed by hand from the tables named in `table`/`col` (column A = the food's own edible part, drained, where the table distinguishes it).",
+  "groups": {
+    "leafy-veg": {
+      "label": "Leafy vegetables (spinach, kale, chard, cabbage, lettuce, greens)",
+      "usda": { "boiled": "3004", "steamed": "3784", "fried": "3015", "baked": "3001" },
+      "usdaNote": { "steamed": "USDA has no steamed-greens code; VEG,OTHER,STEAMED used" },
+      "bognar": {
+        "table": "Part 2 Table 30 (leafy vegetables)",
+        "boiled": { "col": "boil A", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.7, "otherMinerals": 0.9 },
+        "steamed": { "col": "steam A", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.85, "otherMinerals": 0.95 },
+        "fried": { "col": "stew B (no fry column; wilted in own juice)", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.9, "otherMinerals": 1 },
+        "baked": { "col": "bake in oven B", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.9, "otherMinerals": 1 }
+      },
+      "yield": {
+        "boiled": { "bognar": [["Part 1 Table 18", "Leafy vegetables, boiled", 0.98, 7]] },
+        "steamed": { "bognar": [["Part 1 Table 18", "Leafy vegetables, steamed", 0.99, 4]] },
+        "fried": { "bognar": [["Part 1 Table 18", "Leafy vegetables, stewed (wilted in own juice; no pan-fry row)", 0.94, 4]] }
+      },
+      "yieldOverrides": [
+        { "match": "\\bspinach\\b", "method": "boiled", "bognar": [["Part 1 Table 18", "Spinach, boiled", 0.95, 6]] },
+        { "match": "\\bspinach\\b", "method": "steamed", "bognar": [["Part 1 Table 18", "Spinach, steamed", 0.76, 4]] },
+        { "match": "\\bspinach\\b", "method": "fried", "bognar": [["Part 1 Table 18", "Spinach, stewed", 0.84, 25]] },
+        { "match": "\\bcabbage\\b", "method": "boiled", "bognar": [["Part 1 Table 18", "White cabbage, boiled", 0.98, 124]] },
+        { "match": "\\bcabbage\\b", "method": "steamed", "bognar": [["Part 1 Table 18", "White cabbage, steamed", 1.0, 3]] }
+      ]
+    },
+    "root-veg": {
+      "label": "Root, tuber, bulb and stem vegetables (carrot, beet, onion, leek, celery, kohlrabi)",
+      "usda": { "boiled": "3454", "steamed": "3464", "fried": "3460", "baked": "3451" },
+      "bognar": {
+        "table": "Part 2 Table 26 (root, tuber and bulb vegetables)",
+        "boiled": { "col": "boil A", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.6, "otherMinerals": 0.9 },
+        "steamed": { "col": "steam A", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.85, "otherMinerals": 0.95 },
+        "fried": { "col": "fry in pan A", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.9, "otherMinerals": 1 },
+        "baked": { "col": "bake in oven B", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.9, "otherMinerals": 1 }
+      },
+      "yield": {
+        "boiled": { "bognar": [["Part 1 Table 17", "Root and tuber vegetables, boiled", 0.95, 4]] },
+        "steamed": { "bognar": [["Part 1 Table 17", "Root and tuber vegetables, steamed", 0.9, 2]] },
+        "fried": { "bognar": [["Part 1 Table 17", "Onion, transparent, roasted (fry in pan)", 0.83, 3]] }
+      },
+      "yieldOverrides": [
+        { "match": "\\bcarrots?\\b", "method": "boiled", "bognar": [["Part 1 Table 17", "Carrot, boiled", 0.94, 103]] },
+        { "match": "\\bcarrots?\\b", "method": "steamed", "bognar": [["Part 1 Table 17", "Carrot, steamed", 0.9, 97]] },
+        { "match": "\\bkohlrabi\\b", "method": "boiled", "bognar": [["Part 1 Table 17", "Kohlrabi, peeled, boiled", 0.94, 4]] },
+        { "match": "\\bkohlrabi\\b", "method": "steamed", "bognar": [["Part 1 Table 17", "Kohlrabi, peeled, steamed", 0.9, 5]] }
+      ]
+    },
+    "other-veg": {
+      "label": "Flower, fruit, stem and seed vegetables (broccoli, cauliflower, peppers, courgette, aubergine, green beans, peas, asparagus)",
+      "usda": { "boiled": "3774", "steamed": "3784", "fried": "3780", "baked": "3771" },
+      "bognar": {
+        "table": "Part 2 Table 28 (stem, flower, fruit, corn and seed vegetables)",
+        "boiled": { "col": "boil A", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 0.9, "pantothenicAcid_mg": 0.7, "otherMinerals": 0.9 },
+        "steamed": { "col": "steam A", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 0.9, "pantothenicAcid_mg": 0.85, "otherMinerals": 0.95 },
+        "fried": { "col": "fry in pan A", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.9, "otherMinerals": 1 },
+        "baked": { "col": "bake in oven B", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.9, "otherMinerals": 1 }
+      },
+      "yield": {
+        "boiled": { "bognar": [["Part 1 Table 19", "Flower vegetables, boiled", 1.06, 2], ["Part 1 Table 20", "Seed vegetables, boiled (fresh/frozen)", 0.91, 3]] },
+        "steamed": { "bognar": [["Part 1 Table 19", "Flower vegetables, steamed", 1.0, 2], ["Part 1 Table 20", "Seed vegetables, steamed (fresh/frozen)", 0.88, 3]] },
+        "fried": { "bognar": [["Part 1 Table 19", "Fruit vegetables, stew (pan, own juice)", 0.76, 3]] },
+        "baked": { "usdaPair": [170489, 170490] }
+      },
+      "yieldOverrides": [
+        { "match": "\\bbroccoli\\b", "method": "boiled", "bognar": [["Part 1 Table 19", "Broccoli, boiled", 1.11, 3]] },
+        { "match": "\\bbroccoli\\b", "method": "steamed", "bognar": [["Part 1 Table 19", "Broccoli, steamed", 1.04, 3]] },
+        { "match": "\\bcauliflower\\b", "method": "boiled", "bognar": [["Part 1 Table 19", "Cauliflower, boiled", 1.0, 118]] },
+        { "match": "\\bcauliflower\\b", "method": "steamed", "bognar": [["Part 1 Table 19", "Cauliflower, steamed", 0.95, 135]] },
+        { "match": "\\bbrussels sprouts\\b", "method": "boiled", "bognar": [["Part 1 Table 18", "Brussels sprouts, boiled", 1.03, 26]] },
+        { "match": "\\bbrussels sprouts\\b", "method": "steamed", "bognar": [["Part 1 Table 18", "Brussels sprouts, steamed", 1.04, 38]] },
+        { "match": "\\bbeans, snap\\b|\\bgreen beans?\\b", "method": "boiled", "bognar": [["Part 1 Table 20", "Green beans, boiled (fresh/frozen)", 0.93, 120]] },
+        { "match": "\\bbeans, snap\\b|\\bgreen beans?\\b", "method": "steamed", "bognar": [["Part 1 Table 20", "Green beans, steamed (fresh/frozen)", 0.91, 96]] },
+        { "match": "\\bpeas, green\\b|\\bgreen peas\\b", "method": "boiled", "bognar": [["Part 1 Table 20", "Green peas, boiled (fresh/frozen)", 0.89, 48]] },
+        { "match": "\\bpeas, green\\b|\\bgreen peas\\b", "method": "steamed", "bognar": [["Part 1 Table 20", "Green peas, steamed (fresh/frozen)", 0.87, 59]] },
+        { "match": "\\basparagus\\b", "method": "boiled", "bognar": [["Part 1 Table 17", "Asparagus, boiled, steamed", 1.0, 2]] },
+        { "match": "\\basparagus\\b", "method": "steamed", "bognar": [["Part 1 Table 17", "Asparagus, boiled, steamed", 1.0, 2]] }
+      ]
+    },
+    "tomato": {
+      "label": "Tomatoes",
+      "usda": { "boiled": "3751", "fried": "3752", "baked": "3751", "grilled": "3752" },
+      "bognar": { "from": "other-veg" },
+      "yield": { "from": "other-veg" }
+    },
+    "potato": {
+      "label": "Potatoes",
+      "usda": { "boiled": "3308", "steamed": "3307", "fried": "3315", "baked": "3301" },
+      "usdaNote": { "steamed": "USDA has no steamed-potato code; POTATOES,BOILED IN SKIN used" },
+      "bognar": {
+        "table": "Part 2 Table 31 (raw potato based dishes)",
+        "boiled": { "col": "boil A (peeled)", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.7, "otherMinerals": 0.9 },
+        "steamed": { "col": "steam A (peeled)", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.85, "otherMinerals": 0.95 },
+        "fried": { "col": "fry in pan B", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.9, "otherMinerals": 1 },
+        "baked": { "col": "bake in oven B", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.9, "otherMinerals": 1 }
+      },
+      "yield": {
+        "boiled": { "bognar": [["Part 1 Table 21", "Potato, without peel, boiled", 1.0, 272]] },
+        "steamed": { "bognar": [["Part 1 Table 21", "Potato, without peel, steamed", 0.98, 242]] },
+        "baked": { "bognar": [["Part 1 Table 21", "Potato, with peel, baked (with waste — eaten with skin)", 0.81, 4]] },
+        "fried": { "bognar": [["Part 1 Table 21", "Fried potato patty, fresh raw, fry in pan", 0.61, 6]] }
+      }
+    },
+    "sweet-potato": {
+      "label": "Sweet potatoes and yams",
+      "usda": { "boiled": "3708", "steamed": "3707", "fried": "3710", "baked": "3701" },
+      "usdaNote": { "steamed": "USDA has no steamed code; SWEETPOTATOES,BOILED IN SKIN used" },
+      "bognar": { "from": "potato" },
+      "yield": {
+        "boiled": { "usdaPair": [168482, 168484] },
+        "baked": { "usdaPair": [168482, 168483] }
+      }
+    },
+    "mushroom": {
+      "label": "Mushrooms",
+      "usda": { "boiled": "3774", "steamed": "3784", "fried": "3780", "baked": "3771" },
+      "usdaNote": { "*": "USDA Release 6 has no mushroom codes; the VEG,OTHER codes are used" },
+      "bognar": {
+        "table": "Part 2 Table 33 (mushroom based dishes)",
+        "boiled": { "col": "boil A", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.7, "otherMinerals": 0.9 },
+        "steamed": { "col": "steam A", "vitD_ug": 1, "vitE_mg": 0.9, "vitK_ug": 0.9, "pantothenicAcid_mg": 0.85, "otherMinerals": 0.95 },
+        "fried": { "col": "fry in pan A", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.9, "otherMinerals": 1 },
+        "baked": { "col": "bake in oven B", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.9, "otherMinerals": 1 }
+      },
+      "yield": {
+        "boiled": { "usdaPair": [169251, 169252] },
+        "fried": { "bognar": [["Part 1 Table 24", "Mushroom, stew", 0.82, 3]] }
+      }
+    },
+    "legume-dry": {
+      "label": "Dry pulses (beans, lentils, chickpeas, split peas — dry mature seeds)",
+      "usda": { "boiled": "0521", "fried": "0526", "baked": "0524" },
+      "usdaNote": { "*": "dry pulses are always boiled first; fried/baked use the boiled+fried / boiled+baked codes" },
+      "bognar": {
+        "table": "Part 2 Table 35 (legume based dishes)",
+        "boiled": { "col": "boil A", "vitD_ug": 1, "vitE_mg": 0.9, "vitK_ug": 0.9, "pantothenicAcid_mg": 0.55, "otherMinerals": 1 }
+      },
+      "yield": {
+        "boiled": { "bognar": [["Part 1 Table 20", "Beans (white and red), boiled / stewed (dried)", 2.5, 10]] }
+      },
+      "yieldOverrides": [
+        { "match": "\\blentils?\\b", "method": "boiled", "bognar": [["Part 1 Table 20", "Lentils, boiled / stewed (dried)", 2.73, 6]] },
+        { "match": "\\bpeas\\b", "method": "boiled", "bognar": [["Part 1 Table 20", "Peas, boiled / stewed (dried)", 2.45, 6]] }
+      ]
+    },
+    "grain": {
+      "label": "Whole and polished grains (rice, quinoa, barley, millet, buckwheat, bulgur, couscous)",
+      "usda": { "boiled": "0432", "fried": "0433", "blanched": "0431" },
+      "usdaNote": { "*": "rice codes stand for all grains; boiled = absorption method (water used)" },
+      "bognar": {
+        "table": "Part 2 Table 37 (cereal grains and seeds)",
+        "boiled": { "col": "boil A", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.75, "otherMinerals": 1 }
+      },
+      "yield": {
+        "boiled": { "bognar": [["Part 1 Table 29", "Rice, long corn, polished, boiled", 2.98, 140]] },
+        "fried": { "bognar": [["Part 1 Table 29", "Risotto (rice, long corn, polished) — sautéed then simmered", 2.83, 16]] }
+      },
+      "yieldOverrides": [
+        { "match": "\\bbrown\\b", "method": "boiled", "bognar": [["Part 1 Table 29", "Rice, long corn, unpolished, boiled", 2.6, 7]] },
+        { "match": "\\bparboiled\\b", "method": "boiled", "bognar": [["Part 1 Table 29", "Rice, long corn, parboiled, boiled", 2.9, 43]] },
+        { "match": "\\bquinoa\\b", "method": "boiled", "bognar": [["Part 1 Table 29", "Quinoa, stewed", 3.42, 3]] },
+        { "match": "\\bmillet\\b", "method": "boiled", "bognar": [["Part 1 Table 29", "Millet, boiled", 2.4, 3]] },
+        { "match": "\\bbarley\\b", "method": "boiled", "bognar": [["Part 1 Table 29", "Barley, pearl, boiled", 2.5, 2]] },
+        { "match": "\\bbuckwheat\\b", "method": "boiled", "bognar": [["Part 1 Table 29", "Buckwheat, boiled", 3.6, 3]] },
+        { "match": "\\bspelt\\b", "method": "boiled", "bognar": [["Part 1 Table 29", "Spelt, grain, without husk, boiled", 1.8, 2]] },
+        { "match": "\\bwheat\\b(?!.*\\bflour\\b)", "method": "boiled", "bognar": [["Part 1 Table 29", "Wheat, whole, boiled / stewed", 1.78, 6]] },
+        { "match": "\\bbulgur\\b", "method": "boiled", "usdaPair": [170688, 170287] },
+        { "match": "\\bcouscous\\b", "method": "boiled", "usdaPair": [169699, 169700] }
+      ]
+    },
+    "oats": {
+      "label": "Oats",
+      "usda": { "boiled": "0352" },
+      "bognar": { "from": "grain" },
+      "yield": {
+        "boiled": { "assumed": 1, "note": "no tabulated oat yield; porridge liquid is its own ingredient" }
+      }
+    },
+    "pasta": {
+      "label": "Dry and fresh pasta / noodles",
+      "usda": { "boiled": "0381", "baked": "0382" },
+      "usdaNote": { "baked": "PASTA,BOILED,DRAINED,BAKED — pasta is boiled before baking" },
+      "bognar": {
+        "table": "Part 2 Table 38 (cereal flour based dishes)",
+        "boiled": { "col": "pasta, white flour, boil A", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.9, "otherMinerals": 1 }
+      },
+      "yield": {
+        "boiled": { "bognar": [["Part 1 Table 30", "Noodles, hard wheat (egg-free pasta), boiled", 2.1, 4]] }
+      },
+      "yieldOverrides": [
+        { "match": "\\bfresh\\b", "method": "boiled", "usdaPair": [169727, 169728] },
+        { "match": "whole[- ]wheat|wholemeal|whole grain", "method": "boiled", "bognar": [["Part 1 Table 30", "Noodles, wholemeal flour with egg, boiled", 2.63, 7]] },
+        { "match": "\\begg\\b", "method": "boiled", "bognar": [["Part 1 Table 30", "Noodles, wheat flour with egg, boiled", 2.6, 239]] }
+      ]
+    },
+    "flour": {
+      "label": "Flours, meals and starches",
+      "usda": { "baked": "0301", "boiled": "0302", "steamed": "0302", "fried": "0305", "grilled": "0306" },
+      "bognar": {
+        "table": "Part 2 Table 38 (cereal flour based dishes)",
+        "boiled": { "col": "pasta, white flour, boil A", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.9, "otherMinerals": 1 },
+        "fried": { "col": "pan cake, fry A", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.8, "otherMinerals": 1 },
+        "baked": { "col": "bread, pizza, cake, bake A", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.75, "otherMinerals": 1 }
+      },
+      "yield": {
+        "boiled": { "assumed": 1, "note": "a dry ingredient; a dough's or sauce's water is its own (usually excluded) ingredient" },
+        "baked": { "assumed": 1, "note": "a dry ingredient; a dough's water is its own (usually excluded) ingredient" }
+      }
+    },
+    "egg": {
+      "label": "Eggs",
+      "usda": { "boiled": "0105", "fried": "0103", "baked": "0101", "steamed": "0107" },
+      "usdaNote": { "steamed": "EGGS,POACHED used for steamed" },
+      "bognar": {
+        "table": "Part 2 Table 2 (egg based dishes)",
+        "boiled": { "col": "boil A", "vitD_ug": 0.95, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.8, "otherMinerals": 1 },
+        "fried": { "col": "fry in pan B (fried egg)", "vitD_ug": 0.9, "vitE_mg": 0.9, "vitK_ug": 1, "pantothenicAcid_mg": 0.8, "otherMinerals": 1 }
+      },
+      "yield": {
+        "boiled": { "usdaPair": [171287, 173424] },
+        "fried": { "bognar": [["Part 1 Table 2", "Fried egg", 0.87, 5]] }
+      }
+    },
+    "milk": {
+      "label": "Milk, cream and yoghurt",
+      "usda": { "boiled": "2151" },
+      "usdaNote": { "*": "MILK,HEATED APPROX 10MIN stands for every heated method" },
+      "bognar": {
+        "table": "Part 2 Table 1 (milk and milk product based dishes)",
+        "boiled": { "col": "boil B", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.9, "otherMinerals": 1 },
+        "baked": { "col": "fry in oven B", "vitD_ug": 1, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.75, "otherMinerals": 1 }
+      },
+      "yield": {
+        "boiled": { "assumed": 1, "note": "evaporation depends on pot and time; no tabulated yield" }
+      }
+    },
+    "cheese": {
+      "label": "Cheese",
+      "usda": { "baked": "0001", "grilled": "0003", "boiled": "0005" },
+      "bognar": { "from": "milk" },
+      "yield": {
+        "boiled": { "assumed": 1, "note": "no tabulated cheese yield" }
+      }
+    },
+    "fish-lean": {
+      "label": "Lean fish (< 5 g fat / 100 g)",
+      "usda": { "boiled": "2401", "fried": "2309", "baked": "2301", "grilled": "2305" },
+      "usdaNote": { "boiled": "FINFISH,<5%FAT,SIMMERED,WO/DRIPPING" },
+      "bognar": {
+        "table": "Part 2 Table 20 (low-fat fish)",
+        "boiled": { "col": "boil A", "vitD_ug": 0.9, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.7, "otherMinerals": 0.9 },
+        "steamed": { "col": "steam A", "vitD_ug": 0.9, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.7, "otherMinerals": 0.9 },
+        "fried": { "col": "fry in pan A", "vitD_ug": 0.9, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.8, "otherMinerals": 1 },
+        "baked": { "col": "fry in oven A", "vitD_ug": 0.9, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.8, "otherMinerals": 1 }
+      },
+      "yield": {
+        "boiled": { "bognar": [["Part 1 Table 13", "Fish fillet (cod, red fish, pollack), boiled", 0.77, null]] },
+        "steamed": { "bognar": [["Part 1 Table 13", "Fish fillet (cod, pollack), steamed", 0.8, null]] },
+        "fried": { "bognar": [["Part 1 Table 13", "Fish fillet (cod, red fish, pollack), fried (pan, deep, grill)", 0.8, 10]] },
+        "grilled": { "bognar": [["Part 1 Table 13", "Fish fillet (cod, red fish, pollack), fried (pan, deep, grill)", 0.8, 10]] }
+      }
+    },
+    "fish-fatty": {
+      "label": "Fatty fish (> 5 g fat / 100 g)",
+      "usda": { "boiled": "2551", "fried": "2459", "baked": "2451", "grilled": "2455" },
+      "usdaNote": { "boiled": "FINFISH,>5%FAT,SIMMERED,WO/DRIP" },
+      "bognar": {
+        "table": "Part 2 Table 22 (fat fish)",
+        "boiled": { "col": "boil A", "vitD_ug": 0.7, "vitE_mg": 0.7, "vitK_ug": 0.7, "pantothenicAcid_mg": 0.7, "otherMinerals": 0.9 },
+        "steamed": { "col": "steam A", "vitD_ug": 0.7, "vitE_mg": 0.7, "vitK_ug": 0.7, "pantothenicAcid_mg": 0.7, "otherMinerals": 0.9 },
+        "fried": { "col": "fry in pan A", "vitD_ug": 0.8, "vitE_mg": 0.8, "vitK_ug": 0.8, "pantothenicAcid_mg": 0.8, "otherMinerals": 1 },
+        "baked": { "col": "fry in oven A", "vitD_ug": 0.8, "vitE_mg": 0.8, "vitK_ug": 0.8, "pantothenicAcid_mg": 0.8, "otherMinerals": 1 }
+      },
+      "yield": { "from": "fish-lean" }
+    },
+    "shellfish": {
+      "label": "Crustaceans and molluscs",
+      "usda": { "boiled": "2761", "steamed": "2770", "fried": "2755", "baked": "2750", "grilled": "2753" },
+      "bognar": {
+        "table": "Part 2 Table 24 (crustaceans and molluscs)",
+        "boiled": { "col": "boil A", "vitD_ug": 0.9, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.7, "otherMinerals": 0.9 },
+        "steamed": { "col": "steam A", "vitD_ug": 0.9, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.7, "otherMinerals": 0.9 },
+        "fried": { "col": "fry in pan A", "vitD_ug": 0.9, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.8, "otherMinerals": 1 },
+        "baked": { "col": "fry in oven A", "vitD_ug": 0.9, "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.8, "otherMinerals": 1 }
+      },
+      "yield": {
+        "boiled": { "usdaPair": [175179, 175180] }
+      }
+    },
+    "fruit": {
+      "label": "Fruit (non-citrus)",
+      "usda": { "boiled": "0155", "fried": "0153", "baked": "0151", "grilled": "0152" },
+      "usdaNote": { "boiled": "FRUITS,FRESH(NOT CITRUS),STEWED" },
+      "bognar": {
+        "table": "Part 2 Table 36 (fruit based dishes)",
+        "boiled": { "col": "boil A", "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 0.8, "otherMinerals": 1 },
+        "baked": { "col": "bake B", "vitE_mg": 1, "vitK_ug": 1, "pantothenicAcid_mg": 1, "otherMinerals": 1 }
+      },
+      "yield": {
+        "boiled": { "bognar": [["Part 1 Table 27", "Berries, stewed", 0.95, 3], ["Part 1 Table 26", "Stone fruits, without score, stewed", 0.88, 4]] }
+      }
+    },
+    "citrus": {
+      "label": "Citrus fruit",
+      "usda": { "boiled": "0270", "steamed": "0270", "fried": "0270", "baked": "0270", "grilled": "0270" },
+      "usdaNote": { "*": "FRUITS,CITRUS,CKD stands for every heated method" },
+      "bognar": { "from": "fruit" },
+      "yield": { "from": "fruit" }
+    },
+    "nuts-seeds": {
+      "label": "Nuts and seeds",
+      "usda": { "baked": "2203", "grilled": "2202", "boiled": "2204" },
+      "bognar": {},
+      "yield": {
+        "baked": { "usdaPair": [170567, 170158] },
+        "boiled": { "assumed": 1, "note": "no tabulated yield for boiled nuts" }
+      }
+    }
+  }
+}

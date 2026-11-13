@@ -14,10 +14,6 @@ cookTime: PT7M
 totalTime: PT12M
 cuisine: International
 course: Breakfast
-tags:
-  - vegetarian
-  - vegan
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -29,53 +25,56 @@ ingredients:
     milliliters: 59.147
     fdcId: 2346396
     matchConfidence: high
+    cooking: boiled
   - raw: 2-3 dried apricots, puréed
     quantity: 2
     quantity2: 3
     item: dried apricots
     note: puréed
-    grams: 25
-    fdcId: 171697
+    grams: 20
+    fdcId: 173941
     matchConfidence: medium
+    cooking: boiled
   - raw: seasonal fruit, to taste
     item: seasonal fruit
     note: to taste
     grams: 80
-    fdcId: 173928
+    fdcId: 171688
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 130
-    energyKj: 545
-    protein_g: 3.3
-    fat_g: 1.6
-    satFat_g: 0.1
-    carbs_g: 27.4
-    fiber_g: 2.4
-    sugar_g: 11.1
-    sodium_mg: 1
-    availableCarb_g: 25
+    energyKcal: 166
+    energyKj: 693
+    protein_g: 3.6
+    fat_g: 1.4
+    satFat_g: 0.3
+    carbs_g: 37.3
+    fiber_g: 5.5
+    sugar_g: 19.2
+    sodium_mg: 3
+    availableCarb_g: 29.3
   glycemic:
-    gi: 52
-    gl: 13
+    gi: 47
+    gl: 14
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 100
   nutriScore:
     grade: A
     points: -3
     category: general
     version: "2023"
-    coverage: 0.84
+    coverage: 1
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.6
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
     score: 3
     band: low
-    nrf: 11.4
+    nrf: 16.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -85,6 +84,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

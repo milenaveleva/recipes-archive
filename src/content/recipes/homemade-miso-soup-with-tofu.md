@@ -21,6 +21,7 @@ ingredients:
     milliliters: 946.352
     fdcId: 174158
     matchConfidence: high
+    cooking: boiled
   - raw: 10g kombu
     quantity: 10
     unit: g
@@ -29,6 +30,7 @@ ingredients:
     fdcId: 168457
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: boiled
   - raw: 3 cups katsuobushi
     quantity: 3
     unit: cups
@@ -37,6 +39,7 @@ ingredients:
     fdcId: 81010091
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: boiled
   - raw: 7 oz soft/silken tofu
     quantity: 7
     unit: oz
@@ -44,6 +47,7 @@ ingredients:
     grams: 198.4
     fdcId: 172449
     matchConfidence: medium
+    cooking: boiled
   - raw: 4 Tbsp miso (1 Tbsp for every 240 ml of dashi)
     quantity: 4
     unit: Tbsp
@@ -53,6 +57,7 @@ ingredients:
     milliliters: 59.1472
     fdcId: 172442
     matchConfidence: high
+    cooking: boiled
   - raw: 1 Tbsp dried wakame seaweed
     quantity: 1
     unit: Tbsp
@@ -61,12 +66,14 @@ ingredients:
     milliliters: 14.7868
     fdcId: 170496
     matchConfidence: high
+    cooking: boiled
   - raw: 1 green onion/scallion
     quantity: 1
     item: green onion/scallion
     grams: 15
     fdcId: 170005
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 66
@@ -80,12 +87,12 @@ nutrition:
     sodium_mg: 654
     availableCarb_g: 4.2
   glycemic:
-    gi: 29
+    gi: 33
     gl: 1
     giBand: low
     glBand: low
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
-    carbCoveragePct: 100
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: B
     points: 2
@@ -93,8 +100,8 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: 0.1
+    band: neutral
     method: fii v3
   balance:
     score: 2
@@ -109,6 +116,7 @@ nutrition:
   computedAt: "2026-06-28"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

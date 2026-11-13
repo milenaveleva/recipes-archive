@@ -11,10 +11,6 @@ author: Kifli Kukták
 servings: 4
 cuisine: Middle Eastern
 course: Main Course
-tags:
-  - vegan
-  - legumes
-  - fried
 lists:
   - Kifli favourites
 ingredients:
@@ -26,6 +22,7 @@ ingredients:
     grams: 400
     fdcId: 173756
     matchConfidence: high
+    cooking: fried
   - raw: 120 g red onion
     quantity: 120
     unit: g
@@ -33,6 +30,7 @@ ingredients:
     grams: 120
     fdcId: 790577
     matchConfidence: high
+    cooking: fried
   - raw: 40 g fresh parsley
     quantity: 40
     unit: g
@@ -40,6 +38,7 @@ ingredients:
     grams: 40
     fdcId: 170416
     matchConfidence: high
+    cooking: fried
   - raw: 20 g garlic
     quantity: 20
     unit: g
@@ -47,13 +46,16 @@ ingredients:
     grams: 20
     fdcId: 169230
     matchConfidence: high
-  - raw: 10 g red chilli pepper
-    quantity: 10
-    unit: g
+    cooking: fried
+  - raw: 1½ tbsp red chilli pepper
+    quantity: 1.5
+    unit: tbsp
     item: red chilli pepper
     grams: 10
+    milliliters: 22.1802
     fdcId: 170106
     matchConfidence: high
+    cooking: fried
   - raw: sunflower oil, for frying
     group: For frying
     item: sunflower oil
@@ -61,20 +63,25 @@ ingredients:
     grams: 60
     fdcId: 171025
     matchConfidence: high
-  - raw: 2 g ground cumin
-    quantity: 2
-    unit: g
+    cooking: fried
+  - raw: 1 tsp ground cumin
+    quantity: 1
+    unit: tsp
     item: ground cumin
     grams: 2
+    milliliters: 4.92892
     fdcId: 170923
     matchConfidence: medium
-  - raw: 8 g salt
-    quantity: 8
-    unit: g
+    cooking: fried
+  - raw: 1¼ tsp salt
+    quantity: 1.25
+    unit: tsp
     item: salt
     grams: 8
+    milliliters: 6.161149999999999
     fdcId: 173468
     matchConfidence: high
+    cooking: fried
 nutrition:
   perServing:
     energyKcal: 538
@@ -84,30 +91,30 @@ nutrition:
     satFat_g: 2.2
     carbs_g: 68.7
     fiber_g: 13.4
-    sugar_g: 11
-    sodium_mg: 808
+    sugar_g: 12.7
+    sodium_mg: 807
     availableCarb_g: 55.3
   glycemic:
-    gi: 40
-    gl: 22
+    gi: 43
+    gl: 24
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
-    grade: B
-    points: 2
+    grade: A
+    points: -3
     category: general
     version: "2023"
-    coverage: 0.82
+    coverage: 1
   inflammation:
-    score: -1.7
+    score: -1.5
     band: anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 32.2
+    score: 5
+    band: moderate
+    nrf: 29.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -117,6 +124,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -135,4 +143,4 @@ createdAt: "2026-11-13"
 ## Tips
 
 - You can add a pinch of baking soda to the mixture to make the falafel even lighter and crispier.
-- Serve in fresh pita with tahini sauce and plenty of fresh vegetables.
+- Serve in fresh whole-wheat pita with tahini sauce and plenty of fresh vegetables.

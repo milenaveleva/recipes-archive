@@ -14,11 +14,6 @@ cookTime: PT15M
 totalTime: PT25M
 cuisine: Hungarian
 course: Main Course
-tags:
-  - vegetarian
-  - eggs
-  - leftovers
-  - one-pan
 lists:
   - Kifli favourites
 ingredients:
@@ -30,12 +25,14 @@ ingredients:
     grams: 400
     fdcId: 170472
     matchConfidence: high
+    cooking: fried
   - raw: 6 eggs
     quantity: 6
     item: eggs
     grams: 300
     fdcId: 748967
     matchConfidence: high
+    cooking: fried
   - raw: 150 g sour cream
     quantity: 150
     unit: g
@@ -43,6 +40,7 @@ ingredients:
     grams: 150
     fdcId: 171257
     matchConfidence: high
+    cooking: fried
   - raw: 150 g Trappist cheese
     quantity: 150
     unit: g
@@ -50,12 +48,14 @@ ingredients:
     grams: 150
     fdcId: 171241
     matchConfidence: high
+    cooking: fried
   - raw: 1 onion
     quantity: 1
     item: onion
     grams: 110
     fdcId: 170000
     matchConfidence: high
+    cooking: fried
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -63,6 +63,7 @@ ingredients:
     grams: 8
     fdcId: 169230
     matchConfidence: high
+    cooking: fried
   - raw: 30 ml sunflower oil
     quantity: 30
     unit: ml
@@ -71,33 +72,41 @@ ingredients:
     milliliters: 30
     fdcId: 171025
     matchConfidence: high
-  - raw: 5 g sweet paprika
-    quantity: 5
-    unit: g
+    cooking: fried
+  - raw: 2¼ tsp sweet paprika
+    quantity: 2.25
+    unit: tsp
     item: sweet paprika
     grams: 5
+    milliliters: 11.090069999999999
     fdcId: 171329
     matchConfidence: medium
-  - raw: 5 g fine salt
-    quantity: 5
-    unit: g
+    cooking: fried
+  - raw: ¾ tsp fine salt
+    quantity: 0.75
+    unit: tsp
     item: fine salt
     grams: 5
+    milliliters: 3.69669
     fdcId: 173468
     matchConfidence: medium
-  - raw: 1 g ground black pepper
-    quantity: 1
-    unit: g
+    cooking: fried
+  - raw: ½ tsp ground black pepper
+    quantity: 0.5
+    unit: tsp
     item: ground black pepper
     grams: 1
+    milliliters: 2.46446
     fdcId: 170931
     matchConfidence: medium
+    cooking: fried
   - raw: fresh parsley, chopped
     item: fresh parsley
     note: chopped
     grams: 10
     fdcId: 170416
     matchConfidence: high
+    cooking: fried
 nutrition:
   perServing:
     energyKcal: 464
@@ -107,30 +116,30 @@ nutrition:
     satFat_g: 13.6
     carbs_g: 20.6
     fiber_g: 5.5
-    sugar_g: 6.6
+    sugar_g: 6.7
     sodium_mg: 939
     availableCarb_g: 15.1
   glycemic:
-    gi: 16
+    gi: 13
     gl: 2
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 5
+    points: 6
     category: general
     version: "2023"
-    coverage: 0.74
+    coverage: 1
   inflammation:
-    score: 0.5
+    score: 0.6
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 21
+    nrf: 22.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 71.2
@@ -140,6 +149,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

@@ -14,10 +14,6 @@ cookTime: PT20M
 totalTime: PT55M
 cuisine: Italian
 course: Appetizer
-tags:
-  - vegetarian
-  - gluten-free
-  - legumes
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 200
     fdcId: 174288
     matchConfidence: medium
+    cooking: baked
   - raw: 600 ml water
     quantity: 600
     unit: ml
@@ -37,6 +34,7 @@ ingredients:
     fdcId: 169301
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: baked
   - raw: 60 ml extra virgin olive oil
     quantity: 60
     unit: ml
@@ -45,6 +43,7 @@ ingredients:
     milliliters: 60
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 1 tsp salt
     quantity: 1
     unit: tsp
@@ -53,6 +52,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
   - raw: 150 g gorgonzola cheese
     quantity: 150
     unit: g
@@ -60,6 +60,7 @@ ingredients:
     grams: 150
     fdcId: 172175
     matchConfidence: high
+    cooking: baked
   - raw: 2 sprigs fresh rosemary
     quantity: 2
     unit: sprigs
@@ -67,6 +68,7 @@ ingredients:
     grams: 3
     fdcId: 173473
     matchConfidence: high
+    cooking: baked
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -75,6 +77,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
     energyKcal: 448
@@ -88,12 +91,12 @@ nutrition:
     sodium_mg: 1055
     availableCarb_g: 24.4
   glycemic:
-    gi: 42
+    gi: 41
     gl: 10
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: E
     points: 22
@@ -101,7 +104,7 @@ nutrition:
     version: "2023"
     coverage: 0.99
   inflammation:
-    score: -0.6
+    score: -0.7
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
@@ -117,6 +120,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

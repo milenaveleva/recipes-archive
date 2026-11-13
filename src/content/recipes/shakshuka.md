@@ -14,11 +14,6 @@ cookTime: PT15M
 totalTime: PT25M
 cuisine: Middle Eastern
 course: Main Course
-tags:
-  - vegetarian
-  - eggs
-  - one-pot
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +23,7 @@ ingredients:
     grams: 110
     fdcId: 170000
     matchConfidence: high
+    cooking: boiled
   - raw: 2 cloves garlic, crushed
     quantity: 2
     unit: cloves
@@ -36,17 +32,20 @@ ingredients:
     grams: 8
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: olive oil
     item: olive oil
     grams: 28
     fdcId: 171413
     matchConfidence: high
+    cooking: boiled
   - raw: 2 roasted bell peppers
     quantity: 2
     item: roasted bell peppers
     grams: 200
     fdcId: 170108
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tsp paprika
     quantity: 1
     unit: tsp
@@ -55,6 +54,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 171329
     matchConfidence: medium
+    cooking: boiled
   - raw: ½ tsp chili powder
     quantity: 0.5
     unit: tsp
@@ -63,6 +63,7 @@ ingredients:
     milliliters: 2.46446
     fdcId: 171319
     matchConfidence: medium
+    cooking: boiled
   - raw: 400 g canned tomatoes
     quantity: 400
     unit: g
@@ -70,25 +71,20 @@ ingredients:
     grams: 400
     fdcId: 170501
     matchConfidence: high
-  - raw: 1 pinch sugar
-    quantity: 1
-    unit: pinch
-    item: sugar
-    grams: 0.3
-    milliliters: 0.3080575
-    fdcId: 170674
-    matchConfidence: high
+    cooking: boiled
   - raw: 4 eggs
     quantity: 4
     item: eggs
     grams: 200
-    fdcId: 173424
-    matchConfidence: high
+    fdcId: 171287
+    matchConfidence: medium
+    cooking: boiled
   - raw: fresh parsley
     item: fresh parsley
     grams: 5
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: 1 tsp ground cumin
     quantity: 1
     unit: tsp
@@ -97,25 +93,26 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170923
     matchConfidence: medium
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 204
-    energyKj: 852
+    energyKcal: 197
+    energyKj: 826
     protein_g: 9.1
-    fat_g: 13
-    satFat_g: 2.7
-    carbs_g: 15
+    fat_g: 12.5
+    satFat_g: 2.6
+    carbs_g: 14.7
     fiber_g: 3.9
-    sugar_g: 8.4
-    sodium_mg: 263
-    availableCarb_g: 11.1
+    sugar_g: 8
+    sodium_mg: 272
+    availableCarb_g: 10.8
   glycemic:
-    gi: 16
+    gi: 17
     gl: 2
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: B
     points: 1
@@ -123,22 +120,23 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.3
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 81.6
+    score: 9
+    band: excellent
+    nrf: 77.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 84.3
+    minimallyProcessedPct: 83.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -150,6 +148,6 @@ createdAt: "2026-11-13"
 ## Method
 
 1. Heat a large, lidded pan. Soften the onion and garlic in 2 tbsp olive oil.
-2. Add the peppers, spices, tomatoes and sugar and simmer for 10 minutes.
+2. Add the peppers, spices and tomatoes and simmer for 10 minutes.
 3. Using the back of a spoon, make four wells in the mixture and crack an egg into each.
 4. Cover with the lid and cook slowly until the whites have set and the yolks are as you like them. Sprinkle with fresh parsley and serve with bread or toast.

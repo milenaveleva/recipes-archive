@@ -14,11 +14,6 @@ cookTime: PT15M
 totalTime: PT20M
 cuisine: Chinese
 course: Main Course
-tags:
-  - vegan
-  - tofu
-  - stir-fry
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -29,12 +24,14 @@ ingredients:
     grams: 400
     fdcId: 172475
     matchConfidence: high
+    cooking: fried
   - raw: 1 eggplant
     quantity: 1
     item: eggplant
     grams: 300
     fdcId: 169228
     matchConfidence: high
+    cooking: fried
   - raw: 2 tbsp cornstarch
     quantity: 2
     unit: tbsp
@@ -43,6 +40,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 169698
     matchConfidence: high
+    cooking: fried
   - raw: 3 cloves garlic
     quantity: 3
     unit: cloves
@@ -50,6 +48,7 @@ ingredients:
     grams: 12
     fdcId: 169230
     matchConfidence: high
+    cooking: fried
   - raw: 15 g ginger
     quantity: 15
     unit: g
@@ -57,18 +56,21 @@ ingredients:
     grams: 15
     fdcId: 169231
     matchConfidence: high
+    cooking: fried
   - raw: 3 spring onions
     quantity: 3
     item: spring onions
     grams: 45
     fdcId: 170005
     matchConfidence: high
+    cooking: fried
   - raw: 1 red chilli pepper
     quantity: 1
     item: red chilli pepper
     grams: 15
     fdcId: 170106
     matchConfidence: high
+    cooking: fried
   - raw: 3 tbsp soy sauce
     quantity: 3
     unit: tbsp
@@ -77,6 +79,7 @@ ingredients:
     milliliters: 44.3604
     fdcId: 81017008
     matchConfidence: medium
+    cooking: fried
   - raw: 1 tbsp rice vinegar
     quantity: 1
     unit: tbsp
@@ -85,14 +88,16 @@ ingredients:
     milliliters: 14.7868
     fdcId: 81017016
     matchConfidence: high
-  - raw: 1 tbsp cane sugar
-    quantity: 1
-    unit: tbsp
-    item: cane sugar
-    grams: 13.8
-    milliliters: 14.7868
-    fdcId: 170674
-    matchConfidence: medium
+    cooking: fried
+  - raw: 2 tsp honey
+    quantity: 2
+    unit: tsp
+    item: honey
+    grams: 14.1
+    milliliters: 9.85784
+    fdcId: 169640
+    matchConfidence: high
+    cooking: fried
   - raw: 1 tbsp sesame oil
     quantity: 1
     unit: tbsp
@@ -101,6 +106,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 171016
     matchConfidence: high
+    cooking: fried
   - raw: 2 tbsp sunflower oil
     quantity: 2
     unit: tbsp
@@ -109,6 +115,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171025
     matchConfidence: high
+    cooking: fried
   - raw: 1 tbsp sesame seeds
     quantity: 1
     unit: tbsp
@@ -117,49 +124,52 @@ ingredients:
     milliliters: 14.7868
     fdcId: 170150
     matchConfidence: high
-  - raw: 200 g rice
+    cooking: raw
+  - raw: 200 g brown rice, uncooked
     quantity: 200
     unit: g
-    item: rice
+    item: brown rice
+    note: uncooked
     grams: 200
-    fdcId: 169759
+    fdcId: 169703
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 756
-    energyKj: 3162
-    protein_g: 42.3
-    fat_g: 40.9
-    satFat_g: 5.3
-    carbs_g: 63.2
-    fiber_g: 11.6
-    sugar_g: 14
-    sodium_mg: 1554
-    availableCarb_g: 51.6
+    energyKcal: 994
+    energyKj: 4157
+    protein_g: 46.9
+    fat_g: 43.7
+    satFat_g: 5.9
+    carbs_g: 112.3
+    fiber_g: 14.3
+    sugar_g: 13.5
+    sodium_mg: 1557
+    availableCarb_g: 98
   glycemic:
-    gi: 53
-    gl: 27
-    giBand: low
+    gi: 62
+    gl: 60
+    giBand: medium
     glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 80
   nutriScore:
     grade: A
-    points: -1
+    points: 0
     category: general
     version: "2023"
-    coverage: 0.63
+    coverage: 0.7
   inflammation:
-    score: -0.6
+    score: -0.9
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
+    score: 6
     band: moderate
-    nrf: 36.5
+    nrf: 33.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 60
+    minimallyProcessedPct: 69.6
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
@@ -167,6 +177,7 @@ nutrition:
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -179,13 +190,13 @@ createdAt: "2026-11-13"
 
 1. **Preparation:** Drain the tofu and blot off the moisture thoroughly with a clean paper towel, then cut into even 2 cm cubes. Toss the diced tofu in 1 tablespoon of cornstarch so it gets an irresistibly crispy crust when fried.
 2. Wash the eggplant and cut it into roughly 2 cm cubes too. Peel the garlic and fresh ginger and chop them very finely. Slice the chilli into thin rounds. Slice the spring onions diagonally: set the white parts aside for frying and keep the green parts for garnish.
-3. In a small bowl, mix the sauce: the soy sauce, rice vinegar, cane sugar, sesame oil, 1 tablespoon of cornstarch and 80 ml of cold water, until the starch and sugar dissolve completely.
-4. Rinse the rice under cold running water, then cook it covered in twice its volume of lightly salted water for 12-14 minutes until soft and fluffy.
+3. In a small bowl, mix the sauce: the soy sauce, rice vinegar, honey, sesame oil, 1 tablespoon of cornstarch and 80 ml of cold water, until the starch and honey dissolve completely.
+4. Rinse the rice under cold running water, then cook it covered in about 2-2.25 times its volume of lightly salted water for 35-45 minutes until soft and fluffy, then let it rest covered for 10 minutes.
 5. **Wok stir-frying and serving:** Heat 1 tablespoon of sunflower oil in a wok or deep pan until smoking. Add the cornstarch-coated tofu cubes and fry over high heat until golden brown and crispy on all sides, about 4-5 minutes. Transfer the fried tofu to a plate.
 6. Pour another tablespoon of oil into the hot wok, then add the eggplant cubes. Stir with quick, dynamic movements for 4-5 minutes until the eggplant is lightly browned outside and pleasantly soft inside.
 7. Push the eggplant slightly to the edge of the wok and in the middle add the finely chopped garlic, ginger, sliced chilli and the white parts of the spring onions. Stir and fry for 30-40 seconds until an intense aroma is released.
 8. Return the crispy tofu to the wok with the eggplant. Stir the prepared sauce again and pour it into the hot wok. Keep tossing and shaking the pan for about 1 minute until the sauce thickens and coats the vegetables and tofu cubes like a glossy, fragrant glaze.
-9. Turn off the heat and sprinkle with the fresh green spring onion and toasted sesame seeds. Serve immediately, hot, with the fragrant steamed jasmine rice.
+9. Turn off the heat and sprinkle with the fresh green spring onion and toasted sesame seeds. Serve immediately, hot, with the fragrant steamed brown jasmine rice.
 
 ## Tips
 

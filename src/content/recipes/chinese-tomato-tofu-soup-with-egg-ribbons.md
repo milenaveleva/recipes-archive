@@ -14,11 +14,6 @@ cookTime: PT15M
 totalTime: PT25M
 cuisine: Chinese
 course: Soup
-tags:
-  - vegetarian
-  - tofu
-  - soup
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -30,6 +25,7 @@ ingredients:
     grams: 300
     fdcId: 172475
     matchConfidence: high
+    cooking: boiled
   - raw: 400 g tomatoes
     group: Main ingredients
     quantity: 400
@@ -38,13 +34,15 @@ ingredients:
     grams: 400
     fdcId: 321360
     matchConfidence: high
+    cooking: boiled
   - raw: 2 eggs
     group: Main ingredients
     quantity: 2
     item: eggs
     grams: 100
-    fdcId: 173424
-    matchConfidence: high
+    fdcId: 171287
+    matchConfidence: medium
+    cooking: boiled
   - raw: 3 spring onions
     group: Main ingredients
     quantity: 3
@@ -52,6 +50,7 @@ ingredients:
     grams: 45
     fdcId: 170005
     matchConfidence: high
+    cooking: boiled
   - raw: 2 cloves garlic
     group: Main ingredients
     quantity: 2
@@ -60,6 +59,7 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 15 g ginger
     group: Main ingredients
     quantity: 15
@@ -68,6 +68,7 @@ ingredients:
     grams: 15
     fdcId: 169231
     matchConfidence: high
+    cooking: boiled
   - raw: 800 ml vegetable broth
     group: Main ingredients
     quantity: 800
@@ -77,6 +78,7 @@ ingredients:
     milliliters: 800
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 15 g cornstarch
     group: Main ingredients
     quantity: 15
@@ -85,6 +87,7 @@ ingredients:
     grams: 15
     fdcId: 169698
     matchConfidence: high
+    cooking: boiled
   - raw: 20 ml soy sauce
     group: Seasonings and flavourings
     quantity: 20
@@ -94,6 +97,7 @@ ingredients:
     milliliters: 20
     fdcId: 174277
     matchConfidence: high
+    cooking: boiled
   - raw: 10 ml sesame oil
     group: Seasonings and flavourings
     quantity: 10
@@ -103,70 +107,77 @@ ingredients:
     milliliters: 10
     fdcId: 171016
     matchConfidence: high
-  - raw: 5 g salt
+    cooking: raw
+  - raw: ¾ tsp salt
     group: Seasonings and flavourings
-    quantity: 5
-    unit: g
+    quantity: 0.75
+    unit: tsp
     item: salt
     grams: 5
+    milliliters: 3.69669
     fdcId: 173468
     matchConfidence: high
-  - raw: 2 g ground black pepper
+    cooking: boiled
+  - raw: ¾ tsp ground black pepper
     group: Seasonings and flavourings
-    quantity: 2
-    unit: g
+    quantity: 0.75
+    unit: tsp
     item: ground black pepper
     grams: 2
+    milliliters: 3.69669
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
   - raw: vegetable oil, for frying
     item: vegetable oil
     note: for frying
     grams: 10
     fdcId: 172370
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 253
-    energyKj: 1058
+    energyKcal: 250
+    energyKj: 1045
     protein_g: 18.3
-    fat_g: 14.9
-    satFat_g: 2.6
-    carbs_g: 15.6
+    fat_g: 14.6
+    satFat_g: 2.5
+    carbs_g: 15.5
     fiber_g: 4.4
-    sugar_g: 1.7
-    sodium_mg: 1385
-    availableCarb_g: 11.2
+    sugar_g: 6.3
+    sodium_mg: 1389
+    availableCarb_g: 11.1
   glycemic:
-    gi: 39
-    gl: 4
+    gi: 29
+    gl: 3
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 31
   nutriScore:
     grade: B
     points: 2
     category: general
     version: "2023"
-    coverage: 0.58
+    coverage: 0.77
   inflammation:
     score: -0.4
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 43.7
+    score: 7
+    band: high
+    nrf: 44.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 52.4
+    minimallyProcessedPct: 51.9
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

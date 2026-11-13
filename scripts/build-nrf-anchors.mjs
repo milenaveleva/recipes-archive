@@ -15,7 +15,7 @@
  * Prints percentiles to stderr; does NOT write any file — the operator reads the
  * percentiles and sets the breakpoints (score 5 ≈ p50, 8 ≈ p90, 9 ≈ p95, 10 ≈ top).
  *
- * Usage: node scripts/build-nrf-anchors.mjs
+ * Usage: node scripts/build-nrf-anchors.mjs [--recipes]
  */
 import { readFileSync, mkdtempSync, rmSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
@@ -32,6 +32,20 @@ const energyKcalOf = (n) =>
   Number.isFinite(n?.energyKcal) ? n.energyKcal
   : Number.isFinite(n?.energyKj) ? n.energyKj / KJ_PER_KCAL
   : null;
+
+// `--recipes`: report the distribution of the stored per-recipe NRF values instead —
+// the corpus the balance breakpoints are anchored to (rescore first so they're current).
+if (process.argv.includes('--recipes')) {
+  const { readdirSync } = await import('node:fs');
+  const dir = join(ROOT, 'src/content/recipes');
+  const vals = readdirSync(dir).filter((f) => f.endsWith('.md'))
+    .map((f) => /^    nrf: (-?[0-9.]+)/m.exec(readFileSync(join(dir, f), 'utf8'))?.[1])
+    .filter((v) => v != null).map(Number).sort((a, b) => a - b);
+  const pct = (p) => vals[Math.min(vals.length - 1, Math.round((p / 100) * (vals.length - 1)))];
+  log(`→ ${vals.length} recipes with an NRF value`);
+  for (const p of [5, 15, 30, 45, 60, 75, 90, 95, 98]) log(`  p${p}: ${pct(p).toFixed(1)}`);
+  process.exit(0);
+}
 
 // ---- compile the balance engine to CommonJS in a temp dir ----
 log('→ compiling NRF9.3 engine (src/core/balance.ts) to CommonJS…');

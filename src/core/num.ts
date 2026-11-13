@@ -4,7 +4,9 @@
  */
 export function round(n: number, dp = 0): number {
   const f = 10 ** dp;
-  return Math.round(n * f) / f;
+  // `+ 0` folds −0 (from rounding a tiny negative) into 0, so a stored "0"
+  // round-trips through YAML and compares equal under Object.is.
+  return Math.round(n * f) / f + 0;
 }
 
 /** Clamp `n` to the inclusive range [lo, hi]. */

@@ -14,10 +14,6 @@ cookTime: PT25M
 totalTime: PT35M
 cuisine: International
 course: Soup
-tags:
-  - vegan
-  - legumes
-  - soup
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 70
     fdcId: 790577
     matchConfidence: high
+    cooking: boiled
   - raw: 21 g garlic
     quantity: 21
     unit: g
@@ -35,6 +32,7 @@ ingredients:
     grams: 21
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 200 g potatoes
     quantity: 200
     unit: g
@@ -42,6 +40,7 @@ ingredients:
     grams: 200
     fdcId: 170027
     matchConfidence: high
+    cooking: boiled
   - raw: 150 g carrots
     quantity: 150
     unit: g
@@ -49,6 +48,7 @@ ingredients:
     grams: 150
     fdcId: 170393
     matchConfidence: high
+    cooking: boiled
   - raw: 30 g sunflower oil
     quantity: 30
     unit: g
@@ -56,6 +56,7 @@ ingredients:
     grams: 30
     fdcId: 171025
     matchConfidence: high
+    cooking: boiled
   - raw: 2 g bay leaves
     quantity: 2
     unit: g
@@ -63,13 +64,16 @@ ingredients:
     grams: 2
     fdcId: 170917
     matchConfidence: medium
-  - raw: 100 g red lentils
+    cooking: boiled
+  - raw: 100 g red lentils, uncooked
     quantity: 100
     unit: g
     item: red lentils
+    note: uncooked
     grams: 100
     fdcId: 172420
     matchConfidence: high
+    cooking: boiled
   - raw: 5 g fresh parsley
     quantity: 5
     unit: g
@@ -77,6 +81,7 @@ ingredients:
     grams: 5
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: 750 ml water
     quantity: 750
     unit: ml
@@ -86,51 +91,54 @@ ingredients:
     fdcId: 169301
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: boiled
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 3
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
 nutrition:
   perServing:
     energyKcal: 303
     energyKj: 1267
     protein_g: 10.9
     fat_g: 10.7
-    satFat_g: 1.1
+    satFat_g: 1.2
     carbs_g: 43.3
     fiber_g: 6.8
-    sugar_g: 3.5
-    sodium_mg: 430
+    sugar_g: 5.2
+    sodium_mg: 428
     availableCarb_g: 36.6
   glycemic:
-    gi: 43
-    gl: 16
+    gi: 49
+    gl: 18
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 57
   nutriScore:
     grade: A
-    points: -1
+    points: 0
     category: general
     version: "2023"
-    coverage: 0.88
+    coverage: 1
   inflammation:
-    score: -0.9
+    score: -0.8
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 52.2
+    score: 7
+    band: high
+    nrf: 46.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -140,6 +148,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

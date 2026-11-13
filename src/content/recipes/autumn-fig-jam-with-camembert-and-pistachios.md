@@ -14,10 +14,6 @@ cookTime: PT15M
 totalTime: PT30M
 cuisine: French
 course: Appetizer
-tags:
-  - vegetarian
-  - cheese
-  - autumn
 lists:
   - Kifli favourites
 ingredients:
@@ -26,22 +22,25 @@ ingredients:
     unit: g
     item: figs
     grams: 500
-    fdcId: 174666
+    fdcId: 173021
     matchConfidence: high
-  - raw: 4 tbsp brown sugar
-    quantity: 4
+    cooking: boiled
+  - raw: 2 tbsp honey
+    quantity: 2
     unit: tbsp
-    item: brown sugar
-    grams: 55
-    milliliters: 59.1472
-    fdcId: 168833
+    item: honey
+    grams: 42.4
+    milliliters: 29.5736
+    fdcId: 169640
     matchConfidence: high
+    cooking: boiled
   - raw: juice of 1 lemon
     quantity: 1
     item: juice of lemon
     grams: 45
     fdcId: 167747
     matchConfidence: high
+    cooking: boiled
   - raw: ½ tsp ground cinnamon
     quantity: 0.5
     unit: tsp
@@ -50,6 +49,7 @@ ingredients:
     milliliters: 2.46446
     fdcId: 171320
     matchConfidence: medium
+    cooking: boiled
   - raw: ½ tsp ground ginger
     quantity: 0.5
     unit: tsp
@@ -58,18 +58,21 @@ ingredients:
     milliliters: 2.46446
     fdcId: 169231
     matchConfidence: high
+    cooking: boiled
   - raw: 4 whole cloves
     quantity: 4
     item: whole cloves
     grams: 0.5
     fdcId: 171321
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 whole star anise
     quantity: 1
     item: whole star anise
     grams: 1
     matchConfidence: none
     excludeFromNutrition: true
+    cooking: boiled
   - raw: 4 small camembert cheeses
     quantity: 4
     unit: small
@@ -77,31 +80,33 @@ ingredients:
     grams: 500
     fdcId: 172178
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful roasted salted pistachios
     quantity: 1
     item: handful roasted salted pistachios
     grams: 30
     fdcId: 170184
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 607
-    energyKj: 2539
-    protein_g: 28.1
-    fat_g: 34.3
+    energyKcal: 546
+    energyKj: 2283
+    protein_g: 27.3
+    fat_g: 34.2
     satFat_g: 19.7
-    carbs_g: 51.8
-    fiber_g: 6.3
-    sugar_g: 44
-    sodium_mg: 1062
-    availableCarb_g: 45.5
+    carbs_g: 36.5
+    fiber_g: 4.7
+    sugar_g: 30.5
+    sodium_mg: 1055
+    availableCarb_g: 31.8
   glycemic:
-    gi: 59
-    gl: 27
-    giBand: medium
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi: 47
+    gl: 15
+    giBand: low
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 92
   nutriScore:
     grade: D
     points: 15
@@ -109,22 +114,23 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 1.4
+    score: 1.3
     band: pro-inflammatory
     method: fii v3
   balance:
-    score: 1
+    score: 2
     band: poor
     nrf: -2.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 38.2
+    minimallyProcessedPct: 23.6
     ultraProcessedPct: 0
     band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -135,7 +141,7 @@ createdAt: "2026-11-13"
 
 ## Method
 
-1. Wash the figs and chop them into small pieces, skin included. Put them in a saucepan with the sugar, lemon juice and spices (cinnamon, ginger, cloves, star anise).
+1. Wash the figs and chop them into small pieces, skin included. Put them in a saucepan with the honey, lemon juice and spices (cinnamon, ginger, cloves, star anise).
 2. Simmer over low heat for 12-15 minutes, until the figs are soft and begin to fall apart. Remove the whole spices (cloves, star anise), then purée the mixture smooth with a hand blender. Transfer to a jar and let it cool completely in the fridge.
 3. Cut the camembert cheeses in half horizontally and spread with the cooled fig jam. Put the top back on and cut into triangles. Sprinkle with roughly chopped pistachios and decorate with fresh fig slices.
 4. The leftover jam keeps in the fridge for 5-7 days.

@@ -14,10 +14,6 @@ cookTime: PT20M
 totalTime: PT35M
 cuisine: Hungarian
 course: Main Course
-tags:
-  - vegetarian
-  - vegetables
-  - fritters
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +25,7 @@ ingredients:
     grams: 500
     fdcId: 170400
     matchConfidence: high
+    cooking: fried
   - raw: 150 g Trappista cheese
     group: Fritter ingredients
     quantity: 150
@@ -37,6 +34,7 @@ ingredients:
     grams: 150
     fdcId: 173419
     matchConfidence: high
+    cooking: fried
   - raw: 2 eggs
     group: Fritter ingredients
     quantity: 2
@@ -44,6 +42,7 @@ ingredients:
     grams: 100
     fdcId: 748967
     matchConfidence: high
+    cooking: fried
   - raw: 1 onion
     group: Fritter ingredients
     quantity: 1
@@ -51,6 +50,7 @@ ingredients:
     grams: 110
     fdcId: 170000
     matchConfidence: high
+    cooking: fried
   - raw: 4 cloves garlic
     group: Fritter ingredients
     quantity: 4
@@ -59,22 +59,25 @@ ingredients:
     grams: 12
     fdcId: 169230
     matchConfidence: high
-  - raw: 40 g plain flour
+    cooking: fried
+  - raw: 40 g whole-wheat flour
     group: Fritter ingredients
     quantity: 40
     unit: g
-    item: plain flour
+    item: whole-wheat flour
     grams: 40
-    fdcId: 2003586
+    fdcId: 790085
     matchConfidence: high
-  - raw: 50 g breadcrumbs
+    cooking: fried
+  - raw: 50 g whole-wheat breadcrumbs
     group: Fritter ingredients
     quantity: 50
     unit: g
-    item: breadcrumbs
+    item: whole-wheat breadcrumbs
     grams: 50
-    fdcId: 174928
+    fdcId: 172689
     matchConfidence: high
+    cooking: fried
   - raw: 1 bunch fresh parsley
     group: Fritter ingredients
     quantity: 1
@@ -83,6 +86,7 @@ ingredients:
     grams: 30
     fdcId: 170416
     matchConfidence: high
+    cooking: fried
   - raw: 60 ml sunflower oil
     group: For frying and seasoning
     quantity: 60
@@ -92,6 +96,7 @@ ingredients:
     milliliters: 60
     fdcId: 171025
     matchConfidence: high
+    cooking: fried
   - raw: 1 tsp fine salt
     group: For frying and seasoning
     quantity: 1
@@ -101,6 +106,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: medium
+    cooking: fried
   - raw: ½ tsp ground black pepper
     group: For frying and seasoning
     quantity: 0.5
@@ -110,6 +116,7 @@ ingredients:
     milliliters: 2.46446
     fdcId: 170931
     matchConfidence: medium
+    cooking: fried
   - raw: 1 tsp marjoram
     group: For frying and seasoning
     quantity: 1
@@ -119,6 +126,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170928
     matchConfidence: medium
+    cooking: fried
   - raw: 250 g sour cream
     group: Garlic dip
     quantity: 250
@@ -127,48 +135,50 @@ ingredients:
     grams: 250
     fdcId: 171257
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 574
-    energyKj: 2403
-    protein_g: 19.5
-    fat_g: 40.5
+    energyKcal: 564
+    energyKj: 2358
+    protein_g: 20.2
+    fat_g: 40.4
     satFat_g: 15.8
-    carbs_g: 35.9
-    fiber_g: 4
+    carbs_g: 33
+    fiber_g: 5.2
     sugar_g: 6.2
-    sodium_mg: 1231
-    availableCarb_g: 31.9
+    sodium_mg: 1210
+    availableCarb_g: 27.8
   glycemic:
-    gi: 36
-    gl: 11
+    gi: 33
+    gl: 9
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
-    grade: C
-    points: 7
+    grade: D
+    points: 11
     category: general
     version: "2023"
-    coverage: 0.89
+    coverage: 1
   inflammation:
-    score: 0.7
+    score: 0.5
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
     score: 3
     band: low
-    nrf: 14.3
+    nrf: 16.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 68.1
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 69.5
+    ultraProcessedPct: 6.8
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -181,7 +191,7 @@ createdAt: "2026-11-13"
 
 1. **Preparation:** Peel the celeriac and onion, then grate them on the large holes of a grater into a bowl. Sprinkle with a little salt, leave for 10 minutes, then squeeze out the excess liquid thoroughly.
 2. Crush the garlic cloves: set aside 2 cloves for the sour cream dip and add 2 cloves to the squeezed celeriac base.
-3. **Making the fritter mixture and frying:** Mix the grated Trappista cheese, eggs, plain flour, breadcrumbs, finely chopped fresh parsley, marjoram, salt and freshly ground black pepper into the grated celeriac. Shape the mixture into flat patties the size of a palm. If it is too soft, add a little more breadcrumbs.
+3. **Making the fritter mixture and frying:** Mix the grated Trappista cheese, eggs, whole-wheat flour, breadcrumbs, finely chopped fresh parsley, marjoram, salt and freshly ground black pepper into the grated celeriac. Shape the mixture into flat patties the size of a palm. If it is too soft, add a little more breadcrumbs.
 4. In a frying pan, heat sunflower oil over medium heat. Place the patties in and fry for 4-5 minutes per side until beautifully golden brown and crisp and the cheese has melted inside. Drain them on paper towels.
 5. **Serving:** Mix the sour cream with the 2 reserved cloves of crushed garlic and a pinch of salt. Serve the hot, crispy cheesy celeriac fritters immediately with the cool garlic dip.
 

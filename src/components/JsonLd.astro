@@ -27,7 +27,6 @@ const jsonLd: Record<string, unknown> = {
   recipeYield: data.yield ?? `${data.servings} servings`,
   recipeCategory: data.category,
   recipeCuisine: data.cuisine,
-  keywords: data.tags.length ? data.tags.join(', ') : undefined,
   prepTime: data.prepTime,
   cookTime: data.cookTime,
   totalTime: data.totalTime,

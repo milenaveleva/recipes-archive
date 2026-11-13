@@ -14,10 +14,6 @@ cookTime: PT35M
 totalTime: PT50M
 cuisine: International
 course: Salad
-tags:
-  - vegetarian
-  - salad
-  - radish
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 300
     fdcId: 169276
     matchConfidence: high
+    cooking: baked
   - raw: 1 tbsp olive oil
     quantity: 1
     unit: tbsp
@@ -36,6 +33,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 80 g goat cheese
     quantity: 80
     unit: g
@@ -43,12 +41,14 @@ ingredients:
     grams: 80
     fdcId: 173435
     matchConfidence: high
+    cooking: raw
   - raw: 2 handfuls arugula
     quantity: 2
     item: handfuls arugula
     grams: 40
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 40 g pistachios
     quantity: 40
     unit: g
@@ -56,12 +56,14 @@ ingredients:
     grams: 40
     fdcId: 170184
     matchConfidence: medium
+    cooking: raw
   - raw: 1 handful fresh mint
     quantity: 1
     item: handful fresh mint
     grams: 10
     fdcId: 173475
     matchConfidence: high
+    cooking: raw
   - raw: 30 g butter
     quantity: 30
     unit: g
@@ -69,6 +71,7 @@ ingredients:
     grams: 30
     fdcId: 173430
     matchConfidence: high
+    cooking: fried
   - raw: 1 tsp honey
     quantity: 1
     unit: tsp
@@ -77,6 +80,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 169640
     matchConfidence: high
+    cooking: raw
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -84,6 +88,7 @@ ingredients:
     grams: 8
     fdcId: 169230
     matchConfidence: high
+    cooking: fried
   - raw: 1 tbsp lemon juice
     quantity: 1
     unit: tbsp
@@ -92,18 +97,21 @@ ingredients:
     milliliters: 14.7868
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 2
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
     energyKcal: 435
@@ -117,26 +125,26 @@ nutrition:
     sodium_mg: 640
     availableCarb_g: 11.3
   glycemic:
-    gi: 40
-    gl: 4
+    gi: 31
+    gl: 3
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 26
   nutriScore:
     grade: C
-    points: 4
+    points: 9
     category: general
     version: "2023"
     coverage: 0.98
   inflammation:
-    score: 0.1
+    score: 0
     band: neutral
     method: fii v3
   balance:
     score: 3
     band: low
-    nrf: 14
+    nrf: 12.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 75.7
@@ -146,6 +154,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

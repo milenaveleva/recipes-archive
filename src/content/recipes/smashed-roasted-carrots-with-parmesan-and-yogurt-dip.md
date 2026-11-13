@@ -14,10 +14,6 @@ cookTime: PT40M
 totalTime: PT55M
 cuisine: International
 course: Side Dish
-tags:
-  - vegetarian
-  - carrots
-  - gluten-free
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +25,7 @@ ingredients:
     grams: 350
     fdcId: 170393
     matchConfidence: high
+    cooking: baked
   - raw: 1 tbsp olive oil
     quantity: 1
     unit: tbsp
@@ -37,6 +34,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 50 g Parmesan or Grana Padano cheese, grated
     quantity: 50
     unit: g
@@ -45,6 +43,7 @@ ingredients:
     grams: 50
     fdcId: 173431
     matchConfidence: high
+    cooking: baked
   - raw: 140 g plain creamy or Greek yogurt
     quantity: 140
     unit: g
@@ -52,6 +51,7 @@ ingredients:
     grams: 140
     fdcId: 330137
     matchConfidence: high
+    cooking: raw
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -59,24 +59,28 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful fresh parsley
     quantity: 1
     item: handful fresh parsley
     grams: 15
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 2
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
     energyKcal: 286
@@ -86,30 +90,30 @@ nutrition:
     satFat_g: 5.4
     carbs_g: 21.8
     fiber_g: 5.3
-    sugar_g: 8.6
+    sugar_g: 10.9
     sodium_mg: 964
     availableCarb_g: 16.5
   glycemic:
-    gi: 33
+    gi: 28
     gl: 5
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 73
   nutriScore:
-    grade: B
-    points: 2
+    grade: C
+    points: 3
     category: general
     version: "2023"
-    coverage: 0.76
+    coverage: 1
   inflammation:
     score: 0.5
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 86
+    score: 9
+    band: excellent
+    nrf: 82.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 63.7
@@ -119,6 +123,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

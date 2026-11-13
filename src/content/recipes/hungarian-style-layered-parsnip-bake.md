@@ -14,10 +14,6 @@ cookTime: PT45M
 totalTime: PT1H5M
 cuisine: Hungarian
 course: Main Course
-tags:
-  - vegetarian
-  - casserole
-  - autumn
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +25,7 @@ ingredients:
     grams: 800
     fdcId: 170417
     matchConfidence: high
+    cooking: baked
   - raw: 500 g potatoes
     group: For the parsnip bake
     quantity: 500
@@ -37,6 +34,7 @@ ingredients:
     grams: 500
     fdcId: 170026
     matchConfidence: high
+    cooking: baked
   - raw: 1 onion
     group: For the parsnip bake
     quantity: 1
@@ -44,6 +42,7 @@ ingredients:
     grams: 110
     fdcId: 170000
     matchConfidence: high
+    cooking: baked
   - raw: 2 cloves garlic
     group: For the parsnip bake
     quantity: 2
@@ -52,13 +51,15 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 3 eggs
     group: For the parsnip bake
     quantity: 3
     item: eggs
     grams: 150
-    fdcId: 173424
-    matchConfidence: high
+    fdcId: 171287
+    matchConfidence: medium
+    cooking: baked
   - raw: 350 g sour cream
     group: For the parsnip bake
     quantity: 350
@@ -67,6 +68,7 @@ ingredients:
     grams: 350
     fdcId: 171257
     matchConfidence: high
+    cooking: baked
   - raw: 200 g grated Trappist cheese
     group: For the parsnip bake
     quantity: 200
@@ -75,6 +77,7 @@ ingredients:
     grams: 200
     fdcId: 173419
     matchConfidence: high
+    cooking: baked
   - raw: 30 g butter
     group: Seasonings and fat
     quantity: 30
@@ -83,6 +86,7 @@ ingredients:
     grams: 30
     fdcId: 173430
     matchConfidence: high
+    cooking: baked
   - raw: 20 ml sunflower oil
     group: Seasonings and fat
     quantity: 20
@@ -92,38 +96,47 @@ ingredients:
     milliliters: 20
     fdcId: 171025
     matchConfidence: high
-  - raw: 5 g fine salt
+    cooking: baked
+  - raw: ¾ tsp fine salt
     group: Seasonings and fat
-    quantity: 5
-    unit: g
+    quantity: 0.75
+    unit: tsp
     item: fine salt
     grams: 5
+    milliliters: 3.69669
     fdcId: 173468
     matchConfidence: medium
-  - raw: 2 g ground black pepper
+    cooking: baked
+  - raw: ¾ tsp ground black pepper
     group: Seasonings and fat
-    quantity: 2
-    unit: g
+    quantity: 0.75
+    unit: tsp
     item: ground black pepper
     grams: 2
+    milliliters: 3.69669
     fdcId: 170931
     matchConfidence: medium
-  - raw: 3 g sweet paprika
+    cooking: baked
+  - raw: 1¼ tsp sweet paprika
     group: Seasonings and fat
-    quantity: 3
-    unit: g
+    quantity: 1.25
+    unit: tsp
     item: sweet paprika
     grams: 3
+    milliliters: 6.161149999999999
     fdcId: 171329
     matchConfidence: high
-  - raw: 1 g ground caraway
+    cooking: baked
+  - raw: ½ tsp ground caraway
     group: Seasonings and fat
-    quantity: 1
-    unit: g
+    quantity: 0.5
+    unit: tsp
     item: ground caraway
     grams: 1
+    milliliters: 2.46446
     fdcId: 170918
     matchConfidence: medium
+    cooking: baked
   - raw: 15 g fresh parsley
     group: For serving
     quantity: 15
@@ -132,48 +145,50 @@ ingredients:
     grams: 15
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 769
-    energyKj: 3219
+    energyKcal: 765
+    energyKj: 3200
     protein_g: 25.1
-    fat_g: 46.9
-    satFat_g: 23.9
-    carbs_g: 67.2
+    fat_g: 46.5
+    satFat_g: 23.8
+    carbs_g: 67.1
     fiber_g: 13.5
-    sugar_g: 15.3
-    sodium_mg: 1078
-    availableCarb_g: 53.7
+    sugar_g: 15
+    sodium_mg: 1084
+    availableCarb_g: 53.5
   glycemic:
-    gi: 56
+    gi: 55
     gl: 30
-    giBand: medium
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    giBand: low
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 85
   nutriScore:
     grade: C
-    points: 5
+    points: 4
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.8
-    band: pro-inflammatory
+    score: 0.7
+    band: mildly-pro-inflammatory
     method: fii v3
   balance:
     score: 4
     band: low
-    nrf: 24.2
+    nrf: 22.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 76.8
+    minimallyProcessedPct: 76.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

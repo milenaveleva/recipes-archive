@@ -14,10 +14,6 @@ cookTime: PT30M
 totalTime: PT45M
 cuisine: International
 course: Dessert
-tags:
-  - vegetarian
-  - dessert
-  - plums
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 400
     fdcId: 169949
     matchConfidence: high
+    cooking: baked
   - raw: 50 g rolled oats
     quantity: 50
     unit: g
@@ -35,33 +32,41 @@ ingredients:
     grams: 50
     fdcId: 2346396
     matchConfidence: high
+    cooking: baked
   - raw: 10 g flaxseed
     quantity: 10
     unit: g
     item: flaxseed
     grams: 10
-    fdcId: 2262075
+    fdcId: 169414
+    matchConfidence: medium
+    cooking: baked
+  - raw: 1 tsp honey
+    quantity: 1
+    unit: tsp
+    item: honey
+    grams: 7.1
+    milliliters: 4.92892
+    fdcId: 169640
     matchConfidence: high
-  - raw: 10 g sugar
-    quantity: 10
-    unit: g
-    item: sugar
-    grams: 10
-    fdcId: 170674
-    matchConfidence: high
+    cooking: baked
   - raw: 10 g almonds
     quantity: 10
     unit: g
     item: almonds
     grams: 10
-    fdcId: 2262074
-    matchConfidence: high
-  - raw: 1 packet vanilla sugar
-    quantity: 1
-    item: packet vanilla sugar
-    grams: 8
-    fdcId: 170674
+    fdcId: 170567
     matchConfidence: medium
+    cooking: baked
+  - raw: ½ tsp vanilla extract
+    quantity: 0.5
+    unit: tsp
+    item: vanilla extract
+    grams: 2.1
+    milliliters: 2.46446
+    fdcId: 173471
+    matchConfidence: high
+    cooking: baked
   - raw: 10 g chia seeds
     quantity: 10
     unit: g
@@ -69,6 +74,7 @@ ingredients:
     grams: 10
     fdcId: 170554
     matchConfidence: high
+    cooking: baked
   - raw: 10 g coconut oil
     quantity: 10
     unit: g
@@ -76,20 +82,24 @@ ingredients:
     grams: 10
     fdcId: 171412
     matchConfidence: high
-  - raw: 15 g cinnamon
-    quantity: 15
-    unit: g
+    cooking: baked
+  - raw: 2 tbsp cinnamon
+    quantity: 2
+    unit: tbsp
     item: cinnamon
     grams: 15
+    milliliters: 29.5736
     fdcId: 171320
     matchConfidence: medium
+    cooking: baked
   - raw: 10 g hazelnuts
     quantity: 10
     unit: g
     item: hazelnuts
     grams: 10
-    fdcId: 171427
+    fdcId: 170581
     matchConfidence: medium
+    cooking: baked
   - raw: 10 g walnuts
     quantity: 10
     unit: g
@@ -97,55 +107,59 @@ ingredients:
     grams: 10
     fdcId: 170187
     matchConfidence: high
-  - raw: 5 g salt
-    quantity: 5
-    unit: g
+    cooking: baked
+  - raw: ¾ tsp salt
+    quantity: 0.75
+    unit: tsp
     item: salt
     grams: 5
+    milliliters: 3.69669
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 221
-    energyKj: 926
-    protein_g: 4.3
-    fat_g: 10.7
-    satFat_g: 2.7
-    carbs_g: 30.3
-    fiber_g: 5.2
-    sugar_g: 14.5
+    energyKcal: 204
+    energyKj: 853
+    protein_g: 4.7
+    fat_g: 9.8
+    satFat_g: 2.8
+    carbs_g: 27.6
+    fiber_g: 7
+    sugar_g: 12
     sodium_mg: 487
-    availableCarb_g: 25
+    availableCarb_g: 20.7
   glycemic:
-    gi: 61
-    gl: 15
+    gi: 60
+    gl: 12
     giBand: medium
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 43
   nutriScore:
     grade: C
-    points: 6
+    points: 4
     category: general
     version: "2023"
-    coverage: 0.85
+    coverage: 1
   inflammation:
-    score: -0.6
+    score: -0.9
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 7.3
+    score: 3
+    band: low
+    nrf: 15.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 93.2
-    ultraProcessedPct: 6.8
+    minimallyProcessedPct: 100
+    ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -156,7 +170,7 @@ createdAt: "2026-11-13"
 
 ## Method
 
-1. Cut the plums into larger pieces, sprinkle with the sugar, vanilla sugar and cinnamon and toss together. Place in heatproof bowls: you can also make it in a baking tray, but it is great in single-serving ramekins too!
-2. Make the "dough": mix the rolled oats and oats ground into flour, add the sugar, salt, your chosen seeds and nuts, and the coconut oil. Rub together by hand into crumbs.
+1. Cut the plums into larger pieces, drizzle with the honey, vanilla extract and cinnamon and toss together. Place in heatproof bowls: you can also make it in a baking tray, but it is great in single-serving ramekins too!
+2. Make the "dough": mix the rolled oats and oats ground into flour, add the honey, salt, your chosen seeds and nuts, and the coconut oil. Rub together by hand into crumbs.
 3. Pile the topping evenly over the plums.
 4. Bake in an oven preheated to 190 °C (375 °F) for 25–35 minutes until done.

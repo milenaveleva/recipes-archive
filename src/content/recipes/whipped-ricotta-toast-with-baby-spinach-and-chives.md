@@ -1,6 +1,6 @@
 ---
 title: Whipped Ricotta Toast with Baby Spinach and Chives
-description: Crisp oven-toasted bread spread with a fluffy blended ricotta, spinach and chive cream, ready in 15 minutes.
+description: Crisp oven-toasted whole-wheat bread spread with a fluffy blended ricotta, spinach and chive cream, ready in 15 minutes.
 image: ./images/whipped-ricotta-toast-with-baby-spinach-and-chives.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_11649_1777020954932_whipped-ricotta-toast-with-spinach-and-chives_272c74c7.jpg
 imageAlt: Whipped Ricotta Toast with Baby Spinach and Chives
@@ -14,32 +14,31 @@ cookTime: PT10M
 totalTime: PT15M
 cuisine: Italian
 course: Breakfast
-tags:
-  - vegetarian
-  - quick
-  - toast
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 4 slices toast bread (about 120 g)
+  - raw: 4 slices whole-wheat toast bread (about 120 g)
     quantity: 4
-    item: slices toast bread
+    item: slices whole-wheat toast bread
     note: about 120 g
     grams: 120
-    fdcId: 174924
+    fdcId: 172688
     matchConfidence: high
+    cooking: baked
   - raw: 1 handful fresh baby spinach
     quantity: 1
     item: handful fresh baby spinach
     grams: 30
     fdcId: 1999632
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful fresh chives
     quantity: 1
     item: handful fresh chives
     grams: 10
     fdcId: 169994
     matchConfidence: high
+    cooking: raw
   - raw: 250 g ricotta cheese
     quantity: 250
     unit: g
@@ -47,6 +46,7 @@ ingredients:
     grams: 250
     fdcId: 170851
     matchConfidence: high
+    cooking: raw
   - raw: 3 tbsp plain yoghurt (3.5% fat)
     quantity: 3
     unit: tbsp
@@ -56,6 +56,7 @@ ingredients:
     milliliters: 44.3604
     fdcId: 170886
     matchConfidence: high
+    cooking: raw
   - raw: 2 tbsp extra virgin olive oil
     quantity: 2
     unit: tbsp
@@ -64,6 +65,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -72,6 +74,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -80,43 +83,44 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 243
-    energyKj: 1016
-    protein_g: 8.3
+    energyKcal: 239
+    energyKj: 998
+    protein_g: 9.3
     fat_g: 14.4
     satFat_g: 5.3
-    carbs_g: 20.5
-    fiber_g: 1
-    sugar_g: 2.7
-    sodium_mg: 271
-    availableCarb_g: 19.5
+    carbs_g: 18.5
+    fiber_g: 2
+    sugar_g: 2.4
+    sodium_mg: 261
+    availableCarb_g: 16.5
   glycemic:
-    gi: 47
-    gl: 9
+    gi: 44
+    gl: 7
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 6
+    points: 5
     category: general
     version: "2023"
-    coverage: 0.94
+    coverage: 1
   inflammation:
-    score: 0.6
-    band: mildly-pro-inflammatory
+    score: -0.1
+    band: neutral
     method: fii v3
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 13.4
+    nrf: 21.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 28.5
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 29
+    ultraProcessedPct: 31.7
     band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"

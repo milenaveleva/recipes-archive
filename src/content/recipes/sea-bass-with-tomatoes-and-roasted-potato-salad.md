@@ -14,10 +14,6 @@ cookTime: PT15M
 totalTime: PT30M
 cuisine: Mediterranean
 course: Main Course
-tags:
-  - fish
-  - seafood
-  - gluten-free
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +23,7 @@ ingredients:
     grams: 300
     fdcId: 175142
     matchConfidence: medium
+    cooking: fried
   - raw: 2 tbsp olive oil
     quantity: 2
     unit: tbsp
@@ -35,6 +32,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171413
     matchConfidence: high
+    cooking: fried
   - raw: 30 g butter
     quantity: 30
     unit: g
@@ -42,12 +40,14 @@ ingredients:
     grams: 30
     fdcId: 173430
     matchConfidence: high
+    cooking: fried
   - raw: 1 shallot
     quantity: 1
     item: shallot
     grams: 30
     fdcId: 170499
     matchConfidence: high
+    cooking: fried
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -55,6 +55,7 @@ ingredients:
     grams: 8
     fdcId: 169230
     matchConfidence: high
+    cooking: fried
   - raw: 80 g cherry tomatoes
     quantity: 80
     unit: g
@@ -62,12 +63,14 @@ ingredients:
     grams: 80
     fdcId: 321360
     matchConfidence: medium
+    cooking: fried
   - raw: 1 handful fresh basil
     quantity: 1
     item: handful fresh basil
     grams: 10
     fdcId: 172232
     matchConfidence: high
+    cooking: fried
   - raw: 100 ml dry white wine
     quantity: 100
     unit: ml
@@ -76,6 +79,7 @@ ingredients:
     milliliters: 100
     fdcId: 174837
     matchConfidence: high
+    cooking: fried
   - raw: 1 tbsp lemon juice
     quantity: 1
     unit: tbsp
@@ -84,6 +88,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 167747
     matchConfidence: high
+    cooking: fried
   - raw: 300 g new potatoes
     quantity: 300
     unit: g
@@ -91,30 +96,35 @@ ingredients:
     grams: 300
     fdcId: 170029
     matchConfidence: high
+    cooking: boiled
   - raw: ½ red onion
     quantity: 0.5
     item: red onion
     grams: 50
     fdcId: 790577
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful fresh parsley
     quantity: 1
     item: handful fresh parsley
     grams: 10
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 3
     fdcId: 173468
     matchConfidence: high
+    cooking: fried
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: fried
 nutrition:
   perServing:
     energyKcal: 562
@@ -124,30 +134,30 @@ nutrition:
     satFat_g: 10.3
     carbs_g: 34.8
     fiber_g: 4.8
-    sugar_g: 3.9
-    sodium_mg: 724
+    sugar_g: 7.3
+    sodium_mg: 722
     availableCarb_g: 30
   glycemic:
-    gi: 60
-    gl: 18
-    giBand: medium
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi: 52
+    gl: 15
+    giBand: low
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 5
   nutriScore:
     grade: B
     points: 2
     category: general
     version: "2023"
-    coverage: 0.87
+    coverage: 0.93
   inflammation:
     score: 0.1
     band: neutral
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 27.2
+    score: 5
+    band: moderate
+    nrf: 26.3
     version: NRF9.3
   processing:
     minimallyProcessedPct: 92.7
@@ -157,6 +167,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

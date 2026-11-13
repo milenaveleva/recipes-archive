@@ -14,11 +14,6 @@ cookTime: PT25M
 totalTime: PT30M
 cuisine: Spanish
 course: Soup
-tags:
-  - vegan
-  - soup
-  - legumes
-  - gluten-free
 lists:
   - Kifli favourites
 ingredients:
@@ -30,15 +25,17 @@ ingredients:
     milliliters: 946.352
     fdcId: 171583
     matchConfidence: medium
-  - raw: 3 cups canned white beans (cannellini)
+    cooking: boiled
+  - raw: 3 cups canned white beans (cannellini) (≈ 265 g uncooked)
     quantity: 3
     unit: cups
-    item: canned white beans
-    note: cannellini
-    grams: 786
+    item: canned white beans (cannellini)
+    note: ≈ 265 g uncooked
+    grams: 265
     milliliters: 709.764
-    fdcId: 175204
-    matchConfidence: high
+    fdcId: 175202
+    matchConfidence: low
+    cooking: boiled
   - raw: 2 large potatoes
     quantity: 2
     unit: large
@@ -46,12 +43,14 @@ ingredients:
     grams: 400
     fdcId: 170026
     matchConfidence: high
+    cooking: boiled
   - raw: 2 carrots
     quantity: 2
     item: carrots
     grams: 120
     fdcId: 170393
     matchConfidence: high
+    cooking: boiled
   - raw: 2 handfuls turnip greens, kale or chard leaves
     quantity: 2
     item: handfuls turnip greens
@@ -59,6 +58,7 @@ ingredients:
     grams: 80
     fdcId: 168421
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tsp smoked paprika
     quantity: 1
     unit: tsp
@@ -67,31 +67,33 @@ ingredients:
     milliliters: 4.92892
     fdcId: 171329
     matchConfidence: medium
+    cooking: boiled
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 3
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 333
-    energyKj: 1393
-    protein_g: 17.8
+    energyKcal: 330
+    energyKj: 1379
+    protein_g: 19
     fat_g: 1.3
     satFat_g: 0.3
-    carbs_g: 65.3
-    fiber_g: 13.4
-    sugar_g: 4.3
-    sodium_mg: 1651
-    availableCarb_g: 51.9
+    carbs_g: 63.6
+    fiber_g: 14
+    sugar_g: 5.1
+    sodium_mg: 991
+    availableCarb_g: 49.5
   glycemic:
-    gi: 48
-    gl: 25
+    gi: 49
+    gl: 24
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 35
   nutriScore:
     grade: B
     points: 1
@@ -99,22 +101,23 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: -0.4
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 66.7
+    score: 8
+    band: high
+    nrf: 66.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 29.4
+    minimallyProcessedPct: 29.7
     ultraProcessedPct: 0
     band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

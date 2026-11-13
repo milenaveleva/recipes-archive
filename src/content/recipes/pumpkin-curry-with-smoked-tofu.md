@@ -14,10 +14,6 @@ cookTime: PT25M
 totalTime: PT40M
 cuisine: Thai
 course: Main Course
-tags:
-  - vegetarian
-  - vegan
-  - tofu
 lists:
   - Kifli favourites
 ingredients:
@@ -26,8 +22,9 @@ ingredients:
     unit: g
     item: Hokkaido pumpkin
     grams: 500
-    fdcId: 170526
-    matchConfidence: high
+    fdcId: 168448
+    matchConfidence: medium
+    cooking: baked
   - raw: 200 g onion
     quantity: 200
     unit: g
@@ -35,6 +32,7 @@ ingredients:
     grams: 200
     fdcId: 170000
     matchConfidence: high
+    cooking: boiled
   - raw: 28 g garlic
     quantity: 28
     unit: g
@@ -42,6 +40,7 @@ ingredients:
     grams: 28
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 300 g smoked tofu
     quantity: 300
     unit: g
@@ -49,6 +48,7 @@ ingredients:
     grams: 300
     fdcId: 172475
     matchConfidence: high
+    cooking: boiled
   - raw: 40 g tomato paste
     quantity: 40
     unit: g
@@ -56,6 +56,7 @@ ingredients:
     grams: 40
     fdcId: 2685580
     matchConfidence: medium
+    cooking: boiled
   - raw: 160 ml coconut milk
     quantity: 160
     unit: ml
@@ -64,6 +65,7 @@ ingredients:
     milliliters: 160
     fdcId: 170173
     matchConfidence: high
+    cooking: boiled
   - raw: 5 g curry paste
     quantity: 5
     unit: g
@@ -71,6 +73,7 @@ ingredients:
     grams: 5
     fdcId: 170924
     matchConfidence: high
+    cooking: boiled
   - raw: 5 ml soy sauce
     quantity: 5
     unit: ml
@@ -79,6 +82,7 @@ ingredients:
     milliliters: 5
     fdcId: 81017008
     matchConfidence: medium
+    cooking: boiled
   - raw: 10 g Thai basil
     quantity: 10
     unit: g
@@ -86,13 +90,16 @@ ingredients:
     grams: 10
     fdcId: 172232
     matchConfidence: high
-  - raw: 20 g red chilli pepper
-    quantity: 20
-    unit: g
+    cooking: raw
+  - raw: 3 tbsp red chilli pepper
+    quantity: 3
+    unit: tbsp
     item: red chilli pepper
     grams: 20
+    milliliters: 44.3604
     fdcId: 170106
     matchConfidence: high
+    cooking: raw
   - raw: 15 ml olive oil
     quantity: 15
     unit: ml
@@ -101,64 +108,70 @@ ingredients:
     milliliters: 15
     fdcId: 171413
     matchConfidence: high
-  - raw: 200 g rice
+    cooking: fried
+  - raw: 200 g brown rice, uncooked
     group: For the side
     quantity: 200
     unit: g
-    item: rice
+    item: brown rice
+    note: uncooked
     grams: 200
-    fdcId: 169758
+    fdcId: 169703
     matchConfidence: high
-  - raw: 5 g salt
-    quantity: 5
-    unit: g
+    cooking: boiled
+  - raw: ¾ tsp salt
+    quantity: 0.75
+    unit: tsp
     item: salt
     grams: 5
+    milliliters: 3.69669
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 470
-    energyKj: 1965
-    protein_g: 20.2
-    fat_g: 19.1
-    satFat_g: 8.9
-    carbs_g: 59.3
-    fiber_g: 6.2
-    sugar_g: 5.3
-    sodium_mg: 887
-    availableCarb_g: 53
+    energyKcal: 476
+    energyKj: 1992
+    protein_g: 20.6
+    fat_g: 20.2
+    satFat_g: 9.1
+    carbs_g: 59.7
+    fiber_g: 6.4
+    sugar_g: 7.5
+    sodium_mg: 593
+    availableCarb_g: 53.3
   glycemic:
-    gi: 55
-    gl: 29
-    giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi: 63
+    gl: 33
+    giBand: medium
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 82
   nutriScore:
     grade: B
-    points: 1
+    points: 2
     category: general
     version: "2023"
-    coverage: 0.67
+    coverage: 0.74
   inflammation:
-    score: 0
-    band: neutral
+    score: -0.5
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 34.1
+    score: 7
+    band: high
+    nrf: 44.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 58.9
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 58.6
+    ultraProcessedPct: 0.9
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

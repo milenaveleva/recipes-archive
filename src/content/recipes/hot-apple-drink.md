@@ -14,10 +14,6 @@ cookTime: PT15M
 totalTime: PT25M
 cuisine: International
 course: Drink
-tags:
-  - vegan
-  - hot
-  - fruit
 lists:
   - Kifli favourites
 ingredients:
@@ -25,14 +21,16 @@ ingredients:
     quantity: 2
     item: apples
     grams: 360
-    fdcId: 173928
+    fdcId: 171688
     matchConfidence: high
+    cooking: boiled
   - raw: 1 cinnamon stick
     quantity: 1
     item: cinnamon stick
     grams: 3
     fdcId: 171320
     matchConfidence: medium
+    cooking: boiled
   - raw: 5 g ginger
     quantity: 5
     unit: g
@@ -40,52 +38,55 @@ ingredients:
     grams: 5
     fdcId: 169231
     matchConfidence: high
+    cooking: boiled
   - raw: ½ lime
     quantity: 0.5
     item: lime
     grams: 30
     fdcId: 168156
     matchConfidence: high
-  - raw: 20 g sugar
-    quantity: 20
+    cooking: boiled
+  - raw: 15 g honey
+    quantity: 15
     unit: g
-    item: sugar
-    grams: 20
-    fdcId: 170674
+    item: honey
+    grams: 15
+    fdcId: 169640
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 145
-    energyKj: 606
-    protein_g: 0.6
-    fat_g: 0.7
+    energyKcal: 126
+    energyKj: 527
+    protein_g: 0.7
+    fat_g: 0.4
     satFat_g: 0.1
-    carbs_g: 37.4
+    carbs_g: 33.9
     fiber_g: 5.2
-    sugar_g: 30
+    sugar_g: 25.2
     sodium_mg: 3
-    availableCarb_g: 32.2
+    availableCarb_g: 28.7
   glycemic:
-    gi: 49
-    gl: 16
+    gi: 41
+    gl: 12
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 93
   nutriScore:
     grade: E
     points: 10
     category: beverage
     version: "2023"
-    coverage: 0.95
+    coverage: 1
   inflammation:
-    score: 1.1
-    band: pro-inflammatory
+    score: 0.6
+    band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 1
+    score: 2
     band: poor
-    nrf: -15.5
+    nrf: -3.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -95,6 +96,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -106,5 +108,5 @@ createdAt: "2026-11-13"
 ## Method
 
 1. Wash and peel the apples, core them and cut into cubes.
-2. Put the sliced apple in a saucepan, add water, the cinnamon and the ginger. Flavour with the lime juice. Add the sugar as well and bring to the boil.
+2. Put the sliced apple in a saucepan, add water, the cinnamon and the ginger. Flavour with the lime juice. Add the honey as well and bring to the boil.
 3. When the fruit is cooked, remove the cinnamon and blend the remaining ingredients with the water.

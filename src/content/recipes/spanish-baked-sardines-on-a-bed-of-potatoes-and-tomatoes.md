@@ -14,10 +14,6 @@ cookTime: PT35M
 totalTime: PT50M
 cuisine: Spanish
 course: Main Course
-tags:
-  - fish
-  - sardines
-  - one-pan
 lists:
   - Kifli favourites
 ingredients:
@@ -29,14 +25,16 @@ ingredients:
     grams: 400
     fdcId: 170026
     matchConfidence: high
+    cooking: baked
   - raw: 250 g sardines
     group: Main ingredients
     quantity: 250
     unit: g
     item: sardines
     grams: 250
-    fdcId: 175139
-    matchConfidence: high
+    fdcId: 175116
+    matchConfidence: medium
+    cooking: baked
   - raw: 300 g tomatoes
     group: Main ingredients
     quantity: 300
@@ -45,6 +43,7 @@ ingredients:
     grams: 300
     fdcId: 321360
     matchConfidence: high
+    cooking: baked
   - raw: 1 onion
     group: Main ingredients
     quantity: 1
@@ -52,6 +51,7 @@ ingredients:
     grams: 110
     fdcId: 170000
     matchConfidence: high
+    cooking: baked
   - raw: 4 cloves garlic
     group: Main ingredients
     quantity: 4
@@ -60,6 +60,7 @@ ingredients:
     grams: 12
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 50 ml extra virgin olive oil
     group: Spices and pantry
     quantity: 50
@@ -69,6 +70,7 @@ ingredients:
     milliliters: 50
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 80 ml dry white wine
     group: Spices and pantry
     quantity: 80
@@ -78,6 +80,7 @@ ingredients:
     milliliters: 80
     fdcId: 174837
     matchConfidence: high
+    cooking: baked
   - raw: 45 ml lemon juice
     group: Spices and pantry
     quantity: 45
@@ -87,6 +90,7 @@ ingredients:
     milliliters: 45
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: salt, to taste
     group: Spices and pantry
     item: salt
@@ -94,6 +98,7 @@ ingredients:
     grams: 3
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
   - raw: black pepper, to taste
     group: Spices and pantry
     item: black pepper
@@ -101,6 +106,7 @@ ingredients:
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
   - raw: fresh parsley, a little
     group: For serving
     item: fresh parsley
@@ -108,48 +114,50 @@ ingredients:
     grams: 10
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 364
-    energyKj: 1521
-    protein_g: 18.7
-    fat_g: 19.2
-    satFat_g: 2.6
+    energyKcal: 332
+    energyKj: 1390
+    protein_g: 14.6
+    fat_g: 17.7
+    satFat_g: 2.9
     carbs_g: 26.7
     fiber_g: 4.4
-    sugar_g: 2.5
-    sodium_mg: 498
+    sugar_g: 6.1
+    sodium_mg: 362
     availableCarb_g: 22.4
   glycemic:
-    gi: 61
-    gl: 14
+    gi: 59
+    gl: 13
     giBand: medium
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 81
   nutriScore:
     grade: A
     points: 0
     category: general
     version: "2023"
-    coverage: 0.76
+    coverage: 0.74
   inflammation:
-    score: -0.5
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
+    score: 6
     band: moderate
-    nrf: 46.1
+    nrf: 39.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 59.8
+    minimallyProcessedPct: 95.1
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -166,7 +174,7 @@ createdAt: "2026-11-13"
 4. **Layering the sardines and finishing the bake:** While the potatoes bake, slice the tomatoes into attractive rounds. Wash the lemon thoroughly, cut half into thin slices and set the other half aside to squeeze at serving.
 5. Take the dish out of the oven. Arrange the tomato slices and lemon slices on the half-baked potato bed. Lay the sardines on top, sprinkle with the remaining garlic, add another pinch of salt and freshly ground black pepper, and finally drizzle with the remaining extra virgin olive oil.
 6. Return to the oven for another 12-15 minutes until the sardines are heated through, their aroma permeates the vegetable bed, and the tomatoes caramelise slightly.
-7. **Serving:** Take the fragrant tray out of the oven, sprinkle generously with freshly chopped parsley, squeeze over the juice of the reserved lemon, and serve immediately, hot, with crusty sourdough or baguette for dunking!
+7. **Serving:** Take the fragrant tray out of the oven, sprinkle generously with freshly chopped parsley, squeeze over the juice of the reserved lemon, and serve immediately, hot, with crusty whole-wheat sourdough or whole-wheat baguette for dunking!
 
 ## Tips
 

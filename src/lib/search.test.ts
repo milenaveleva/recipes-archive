@@ -9,7 +9,6 @@ function doc(slug: string, over: Partial<SearchDoc> = {}): SearchDoc {
     description: '',
     ingredients: [],
     steps: [],
-    tags: [],
     category: null,
     lists: [],
     cuisine: null,
@@ -26,32 +25,32 @@ function doc(slug: string, over: Partial<SearchDoc> = {}): SearchDoc {
 
 describe('facetsOf', () => {
   it('only includes groups that at least one recipe carries', () => {
-    const groups = facetsOf([doc('a', { tags: ['vegan'] })]);
+    const groups = facetsOf([doc('a', { lists: ['vegan'] })]);
     const keys = groups.map((g) => g.key);
-    expect(keys).toContain('tag');
+    expect(keys).toContain('list');
     expect(keys).not.toContain('category'); // no recipe has a category
     expect(keys).not.toContain('cuisine');
   });
 
   it('collapses values by slug and counts each recipe once', () => {
     const groups = facetsOf([
-      doc('a', { tags: ['Vegan', 'vegan', 'High-Fiber'] }), // dup collapses, counted once
-      doc('b', { tags: ['vegan'] }),
+      doc('a', { lists: ['Vegan', 'vegan', 'High-Fiber'] }), // dup collapses, counted once
+      doc('b', { lists: ['vegan'] }),
     ]);
-    const tag = groups.find((g) => g.key === 'tag')!;
-    const vegan = tag.values.find((v) => v.value === 'vegan')!;
+    const list = groups.find((g) => g.key === 'list')!;
+    const vegan = list.values.find((v) => v.value === 'vegan')!;
     expect(vegan.count).toBe(2);
     expect(vegan.label).toBe('Vegan'); // first original term seen for the slug
-    expect(tag.values.find((v) => v.value === 'high-fiber')!.count).toBe(1);
+    expect(list.values.find((v) => v.value === 'high-fiber')!.count).toBe(1);
   });
 
   it('sorts values by count desc then label', () => {
-    const tag = facetsOf([
-      doc('a', { tags: ['rare', 'common'] }),
-      doc('b', { tags: ['common'] }),
-      doc('c', { tags: ['common', 'also'] }),
-    ]).find((g) => g.key === 'tag')!;
-    expect(tag.values.map((v) => v.value)).toEqual(['common', 'also', 'rare']);
+    const list = facetsOf([
+      doc('a', { lists: ['rare', 'common'] }),
+      doc('b', { lists: ['common'] }),
+      doc('c', { lists: ['common', 'also'] }),
+    ]).find((g) => g.key === 'list')!;
+    expect(list.values.map((v) => v.value)).toEqual(['common', 'also', 'rare']);
   });
 
   it('labels score-band and difficulty values for display', () => {
@@ -88,21 +87,21 @@ describe('facetsOf', () => {
 });
 
 describe('matchesFacets', () => {
-  const d = doc('a', { tags: ['vegan', 'one-pot'], category: 'Mains', course: 'main', giBand: 'low' });
+  const d = doc('a', { lists: ['vegan', 'one-pot'], category: 'Mains', course: 'main', giBand: 'low' });
 
   it('matches everything when nothing is selected', () => {
     expect(matchesFacets(d, {})).toBe(true);
-    expect(matchesFacets(d, { tag: [] })).toBe(true);
+    expect(matchesFacets(d, { list: [] })).toBe(true);
   });
 
   it('ORs within a group', () => {
-    expect(matchesFacets(d, { tag: ['dairy', 'vegan'] })).toBe(true); // has one of the two
-    expect(matchesFacets(d, { tag: ['dairy', 'gluten'] })).toBe(false);
+    expect(matchesFacets(d, { list: ['dairy', 'vegan'] })).toBe(true); // has one of the two
+    expect(matchesFacets(d, { list: ['dairy', 'gluten'] })).toBe(false);
   });
 
   it('ANDs across groups', () => {
-    expect(matchesFacets(d, { tag: ['vegan'], course: ['main'] })).toBe(true);
-    expect(matchesFacets(d, { tag: ['vegan'], course: ['dessert'] })).toBe(false);
+    expect(matchesFacets(d, { list: ['vegan'], course: ['main'] })).toBe(true);
+    expect(matchesFacets(d, { list: ['vegan'], course: ['dessert'] })).toBe(false);
   });
 
   it('normalizes the doc side to slugs before comparing', () => {
@@ -112,9 +111,9 @@ describe('matchesFacets', () => {
 
 describe('visibleSlugs', () => {
   const docs = [
-    doc('a', { tags: ['vegan'], giBand: 'low' }),
-    doc('b', { tags: ['vegan'], giBand: 'high' }),
-    doc('c', { tags: ['meat'], giBand: 'low' }),
+    doc('a', { lists: ['vegan'], giBand: 'low' }),
+    doc('b', { lists: ['vegan'], giBand: 'high' }),
+    doc('c', { lists: ['meat'], giBand: 'low' }),
   ];
 
   it('applies no text constraint when textSlugs is null', () => {
@@ -131,7 +130,7 @@ describe('visibleSlugs', () => {
   });
 
   it('filters by facet alone', () => {
-    expect(visibleSlugs(docs, null, { tag: ['vegan'] })).toEqual(['a', 'b']);
+    expect(visibleSlugs(docs, null, { list: ['vegan'] })).toEqual(['a', 'b']);
   });
 });
 

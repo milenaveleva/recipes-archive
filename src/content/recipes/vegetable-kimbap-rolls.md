@@ -14,44 +14,46 @@ cookTime: PT15M
 totalTime: PT35M
 cuisine: Korean
 course: Snack
-tags:
-  - vegetarian
-  - vegan
-  - rice
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g sushi rice
+  - raw: 200 g short-grain brown rice, uncooked
     quantity: 200
     unit: g
-    item: sushi rice
+    item: short-grain brown rice
+    note: uncooked
     grams: 200
-    fdcId: 169758
+    fdcId: 169706
     matchConfidence: high
+    cooking: boiled
   - raw: 2 nori sheets
     quantity: 2
     item: nori sheets
     grams: 5
     fdcId: 168458
     matchConfidence: high
+    cooking: raw
   - raw: 1 carrot
     quantity: 1
     item: carrot
     grams: 60
     fdcId: 170393
     matchConfidence: high
+    cooking: raw
   - raw: 1 cucumber
     quantity: 1
     item: cucumber
     grams: 200
     fdcId: 169225
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful fresh spinach
     quantity: 1
     item: handful fresh spinach
     grams: 30
     fdcId: 168462
     matchConfidence: high
+    cooking: blanched
   - raw: 1 tsp sesame seeds
     quantity: 1
     unit: tsp
@@ -60,6 +62,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170150
     matchConfidence: high
+    cooking: raw
   - raw: 2 tsp sesame oil
     quantity: 2
     unit: tsp
@@ -68,6 +71,7 @@ ingredients:
     milliliters: 9.85784
     fdcId: 171016
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -76,6 +80,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
   - raw: 2 tbsp soy sauce
     quantity: 2
     unit: tbsp
@@ -84,6 +89,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 81017008
     matchConfidence: medium
+    cooking: raw
   - raw: 1 tsp mustard
     quantity: 1
     unit: tsp
@@ -92,42 +98,43 @@ ingredients:
     milliliters: 4.92892
     fdcId: 172234
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 461
-    energyKj: 1927
+    energyKcal: 449
+    energyKj: 1877
     protein_g: 10.2
-    fat_g: 6.7
-    satFat_g: 1.1
-    carbs_g: 88
-    fiber_g: 4
-    sugar_g: 3.6
-    sodium_mg: 1152
-    availableCarb_g: 84.1
+    fat_g: 8.4
+    satFat_g: 1.4
+    carbs_g: 83.3
+    fiber_g: 5.6
+    sugar_g: 4
+    sodium_mg: 1154
+    availableCarb_g: 77.8
   glycemic:
-    gi: 60
-    gl: 50
+    gi: 67
+    gl: 52
     giBand: medium
     glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 97
   nutriScore:
     grade: C
-    points: 5
+    points: 4
     category: general
     version: "2023"
-    coverage: 0.94
+    coverage: 1
   inflammation:
-    score: 0.2
-    band: neutral
+    score: -0.7
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 15.8
+    nrf: 23.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 97.6
+    minimallyProcessedPct: 97.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -135,6 +142,7 @@ nutrition:
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -145,7 +153,7 @@ createdAt: "2026-11-13"
 
 ## Method
 
-1. Cook the sushi rice according to the package instructions and, while still warm, mix it with 1 teaspoon of sesame oil and the sesame seeds.
+1. Cook the short-grain brown rice according to the package instructions and, while still warm, mix it with 1 teaspoon of sesame oil and the sesame seeds.
 2. Cut the carrot and cucumber into thin strips; briefly blanch the spinach in salted water, then drain.
 3. Cut the nori sheets in half and spread a thin layer of rice along the bottom edge.
 4. Place the carrot, cucumber and spinach strips on the rice and roll up tightly.

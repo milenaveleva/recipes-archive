@@ -14,10 +14,6 @@ cookTime: PT57M
 totalTime: PT1H12M
 cuisine: Middle Eastern
 course: Main Course
-tags:
-  - vegetarian
-  - gluten-free
-  - cauliflower
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +25,7 @@ ingredients:
     grams: 700
     fdcId: 169986
     matchConfidence: high
+    cooking: baked
   - raw: 40 g butter
     group: For the spiced roasted cauliflower
     quantity: 40
@@ -37,6 +34,7 @@ ingredients:
     grams: 40
     fdcId: 173430
     matchConfidence: high
+    cooking: baked
   - raw: 40 g extra virgin olive oil
     group: For the spiced roasted cauliflower
     quantity: 40
@@ -45,6 +43,7 @@ ingredients:
     grams: 40
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 1½ tsp smoked paprika
     group: For the spiced roasted cauliflower
     quantity: 1.5
@@ -54,6 +53,7 @@ ingredients:
     milliliters: 7.39338
     fdcId: 171329
     matchConfidence: medium
+    cooking: baked
   - raw: ½ tsp garlic powder
     group: For the spiced roasted cauliflower
     quantity: 0.5
@@ -63,6 +63,7 @@ ingredients:
     milliliters: 2.46446
     fdcId: 171325
     matchConfidence: medium
+    cooking: baked
   - raw: ½ tsp chili powder
     group: For the spiced roasted cauliflower
     quantity: 0.5
@@ -72,6 +73,7 @@ ingredients:
     milliliters: 2.46446
     fdcId: 171319
     matchConfidence: medium
+    cooking: baked
   - raw: ½ tsp ground cumin
     group: For the spiced roasted cauliflower
     quantity: 0.5
@@ -81,6 +83,7 @@ ingredients:
     milliliters: 2.46446
     fdcId: 170923
     matchConfidence: medium
+    cooking: baked
   - raw: 1 tsp salt
     group: For the spiced roasted cauliflower
     quantity: 1
@@ -90,6 +93,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
   - raw: ½ tsp ground black pepper
     group: For the spiced roasted cauliflower
     quantity: 0.5
@@ -99,6 +103,7 @@ ingredients:
     milliliters: 2.46446
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
   - raw: 120 g plain yogurt
     group: For the tahini yogurt cream
     quantity: 120
@@ -107,6 +112,7 @@ ingredients:
     grams: 120
     fdcId: 171284
     matchConfidence: high
+    cooking: raw
   - raw: 40 g tahini
     group: For the tahini yogurt cream
     quantity: 40
@@ -115,6 +121,7 @@ ingredients:
     grams: 40
     fdcId: 169410
     matchConfidence: medium
+    cooking: raw
   - raw: ½ lemon (juiced)
     group: For the tahini yogurt cream
     quantity: 0.5
@@ -123,6 +130,7 @@ ingredients:
     grams: 22
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: 1 clove garlic
     group: For the tahini yogurt cream
     quantity: 1
@@ -131,13 +139,15 @@ ingredients:
     grams: 4
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful pomegranate seeds
     group: For serving and garnish
     quantity: 1
     item: handful pomegranate seeds
     grams: 40
-    fdcId: 169414
+    fdcId: 169134
     matchConfidence: medium
+    cooking: raw
   - raw: 30 g pistachios
     group: For serving and garnish
     quantity: 30
@@ -146,6 +156,7 @@ ingredients:
     grams: 30
     fdcId: 170184
     matchConfidence: medium
+    cooking: raw
   - raw: 1 handful fresh parsley
     group: For serving and garnish
     quantity: 1
@@ -153,48 +164,50 @@ ingredients:
     grams: 10
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 385
-    energyKj: 1609
-    protein_g: 10.1
-    fat_g: 32.3
-    satFat_g: 8.8
-    carbs_g: 19.7
-    fiber_g: 8.6
-    sugar_g: 5.8
-    sodium_mg: 682
-    availableCarb_g: 11.1
+    energyKcal: 339
+    energyKj: 1420
+    protein_g: 8.4
+    fat_g: 28.2
+    satFat_g: 8.5
+    carbs_g: 18.7
+    fiber_g: 6.3
+    sugar_g: 7
+    sodium_mg: 679
+    availableCarb_g: 12.4
   glycemic:
     gi: 29
     gl: 3
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 12
   nutriScore:
     grade: C
-    points: 3
+    points: 4
     category: general
     version: "2023"
     coverage: 0.96
   inflammation:
-    score: -0.8
+    score: -0.7
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
+    score: 6
     band: moderate
-    nrf: 42.3
+    nrf: 36
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 85.2
-    ultraProcessedPct: 14.8
+    minimallyProcessedPct: 100
+    ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

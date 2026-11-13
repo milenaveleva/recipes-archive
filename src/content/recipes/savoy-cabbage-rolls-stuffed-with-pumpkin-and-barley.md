@@ -13,10 +13,6 @@ prepTime: PT30M
 totalTime: PT30M
 cuisine: Hungarian
 course: Main Course
-tags:
-  - vegetarian
-  - cabbage
-  - barley
 lists:
   - Kifli favourites
 ingredients:
@@ -27,20 +23,24 @@ ingredients:
     grams: 300
     fdcId: 170388
     matchConfidence: high
-  - raw: 200 g pearl barley
+    cooking: baked
+  - raw: 200 g pearl barley, uncooked
     quantity: 200
     unit: g
     item: pearl barley
+    note: uncooked
     grams: 200
-    fdcId: 170285
+    fdcId: 170284
     matchConfidence: medium
+    cooking: baked
   - raw: 350 g pumpkin
     quantity: 350
     unit: g
     item: pumpkin
     grams: 350
-    fdcId: 169272
+    fdcId: 168448
     matchConfidence: high
+    cooking: baked
   - raw: 200 g cremini mushrooms
     quantity: 200
     unit: g
@@ -48,12 +48,14 @@ ingredients:
     grams: 200
     fdcId: 169403
     matchConfidence: medium
+    cooking: baked
   - raw: 1 onion
     quantity: 1
     item: onion
     grams: 110
     fdcId: 170000
     matchConfidence: high
+    cooking: baked
   - raw: 3 cloves garlic
     quantity: 3
     unit: cloves
@@ -61,6 +63,7 @@ ingredients:
     grams: 12
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 500 ml vegetable broth
     quantity: 500
     unit: ml
@@ -69,6 +72,7 @@ ingredients:
     milliliters: 500
     fdcId: 171583
     matchConfidence: medium
+    cooking: baked
   - raw: 3 tbsp sunflower oil
     quantity: 3
     unit: tbsp
@@ -77,6 +81,7 @@ ingredients:
     milliliters: 44.3604
     fdcId: 171025
     matchConfidence: high
+    cooking: baked
   - raw: 2 tsp sweet paprika
     quantity: 2
     unit: tsp
@@ -85,6 +90,7 @@ ingredients:
     milliliters: 9.85784
     fdcId: 171329
     matchConfidence: medium
+    cooking: baked
   - raw: 1 tsp ground caraway
     quantity: 1
     unit: tsp
@@ -93,6 +99,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170918
     matchConfidence: medium
+    cooking: baked
   - raw: 1 tsp salt
     quantity: 1
     unit: tsp
@@ -101,6 +108,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
   - raw: 1 tsp ground black pepper
     quantity: 1
     unit: tsp
@@ -109,6 +117,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
   - raw: 150 g sour cream
     group: For serving
     quantity: 150
@@ -117,6 +126,7 @@ ingredients:
     grams: 150
     fdcId: 171257
     matchConfidence: high
+    cooking: raw
   - raw: 1 bunch fresh parsley
     group: For serving
     quantity: 1
@@ -125,48 +135,50 @@ ingredients:
     grams: 30
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 309
-    energyKj: 1291
-    protein_g: 8.6
-    fat_g: 18.6
-    satFat_g: 5.2
-    carbs_g: 32.3
-    fiber_g: 7.1
-    sugar_g: 6.2
-    sodium_mg: 988
-    availableCarb_g: 25.2
+    energyKcal: 429
+    energyKj: 1796
+    protein_g: 10.5
+    fat_g: 18.7
+    satFat_g: 5.1
+    carbs_g: 60.7
+    fiber_g: 13.4
+    sugar_g: 8.9
+    sodium_mg: 983
+    availableCarb_g: 47.3
   glycemic:
-    gi: 23
-    gl: 6
+    gi: 31
+    gl: 15
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 77
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
-    coverage: 0.81
+    coverage: 1
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: -0.1
+    band: neutral
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 46.4
+    score: 7
+    band: high
+    nrf: 44
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98.1
+    minimallyProcessedPct: 98.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -185,7 +197,7 @@ createdAt: "2026-11-13"
 6. Spread the blanched cabbage leaves on a cutting board. Divide the pumpkin-mushroom-barley filling evenly among them, fold in the two sides of the leaves, then roll up tightly, just like stuffed cabbage.
 7. **Baking and serving:** Pour 1 tablespoon of sunflower oil into the bottom of an ovenproof dish or tray, stir in 1 teaspoon of paprika, the remaining crushed garlic and the remaining caraway, then pour in the hot vegetable broth. Arrange the cabbage rolls tightly in it.
 8. Cover the dish with aluminium foil and bake in an oven preheated to 180 °C for 35-40 minutes. Remove the foil for the last 10 minutes so the tops of the rolls brown slightly and the paprika sauce thickens.
-9. To serve, place 2 rolls on each plate, drizzle with the rich vegetable sauce, spoon over plenty of cool sour cream and sprinkle with the remaining fresh parsley. Serve with fresh sourdough bread!
+9. To serve, place 2 rolls on each plate, drizzle with the rich vegetable sauce, spoon over plenty of cool sour cream and sprinkle with the remaining fresh parsley. Serve with fresh whole-wheat sourdough bread!
 
 ## Tips
 

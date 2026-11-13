@@ -14,26 +14,24 @@ cookTime: PT20M
 totalTime: PT35M
 cuisine: International
 course: Snack
-tags:
-  - vegetarian
-  - baby food
-  - sweet potato
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g sweet potato, steamed and mashed
+  - raw: 200 g sweet potato, steamed and mashed (≈ 213 g raw)
     quantity: 200
     unit: g
-    item: sweet potato
-    note: steamed and mashed
-    grams: 200
-    fdcId: 170134
-    matchConfidence: high
+    item: sweet potato, steamed and mashed
+    note: ≈ 213 g raw
+    grams: 213
+    fdcId: 168482
+    matchConfidence: medium
+    cooking: baked
   - raw: about 80-100 g ground rolled oats
     item: about 80-100 g ground rolled oats
     grams: 90
     fdcId: 169705
     matchConfidence: medium
+    cooking: baked
   - raw: 2 tbsp baking oil
     quantity: 2
     unit: tbsp
@@ -42,39 +40,40 @@ ingredients:
     milliliters: 29.5736
     fdcId: 172370
     matchConfidence: high
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 51
-    energyKj: 215
-    protein_g: 1.3
+    energyKcal: 52
+    energyKj: 216
+    protein_g: 1.2
     fat_g: 2.2
     satFat_g: 0.4
-    carbs_g: 6.7
+    carbs_g: 6.8
     fiber_g: 1.1
-    sugar_g: 0.9
-    sodium_mg: 33
-    availableCarb_g: 5.7
+    sugar_g: 0.7
+    sodium_mg: 8
+    availableCarb_g: 5.8
   glycemic:
-    gi: 69
+    gi: 61
     gl: 4
     giBand: medium
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 58
   nutriScore:
-    grade: B
-    points: 2
+    grade: A
+    points: 0
     category: general
     version: "2023"
-    coverage: 0.72
+    coverage: 1
   inflammation:
-    score: -1.3
-    band: anti-inflammatory
+    score: -0.9
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 25.9
+    score: 7
+    band: high
+    nrf: 43
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -84,6 +83,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

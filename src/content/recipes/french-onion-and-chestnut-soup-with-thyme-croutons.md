@@ -14,10 +14,6 @@ cookTime: PT35M
 totalTime: PT50M
 cuisine: French
 course: Soup
-tags:
-  - vegetarian
-  - soup
-  - autumn
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +25,7 @@ ingredients:
     grams: 500
     fdcId: 790577
     matchConfidence: high
+    cooking: boiled
   - raw: 250 g chestnuts (cooked, peeled)
     group: Soup base
     quantity: 250
@@ -38,6 +35,7 @@ ingredients:
     grams: 250
     fdcId: 170190
     matchConfidence: medium
+    cooking: boiled
   - raw: 750 ml vegetable broth
     group: Soup base
     quantity: 750
@@ -47,6 +45,7 @@ ingredients:
     milliliters: 750
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 150 g whipping cream (30%)
     group: Soup base
     quantity: 150
@@ -56,6 +55,7 @@ ingredients:
     grams: 150
     fdcId: 170859
     matchConfidence: high
+    cooking: boiled
   - raw: 40 g butter
     group: Seasonings and basics
     quantity: 40
@@ -64,6 +64,7 @@ ingredients:
     grams: 40
     fdcId: 173430
     matchConfidence: high
+    cooking: boiled
   - raw: 15 ml olive oil
     group: Seasonings and basics
     quantity: 15
@@ -73,6 +74,7 @@ ingredients:
     milliliters: 15
     fdcId: 171413
     matchConfidence: high
+    cooking: boiled
   - raw: fine salt, 1 pinch
     group: Seasonings and basics
     quantity: 1
@@ -82,6 +84,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: medium
+    cooking: boiled
   - raw: ground black pepper, 1 pinch
     group: Seasonings and basics
     quantity: 1
@@ -91,13 +94,15 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
-  - raw: 1 baguette
+    cooking: boiled
+  - raw: 1 whole-wheat baguette
     group: For serving and crunchy topping
     quantity: 1
-    item: baguette
+    item: whole-wheat baguette
     grams: 120
-    fdcId: 172675
-    matchConfidence: medium
+    fdcId: 174091
+    matchConfidence: high
+    cooking: fried
   - raw: 1 tsp thyme
     group: For serving and crunchy topping
     quantity: 1
@@ -107,48 +112,50 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173470
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 528
-    energyKj: 2210
-    protein_g: 8
-    fat_g: 27.4
+    energyKcal: 518
+    energyKj: 2169
+    protein_g: 7.2
+    fat_g: 27
     satFat_g: 14.6
-    carbs_g: 63.9
-    fiber_g: 6.6
-    sugar_g: 10.1
-    sodium_mg: 752
-    availableCarb_g: 57.2
+    carbs_g: 63
+    fiber_g: 7.2
+    sugar_g: 15.9
+    sodium_mg: 683
+    availableCarb_g: 55.8
   glycemic:
-    gi: 46
-    gl: 26
+    gi: 40
+    gl: 22
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
     points: 6
     category: general
     version: "2023"
-    coverage: 0.72
+    coverage: 1
   inflammation:
-    score: 0.5
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 1
+    score: 2
     band: poor
-    nrf: -1.7
+    nrf: 2.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 82.9
+    minimallyProcessedPct: 84.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

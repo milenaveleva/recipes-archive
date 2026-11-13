@@ -14,10 +14,6 @@ cookTime: PT20M
 totalTime: PT30M
 cuisine: International
 course: Soup
-tags:
-  - vegan
-  - soup
-  - sweet-potato
 lists:
   - Kifli favourites
 ingredients:
@@ -27,8 +23,9 @@ ingredients:
     item: sweet potatoes
     note: diced
     grams: 600
-    fdcId: 170026
-    matchConfidence: high
+    fdcId: 168482
+    matchConfidence: medium
+    cooking: boiled
   - raw: 500 ml vegetable broth or water
     quantity: 500
     unit: ml
@@ -37,6 +34,7 @@ ingredients:
     milliliters: 500
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 400 ml full-fat coconut milk (canned)
     quantity: 400
     unit: ml
@@ -46,6 +44,7 @@ ingredients:
     milliliters: 400
     fdcId: 170173
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tbsp vegetable oil
     quantity: 1
     unit: tbsp
@@ -54,6 +53,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 172370
     matchConfidence: high
+    cooking: boiled
   - raw: 1 onion, finely chopped
     quantity: 1
     item: onion
@@ -61,6 +61,7 @@ ingredients:
     grams: 110
     fdcId: 170000
     matchConfidence: high
+    cooking: boiled
   - raw: 2 cloves garlic, crushed
     quantity: 2
     unit: cloves
@@ -69,6 +70,7 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tsp apple cider or white wine vinegar
     quantity: 1
     unit: tsp
@@ -77,72 +79,78 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173469
     matchConfidence: high
+    cooking: boiled
   - raw: paprika, to taste (can be smoked)
     item: paprika, to taste
     note: can be smoked
     grams: 2
     fdcId: 171329
     matchConfidence: high
+    cooking: boiled
   - raw: ground cinnamon, to taste (about 2 tsp recommended)
     item: ground cinnamon, to taste
     note: about 2 tsp recommended
     grams: 4
     fdcId: 171320
     matchConfidence: high
+    cooking: boiled
   - raw: ground coriander, to taste (about 2 tsp recommended)
     item: ground coriander, to taste
     note: about 2 tsp recommended
     grams: 4
     fdcId: 170922
     matchConfidence: high
+    cooking: boiled
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 3
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 360
-    energyKj: 1506
-    protein_g: 5.9
-    fat_g: 24.3
+    energyKcal: 373
+    energyKj: 1562
+    protein_g: 5.2
+    fat_g: 24.2
     satFat_g: 18.7
-    carbs_g: 34.7
-    fiber_g: 4.8
-    sugar_g: 3.1
-    sodium_mg: 660
-    availableCarb_g: 29.9
+    carbs_g: 38.6
+    fiber_g: 6.1
+    sugar_g: 8.2
+    sodium_mg: 730
+    availableCarb_g: 32.5
   glycemic:
-    gi: 64
+    gi: 60
     gl: 19
     giBand: medium
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
     points: 7
     category: general
     version: "2023"
-    coverage: 0.76
+    coverage: 0.77
   inflammation:
-    score: 0.8
+    score: 0.9
     band: pro-inflammatory
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 4.2
+    score: 4
+    band: low
+    nrf: 19
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 46.1
+    minimallyProcessedPct: 48
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

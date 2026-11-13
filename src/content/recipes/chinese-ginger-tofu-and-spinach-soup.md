@@ -14,11 +14,6 @@ cookTime: PT15M
 totalTime: PT25M
 cuisine: Chinese
 course: Soup
-tags:
-  - vegan
-  - tofu
-  - soup
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -30,6 +25,7 @@ ingredients:
     grams: 400
     fdcId: 172475
     matchConfidence: high
+    cooking: boiled
   - raw: 200 g fresh spinach
     group: Soup base and fillings
     quantity: 200
@@ -38,6 +34,7 @@ ingredients:
     grams: 200
     fdcId: 168462
     matchConfidence: high
+    cooking: boiled
   - raw: 1000 ml vegetable broth
     group: Soup base and fillings
     quantity: 1000
@@ -47,14 +44,16 @@ ingredients:
     milliliters: 1000
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 150 g shiitake mushrooms
     group: Soup base and fillings
     quantity: 150
     unit: g
     item: shiitake mushrooms
     grams: 150
-    fdcId: 170097
+    fdcId: 169242
     matchConfidence: high
+    cooking: boiled
   - raw: 30 g ginger
     group: For flavouring
     quantity: 30
@@ -63,6 +62,7 @@ ingredients:
     grams: 30
     fdcId: 169231
     matchConfidence: high
+    cooking: boiled
   - raw: 3 cloves garlic
     group: For flavouring
     quantity: 3
@@ -71,6 +71,7 @@ ingredients:
     grams: 9
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 30 ml soy sauce
     group: For flavouring
     quantity: 30
@@ -80,6 +81,7 @@ ingredients:
     milliliters: 30
     fdcId: 174277
     matchConfidence: high
+    cooking: boiled
   - raw: 15 ml sesame oil
     group: For flavouring
     quantity: 15
@@ -89,6 +91,7 @@ ingredients:
     milliliters: 15
     fdcId: 171016
     matchConfidence: high
+    cooking: boiled
   - raw: 1 pinch salt
     group: For flavouring
     quantity: 1
@@ -98,6 +101,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
   - raw: 3 spring onions
     group: For serving and garnish
     quantity: 3
@@ -105,6 +109,7 @@ ingredients:
     grams: 45
     fdcId: 170005
     matchConfidence: high
+    cooking: boiled
   - raw: 10 g sesame seeds
     group: For serving and garnish
     quantity: 10
@@ -113,6 +118,7 @@ ingredients:
     grams: 10
     fdcId: 170150
     matchConfidence: high
+    cooking: raw
   - raw: 1 red chilli pepper
     group: For serving and garnish
     quantity: 1
@@ -120,48 +126,50 @@ ingredients:
     grams: 10
     fdcId: 170106
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 251
-    energyKj: 1051
-    protein_g: 21.5
-    fat_g: 14
+    energyKcal: 243
+    energyKj: 1017
+    protein_g: 21.8
+    fat_g: 14.1
     satFat_g: 2.1
-    carbs_g: 16.3
-    fiber_g: 5.1
-    sugar_g: 3.5
-    sodium_mg: 1323
-    availableCarb_g: 11.2
+    carbs_g: 13.4
+    fiber_g: 5.2
+    sugar_g: 3
+    sodium_mg: 1234
+    availableCarb_g: 8.2
   glycemic:
-    gi: 45
-    gl: 5
+    gi: 20
+    gl: 2
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: 0
     category: general
     version: "2023"
     coverage: 0.78
   inflammation:
-    score: -0.5
+    score: -0.6
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 71.8
+    score: 8
+    band: high
+    nrf: 73.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 36.3
+    minimallyProcessedPct: 34.2
     ultraProcessedPct: 0
     band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

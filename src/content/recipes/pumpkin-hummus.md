@@ -13,11 +13,6 @@ prepTime: PT10M
 totalTime: PT10M
 cuisine: Middle Eastern
 course: Appetizer
-tags:
-  - vegan
-  - dip
-  - legumes
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +23,7 @@ ingredients:
     grams: 20
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: 1 clove garlic
     quantity: 1
     unit: clove
@@ -35,6 +31,7 @@ ingredients:
     grams: 4
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 50 g tahini
     quantity: 50
     unit: g
@@ -42,6 +39,7 @@ ingredients:
     grams: 50
     fdcId: 169410
     matchConfidence: medium
+    cooking: raw
   - raw: 35 g olive oil
     quantity: 35
     unit: g
@@ -49,6 +47,7 @@ ingredients:
     grams: 35
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: 120 g pumpkin purée
     quantity: 120
     unit: g
@@ -56,13 +55,16 @@ ingredients:
     grams: 120
     fdcId: 170527
     matchConfidence: high
-  - raw: 1 can chickpeas + 8 tbsp of their liquid
+    cooking: raw
+  - raw: 1 can chickpeas + 8 tbsp of their liquid (≈ 82 g uncooked)
     quantity: 1
     unit: can
     item: chickpeas + 8 tbsp of their liquid
-    grams: 240
-    fdcId: 2644288
-    matchConfidence: high
+    note: ≈ 82 g uncooked
+    grams: 82
+    fdcId: 173756
+    matchConfidence: medium
+    cooking: raw
   - raw: 30 ml water
     quantity: 30
     unit: ml
@@ -72,59 +74,64 @@ ingredients:
     fdcId: 169301
     matchConfidence: high
     excludeFromNutrition: true
-  - raw: 5 g salt, to taste
-    quantity: 5
-    unit: g
+    cooking: raw
+  - raw: ¾ tsp salt, to taste
+    quantity: 0.75
+    unit: tsp
     item: salt
     note: to taste
     grams: 5
+    milliliters: 3.69669
     fdcId: 173468
     matchConfidence: high
-  - raw: 3 g ground cumin
-    quantity: 3
-    unit: g
+    cooking: raw
+  - raw: 1½ tsp ground cumin
+    quantity: 1.5
+    unit: tsp
     item: ground cumin
     grams: 3
+    milliliters: 7.39338
     fdcId: 170923
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 488
-    energyKj: 2042
-    protein_g: 14
-    fat_g: 33.8
-    satFat_g: 4.2
-    carbs_g: 37.8
-    fiber_g: 4.3
-    sugar_g: 2.3
-    sodium_mg: 1379
-    availableCarb_g: 33.5
+    energyKcal: 483
+    energyKj: 2022
+    protein_g: 13.9
+    fat_g: 32.5
+    satFat_g: 4.5
+    carbs_g: 39.2
+    fiber_g: 9.3
+    sugar_g: 6.7
+    sodium_mg: 1146
+    availableCarb_g: 30
   glycemic:
     gi: 41
-    gl: 14
+    gl: 12
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 10
   nutriScore:
     grade: C
-    points: 3
+    points: 9
     category: general
     version: "2023"
-    coverage: 0.39
+    coverage: 0.84
   inflammation:
-    score: -0.5
-    band: mildly-anti-inflammatory
+    score: -1.5
+    band: anti-inflammatory
     method: fii v3
   balance:
-    score: 3
-    band: low
-    nrf: 15.3
+    score: 5
+    band: moderate
+    nrf: 26.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 33.9
-    ultraProcessedPct: 29.2
-    band: highly-processed
+    minimallyProcessedPct: 63.7
+    ultraProcessedPct: 0
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:

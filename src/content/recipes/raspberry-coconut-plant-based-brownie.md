@@ -14,10 +14,6 @@ cookTime: PT10M
 totalTime: PT40M
 cuisine: International
 course: Dessert
-tags:
-  - vegan
-  - no-bake
-  - gluten-free
 lists:
   - Kifli favourites
 ingredients:
@@ -29,14 +25,16 @@ ingredients:
     grams: 100
     fdcId: 170187
     matchConfidence: medium
+    cooking: raw
   - raw: 50 g almonds
     group: For the base
     quantity: 50
     unit: g
     item: almonds
     grams: 50
-    fdcId: 2262074
-    matchConfidence: high
+    fdcId: 170567
+    matchConfidence: medium
+    cooking: raw
   - raw: 170 g dates
     group: For the base
     quantity: 170
@@ -45,6 +43,7 @@ ingredients:
     grams: 170
     fdcId: 168191
     matchConfidence: high
+    cooking: raw
   - raw: 150 ml unsweetened almond milk
     group: For the base
     quantity: 150
@@ -54,6 +53,7 @@ ingredients:
     milliliters: 150
     fdcId: 174832
     matchConfidence: high
+    cooking: raw
   - raw: 30 g coconut flour
     group: For the base
     quantity: 30
@@ -62,6 +62,7 @@ ingredients:
     grams: 30
     fdcId: 2515382
     matchConfidence: high
+    cooking: raw
   - raw: 50 g unsweetened cocoa powder
     group: For the base
     quantity: 50
@@ -70,6 +71,7 @@ ingredients:
     grams: 50
     fdcId: 169593
     matchConfidence: medium
+    cooking: raw
   - raw: 10 g peanut butter
     group: For the base
     quantity: 10
@@ -78,6 +80,7 @@ ingredients:
     grams: 10
     fdcId: 2262072
     matchConfidence: medium
+    cooking: raw
   - raw: 250 g frozen raspberries
     group: For the raspberry layer
     quantity: 250
@@ -86,6 +89,7 @@ ingredients:
     grams: 250
     fdcId: 167755
     matchConfidence: high
+    cooking: boiled
   - raw: 15 g chia seeds
     group: For the raspberry layer
     quantity: 15
@@ -94,6 +98,7 @@ ingredients:
     grams: 15
     fdcId: 170554
     matchConfidence: high
+    cooking: boiled
   - raw: 80 g unsweetened almond milk
     group: For the raspberry layer
     quantity: 80
@@ -102,6 +107,7 @@ ingredients:
     grams: 80
     fdcId: 174832
     matchConfidence: high
+    cooking: boiled
   - raw: 100 g plant-based vanilla dessert
     group: For the raspberry layer
     quantity: 100
@@ -110,6 +116,7 @@ ingredients:
     grams: 100
     fdcId: 1999630
     matchConfidence: high
+    cooking: boiled
   - raw: 6 g agar-agar
     group: For the raspberry layer
     quantity: 6
@@ -118,6 +125,7 @@ ingredients:
     grams: 6
     fdcId: 169280
     matchConfidence: high
+    cooking: boiled
   - raw: desiccated coconut, for topping
     group: For decoration
     item: desiccated coconut
@@ -125,48 +133,50 @@ ingredients:
     grams: 10
     fdcId: 170170
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 259
-    energyKj: 1084
+    energyKcal: 258
+    energyKj: 1078
     protein_g: 7.1
-    fat_g: 15.7
+    fat_g: 15.5
     satFat_g: 3
     carbs_g: 30.5
-    fiber_g: 9.5
-    sugar_g: 16.3
+    fiber_g: 9.7
+    sugar_g: 16.7
     sodium_mg: 34
-    availableCarb_g: 21
+    availableCarb_g: 20.9
   glycemic:
-    gi: 45
+    gi: 42
     gl: 9
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 71
   nutriScore:
     grade: A
-    points: 0
+    points: -1
     category: general
     version: "2023"
-    coverage: 0.8
+    coverage: 0.83
   inflammation:
-    score: -1
+    score: -1.1
     band: anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 32.5
+    score: 6
+    band: moderate
+    nrf: 35.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 79
-    ultraProcessedPct: 21
+    minimallyProcessedPct: 93.5
+    ultraProcessedPct: 3.7
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

@@ -24,12 +24,11 @@ export const META_ICONS = {
 /** Lucide glyphs (ISC) keyed by search facet-group key, so every filter group,
  * its chips and the compact icon rail draw the same mark from one source. Same
  * 24×24 `fill=none stroke=currentColor` convention as META_ICONS; render via
- * Icon.astro. Keyed to `FACET_DEFS` in search.ts: tag→tag, category→layers,
+ * Icon.astro. Keyed to `FACET_DEFS` in search.ts: category→layers,
  * course→utensils, cuisine/difficulty reuse the like-named META glyph (globe,
  * gauge), list→list, gi→activity, gl→trending-up, nutri→award,
  * inflammation→flame (the cook glyph), balance→scale. */
 export const FACET_ICONS = {
-  tag: '<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/>',
   category:
     '<path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/>',
   course:

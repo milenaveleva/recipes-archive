@@ -14,10 +14,6 @@ cookTime: PT15M
 totalTime: PT30M
 cuisine: Japanese
 course: Soup
-tags:
-  - vegan
-  - tofu
-  - soup
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +25,7 @@ ingredients:
     grams: 400
     fdcId: 172475
     matchConfidence: high
+    cooking: fried
   - raw: 50 g cornstarch
     group: Soup and crispy tofu base
     quantity: 50
@@ -37,6 +34,7 @@ ingredients:
     grams: 50
     fdcId: 169698
     matchConfidence: high
+    cooking: fried
   - raw: 2 pak choi
     group: Soup and crispy tofu base
     quantity: 2
@@ -44,6 +42,7 @@ ingredients:
     grams: 200
     fdcId: 170390
     matchConfidence: medium
+    cooking: boiled
   - raw: 1000 ml vegetable broth
     group: Soup and crispy tofu base
     quantity: 1000
@@ -53,6 +52,7 @@ ingredients:
     milliliters: 1000
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 40 ml soy sauce
     group: Flavourings and frying
     quantity: 40
@@ -62,6 +62,7 @@ ingredients:
     milliliters: 40
     fdcId: 174277
     matchConfidence: high
+    cooking: boiled
   - raw: 15 g ginger
     group: Flavourings and frying
     quantity: 15
@@ -70,6 +71,7 @@ ingredients:
     grams: 15
     fdcId: 169231
     matchConfidence: high
+    cooking: boiled
   - raw: 50 ml sunflower oil
     group: Flavourings and frying
     quantity: 50
@@ -79,6 +81,7 @@ ingredients:
     milliliters: 50
     fdcId: 171025
     matchConfidence: high
+    cooking: fried
   - raw: 10 ml sesame oil
     group: Flavourings and frying
     quantity: 10
@@ -88,6 +91,7 @@ ingredients:
     milliliters: 10
     fdcId: 171016
     matchConfidence: high
+    cooking: boiled
   - raw: 2 spring onions
     group: For garnish and serving
     quantity: 2
@@ -95,6 +99,7 @@ ingredients:
     grams: 30
     fdcId: 170005
     matchConfidence: high
+    cooking: raw
   - raw: 10 g sesame seeds
     group: For garnish and serving
     quantity: 10
@@ -103,6 +108,7 @@ ingredients:
     grams: 10
     fdcId: 170150
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 715
@@ -113,29 +119,29 @@ nutrition:
     carbs_g: 39.6
     fiber_g: 7.1
     sugar_g: 4.3
-    sodium_mg: 2670
+    sodium_mg: 2667
     availableCarb_g: 32.5
   glycemic:
-    gi: 48
-    gl: 16
+    gi: 35
+    gl: 11
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
-    coverage: 0.77
+    coverage: 0.78
   inflammation:
     score: -0.5
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 46
+    score: 7
+    band: high
+    nrf: 42.8
     version: NRF9.3
   processing:
     minimallyProcessedPct: 54.8
@@ -145,6 +151,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

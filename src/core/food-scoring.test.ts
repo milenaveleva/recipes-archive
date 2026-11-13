@@ -9,7 +9,7 @@ type Scoring = { gi?: number; giConfidence?: string; fvl?: boolean };
 
 const FOODS = foods as Food[];
 const SCORING = scoring as Record<string, Scoring>;
-const POLYPHENOLS = polyphenols as Record<string, { polyphenol_mg?: number; source?: string }>;
+const POLYPHENOLS = polyphenols as Record<string, { polyphenol_mg?: number; basis?: string; source?: string }>;
 
 describe('food-scoring.json integrity', () => {
   // Scoring is curated + cited per food, so it covers a subset of the full USDA
@@ -51,7 +51,9 @@ describe('polyphenols.json integrity', () => {
     const ids = new Set(FOODS.map((f) => String(f.fdcId)));
     for (const [id, p] of entries) {
       expect(ids.has(id), `orphan fdcId ${id}`).toBe(true);
-      expect(p.polyphenol_mg, `polyphenol_mg ${id}`).toBeGreaterThan(0);
+      // 0 only for a rule-documented absence (basis "absent:<rule>"); an analysed value is positive.
+      if (p.basis?.startsWith('absent:')) expect(p.polyphenol_mg, `polyphenol_mg ${id}`).toBe(0);
+      else expect(p.polyphenol_mg, `polyphenol_mg ${id}`).toBeGreaterThan(0);
       expect(p.source, `source ${id}`).toBeTruthy();
     }
   });
@@ -60,9 +62,14 @@ describe('polyphenols.json integrity', () => {
 describe('phenol-crosswalk.json integrity', () => {
   // The crosswalk (Phenol-Explorer name → fdcId) generates polyphenols.json. Guard it so a
   // typo or a USDA re-ingest that drops a food can't silently orphan a polyphenol mapping.
-  const ids = Object.entries(crosswalk as Record<string, unknown>)
-    .filter(([k]) => !k.startsWith('_'))
-    .map(([, v]) => v as number);
+  // A name maps to one fdcId or a list of them (several USDA records of the same food);
+  // the `_absent` rule lists join the same pool, so every placed fdcId is checked once.
+  const raw = crosswalk as Record<string, unknown>;
+  const absent = (raw._absent ?? {}) as Record<string, unknown>;
+  const ids = [
+    ...Object.entries(raw).filter(([k]) => !k.startsWith('_')).map(([, v]) => v),
+    ...Object.entries(absent).filter(([k]) => !k.startsWith('_')).map(([, v]) => v),
+  ].flat() as number[];
 
   it('maps every entry to a real food fdcId', () => {
     const real = new Set(FOODS.map((f) => String(f.fdcId)));

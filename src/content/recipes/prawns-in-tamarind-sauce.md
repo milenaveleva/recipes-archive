@@ -14,9 +14,6 @@ cookTime: PT10M
 totalTime: PT20M
 cuisine: Thai
 course: Main Course
-tags:
-  - seafood
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +25,7 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: fried
   - raw: 2 slices ginger, finely chopped
     quantity: 2
     item: slices ginger
@@ -35,6 +33,7 @@ ingredients:
     grams: 10
     fdcId: 169231
     matchConfidence: medium
+    cooking: fried
   - raw: 4 lime leaves (preferably kaffir lime)
     quantity: 4
     item: lime leaves
@@ -42,6 +41,7 @@ ingredients:
     grams: 1
     fdcId: 168155
     matchConfidence: high
+    cooking: fried
   - raw: 1 fresh hot chilli, chopped
     quantity: 1
     item: fresh hot chilli
@@ -49,14 +49,16 @@ ingredients:
     grams: 15
     fdcId: 170497
     matchConfidence: medium
+    cooking: fried
   - raw: 800 g prawns (peeled or shell-on, as preferred)
     quantity: 800
     unit: g
     item: prawns
     note: peeled or shell-on, as preferred
     grams: 800
-    fdcId: 175180
+    fdcId: 175179
     matchConfidence: medium
+    cooking: fried
   - raw: 6 tbsp fish sauce
     quantity: 6
     unit: tbsp
@@ -65,14 +67,16 @@ ingredients:
     milliliters: 88.7208
     fdcId: 174531
     matchConfidence: high
-  - raw: 6 tbsp brown sugar
-    quantity: 6
+    cooking: fried
+  - raw: 3 tbsp honey
+    quantity: 3
     unit: tbsp
-    item: brown sugar
-    grams: 82.5
-    milliliters: 88.7208
-    fdcId: 168833
+    item: honey
+    grams: 63.6
+    milliliters: 44.3604
+    fdcId: 169640
     matchConfidence: high
+    cooking: fried
   - raw: 2 tbsp vegetable oil
     quantity: 2
     unit: tbsp
@@ -81,54 +85,57 @@ ingredients:
     milliliters: 29.5736
     fdcId: 172370
     matchConfidence: high
-  - raw: rice, for serving (uncooked weight)
-    item: rice, for serving
+    cooking: fried
+  - raw: brown rice, for serving (uncooked weight)
+    item: brown rice, for serving
     note: uncooked weight
     grams: 240
-    fdcId: 169760
+    fdcId: 169703
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 568
-    energyKj: 2375
-    protein_g: 53.6
-    fat_g: 7.7
-    satFat_g: 1.3
-    carbs_g: 70.5
-    fiber_g: 0.1
-    sugar_g: 21.2
-    sodium_mg: 2349
-    availableCarb_g: 70.4
+    energyKcal: 514
+    energyKj: 2150
+    protein_g: 46.4
+    fat_g: 9.8
+    satFat_g: 1.6
+    carbs_g: 61.1
+    fiber_g: 2.3
+    sugar_g: 14.7
+    sodium_mg: 2362
+    availableCarb_g: 58.8
   glycemic:
-    gi: 61
-    gl: 43
+    gi: 58
+    gl: 34
     giBand: medium
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 96
   nutriScore:
-    grade: D
-    points: 12
+    grade: C
+    points: 4
     category: general
     version: "2023"
-    coverage: 0.19
+    coverage: 1
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v3
   balance:
-    score: 1
-    band: poor
-    nrf: -22.8
+    score: 3
+    band: low
+    nrf: 12.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98.3
+    minimallyProcessedPct: 98.2
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -139,7 +146,7 @@ createdAt: "2026-11-13"
 
 ## Method
 
-1. **Make the sauce:** In a bowl, mix the tamarind sauce, fish sauce and brown sugar. Stir until the sugar has completely dissolved in the liquid.
+1. **Make the sauce:** In a bowl, mix the tamarind sauce, fish sauce and honey. Stir until the honey has completely dissolved in the liquid.
 2. **Aromatics:** Heat the oil in a wok or large frying pan. Add the chopped garlic, ginger and chilli. Fry for a few minutes until you start to smell them (take care that the garlic does not burn!).
 3. **Cook and assemble:** Add the prawns to the pan and immediately pour the prepared sauce over them. Toss everything together thoroughly. Cook until the prawns are cooked through (they will turn pretty pink and curl up).
-4. **Serve:** Serve hot with steamed jasmine rice.
+4. **Serve:** Serve hot with steamed brown jasmine rice.

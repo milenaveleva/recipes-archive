@@ -14,11 +14,6 @@ cookTime: PT20M
 totalTime: PT25M
 cuisine: Japanese
 course: Soup
-tags:
-  - vegan
-  - soup
-  - tofu
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +24,7 @@ ingredients:
     grams: 200
     fdcId: 172475
     matchConfidence: high
+    cooking: boiled
   - raw: 15 ml dried wakame seaweed
     quantity: 15
     unit: ml
@@ -37,6 +33,7 @@ ingredients:
     milliliters: 15
     fdcId: 170496
     matchConfidence: high
+    cooking: boiled
   - raw: 30 ml soy sauce
     quantity: 30
     unit: ml
@@ -45,12 +42,14 @@ ingredients:
     milliliters: 30
     fdcId: 81017008
     matchConfidence: medium
+    cooking: boiled
   - raw: 2 spring onions
     quantity: 2
     item: spring onions
     grams: 30
     fdcId: 170005
     matchConfidence: high
+    cooking: boiled
   - raw: 60 g miso paste
     quantity: 60
     unit: g
@@ -58,6 +57,7 @@ ingredients:
     grams: 60
     fdcId: 172442
     matchConfidence: high
+    cooking: boiled
   - raw: 1 sprig coriander (cilantro)
     quantity: 1
     unit: sprig
@@ -66,6 +66,7 @@ ingredients:
     grams: 3
     fdcId: 169997
     matchConfidence: high
+    cooking: raw
   - raw: 15 ml sesame seeds
     quantity: 15
     unit: ml
@@ -74,6 +75,7 @@ ingredients:
     milliliters: 15
     fdcId: 170150
     matchConfidence: high
+    cooking: raw
   - raw: 600 ml water
     quantity: 600
     unit: ml
@@ -83,6 +85,7 @@ ingredients:
     fdcId: 169301
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: boiled
 nutrition:
   perServing:
     energyKcal: 245
@@ -93,18 +96,18 @@ nutrition:
     carbs_g: 13.8
     fiber_g: 4.9
     sugar_g: 2.7
-    sodium_mg: 2167
+    sodium_mg: 2166
     availableCarb_g: 8.9
   glycemic:
-    gi: 29
-    gl: 3
+    gi: 25
+    gl: 2
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: D
-    points: 12
+    points: 13
     category: general
     version: "2023"
     coverage: 0.41
@@ -113,9 +116,9 @@ nutrition:
     band: anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 28.7
+    score: 5
+    band: moderate
+    nrf: 28.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 13.2
@@ -126,6 +129,7 @@ nutrition:
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

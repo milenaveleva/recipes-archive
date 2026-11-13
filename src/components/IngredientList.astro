@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { formatIngredientAmount } from '../lib/recipe';
+import { formatIngredientAmount, showRawFallback } from '../lib/recipe';
 
 type Ingredient = CollectionEntry<'recipes'>['data']['ingredients'][number];
 
@@ -37,7 +37,7 @@ for (const ing of ingredients) {
                 <span class="font-body text-ink">
                   {ing.item}
                   {ing.note && <span class="text-ink-faint"> · {ing.note}</span>}
-                  {amt == null && (
+                  {showRawFallback(ing, amt) && (
                     <span class="text-ink-faint"> {ing.raw}</span>
                   )}
                 </span>

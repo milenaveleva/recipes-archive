@@ -126,13 +126,15 @@ function parsePdf() {
   const meanRe = /^(.+?),\s*mean of [\w-]+ (?:foods|studies)\s+(\d{1,3})\s*$/;
   const giSemRe = /(\d{1,3})\s*±\s*\d/;                 // the GI±SEM data cell
   const numRe = /^\s{0,8}(\d{1,4})\s+/;                 // food-number column (left ≤8 cols), not an in-name number
-  const noise = /^(Atkinson |Online Supplemental|Supplemental Table|Explanatory|TABLE OF CONTENTS|Glycemic index|Values included|Test food|used, in accordance|The standardized|A standardized|category was used|contained in|headings|whole blood|plasma|Capillary|Venous|Country of|Food Number|Year of|production|test\d|Subjects|Reference|Timepoints|Sample|analysis|method|Avail|carb|portion|\(Glu ?= ?100\)|SEM|Ref\.|GI\d|FOOTNOTES|Average available carbohydrate)/i;
+  const noise = /^(Atkinson |Online Supplemental|Supplemental Table|Explanatory|TABLE OF CONTENTS|Glycemic index|Values included|Test food|used, in accordance|The standardized|A standardized|category was used|contained in|headings|whole blood|plasma|Capillary|Venous|Country of|Food Number|Year of|production|test\d|Subjects|Reference|Timepoints|Sample|analysis|method|Avail|carb|portion|\(Glu ?= ?100\)|SEM|Ref\.|GI\d|FOOTNOTES|Average (available )?carbohydrate)/i;
 
-  // Tag each line with its current top-level category.
+  // Tag each line with its current top-level category. Headings are matched
+  // case-insensitively: the PDF prints one of them in mixed case ("PASTA and NOODLES").
+  const heading = (line) => (CATEGORIES.has(line.trim().toUpperCase()) ? line.trim().toUpperCase() : null);
   const cat = new Array(lines.length).fill(null);
   let category = null;
   for (let i = 0; i < lines.length; i++) {
-    if (CATEGORIES.has(lines[i].trim())) category = lines[i].trim();
+    category = heading(lines[i]) ?? category;
     cat[i] = category;
   }
 
@@ -142,7 +144,7 @@ function parsePdf() {
   const means = [];
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i], trimmed = line.trim();
-    if (!trimmed || !cat[i] || CATEGORIES.has(trimmed)) continue;
+    if (!trimmed || !cat[i] || heading(line)) continue;
     const mean = trimmed.match(meanRe);
     if (mean) { const gi = parseGi(mean[2]); if (gi != null) means.push({ category: cat[i], food: clean(mean[1]), gi, kind: 'mean' }); continue; }
     const giSem = line.match(giSemRe);

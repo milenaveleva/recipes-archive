@@ -14,28 +14,29 @@ cookTime: PT35M
 totalTime: PT1H
 cuisine: Italian
 course: Main Course
-tags:
-  - vegetarian
-  - baked
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 500 g all-purpose flour
+  - raw: 500 g whole-wheat flour
     group: Dough
     quantity: 500
     unit: g
-    item: all-purpose flour
+    item: whole-wheat flour
     grams: 500
-    fdcId: 790018
+    fdcId: 790085
     matchConfidence: high
-  - raw: 7 g active dry yeast
+    cooking: baked
+  - raw: 2¼ tsp active dry yeast
     group: Dough
-    quantity: 7
-    unit: g
+    quantity: 2.25
+    unit: tsp
     item: active dry yeast
     grams: 7
-    matchConfidence: none
+    milliliters: 11.090069999999999
+    fdcId: 81017083
+    matchConfidence: high
     excludeFromNutrition: true
+    cooking: baked
   - raw: 280 ml water
     group: Dough
     quantity: 280
@@ -46,6 +47,7 @@ ingredients:
     fdcId: 169301
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: baked
   - raw: 40 ml extra virgin olive oil
     group: Dough
     quantity: 40
@@ -55,22 +57,27 @@ ingredients:
     milliliters: 40
     fdcId: 171413
     matchConfidence: high
-  - raw: 10 g fine salt
+    cooking: baked
+  - raw: 1¾ tsp fine salt
     group: Dough
-    quantity: 10
-    unit: g
+    quantity: 1.75
+    unit: tsp
     item: fine salt
     grams: 10
+    milliliters: 8.62561
     fdcId: 173468
     matchConfidence: medium
-  - raw: 5 g granulated sugar
+    cooking: baked
+  - raw: 1 tsp honey
     group: Dough
-    quantity: 5
-    unit: g
-    item: granulated sugar
-    grams: 5
-    fdcId: 169655
+    quantity: 1
+    unit: tsp
+    item: honey
+    grams: 7.1
+    milliliters: 4.92892
+    fdcId: 169640
     matchConfidence: high
+    cooking: baked
   - raw: 300 g mozzarella cheese
     group: Cheese filling
     quantity: 300
@@ -79,6 +86,7 @@ ingredients:
     grams: 300
     fdcId: 170845
     matchConfidence: high
+    cooking: baked
   - raw: 250 g ricotta cheese
     group: Cheese filling
     quantity: 250
@@ -87,6 +95,7 @@ ingredients:
     grams: 250
     fdcId: 170851
     matchConfidence: high
+    cooking: baked
   - raw: 60 g parmesan cheese
     group: Cheese filling
     quantity: 60
@@ -95,64 +104,70 @@ ingredients:
     grams: 60
     fdcId: 173431
     matchConfidence: high
-  - raw: 3 g dried oregano
+    cooking: baked
+  - raw: 1 tbsp dried oregano
     group: Cheese filling
-    quantity: 3
-    unit: g
+    quantity: 1
+    unit: tbsp
     item: dried oregano
     grams: 3
+    milliliters: 14.7868
     fdcId: 171328
     matchConfidence: medium
-  - raw: 2 g ground black pepper
+    cooking: baked
+  - raw: ¾ tsp ground black pepper
     group: Cheese filling
-    quantity: 2
-    unit: g
+    quantity: 0.75
+    unit: tsp
     item: ground black pepper
     grams: 2
+    milliliters: 3.69669
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 921
-    energyKj: 3856
-    protein_g: 42.2
-    fat_g: 38.3
-    satFat_g: 18.3
-    carbs_g: 102.2
-    fiber_g: 4.2
-    sugar_g: 1.6
-    sodium_mg: 1661
-    availableCarb_g: 98
+    energyKcal: 932
+    energyKj: 3900
+    protein_g: 46
+    fat_g: 39.6
+    satFat_g: 18.9
+    carbs_g: 98.2
+    fiber_g: 13.7
+    sugar_g: 2.3
+    sodium_mg: 1663
+    availableCarb_g: 84.5
   glycemic:
-    gi: 56
-    gl: 55
-    giBand: medium
+    gi: 54
+    gl: 46
+    giBand: low
     glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 2
   nutriScore:
     grade: D
-    points: 16
+    points: 14
     category: general
     version: "2023"
-    coverage: 0.57
+    coverage: 1
   inflammation:
-    score: 0.5
-    band: mildly-pro-inflammatory
+    score: -0.1
+    band: neutral
     method: fii v3
   balance:
-    score: 1
-    band: poor
-    nrf: -0.2
+    score: 4
+    band: low
+    nrf: 18.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 58.7
+    minimallyProcessedPct: 59.2
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -163,7 +178,7 @@ createdAt: "2026-11-13"
 
 ## Method
 
-1. **Making the yeast dough:** In a large bowl, mix the lukewarm water with the sugar and dry yeast, and leave for 5 minutes until it begins to foam lightly.
+1. **Making the yeast dough:** In a large bowl, mix the lukewarm water with the honey and dry yeast, and leave for 5 minutes until it begins to foam lightly.
 2. Sift in the flour, then add the fine salt and extra virgin olive oil. Knead by hand or machine for about 8-10 minutes into a smooth, elastic dough with a shiny surface.
 3. Shape the dough into a ball, place it in a thinly oiled bowl, cover with a damp tea towel and let rise in a warm place for about 60 minutes until doubled in size.
 4. **Preparing the cheese filling:** In a bowl, mix the ricotta with the freshly grated Parmesan, dried oregano and freshly ground black pepper.

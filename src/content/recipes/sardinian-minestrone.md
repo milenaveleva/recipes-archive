@@ -1,6 +1,6 @@
 ---
 title: Sardinian Minestrone
-description: A hearty Sardinian bean and vegetable soup with fennel, tomatoes and tiny toasted pasta, finished with Pecorino Romano and olive oil.
+description: A hearty Sardinian bean and vegetable soup with fennel, tomatoes and tiny toasted whole-wheat pasta, finished with Pecorino Romano and olive oil.
 image: ./images/sardinian-minestrone.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_11747_1777024059873_sardinian-minestrone-with-fregula-and-pecorino_30998b1a.jpg
 imageAlt: Sardinian Minestrone
@@ -14,11 +14,6 @@ cookTime: PT1H40M
 totalTime: PT2H
 cuisine: Italian
 course: Soup
-tags:
-  - legumes
-  - pasta
-  - one-pot
-  - soup
 lists:
   - Kifli favourites
 ingredients:
@@ -26,10 +21,11 @@ ingredients:
     quantity: 0.5
     unit: cup
     item: dried fava beans
-    grams: 63
+    grams: 75.2
     milliliters: 118.294
-    fdcId: 168574
-    matchConfidence: high
+    fdcId: 175205
+    matchConfidence: medium
+    cooking: boiled
   - raw: ½ cup dried borlotti beans
     quantity: 0.5
     unit: cup
@@ -38,6 +34,7 @@ ingredients:
     milliliters: 118.294
     fdcId: 175189
     matchConfidence: high
+    cooking: boiled
   - raw: ⅓ cup dried chickpeas
     quantity: 0.333
     unit: cup
@@ -46,6 +43,7 @@ ingredients:
     milliliters: 78.783804
     fdcId: 173756
     matchConfidence: high
+    cooking: boiled
   - raw: 7 tbsp extra virgin olive oil
     quantity: 7
     unit: tbsp
@@ -54,6 +52,7 @@ ingredients:
     milliliters: 103.5076
     fdcId: 171413
     matchConfidence: high
+    cooking: boiled
   - raw: 1 medium red onion, chopped
     quantity: 1
     unit: medium
@@ -62,6 +61,7 @@ ingredients:
     grams: 110
     fdcId: 790577
     matchConfidence: high
+    cooking: boiled
   - raw: 2 medium carrots, peeled and sliced
     quantity: 2
     unit: medium
@@ -70,6 +70,7 @@ ingredients:
     grams: 120
     fdcId: 170393
     matchConfidence: high
+    cooking: boiled
   - raw: 2 celery stalks, sliced
     quantity: 2
     item: celery stalks
@@ -77,6 +78,7 @@ ingredients:
     grams: 80
     fdcId: 169988
     matchConfidence: high
+    cooking: boiled
   - raw: 2 tsp chopped garlic
     quantity: 2
     unit: tsp
@@ -85,6 +87,7 @@ ingredients:
     milliliters: 9.85784
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 1 can (800 g) chopped tomatoes
     quantity: 800
     unit: g
@@ -92,6 +95,7 @@ ingredients:
     grams: 800
     fdcId: 170501
     matchConfidence: high
+    cooking: boiled
   - raw: 3 medium potatoes, peeled and diced
     quantity: 3
     unit: medium
@@ -100,6 +104,7 @@ ingredients:
     grams: 450
     fdcId: 170026
     matchConfidence: high
+    cooking: boiled
   - raw: 1½ cups chopped fennel
     quantity: 1.5
     unit: cups
@@ -108,6 +113,7 @@ ingredients:
     milliliters: 354.882
     fdcId: 169385
     matchConfidence: high
+    cooking: boiled
   - raw: ¼ cup chopped fresh parsley
     quantity: 0.25
     unit: cup
@@ -116,6 +122,7 @@ ingredients:
     milliliters: 59.147
     fdcId: 170416
     matchConfidence: high
+    cooking: boiled
   - raw: 2 tbsp chopped fresh basil
     quantity: 2
     unit: tbsp
@@ -124,75 +131,81 @@ ingredients:
     milliliters: 29.5736
     fdcId: 172232
     matchConfidence: high
-  - raw: ⅔ cup dry tarhonya (or fregula sarda)
+    cooking: boiled
+  - raw: ⅔ cup dry whole-wheat tarhonya (or fregula sarda)
     quantity: 0.667
     unit: cup
-    item: dry tarhonya
+    item: dry whole-wheat tarhonya
     note: or fregula sarda
     grams: 64
     milliliters: 157.80419600000002
-    fdcId: 168927
+    fdcId: 169738
     matchConfidence: high
+    cooking: boiled
   - raw: Pecorino Romano cheese, grated (for serving)
     item: Pecorino Romano cheese, grated
     note: for serving
     grams: 20
     fdcId: 171249
     matchConfidence: high
+    cooking: raw
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 3
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
   - raw: ground black pepper, to taste
     item: ground black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 638
-    energyKj: 2669
-    protein_g: 20.9
-    fat_g: 27.5
-    satFat_g: 4.5
-    carbs_g: 83.7
-    fiber_g: 18.9
-    sugar_g: 16.4
-    sodium_mg: 808
-    availableCarb_g: 64.8
+    energyKcal: 685
+    energyKj: 2867
+    protein_g: 24.7
+    fat_g: 27.9
+    satFat_g: 4.6
+    carbs_g: 91.7
+    fiber_g: 23.4
+    sugar_g: 17.7
+    sodium_mg: 803
+    availableCarb_g: 68.3
   glycemic:
-    gi: 48
-    gl: 31
+    gi: 47
+    gl: 32
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 43
   nutriScore:
     grade: A
     points: -2
     category: general
     version: "2023"
-    coverage: 0.9
+    coverage: 0.91
   inflammation:
-    score: -0.6
+    score: -0.9
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 45.5
+    score: 7
+    band: high
+    nrf: 43.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 86.9
+    minimallyProcessedPct: 87.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -206,5 +219,5 @@ createdAt: "2026-11-13"
 1. Soak the beans and chickpeas in water for 8–16 hours, ideally overnight. Then drain and rinse thoroughly.
 2. In a large pot, heat 3 tablespoons of olive oil over medium heat. Add the onion, carrots and celery and sweat for 5 minutes until softened. Add the garlic and cook for another 20 seconds.
 3. Stir in the tomatoes, potatoes, fennel, herbs and the rinsed legumes. Pour in enough water to cover everything by about 2–3 cm (about 1.5–2 litres). Bring to the boil, then lower the heat and cook uncovered for about 1½ hours, until the beans are tender. Top up with water if needed as it evaporates.
-4. Stir in the tarhonya (or fregula), season with salt and pepper. Cook for another 10 minutes until the pasta is tender.
+4. Stir in the tarhonya (or fregula), season with salt and pepper. Cook for another 10-12 minutes until the pasta is tender.
 5. To serve, drizzle 1 tablespoon of olive oil into each bowl, ladle in the soup and sprinkle generously with grated Pecorino Romano.

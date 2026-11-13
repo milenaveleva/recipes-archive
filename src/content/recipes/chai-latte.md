@@ -14,43 +14,43 @@ cookTime: PT10M
 totalTime: PT15M
 cuisine: Indian
 course: Drink
-tags:
-  - vegetarian
-  - tea
-  - hot
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 120 ml milk
+  - raw: 120 ml unsweetened oat milk
     quantity: 120
     unit: ml
-    item: milk
-    grams: 124.3
+    item: unsweetened oat milk
+    grams: 124
     milliliters: 120
-    fdcId: 171284
-    matchConfidence: medium
-  - raw: 1 tbsp sugar
-    quantity: 1
-    unit: tbsp
-    item: sugar
-    grams: 13.8
-    milliliters: 14.7868
-    fdcId: 170674
+    fdcId: 2257046
     matchConfidence: high
+    cooking: boiled
+  - raw: 1½ tsp honey
+    quantity: 1.5
+    unit: tsp
+    item: honey
+    grams: 10.6
+    milliliters: 7.39338
+    fdcId: 169640
+    matchConfidence: high
+    cooking: boiled
   - raw: 1 tbsp loose-leaf black tea
     quantity: 1
     unit: tbsp
     item: loose-leaf black tea
-    grams: 14.8
+    grams: 120
     milliliters: 14.7868
-    fdcId: 171946
+    fdcId: 173227
     matchConfidence: medium
+    cooking: boiled
   - raw: 4 cardamom pods
     quantity: 4
     item: cardamom pods
     grams: 1
     fdcId: 170919
     matchConfidence: medium
+    cooking: boiled
   - raw: ¼ tsp cinnamon
     quantity: 0.25
     unit: tsp
@@ -59,6 +59,7 @@ ingredients:
     milliliters: 1.23223
     fdcId: 171320
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 piece ginger (2 cm)
     quantity: 1
     unit: piece
@@ -67,6 +68,7 @@ ingredients:
     grams: 5
     fdcId: 169231
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 pinch ground fennel seed
     quantity: 1
     unit: pinch
@@ -75,48 +77,50 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 171323
     matchConfidence: medium
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 140
-    energyKj: 586
-    protein_g: 4.6
-    fat_g: 4.2
-    satFat_g: 2.6
-    carbs_g: 21.8
+    energyKcal: 102
+    energyKj: 429
+    protein_g: 1.3
+    fat_g: 3.5
+    satFat_g: 0
+    carbs_g: 17.6
     fiber_g: 0.8
-    sugar_g: 19.6
-    sodium_mg: 59
-    availableCarb_g: 21
+    sugar_g: 11.7
+    sodium_mg: 57
+    availableCarb_g: 16.8
   glycemic:
-    gi: 54
-    gl: 11
+    gi: 43
+    gl: 7
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 55
   nutriScore:
-    grade: E
-    points: 14
+    grade: C
+    points: 6
     category: beverage
     version: "2023"
-    coverage: 0.91
+    coverage: 0.53
   inflammation:
-    score: 0.8
+    score: 1.2
     band: pro-inflammatory
     method: fii v3
   balance:
-    score: 1
+    score: 2
     band: poor
-    nrf: -9.9
+    nrf: 8.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 100
-    ultraProcessedPct: 0
-    band: minimally-processed
+    minimallyProcessedPct: 41.6
+    ultraProcessedPct: 58.4
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -129,5 +133,5 @@ createdAt: "2026-11-13"
 
 1. Pour 250 ml water into a saucepan, add the spices and bring to the boil.
 2. Add the tea leaves and wait until the tea has infused.
-3. Pour in the milk and bring everything to the boil. Once it boils, take it off the heat.
-4. Pour into cups and sweeten to taste with sugar or even honey.
+3. Pour in the oat milk and bring everything to the boil. Once it boils, take it off the heat.
+4. Pour into cups and sweeten to taste with honey.

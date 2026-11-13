@@ -14,9 +14,6 @@ cookTime: PT20M
 totalTime: PT35M
 cuisine: Spanish
 course: Main Course
-tags:
-  - fish
-  - seafood
 lists:
   - Kifli favourites
 ingredients:
@@ -25,8 +22,9 @@ ingredients:
     unit: g
     item: cod fillet
     grams: 600
-    fdcId: 175178
+    fdcId: 171955
     matchConfidence: medium
+    cooking: fried
   - raw: 400 g canned chopped tomatoes
     quantity: 400
     unit: g
@@ -34,6 +32,7 @@ ingredients:
     grams: 400
     fdcId: 170501
     matchConfidence: high
+    cooking: boiled
   - raw: 2 tbsp honey
     quantity: 2
     unit: tbsp
@@ -42,12 +41,14 @@ ingredients:
     milliliters: 29.5736
     fdcId: 169640
     matchConfidence: high
+    cooking: boiled
   - raw: 1 onion
     quantity: 1
     item: onion
     grams: 110
     fdcId: 170000
     matchConfidence: high
+    cooking: boiled
   - raw: 3 cloves garlic
     quantity: 3
     unit: cloves
@@ -55,6 +56,7 @@ ingredients:
     grams: 12
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 100 ml dry white wine
     quantity: 100
     unit: ml
@@ -63,14 +65,16 @@ ingredients:
     milliliters: 100
     fdcId: 174837
     matchConfidence: high
-  - raw: 3 tbsp all-purpose flour
+    cooking: boiled
+  - raw: 3 tbsp whole-wheat flour
     quantity: 3
     unit: tbsp
-    item: all-purpose flour
+    item: whole-wheat flour
     grams: 24
     milliliters: 44.3604
-    fdcId: 790018
+    fdcId: 790085
     matchConfidence: high
+    cooking: fried
   - raw: 4 tbsp extra virgin olive oil
     quantity: 4
     unit: tbsp
@@ -79,6 +83,7 @@ ingredients:
     milliliters: 59.1472
     fdcId: 171413
     matchConfidence: high
+    cooking: fried
   - raw: 1 tsp fine salt
     quantity: 1
     unit: tsp
@@ -87,6 +92,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: medium
+    cooking: fried
   - raw: 1 tsp ground black pepper
     quantity: 1
     unit: tsp
@@ -95,6 +101,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170931
     matchConfidence: medium
+    cooking: fried
   - raw: 1 bunch fresh parsley
     group: For garnish and serving
     quantity: 1
@@ -103,48 +110,50 @@ ingredients:
     grams: 30
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 371
-    energyKj: 1553
-    protein_g: 33.8
-    fat_g: 14.4
-    satFat_g: 2
-    carbs_g: 25.6
-    fiber_g: 3
+    energyKcal: 369
+    energyKj: 1543
+    protein_g: 30.1
+    fat_g: 15.1
+    satFat_g: 2.2
+    carbs_g: 25.3
+    fiber_g: 3.5
     sugar_g: 14.6
-    sodium_mg: 987
-    availableCarb_g: 22.5
+    sodium_mg: 867
+    availableCarb_g: 21.9
   glycemic:
-    gi: 42
-    gl: 9
+    gi: 31
+    gl: 7
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 40
   nutriScore:
     grade: B
     points: 1
     category: general
     version: "2023"
-    coverage: 0.55
+    coverage: 1
   inflammation:
-    score: 0
+    score: -0.1
     band: neutral
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 22.8
+    score: 6
+    band: moderate
+    nrf: 32.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 85.9
+    minimallyProcessedPct: 85.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -162,7 +171,7 @@ createdAt: "2026-11-13"
 5. To the fat left in the pan add another 1 tablespoon of olive oil, then add the chopped onion. Cook over low heat for 5-6 minutes until glassy and sweetly soft. Add the garlic and fry for another minute, taking care it does not brown.
 6. Pour the dry white wine over the onion base and boil for 2 minutes until the alcohol has evaporated. Add the canned chopped tomatoes and the honey, season with salt and pepper to taste, then simmer the sauce covered over low heat for 10-12 minutes until nicely thickened and the caramel sweetness of the honey blends harmoniously with the tomato.
 7. **Assembly and serving:** Return the pre-fried cod fillets to the pan, into the hot honey tomato sauce. Cover and simmer over very low heat for another 4-5 minutes until the fish is cooked through, tender and has absorbed the flavourful sauce.
-8. Before serving, sprinkle the dish with freshly chopped parsley. Serve with a crusty baguette or sourdough bread, perfect for mopping up the silky sauce!
+8. Before serving, sprinkle the dish with freshly chopped parsley. Serve with a crusty whole-wheat baguette or whole-wheat sourdough bread, perfect for mopping up the silky sauce!
 
 ## Tips
 

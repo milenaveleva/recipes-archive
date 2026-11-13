@@ -14,9 +14,6 @@ cookTime: PT30M
 totalTime: PT45M
 cuisine: International
 course: Snack
-tags:
-  - dog treat
-  - baked
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +24,7 @@ ingredients:
     grams: 150
     fdcId: 173709
     matchConfidence: medium
+    cooking: baked
   - raw: 60 g fine rolled oats
     quantity: 60
     unit: g
@@ -34,20 +32,23 @@ ingredients:
     grams: 60
     fdcId: 169705
     matchConfidence: medium
+    cooking: baked
   - raw: 1 egg
     quantity: 1
     item: egg
     grams: 50
-    fdcId: 173424
-    matchConfidence: high
-  - raw: 1 tbsp all-purpose flour
+    fdcId: 171287
+    matchConfidence: medium
+    cooking: baked
+  - raw: 1 tbsp whole-wheat flour
     quantity: 1
     unit: tbsp
-    item: all-purpose flour
+    item: whole-wheat flour
     grams: 8
     milliliters: 14.7868
-    fdcId: 790018
+    fdcId: 790085
     matchConfidence: high
+    cooking: baked
   - raw: 3 tbsp water
     quantity: 3
     unit: tbsp
@@ -57,48 +58,50 @@ ingredients:
     fdcId: 169301
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 469
-    energyKj: 1962
-    protein_g: 46.5
-    fat_g: 11
-    satFat_g: 2.7
-    carbs_g: 46.3
-    fiber_g: 6.6
-    sugar_g: 0.6
-    sodium_mg: 434
-    availableCarb_g: 39.7
+    energyKcal: 464
+    energyKj: 1939
+    protein_g: 46.7
+    fat_g: 10.6
+    satFat_g: 2.6
+    carbs_g: 45.8
+    fiber_g: 7.2
+    sugar_g: 0.8
+    sodium_mg: 443
+    availableCarb_g: 38.6
   glycemic:
-    gi: 55
-    gl: 22
+    gi: 45
+    gl: 17
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 87
   nutriScore:
     grade: A
     points: -2
     category: general
     version: "2023"
-    coverage: 0.75
+    coverage: 1
   inflammation:
     score: -0.8
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 40.1
+    score: 7
+    band: high
+    nrf: 42.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 72.5
+    minimallyProcessedPct: 72.2
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

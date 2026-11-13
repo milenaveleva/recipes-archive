@@ -21,6 +21,7 @@ ingredients:
     milliliters: 236.588
     fdcId: 169230
     matchConfidence: low
+    cooking: raw
   - raw: 1 cup raw honey (or more, as needed to cover garlic)
     quantity: 1
     unit: cup
@@ -30,6 +31,7 @@ ingredients:
     milliliters: 236.588
     fdcId: 169640
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 77
@@ -43,12 +45,12 @@ nutrition:
     sodium_mg: 2
     availableCarb_g: 20
   glycemic:
-    gi: 55
-    gl: 11
-    giBand: low
-    glBand: medium
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
-    carbCoveragePct: 100
+    gi: 62
+    gl: 12
+    giBand: medium
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 87
   nutriScore:
     grade: D
     points: 18

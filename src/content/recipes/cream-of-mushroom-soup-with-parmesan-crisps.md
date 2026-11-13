@@ -14,10 +14,6 @@ cookTime: PT45M
 totalTime: PT1H
 cuisine: Hungarian
 course: Soup
-tags:
-  - vegetarian
-  - mushroom
-  - soup
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +25,7 @@ ingredients:
     grams: 300
     fdcId: 1999629
     matchConfidence: high
+    cooking: boiled
   - raw: 1 l vegetable broth
     quantity: 1
     unit: l
@@ -37,6 +34,7 @@ ingredients:
     milliliters: 1000
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 100 g butter
     quantity: 100
     unit: g
@@ -44,6 +42,7 @@ ingredients:
     grams: 100
     fdcId: 173430
     matchConfidence: high
+    cooking: boiled
   - raw: 200 ml heavy cream
     quantity: 200
     unit: ml
@@ -52,12 +51,14 @@ ingredients:
     milliliters: 200
     fdcId: 2346386
     matchConfidence: high
+    cooking: boiled
   - raw: fresh thyme, a little
     item: fresh thyme
     note: a little
     grams: 1
     fdcId: 173470
     matchConfidence: high
+    cooking: boiled
   - raw: 50 g parmesan cheese, grated
     quantity: 50
     unit: g
@@ -66,6 +67,7 @@ ingredients:
     grams: 50
     fdcId: 173431
     matchConfidence: high
+    cooking: fried
   - raw: 1 small onion
     quantity: 1
     unit: small
@@ -73,6 +75,7 @@ ingredients:
     grams: 70
     fdcId: 170000
     matchConfidence: high
+    cooking: boiled
   - raw: 1 clove garlic
     quantity: 1
     unit: clove
@@ -80,43 +83,46 @@ ingredients:
     grams: 3
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 3
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
 nutrition:
   perServing:
     energyKcal: 437
     energyKj: 1829
     protein_g: 8.9
     fat_g: 41.9
-    satFat_g: 25
+    satFat_g: 25.1
     carbs_g: 9.6
     fiber_g: 1.7
-    sugar_g: 2.2
+    sugar_g: 5.1
     sodium_mg: 1213
-    availableCarb_g: 7.9
+    availableCarb_g: 7.6
   glycemic:
-    gi: 15
+    gi: 13
     gl: 1
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
     points: 10
     category: general
     version: "2023"
-    coverage: 0.7
+    coverage: 1
   inflammation:
     score: 1.2
     band: pro-inflammatory
@@ -124,7 +130,7 @@ nutrition:
   balance:
     score: 1
     band: poor
-    nrf: -27.8
+    nrf: -16.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 85.5
@@ -134,6 +140,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

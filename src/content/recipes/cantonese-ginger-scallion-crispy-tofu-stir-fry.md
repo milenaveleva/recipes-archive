@@ -14,10 +14,6 @@ cookTime: PT15M
 totalTime: PT20M
 cuisine: Chinese
 course: Main Course
-tags:
-  - vegan
-  - tofu
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 400
     fdcId: 172475
     matchConfidence: high
+    cooking: fried
   - raw: 30 g ginger
     quantity: 30
     unit: g
@@ -35,12 +32,14 @@ ingredients:
     grams: 30
     fdcId: 169231
     matchConfidence: high
+    cooking: fried
   - raw: 4 spring onions
     quantity: 4
     item: spring onions
     grams: 60
     fdcId: 170005
     matchConfidence: high
+    cooking: fried
   - raw: 3 cloves garlic
     quantity: 3
     unit: cloves
@@ -48,6 +47,7 @@ ingredients:
     grams: 12
     fdcId: 169230
     matchConfidence: high
+    cooking: fried
   - raw: 45 ml soy sauce
     quantity: 45
     unit: ml
@@ -56,6 +56,7 @@ ingredients:
     milliliters: 45
     fdcId: 81017008
     matchConfidence: medium
+    cooking: fried
   - raw: 15 ml sesame oil
     quantity: 15
     unit: ml
@@ -64,6 +65,7 @@ ingredients:
     milliliters: 15
     fdcId: 171016
     matchConfidence: high
+    cooking: fried
   - raw: 30 g cornstarch
     quantity: 30
     unit: g
@@ -71,6 +73,7 @@ ingredients:
     grams: 30
     fdcId: 169698
     matchConfidence: high
+    cooking: fried
   - raw: 30 ml sunflower oil
     quantity: 30
     unit: ml
@@ -79,63 +82,68 @@ ingredients:
     milliliters: 30
     fdcId: 171025
     matchConfidence: high
+    cooking: fried
   - raw: 10 g sesame seeds
     quantity: 10
     unit: g
     item: sesame seeds
     grams: 10
-    fdcId: 170191
+    fdcId: 170150
     matchConfidence: high
-  - raw: 250 g rice
+    cooking: raw
+  - raw: 250 g brown rice, uncooked
     quantity: 250
     unit: g
-    item: rice
+    item: brown rice
+    note: uncooked
     grams: 250
-    fdcId: 169760
+    fdcId: 169703
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 1052
-    energyKj: 4403
-    protein_g: 46.4
-    fat_g: 41.6
-    satFat_g: 5.5
-    carbs_g: 127.8
-    fiber_g: 6.2
-    sugar_g: 1.6
-    sodium_mg: 1551
-    availableCarb_g: 121.6
+    energyKcal: 1060
+    energyKj: 4437
+    protein_g: 47.5
+    fat_g: 44.8
+    satFat_g: 6.1
+    carbs_g: 123.9
+    fiber_g: 11
+    sugar_g: 2.5
+    sodium_mg: 1556
+    availableCarb_g: 112.9
   glycemic:
-    gi: 60
-    gl: 72
+    gi: 65
+    gl: 74
     giBand: medium
     glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 80
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
-    coverage: 0.25
+    coverage: 0.7
   inflammation:
-    score: -0.5
+    score: -0.9
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 26.8
+    score: 6
+    band: moderate
+    nrf: 31.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 68.5
-    ultraProcessedPct: 2.8
-    band: moderately-processed
+    minimallyProcessedPct: 71.5
+    ultraProcessedPct: 0
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

@@ -14,28 +14,28 @@ cookTime: PT35M
 totalTime: PT50M
 cuisine: Italian
 course: Salad
-tags:
-  - vegetarian
-  - salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g buckwheat groats
+  - raw: 250 g buckwheat groats, uncooked
     group: Salad base
     quantity: 250
     unit: g
     item: buckwheat groats
+    note: uncooked
     grams: 250
-    fdcId: 170686
-    matchConfidence: high
+    fdcId: 170685
+    matchConfidence: medium
+    cooking: boiled
   - raw: 400 g beetroot
     group: Salad base
     quantity: 400
     unit: g
     item: beetroot
     grams: 400
-    fdcId: 169146
+    fdcId: 169145
     matchConfidence: high
+    cooking: baked
   - raw: 150 g gorgonzola cheese
     group: Salad base
     quantity: 150
@@ -44,6 +44,7 @@ ingredients:
     grams: 150
     fdcId: 172175
     matchConfidence: high
+    cooking: raw
   - raw: 60 g walnuts
     group: Salad base
     quantity: 60
@@ -52,6 +53,7 @@ ingredients:
     grams: 60
     fdcId: 170187
     matchConfidence: high
+    cooking: fried
   - raw: 80 g arugula
     group: Salad base
     quantity: 80
@@ -60,6 +62,7 @@ ingredients:
     grams: 80
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 45 ml extra virgin olive oil
     group: Dressing and seasonings
     quantity: 45
@@ -69,6 +72,7 @@ ingredients:
     milliliters: 45
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 20 ml balsamic vinegar
     group: Dressing and seasonings
     quantity: 20
@@ -78,6 +82,7 @@ ingredients:
     milliliters: 20
     fdcId: 172241
     matchConfidence: high
+    cooking: raw
   - raw: 15 g honey
     group: Dressing and seasonings
     quantity: 15
@@ -86,64 +91,70 @@ ingredients:
     grams: 15
     fdcId: 169640
     matchConfidence: high
-  - raw: 5 g salt
+    cooking: raw
+  - raw: ¾ tsp salt
     group: Dressing and seasonings
-    quantity: 5
-    unit: g
+    quantity: 0.75
+    unit: tsp
     item: salt
     grams: 5
+    milliliters: 3.69669
     fdcId: 173468
     matchConfidence: high
-  - raw: 2 g black pepper
+    cooking: baked
+  - raw: ¾ tsp black pepper
     group: Dressing and seasonings
-    quantity: 2
-    unit: g
+    quantity: 0.75
+    unit: tsp
     item: black pepper
     grams: 2
+    milliliters: 3.69669
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 445
-    energyKj: 1863
-    protein_g: 14.7
-    fat_g: 31.5
-    satFat_g: 9.5
-    carbs_g: 30.4
-    fiber_g: 5.1
-    sugar_g: 13.4
-    sodium_mg: 1003
-    availableCarb_g: 25.2
+    energyKcal: 603
+    energyKj: 2523
+    protein_g: 19.8
+    fat_g: 32.8
+    satFat_g: 9.8
+    carbs_g: 64.4
+    fiber_g: 10.7
+    sugar_g: 11.6
+    sodium_mg: 1009
+    availableCarb_g: 53.7
   glycemic:
-    gi: 57
-    gl: 14
+    gi: 58
+    gl: 31
     giBand: medium
     glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 6
   nutriScore:
     grade: C
-    points: 7
+    points: 10
     category: general
     version: "2023"
-    coverage: 0.98
+    coverage: 0.74
   inflammation:
-    score: 0.1
-    band: neutral
+    score: -0.8
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 7
+    score: 3
+    band: low
+    nrf: 14.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 70.3
+    minimallyProcessedPct: 78
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

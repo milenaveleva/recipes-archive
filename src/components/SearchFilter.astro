@@ -265,7 +265,7 @@ const docsJson = JSON.stringify(docs)
       // a chip inside it held focus it would drop to <body>, so hand focus to
       // that group's rail button, which stays visible on the collapsed bar.
       if (!compact) return;
-      if (active === input) {
+      if (input && active === input) {
         input.blur();
         return;
       }

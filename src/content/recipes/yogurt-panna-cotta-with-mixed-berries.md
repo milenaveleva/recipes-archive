@@ -14,10 +14,6 @@ cookTime: PT15M
 totalTime: PT25M
 cuisine: Italian
 course: Dessert
-tags:
-  - vegetarian
-  - dessert
-  - berries
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 200
     fdcId: 173950
     matchConfidence: high
+    cooking: boiled
   - raw: 6 g agar powder (divided)
     quantity: 6
     unit: g
@@ -36,6 +33,7 @@ ingredients:
     grams: 6
     fdcId: 170090
     matchConfidence: medium
+    cooking: boiled
   - raw: 3 tbsp honey (divided)
     quantity: 3
     unit: tbsp
@@ -45,6 +43,7 @@ ingredients:
     milliliters: 44.3604
     fdcId: 169640
     matchConfidence: high
+    cooking: boiled
   - raw: 300 g plain yogurt (3.5%)
     quantity: 300
     unit: g
@@ -53,15 +52,16 @@ ingredients:
     grams: 300
     fdcId: 171284
     matchConfidence: high
-  - raw: 100 ml semi-skimmed milk (2.8%)
+    cooking: boiled
+  - raw: 100 ml unsweetened oat milk
     quantity: 100
     unit: ml
-    item: semi-skimmed milk
-    note: 2.8%
-    grams: 103.6
+    item: unsweetened oat milk
+    grams: 103
     milliliters: 100
-    fdcId: 171284
-    matchConfidence: medium
+    fdcId: 2257046
+    matchConfidence: high
+    cooking: boiled
   - raw: 65 ml water
     quantity: 65
     unit: ml
@@ -71,48 +71,50 @@ ingredients:
     fdcId: 169301
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 187
-    energyKj: 781
-    protein_g: 5.1
-    fat_g: 4.8
-    satFat_g: 2.9
-    carbs_g: 33.5
+    energyKcal: 182
+    energyKj: 762
+    protein_g: 4.2
+    fat_g: 4.6
+    satFat_g: 2.1
+    carbs_g: 33.6
     fiber_g: 2
-    sugar_g: 29.4
-    sodium_mg: 65
-    availableCarb_g: 31.5
+    sugar_g: 28.6
+    sodium_mg: 64
+    availableCarb_g: 31.6
   glycemic:
     gi: 54
     gl: 17
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 70
   nutriScore:
     grade: C
-    points: 5
+    points: 4
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.84
   inflammation:
-    score: 0.8
+    score: 0.9
     band: pro-inflammatory
     method: fii v3
   balance:
     score: 1
     band: poor
-    nrf: -8.6
+    nrf: -9.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 100
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 90.9
+    ultraProcessedPct: 9.1
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -126,9 +128,9 @@ createdAt: "2026-11-13"
 1. Prepare 3 glasses or bowls of about 250 ml each.
 2. Meanwhile put the frozen mixed berries into a saucepan, add 15 ml water and cook over medium heat for 5-7 minutes until the fruit is soft.
 3. When the fruit has softened, stir in 2.5 g agar powder whisked into 50 ml water, plus 2 tablespoons of honey. Bring to the boil and simmer for 1-2 minutes, stirring, until the agar has completely dissolved. Take off the heat, divide evenly among the prepared glasses and refrigerate for at least 1 hour to set.
-4. In a small saucepan whisk the remaining 3.5 g agar powder into the milk.
-5. In a medium bowl mix the plain yogurt with the remaining 1 tablespoon of honey. Bring the milk to the boil and simmer for 1-2 minutes, whisking, until the agar has dissolved.
-6. Take off the heat, quickly whisk the hot milk into the yogurt until smooth, pour it over the set fruit layer and return the glasses to the fridge for at least 2 hours (or until completely firm).
+4. In a small saucepan whisk the remaining 3.5 g agar powder into the oat milk.
+5. In a medium bowl mix the plain yogurt with the remaining 1 tablespoon of honey. Bring the oat milk to the boil and simmer for 1-2 minutes, whisking, until the agar has dissolved.
+6. Take off the heat, quickly whisk the hot oat milk into the yogurt until smooth, pour it over the set fruit layer and return the glasses to the fridge for at least 2 hours (or until completely firm).
 
 ## Tips
 

@@ -1,6 +1,6 @@
 ---
 title: Porcini and Tomato Toasts with Arugula
-description: Sourdough toasts topped with a creamy porcini ragout and a fresh tomato salad, finished with peppery arugula.
+description: Whole-wheat sourdough toasts topped with a creamy porcini ragout and a fresh tomato salad, finished with peppery arugula.
 image: ./images/porcini-and-tomato-toasts-with-arugula.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10484_1775303702163_porcini-and-tomato-bruschetta-with-arugula_31fd3183.png
 imageAlt: Porcini and Tomato Toasts with Arugula
@@ -14,19 +14,16 @@ cookTime: PT20M
 totalTime: PT30M
 cuisine: Italian
 course: Appetizer
-tags:
-  - vegetarian
-  - mushroom
-  - quick
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 8 slices sourdough bread
+  - raw: 8 slices whole-wheat sourdough bread
     quantity: 8
-    item: slices sourdough bread
+    item: slices whole-wheat sourdough bread
     grams: 320
-    fdcId: 174924
+    fdcId: 172688
     matchConfidence: high
+    cooking: fried
   - raw: 500 g mixed tomatoes, preferably colourful
     quantity: 500
     unit: g
@@ -35,6 +32,7 @@ ingredients:
     grams: 500
     fdcId: 321360
     matchConfidence: medium
+    cooking: raw
   - raw: 500 g porcini mushrooms
     quantity: 500
     unit: g
@@ -42,12 +40,14 @@ ingredients:
     grams: 500
     fdcId: 169251
     matchConfidence: high
+    cooking: boiled
   - raw: 2 onions
     quantity: 2
     item: onions
     grams: 220
     fdcId: 170000
     matchConfidence: high
+    cooking: boiled
   - raw: 4 cloves garlic
     quantity: 4
     unit: cloves
@@ -55,6 +55,7 @@ ingredients:
     grams: 12
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 200 ml heavy cream
     quantity: 200
     unit: ml
@@ -63,6 +64,7 @@ ingredients:
     milliliters: 200
     fdcId: 2346386
     matchConfidence: high
+    cooking: boiled
   - raw: 100 g butter
     quantity: 100
     unit: g
@@ -70,24 +72,28 @@ ingredients:
     grams: 100
     fdcId: 173430
     matchConfidence: high
+    cooking: boiled
   - raw: fresh basil, a little
     item: fresh basil
     note: a little
     grams: 5
     fdcId: 172232
     matchConfidence: high
+    cooking: raw
   - raw: fresh thyme, a little
     item: fresh thyme
     note: a little
     grams: 2
     fdcId: 173470
     matchConfidence: high
+    cooking: boiled
   - raw: fresh parsley, a little
     item: fresh parsley
     note: a little
     grams: 5
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: 50 g arugula
     quantity: 50
     unit: g
@@ -95,6 +101,7 @@ ingredients:
     grams: 50
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 2 tbsp white wine vinegar
     quantity: 2
     unit: tbsp
@@ -103,6 +110,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 172240
     matchConfidence: high
+    cooking: raw
   - raw: 100 ml extra virgin olive oil
     quantity: 100
     unit: ml
@@ -111,60 +119,64 @@ ingredients:
     milliliters: 100
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 4
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 855
-    energyKj: 3576
-    protein_g: 14.4
-    fat_g: 64.9
+    energyKcal: 843
+    energyKj: 3529
+    protein_g: 17.3
+    fat_g: 65
     satFat_g: 26.6
-    carbs_g: 59.3
-    fiber_g: 7.4
-    sugar_g: 9.7
-    sodium_mg: 815
-    availableCarb_g: 51.9
+    carbs_g: 53.9
+    fiber_g: 10
+    sugar_g: 16
+    sodium_mg: 786
+    availableCarb_g: 43.9
   glycemic:
-    gi: 47
-    gl: 24
+    gi: 46
+    gl: 20
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 10
   nutriScore:
     grade: C
-    points: 5
+    points: 6
     category: general
     version: "2023"
-    coverage: 0.66
+    coverage: 0.74
   inflammation:
-    score: 0.4
-    band: mildly-pro-inflammatory
+    score: 0
+    band: neutral
     method: fii v3
   balance:
     score: 2
     band: poor
-    nrf: 0.3
+    nrf: 8.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 75.1
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 76.1
+    ultraProcessedPct: 23.9
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

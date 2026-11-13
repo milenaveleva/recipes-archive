@@ -1,6 +1,6 @@
 ---
 title: Bruschetta al Pomodoro
-description: Toasted bread rubbed with garlic and piled with a fresh tomato, basil and red onion topping, finished with Parmesan shavings.
+description: Toasted whole-wheat bread rubbed with garlic and piled with a fresh tomato, basil and red onion topping, finished with Parmesan shavings.
 image: ./images/bruschetta-al-pomodoro.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_11584_1776980320336_bruschetta-al-pomodoro_99ea80d5.jpg
 imageAlt: Bruschetta al Pomodoro
@@ -14,19 +14,16 @@ cookTime: PT5M
 totalTime: PT15M
 cuisine: Italian
 course: Appetizer
-tags:
-  - vegetarian
-  - tomato
-  - quick
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 2 slices bread
+  - raw: 2 slices whole-wheat bread
     quantity: 2
-    item: slices bread
+    item: slices whole-wheat bread
     grams: 100
-    fdcId: 174918
-    matchConfidence: medium
+    fdcId: 172688
+    matchConfidence: high
+    cooking: fried
   - raw: 400 g tomatoes
     quantity: 400
     unit: g
@@ -34,6 +31,7 @@ ingredients:
     grams: 400
     fdcId: 321360
     matchConfidence: high
+    cooking: raw
   - raw: 10 g red onion
     quantity: 10
     unit: g
@@ -41,6 +39,7 @@ ingredients:
     grams: 10
     fdcId: 790577
     matchConfidence: high
+    cooking: raw
   - raw: 30 g parmesan cheese
     quantity: 30
     unit: g
@@ -48,6 +47,7 @@ ingredients:
     grams: 30
     fdcId: 173431
     matchConfidence: high
+    cooking: raw
   - raw: 60 ml extra virgin olive oil
     quantity: 60
     unit: ml
@@ -56,6 +56,7 @@ ingredients:
     milliliters: 60
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: ½ tbsp red wine vinegar
     quantity: 0.5
     unit: tbsp
@@ -64,6 +65,7 @@ ingredients:
     milliliters: 7.3934
     fdcId: 172240
     matchConfidence: high
+    cooking: raw
   - raw: 1 clove garlic
     quantity: 1
     unit: clove
@@ -71,12 +73,14 @@ ingredients:
     grams: 4
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 5 fresh basil leaves
     quantity: 5
     item: fresh basil leaves
     grams: 3
     fdcId: 172232
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch black pepper
     quantity: 1
     unit: pinch
@@ -85,6 +89,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -93,43 +98,44 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 490
-    energyKj: 2049
-    protein_g: 11.9
-    fat_g: 34.3
-    satFat_g: 6.6
-    carbs_g: 36.5
-    fiber_g: 7.6
-    sugar_g: 0.4
-    sodium_mg: 644
-    availableCarb_g: 28.9
+    energyKcal: 491
+    energyKj: 2054
+    protein_g: 13.8
+    fat_g: 34.5
+    satFat_g: 6.8
+    carbs_g: 34.1
+    fiber_g: 7.4
+    sugar_g: 12.2
+    sodium_mg: 573
+    availableCarb_g: 26.7
   glycemic:
-    gi: 49
+    gi: 51
     gl: 14
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 26
   nutriScore:
     grade: C
-    points: 3
+    points: 4
     category: general
     version: "2023"
-    coverage: 0.33
+    coverage: 0.34
   inflammation:
-    score: -0.3
+    score: -0.5
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 18.1
+    nrf: 23.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 61.8
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 61.6
+    ultraProcessedPct: 25.7
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
@@ -151,4 +157,4 @@ createdAt: "2026-11-13"
 
 ## Tips
 
-- For the best result, use ripe, juicy tomatoes and good-quality sourdough bread.
+- For the best result, use ripe, juicy tomatoes and good-quality whole-wheat sourdough bread.

@@ -1,6 +1,6 @@
 ---
 title: Vegan Coconut Pumpkin Cream Soup with Toasted Pumpkin Seeds
-description: A silky vegan butternut squash soup with coconut milk, lime and agave, topped with toasted pumpkin seeds.
+description: A silky vegan butternut squash soup with coconut milk, lime and honey, topped with toasted pumpkin seeds.
 image: ./images/vegan-coconut-pumpkin-cream-soup-with-toasted-pumpkin-seeds.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10404_1775302832084_vegan-coconut-pumpkin-cream-soup-with-toasted-pumpkin-seeds_1dc8a988.png
 imageAlt: Vegan Coconut Pumpkin Cream Soup with Toasted Pumpkin Seeds
@@ -14,10 +14,6 @@ cookTime: PT25M
 totalTime: PT45M
 cuisine: International
 course: Soup
-tags:
-  - vegan
-  - soup
-  - pumpkin
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 1200
     fdcId: 169295
     matchConfidence: high
+    cooking: boiled
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -35,6 +32,7 @@ ingredients:
     grams: 8
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 1 small onion, finely chopped
     quantity: 1
     unit: small
@@ -43,17 +41,20 @@ ingredients:
     grams: 70
     fdcId: 170000
     matchConfidence: high
+    cooking: boiled
   - raw: a few spring onions
     item: a few spring onions
     grams: 30
     fdcId: 170005
     matchConfidence: high
+    cooking: raw
   - raw: juice of 1 lime
     quantity: 1
     item: juice of lime
     grams: 30
     fdcId: 168156
     matchConfidence: high
+    cooking: raw
   - raw: 1 small red chili (optional)
     quantity: 1
     unit: small
@@ -62,12 +63,14 @@ ingredients:
     grams: 10
     fdcId: 170106
     matchConfidence: high
+    cooking: boiled
   - raw: fresh cilantro, a little
     item: fresh cilantro
     note: a little
     grams: 3
     fdcId: 169997
     matchConfidence: high
+    cooking: raw
   - raw: 50 g pumpkin seeds
     quantity: 50
     unit: g
@@ -75,6 +78,7 @@ ingredients:
     grams: 50
     fdcId: 170556
     matchConfidence: high
+    cooking: fried
   - raw: 2 tbsp pumpkin seed oil
     quantity: 2
     unit: tbsp
@@ -83,6 +87,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 172370
     matchConfidence: high
+    cooking: raw
   - raw: 50 ml olive oil
     quantity: 50
     unit: ml
@@ -91,14 +96,16 @@ ingredients:
     milliliters: 50
     fdcId: 171413
     matchConfidence: high
+    cooking: fried
   - raw: 500 ml coconut milk
     quantity: 500
     unit: ml
     item: coconut milk
-    grams: 507.2
+    grams: 477.6
     milliliters: 500
-    fdcId: 170172
+    fdcId: 170173
     matchConfidence: high
+    cooking: boiled
   - raw: 500 ml vegetable broth
     quantity: 500
     unit: ml
@@ -107,54 +114,57 @@ ingredients:
     milliliters: 500
     fdcId: 171583
     matchConfidence: medium
-  - raw: a few tbsp agave syrup, to taste
-    item: a few tbsp agave syrup
+    cooking: boiled
+  - raw: a few tbsp honey, to taste
+    item: a few tbsp honey
     note: to taste
-    grams: 30
-    fdcId: 170277
-    matchConfidence: medium
+    grams: 22
+    fdcId: 169640
+    matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 702
-    energyKj: 2937
-    protein_g: 10.5
-    fat_g: 55
-    satFat_g: 30.6
-    carbs_g: 54
-    fiber_g: 10.2
-    sugar_g: 18
-    sodium_mg: 381
-    availableCarb_g: 43.8
+    energyKcal: 639
+    energyKj: 2673
+    protein_g: 10
+    fat_g: 50.2
+    satFat_g: 26.4
+    carbs_g: 49.1
+    fiber_g: 7.4
+    sugar_g: 13.1
+    sodium_mg: 377
+    availableCarb_g: 41.8
   glycemic:
-    gi: 22
+    gi: 21
     gl: 9
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 11
   nutriScore:
     grade: C
     points: 4
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.8
   inflammation:
-    score: 0
+    score: 0.2
     band: neutral
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 42.8
+    score: 7
+    band: high
+    nrf: 44
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 99.2
+    minimallyProcessedPct: 62.3
     ultraProcessedPct: 0
-    band: minimally-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -170,7 +180,7 @@ createdAt: "2026-11-13"
 3. Add the diced squash and fry together for a few minutes, then pour in half of the coconut milk and broth.
 4. Cook the squash until completely tender and blend thoroughly in a blender, then strain.
 5. Check the consistency and adjust to your liking with broth and coconut milk.
-6. Only then season with salt, lime juice and agave syrup.
+6. Only then season with salt, lime juice and honey.
 7. Serve with toasted pumpkin seeds, pumpkin seed oil and fresh herbs.
 
 ## Tips

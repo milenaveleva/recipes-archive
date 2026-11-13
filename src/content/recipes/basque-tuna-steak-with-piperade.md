@@ -14,11 +14,6 @@ cookTime: PT20M
 totalTime: PT35M
 cuisine: Spanish
 course: Main Course
-tags:
-  - fish
-  - tuna
-  - gluten-free
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -30,6 +25,7 @@ ingredients:
     grams: 400
     fdcId: 175159
     matchConfidence: medium
+    cooking: fried
   - raw: 2 red bell peppers (kápia)
     group: Fish and vegetable bed
     quantity: 2
@@ -38,6 +34,7 @@ ingredients:
     grams: 200
     fdcId: 2258590
     matchConfidence: high
+    cooking: boiled
   - raw: 2 green peppers
     group: Fish and vegetable bed
     quantity: 2
@@ -45,6 +42,7 @@ ingredients:
     grams: 150
     fdcId: 170427
     matchConfidence: high
+    cooking: boiled
   - raw: 1 onion
     group: Fish and vegetable bed
     quantity: 1
@@ -52,6 +50,7 @@ ingredients:
     grams: 110
     fdcId: 170000
     matchConfidence: high
+    cooking: boiled
   - raw: 3 cloves garlic
     group: Fish and vegetable bed
     quantity: 3
@@ -60,6 +59,7 @@ ingredients:
     grams: 9
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 200 g canned chopped tomatoes
     group: Fish and vegetable bed
     quantity: 200
@@ -68,6 +68,7 @@ ingredients:
     grams: 200
     fdcId: 170501
     matchConfidence: high
+    cooking: boiled
   - raw: 3 tbsp extra virgin olive oil
     quantity: 3
     unit: tbsp
@@ -76,6 +77,7 @@ ingredients:
     milliliters: 44.3604
     fdcId: 171413
     matchConfidence: high
+    cooking: fried
   - raw: 1 tsp smoked paprika
     quantity: 1
     unit: tsp
@@ -84,6 +86,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 171329
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 tbsp white wine vinegar
     quantity: 1
     unit: tbsp
@@ -92,6 +95,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 172240
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tsp fine salt
     quantity: 1
     unit: tsp
@@ -100,6 +104,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: medium
+    cooking: fried
   - raw: 1 tsp ground black pepper
     quantity: 1
     unit: tsp
@@ -108,6 +113,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170931
     matchConfidence: medium
+    cooking: fried
   - raw: 1 handful fresh parsley
     group: For serving
     quantity: 1
@@ -115,39 +121,40 @@ ingredients:
     grams: 10
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 509
     energyKj: 2130
     protein_g: 53.3
     fat_g: 22.1
-    satFat_g: 3.3
+    satFat_g: 3.4
     carbs_g: 25.7
     fiber_g: 6.2
-    sugar_g: 8.7
+    sugar_g: 12.9
     sodium_mg: 1469
-    availableCarb_g: 19.5
+    availableCarb_g: 18.5
   glycemic:
-    gi: 16
+    gi: 14
     gl: 3
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: A
-    points: 0
+    points: -2
     category: general
     version: "2023"
-    coverage: 0.83
+    coverage: 1
   inflammation:
-    score: -0.1
+    score: -0.2
     band: neutral
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 81.9
+    score: 9
+    band: excellent
+    nrf: 77.1
     version: NRF9.3
   processing:
     minimallyProcessedPct: 93.7
@@ -157,6 +164,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

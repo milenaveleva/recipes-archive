@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 import { describe, it, expect } from 'vitest';
 import { parse as parseYaml } from 'yaml';
-import { scoreRecipe, type FoodScoring, type StoredScoringIngredient } from './recipeScore';
+import { scoreRecipe, storedScoringFields, type FoodScoring } from './recipeScore';
 import type { FoodRecord } from './match';
 import usdaFoods from '../data/usda-foods.json';
 import foodScoringData from '../data/food-scoring.json';
@@ -30,7 +30,7 @@ const polyphenols = polyphenolData as Record<string, { polyphenol_mg?: number }>
 
 interface Frontmatter {
   servings?: number;
-  ingredients?: (StoredScoringIngredient & Record<string, unknown>)[];
+  ingredients?: Record<string, unknown>[];
   nutrition?: Record<string, any>;
 }
 
@@ -54,11 +54,7 @@ describe('recipe nutrition blocks reproduce from the engine', () => {
       const stored = data.nutrition!;
       const ns = stored.nutriScore ?? {};
       const { macro, scores } = scoreRecipe(
-        (data.ingredients ?? []).map((i) => ({
-          grams: i.grams,
-          fdcId: i.fdcId,
-          excludeFromNutrition: i.excludeFromNutrition,
-        })),
+        (data.ingredients ?? []).map(storedScoringFields),
         {
           servings: data.servings ?? 4,
           nutriCategory: ns.category ?? 'general',
@@ -82,7 +78,7 @@ describe('recipe nutrition blocks reproduce from the engine', () => {
       if (stored.glycemic) {
         expect(scores.glycemic?.gi).toBe(stored.glycemic.gi);
         expect(scores.glycemic?.gl).toBe(stored.glycemic.gl);
-        expect(scores.glycemic?.carbCoveragePct).toBe(stored.glycemic.carbCoveragePct);
+        expect(scores.glycemic?.measuredGiPct).toBe(stored.glycemic.measuredGiPct);
       }
       // Nutri-Score
       if (stored.nutriScore) {
@@ -142,7 +138,7 @@ describe('every carb-bearing recipe has a glycemic block', () => {
     const ns = data.nutrition.nutriScore ?? {};
     it(`${file.split('/').pop()}`, () => {
       const { macro, scores } = scoreRecipe(
-        (data.ingredients ?? []).map((i) => ({ grams: i.grams, fdcId: i.fdcId, excludeFromNutrition: i.excludeFromNutrition })),
+        (data.ingredients ?? []).map(storedScoringFields),
         { servings: data.servings ?? 4, nutriCategory: ns.category ?? 'general', nnsPresent: ns.nnsPresent, isWater: ns.isWater, isCheese: ns.isCheese, redMeat: ns.redMeat },
         foodById, foodScoring, polyphenols,
       );

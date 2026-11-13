@@ -22,7 +22,6 @@ export interface SearchDoc {
   ingredients: string[];
   steps: string[];
   // Facet fields.
-  tags: string[];
   category: string | null;
   lists: string[];
   cuisine: string | null;
@@ -58,7 +57,6 @@ export interface FacetGroup {
 /** Fuse.js key weights — title matters most, method text least. */
 export const FUSE_KEYS = [
   { name: 'title', weight: 3 },
-  { name: 'tags', weight: 2 },
   { name: 'description', weight: 1.6 },
   { name: 'ingredients', weight: 1.2 },
   { name: 'category', weight: 1 },
@@ -101,7 +99,6 @@ interface FacetDef {
  * grows into (or out of) using a given field.
  */
 export const FACET_DEFS: FacetDef[] = [
-  { key: 'tag', label: 'Tags', primary: true, pick: (d) => d.tags },
   { key: 'category', label: 'Category', primary: true, pick: (d) => (d.category ? [d.category] : []) },
   { key: 'course', label: 'Course', primary: false, pick: (d) => (d.course ? [d.course] : []), labelOf: titleCase },
   { key: 'cuisine', label: 'Cuisine', primary: false, pick: (d) => (d.cuisine ? [d.cuisine] : []), labelOf: titleCase },

@@ -14,10 +14,6 @@ cookTime: PT30M
 totalTime: PT40M
 cuisine: International
 course: Main Course
-tags:
-  - vegan
-  - vegetarian
-  - broccoli
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +23,7 @@ ingredients:
     grams: 200
     fdcId: 171595
     matchConfidence: high
+    cooking: baked
   - raw: 1 head broccoli
     quantity: 1
     unit: head
@@ -34,12 +31,14 @@ ingredients:
     grams: 350
     fdcId: 170379
     matchConfidence: high
+    cooking: baked
   - raw: 16 cherry tomatoes
     quantity: 16
     item: cherry tomatoes
     grams: 270
     fdcId: 321360
     matchConfidence: medium
+    cooking: baked
   - raw: 2-3 spring onions
     quantity: 2
     quantity2: 3
@@ -47,6 +46,7 @@ ingredients:
     grams: 50
     fdcId: 170005
     matchConfidence: high
+    cooking: raw
   - raw: 100 g rocket (arugula)
     quantity: 100
     unit: g
@@ -55,6 +55,7 @@ ingredients:
     grams: 100
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 2 tbsp sunflower oil
     quantity: 2
     unit: tbsp
@@ -63,6 +64,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171025
     matchConfidence: high
+    cooking: baked
   - raw: 125 g vegan cheese
     quantity: 125
     unit: g
@@ -70,29 +72,34 @@ ingredients:
     grams: 125
     fdcId: 170845
     matchConfidence: high
+    cooking: baked
   - raw: oregano, optional
     item: oregano
     note: optional
     matchConfidence: none
     excludeFromNutrition: true
+    cooking: baked
   - raw: thyme, optional
     item: thyme
     note: optional
     fdcId: 173470
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: baked
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 2
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
     energyKcal: 258
@@ -102,39 +109,40 @@ nutrition:
     satFat_g: 5.2
     carbs_g: 22.1
     fiber_g: 5.6
-    sugar_g: 8.9
+    sugar_g: 12.2
     sodium_mg: 1058
     availableCarb_g: 16.4
   glycemic:
-    gi: 43
+    gi: 40
     gl: 7
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 14
   nutriScore:
     grade: C
-    points: 3
+    points: 4
     category: general
     version: "2023"
-    coverage: 0.76
+    coverage: 0.77
   inflammation:
     score: 0.3
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 67.8
+    score: 8
+    band: high
+    nrf: 65.2
     version: NRF9.3
   processing:
     minimallyProcessedPct: 46
-    ultraProcessedPct: 0
+    ultraProcessedPct: 17.8
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

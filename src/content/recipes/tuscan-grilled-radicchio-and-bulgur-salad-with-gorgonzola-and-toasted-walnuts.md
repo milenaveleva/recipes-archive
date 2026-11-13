@@ -14,21 +14,19 @@ cookTime: PT15M
 totalTime: PT30M
 cuisine: Italian
 course: Salad
-tags:
-  - vegetarian
-  - salad
-  - grilled
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g bulgur
+  - raw: 250 g bulgur, uncooked
     group: Main ingredients
     quantity: 250
     unit: g
     item: bulgur
+    note: uncooked
     grams: 250
-    fdcId: 170287
-    matchConfidence: high
+    fdcId: 170688
+    matchConfidence: medium
+    cooking: boiled
   - raw: 1 head radicchio
     group: Main ingredients
     quantity: 1
@@ -37,6 +35,7 @@ ingredients:
     grams: 200
     fdcId: 168564
     matchConfidence: high
+    cooking: grilled
   - raw: 120 g gorgonzola cheese
     quantity: 120
     unit: g
@@ -44,6 +43,7 @@ ingredients:
     grams: 120
     fdcId: 172175
     matchConfidence: high
+    cooking: raw
   - raw: 60 g walnuts
     quantity: 60
     unit: g
@@ -51,6 +51,7 @@ ingredients:
     grams: 60
     fdcId: 170187
     matchConfidence: medium
+    cooking: fried
   - raw: 50 g arugula
     quantity: 50
     unit: g
@@ -58,6 +59,7 @@ ingredients:
     grams: 50
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 40 ml extra virgin olive oil
     group: Balsamic dressing and seasonings
     quantity: 40
@@ -67,6 +69,7 @@ ingredients:
     milliliters: 40
     fdcId: 171413
     matchConfidence: high
+    cooking: grilled
   - raw: 25 ml balsamic vinegar
     group: Balsamic dressing and seasonings
     quantity: 25
@@ -76,6 +79,7 @@ ingredients:
     milliliters: 25
     fdcId: 172241
     matchConfidence: high
+    cooking: raw
   - raw: 15 g honey
     group: Balsamic dressing and seasonings
     quantity: 15
@@ -84,6 +88,7 @@ ingredients:
     grams: 15
     fdcId: 169640
     matchConfidence: high
+    cooking: raw
   - raw: 2 cloves fresh garlic
     group: Balsamic dressing and seasonings
     quantity: 2
@@ -92,64 +97,70 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
-  - raw: 5 g fine salt
+    cooking: raw
+  - raw: ¾ tsp fine salt
     group: Balsamic dressing and seasonings
-    quantity: 5
-    unit: g
+    quantity: 0.75
+    unit: tsp
     item: fine salt
     grams: 5
+    milliliters: 3.69669
     fdcId: 173468
     matchConfidence: medium
-  - raw: 2 g ground black pepper
+    cooking: raw
+  - raw: ¾ tsp ground black pepper
     group: Balsamic dressing and seasonings
-    quantity: 2
-    unit: g
+    quantity: 0.75
+    unit: tsp
     item: ground black pepper
     grams: 2
+    milliliters: 3.69669
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 372
-    energyKj: 1557
-    protein_g: 11.9
-    fat_g: 27.9
-    satFat_g: 7.9
-    carbs_g: 22.1
-    fiber_g: 4.6
-    sugar_g: 5.3
-    sodium_mg: 850
-    availableCarb_g: 17.5
+    energyKcal: 534
+    energyKj: 2234
+    protein_g: 17.6
+    fat_g: 28.6
+    satFat_g: 8
+    carbs_g: 57.9
+    fiber_g: 9.7
+    sugar_g: 5.5
+    sodium_mg: 858
+    availableCarb_g: 48.3
   glycemic:
-    gi: 49
-    gl: 9
-    giBand: low
-    glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi: 56
+    gl: 27
+    giBand: medium
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 6
   nutriScore:
-    grade: D
-    points: 11
+    grade: C
+    points: 4
     category: general
     version: "2023"
-    coverage: 0.96
+    coverage: 1
   inflammation:
-    score: -0.1
-    band: neutral
+    score: -0.6
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
     score: 3
     band: low
-    nrf: 10.1
+    nrf: 17.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 71.5
+    minimallyProcessedPct: 80.2
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

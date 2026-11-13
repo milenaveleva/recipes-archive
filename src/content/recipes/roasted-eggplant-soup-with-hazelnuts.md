@@ -1,6 +1,6 @@
 ---
 title: Roasted Eggplant Soup with Hazelnuts
-description: A creamy soup of oven-roasted eggplant, potato and milk, topped with toasted hazelnuts, parsley and Greek yoghurt.
+description: A creamy soup of oven-roasted eggplant, potato and oat milk, topped with toasted hazelnuts, parsley and Greek yoghurt.
 image: ./images/roasted-eggplant-soup-with-hazelnuts.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_12285_1777207268586_roasted-eggplant-soup-with-hazelnuts_b39bef7e.jpg
 imageAlt: Roasted Eggplant Soup with Hazelnuts
@@ -14,10 +14,6 @@ cookTime: PT45M
 totalTime: PT1H5M
 cuisine: Mediterranean
 course: Soup
-tags:
-  - vegetarian
-  - soup
-  - eggplant
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +25,7 @@ ingredients:
     grams: 800
     fdcId: 169228
     matchConfidence: high
+    cooking: baked
   - raw: 80 g hazelnuts
     quantity: 80
     unit: g
@@ -36,6 +33,7 @@ ingredients:
     grams: 80
     fdcId: 170581
     matchConfidence: high
+    cooking: baked
   - raw: 70 g onion
     quantity: 70
     unit: g
@@ -43,6 +41,7 @@ ingredients:
     grams: 70
     fdcId: 170000
     matchConfidence: high
+    cooking: boiled
   - raw: 20 g garlic
     quantity: 20
     unit: g
@@ -50,6 +49,7 @@ ingredients:
     grams: 20
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 70 g potato (waxy)
     quantity: 70
     unit: g
@@ -58,6 +58,7 @@ ingredients:
     grams: 70
     fdcId: 170026
     matchConfidence: high
+    cooking: boiled
   - raw: 110 ml olive oil
     quantity: 110
     unit: ml
@@ -66,15 +67,16 @@ ingredients:
     milliliters: 110
     fdcId: 171413
     matchConfidence: high
-  - raw: 500 ml milk (2.8% fat)
+    cooking: boiled
+  - raw: 500 ml unsweetened oat milk
     quantity: 500
     unit: ml
-    item: milk
-    note: 2.8% fat
-    grams: 517.8
+    item: unsweetened oat milk
+    grams: 515
     milliliters: 500
-    fdcId: 171284
-    matchConfidence: medium
+    fdcId: 2257046
+    matchConfidence: high
+    cooking: boiled
   - raw: 2 tbsp fresh parsley, chopped
     quantity: 2
     unit: tbsp
@@ -84,6 +86,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: 35 g Greek yoghurt
     quantity: 35
     unit: g
@@ -91,6 +94,7 @@ ingredients:
     grams: 35
     fdcId: 330137
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -99,6 +103,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -107,48 +112,50 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 510
-    energyKj: 2136
-    protein_g: 11.3
-    fat_g: 41.9
-    satFat_g: 7.2
-    carbs_g: 27.9
+    energyKcal: 494
+    energyKj: 2066
+    protein_g: 7.8
+    fat_g: 41.3
+    satFat_g: 4.4
+    carbs_g: 28.5
     fiber_g: 8.8
-    sugar_g: 14.9
-    sodium_mg: 110
-    availableCarb_g: 19.2
+    sugar_g: 12.2
+    sodium_mg: 104
+    availableCarb_g: 19.7
   glycemic:
     gi: 28
-    gl: 5
+    gl: 6
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 14
   nutriScore:
     grade: B
     points: 1
     category: general
     version: "2023"
-    coverage: 0.98
+    coverage: 0.69
   inflammation:
-    score: -0.8
+    score: -0.6
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 23.9
+    score: 5
+    band: moderate
+    nrf: 24
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 100
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 87.4
+    ultraProcessedPct: 12.6
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -163,7 +170,7 @@ createdAt: "2026-11-13"
 2. Reduce the oven temperature to 160 °C. Put in the hazelnuts and toast for 15 minutes. Let them cool, then chop these roughly too.
 3. Chop the onion and garlic finely. Peel the potato and cut it into roughly 1 cm cubes.
 4. In a pot over medium heat, heat 2 tablespoons of olive oil, add the onion and cook until translucent. Add the garlic and potato and fry for 2 minutes, stirring constantly. Stir in the chopped eggplant, season with salt and pepper.
-5. Pour in the milk and 500 ml water (or vegetable broth for a richer flavour), bring to the boil, then reduce the heat and cook until the potato is soft. Then pour the soup into a blender and blend until smooth. While blending, drizzle in the remaining olive oil. Taste and add more salt if needed.
+5. Pour in the oat milk and 500 ml water (or vegetable broth for a richer flavour), bring to the boil, then reduce the heat and cook until the potato is soft. Then pour the soup into a blender and blend until smooth. While blending, drizzle in the remaining olive oil. Taste and add more salt if needed.
 6. To serve, drizzle a little olive oil over the soup, sprinkle with chopped parsley and toasted hazelnuts, and finish with a spoonful of Greek yoghurt.
 
 ## Tips

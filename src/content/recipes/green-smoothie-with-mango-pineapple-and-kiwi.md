@@ -13,10 +13,6 @@ prepTime: PT15M
 totalTime: PT15M
 cuisine: International
 course: Drink
-tags:
-  - vegan
-  - smoothie
-  - breakfast
 lists:
   - Kifli favourites
 ingredients:
@@ -26,12 +22,14 @@ ingredients:
     grams: 30
     fdcId: 168421
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful baby spinach
     quantity: 1
     item: handful baby spinach
     grams: 30
     fdcId: 1999632
     matchConfidence: high
+    cooking: raw
   - raw: 150 g mango
     quantity: 150
     unit: g
@@ -39,6 +37,7 @@ ingredients:
     grams: 150
     fdcId: 169910
     matchConfidence: high
+    cooking: raw
   - raw: 150 g pineapple
     quantity: 150
     unit: g
@@ -46,6 +45,7 @@ ingredients:
     grams: 150
     fdcId: 2346398
     matchConfidence: high
+    cooking: raw
   - raw: 5 cm fresh ginger
     quantity: 5
     unit: cm
@@ -53,12 +53,14 @@ ingredients:
     grams: 15
     fdcId: 169231
     matchConfidence: high
+    cooking: raw
   - raw: 2 kiwis
     quantity: 2
     item: kiwis
     grams: 150
     fdcId: 2710831
     matchConfidence: medium
+    cooking: raw
   - raw: 250 ml water
     quantity: 250
     unit: ml
@@ -68,6 +70,7 @@ ingredients:
     fdcId: 169301
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 144
@@ -77,30 +80,30 @@ nutrition:
     satFat_g: 0.1
     carbs_g: 34.5
     fiber_g: 4.5
-    sugar_g: 10.6
+    sugar_g: 25.6
     sodium_mg: 28
     availableCarb_g: 30
   glycemic:
-    gi: 59
-    gl: 18
+    gi: 56
+    gl: 17
     giBand: medium
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 67
   nutriScore:
-    grade: B
-    points: 1
+    grade: C
+    points: 6
     category: beverage
     version: "2023"
-    coverage: 0.37
+    coverage: 1
   inflammation:
-    score: -0.6
-    band: mildly-anti-inflammatory
+    score: -0.1
+    band: neutral
     method: fii v3
   balance:
-    score: 7
-    band: high
-    nrf: 111.3
+    score: 10
+    band: excellent
+    nrf: 122.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

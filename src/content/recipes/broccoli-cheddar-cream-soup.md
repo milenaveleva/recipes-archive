@@ -14,10 +14,6 @@ cookTime: PT25M
 totalTime: PT40M
 cuisine: International
 course: Soup
-tags:
-  - vegetarian-friendly
-  - broccoli
-  - soup
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 500
     fdcId: 170379
     matchConfidence: high
+    cooking: boiled
   - raw: 100 g fresh spinach
     quantity: 100
     unit: g
@@ -35,6 +32,7 @@ ingredients:
     grams: 100
     fdcId: 168462
     matchConfidence: high
+    cooking: boiled
   - raw: 60 g red onion
     quantity: 60
     unit: g
@@ -42,6 +40,7 @@ ingredients:
     grams: 60
     fdcId: 790577
     matchConfidence: high
+    cooking: boiled
   - raw: 14 g garlic
     quantity: 14
     unit: g
@@ -49,13 +48,15 @@ ingredients:
     grams: 14
     fdcId: 169230
     matchConfidence: high
-  - raw: 50 g all-purpose flour
+    cooking: boiled
+  - raw: 50 g whole-wheat flour
     quantity: 50
     unit: g
-    item: all-purpose flour
+    item: whole-wheat flour
     grams: 50
-    fdcId: 790018
+    fdcId: 790085
     matchConfidence: high
+    cooking: boiled
   - raw: 850 ml vegetable broth
     quantity: 850
     unit: ml
@@ -64,6 +65,7 @@ ingredients:
     milliliters: 850
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 25 g butter
     quantity: 25
     unit: g
@@ -71,6 +73,7 @@ ingredients:
     grams: 25
     fdcId: 173430
     matchConfidence: high
+    cooking: boiled
   - raw: 150 g cheddar cheese
     quantity: 150
     unit: g
@@ -78,15 +81,16 @@ ingredients:
     grams: 150
     fdcId: 173414
     matchConfidence: high
-  - raw: 500 ml whole milk (3.5%)
+    cooking: boiled
+  - raw: 500 ml unsweetened oat milk
     quantity: 500
     unit: ml
-    item: whole milk
-    note: 3.5%
-    grams: 517.8
+    item: unsweetened oat milk
+    grams: 515
     milliliters: 500
-    fdcId: 171284
-    matchConfidence: medium
+    fdcId: 2257046
+    matchConfidence: high
+    cooking: boiled
   - raw: 250 g cooking cream (10%)
     quantity: 250
     unit: g
@@ -95,6 +99,7 @@ ingredients:
     grams: 250
     fdcId: 170858
     matchConfidence: high
+    cooking: boiled
   - raw: 1 pinch black pepper
     quantity: 1
     unit: pinch
@@ -103,6 +108,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -111,31 +117,32 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 382
-    energyKj: 1597
-    protein_g: 14
-    fat_g: 28
-    satFat_g: 16.8
+    energyKcal: 371
+    energyKj: 1553
+    protein_g: 12
+    fat_g: 27.7
+    satFat_g: 15.1
     carbs_g: 21.5
-    fiber_g: 3.1
-    sugar_g: 7.6
-    sodium_mg: 676
-    availableCarb_g: 18.4
+    fiber_g: 3.7
+    sugar_g: 6.2
+    sodium_mg: 671
+    availableCarb_g: 17.8
   glycemic:
-    gi: 32
-    gl: 6
+    gi: 30
+    gl: 5
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 6
+    points: 5
     category: general
     version: "2023"
-    coverage: 0.96
+    coverage: 0.79
   inflammation:
     score: 1.1
     band: pro-inflammatory
@@ -143,16 +150,17 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 29.5
+    nrf: 23.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 71.9
-    ultraProcessedPct: 0
-    band: minimally-processed
+    minimallyProcessedPct: 59.9
+    ultraProcessedPct: 11.2
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -165,7 +173,7 @@ createdAt: "2026-11-13"
 
 1. **Preparation:** Peel and finely chop the onion and garlic. Wash the broccoli, break it into florets, and clean the stems and cut them into smaller pieces. Rinse the spinach and finely grate the cheddar.
 2. **Cooking:** Melt the butter in a pot and sauté the onion and garlic until translucent. Sprinkle in the flour and toast briefly (make a light roux).
-3. Gradually pour in the broth and milk, add the broccoli stems and cook, stirring occasionally, for about 10 minutes.
+3. Gradually pour in the broth and oat milk, add the broccoli stems and cook, stirring occasionally, for about 10 minutes.
 4. Remove the broccoli stems (or leave them in if completely soft), add the broccoli florets and most of the grated cheddar, and keep cooking until the broccoli is tender.
 5. Finally add the spinach and cooking cream, cook for another 5 minutes, then blend everything silky smooth with an immersion blender.
 6. **Serving:** Season with salt and pepper to taste. Sprinkle with the remaining grated cheddar when serving and offer crunchy croutons alongside.

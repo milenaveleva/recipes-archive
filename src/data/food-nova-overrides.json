@@ -1,5 +1,5 @@
 {
-  "_doc": "Per-food NOVA processing-group corrections, keyed by USDA/national-table fdcId. Layered on top of the rule-based estimate in scripts/nova.mjs (override wins) and stamped into usda-foods.json by serializeFoods. Only foods whose name carries no marker the rules can see are listed here — national-table ferments, prepared condiments, ready-to-serve broths, and formulated plant-milk drink substitutes (whose rename to 'Milk, <plant>' strips the signal). NOVA assignment has low inter-rater agreement; these are estimates. Group: 1 minimally processed, 2 culinary ingredient, 3 processed, 4 ultra-processed.",
+  "_doc": "Per-food NOVA processing-group corrections, keyed by USDA/national-table fdcId. Layered on top of the rule-based estimate in scripts/nova.mjs (override wins) and stamped into usda-foods.json by serializeFoods. Only foods whose name carries no marker the rules can see are listed here — national-table ferments and composite dishes (gnocchi), nutritional yeast (whose 'yeast' name reads as a leavening agent), prepared condiments, ready-to-serve broths, and formulated plant-milk drink substitutes (whose rename to 'Milk, <plant>' strips the signal). NOVA assignment has low inter-rater agreement; these are estimates. Group: 1 minimally processed, 2 culinary ingredient, 3 processed, 4 ultra-processed.",
   "81004040": { "nova": 3, "reason": "aburaage — deep-fried tofu pouch (processed)" },
   "81010091": { "nova": 3, "reason": "katsuobushi — dried, smoked, fermented bonito (processed)" },
   "81016023": { "nova": 3, "reason": "sake — fermented rice wine (processed alcoholic drink)" },
@@ -14,5 +14,13 @@
   "171942": { "nova": 4, "reason": "rice drink — formulated plant-milk substitute, hydrolyzed starch (ultra-processed)" },
   "2257046": { "nova": 4, "reason": "oat drink — formulated plant-milk substitute (ultra-processed)" },
   "1999630": { "nova": 4, "reason": "soy drink, unsweetened — formulated plant-milk substitute (ultra-processed)" },
-  "9000003": { "nova": 4, "reason": "plant-based feta — formulated cheese analogue (refined coconut oil + starch), ultra-processed" }
+  "82018905": { "nova": 4, "reason": "oat drink, unsweetened (Ciqual) — formulated plant-milk substitute (ultra-processed), as the USDA oat drink" },
+  "82025510": { "nova": 3, "reason": "potato gnocchi (Ciqual) — potato dough with flour, egg and salt (processed)" },
+  "82011009": { "nova": 1, "reason": "nutritional yeast (Ciqual, unfortified) — deactivated dried yeast eaten as a food, not the leavening-agent culinary ingredient the 'yeast' rule targets" },
+  "9000003": { "nova": 4, "reason": "plant-based feta — formulated cheese analogue (refined coconut oil + starch), ultra-processed" },
+  "174523": { "nova": 4, "reason": "barbecue sauce — industrial formulation (glucose-fructose syrup, modified starch, flavourings, colour)" },
+  "174529": { "nova": 4, "reason": "oyster sauce, ready-to-serve — industrial formulation (modified starch, caramel colour, flavour enhancer)" },
+  "171186": { "nova": 4, "reason": "sriracha — formulated hot sauce with thickener (xanthan gum) and preservatives" },
+  "171595": { "nova": 4, "reason": "tomato chili sauce, bottled — ketchup-type formulation (glucose-fructose syrup, flavourings), like catsup" },
+  "172802": { "nova": 3, "reason": "wonton/egg-roll wrappers — flour-egg-salt dough sheets (processed, like fresh pasta with salt)" }
 }

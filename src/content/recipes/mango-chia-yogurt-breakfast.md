@@ -13,10 +13,6 @@ prepTime: PT10M
 totalTime: PT10M
 cuisine: International
 course: Breakfast
-tags:
-  - vegetarian
-  - fruit
-  - make-ahead
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +23,7 @@ ingredients:
     grams: 400
     fdcId: 330137
     matchConfidence: high
+    cooking: raw
   - raw: 40 g chia seeds
     quantity: 40
     unit: g
@@ -34,6 +31,7 @@ ingredients:
     grams: 40
     fdcId: 170554
     matchConfidence: high
+    cooking: raw
   - raw: 30 g honey
     quantity: 30
     unit: g
@@ -41,57 +39,61 @@ ingredients:
     grams: 30
     fdcId: 169640
     matchConfidence: high
+    cooking: raw
   - raw: 1 ripe mango
     quantity: 1
     item: ripe mango
     grams: 300
     fdcId: 169910
     matchConfidence: high
+    cooking: raw
   - raw: a few fresh mint leaves
     item: a few fresh mint leaves
     grams: 2
     fdcId: 173475
     matchConfidence: high
+    cooking: raw
   - raw: 10 g hazelnuts
     quantity: 10
     unit: g
     item: hazelnuts
     grams: 10
-    fdcId: 171427
+    fdcId: 170581
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 399
-    energyKj: 1671
-    protein_g: 25.2
-    fat_g: 12.5
-    satFat_g: 1.4
-    carbs_g: 50.6
-    fiber_g: 9.4
-    sugar_g: 32.9
+    energyKcal: 387
+    energyKj: 1618
+    protein_g: 26
+    fat_g: 10.5
+    satFat_g: 1.2
+    carbs_g: 51.5
+    fiber_g: 9.9
+    sugar_g: 40
     sodium_mg: 78
-    availableCarb_g: 41.3
+    availableCarb_g: 41.6
   glycemic:
-    gi: 53
-    gl: 22
+    gi: 40
+    gl: 17
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 78
   nutriScore:
     grade: B
-    points: 1
+    points: 2
     category: general
     version: "2023"
-    coverage: 0.43
+    coverage: 1
   inflammation:
     score: -0.6
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 24.2
+    score: 7
+    band: high
+    nrf: 42.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

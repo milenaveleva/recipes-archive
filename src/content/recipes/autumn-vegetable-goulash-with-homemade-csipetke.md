@@ -1,6 +1,6 @@
 ---
 title: Autumn Vegetable Goulash with Homemade Csipetke
-description: A hearty vegetable goulash with root vegetables, paprika and pinched homemade egg noodles (csipetke).
+description: A hearty vegetable goulash with root vegetables, paprika and pinched homemade whole-wheat egg noodles (csipetke).
 image: ./images/autumn-vegetable-goulash-with-homemade-csipetke.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14343_1791295694906_hungarian-autumn-vegetable-goulash-with-pinched-noodles_29cea4dc.jpg
 imageAlt: Autumn Vegetable Goulash with Homemade Csipetke
@@ -14,11 +14,6 @@ cookTime: PT25M
 totalTime: PT45M
 cuisine: Hungarian
 course: Soup
-tags:
-  - vegetarian
-  - soup
-  - hearty
-  - root-vegetables
 lists:
   - Kifli favourites
 ingredients:
@@ -30,6 +25,7 @@ ingredients:
     grams: 300
     fdcId: 170393
     matchConfidence: high
+    cooking: boiled
   - raw: 200 g parsley root
     group: Vegetable goulash base
     quantity: 200
@@ -38,6 +34,7 @@ ingredients:
     grams: 200
     fdcId: 170417
     matchConfidence: high
+    cooking: boiled
   - raw: 150 g celery root
     group: Vegetable goulash base
     quantity: 150
@@ -46,6 +43,7 @@ ingredients:
     grams: 150
     fdcId: 170400
     matchConfidence: high
+    cooking: boiled
   - raw: 400 g potatoes
     group: Vegetable goulash base
     quantity: 400
@@ -54,6 +52,7 @@ ingredients:
     grams: 400
     fdcId: 170026
     matchConfidence: high
+    cooking: boiled
   - raw: 2 onions
     group: Vegetable goulash base
     quantity: 2
@@ -61,6 +60,7 @@ ingredients:
     grams: 220
     fdcId: 170000
     matchConfidence: high
+    cooking: boiled
   - raw: 3 cloves garlic
     group: Vegetable goulash base
     quantity: 3
@@ -69,6 +69,7 @@ ingredients:
     grams: 12
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 3 tbsp sunflower oil
     group: Spices and pantry
     quantity: 3
@@ -78,6 +79,7 @@ ingredients:
     milliliters: 44.3604
     fdcId: 171025
     matchConfidence: high
+    cooking: boiled
   - raw: 2 tbsp sweet paprika
     group: Spices and pantry
     quantity: 2
@@ -87,6 +89,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171329
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 tsp fine salt
     group: Spices and pantry
     quantity: 1
@@ -96,14 +99,16 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: medium
-  - raw: 100 g plain flour
+    cooking: boiled
+  - raw: 100 g whole-wheat flour
     group: Homemade csipetke
     quantity: 100
     unit: g
-    item: plain flour
+    item: whole-wheat flour
     grams: 100
-    fdcId: 2003586
+    fdcId: 790085
     matchConfidence: high
+    cooking: boiled
   - raw: 1 egg
     group: Homemade csipetke
     quantity: 1
@@ -111,6 +116,7 @@ ingredients:
     grams: 50
     fdcId: 748967
     matchConfidence: high
+    cooking: boiled
   - raw: 1 handful fresh parsley leaves
     group: For serving
     quantity: 1
@@ -118,39 +124,40 @@ ingredients:
     grams: 10
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 398
-    energyKj: 1666
-    protein_g: 9.7
-    fat_g: 12.9
-    satFat_g: 1.7
-    carbs_g: 64
-    fiber_g: 10.3
-    sugar_g: 10.1
-    sodium_mg: 714
-    availableCarb_g: 53.7
+    energyKcal: 399
+    energyKj: 1670
+    protein_g: 10.6
+    fat_g: 13.2
+    satFat_g: 1.8
+    carbs_g: 63.2
+    fiber_g: 12.2
+    sugar_g: 10.2
+    sodium_mg: 710
+    availableCarb_g: 50.9
   glycemic:
-    gi: 55
-    gl: 30
-    giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi: 56
+    gl: 28
+    giBand: medium
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 53
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: 0
     category: general
     version: "2023"
-    coverage: 0.9
+    coverage: 1
   inflammation:
-    score: -0.3
+    score: -0.6
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 59.8
+    score: 7
+    band: high
+    nrf: 60.2
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -160,6 +167,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

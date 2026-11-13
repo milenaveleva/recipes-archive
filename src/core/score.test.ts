@@ -42,7 +42,7 @@ describe('computeScores (orchestration)', () => {
     // protein + fibre earn points (the seen-mass rule keeps the rest unknown,
     // never fabricated) → a moderate, conservative score.
     expect(r.balance?.nrf).toBeCloseTo(36.9, 1);
-    expect(r.balance?.score).toBe(5);
+    expect(r.balance?.score).toBe(6);
     expect(r.balance?.band).toBe('moderate');
   });
 
@@ -115,5 +115,77 @@ describe('computeScores — Nutri-Score category dispatch', () => {
     expect(fat.nutriScore?.category).toBe('fat-oil-nut-seed');
     expect(fat.nutriScore?.points).toBe(0);
     expect(fat.nutriScore?.grade).toBe('B'); // ratio-based scoring + olive-oil FVL credit
+  });
+});
+
+describe('computeScores — mixed-meal GI and NOVA markers', () => {
+  // Per-100 g vectors (USDA-like): cooked white rice and grilled chicken breast.
+  const RICE = { energyKcal: 130, protein_g: 2.7, fat_g: 0.3, satFat_g: 0.1, carbs_g: 28.2, fiber_g: 0.4, sugar_g: 0.1, sodium_mg: 1 };
+  const CHICKEN = { energyKcal: 165, protein_g: 31, fat_g: 3.6, satFat_g: 1, carbs_g: 0, fiber_g: 0, sugar_g: 0, sodium_mg: 74 };
+
+  it('lowers the composite GI (and GL) for protein added by a protein-dominant food', () => {
+    const riceOnly = computeScores([{ grams: 300, nutrients: RICE, gi: 73 }], 2);
+    expect(riceOnly.glycemic?.gi).toBe(73); // rice's own protein is inside its GI — no correction
+    const withChicken = computeScores(
+      [{ grams: 300, nutrients: RICE, gi: 73 }, { grams: 300, nutrients: CHICKEN, gi: 0 }],
+      2,
+    );
+    // 93 g chicken protein / 83.4 g available carb = 1.12 g/g → factor 1 − 0.285·0.87 ≈ 0.75.
+    expect(withChicken.glycemic!.gi).toBeLessThan(riceOnly.glycemic!.gi);
+    expect(withChicken.glycemic!.gi).toBe(55);
+    expect(withChicken.glycemic!.gl).toBeLessThan(riceOnly.glycemic!.gl);
+    expect(withChicken.glycemic!.gi_source).toContain('protein-adjusted');
+  });
+
+  it('does not add the protein of a food whose measured GI already includes it (yogurt + fruit)', () => {
+    const YOGURT = { energyKcal: 73, protein_g: 9.95, fat_g: 1.9, satFat_g: 1.2, carbs_g: 3.94, fiber_g: 0, sugar_g: 3.6, sodium_mg: 34 };
+    const BERRIES = { energyKcal: 57, protein_g: 0.7, fat_g: 0.3, satFat_g: 0, carbs_g: 14.5, fiber_g: 2.4, sugar_g: 10, sodium_mg: 1 };
+    const bowl = computeScores(
+      [{ grams: 200, nutrients: YOGURT, gi: 11, giMeasured: true }, { grams: 150, nutrients: BERRIES, gi: 40, giMeasured: true }],
+      1,
+    );
+    const noYogurtProtein = computeScores(
+      [{ grams: 200, nutrients: { ...YOGURT, protein_g: 0 }, gi: 11, giMeasured: true }, { grams: 150, nutrients: BERRIES, gi: 40, giMeasured: true }],
+      1,
+    );
+    expect(bowl.glycemic!.gi).toBe(noYogurtProtein.glycemic!.gi);
+    expect(bowl.glycemic!.gi).toBe(31); // plain carb-weighted composite (11·7.9 + 40·18.2) / 26.0
+  });
+
+  it('still adds protein from fish, eggs and tofu (outside the composite or nominal GI)', () => {
+    const rice = computeScores([{ grams: 300, nutrients: RICE, gi: 73 }], 2).glycemic!.gi;
+    const FISH = { energyKcal: 208, protein_g: 20.4, fat_g: 13.4, satFat_g: 3, carbs_g: 0, fiber_g: 0, sugar_g: 0, sodium_mg: 59 };
+    const EGG = { energyKcal: 143, protein_g: 12.6, fat_g: 9.5, satFat_g: 3.1, carbs_g: 0.72, fiber_g: 0, sugar_g: 0.37, sodium_mg: 142 };
+    const TOFU = { energyKcal: 144, protein_g: 17.3, fat_g: 8.7, satFat_g: 1.3, carbs_g: 2.78, fiber_g: 2.3, sugar_g: 0.6, sodium_mg: 14 };
+    for (const [name, n, gi] of [['fish', FISH, 0], ['egg', EGG, 15], ['tofu', TOFU, 15]] as const) {
+      const r = computeScores([{ grams: 300, nutrients: RICE, gi: 73 }, { grams: 300, nutrients: n, gi, giMeasured: false }], 2);
+      expect(r.glycemic!.gi, name).toBeLessThan(rice);
+    }
+  });
+
+  it('ignores the protein of a food with no carbohydrate data', () => {
+    const rice = computeScores([{ grams: 300, nutrients: RICE, gi: 73 }], 2).glycemic!.gi;
+    const { carbs_g: _c, ...noCarb } = CHICKEN;
+    const r = computeScores([{ grams: 300, nutrients: RICE, gi: 73 }, { grams: 300, nutrients: noCarb, gi: null }], 2);
+    expect(r.glycemic!.gi).toBe(rice);
+  });
+
+  it('reports the measured-GI share from the per-food giMeasured flag', () => {
+    const r = computeScores(
+      [
+        { grams: 300, nutrients: RICE, gi: 73, giMeasured: true },
+        { grams: 100, nutrients: RICE, gi: 60, giMeasured: false },
+      ],
+      2,
+    );
+    expect(r.glycemic?.measuredGiPct).toBe(75);
+  });
+
+  it('promotes a food to a higher NOVA group from processing markers in its original line', () => {
+    const plain = computeScores([{ grams: 200, nutrients: RICE, nova: 1, raw: '200 g rice' }], 1);
+    expect(plain.processing?.ultraProcessedPct).toBe(0);
+    const marked = computeScores([{ grams: 200, nutrients: RICE, nova: 1, raw: '200 g instant noodles' }], 1);
+    expect(marked.processing?.ultraProcessedPct).toBe(100);
+    expect(marked.processing?.band).toBe('highly-processed');
   });
 });

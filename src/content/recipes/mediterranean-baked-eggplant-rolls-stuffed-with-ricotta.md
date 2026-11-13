@@ -14,10 +14,6 @@ cookTime: PT40M
 totalTime: PT1H
 cuisine: Mediterranean
 course: Main Course
-tags:
-  - vegetarian
-  - eggplant
-  - baked
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +23,7 @@ ingredients:
     grams: 600
     fdcId: 169228
     matchConfidence: high
+    cooking: baked
   - raw: 250 g ricotta cheese
     quantity: 250
     unit: g
@@ -34,6 +31,7 @@ ingredients:
     grams: 250
     fdcId: 170851
     matchConfidence: high
+    cooking: baked
   - raw: 400 g canned chopped tomatoes
     quantity: 400
     unit: g
@@ -41,6 +39,7 @@ ingredients:
     grams: 400
     fdcId: 170501
     matchConfidence: high
+    cooking: baked
   - raw: 100 g mozzarella cheese
     quantity: 100
     unit: g
@@ -48,6 +47,7 @@ ingredients:
     grams: 100
     fdcId: 170845
     matchConfidence: high
+    cooking: baked
   - raw: 40 g Parmesan cheese
     quantity: 40
     unit: g
@@ -55,6 +55,7 @@ ingredients:
     grams: 40
     fdcId: 173431
     matchConfidence: high
+    cooking: baked
   - raw: 2 cloves fresh garlic
     quantity: 2
     unit: cloves
@@ -62,6 +63,7 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 30 ml olive oil
     quantity: 30
     unit: ml
@@ -70,6 +72,7 @@ ingredients:
     milliliters: 30
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 1 tsp dried oregano
     quantity: 1
     unit: tsp
@@ -78,6 +81,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 171328
     matchConfidence: medium
+    cooking: baked
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -86,6 +90,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -94,6 +99,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
   - raw: 1 handful fresh basil
     group: For serving
     quantity: 1
@@ -101,6 +107,7 @@ ingredients:
     grams: 10
     fdcId: 172232
     matchConfidence: high
+    cooking: baked
 nutrition:
   perServing:
     energyKcal: 344
@@ -114,12 +121,12 @@ nutrition:
     sodium_mg: 589
     availableCarb_g: 15.8
   glycemic:
-    gi: 15
+    gi: 14
     gl: 2
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: B
     points: 1
@@ -127,13 +134,13 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.9
+    score: 0.8
     band: pro-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 26.9
+    score: 5
+    band: moderate
+    nrf: 26.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 29.6
@@ -143,6 +150,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

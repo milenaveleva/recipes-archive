@@ -1,6 +1,6 @@
 ---
 title: French Roasted Leek Soup with Crispy Croutons
-description: A silky French cream soup of caramelised roasted leeks, roasted garlic and white wine, topped with crisp baguette croutons.
+description: A silky French cream soup of caramelised roasted leeks, roasted garlic and white wine, topped with crisp whole-wheat baguette croutons.
 image: ./images/french-roasted-leek-soup-with-crispy-croutons.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14687_1792498122646_french-roasted-leek-veloute-soup_f23ffe55.jpg
 imageAlt: French Roasted Leek Soup with Crispy Croutons
@@ -14,10 +14,6 @@ cookTime: PT30M
 totalTime: PT45M
 cuisine: French
 course: Soup
-tags:
-  - vegetarian
-  - soup
-  - leek
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +25,7 @@ ingredients:
     grams: 600
     fdcId: 169246
     matchConfidence: high
+    cooking: baked
   - raw: 4 cloves garlic
     group: For the roasted leek base
     quantity: 4
@@ -37,6 +34,7 @@ ingredients:
     grams: 16
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 300 g potatoes
     group: For the roasted leek base
     quantity: 300
@@ -45,6 +43,7 @@ ingredients:
     grams: 300
     fdcId: 170026
     matchConfidence: high
+    cooking: baked
   - raw: 45 ml extra virgin olive oil
     group: For the roasted leek base
     quantity: 45
@@ -54,6 +53,7 @@ ingredients:
     milliliters: 45
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 100 ml dry white wine
     group: For the roasted leek base
     quantity: 100
@@ -63,6 +63,7 @@ ingredients:
     milliliters: 100
     fdcId: 174837
     matchConfidence: medium
+    cooking: boiled
   - raw: 800 ml vegetable broth
     group: For the roasted leek base
     quantity: 800
@@ -72,6 +73,7 @@ ingredients:
     milliliters: 800
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 150 ml whipping cream (30%)
     group: For the roasted leek base
     quantity: 150
@@ -82,6 +84,7 @@ ingredients:
     milliliters: 150
     fdcId: 2346386
     matchConfidence: high
+    cooking: boiled
   - raw: 40 g butter
     group: For cooking and seasoning
     quantity: 40
@@ -90,6 +93,7 @@ ingredients:
     grams: 40
     fdcId: 173430
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tsp thyme
     group: For cooking and seasoning
     quantity: 1
@@ -99,6 +103,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173470
     matchConfidence: high
+    cooking: baked
   - raw: 1 tsp fine salt
     group: For cooking and seasoning
     quantity: 1
@@ -108,6 +113,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: medium
+    cooking: baked
   - raw: 1 pinch ground black pepper
     group: For cooking and seasoning
     quantity: 1
@@ -117,55 +123,58 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
-  - raw: 1 baguette
+    cooking: baked
+  - raw: 1 whole-wheat baguette
     group: For the croutons and serving
     quantity: 1
-    item: baguette
+    item: whole-wheat baguette
     grams: 250
-    fdcId: 172675
+    fdcId: 174091
     matchConfidence: high
+    cooking: fried
 nutrition:
   perServing:
-    energyKcal: 643
-    energyKj: 2690
-    protein_g: 12.1
-    fat_g: 33.8
-    satFat_g: 14.5
-    carbs_g: 72.1
-    fiber_g: 5.8
-    sugar_g: 10.7
-    sodium_mg: 1566
-    availableCarb_g: 66.3
+    energyKcal: 622
+    energyKj: 2604
+    protein_g: 10.6
+    fat_g: 33
+    satFat_g: 14.2
+    carbs_g: 70.3
+    fiber_g: 7
+    sugar_g: 8.9
+    sodium_mg: 1425
+    availableCarb_g: 63.3
   glycemic:
-    gi: 61
-    gl: 40
+    gi: 62
+    gl: 39
     giBand: medium
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 18
   nutriScore:
     grade: C
     points: 6
     category: general
     version: "2023"
-    coverage: 0.93
+    coverage: 1
   inflammation:
-    score: 0.6
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 8.2
+    score: 3
+    band: low
+    nrf: 11.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 68.9
+    minimallyProcessedPct: 71.2
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

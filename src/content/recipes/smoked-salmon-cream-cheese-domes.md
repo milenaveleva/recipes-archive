@@ -13,10 +13,6 @@ prepTime: PT45M
 totalTime: PT45M
 cuisine: International
 course: Appetizer
-tags:
-  - fish
-  - starter
-  - no-cook
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +23,7 @@ ingredients:
     grams: 350
     fdcId: 173687
     matchConfidence: medium
+    cooking: raw
   - raw: 200 g cream cheese
     quantity: 200
     unit: g
@@ -34,6 +31,7 @@ ingredients:
     grams: 200
     fdcId: 173418
     matchConfidence: high
+    cooking: raw
   - raw: 100 g ricotta
     quantity: 100
     unit: g
@@ -41,6 +39,7 @@ ingredients:
     grams: 100
     fdcId: 170851
     matchConfidence: medium
+    cooking: raw
   - raw: 1 tsp lemon juice and grated zest of ½ lemon
     quantity: 1
     unit: tsp
@@ -49,6 +48,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp chopped fresh dill (plus extra for garnish)
     quantity: 1
     unit: tbsp
@@ -58,17 +58,20 @@ ingredients:
     milliliters: 14.7868
     fdcId: 172233
     matchConfidence: medium
+    cooking: raw
   - raw: cling film
     group: Equipment
     item: cling film
     matchConfidence: none
     excludeFromNutrition: true
+    cooking: raw
   - raw: dry white wine (recommended pairing)
     group: Drink suggestion
     item: dry white wine
     note: recommended pairing
     matchConfidence: none
     excludeFromNutrition: true
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 630
@@ -82,12 +85,12 @@ nutrition:
     sodium_mg: 1545
     availableCarb_g: 9.3
   glycemic:
-    gi: 15
+    gi: 10
     gl: 1
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: D
     points: 14
@@ -95,7 +98,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 1.3
+    score: 1.2
     band: pro-inflammatory
     method: fii v3
   balance:

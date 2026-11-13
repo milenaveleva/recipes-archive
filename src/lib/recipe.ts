@@ -1,5 +1,6 @@
 import type { CollectionEntry } from 'astro:content';
-import { canonicalUnit } from '../core/units';
+import { canonicalUnit, classifyUnit } from '../core/units';
+import { INFLAMMATION_BAND_EDGES, inflammationBandOf, type InflammationBand } from '../core/inflammation';
 
 export type Recipe = CollectionEntry<'recipes'>;
 export type Tone = 'good' | 'mid' | 'bad' | 'unknown';
@@ -76,12 +77,15 @@ export function buildRecipeMeta(data: RecipeMetaSource): RecipeMetaItem[] {
 }
 
 /** Fields formatIngredientAmount reads — common to a collection ingredient and
- * an authoring DraftIngredient. `item` is the food name, used to spot liquids. */
+ * an authoring DraftIngredient. `item` is the food name, used to spot liquids and
+ * seasonings; `note`/`raw` are also scanned for "juice". */
 export interface IngredientAmountSource {
   quantity?: number | null;
   quantity2?: number | null;
   unit?: string | null;
   item?: string | null;
+  note?: string | null;
+  raw?: string | null;
   grams?: number | null;
   milliliters?: number | null;
 }
@@ -115,27 +119,101 @@ function isLiquid(name?: string | null): boolean {
   return LIQUID_HEADS.has(head) || LIQUID_HEADS.has(singular);
 }
 
+/** A juice anywhere in the item, note or original line ("lemon juice", "juice of ½ lime"). */
+function isJuice(ing: IngredientAmountSource): boolean {
+  return [ing.item, ing.note, ing.raw].some((t) => !!t && /\bjuices?\b/i.test(t));
+}
+
+/** Whether the line writes an amount: a parsed quantity, or a number/fraction in its text
+ *  ("juice of ½ lemon" parses no quantity but names one). */
+function hasWrittenAmount(ing: IngredientAmountSource): boolean {
+  if (ing.quantity != null) return true;
+  return [ing.item, ing.note, ing.raw].some((t) => !!t && /[\d¼½¾⅐⅑⅒⅓⅔⅕⅖⅗⅘⅙⅚⅛⅜⅝⅞]/.test(t));
+}
+
+/**
+ * Seasonings — salt, pepper, ground/dried spices, dried herbs, leaveners, vanilla — are
+ * measured by spoon or pinch, never shown by weight. Fresh produce that shares a word
+ * (bell pepper, fresh ginger, fresh thyme, garlic cloves) is deliberately not matched.
+ */
+const SEASONING_PATTERNS: RegExp[] = [
+  /\bsalt\b/,
+  /^(?:freshly\s+)?(?:(?:ground|cracked|black|white|pink|lemon|cayenne)\s+)*pepper(?:corns?)?$/,
+  /\b(?:black|white|ground|cracked|cayenne|lemon)\s+pepper\b/,
+  /\bpeppercorns?\b/,
+  /\b(?:red\s+)?pepper\s+flakes\b/,
+  /\b(?:cumin|paprika|cinnamon|turmeric|nutmeg|oregano|cardamom|allspice|caraway|sumac|za'?atar|saffron|cayenne|garam masala|curry powder|garlic powder|onion powder|five[- ]spice|mixed spice|baking powder|baking soda|bicarbonate of soda|star anise|bay lea(?:f|ves))\b/,
+  /\bchil(?:l)?i\s+(?:flakes|powder)\b/,
+  /\b(?:coriander|fennel|mustard|caraway|celery|nigella|anise|cumin)\s+seeds?\b/,
+  /\bground\s+(?:coriander|ginger|cloves?|cinnamon|nutmeg|cumin|allspice|cardamom|turmeric)\b/,
+  /\b(?:coriander|ginger|cloves?)\b.*\bground\b/,
+  /\bdried\s+(?:thyme|rosemary|oregano|basil|parsley|dill|mint|sage|tarragon|marjoram|herbs?)\b/,
+  /\b(?:thyme|rosemary|herbs?)\b.*\bdried\b/,
+  /\bvanilla(?:\s+(?:extract|essence|pods?|beans?|paste|sugar|powder))?$/,
+  /\bvanilla\s+(?:extract|essence|pods?|beans?|paste|powder)\b/,
+  /\b(?:spices?|seasoning)\b/,
+];
+
+/** Whether an ingredient name is a seasoning (shown by spoon/pinch, never grams). */
+export function isSeasoning(name?: string | null): boolean {
+  if (!name) return false;
+  const n = name.toLowerCase().trim();
+  return SEASONING_PATTERNS.some((re) => re.test(n));
+}
+
+/** Vulgar fractions a cook reads at a glance, keyed by their decimal value. */
+const FRACTIONS: [number, string][] = [
+  [1 / 8, '⅛'], [1 / 4, '¼'], [1 / 3, '⅓'], [1 / 2, '½'], [2 / 3, '⅔'], [3 / 4, '¾'],
+];
+
+/** A quantity as a cook writes it: "½", "1¼", "2⅓"; other values as a rounded decimal. */
+export function formatQuantity(q: number): string {
+  const whole = Math.floor(q + 1e-9);
+  const rest = q - whole;
+  if (rest < 0.02) return String(whole);
+  const frac = FRACTIONS.find(([v]) => Math.abs(rest - v) < 0.02);
+  if (frac) return `${whole || ''}${frac[1]}`;
+  return String(round(q, 2));
+}
+
 /**
  * The amount shown beside an ingredient, the way a cook reads it: teaspoons and
- * tablespoons keep their spoon measure ("1 tbsp"); a liquid (any drink, broth,
- * juice, oil, etc., recognised by its name) or anything metered in a metric
- * volume shows ml/L; everything else shows its metric weight in grams/kg. A
- * non-liquid measured by an imperial volume like "cups" with no weight falls
- * back to its written amount ("1½ cups") — cups measure solids too, so a bare
- * volume conversion would be meaningless. Grams remain the basis for ALL
- * nutrition math regardless of what's shown. Returns null when no amount is
- * known, so the caller can fall back to the raw line.
+ * tablespoons keep their spoon measure ("1 tbsp"); a seasoning shows only a spoon,
+ * pinch/dash or count — never grams (else nothing); a juice shows ml (from its
+ * volume, or its weight at ≈1 g/ml); an ingredient with no written quantity ("salt,
+ * to taste", "parsley, for garnish") shows nothing, since its weight is only a hidden
+ * estimate for the nutrition math; a liquid (recognised by its name) or anything
+ * metered in a metric volume shows ml/L; everything else shows its metric weight in
+ * grams/kg. A non-liquid measured by an imperial volume like "cups" with no weight
+ * falls back to its written amount ("1½ cups") — cups measure solids too, so a bare
+ * volume conversion would be meaningless. Grams remain the basis for ALL nutrition
+ * math regardless of what's shown. Returns null when no amount should be shown.
  */
 export function formatIngredientAmount(ing: IngredientAmountSource): string | null {
   const qtyText = () =>
     ing.quantity2 != null
-      ? `${round(ing.quantity!, 2)}–${round(ing.quantity2, 2)}`
-      : `${round(ing.quantity!, 2)}`;
+      ? `${formatQuantity(ing.quantity!)}–${formatQuantity(ing.quantity2)}`
+      : formatQuantity(ing.quantity!);
 
   const canon = canonicalUnit(ing.unit);
   if ((canon === 'teaspoon' || canon === 'tablespoon') && ing.quantity != null) {
     return `${qtyText()} ${canon === 'tablespoon' ? 'tbsp' : 'tsp'}`;
   }
+  if (isSeasoning(ing.item)) {
+    if (ing.quantity == null) return null;
+    if (canon === 'pinch' || canon === 'dash') return `${qtyText()} ${ing.unit}`;
+    // A count ("2 bay leaves", "1 cinnamon stick") is fine; any mass/volume is not.
+    if (!ing.unit) return qtyText();
+    return classifyUnit(ing.unit) == null ? `${qtyText()} ${ing.unit}` : null;
+  }
+  if (isJuice(ing)) {
+    // No written amount ("lemon juice, to taste") shows none, whatever weight was estimated.
+    if (!hasWrittenAmount(ing)) return null;
+    // Citrus/fruit juice is ≈1.0 g/ml, so a weight-only juice reads as the same ml.
+    const ml = ing.milliliters != null && ing.milliliters > 0 ? ing.milliliters : ing.grams;
+    if (ml != null && ml > 0) return formatMilliliters(ml);
+  }
+  if (ing.quantity == null) return null;
   // Liquids (recognised by name) and anything written in a metric volume show
   // ml/L; a cup of a dry good is NOT a liquid and falls through to weight.
   const metricVolume =
@@ -147,8 +225,13 @@ export function formatIngredientAmount(ing: IngredientAmountSource): string | nu
     return formatMilliliters(ing.milliliters);
   }
   if (ing.grams != null && ing.grams > 0) return formatGrams(ing.grams);
-  if (ing.quantity != null) return ing.unit ? `${qtyText()} ${ing.unit}` : qtyText();
-  return null;
+  return ing.unit ? `${qtyText()} ${ing.unit}` : qtyText();
+}
+
+/** Whether to show the original line beside an ingredient that has no displayed amount:
+ *  never for a seasoning, whose original line may carry a gram weight. */
+export function showRawFallback(ing: IngredientAmountSource, amount: string | null): boolean {
+  return amount == null && !!ing.raw && !isSeasoning(ing.item);
 }
 
 /* ---- number formatting ---- */
@@ -185,7 +268,7 @@ function formatMilliliters(ml: number): string {
 }
 
 /* ---- score normalization: every metric → a 1–10 rating ----
- * The six scores live on different native scales (GI 0–100, GL 0–20+, Nutri A–E,
+ * The six scores live on different native scales (GI 0–100, GL 0–60+, Nutri A–E,
  * NRF 1–10, inflammation −2…+2, processing %). To read as one coherent wall they
  * are each normalized to a 1–10 rating where 1 = healthiest and 10 = least healthy
  * — lower is always better. Each metric's own good/medium/high bands land on
@@ -213,18 +296,47 @@ export function giRating(gi?: number | null): number | null {
   return clampRating(7 + ((gi - 69) / 31) * 3);
 }
 
-/** Glycemic load → 1–10 (low ≤10 → 1–3, medium 11–19 → 4–6, high ≥20 → 7–10). */
+/** Per-serving glycemic load → 1–10 on the MEAL bands (low <20 → 1–3, medium 20–39 →
+ *  4–6, high ≥40 → 7–10, reaching 10 at GL 60) — the same cut-offs as `glBandOf` (core/gi.ts). */
 export function glRating(gl?: number | null): number | null {
   if (gl == null) return null;
-  if (gl <= 10) return clampRating(1 + (gl / 10) * 2);
-  if (gl <= 19) return clampRating(4 + ((gl - 10) / 9) * 2);
-  return clampRating(7 + ((gl - 19) / 11) * 3);
+  if (gl < 20) return clampRating(1 + (gl / 20) * 2);
+  if (gl < 40) return clampRating(4 + ((gl - 20) / 20) * 2);
+  return clampRating(7 + ((gl - 40) / 20) * 3);
 }
 
-/** Inflammation index (−2 anti … +2 pro) → 1–10, most anti-inflammatory = best. */
-export function inflammationRating(score?: number | null): number | null {
+const INFLAMMATION_BANDS: readonly InflammationBand[] = [
+  'anti-inflammatory',
+  'mildly-anti-inflammatory',
+  'neutral',
+  'mildly-pro-inflammatory',
+  'pro-inflammatory',
+];
+
+/**
+ * Inflammation index (−2 anti … +2 pro) → 1–10, anchored to the FII band edges (the
+ * quintiles of single foods, inflammation-reference.json) rather than a linear map, so the
+ * colour always agrees with the band word: anti → 1–2, mildly anti → 2–3 (both good),
+ * neutral → 4–6, mildly pro → 7–8, pro → 8–10. The stored band decides the segment; the
+ * score positions the rating within it. Without a valid band the score's own band is used.
+ */
+export function inflammationRating(score?: number | null, band?: string | null): number | null {
   if (score == null) return null;
-  return clampRating(1 + ((score + 2) / 4) * 9);
+  const b = INFLAMMATION_BANDS.includes(band as InflammationBand)
+    ? (band as InflammationBand)
+    : inflammationBandOf(score);
+  const e = INFLAMMATION_BAND_EDGES;
+  // [score low, score high, rating low, rating high] for each band.
+  const seg: Record<InflammationBand, [number, number, number, number]> = {
+    'anti-inflammatory': [-2, e.antiMax, 1, 2],
+    'mildly-anti-inflammatory': [e.antiMax, e.mildlyAntiMax, 2, 3],
+    neutral: [e.mildlyAntiMax, e.neutralMax, 4, 6],
+    'mildly-pro-inflammatory': [e.neutralMax, e.mildlyProMax, 7, 8],
+    'pro-inflammatory': [e.mildlyProMax, 2, 8, 10],
+  };
+  const [lo, hi, rLo, rHi] = seg[b];
+  const t = hi > lo ? Math.min(1, Math.max(0, (score - lo) / (hi - lo))) : 0;
+  return clampRating(rLo + t * (rHi - rLo));
 }
 
 /** Nutrient balance (NRF 1–10, higher better) → 1–10 concern, inverted so denser = better. */
@@ -255,15 +367,13 @@ export function inflammationLabel(band?: string | null): string {
 export const UPF_ALARM_PCT = 30;
 
 /**
- * Processing → 1–10 rating (1 = least processed, 10 = most). When the ultra-processed
- * (NOVA 4) share is known it governs the alarm: it is the health-relevant NOVA signal
- * (Lane 2024), not merely a low share of whole foods, so a dish lands in the 7–10 poor
- * band only when a real share of its energy is ultra-processed — regardless of the NOVA
- * 1–2 band — while a low-UPF dish that is only fermented/processed (NOVA 3: miso, cheese,
- * cured fish) sits in the 4–6 caution band, not the alarm. When the share is unknown (a
- * partially-populated nutrition object), fall back to the band alone. Within each band the
- * whole-food share positions the exact rating. The band choice is kept identical to the
- * old tone split, so `ratingTone(processingRating(…))` always agrees with the band word.
+ * Processing → 1–10 rating (1 = least processed, 10 = most). The 7–10 poor band covers a
+ * "highly-processed" dish (under 40 % of its energy from NOVA 1–2 foods) AND any dish whose
+ * ultra-processed (NOVA 4) share reaches `UPF_ALARM_PCT` — the health-relevant NOVA signal
+ * (Lane 2024) — whatever its whole-food band. Within the poor band the larger of the two
+ * excesses positions the rating. Otherwise a minimally-processed dish reads good (1–3) and
+ * everything else — moderately processed — reads caution (4–6), positioned by its whole-food
+ * share. So a "highly-processed" band word is always shown red.
  */
 export function processingRating(
   minimallyProcessedPct?: number | null,
@@ -271,12 +381,15 @@ export function processingRating(
   band?: string | null,
 ): number | null {
   if (minimallyProcessedPct == null || !band) return null;
-  const upfKnown = ultraProcessedPct != null;
-  // Poor (7–10): a real ultra-processed share, or — when UPF is unknown — a highly-processed dish.
-  if (upfKnown ? ultraProcessedPct! >= UPF_ALARM_PCT : band === 'highly-processed') {
-    const over = upfKnown ? Math.min(ultraProcessedPct!, 100) - UPF_ALARM_PCT : 100 - minimallyProcessedPct;
-    const span = upfKnown ? 100 - UPF_ALARM_PCT : 100;
-    return clampRating(7 + (over / span) * 3);
+  const upfAlarm = ultraProcessedPct != null && ultraProcessedPct >= UPF_ALARM_PCT;
+  // Poor (7–10): a highly-processed dish, or a real ultra-processed share.
+  if (band === 'highly-processed' || upfAlarm) {
+    const upfOver = upfAlarm ? (Math.min(ultraProcessedPct!, 100) - UPF_ALARM_PCT) / (100 - UPF_ALARM_PCT) : 0;
+    // Clamped to [0, 1] so a 'highly-processed' band always rates ≥ 7, even when its stored
+    // whole-food share sits at or above the 40 % band edge.
+    const wholeShort =
+      band === 'highly-processed' ? Math.min(1, Math.max(0, (40 - minimallyProcessedPct) / 40)) : 0;
+    return clampRating(7 + Math.max(upfOver, wholeShort) * 3);
   }
   // Good (1–3): minimally processed with a low/unknown ultra-processed share.
   if (band === 'minimally-processed') return clampRating(1 + ((100 - minimallyProcessedPct) / 30) * 2);
@@ -335,6 +448,8 @@ export interface ScoreDial {
   label: string;
   /** One-line explanation of what the score measures, shown as a hover/focus tooltip. */
   blurb: string;
+  /** Short native-value line under the label ("≈ 55, estimated"); absent when the score is. */
+  caption?: string;
   /** The 1–10 rating as a string ("1" … "10"), or "—" when the score is absent. */
   value: string;
   /** Whether this score has a real value; when false, `value` is the "—" placeholder.
@@ -348,13 +463,15 @@ export interface ScoreDial {
 /** Minimal structural shape shared by the collection entry and the authoring draft. */
 type NutritionLike =
   | {
+      perServing?: { availableCarb_g?: number | null } | null;
       glycemic?: {
         gi?: number | null;
         gl?: number | null;
         giBand?: string | null;
         glBand?: string | null;
+        measuredGiPct?: number | null;
       } | null;
-      nutriScore?: { grade?: string | null } | null;
+      nutriScore?: { grade?: string | null; coverage?: number | null } | null;
       inflammation?: { score?: number | null; band?: string | null } | null;
       balance?: { score?: number | null; band?: string | null } | null;
       processing?: {
@@ -366,12 +483,26 @@ type NutritionLike =
   | null
   | undefined;
 
+/** Inflammation band in caption prose ('mildly-anti-inflammatory' → 'Mildly anti-inflammatory'). */
+function inflammationCaptionBand(band: string): string {
+  const words = band.replace(/^mildly-/, 'mildly ');
+  return words[0].toUpperCase() + words.slice(1);
+}
+
+/** Nutri-Score data coverage below which the dial carries a "low data" note. */
+export const NUTRI_LOW_DATA_COVERAGE = 0.9;
+
+/** GI display value: an estimate, so rounded to the nearest 5 (no false precision). */
+export function giEstimateLabel(gi: number): string {
+  return `≈ ${Math.round(gi / 5) * 5}, estimated`;
+}
+
 /**
  * Build the six score dials from a nutrition block — the single source of the
- * rating/tone/fill logic shared by the Astro detail page, the React edit preview,
- * and the authoring panel (so the three renderers never drift). Every dial is the
- * same shape: `value` is the metric's 1–10 rating, `fill` is `rating / 10`, and
- * `tone` is `ratingTone(rating)`.
+ * rating/tone/fill/caption logic shared by the Astro detail page, the React edit
+ * preview, and the authoring panel (so the three renderers never drift). Every dial is
+ * the same shape: `value` is the metric's 1–10 rating, `fill` is `rating / 10`, `tone`
+ * is `ratingTone(rating)`, and `caption` is a short native-value line.
  */
 export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
   const gly = nutrition?.glycemic ?? undefined;
@@ -380,63 +511,82 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
   const bal = nutrition?.balance ?? undefined;
   const proc = nutrition?.processing ?? undefined;
   const grade = nutri?.grade ?? null;
+  const carbs = nutrition?.perServing?.availableCarb_g ?? null;
 
   const gi = giRating(gly?.gi);
   const gl = glRating(gly?.gl);
   const nu = nutriRating(grade);
   const ba = balanceRating(bal?.score);
-  const inf = inflammationRating(inflam?.score);
+  const inf = inflammationRating(inflam?.score, inflam?.band);
   const pr = processingRating(proc?.minimallyProcessedPct, proc?.ultraProcessedPct, proc?.band);
 
-  const dial = (rating: number | null) => ({
+  const dial = (rating: number | null, caption?: string) => ({
     value: rating != null ? String(rating) : '—',
     present: rating != null,
     tone: ratingTone(rating),
     fill: rating != null ? rating / 10 : 0,
+    ...(rating != null && caption ? { caption } : {}),
   });
+
+  const measured = gly?.measuredGiPct;
+  const lowData = nutri?.coverage != null && nutri.coverage < NUTRI_LOW_DATA_COVERAGE;
+  const inflamBand = inflam?.band ?? (inflam?.score != null ? inflammationBandOf(inflam.score) : null);
 
   return [
     {
       key: 'gi',
       label: 'Glycemic Index',
       blurb:
-        'How quickly this dish’s carbohydrate raises blood glucose (native 0–100, glucose = 100), carb-weighted from published values. Shown as 1 (best) to 10 — lower is better. An estimate that tends to read high for mixed meals.',
-      ...dial(gi),
+        'Estimated glycemic index of the dish (native 0–100, glucose = 100): its carbohydrates’ published values, carb-weighted, then lowered for the protein eaten alongside, which blunts the glucose rise. Shown as 1 (best) to 10 — lower is better.' +
+        (measured != null
+          ? ` ${measured}% of the carbohydrate has a measured GI; the rest is estimated from similar foods.`
+          : ' An estimate.'),
+      ...dial(gi, gly?.gi != null ? giEstimateLabel(gly.gi) : undefined),
     },
     {
       key: 'gl',
       label: 'Glycemic Load',
       blurb:
-        'Glycemic index scaled by the available carbohydrate in one serving — the total blood-glucose impact of a portion, not just its speed (native low ≤10, high ≥20). Shown as 1 (best) to 10 — lower is better. An estimate.',
-      ...dial(gl),
+        'Glycemic load of one serving: the estimated GI × the serving’s available carbohydrate ÷ 100 — the portion’s total blood-glucose impact, not just its speed. Banded for a whole meal (low under 20, medium 20–39, high 40+), not the single-food cut-offs. Shown as 1 (best) to 10 — lower is better. An estimate.',
+      ...dial(
+        gl,
+        gly?.gl != null
+          ? carbs != null
+            ? `${gly.gl} per serving · ${Math.round(carbs)} g carbs`
+            : `${gly.gl} per serving`
+          : undefined,
+      ),
     },
     {
       key: 'nutri',
       label: 'Nutrition Score',
       blurb:
-        'Nutri-Score 2023 (native A best … E worst): fibre, protein and fruit/vegetables/legumes weighed against energy, sugar, saturated fat and salt. Mapped to 1 (grade A) … 10 (grade E) — lower is better. Built for packaged products, applied to the dish as an estimate.',
-      ...dial(nu),
+        'Nutri-Score 2023 (native A best … E worst): fibre, protein and fruit/vegetables/legumes weighed against energy, sugar, saturated fat and salt. Mapped to 1 (grade A) … 10 (grade E) — lower is better. Built for packaged products, applied to the dish as an estimate.' +
+        (lowData
+          ? ` Low data: only ${Math.round(nutri!.coverage! * 100)}% of the dish’s weight reports every scored nutrient, so the grade is less certain.`
+          : ''),
+      ...dial(nu, grade ? `Grade ${grade}${lowData ? ' · low data' : ''}` : undefined),
     },
     {
       key: 'balance',
       label: 'Nutrient Balance',
       blurb:
         'Nutrient density (native NRF9.3, 1–10, where more is denser): nine nutrients to encourage — protein, fibre, vitamins, minerals — minus three to limit (saturated fat, sugar, sodium), per 100 kcal. Inverted here to 1 (best) … 10 so every dial reads the same way — lower is better. An estimate.',
-      ...dial(ba),
+      ...dial(ba, bal?.band ? `${bal.band[0].toUpperCase()}${bal.band.slice(1)} nutrient density` : undefined),
     },
     {
       key: 'inflam',
       label: 'Inflammation',
       blurb:
-        'Food Inflammation Index (native −2 anti to +2 pro): inflammatory potential from fat quality, fibre, antioxidants and polyphenols, energy-weighted across the dish. Shown as 1 (most anti-inflammatory) to 10 — lower is better. An estimate, not a clinical measure.',
-      ...dial(inf),
+        'Food Inflammation Index (native −2 anti to +2 pro): inflammatory potential from fat quality, fibre, antioxidants and polyphenols, energy-weighted across the dish. The rating and colour follow its band relative to single foods — “anti-inflammatory” means more anti than a typical food. Shown as 1 (most anti-inflammatory) to 10 — lower is better. An estimate, not a clinical measure.',
+      ...dial(inf, inflamBand ? `${inflammationCaptionBand(inflamBand)} relative to foods` : undefined),
     },
     {
       key: 'processing',
       label: 'Processing',
       blurb:
-        'How processed the dish is (NOVA): its whole-food share (groups 1–2) set against the ultra-processed share (group 4), which drives the rating when it climbs. Shown as 1 (least processed) to 10 — lower is better. A rough estimate — processing is judged by food type.',
-      ...dial(pr),
+        'How processed the dish is (NOVA): its whole-food share (groups 1–2) set against the ultra-processed share (group 4). A highly-processed dish, or one with a real ultra-processed share, reads 7–10. Shown as 1 (least processed) to 10 — lower is better. A rough estimate — processing is judged by food type and the ingredient wording.',
+      ...dial(pr, proc?.band ? processingLabel(proc.band) : undefined),
     },
   ];
 }
@@ -483,7 +633,6 @@ function tally(all: Recipe[], pick: (r: Recipe) => string[]): [string, number][]
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 }
 
-export const allTags = (all: Recipe[]) => tally(all, (r) => r.data.tags);
 export const allCategories = (all: Recipe[]) =>
   tally(all, (r) => (r.data.category ? [r.data.category] : []));
 export const allLists = (all: Recipe[]) => tally(all, (r) => r.data.lists);

@@ -14,11 +14,6 @@ cookTime: PT10M
 totalTime: PT20M
 cuisine: Chinese
 course: Main Course
-tags:
-  - vegan
-  - tofu
-  - stir-fry
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -28,16 +23,18 @@ ingredients:
     unit: g
     item: smoked tofu
     grams: 300
-    fdcId: 172451
+    fdcId: 172475
     matchConfidence: medium
+    cooking: fried
   - raw: 200 g shiitake mushrooms
     group: For the wok
     quantity: 200
     unit: g
     item: shiitake mushrooms
     grams: 200
-    fdcId: 170097
+    fdcId: 169242
     matchConfidence: high
+    cooking: fried
   - raw: 2 heads pak choi
     group: For the wok
     quantity: 2
@@ -46,6 +43,7 @@ ingredients:
     grams: 300
     fdcId: 170390
     matchConfidence: medium
+    cooking: fried
   - raw: 3 spring onions
     group: For the wok
     quantity: 3
@@ -53,6 +51,7 @@ ingredients:
     grams: 45
     fdcId: 170005
     matchConfidence: high
+    cooking: fried
   - raw: 15 g fresh ginger
     group: For the wok
     quantity: 15
@@ -61,6 +60,7 @@ ingredients:
     grams: 15
     fdcId: 169231
     matchConfidence: high
+    cooking: fried
   - raw: 3 cloves garlic
     group: For the wok
     quantity: 3
@@ -69,6 +69,7 @@ ingredients:
     grams: 12
     fdcId: 169230
     matchConfidence: high
+    cooking: fried
   - raw: 15 ml sunflower oil
     group: For the wok
     quantity: 15
@@ -78,6 +79,7 @@ ingredients:
     milliliters: 15
     fdcId: 171025
     matchConfidence: high
+    cooking: fried
   - raw: 30 ml soy sauce
     group: Sauce and serving
     quantity: 30
@@ -87,6 +89,7 @@ ingredients:
     milliliters: 30
     fdcId: 81017008
     matchConfidence: medium
+    cooking: fried
   - raw: 15 ml sesame oil
     group: Sauce and serving
     quantity: 15
@@ -96,6 +99,7 @@ ingredients:
     milliliters: 15
     fdcId: 171016
     matchConfidence: high
+    cooking: fried
   - raw: 10 g cornstarch
     group: Sauce and serving
     quantity: 10
@@ -104,14 +108,17 @@ ingredients:
     grams: 10
     fdcId: 169698
     matchConfidence: high
-  - raw: 10 g cane sugar
+    cooking: fried
+  - raw: 1 tsp honey
     group: Sauce and serving
-    quantity: 10
-    unit: g
-    item: cane sugar
-    grams: 10
-    fdcId: 170674
+    quantity: 1
+    unit: tsp
+    item: honey
+    grams: 7.1
+    milliliters: 4.92892
+    fdcId: 169640
     matchConfidence: high
+    cooking: fried
   - raw: 10 g sesame seeds
     group: Sauce and serving
     quantity: 10
@@ -120,42 +127,43 @@ ingredients:
     grams: 10
     fdcId: 170150
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 702
-    energyKj: 2937
-    protein_g: 34.7
-    fat_g: 47.2
-    satFat_g: 6.5
-    carbs_g: 47.6
-    fiber_g: 10.9
-    sugar_g: 15.8
-    sodium_mg: 1376
-    availableCarb_g: 36.6
+    energyKcal: 482
+    energyKj: 2016
+    protein_g: 33.2
+    fat_g: 30.3
+    satFat_g: 4
+    carbs_g: 28.8
+    fiber_g: 9
+    sugar_g: 8.2
+    sodium_mg: 1142
+    availableCarb_g: 19.8
   glycemic:
-    gi: 48
-    gl: 18
+    gi: 28
+    gl: 6
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 15
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: -4
     category: general
     version: "2023"
-    coverage: 0.96
+    coverage: 0.67
   inflammation:
-    score: -0.7
+    score: -0.8
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 43.4
+    score: 8
+    band: high
+    nrf: 69.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 40.9
+    minimallyProcessedPct: 53.2
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
@@ -163,6 +171,7 @@ nutrition:
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -174,11 +183,11 @@ createdAt: "2026-11-13"
 ## Method
 
 1. **Preparation:** Drain the smoked tofu, blot it thoroughly with paper towels and cut it into 2 cm cubes. Clean the shiitake, remove the stems and cut into thicker slices. Wash the pak choi and cut it lengthwise into quarters or strips. Finely chop the garlic and ginger, and slice the spring onions, separating the white and green parts.
-2. In a small bowl, mix the sauce: the soy sauce, cane sugar, sesame oil, cornstarch and 2–3 tablespoons of water until the sugar and cornstarch are completely dissolved.
+2. In a small bowl, mix the sauce: the soy sauce, honey, sesame oil, cornstarch and 2–3 tablespoons of water until the honey and cornstarch are completely dissolved.
 3. **Stir-frying:** Heat a wok or deep pan over high heat with the sunflower oil. Add the smoked tofu cubes and fry for 4–5 minutes on all sides until nicely golden and crispy, then remove to a plate.
 4. To the hot pan, add the chopped garlic, ginger and the white part of the spring onions and stir-fry for half a minute until fragrant. Add the shiitake and stir-fry over lively heat for 2–3 minutes until soft and lightly coloured.
 5. Add the pak choi to the wok too and toss for 1–2 minutes so it stays crisp. Return the crispy smoked tofu to the pan, then stir the prepared sauce and pour it over the ingredients. Bring to a boil for 1 minute, stirring constantly, until the glaze thickens and coats the vegetables and tofu glossily.
-6. **Serving:** Remove from the heat and sprinkle with the green part of the spring onions and the sesame seeds. Serve immediately with fresh jasmine rice, or on its own as a light, protein-rich dinner.
+6. **Serving:** Remove from the heat and sprinkle with the green part of the spring onions and the sesame seeds. Serve immediately with fresh brown jasmine rice, or on its own as a light, protein-rich dinner.
 
 ## Tips
 

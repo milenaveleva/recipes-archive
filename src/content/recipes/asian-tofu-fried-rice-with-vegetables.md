@@ -14,11 +14,6 @@ cookTime: PT10M
 totalTime: PT20M
 cuisine: Chinese
 course: Main Course
-tags:
-  - vegetarian
-  - tofu
-  - stir-fry
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -30,15 +25,17 @@ ingredients:
     grams: 360
     fdcId: 172475
     matchConfidence: high
-  - raw: 300 g cooked rice, chilled
+    cooking: fried
+  - raw: 300 g cooked brown rice, chilled (≈ 101 g uncooked)
     group: For the tofu fried rice
     quantity: 300
     unit: g
-    item: cooked rice
-    note: chilled
-    grams: 300
-    fdcId: 169756
-    matchConfidence: high
+    item: cooked brown rice, chilled
+    note: ≈ 101 g uncooked
+    grams: 101
+    fdcId: 169703
+    matchConfidence: low
+    cooking: fried
   - raw: 2 eggs
     group: For the tofu fried rice
     quantity: 2
@@ -46,6 +43,7 @@ ingredients:
     grams: 100
     fdcId: 748967
     matchConfidence: high
+    cooking: fried
   - raw: 1 carrot
     group: For the tofu fried rice
     quantity: 1
@@ -53,6 +51,7 @@ ingredients:
     grams: 60
     fdcId: 170393
     matchConfidence: high
+    cooking: fried
   - raw: 100 g frozen green peas
     group: For the tofu fried rice
     quantity: 100
@@ -61,6 +60,7 @@ ingredients:
     grams: 100
     fdcId: 170419
     matchConfidence: high
+    cooking: fried
   - raw: 3 spring onions
     group: For the tofu fried rice
     quantity: 3
@@ -68,6 +68,7 @@ ingredients:
     grams: 45
     fdcId: 170005
     matchConfidence: high
+    cooking: fried
   - raw: 2 cloves garlic
     group: For the tofu fried rice
     quantity: 2
@@ -76,6 +77,7 @@ ingredients:
     grams: 8
     fdcId: 169230
     matchConfidence: high
+    cooking: fried
   - raw: 15 g fresh ginger
     group: For the tofu fried rice
     quantity: 15
@@ -84,6 +86,7 @@ ingredients:
     grams: 15
     fdcId: 169231
     matchConfidence: high
+    cooking: fried
   - raw: 30 ml soy sauce
     group: Sauce and frying
     quantity: 30
@@ -93,6 +96,7 @@ ingredients:
     milliliters: 30
     fdcId: 81017008
     matchConfidence: medium
+    cooking: fried
   - raw: 15 ml sesame oil
     group: Sauce and frying
     quantity: 15
@@ -102,6 +106,7 @@ ingredients:
     milliliters: 15
     fdcId: 171016
     matchConfidence: high
+    cooking: fried
   - raw: 30 ml sunflower oil
     group: Sauce and frying
     quantity: 30
@@ -111,6 +116,7 @@ ingredients:
     milliliters: 30
     fdcId: 171025
     matchConfidence: high
+    cooking: fried
   - raw: 10 g sesame seeds
     group: For serving
     quantity: 10
@@ -119,49 +125,51 @@ ingredients:
     grams: 10
     fdcId: 170150
     matchConfidence: high
+    cooking: fried
 nutrition:
   perServing:
-    energyKcal: 1174
-    energyKj: 4912
-    protein_g: 53.6
-    fat_g: 45.2
+    energyKcal: 812
+    energyKj: 3396
+    protein_g: 46.7
+    fat_g: 45.9
     satFat_g: 7
-    carbs_g: 142
-    fiber_g: 11.2
-    sugar_g: 5.5
-    sodium_mg: 1134
-    availableCarb_g: 130.8
+    carbs_g: 60.4
+    fiber_g: 11.1
+    sugar_g: 5.8
+    sodium_mg: 1129
+    availableCarb_g: 49.4
   glycemic:
-    gi: 69
-    gl: 90
-    giBand: medium
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi: 52
+    gl: 26
+    giBand: low
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 87
   nutriScore:
-    grade: A
-    points: 0
+    grade: B
+    points: 1
     category: general
     version: "2023"
-    coverage: 0.57
+    coverage: 0.64
   inflammation:
-    score: -0.4
-    band: mildly-anti-inflammatory
+    score: -1
+    band: anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 32.8
+    score: 7
+    band: high
+    nrf: 45
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 77.1
+    minimallyProcessedPct: 66.9
     ultraProcessedPct: 0
-    band: minimally-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

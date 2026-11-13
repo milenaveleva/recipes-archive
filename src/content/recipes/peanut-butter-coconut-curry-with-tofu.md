@@ -14,11 +14,6 @@ cookTime: PT15M
 totalTime: PT25M
 cuisine: Thai
 course: Main Course
-tags:
-  - vegan
-  - tofu
-  - curry
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +24,7 @@ ingredients:
     grams: 200
     fdcId: 172475
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tbsp vegetable oil
     quantity: 1
     unit: tbsp
@@ -37,6 +33,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 172370
     matchConfidence: high
+    cooking: boiled
   - raw: 1 small red onion
     quantity: 1
     unit: small
@@ -44,6 +41,7 @@ ingredients:
     grams: 70
     fdcId: 790577
     matchConfidence: high
+    cooking: boiled
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -51,6 +49,7 @@ ingredients:
     grams: 8
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tbsp fresh ginger, grated
     quantity: 1
     unit: tbsp
@@ -60,6 +59,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 169231
     matchConfidence: high
+    cooking: boiled
   - raw: 2 tbsp red curry paste
     quantity: 2
     unit: tbsp
@@ -68,6 +68,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 170106
     matchConfidence: high
+    cooking: boiled
   - raw: 2 tbsp peanut butter
     quantity: 2
     unit: tbsp
@@ -76,14 +77,16 @@ ingredients:
     milliliters: 29.5736
     fdcId: 2262072
     matchConfidence: medium
+    cooking: boiled
   - raw: 250 ml coconut milk
     quantity: 250
     unit: ml
     item: coconut milk
-    grams: 253.6
+    grams: 238.8
     milliliters: 250
-    fdcId: 170172
+    fdcId: 170173
     matchConfidence: high
+    cooking: boiled
   - raw: 100 ml vegetable broth
     quantity: 100
     unit: ml
@@ -92,6 +95,7 @@ ingredients:
     milliliters: 100
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 100 g spinach
     quantity: 100
     unit: g
@@ -99,6 +103,7 @@ ingredients:
     grams: 100
     fdcId: 168462
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tsp lime juice
     quantity: 1
     unit: tsp
@@ -107,61 +112,66 @@ ingredients:
     milliliters: 4.92892
     fdcId: 168156
     matchConfidence: high
-  - raw: 120 g basmati or jasmine rice
+    cooking: boiled
+  - raw: 120 g brown basmati or jasmine rice, uncooked
     quantity: 120
     unit: g
-    item: basmati or jasmine rice
+    item: brown basmati or jasmine rice
+    note: uncooked
     grams: 120
-    fdcId: 169758
+    fdcId: 169703
     matchConfidence: high
+    cooking: boiled
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 2
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 428
-    energyKj: 1792
-    protein_g: 15.5
-    fat_g: 27.3
-    satFat_g: 15.3
-    carbs_g: 35.3
-    fiber_g: 4.7
-    sugar_g: 2.8
-    sodium_mg: 319
-    availableCarb_g: 30.6
+    energyKcal: 398
+    energyKj: 1665
+    protein_g: 15.2
+    fat_g: 25.6
+    satFat_g: 13.3
+    carbs_g: 32.1
+    fiber_g: 3.8
+    sugar_g: 2.3
+    sodium_mg: 317
+    availableCarb_g: 28.2
   glycemic:
-    gi: 52
-    gl: 16
-    giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi: 60
+    gl: 17
+    giBand: medium
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 82
   nutriScore:
     grade: C
-    points: 6
+    points: 4
     category: general
     version: "2023"
-    coverage: 0.67
+    coverage: 0.6
   inflammation:
-    score: -0
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 17.2
+    nrf: 22.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 71.9
-    ultraProcessedPct: 11
-    band: minimally-processed
+    minimallyProcessedPct: 39.7
+    ultraProcessedPct: 0.5
+    band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -172,7 +182,7 @@ createdAt: "2026-11-13"
 
 ## Method
 
-1. Cook the rice according to the package instructions.
+1. Cook the rice according to the package instructions (brown basmati or jasmine: about 2-2.25 times its volume of water, simmer 30-40 minutes, then rest 10 minutes).
 2. Cut the tofu into bite-sized cubes. Finely chop the onion, mince the garlic and grate the ginger.
 3. Heat the oil in a pan, add the onion and sauté for about 2 minutes until soft. Add the garlic and ginger and cook for another 30 seconds.
 4. Stir in the curry paste and peanut butter and heat briefly to release their flavours.

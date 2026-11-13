@@ -13,10 +13,6 @@ prepTime: PT5M
 totalTime: PT5M
 cuisine: International
 course: Drink
-tags:
-  - vegan
-  - drink
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +23,7 @@ ingredients:
     grams: 100
     fdcId: 168153
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 61
@@ -44,8 +41,8 @@ nutrition:
     gl: 7
     giBand: medium
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
     points: 6
@@ -57,8 +54,8 @@ nutrition:
     band: neutral
     method: fii v3
   balance:
-    score: 7
-    band: high
+    score: 10
+    band: excellent
     nrf: 132.7
     version: NRF9.3
   processing:

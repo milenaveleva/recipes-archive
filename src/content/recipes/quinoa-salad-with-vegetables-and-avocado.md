@@ -14,21 +14,18 @@ cookTime: PT15M
 totalTime: PT45M
 cuisine: Mediterranean
 course: Salad
-tags:
-  - vegan
-  - salad
-  - quinoa
-  - gluten-free
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g quinoa
+  - raw: 200 g quinoa, uncooked
     quantity: 200
     unit: g
     item: quinoa
+    note: uncooked
     grams: 200
-    fdcId: 168917
+    fdcId: 168874
     matchConfidence: high
+    cooking: boiled
   - raw: 500 g tomatoes
     quantity: 500
     unit: g
@@ -36,24 +33,28 @@ ingredients:
     grams: 500
     fdcId: 321360
     matchConfidence: high
+    cooking: raw
   - raw: 1 cucumber
     quantity: 1
     item: cucumber
     grams: 300
     fdcId: 169225
     matchConfidence: high
+    cooking: raw
   - raw: 2 avocados
     quantity: 2
     item: avocados
     grams: 300
     fdcId: 171707
     matchConfidence: high
+    cooking: raw
   - raw: 1 red onion
     quantity: 1
     item: red onion
     grams: 110
     fdcId: 790577
     matchConfidence: high
+    cooking: raw
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -61,12 +62,14 @@ ingredients:
     grams: 8
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful fresh herbs
     quantity: 1
     item: handful fresh herbs
     grams: 15
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: 4 tbsp olive oil
     quantity: 4
     unit: tbsp
@@ -75,6 +78,7 @@ ingredients:
     milliliters: 59.1472
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: 2 tbsp lemon juice
     quantity: 2
     unit: tbsp
@@ -83,6 +87,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp red wine vinegar
     quantity: 1
     unit: tbsp
@@ -91,6 +96,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 172240
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -99,6 +105,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch black pepper
     quantity: 1
     unit: pinch
@@ -107,39 +114,40 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 329
-    energyKj: 1378
-    protein_g: 5.9
-    fat_g: 23
-    satFat_g: 3.5
-    carbs_g: 29.2
-    fiber_g: 9.5
-    sugar_g: 3.5
-    sodium_mg: 56
-    availableCarb_g: 19.7
+    energyKcal: 453
+    energyKj: 1897
+    protein_g: 10.7
+    fat_g: 25.1
+    satFat_g: 3.8
+    carbs_g: 50.7
+    fiber_g: 11.6
+    sugar_g: 12.2
+    sodium_mg: 55
+    availableCarb_g: 39
   glycemic:
-    gi: 38
-    gl: 7
+    gi: 48
+    gl: 19
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 85
   nutriScore:
     grade: A
-    points: -4
+    points: -1
     category: general
     version: "2023"
-    coverage: 0.6
+    coverage: 0.75
   inflammation:
-    score: -1
+    score: -1.3
     band: anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 49
+    score: 7
+    band: high
+    nrf: 48.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -149,6 +157,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

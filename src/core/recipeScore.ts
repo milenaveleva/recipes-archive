@@ -2,9 +2,13 @@
  * Assemble a stored recipe's ingredients into the compute engine's shapes and
  * produce its full precomputed nutrition block (macros + the six scores). This is
  * the single source of the ingredient→score assembly, shared by:
- *   - the /add authoring island (addLib.ts imports `nutrientsFor`/`fvlFromCategory`),
+ *   - the /add authoring island (addLib.ts imports `nutrientsFor`/`fvlFromCategory`/`dataSourcesFor`),
  *   - the rescorer (scripts/rescore-recipes.mjs, via the compiled core),
  *   - the build-time reproducibility check (recipeScore.repro.test.ts).
+ *
+ * Ingredients are stored RAW (raw food record, raw weight) with a cooking method; this
+ * assembly turns each into its cooked, as-eaten state (cooking.ts: per-nutrient retention
+ * + mass yield) before any engine sees it, so macros and every score read the cooked dish.
  *
  * Because all three go through here, a stored block can always be regenerated from
  * the same food data + engine that authored it — the guarantee the reproducibility
@@ -15,12 +19,20 @@
 import { computeMacros, type MacroComputation } from './nutrition';
 import { computeScores, type ScoredIngredient, type ScoreResult, type ScoreOptions } from './score';
 import type { FoodRecord } from './match';
+import { applyCooking, cookingApplies, isCookingMethod, type CookingMethod } from './cooking';
 import type { NutrientVector, ResolvedIngredient } from './types';
 
 /** Curated per-food scoring metadata (GI + FVL); inflammation is composition-derived. */
 export interface FoodScoring {
   gi?: number;
+  /** Provenance tier of `gi`: high|medium = measured table match; low|predicted|none = estimated. */
+  giConfidence?: string;
   fvl?: boolean;
+}
+
+/** Whether a food's GI is a measured table match (giConfidence high|medium). */
+export function isMeasuredGi(scoring: FoodScoring | undefined): boolean {
+  return scoring?.giConfidence === 'high' || scoring?.giConfidence === 'medium';
 }
 
 /** Per-100g nutrients for a matched food, with the merged polyphenol value (FII input). */
@@ -53,6 +65,48 @@ export interface StoredScoringIngredient {
   grams?: number | null;
   fdcId?: number | null;
   excludeFromNutrition?: boolean;
+  /** Original ingredient line — scanned for NOVA processing markers. */
+  raw?: string | null;
+  /** Parsed food name — the marker text when `raw` is empty. */
+  item?: string | null;
+  /** How the ingredient is cooked; missing = raw. */
+  cooking?: CookingMethod | null;
+}
+
+/** Pick the scoring fields from a stored frontmatter ingredient — shared by the
+ *  rescorer and the reproducibility test so both feed the assembly identically. */
+export function storedScoringFields(ing: Record<string, unknown>): StoredScoringIngredient {
+  return {
+    grams: ing.grams as number | null | undefined,
+    fdcId: ing.fdcId as number | null | undefined,
+    excludeFromNutrition: ing.excludeFromNutrition as boolean | undefined,
+    raw: ing.raw as string | null | undefined,
+    item: ing.item as string | null | undefined,
+    cooking: isCookingMethod(ing.cooking) ? ing.cooking : undefined,
+  };
+}
+
+/**
+ * An ingredient's cooked, as-eaten view for the engines: the cooked mass, the cooked
+ * composition per 100 g of that mass (so mass × concentration = the retained totals, and
+ * the Nutri-Score / NRF per-100 g basis is the summed cooked mass), and — for the Food
+ * Inflammation Index — the retained nutrients per 100 g of RAW mass. The FII standardises
+ * per-100 g concentrations against a raw-food reference distribution, so it reads the
+ * nutrient losses but not the water change (boiling pasta must not make it look
+ * "diluted" toward neutral). Excluded, weightless or unmatched ingredients pass through.
+ */
+export function cookIngredient(
+  grams: number | null,
+  nutrients: NutrientVector | null,
+  food: FoodRecord | undefined,
+  cooking: CookingMethod | null | undefined,
+  excluded?: boolean,
+): { grams: number | null; nutrients: NutrientVector | null; fiiNutrients: NutrientVector | null } {
+  if (excluded || grams == null || !(grams > 0) || !nutrients || !cooking || cooking === 'raw') {
+    return { grams, nutrients, fiiNutrients: nutrients };
+  }
+  const c = applyCooking(grams, nutrients, food, cooking);
+  return { grams: c.cookedGrams, nutrients: c.cookedPer100, fiiNutrients: c.retainedPer100Raw };
 }
 
 /** Recipe-level scoring context (Nutri-Score category + retained flags). */
@@ -60,7 +114,7 @@ export interface RecipeScoringOptions extends ScoreOptions {
   servings: number;
 }
 
-/** One matched ingredient → the scoring engine's shape (adds GI + FVL + NOVA). */
+/** One matched ingredient → the scoring engine's shape, cooked (adds GI + FVL + NOVA + marker text). */
 export function toScored(
   ing: StoredScoringIngredient,
   foodById: Map<number, FoodRecord>,
@@ -69,27 +123,32 @@ export function toScored(
 ): ScoredIngredient {
   const food = ing.fdcId != null ? foodById.get(ing.fdcId) : undefined;
   const s = ing.fdcId != null ? foodScoring[String(ing.fdcId)] : undefined;
+  const cooked = cookIngredient(ing.grams ?? null, nutrientsFor(food, polyphenols), food, ing.cooking, ing.excludeFromNutrition);
   return {
-    grams: ing.grams ?? null,
+    grams: cooked.grams,
     excludeFromNutrition: ing.excludeFromNutrition,
     fdcId: ing.fdcId ?? null,
-    nutrients: nutrientsFor(food, polyphenols),
+    nutrients: cooked.nutrients,
+    fiiNutrients: cooked.fiiNutrients,
     gi: s?.gi ?? null,
+    giMeasured: isMeasuredGi(s),
     fvl: s?.fvl ?? fvlFromCategory(food),
     nova: food?.nova ?? null,
+    raw: ing.raw || ing.item || null,
   };
 }
 
-/** One matched ingredient → the macro engine's shape (mass + per-100g nutrients). */
+/** One matched ingredient → the macro engine's shape (cooked mass + cooked per-100g nutrients). */
 export function toResolved(
   ing: StoredScoringIngredient,
   foodById: Map<number, FoodRecord>,
 ): ResolvedIngredient {
   const food = ing.fdcId != null ? foodById.get(ing.fdcId) : undefined;
+  const cooked = cookIngredient(ing.grams ?? null, food?.n ?? null, food, ing.cooking, ing.excludeFromNutrition);
   return {
-    grams: ing.grams ?? null,
+    grams: cooked.grams,
     excludeFromNutrition: ing.excludeFromNutrition,
-    nutrients: food?.n ?? null,
+    nutrients: cooked.nutrients,
   };
 }
 
@@ -119,4 +178,44 @@ export function scoreRecipe(
       )
     : {};
   return { macro, scores };
+}
+
+/** Credit line per national food-composition table, keyed by a matched food's `source` tag. */
+export const NATIONAL_TABLE_CREDITS: Record<string, string> = {
+  'JP-MEXT': 'MEXT Standard Tables of Food Composition in Japan 2020',
+  'FR-CIQUAL': 'ANSES Ciqual French food composition table 2020',
+};
+
+/** Credit line for the cooking retention + yield tables (cooking.ts). */
+export const COOKING_FACTORS_CREDIT = 'USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields';
+
+/**
+ * Provenance strings for a nutrition block: the base USDA table, each national table a
+ * non-excluded ingredient's matched food comes from (in NATIONAL_TABLE_CREDITS order, so
+ * the list is stable), the cooking factor tables when at least one contributing
+ * ingredient actually had retention/yield applied (`cookingApplies`), and one line per
+ * score present. Credits follow the matched food's own `source`; per-field gap-fill
+ * provenance is not a matched-food source and is not credited here.
+ */
+export function dataSourcesFor(
+  scores: ScoreResult,
+  ingredients: StoredScoringIngredient[],
+  foodById: Map<number, FoodRecord>,
+): string[] {
+  const sources = ['USDA FoodData Central'];
+  const matched = ingredients
+    .filter((i) => !i.excludeFromNutrition && i.fdcId != null)
+    .map((i) => ({ ing: i, food: foodById.get(i.fdcId!) }));
+  const used = new Set(matched.map((m) => m.food?.source));
+  for (const [tag, credit] of Object.entries(NATIONAL_TABLE_CREDITS)) if (used.has(tag)) sources.push(credit);
+  const cooked = matched.some(
+    ({ ing, food }) => ing.grams != null && ing.grams > 0 && food?.n != null && cookingApplies(food, ing.cooking),
+  );
+  if (cooked) sources.push(COOKING_FACTORS_CREDIT);
+  if (scores.glycemic) sources.push('Atkinson 2021 GI tables');
+  if (scores.nutriScore) sources.push('Nutri-Score 2023');
+  if (scores.inflammation) sources.push('Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols');
+  if (scores.balance) sources.push('Nutrient-Rich Foods Index (NRF9.3)');
+  if (scores.processing) sources.push('NOVA food classification (energy-weighted)');
+  return sources;
 }

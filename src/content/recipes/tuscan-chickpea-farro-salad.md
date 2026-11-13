@@ -8,34 +8,33 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14518-toszkan-csicseriborsos-farrosalata-gazdag-oszi-tal
 author: Kifli Kukták
-servings: 2
+servings: 4
 prepTime: PT15M
 cookTime: PT25M
 totalTime: PT40M
 cuisine: Italian
 course: Salad
-tags:
-  - vegetarian
-  - grains
-  - legumes
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g farro
+  - raw: 250 g farro, uncooked
     quantity: 250
     unit: g
     item: farro
+    note: uncooked
     grams: 250
     fdcId: 2710828
     matchConfidence: high
-  - raw: 400 g canned chickpeas, drained
+    cooking: boiled
+  - raw: 400 g canned chickpeas, drained (≈ 136 g uncooked)
     quantity: 400
     unit: g
-    item: canned chickpeas
-    note: drained
-    grams: 400
-    fdcId: 2644288
-    matchConfidence: high
+    item: canned chickpeas, drained
+    note: ≈ 136 g uncooked
+    grams: 136
+    fdcId: 173756
+    matchConfidence: medium
+    cooking: baked
   - raw: 100 g sun-dried tomatoes
     quantity: 100
     unit: g
@@ -43,6 +42,7 @@ ingredients:
     grams: 100
     fdcId: 168567
     matchConfidence: high
+    cooking: raw
   - raw: 100 g rocket (arugula)
     quantity: 100
     unit: g
@@ -51,6 +51,7 @@ ingredients:
     grams: 100
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 60 g aged pecorino cheese
     quantity: 60
     unit: g
@@ -58,6 +59,7 @@ ingredients:
     grams: 60
     fdcId: 171249
     matchConfidence: high
+    cooking: raw
   - raw: 30 g pine nuts
     quantity: 30
     unit: g
@@ -65,6 +67,7 @@ ingredients:
     grams: 30
     fdcId: 170591
     matchConfidence: high
+    cooking: fried
   - raw: 2 cloves fresh garlic
     quantity: 2
     unit: cloves
@@ -72,6 +75,7 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 45 ml lemon juice
     quantity: 45
     unit: ml
@@ -80,6 +84,7 @@ ingredients:
     milliliters: 45
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: 60 ml extra virgin olive oil
     quantity: 60
     unit: ml
@@ -88,6 +93,7 @@ ingredients:
     milliliters: 60
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 1 pinch fine salt
     quantity: 1
     unit: pinch
@@ -96,6 +102,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: medium
+    cooking: baked
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -104,48 +111,50 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 1306
-    energyKj: 5466
-    protein_g: 50
-    fat_g: 57.7
-    satFat_g: 9.9
-    carbs_g: 166.1
-    fiber_g: 16.8
-    sugar_g: 21.2
-    sodium_mg: 980
-    availableCarb_g: 149.3
+    energyKcal: 649
+    energyKj: 2714
+    protein_g: 25
+    fat_g: 27.8
+    satFat_g: 5.2
+    carbs_g: 84.2
+    fiber_g: 12.5
+    sugar_g: 14.2
+    sodium_mg: 296
+    availableCarb_g: 71.6
   glycemic:
-    gi: 53
-    gl: 78
+    gi: 54
+    gl: 39
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: B
     points: 1
     category: general
     version: "2023"
-    coverage: 0.38
+    coverage: 0.5
   inflammation:
-    score: -0.6
-    band: mildly-anti-inflammatory
+    score: -1.1
+    band: anti-inflammatory
     method: fii v3
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 17.7
+    nrf: 23.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 70.8
+    minimallyProcessedPct: 71.2
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

@@ -14,10 +14,6 @@ cookTime: PT15M
 totalTime: PT30M
 cuisine: International
 course: Soup
-tags:
-  - vegetarian
-  - asparagus
-  - soup
 lists:
   - Kifli favourites
 ingredients:
@@ -26,14 +22,16 @@ ingredients:
     unit: g
     item: white asparagus
     grams: 500
-    fdcId: 168390
+    fdcId: 168389
     matchConfidence: high
+    cooking: boiled
   - raw: 34 green asparagus spears
     quantity: 34
     item: green asparagus spears
     grams: 340
-    fdcId: 168390
+    fdcId: 2710823
     matchConfidence: high
+    cooking: boiled
   - raw: 100 ml heavy cream (at least 31% fat)
     quantity: 100
     unit: ml
@@ -43,6 +41,7 @@ ingredients:
     milliliters: 100
     fdcId: 2346386
     matchConfidence: high
+    cooking: boiled
   - raw: 70 g butter
     quantity: 70
     unit: g
@@ -50,53 +49,47 @@ ingredients:
     grams: 70
     fdcId: 173430
     matchConfidence: high
-  - raw: 3 tbsp sugar
-    quantity: 3
-    unit: tbsp
-    item: sugar
-    grams: 41.4
-    milliliters: 44.3604
-    fdcId: 170674
-    matchConfidence: high
+    cooking: boiled
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 4
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 296
-    energyKj: 1240
-    protein_g: 5.7
-    fat_g: 23.5
+    energyKcal: 254
+    energyKj: 1063
+    protein_g: 4.6
+    fat_g: 23.4
     satFat_g: 14
-    carbs_g: 19.9
+    carbs_g: 10.1
     fiber_g: 4.2
-    sugar_g: 13
-    sodium_mg: 425
-    availableCarb_g: 15.7
+    sugar_g: 4.7
+    sodium_mg: 399
+    availableCarb_g: 5.9
   glycemic:
-    gi: 48
-    gl: 8
+    gi: 14
+    gl: 1
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
-    grade: C
-    points: 7
+    grade: B
+    points: 2
     category: general
     version: "2023"
-    coverage: 0.87
+    coverage: 1
   inflammation:
-    score: 0.9
+    score: 0.8
     band: pro-inflammatory
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 2.5
+    score: 3
+    band: low
+    nrf: 12.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -106,6 +99,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -116,7 +110,7 @@ createdAt: "2026-11-13"
 
 ## Method
 
-1. In a tall pot, bring 1.5 litres of water to a boil with 3 tablespoons of sugar and salt to taste.
+1. In a tall pot, bring 1.5 litres of water to a boil with salt to taste.
 2. Add both the white and green asparagus to the boiling water and cook for 5–10 minutes. Remove the green asparagus earlier, as it cooks faster. To keep the green asparagus from turning brown, immediately plunge it into a bowl of ice water after cooking. Once cooled, slice it into 4 cm pieces. Keep the cooking water.
 3. Cut off the white asparagus "tips" and set them aside, then slice the rest into smaller pieces.
 4. Measure out 1 litre of the cooking water and blend it thoroughly with the asparagus pieces. Strain through a fine sieve.

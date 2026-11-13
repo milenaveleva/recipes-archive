@@ -25,7 +25,7 @@ const siteName = 'mili’s hedonistic longevity cookbook';
 const fullTitle = title ? `${title} — ${siteName}` : siteName;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 
-// The landing page is the whole app — tags, categories and lists are filtered
+// The landing page is the whole app — categories and lists are filtered
 // in place there, so the header carries no section nav, only sign-in.
 const here = Astro.url.pathname.replace(/\/$/, '');
 const onAddPage = here === withBase('/add').replace(/\/$/, '');

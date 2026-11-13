@@ -8,16 +8,12 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11017-magas-feherjetartalmu-medvehagymas-pogacsa
 author: Lőrincz Eszter
-servings: 4
+servings: 12
 prepTime: PT15M
 cookTime: PT25M
 totalTime: PT40M
 cuisine: Hungarian
 course: Snack
-tags:
-  - vegetarian
-  - high-protein
-  - baking
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 250
     fdcId: 330137
     matchConfidence: high
+    cooking: baked
   - raw: 250 g plain cottage cheese
     quantity: 250
     unit: g
@@ -35,34 +32,40 @@ ingredients:
     grams: 250
     fdcId: 173417
     matchConfidence: high
-  - raw: 500 g all-purpose flour
+    cooking: baked
+  - raw: 500 g whole-wheat flour
     quantity: 500
     unit: g
-    item: all-purpose flour
+    item: whole-wheat flour
     grams: 500
-    fdcId: 790018
+    fdcId: 790085
     matchConfidence: high
-  - raw: 12 g baking powder
-    quantity: 12
-    unit: g
+    cooking: baked
+  - raw: 2½ tsp baking powder
+    quantity: 2.5
+    unit: tsp
     item: baking powder
     grams: 12
+    milliliters: 12.322299999999998
     matchConfidence: none
     excludeFromNutrition: true
+    cooking: baked
   - raw: 2 eggs
     quantity: 2
     item: eggs
     grams: 100
-    fdcId: 173424
-    matchConfidence: high
+    fdcId: 171287
+    matchConfidence: medium
+    cooking: baked
   - raw: 1 bunch wild garlic (ramsons)
     quantity: 1
     unit: bunch
     item: wild garlic
     note: ramsons
-    grams: 50
-    fdcId: 169230
-    matchConfidence: high
+    grams: 100
+    fdcId: 169246
+    matchConfidence: medium
+    cooking: baked
   - raw: 100 g grated light cheese
     quantity: 100
     unit: g
@@ -70,55 +73,59 @@ ingredients:
     grams: 100
     fdcId: 171244
     matchConfidence: high
-  - raw: 10 g salt
-    quantity: 10
-    unit: g
+    cooking: baked
+  - raw: 1¾ tsp salt
+    quantity: 1.75
+    unit: tsp
     item: salt
     grams: 10
+    milliliters: 8.62561
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 667
-    energyKj: 2790
-    protein_g: 39.1
-    fat_g: 10.7
-    satFat_g: 4.1
-    carbs_g: 103
-    fiber_g: 4
-    sugar_g: 2.6
-    sodium_mg: 1448
-    availableCarb_g: 99
+    energyKcal: 223
+    energyKj: 935
+    protein_g: 14.2
+    fat_g: 3.9
+    satFat_g: 1.5
+    carbs_g: 32.7
+    fiber_g: 4.6
+    sugar_g: 1.9
+    sodium_mg: 486
+    availableCarb_g: 28.1
   glycemic:
-    gi: 55
-    gl: 54
-    giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi: 56
+    gl: 16
+    giBand: medium
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 1
     category: general
     version: "2023"
-    coverage: 0.4
+    coverage: 1
   inflammation:
-    score: 0.2
-    band: neutral
+    score: -0.6
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 9.8
+    score: 5
+    band: moderate
+    nrf: 27.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 82.2
+    minimallyProcessedPct: 82.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

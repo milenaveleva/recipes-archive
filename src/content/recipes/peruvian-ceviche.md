@@ -13,10 +13,6 @@ prepTime: PT20M
 totalTime: PT20M
 cuisine: Peruvian
 course: Appetizer
-tags:
-  - fish
-  - seafood
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -27,51 +23,60 @@ ingredients:
     grams: 200
     fdcId: 175141
     matchConfidence: high
+    cooking: raw
   - raw: juice of ½ lemon
     item: juice of ½ lemon
     grams: 22
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: juice of ½ orange
     item: juice of ½ orange
     grams: 50
     fdcId: 169098
     matchConfidence: high
+    cooking: raw
   - raw: juice of ½ lime
     item: juice of ½ lime
     grams: 15
     fdcId: 168156
     matchConfidence: high
+    cooking: raw
   - raw: 1 chilli or jalapeño pepper
     quantity: 1
     item: chilli or jalapeño pepper
     grams: 15
     fdcId: 170497
     matchConfidence: high
+    cooking: raw
   - raw: 1 red onion or shallot
     quantity: 1
     item: red onion or shallot
     grams: 70
     fdcId: 170499
     matchConfidence: medium
+    cooking: raw
   - raw: 1 handful fresh coriander
     quantity: 1
     item: handful fresh coriander
     grams: 15
     fdcId: 169997
     matchConfidence: medium
+    cooking: raw
   - raw: sea salt, to taste
     item: sea salt
     note: to taste
     grams: 2
     fdcId: 173468
     matchConfidence: medium
+    cooking: raw
   - raw: freshly ground black pepper, to taste
     item: freshly ground black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 76
@@ -85,12 +90,12 @@ nutrition:
     sodium_mg: 219
     availableCarb_g: 4.7
   glycemic:
-    gi: 58
-    gl: 3
-    giBand: medium
+    gi: 40
+    gl: 2
+    giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: A
     points: -2
@@ -98,12 +103,12 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.2
+    score: 0.1
     band: neutral
     method: fii v3
   balance:
-    score: 6
-    band: moderate
+    score: 8
+    band: high
     nrf: 68.9
     version: NRF9.3
   processing:
@@ -128,7 +133,7 @@ createdAt: "2026-11-13"
 2. Squeeze the citrus juices and mix them together in a large bowl.
 3. Chop the coriander, slice the onion thinly, and deseed and slice the chilli.
 4. Add the fish, onion, chilli and coriander to the citrus juice and mix well.
-5. Let the marinade "work" for 5-10 minutes, then it is ready to eat. It is best with a cold beer, but a glass of dry sparkling wine goes very well with it too.
+5. Let the marinade "work" for 5-10 minutes, then it is ready to eat. Serve straight away, well chilled.
 
 ## Tips
 

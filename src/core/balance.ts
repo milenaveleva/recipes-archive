@@ -18,8 +18,8 @@
  * added-sugar precision.
  *
  * The raw NRF value is kept for provenance; the 1–10 score bins it by
- * breakpoints anchored to the per-100-kcal distribution of the bundled food
- * dataset, so 5 ≈ a median food and 10 ≈ top-tier nutrient density. An estimate
+ * breakpoints anchored to the per-100-kcal distribution of the archive's
+ * dishes, so 5 ≈ a median dish and 10 ≈ top-tier nutrient density. An estimate
  * for comparison only — never a clinical figure, and not labelled "DII".
  */
 import { round } from './num';
@@ -83,13 +83,15 @@ const MRV = {
 const LIMITING_KEYS = Object.keys(MRV) as (keyof typeof MRV)[];
 
 /**
- * Raw-NRF breakpoints for the integer score, anchored to the shipped food
- * dataset's per-100-kcal percentile distribution (p50 ≈ 46 → 5, p90 ≈ 198 → 8,
- * p95 ≈ 290 → 9; regenerate with scripts/build-nrf-anchors.mjs). A net-negative
- * balance (limits outweigh the encouraged nutrients, ≈ 11% of foods) maps to 1;
- * only the top few % of nutrient density reaches 10.
+ * Raw-NRF breakpoints for the integer score, anchored to the per-100-kcal
+ * distribution of the archive's own mixed dishes (whole recipes, not single
+ * foods: a dish blends nutrient-dense vegetables with energy-dense staples and
+ * fats, so single-food anchors would paint most dishes as poor). Breakpoints sit
+ * at the recipe p5/p15/p30/p45/p60/p75/p90/p95/p98, so a median dish scores 5,
+ * the top decile 8+, and only the top ~2 % reaches 10; regenerate with
+ * `node scripts/build-nrf-anchors.mjs --recipes` after a corpus-wide rescore.
  */
-const SCORE_BREAKPOINTS = [0, 10, 22, 36, 56, 90, 140, 210, 340];
+const SCORE_BREAKPOINTS = [-4, 9, 18, 24, 31, 41, 61, 77, 100];
 
 /** Integer 1–10 from a raw NRF value: 1 + how many breakpoints it reaches. */
 export function balanceScoreOf(nrf: number): number {

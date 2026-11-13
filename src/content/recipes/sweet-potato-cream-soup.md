@@ -14,10 +14,6 @@ cookTime: PT20M
 totalTime: PT30M
 cuisine: International
 course: Soup
-tags:
-  - vegetarian
-  - soup
-  - sweet-potato
 lists:
   - Kifli favourites
 ingredients:
@@ -28,12 +24,14 @@ ingredients:
     grams: 1000
     fdcId: 169306
     matchConfidence: high
+    cooking: boiled
   - raw: 1 onion
     quantity: 1
     item: onion
     grams: 110
     fdcId: 170000
     matchConfidence: high
+    cooking: boiled
   - raw: 2-3 cloves garlic
     quantity: 2
     quantity2: 3
@@ -42,6 +40,7 @@ ingredients:
     grams: 10
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 1 carton cooking cream
     quantity: 1
     unit: carton
@@ -49,6 +48,7 @@ ingredients:
     grams: 200
     fdcId: 2346386
     matchConfidence: high
+    cooking: boiled
   - raw: 200 g aged cheese
     quantity: 200
     unit: g
@@ -56,24 +56,28 @@ ingredients:
     grams: 200
     fdcId: 173414
     matchConfidence: high
+    cooking: raw
   - raw: ginger, a little
     item: ginger
     note: a little
     grams: 3
     fdcId: 169231
     matchConfidence: high
+    cooking: boiled
   - raw: nutmeg, a pinch
     item: nutmeg
     note: a pinch
     grams: 0.5
     fdcId: 171326
     matchConfidence: high
+    cooking: boiled
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 3
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
     energyKcal: 625
@@ -83,30 +87,30 @@ nutrition:
     satFat_g: 19.8
     carbs_g: 62.7
     fiber_g: 4.8
-    sugar_g: 1.4
+    sugar_g: 2.9
     sodium_mg: 644
     availableCarb_g: 57.9
   glycemic:
     gi: 66
     gl: 38
     giBand: medium
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 8
+    points: 5
     category: general
     version: "2023"
-    coverage: 0.21
+    coverage: 0.31
   inflammation:
     score: 0.9
     band: pro-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 32.4
+    score: 5
+    band: moderate
+    nrf: 30.1
     version: NRF9.3
   processing:
     minimallyProcessedPct: 67.8
@@ -116,6 +120,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

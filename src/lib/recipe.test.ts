@@ -1,9 +1,12 @@
 import { describe, it, expect } from 'vitest';
 import {
+  formatQuantity,
   buildScoreDials,
   hasAnyScore,
   hasDisplayableScore,
   formatIngredientAmount,
+  isSeasoning,
+  showRawFallback,
   ratingTone,
   giRating,
   glRating,
@@ -12,13 +15,16 @@ import {
   inflammationRating,
   processingRating,
   UPF_ALARM_PCT,
+  giEstimateLabel,
+  NUTRI_LOW_DATA_COVERAGE,
 } from './recipe';
+import { INFLAMMATION_BAND_EDGES, inflammationBandOf } from '../core/inflammation';
 
 describe('formatIngredientAmount (display unit ≠ calc basis)', () => {
   it('shows tsp/tbsp as written even when grams/ml are stored for the math', () => {
     expect(formatIngredientAmount({ quantity: 1, unit: 'tbsp', grams: 13.6, milliliters: 14.8 })).toBe('1 tbsp');
     expect(formatIngredientAmount({ quantity: 2, unit: 'tsp', grams: 9.2 })).toBe('2 tsp');
-    expect(formatIngredientAmount({ quantity: 0.5, unit: 'tbsp' })).toBe('0.5 tbsp');
+    expect(formatIngredientAmount({ quantity: 0.5, unit: 'tbsp' })).toBe('½ tbsp');
   });
 
   it('normalises spoon aliases and casing/trailing dots', () => {
@@ -39,11 +45,11 @@ describe('formatIngredientAmount (display unit ≠ calc basis)', () => {
 
   it('snaps metric amounts over 10 g/ml to the nearest 10, keeps ≤10 exact', () => {
     expect(formatIngredientAmount({ quantity: 9, unit: 'oz', grams: 196 })).toBe('200 g');
-    expect(formatIngredientAmount({ grams: 34 })).toBe('30 g');
-    expect(formatIngredientAmount({ grams: 35 })).toBe('40 g'); // half rounds up
-    expect(formatIngredientAmount({ grams: 4.5 })).toBe('4.5 g'); // ≤10: exact, never coarsened
-    expect(formatIngredientAmount({ grams: 3 })).toBe('3 g');
-    expect(formatIngredientAmount({ grams: 1234 })).toBe('1.23 kg');
+    expect(formatIngredientAmount({ quantity: 34, unit: 'g', grams: 34 })).toBe('30 g');
+    expect(formatIngredientAmount({ quantity: 35, unit: 'g', grams: 35 })).toBe('40 g'); // half rounds up
+    expect(formatIngredientAmount({ quantity: 4.5, unit: 'g', grams: 4.5 })).toBe('4.5 g'); // ≤10: exact, never coarsened
+    expect(formatIngredientAmount({ quantity: 3, unit: 'g', grams: 3 })).toBe('3 g');
+    expect(formatIngredientAmount({ quantity: 1234, unit: 'g', grams: 1234 })).toBe('1.23 kg');
     expect(formatIngredientAmount({ quantity: 1, unit: 'ml', milliliters: 196 })).toBe('200 ml');
     expect(formatIngredientAmount({ quantity: 1, unit: 'ml', milliliters: 5 })).toBe('5 ml'); // ≤10: exact
   });
@@ -74,8 +80,56 @@ describe('formatIngredientAmount (display unit ≠ calc basis)', () => {
   it('shows an unweighed dry good measured in cups as cups, never ml', () => {
     // A dry good (not a liquid name) with no USDA match carries only `milliliters`;
     // it must read in cups (its written measure), not a meaningless conversion.
-    expect(formatIngredientAmount({ quantity: 1.5, unit: 'cups', item: 'shelled edamame', milliliters: 354.882 })).toBe('1.5 cups');
-    expect(formatIngredientAmount({ quantity: 0.25, unit: 'cup', item: 'fresh mint', milliliters: 59.147 })).toBe('0.25 cup');
+    expect(formatIngredientAmount({ quantity: 1.5, unit: 'cups', item: 'shelled edamame', milliliters: 354.882 })).toBe('1½ cups');
+    expect(formatIngredientAmount({ quantity: 0.25, unit: 'cup', item: 'fresh mint', milliliters: 59.147 })).toBe('¼ cup');
+  });
+
+  it('shows nothing for a line with no written quantity (its grams are a hidden estimate)', () => {
+    expect(formatIngredientAmount({ item: 'salt', note: 'to taste', grams: 3 })).toBeNull();
+    expect(formatIngredientAmount({ item: 'fresh parsley', note: 'for garnish', grams: 3 })).toBeNull();
+    expect(formatIngredientAmount({ item: 'sunflower oil', note: 'for frying', grams: 60 })).toBeNull();
+  });
+
+  it('never shows a seasoning in grams — spoon, pinch or count only, else nothing', () => {
+    expect(formatIngredientAmount({ quantity: 5, unit: 'g', item: 'smoked paprika', grams: 5 })).toBeNull();
+    expect(formatIngredientAmount({ quantity: 2, unit: 'g', item: 'salt', grams: 2 })).toBeNull();
+    expect(formatIngredientAmount({ quantity: 0.5, unit: 'mg', item: 'saffron', grams: 0.0005 })).toBeNull();
+    expect(formatIngredientAmount({ quantity: 1, unit: 'tsp', item: 'ground cumin', grams: 2.1 })).toBe('1 tsp');
+    expect(formatIngredientAmount({ quantity: 0.5, unit: 'tbsp', item: 'curry powder', grams: 3 })).toBe('½ tbsp');
+    expect(formatIngredientAmount({ quantity: 1, unit: 'pinch', item: 'nutmeg', grams: 0.2 })).toBe('1 pinch');
+    expect(formatIngredientAmount({ quantity: 2, item: 'bay leaves', grams: 0.4 })).toBe('2');
+    expect(formatIngredientAmount({ quantity: 1, unit: 'stick', item: 'cinnamon', grams: 3 })).toBe('1 stick');
+    expect(formatIngredientAmount({ quantity: 5, unit: 'ml', item: 'vanilla extract', milliliters: 5, grams: 4 })).toBeNull();
+    expect(formatIngredientAmount({ item: 'black pepper', note: 'to taste', grams: 0.5 })).toBeNull();
+  });
+
+  it('recognises seasonings without catching produce that shares a word', () => {
+    for (const s of ['salt', 'sea salt', 'pepper', 'black pepper', 'freshly ground black pepper', 'red pepper flakes', 'chili flakes', 'chilli powder', 'cumin', 'ground coriander', 'coriander seeds', 'ginger, ground', 'dried thyme', 'rosemary (dried)', 'garam masala', 'garlic powder', 'baking soda', 'baking powder', 'vanilla', 'vanilla extract', 'mixed spice', "za'atar", 'bay leaves']) {
+      expect(isSeasoning(s), s).toBe(true);
+    }
+    for (const s of ['red pepper', 'green pepper', 'bell pepper', 'fresh ginger', 'fresh thyme', 'garlic cloves', 'vanilla yoghurt', 'chicken breast', 'salted peanuts', '']) {
+      expect(isSeasoning(s), s).toBe(false);
+    }
+    expect(formatIngredientAmount({ quantity: 200, unit: 'g', item: 'red pepper', grams: 200 })).toBe('200 g');
+  });
+
+  it('shows no amount for a juice with no written quantity', () => {
+    expect(formatIngredientAmount({ item: 'lemon juice', note: 'to taste', raw: 'lemon juice, to taste', grams: 15 })).toBeNull();
+    expect(formatIngredientAmount({ item: 'lime juice', raw: 'a squeeze of lime juice', milliliters: 5 })).toBeNull();
+  });
+
+  it('shows juice in ml — from its volume, or its weight at ≈1 g/ml', () => {
+    expect(formatIngredientAmount({ item: 'juice of ¼ lemon', grams: 10 })).toBe('10 ml');
+    expect(formatIngredientAmount({ item: 'lemon', note: 'juice of ½', raw: 'juice of ½ lemon', grams: 15 })).toBe('20 ml');
+    expect(formatIngredientAmount({ item: 'lime', raw: 'juice of 1 lime', quantity: 1, grams: 30 })).toBe('30 ml');
+    expect(formatIngredientAmount({ quantity: 2, unit: 'tbsp', item: 'lemon juice', grams: 30 })).toBe('2 tbsp');
+    expect(formatIngredientAmount({ quantity: 0.5, unit: 'cup', item: 'orange juice', milliliters: 118, grams: 124 })).toBe('120 ml');
+  });
+
+  it('shows the original line only when there is no amount and the ingredient is not a seasoning', () => {
+    expect(showRawFallback({ item: 'lime', raw: 'lime (optional)' }, null)).toBe(true);
+    expect(showRawFallback({ item: 'cumin', raw: '5 g cumin' }, null)).toBe(false);
+    expect(showRawFallback({ item: 'lime', raw: 'lime' }, '30 g')).toBe(false);
   });
 
   it('falls back to quantity+unit, then null', () => {
@@ -106,13 +160,21 @@ describe('score rating normalization (1–10, 1 = healthiest)', () => {
     expect(giRating(null)).toBeNull();
   });
 
-  it('maps GL so ≤10 / 11–19 / ≥20 land on 1–3 / 4–6 / 7–10', () => {
+  it('maps per-serving GL on meal bands: <20 / 20–39 / ≥40 → 1–3 / 4–6 / 7–10', () => {
     expect(glRating(0)).toBe(1);
-    expect(glRating(10)).toBe(3);
-    expect(glRating(19)).toBe(6);
-    expect(glRating(20)).toBe(7);
-    expect(glRating(40)).toBe(10); // clamped
+    expect(glRating(10)).toBe(2);
+    expect(glRating(19)).toBe(3); // top of the low band → still good
+    expect(glRating(20)).toBe(4);
+    expect(glRating(30)).toBe(5);
+    expect(glRating(39)).toBe(6);
+    expect(glRating(40)).toBe(7); // into high → bad
+    expect(glRating(60)).toBe(10);
+    expect(glRating(90)).toBe(10); // clamped
     expect(glRating(null)).toBeNull();
+    for (let g = 0; g <= 80; g++) {
+      const tone = ratingTone(glRating(g));
+      expect(tone).toBe(g < 20 ? 'good' : g < 40 ? 'mid' : 'bad');
+    }
   });
 
   it('maps Nutri-Score A…E onto 1…10 (A best, E worst)', () => {
@@ -133,12 +195,34 @@ describe('score rating normalization (1–10, 1 = healthiest)', () => {
     expect(balanceRating(null)).toBeNull();
   });
 
-  it('maps inflammation from −2…+2 onto 1…10 (most anti = best)', () => {
+  it('maps inflammation onto 1…10 by the FII band edges, so colour agrees with the band word', () => {
+    const e = INFLAMMATION_BAND_EDGES;
     expect(inflammationRating(-2)).toBe(1);
-    expect(inflammationRating(-1)).toBe(3); // anti-inflammatory band edge → still good
-    expect(inflammationRating(0)).toBe(6); // neutral → mid
+    expect(inflammationRating(e.antiMax)).toBe(2); // top of "anti" → good
+    expect(inflammationRating(e.mildlyAntiMax)).toBe(3); // top of "mildly anti" → still good
+    expect(inflammationRating(e.neutralMax)).toBe(6); // top of "neutral" → mid
+    expect(inflammationRating(e.mildlyProMax)).toBe(8); // top of "mildly pro" → bad
     expect(inflammationRating(2)).toBe(10);
     expect(inflammationRating(null)).toBeNull();
+    const toneOf: Record<string, string> = {
+      'anti-inflammatory': 'good',
+      'mildly-anti-inflammatory': 'good',
+      neutral: 'mid',
+      'mildly-pro-inflammatory': 'bad',
+      'pro-inflammatory': 'bad',
+    };
+    for (let x = -2; x <= 2.0001; x += 0.05) {
+      const score = Math.round(x * 100) / 100;
+      expect(ratingTone(inflammationRating(score)), `score ${score}`).toBe(toneOf[inflammationBandOf(score)]);
+    }
+  });
+
+  it('positions inflammation by the stored band, clamping a score outside it', () => {
+    // The stored band decides the colour segment even if the score sits past its edge.
+    expect(ratingTone(inflammationRating(1.2, 'mildly-pro-inflammatory'))).toBe('bad');
+    expect(inflammationRating(1.2, 'mildly-pro-inflammatory')).toBe(8);
+    expect(ratingTone(inflammationRating(0, 'neutral'))).toBe('mid');
+    expect(inflammationRating(0, 'bogus')).toBe(inflammationRating(0)); // invalid band → score's band
   });
 });
 
@@ -157,8 +241,8 @@ describe('buildScoreDials', () => {
     expect(gi.tone).toBe('mid');
     expect(gi.fill).toBeCloseTo(0.5);
 
-    expect(gl.value).toBe('6');
-    expect(gl.tone).toBe('mid');
+    expect(gl.value).toBe('3'); // GL 19 is a low-GL meal
+    expect(gl.tone).toBe('good');
 
     expect(nutri.value).toBe('6'); // grade C → 6
     expect(nutri.tone).toBe('mid');
@@ -168,8 +252,8 @@ describe('buildScoreDials', () => {
     expect(balance.tone).toBe('good');
     expect(balance.fill).toBeCloseTo(0.3);
 
-    expect(inflam.value).toBe('4'); // −0.8 → 4 (mid)
-    expect(inflam.tone).toBe('mid');
+    expect(inflam.value).toBe('2'); // −0.8, low in the mildly-anti band → 2 (good, agreeing with the band)
+    expect(inflam.tone).toBe('good');
   });
 
   it('shows an em-dash balance dial with empty fill when absent', () => {
@@ -191,8 +275,8 @@ describe('buildScoreDials', () => {
   });
 
   it('rates a partial nutrition block (only glycemic load present)', () => {
-    const [, gl] = buildScoreDials({ glycemic: { gl: 12 } });
-    expect(gl.value).toBe('4'); // GL 12 → 4
+    const [, gl] = buildScoreDials({ glycemic: { gl: 32 } });
+    expect(gl.value).toBe('5'); // GL 32 → 5
     expect(gl.present).toBe(true);
     const [giBlank] = buildScoreDials({ glycemic: { gi: 50, giBand: '' } });
     expect(giBlank.value).toBe('3'); // GI 50 → 3
@@ -204,13 +288,45 @@ describe('buildScoreDials', () => {
     expect(inflam.tone).toBe('bad');
   });
 
-  it('does not flash a low-UPF fermented dish alarming red (miso soup case)', () => {
-    // Mostly NOVA-3 fermented foods → low NOVA 1+2 share, ~0% ultra-processed.
+  it('shows a highly-processed dish red even with no ultra-processed share', () => {
     const [, , , , , proc] = buildScoreDials({
       processing: { minimallyProcessedPct: 22, ultraProcessedPct: 0, band: 'highly-processed' },
     });
     expect(proc.key).toBe('processing');
-    expect(proc.tone).toBe('mid'); // caution (4–6), not the critical red
+    expect(proc.tone).toBe('bad');
+    expect(proc.caption).toBe('Highly Processed');
+  });
+
+  it('captions GI as a rounded estimate and GL with the serving carbs', () => {
+    const [gi, gl] = buildScoreDials({
+      perServing: { availableCarb_g: 46.4 },
+      glycemic: { gi: 57, gl: 26, measuredGiPct: 80 },
+    });
+    expect(gi.caption).toBe('≈ 55, estimated');
+    expect(gi.blurb).toContain('80% of the carbohydrate has a measured GI');
+    expect(gl.caption).toBe('26 per serving · 46 g carbs');
+    expect(gl.blurb).toContain('low under 20, medium 20–39, high 40+');
+    expect(giEstimateLabel(58)).toBe('≈ 60, estimated');
+    expect(giEstimateLabel(52)).toBe('≈ 50, estimated');
+    const [, glNoCarbs] = buildScoreDials({ glycemic: { gl: 26 } });
+    expect(glNoCarbs.caption).toBe('26 per serving');
+  });
+
+  it('flags a low-data Nutri-Score (coverage < 0.9) in caption and tooltip', () => {
+    const [, , low] = buildScoreDials({ nutriScore: { grade: 'B', coverage: 0.72 } });
+    expect(low.caption).toBe('Grade B · low data');
+    expect(low.blurb).toContain('Low data: only 72%');
+    const [, , ok] = buildScoreDials({ nutriScore: { grade: 'B', coverage: 0.95 } });
+    expect(ok.caption).toBe('Grade B');
+    expect(ok.blurb).not.toContain('Low data');
+    expect(NUTRI_LOW_DATA_COVERAGE).toBe(0.9);
+  });
+
+  it('captions inflammation relative to foods, and omits captions for absent scores', () => {
+    const [, , , , inflam] = buildScoreDials({ inflammation: { score: -0.5, band: 'mildly-anti-inflammatory' } });
+    expect(inflam.caption).toBe('Mildly anti-inflammatory relative to foods');
+    const [gi] = buildScoreDials(undefined);
+    expect(gi.caption).toBeUndefined();
   });
 
   it('reserves the critical processing rating for genuinely ultra-processed dishes', () => {
@@ -221,13 +337,25 @@ describe('buildScoreDials', () => {
   });
 });
 
+describe('processingRating — highly-processed always poor', () => {
+  it('rates a highly-processed band ≥ 7 even at/above the 40 % whole-food edge', () => {
+    for (const pct of [39.9, 40, 45, 80]) {
+      expect(processingRating(pct, 0, 'highly-processed')!, String(pct)).toBeGreaterThanOrEqual(7);
+      expect(processingRating(pct, null, 'highly-processed')!, String(pct)).toBeGreaterThanOrEqual(7);
+    }
+  });
+});
+
 describe('processingRating', () => {
   it('keys the poor band on the ultra-processed share, not merely a low whole-food share', () => {
     expect(ratingTone(processingRating(95, 0, 'minimally-processed'))).toBe('good');
-    // Highly-processed by NOVA 1+2 share, but ultra-processed content decides the alarm.
-    expect(ratingTone(processingRating(22, 0, 'highly-processed'))).toBe('mid');
-    expect(ratingTone(processingRating(22, UPF_ALARM_PCT - 1, 'highly-processed'))).toBe('mid');
+    // A highly-processed band is always poor, whatever the ultra-processed share.
+    expect(ratingTone(processingRating(22, 0, 'highly-processed'))).toBe('bad');
+    expect(ratingTone(processingRating(39, UPF_ALARM_PCT - 1, 'highly-processed'))).toBe('bad');
     expect(ratingTone(processingRating(22, UPF_ALARM_PCT, 'highly-processed'))).toBe('bad');
+    expect(processingRating(0, 100, 'highly-processed')).toBe(10);
+    // Below the alarm, a moderately-processed dish stays caution.
+    expect(ratingTone(processingRating(50, UPF_ALARM_PCT - 1, 'moderately-processed'))).toBe('mid');
     expect(ratingTone(processingRating(30, UPF_ALARM_PCT + 20, 'moderately-processed'))).toBe('bad');
   });
 
@@ -271,5 +399,16 @@ describe('hasDisplayableScore', () => {
     const dials = buildScoreDials({ nutriScore: { grade: 'B' }, glycemic: { gi: null } });
     expect(dials.find((d) => d.key === 'nutri')?.present).toBe(true);
     expect(dials.find((d) => d.key === 'gi')?.present).toBe(false);
+  });
+});
+
+describe('formatQuantity (cook-readable fractions)', () => {
+  it('renders common fractions and mixed numbers, decimals otherwise', () => {
+    expect(formatQuantity(0.5)).toBe('½');
+    expect(formatQuantity(0.25)).toBe('¼');
+    expect(formatQuantity(1.75)).toBe('1¾');
+    expect(formatQuantity(1 / 3)).toBe('⅓');
+    expect(formatQuantity(2)).toBe('2');
+    expect(formatQuantity(1.4)).toBe('1.4');
   });
 });

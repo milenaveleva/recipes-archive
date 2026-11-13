@@ -14,10 +14,6 @@ cookTime: PT20M
 totalTime: PT40M
 cuisine: Italian
 course: Salad
-tags:
-  - vegetarian
-  - polenta
-  - salad
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +25,7 @@ ingredients:
     grams: 250
     fdcId: 172015
     matchConfidence: high
+    cooking: boiled
   - raw: 750 ml vegetable broth
     group: Salad base and toppings
     quantity: 750
@@ -38,6 +35,7 @@ ingredients:
     milliliters: 750
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 2 pears
     group: Salad base and toppings
     quantity: 2
@@ -45,6 +43,7 @@ ingredients:
     grams: 340
     fdcId: 169118
     matchConfidence: high
+    cooking: fried
   - raw: 120 g gorgonzola or other blue cheese
     group: Salad base and toppings
     quantity: 120
@@ -53,6 +52,7 @@ ingredients:
     grams: 120
     fdcId: 172175
     matchConfidence: high
+    cooking: raw
   - raw: 100 g arugula
     group: Salad base and toppings
     quantity: 100
@@ -61,14 +61,16 @@ ingredients:
     grams: 100
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 60 g walnuts
     group: Salad base and toppings
     quantity: 60
     unit: g
     item: walnuts
     grams: 60
-    fdcId: 171030
+    fdcId: 170187
     matchConfidence: medium
+    cooking: fried
   - raw: 4 tbsp extra virgin olive oil
     group: Dressing and seasoning
     quantity: 4
@@ -78,6 +80,7 @@ ingredients:
     milliliters: 59.1472
     fdcId: 171413
     matchConfidence: high
+    cooking: fried
   - raw: 2 tbsp balsamic vinegar
     group: Dressing and seasoning
     quantity: 2
@@ -87,6 +90,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 172241
     matchConfidence: high
+    cooking: raw
   - raw: 1 tsp honey
     group: Dressing and seasoning
     quantity: 1
@@ -96,6 +100,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 169640
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch salt
     group: Dressing and seasoning
     quantity: 1
@@ -105,6 +110,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: fried
   - raw: 1 pinch black pepper
     group: Dressing and seasoning
     quantity: 1
@@ -114,48 +120,50 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 665
-    energyKj: 2783
-    protein_g: 12.3
-    fat_g: 38.6
-    satFat_g: 9.1
-    carbs_g: 68.6
-    fiber_g: 5.5
-    sugar_g: 13.6
-    sodium_mg: 916
-    availableCarb_g: 63.1
+    energyKcal: 631
+    energyKj: 2638
+    protein_g: 14.6
+    fat_g: 33.4
+    satFat_g: 8.6
+    carbs_g: 70.7
+    fiber_g: 6.5
+    sugar_g: 14
+    sodium_mg: 917
+    availableCarb_g: 62.3
   glycemic:
     gi: 54
-    gl: 34
+    gl: 33
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 16
   nutriScore:
     grade: C
-    points: 4
+    points: 5
     category: general
     version: "2023"
-    coverage: 0.98
+    coverage: 1
   inflammation:
-    score: 0.1
+    score: -0.2
     band: neutral
     method: fii v3
   balance:
     score: 2
     band: poor
-    nrf: 2.1
+    nrf: 5.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 82.8
+    minimallyProcessedPct: 81.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

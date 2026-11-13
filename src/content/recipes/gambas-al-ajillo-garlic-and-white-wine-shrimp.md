@@ -1,6 +1,6 @@
 ---
 title: Gambas al Ajillo (Garlic and White Wine Shrimp)
-description: Classic Spanish garlic shrimp sizzled in olive oil with chilli and finished with lemon and white wine, ready in 15 minutes and perfect for mopping up with fresh baguette.
+description: Classic Spanish garlic shrimp sizzled in olive oil with chilli and finished with lemon and white wine, ready in 15 minutes and perfect for mopping up with fresh whole-wheat baguette.
 image: ./images/gambas-al-ajillo-garlic-and-white-wine-shrimp.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/10519-1715240154931.jpg
 imageAlt: Gambas al Ajillo (Garlic and White Wine Shrimp)
@@ -14,10 +14,6 @@ cookTime: PT5M
 totalTime: PT15M
 cuisine: Spanish
 course: Appetizer
-tags:
-  - seafood
-  - tapas
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -26,14 +22,16 @@ ingredients:
     unit: g
     item: peeled shrimp tails
     grams: 300
-    fdcId: 175180
+    fdcId: 175179
     matchConfidence: medium
+    cooking: fried
   - raw: 1 green chilli
     quantity: 1
     item: green chilli
     grams: 15
     fdcId: 170497
     matchConfidence: medium
+    cooking: fried
   - raw: 35 g garlic
     quantity: 35
     unit: g
@@ -41,12 +39,14 @@ ingredients:
     grams: 35
     fdcId: 169230
     matchConfidence: high
+    cooking: fried
   - raw: juice of 1 lemon
     quantity: 1
     item: juice of lemon
     grams: 45
     fdcId: 167747
     matchConfidence: high
+    cooking: fried
   - raw: 10 g fresh parsley
     quantity: 10
     unit: g
@@ -54,6 +54,7 @@ ingredients:
     grams: 10
     fdcId: 170416
     matchConfidence: high
+    cooking: fried
   - raw: 5 g chives
     quantity: 5
     unit: g
@@ -61,25 +62,30 @@ ingredients:
     grams: 5
     fdcId: 169994
     matchConfidence: high
-  - raw: 2 g crushed chilli flakes
-    quantity: 2
-    unit: g
+    cooking: raw
+  - raw: 1 tsp crushed chilli flakes
+    quantity: 1
+    unit: tsp
     item: crushed chilli flakes
     grams: 2
+    milliliters: 4.92892
     fdcId: 170932
     matchConfidence: high
-  - raw: 1 fresh baguette
+    cooking: fried
+  - raw: 1 fresh whole-wheat baguette
     quantity: 1
-    item: fresh baguette
+    item: fresh whole-wheat baguette
     grams: 150
-    fdcId: 172675
-    matchConfidence: medium
+    fdcId: 174091
+    matchConfidence: high
+    cooking: raw
   - raw: dry white wine, a splash
     item: dry white wine
     note: a splash
     grams: 5
     fdcId: 174837
     matchConfidence: high
+    cooking: fried
   - raw: 100 ml extra virgin olive oil
     quantity: 100
     unit: ml
@@ -88,48 +94,50 @@ ingredients:
     milliliters: 100
     fdcId: 171413
     matchConfidence: high
+    cooking: fried
 nutrition:
   perServing:
-    energyKcal: 798
-    energyKj: 3338
-    protein_g: 45.8
-    fat_g: 48.3
-    satFat_g: 6.9
-    carbs_g: 48.3
-    fiber_g: 2.7
-    sugar_g: 4.8
-    sodium_mg: 626
-    availableCarb_g: 45.6
+    energyKcal: 752
+    energyKj: 3147
+    protein_g: 38.1
+    fat_g: 47.6
+    satFat_g: 6.5
+    carbs_g: 45.9
+    fiber_g: 4.2
+    sugar_g: 1.3
+    sodium_mg: 468
+    availableCarb_g: 41.7
   glycemic:
-    gi: 49
-    gl: 22
+    gi: 48
+    gl: 20
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
-    coverage: 0.54
+    coverage: 1
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.5
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 25
+    score: 5
+    band: moderate
+    nrf: 26
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 74.2
+    minimallyProcessedPct: 75.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

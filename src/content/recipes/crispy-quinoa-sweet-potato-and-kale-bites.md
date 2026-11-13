@@ -14,21 +14,18 @@ cookTime: PT25M
 totalTime: PT55M
 cuisine: International
 course: Snack
-tags:
-  - vegan
-  - quinoa
-  - baked
-  - snack
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 225 g cooked quinoa
+  - raw: 225 g cooked quinoa (≈ 74 g uncooked)
     quantity: 225
     unit: g
     item: cooked quinoa
-    grams: 225
-    fdcId: 168917
+    note: ≈ 74 g uncooked
+    grams: 74
+    fdcId: 168874
     matchConfidence: high
+    cooking: baked
   - raw: 2 tbsp ground flaxseed (mixed with 6 tbsp water)
     quantity: 2
     unit: tbsp
@@ -38,6 +35,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 2262075
     matchConfidence: medium
+    cooking: baked
   - raw: 40 g kale leaves, finely chopped (stems removed)
     quantity: 40
     unit: g
@@ -46,6 +44,7 @@ ingredients:
     grams: 40
     fdcId: 168421
     matchConfidence: high
+    cooking: baked
   - raw: 50 g oat flour
     quantity: 50
     unit: g
@@ -53,6 +52,7 @@ ingredients:
     grams: 50
     fdcId: 2261421
     matchConfidence: high
+    cooking: baked
   - raw: 35 g sunflower seeds
     quantity: 35
     unit: g
@@ -60,6 +60,7 @@ ingredients:
     grams: 35
     fdcId: 170562
     matchConfidence: high
+    cooking: baked
   - raw: 60 g finely grated sweet potato
     quantity: 60
     unit: g
@@ -67,6 +68,7 @@ ingredients:
     grams: 60
     fdcId: 169306
     matchConfidence: high
+    cooking: baked
   - raw: 35 g sun-dried tomatoes, finely chopped
     quantity: 35
     unit: g
@@ -75,6 +77,7 @@ ingredients:
     grams: 35
     fdcId: 168567
     matchConfidence: high
+    cooking: baked
   - raw: 10 g basil
     quantity: 10
     unit: g
@@ -82,6 +85,7 @@ ingredients:
     grams: 10
     fdcId: 172232
     matchConfidence: high
+    cooking: baked
   - raw: 20 g red onion, finely chopped
     quantity: 20
     unit: g
@@ -90,6 +94,7 @@ ingredients:
     grams: 20
     fdcId: 790577
     matchConfidence: high
+    cooking: baked
   - raw: 1 clove garlic, finely chopped
     quantity: 1
     unit: clove
@@ -98,6 +103,7 @@ ingredients:
     grams: 3
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 1 tbsp creamy tahini paste
     quantity: 1
     unit: tbsp
@@ -106,6 +112,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 169410
     matchConfidence: high
+    cooking: baked
   - raw: 1½ tsp oregano
     quantity: 1.5
     unit: tsp
@@ -114,6 +121,7 @@ ingredients:
     milliliters: 7.39338
     fdcId: 171328
     matchConfidence: medium
+    cooking: baked
   - raw: 1½ tsp white wine vinegar
     quantity: 1.5
     unit: tsp
@@ -122,20 +130,23 @@ ingredients:
     milliliters: 7.39338
     fdcId: 172240
     matchConfidence: high
-  - raw: 3 tbsp flour
+    cooking: baked
+  - raw: 3 tbsp whole-wheat flour
     quantity: 3
     unit: tbsp
-    item: flour
+    item: whole-wheat flour
     grams: 24
     milliliters: 44.3604
-    fdcId: 2003586
+    fdcId: 790085
     matchConfidence: high
+    cooking: baked
   - raw: chilli, to taste
     item: chilli
     note: to taste
     grams: 1
     fdcId: 170106
     matchConfidence: medium
+    cooking: baked
   - raw: 1½ tsp salt
     quantity: 1.5
     unit: tsp
@@ -144,48 +155,50 @@ ingredients:
     milliliters: 7.39338
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
 nutrition:
   perServing:
     energyKcal: 92
-    energyKj: 386
-    protein_g: 3.3
-    fat_g: 3.4
+    energyKj: 387
+    protein_g: 3.5
+    fat_g: 3.5
     satFat_g: 0.3
-    carbs_g: 13
+    carbs_g: 12.9
     fiber_g: 2.4
-    sugar_g: 1.4
-    sodium_mg: 303
-    availableCarb_g: 10.6
+    sugar_g: 1.5
+    sodium_mg: 302
+    availableCarb_g: 10.5
   glycemic:
-    gi: 58
+    gi: 57
     gl: 6
     giBand: medium
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 34
   nutriScore:
     grade: C
-    points: 5
+    points: 8
     category: general
     version: "2023"
-    coverage: 0.66
+    coverage: 0.77
   inflammation:
-    score: -1.3
+    score: -1.7
     band: anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 41.3
+    score: 7
+    band: high
+    nrf: 41.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 92.3
-    ultraProcessedPct: 7.7
+    minimallyProcessedPct: 100
+    ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

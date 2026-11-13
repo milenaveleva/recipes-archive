@@ -1,6 +1,6 @@
 ---
 title: Malaysian Coconut Tofu Laksa Soup
-description: A rich Asian noodle soup of crispy tofu and rice noodles in a fragrant coconut curry broth.
+description: A rich Asian noodle soup of crispy tofu and whole-wheat thin noodles in a fragrant coconut curry broth.
 image: ./images/malaysian-coconut-tofu-laksa-soup.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_13219_1787511835204_malaysian-tofu-laksa-soup_92e23b6a.jpg
 imageAlt: Malaysian Coconut Tofu Laksa Soup
@@ -14,11 +14,6 @@ cookTime: PT15M
 totalTime: PT30M
 cuisine: Malaysian
 course: Soup
-tags:
-  - vegan
-  - soup
-  - noodles
-  - tofu
 lists:
   - Kifli favourites
 ingredients:
@@ -30,23 +25,27 @@ ingredients:
     grams: 300
     fdcId: 172475
     matchConfidence: high
-  - raw: 200 g rice noodles
+    cooking: fried
+  - raw: 200 g whole-wheat thin noodles (in place of rice noodles), dry
     group: Soup base and noodles
     quantity: 200
     unit: g
-    item: rice noodles
+    item: whole-wheat thin noodles (in place of rice noodles)
+    note: dry
     grams: 200
-    fdcId: 174258
+    fdcId: 169738
     matchConfidence: high
+    cooking: boiled
   - raw: 400 ml coconut milk
     group: Soup base and noodles
     quantity: 400
     unit: ml
     item: coconut milk
-    grams: 405.8
+    grams: 382.1
     milliliters: 400
-    fdcId: 170172
+    fdcId: 170173
     matchConfidence: high
+    cooking: boiled
   - raw: 600 ml vegetable broth
     group: Soup base and noodles
     quantity: 600
@@ -56,6 +55,7 @@ ingredients:
     milliliters: 600
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 2 tbsp curry paste
     group: Soup base and noodles
     quantity: 2
@@ -65,6 +65,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 170924
     matchConfidence: high
+    cooking: boiled
   - raw: 20 g ginger
     group: Soup base and noodles
     quantity: 20
@@ -73,6 +74,7 @@ ingredients:
     grams: 20
     fdcId: 169231
     matchConfidence: high
+    cooking: boiled
   - raw: 3 cloves garlic
     group: Soup base and noodles
     quantity: 3
@@ -81,6 +83,7 @@ ingredients:
     grams: 12
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 2 tbsp sunflower oil
     group: Seasonings
     quantity: 2
@@ -90,6 +93,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171025
     matchConfidence: high
+    cooking: fried
   - raw: 2 tbsp soy sauce
     group: Seasonings
     quantity: 2
@@ -99,15 +103,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 81017008
     matchConfidence: medium
-  - raw: 1 tsp cane sugar
-    group: Seasonings
-    quantity: 1
-    unit: tsp
-    item: cane sugar
-    grams: 4.6
-    milliliters: 4.92892
-    fdcId: 170674
-    matchConfidence: medium
+    cooking: boiled
   - raw: 1 lime
     group: Seasonings
     quantity: 1
@@ -115,6 +111,7 @@ ingredients:
     grams: 65
     fdcId: 168156
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch salt
     group: Seasonings
     quantity: 1
@@ -124,6 +121,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
   - raw: 2 spring onions
     group: For serving and garnish
     quantity: 2
@@ -131,6 +129,7 @@ ingredients:
     grams: 30
     fdcId: 170005
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful fresh coriander
     group: For serving and garnish
     quantity: 1
@@ -138,6 +137,7 @@ ingredients:
     grams: 10
     fdcId: 169997
     matchConfidence: medium
+    cooking: raw
   - raw: 1 red chilli pepper
     group: For serving and garnish
     quantity: 1
@@ -145,49 +145,51 @@ ingredients:
     grams: 15
     fdcId: 170106
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 1240
-    energyKj: 5189
-    protein_g: 34.4
-    fat_g: 76.3
-    satFat_g: 46.3
-    carbs_g: 119.1
-    fiber_g: 12.7
-    sugar_g: 12.7
-    sodium_mg: 1988
-    availableCarb_g: 106.4
+    energyKcal: 1142
+    energyKj: 4777
+    protein_g: 47.4
+    fat_g: 71.6
+    satFat_g: 40
+    carbs_g: 98.3
+    fiber_g: 16.9
+    sugar_g: 6.4
+    sodium_mg: 1975
+    availableCarb_g: 81.3
   glycemic:
-    gi: 34
+    gi: 44
     gl: 36
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 79
   nutriScore:
     grade: C
-    points: 7
+    points: 6
     category: general
     version: "2023"
-    coverage: 0.82
+    coverage: 0.66
   inflammation:
-    score: 0.4
-    band: mildly-pro-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 7
+    score: 4
+    band: low
+    nrf: 19.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 80.7
-    ultraProcessedPct: 0
-    band: minimally-processed
+    minimallyProcessedPct: 44.3
+    ultraProcessedPct: 1.7
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -199,10 +201,10 @@ createdAt: "2026-11-13"
 ## Method
 
 1. **Preparation and frying the tofu:** Drain the tofu and pat it dry with a kitchen towel, then cut it into 2 cm cubes. Heat 1 tablespoon of sunflower oil in a pan and fry the tofu cubes over medium heat until golden brown and crispy on all sides (about 6-8 minutes). Remove to a plate and set aside.
-2. Soak the rice noodles in hot water according to the package instructions (about 5-7 minutes), then drain, rinse with cold water and set aside.
+2. Cook the whole-wheat thin noodles in boiling water according to the package instructions (usually 4-6 minutes), then drain, rinse with cold water and set aside.
 3. **Making the laksa base:** Heat the remaining 1 tablespoon of oil in a larger pot. Add the finely grated ginger, crushed garlic and red curry paste. Fry over medium heat for 1-2 minutes until the intense aromas rise.
-4. Pour in the vegetable broth and coconut milk and stir until smooth. Add the soy sauce, cane sugar and a pinch of salt. Bring to a boil, then reduce the heat and simmer gently for 10 minutes so the flavours meld. At the end, squeeze in the lime juice.
-5. **Serving:** Divide the drained rice noodles and the crispy fried tofu cubes between two deep bowls. Ladle the hot, aromatic coconut laksa soup over them.
+4. Pour in the vegetable broth and coconut milk and stir until smooth. Add the soy sauce and a pinch of salt. Bring to a boil, then reduce the heat and simmer gently for 10 minutes so the flavours meld. At the end, squeeze in the lime juice.
+5. **Serving:** Divide the drained whole-wheat thin noodles and the crispy fried tofu cubes between two deep bowls. Ladle the hot, aromatic coconut laksa soup over them.
 6. Garnish the soup with sliced spring onions, thinly sliced red chilli and fresh coriander leaves. Serve immediately while hot!
 
 ## Tips

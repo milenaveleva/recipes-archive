@@ -14,26 +14,25 @@ cookTime: PT25M
 totalTime: PT40M
 cuisine: Italian
 course: Salad
-tags:
-  - vegetarian
-  - grains
-  - leeks
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g pearl barley
+  - raw: 200 g pearl barley, uncooked
     quantity: 200
     unit: g
     item: pearl barley
+    note: uncooked
     grams: 200
-    fdcId: 170285
+    fdcId: 170284
     matchConfidence: high
+    cooking: boiled
   - raw: 2 leeks
     quantity: 2
     item: leeks
     grams: 300
     fdcId: 169246
     matchConfidence: high
+    cooking: fried
   - raw: 500 ml vegetable broth
     quantity: 500
     unit: ml
@@ -42,6 +41,7 @@ ingredients:
     milliliters: 500
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 60 g walnuts
     quantity: 60
     unit: g
@@ -49,6 +49,7 @@ ingredients:
     grams: 60
     fdcId: 170187
     matchConfidence: high
+    cooking: fried
   - raw: 80 g rocket (arugula)
     quantity: 80
     unit: g
@@ -57,6 +58,7 @@ ingredients:
     grams: 80
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 50 g Parmesan cheese
     quantity: 50
     unit: g
@@ -64,6 +66,7 @@ ingredients:
     grams: 50
     fdcId: 173431
     matchConfidence: high
+    cooking: raw
   - raw: 2 cloves fresh garlic
     quantity: 2
     unit: cloves
@@ -71,6 +74,7 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: fried
   - raw: 25 g butter
     quantity: 25
     unit: g
@@ -78,6 +82,7 @@ ingredients:
     grams: 25
     fdcId: 173430
     matchConfidence: high
+    cooking: fried
   - raw: 45 ml extra virgin olive oil
     quantity: 45
     unit: ml
@@ -86,6 +91,7 @@ ingredients:
     milliliters: 45
     fdcId: 171413
     matchConfidence: high
+    cooking: fried
   - raw: 20 ml balsamic vinegar
     quantity: 20
     unit: ml
@@ -94,6 +100,7 @@ ingredients:
     milliliters: 20
     fdcId: 172241
     matchConfidence: high
+    cooking: fried
   - raw: 1 tsp thyme
     quantity: 1
     unit: tsp
@@ -102,6 +109,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173470
     matchConfidence: high
+    cooking: fried
   - raw: 1 tsp fine salt
     quantity: 1
     unit: tsp
@@ -110,6 +118,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: medium
+    cooking: fried
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -118,48 +127,50 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: fried
 nutrition:
   perServing:
-    energyKcal: 411
-    energyKj: 1719
-    protein_g: 10.3
-    fat_g: 29.2
-    satFat_g: 7.8
-    carbs_g: 30.5
-    fiber_g: 4.6
-    sugar_g: 5.5
-    sodium_mg: 1174
-    availableCarb_g: 25.9
+    energyKcal: 525
+    energyKj: 2199
+    protein_g: 14.1
+    fat_g: 29.6
+    satFat_g: 7.9
+    carbs_g: 55.3
+    fiber_g: 10.6
+    sugar_g: 5.7
+    sodium_mg: 1177
+    availableCarb_g: 44.7
   glycemic:
-    gi: 44
-    gl: 11
+    gi: 38
+    gl: 17
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 69
   nutriScore:
     grade: C
-    points: 6
+    points: 5
     category: general
     version: "2023"
-    coverage: 0.98
+    coverage: 1
   inflammation:
-    score: -0.1
-    band: neutral
+    score: -0.4
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
     score: 3
     band: low
-    nrf: 12.5
+    nrf: 16.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 86
+    minimallyProcessedPct: 89
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

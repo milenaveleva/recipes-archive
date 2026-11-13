@@ -14,58 +14,62 @@ cookTime: PT20M
 totalTime: PT35M
 cuisine: International
 course: Salad
-tags:
-  - vegan
-  - gluten-free
-  - legumes
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 150 g millet
+  - raw: 150 g millet, uncooked
     quantity: 150
     unit: g
     item: millet
+    note: uncooked
     grams: 150
     fdcId: 169702
     matchConfidence: high
+    cooking: boiled
   - raw: 1 beetroot
     quantity: 1
     item: beetroot
     grams: 150
-    fdcId: 169146
+    fdcId: 169145
     matchConfidence: high
+    cooking: baked
   - raw: 1 fennel bulb
     quantity: 1
     item: fennel bulb
     grams: 200
     fdcId: 169385
     matchConfidence: high
+    cooking: baked
   - raw: 1 orange
     quantity: 1
     item: orange
     grams: 130
     fdcId: 169919
     matchConfidence: high
+    cooking: raw
   - raw: 3 radishes
     quantity: 3
     item: radishes
     grams: 30
     fdcId: 169276
     matchConfidence: high
+    cooking: raw
   - raw: 1 avocado
     quantity: 1
     item: avocado
     grams: 150
     fdcId: 171707
     matchConfidence: high
+    cooking: raw
   - raw: 1 can chickpeas, drained
     quantity: 1
     unit: can
     item: chickpeas
     note: drained
     grams: 240
-    fdcId: 174288
-    matchConfidence: high
+    fdcId: 173800
+    matchConfidence: medium
+    cooking: baked
   - raw: 5 ml olive oil
     quantity: 5
     unit: ml
@@ -74,55 +78,59 @@ ingredients:
     milliliters: 5
     fdcId: 171413
     matchConfidence: high
-  - raw: 10 g salt
-    quantity: 10
-    unit: g
+    cooking: baked
+  - raw: 1¾ tsp salt
+    quantity: 1.75
+    unit: tsp
     item: salt
     grams: 10
+    milliliters: 8.62561
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 483
-    energyKj: 2020
-    protein_g: 20.1
-    fat_g: 10.8
-    satFat_g: 1.6
-    carbs_g: 77.6
-    fiber_g: 15.7
-    sugar_g: 12.5
-    sodium_mg: 1069
-    availableCarb_g: 61.9
+    energyKcal: 334
+    energyKj: 1396
+    protein_g: 10.9
+    fat_g: 8.5
+    satFat_g: 1.4
+    carbs_g: 56.3
+    fiber_g: 13.3
+    sugar_g: 8
+    sodium_mg: 1179
+    availableCarb_g: 43
   glycemic:
-    gi: 57
-    gl: 36
+    gi: 63
+    gl: 27
     giBand: medium
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 79
   nutriScore:
     grade: A
-    points: -3
+    points: 0
     category: general
     version: "2023"
-    coverage: 0.74
+    coverage: 0.6
   inflammation:
-    score: -1.7
+    score: -1.2
     band: anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 34.6
+    score: 5
+    band: moderate
+    nrf: 29.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 100
+    minimallyProcessedPct: 75
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

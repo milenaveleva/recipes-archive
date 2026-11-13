@@ -18,7 +18,6 @@ export function buildSearchDoc(entry: Recipe): SearchDoc {
     // Food names drive useful matches; fall back to the raw line ("to taste" etc.).
     ingredients: data.ingredients.map((i) => i.item || i.raw).filter(Boolean),
     steps: extractSteps(entry.body),
-    tags: data.tags,
     category: data.category ?? null,
     lists: data.lists,
     cuisine: data.cuisine ?? null,

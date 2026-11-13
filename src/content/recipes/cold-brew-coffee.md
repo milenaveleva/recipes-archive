@@ -13,10 +13,6 @@ prepTime: PT10M
 totalTime: PT10M
 cuisine: International
 course: Drink
-tags:
-  - vegan
-  - drink
-  - coffee
 lists:
   - Kifli favourites
 ingredients:
@@ -27,57 +23,63 @@ ingredients:
     grams: 85
     fdcId: 171881
     matchConfidence: medium
-  - raw: milk, to taste
+    cooking: raw
+  - raw: 30 ml unsweetened oat milk, to taste
     group: What else you may need
-    item: milk
+    quantity: 30
+    unit: ml
+    item: unsweetened oat milk
     note: to taste
     grams: 30
-    fdcId: 171284
-    matchConfidence: medium
+    milliliters: 30
+    fdcId: 2257046
+    matchConfidence: high
+    cooking: raw
   - raw: ice
     group: What else you may need
     item: ice
     fdcId: 175001
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 4
-    energyKj: 17
-    protein_g: 0.3
+    energyKcal: 3
+    energyKj: 14
+    protein_g: 0.1
     fat_g: 0.2
-    satFat_g: 0.1
+    satFat_g: 0
     carbs_g: 0.3
     fiber_g: 0
-    sugar_g: 0.3
+    sugar_g: 0.1
     sodium_mg: 3
     availableCarb_g: 0.3
   glycemic:
-    gi: 27
+    gi: 15
     gl: 0
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: B
     points: 2
     category: beverage
     version: "2023"
-    coverage: 1
+    coverage: 0.74
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: 0.8
+    band: pro-inflammatory
     method: fii v3
   balance:
-    score: 3
-    band: low
-    nrf: 19.3
+    score: 6
+    band: moderate
+    nrf: 38.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 100
-    ultraProcessedPct: 0
-    band: minimally-processed
+    minimallyProcessedPct: 10.5
+    ultraProcessedPct: 89.5
+    band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
@@ -99,4 +101,4 @@ createdAt: "2026-11-13"
 5. Seal the jar airtight and put it in the fridge for about 18 hours.
 6. After 18 hours, set a fine-mesh sieve over a bowl. Line it with a paper coffee filter (a tea towel or cloth works perfectly too), then pour in the coffee. Leave it until it has finished dripping.
 7. After straining, pour the coffee into another airtight jar; in the fridge it keeps for up to 2 weeks.
-8. Serve with plenty of ice, half water and half cold brew. Finish with a little milk if you like.
+8. Serve with plenty of ice, half water and half cold brew. Finish with a little oat milk if you like.

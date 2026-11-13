@@ -1,6 +1,6 @@
 ---
 title: Middle Eastern Green Lentil Tabbouleh Salad
-description: A fresh, protein-rich tabbouleh made with green lentils, plenty of parsley and mint, feta and toasted pine nuts, served with warm pita.
+description: A fresh, protein-rich tabbouleh made with green lentils, plenty of parsley and mint, feta and toasted pine nuts, served with warm whole-wheat pita.
 image: ./images/middle-eastern-green-lentil-tabbouleh-salad.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14258_1790993090651_middle-eastern-lentil-tabbouleh-salad_69cdd399.jpg
 imageAlt: Middle Eastern Green Lentil Tabbouleh Salad
@@ -14,21 +14,19 @@ cookTime: PT20M
 totalTime: PT40M
 cuisine: Middle Eastern
 course: Main Course
-tags:
-  - vegetarian
-  - legumes
-  - salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g green lentils
+  - raw: 250 g green lentils, uncooked
     group: For the salad base
     quantity: 250
     unit: g
     item: green lentils
+    note: uncooked
     grams: 250
     fdcId: 2644283
     matchConfidence: high
+    cooking: boiled
   - raw: 250 g cherry tomatoes
     group: For the salad base
     quantity: 250
@@ -37,6 +35,7 @@ ingredients:
     grams: 250
     fdcId: 321360
     matchConfidence: medium
+    cooking: raw
   - raw: 1 long cucumber
     group: For the salad base
     quantity: 1
@@ -44,6 +43,7 @@ ingredients:
     grams: 300
     fdcId: 169225
     matchConfidence: high
+    cooking: raw
   - raw: 1 bunch spring onions
     group: For the salad base
     quantity: 1
@@ -52,6 +52,7 @@ ingredients:
     grams: 60
     fdcId: 170005
     matchConfidence: high
+    cooking: raw
   - raw: 2 bunches fresh parsley
     group: For the salad base
     quantity: 2
@@ -60,6 +61,7 @@ ingredients:
     grams: 80
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: 1 bunch fresh mint
     group: For the salad base
     quantity: 1
@@ -68,6 +70,7 @@ ingredients:
     grams: 30
     fdcId: 173475
     matchConfidence: high
+    cooking: raw
   - raw: 50 ml extra virgin olive oil
     group: For the lemon-olive oil dressing
     quantity: 50
@@ -77,6 +80,7 @@ ingredients:
     milliliters: 50
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: juice of 2 lemons
     group: For the lemon-olive oil dressing
     quantity: 2
@@ -84,6 +88,7 @@ ingredients:
     grams: 90
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: 2 cloves garlic
     group: For the lemon-olive oil dressing
     quantity: 2
@@ -92,6 +97,7 @@ ingredients:
     grams: 8
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 1 tsp ground cumin
     group: For the lemon-olive oil dressing
     quantity: 1
@@ -101,6 +107,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170923
     matchConfidence: medium
+    cooking: raw
   - raw: 1 tsp fine salt
     group: For the lemon-olive oil dressing
     quantity: 1
@@ -110,6 +117,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: medium
+    cooking: raw
   - raw: 1 pinch ground black pepper
     group: For the lemon-olive oil dressing
     quantity: 1
@@ -119,6 +127,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
   - raw: 150 g feta cheese
     group: Toppings and serving
     quantity: 150
@@ -127,6 +136,7 @@ ingredients:
     grams: 150
     fdcId: 173420
     matchConfidence: high
+    cooking: raw
   - raw: 40 g pine nuts
     group: Toppings and serving
     quantity: 40
@@ -135,46 +145,48 @@ ingredients:
     grams: 40
     fdcId: 170591
     matchConfidence: high
-  - raw: 4 pita breads
+    cooking: fried
+  - raw: 4 whole-wheat pita breads
     group: Toppings and serving
     quantity: 4
-    item: pita breads
+    item: whole-wheat pita breads
     grams: 240
     fdcId: 174916
     matchConfidence: high
+    cooking: fried
 nutrition:
   perServing:
     energyKcal: 694
     energyKj: 2902
     protein_g: 29.7
     fat_g: 29.5
-    satFat_g: 7.3
+    satFat_g: 7.4
     carbs_g: 85.7
-    fiber_g: 7.6
-    sugar_g: 4.2
+    fiber_g: 14.3
+    sugar_g: 8.5
     sodium_mg: 1295
-    availableCarb_g: 78.1
+    availableCarb_g: 71.4
   glycemic:
-    gi: 32
-    gl: 25
+    gi: 34
+    gl: 24
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 48
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
-    coverage: 0.66
+    coverage: 0.87
   inflammation:
-    score: -0.5
+    score: -0.8
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 32.3
+    score: 6
+    band: moderate
+    nrf: 36.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 63
@@ -184,6 +196,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

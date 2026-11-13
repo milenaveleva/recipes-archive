@@ -13,10 +13,6 @@ prepTime: PT30M
 totalTime: PT30M
 cuisine: International
 course: Side Dish
-tags:
-  - vegan
-  - fermented
-  - gluten-free
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +23,7 @@ ingredients:
     grams: 1500
     fdcId: 169225
     matchConfidence: high
+    cooking: raw
   - raw: 70 g garlic
     quantity: 70
     unit: g
@@ -34,6 +31,7 @@ ingredients:
     grams: 70
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 1 bunch fresh dill
     quantity: 1
     unit: bunch
@@ -41,13 +39,16 @@ ingredients:
     grams: 30
     fdcId: 172233
     matchConfidence: high
-  - raw: 35 g salt
-    quantity: 35
-    unit: g
+    cooking: raw
+  - raw: 2 tbsp salt
+    quantity: 2
+    unit: tbsp
     item: salt
     grams: 35
+    milliliters: 29.5736
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 267
@@ -57,22 +58,22 @@ nutrition:
     satFat_g: 1.3
     carbs_g: 57.7
     fiber_g: 12.6
-    sugar_g: 21.4
+    sugar_g: 21.8
     sodium_mg: 13640
     availableCarb_g: 45.1
   glycemic:
-    gi: 15
-    gl: 7
+    gi: 42
+    gl: 19
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
     points: 5
     category: general
     version: "2023"
-    coverage: 0.98
+    coverage: 1
   inflammation:
     score: 0.4
     band: mildly-pro-inflammatory
@@ -80,7 +81,7 @@ nutrition:
   balance:
     score: 1
     band: poor
-    nrf: -100.1
+    nrf: -98.8
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

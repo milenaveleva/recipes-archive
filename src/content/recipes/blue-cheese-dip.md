@@ -8,15 +8,11 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10523-keksajt-martas-a-mindenhez-is-toekeletes-martogatos
 author: Kifli Kukták
-servings: 1
+servings: 6
 prepTime: PT10M
 totalTime: PT10M
 cuisine: American
 course: Sauce
-tags:
-  - vegetarian
-  - dip
-  - sauce
 lists:
   - Kifli favourites
 ingredients:
@@ -27,13 +23,15 @@ ingredients:
     grams: 115
     fdcId: 172175
     matchConfidence: high
-  - raw: 110 g mayonnaise
+    cooking: raw
+  - raw: 110 g Greek yogurt
     quantity: 110
     unit: g
-    item: mayonnaise
-    grams: 84.7
-    fdcId: 171411
-    matchConfidence: medium
+    item: Greek yogurt
+    grams: 110
+    fdcId: 171304
+    matchConfidence: high
+    cooking: raw
   - raw: 70 g sour cream
     quantity: 70
     unit: g
@@ -41,11 +39,13 @@ ingredients:
     grams: 70
     fdcId: 171257
     matchConfidence: high
+    cooking: raw
   - raw: juice of ½ lemon
     item: juice of ½ lemon
     grams: 22
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: 15 ml white wine vinegar
     quantity: 15
     unit: ml
@@ -54,56 +54,59 @@ ingredients:
     milliliters: 15
     fdcId: 172240
     matchConfidence: high
+    cooking: raw
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 1
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
   - raw: freshly ground black pepper, to taste
     item: freshly ground black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 1302
-    energyKj: 5449
-    protein_g: 26.5
-    fat_g: 131.4
-    satFat_g: 41.8
-    carbs_g: 7.8
-    fiber_g: 0.2
-    sugar_g: 3.5
-    sodium_mg: 1734
-    availableCarb_g: 7.6
+    energyKcal: 110
+    energyKj: 460
+    protein_g: 6.1
+    fat_g: 8.7
+    satFat_g: 5.2
+    carbs_g: 2
+    fiber_g: 0
+    sugar_g: 1.3
+    sodium_mg: 295
+    availableCarb_g: 2
   glycemic:
-    gi: 15
-    gl: 1
+    gi: 10
+    gl: 0
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
-    grade: E
-    points: 22
+    grade: D
+    points: 17
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
-    band: neutral
+    score: 1.3
+    band: pro-inflammatory
     method: fii v3
   balance:
     score: 1
     band: poor
-    nrf: -5.3
+    nrf: -5.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 68.8
+    minimallyProcessedPct: 38.5
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
@@ -119,7 +122,7 @@ createdAt: "2026-11-13"
 ## Method
 
 1. In a large bowl, mash the blue cheese with a fork until creamy.
-2. Stir in the lemon juice, sour cream, mayonnaise and vinegar. You should get a creamy dip.
+2. Stir in the lemon juice, sour cream, Greek yogurt and vinegar. You should get a creamy dip.
 3. Season with salt and pepper, and that is it, ready!
 
 ## Tips

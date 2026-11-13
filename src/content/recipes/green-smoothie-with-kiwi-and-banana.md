@@ -1,6 +1,6 @@
 ---
 title: Green Smoothie with Kiwi and Banana
-description: A creamy green smoothie of soy milk, kiwi, banana, baby spinach and walnuts.
+description: A creamy green smoothie of oat milk, kiwi, banana, baby spinach and walnuts.
 image: ./images/green-smoothie-with-kiwi-and-banana.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_12920_1777235415544_green-kiwi-banana-spinach-smoothie-with-walnuts_e0abd11f.jpg
 imageAlt: Green Smoothie with Kiwi and Banana
@@ -13,33 +13,32 @@ prepTime: PT10M
 totalTime: PT10M
 cuisine: International
 course: Drink
-tags:
-  - vegan
-  - smoothie
-  - quick
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 1 l unsweetened soy milk
+  - raw: 1 l unsweetened oat milk
     quantity: 1
     unit: l
-    item: unsweetened soy milk
+    item: unsweetened oat milk
     grams: 1030
     milliliters: 1000
-    fdcId: 1999630
+    fdcId: 2257046
     matchConfidence: high
+    cooking: raw
   - raw: 4 kiwis
     quantity: 4
     item: kiwis
     grams: 300
     fdcId: 2710831
     matchConfidence: medium
+    cooking: raw
   - raw: 2 ripe bananas
     quantity: 2
     item: ripe bananas
     grams: 240
     fdcId: 173944
     matchConfidence: high
+    cooking: raw
   - raw: 40 g walnuts
     quantity: 40
     unit: g
@@ -47,6 +46,7 @@ ingredients:
     grams: 40
     fdcId: 170187
     matchConfidence: high
+    cooking: raw
   - raw: 40 g fresh baby spinach
     quantity: 40
     unit: g
@@ -54,6 +54,7 @@ ingredients:
     grams: 40
     fdcId: 1999632
     matchConfidence: high
+    cooking: raw
   - raw: 1 sprig fresh basil, for garnish
     quantity: 1
     unit: sprig
@@ -62,43 +63,44 @@ ingredients:
     grams: 2
     fdcId: 172232
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 264
-    energyKj: 1105
-    protein_g: 12.4
-    fat_g: 12.7
-    satFat_g: 1.5
-    carbs_g: 29
+    energyKcal: 289
+    energyKj: 1210
+    protein_g: 5.3
+    fat_g: 14.3
+    satFat_g: 0.7
+    carbs_g: 38.8
     fiber_g: 4
-    sugar_g: 7.6
-    sodium_mg: 102
-    availableCarb_g: 25
+    sugar_g: 20
+    sodium_mg: 122
+    availableCarb_g: 34.8
   glycemic:
-    gi: 45
-    gl: 11
+    gi: 39
+    gl: 14
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 35
   nutriScore:
-    grade: B
-    points: -6
+    grade: D
+    points: 8
     category: beverage
     version: "2023"
-    coverage: 0.17
+    coverage: 0.38
   inflammation:
-    score: -0.5
-    band: mildly-anti-inflammatory
+    score: 0.4
+    band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 5
+    score: 6
     band: moderate
-    nrf: 37.3
+    nrf: 40.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 62.4
-    ultraProcessedPct: 37.6
+    minimallyProcessedPct: 57
+    ultraProcessedPct: 43
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"

@@ -14,10 +14,6 @@ cookTime: PT20M
 totalTime: PT35M
 cuisine: Mediterranean
 course: Appetizer
-tags:
-  - fish
-  - eggplant
-  - starter
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 300
     fdcId: 169228
     matchConfidence: high
+    cooking: baked
   - raw: 50 g smoked salmon slices
     quantity: 50
     unit: g
@@ -35,6 +32,7 @@ ingredients:
     grams: 50
     fdcId: 173687
     matchConfidence: medium
+    cooking: raw
   - raw: 30 g fresh goat cheese
     quantity: 30
     unit: g
@@ -42,6 +40,7 @@ ingredients:
     grams: 30
     fdcId: 173435
     matchConfidence: high
+    cooking: raw
   - raw: 10 g vegetable oil
     quantity: 10
     unit: g
@@ -49,6 +48,7 @@ ingredients:
     grams: 10
     fdcId: 172370
     matchConfidence: high
+    cooking: baked
   - raw: 25 g extra virgin olive oil
     quantity: 25
     unit: g
@@ -56,6 +56,7 @@ ingredients:
     grams: 25
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: 1 tsp fresh thyme
     quantity: 1
     unit: tsp
@@ -64,6 +65,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173470
     matchConfidence: high
+    cooking: raw
   - raw: 50 g plain yogurt
     quantity: 50
     unit: g
@@ -71,6 +73,7 @@ ingredients:
     grams: 50
     fdcId: 171284
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp heavy cream (min. 31%)
     quantity: 1
     unit: tbsp
@@ -80,6 +83,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 2346386
     matchConfidence: high
+    cooking: raw
   - raw: 1 tsp white wine vinegar
     quantity: 1
     unit: tsp
@@ -88,6 +92,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 172240
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp fresh dill
     quantity: 1
     unit: tbsp
@@ -96,6 +101,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 172233
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp raisins
     quantity: 1
     unit: tbsp
@@ -104,18 +110,21 @@ ingredients:
     milliliters: 14.7868
     fdcId: 168166
     matchConfidence: high
+    cooking: raw
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 2
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
 nutrition:
   perServing:
     energyKcal: 636
@@ -125,22 +134,22 @@ nutrition:
     satFat_g: 14
     carbs_g: 29.2
     fiber_g: 10
-    sugar_g: 12.9
+    sugar_g: 13.4
     sodium_mg: 1286
     availableCarb_g: 19.2
   glycemic:
-    gi: 32
-    gl: 6
+    gi: 27
+    gl: 5
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 51
   nutriScore:
     grade: C
     points: 3
     category: general
     version: "2023"
-    coverage: 0.95
+    coverage: 0.98
   inflammation:
     score: -0.1
     band: neutral
@@ -148,7 +157,7 @@ nutrition:
   balance:
     score: 2
     band: poor
-    nrf: 7.7
+    nrf: 8.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 78.3
@@ -158,6 +167,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

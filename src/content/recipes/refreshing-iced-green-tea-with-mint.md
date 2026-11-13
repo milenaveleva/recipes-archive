@@ -14,10 +14,6 @@ cookTime: PT5M
 totalTime: PT30M
 cuisine: International
 course: Drink
-tags:
-  - vegan-friendly
-  - drink
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +23,7 @@ ingredients:
     grams: 8
     fdcId: 171917
     matchConfidence: medium
+    cooking: boiled
   - raw: 3 sprigs fresh mint (plus extra to garnish)
     quantity: 3
     unit: sprigs
@@ -35,6 +32,7 @@ ingredients:
     grams: 6
     fdcId: 173475
     matchConfidence: high
+    cooking: boiled
   - raw: 80 g honey
     quantity: 80
     unit: g
@@ -42,11 +40,13 @@ ingredients:
     grams: 80
     fdcId: 169640
     matchConfidence: high
+    cooking: raw
   - raw: ice
     item: ice
     fdcId: 175001
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: raw
   - raw: lemon (optional)
     group: Optional extras
     item: lemon
@@ -54,6 +54,7 @@ ingredients:
     grams: 30
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: lime (optional)
     group: Optional extras
     item: lime
@@ -61,6 +62,7 @@ ingredients:
     grams: 30
     fdcId: 168155
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 44
@@ -78,8 +80,8 @@ nutrition:
     gl: 7
     giBand: medium
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 94
   nutriScore:
     grade: E
     points: 20

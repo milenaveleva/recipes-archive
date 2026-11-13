@@ -14,10 +14,6 @@ cookTime: PT15M
 totalTime: PT35M
 cuisine: Hungarian
 course: Main Course
-tags:
-  - vegan
-  - tofu
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -28,11 +24,13 @@ ingredients:
     grams: 400
     fdcId: 172475
     matchConfidence: high
+    cooking: raw
   - raw: a few drops of lemon juice
     item: a few drops of lemon juice
     grams: 5
     fdcId: 167747
     matchConfidence: high
+    cooking: baked
   - raw: 10 g fresh parsley
     quantity: 10
     unit: g
@@ -40,14 +38,7 @@ ingredients:
     grams: 10
     fdcId: 170416
     matchConfidence: high
-  - raw: 5 ml coconut blossom syrup
-    quantity: 5
-    unit: ml
-    item: coconut blossom syrup
-    grams: 4.7
-    milliliters: 5
-    fdcId: 170674
-    matchConfidence: medium
+    cooking: raw
   - raw: 200 ml vegetable broth
     quantity: 200
     unit: ml
@@ -56,6 +47,7 @@ ingredients:
     milliliters: 200
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 50 ml olive oil
     quantity: 50
     unit: ml
@@ -64,39 +56,44 @@ ingredients:
     milliliters: 50
     fdcId: 171413
     matchConfidence: high
-  - raw: 5 g salt
-    quantity: 5
-    unit: g
+    cooking: raw
+  - raw: ¾ tsp salt
+    quantity: 0.75
+    unit: tsp
     item: salt
     grams: 5
+    milliliters: 3.69669
     fdcId: 173468
     matchConfidence: high
-  - raw: 2 g black pepper
-    quantity: 2
-    unit: g
+    cooking: baked
+  - raw: ¾ tsp black pepper
+    quantity: 0.75
+    unit: tsp
     item: black pepper
     grams: 2
+    milliliters: 3.69669
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 254
-    energyKj: 1064
+    energyKcal: 250
+    energyKj: 1044
     protein_g: 17.5
     fat_g: 20.2
     satFat_g: 2.9
-    carbs_g: 5
+    carbs_g: 3.8
     fiber_g: 2.5
-    sugar_g: 1.5
+    sugar_g: 0.3
     sodium_mg: 639
-    availableCarb_g: 2.4
+    availableCarb_g: 1.3
   glycemic:
-    gi: 44
-    gl: 1
+    gi: 15
+    gl: 0
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: A
     points: 0
@@ -104,22 +101,23 @@ nutrition:
     version: "2023"
     coverage: 0.39
   inflammation:
-    score: -1
+    score: -1.1
     band: anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 40
+    score: 7
+    band: high
+    nrf: 43.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 42.4
+    minimallyProcessedPct: 41.4
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -131,7 +129,7 @@ createdAt: "2026-11-13"
 ## Method
 
 1. Clean the vegetables and cut them into bite-sized pieces.
-2. Season with salt, pepper, lemon juice and coconut syrup, then roast the root vegetables on a baking tray at 180 °C for 10-15 minutes.
+2. Season with salt, pepper and lemon juice, then roast the root vegetables on a baking tray at 180 °C for 10-15 minutes.
 3. If you are also using green vegetables, blanch them in salted water and refresh in ice water.
 4. Mix the vegetables with the herbs and olive oil and adjust the seasoning if needed.
 5. Serve your modern-style stew with tofu or vegan cheese.

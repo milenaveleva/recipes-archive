@@ -8,16 +8,12 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10480-roston-suelt-lazac-rukkolaval-rizzsel-edamame-babbal-es-guau-guacamole-val
 author: Kifli Kukták
-servings: 1
+servings: 2
 prepTime: PT15M
 cookTime: PT10M
 totalTime: PT25M
 cuisine: International
 course: Main Course
-tags:
-  - fish
-  - salmon
-  - rice
 lists:
   - Kifli favourites
 ingredients:
@@ -27,12 +23,14 @@ ingredients:
     grams: 300
     fdcId: 175167
     matchConfidence: high
+    cooking: fried
   - raw: arugula, for the salad
     item: arugula
     note: for the salad
     grams: 40
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 1 cup shelled edamame
     quantity: 1
     unit: cup
@@ -41,19 +39,23 @@ ingredients:
     milliliters: 236.588
     fdcId: 168411
     matchConfidence: high
+    cooking: raw
   - raw: guacamole
     item: guacamole
     grams: 100
     fdcId: 171707
     matchConfidence: high
-  - raw: 2 cups cooked rice
+    cooking: raw
+  - raw: 2 cups cooked brown rice (≈ 136 g uncooked)
     quantity: 2
     unit: cups
-    item: cooked rice
-    grams: 316
+    item: cooked brown rice
+    note: ≈ 136 g uncooked
+    grams: 136
     milliliters: 473.176
-    fdcId: 169759
+    fdcId: 169703
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tbsp oil
     quantity: 1
     unit: tbsp
@@ -62,51 +64,54 @@ ingredients:
     milliliters: 14.7868
     fdcId: 172370
     matchConfidence: high
+    cooking: fried
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 2
     fdcId: 173468
     matchConfidence: high
+    cooking: fried
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: fried
 nutrition:
   perServing:
-    energyKcal: 1452
-    energyKj: 6074
-    protein_g: 92.2
-    fat_g: 73.4
-    satFat_g: 14.4
-    carbs_g: 105.6
-    fiber_g: 17.3
-    sugar_g: 7
-    sodium_mg: 982
-    availableCarb_g: 88.3
+    energyKcal: 781
+    energyKj: 3268
+    protein_g: 46.6
+    fat_g: 38.3
+    satFat_g: 7.5
+    carbs_g: 63.5
+    fiber_g: 9.7
+    sugar_g: 3.8
+    sodium_mg: 491
+    availableCarb_g: 53.9
   glycemic:
-    gi: 58
-    gl: 51
+    gi: 56
+    gl: 30
     giBand: medium
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 92
   nutriScore:
     grade: A
-    points: -1
+    points: 0
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.8
-    band: mildly-anti-inflammatory
+    score: -1.1
+    band: anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 32.1
+    score: 6
+    band: moderate
+    nrf: 31.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -116,6 +121,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

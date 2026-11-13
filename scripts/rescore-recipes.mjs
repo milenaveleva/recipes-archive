@@ -35,12 +35,12 @@ try {
     { cwd: ROOT, stdio: ['ignore', 'ignore', 'inherit'] },
   );
   const core = await import(pathToFileURL(join(outDir, 'core/recipeScore.js')).href);
-  await rescore(core.scoreRecipe);
+  await rescore(core);
 } finally {
   rmSync(outDir, { recursive: true, force: true });
 }
 
-async function rescore(scoreRecipe) {
+async function rescore({ scoreRecipe, storedScoringFields, dataSourcesFor }) {
   log('→ loading food data…');
   const foods = read('src/data/usda-foods.json');
   const foodById = new Map(foods.map((f) => [f.fdcId, f]));
@@ -58,8 +58,10 @@ async function rescore(scoreRecipe) {
     if (!data?.nutrition) continue; // only recipes that carry a nutrition block
 
     const stored = data.nutrition.nutriScore ?? {};
+    // storedScoringFields carries each ingredient's `cooking` method, so the block is
+    // scored on the cooked, as-eaten state (src/core/cooking.ts).
     const { macro, scores } = scoreRecipe(
-      (data.ingredients ?? []).map((i) => ({ grams: i.grams, fdcId: i.fdcId, excludeFromNutrition: i.excludeFromNutrition })),
+      (data.ingredients ?? []).map(storedScoringFields),
       {
         servings: data.servings ?? 4,
         nutriCategory: stored.category ?? 'general',
@@ -71,7 +73,8 @@ async function rescore(scoreRecipe) {
       foodById, foodScoring, polyphenols,
     );
 
-    const block = serializeNutrition(macro, scores, data.nutrition.computedAt, foodById, data.ingredients ?? [], stored);
+    const sources = dataSourcesFor(scores, (data.ingredients ?? []).map(storedScoringFields), foodById);
+    const block = serializeNutrition(macro, scores, data.nutrition.computedAt, sources, stored);
     const blockRe = /^nutrition:\n(?:  .*(?:\n|$))*/m;
     if (!blockRe.test(text)) { log(`  ${file}: ⚠ nutrition block not matched — skipped`); continue; }
     const updated = text.replace(blockRe, block);
@@ -85,7 +88,7 @@ async function rescore(scoreRecipe) {
 }
 
 /** Serialize the nutrition block to the committed YAML shape (2-space indent). */
-function serializeNutrition(macro, scores, computedAt, foodById, ingredients, nutriInputs = {}) {
+function serializeNutrition(macro, scores, computedAt, sources, nutriInputs = {}) {
   const L = ['nutrition:'];
   const kv = (indent, k, v) => L.push(`${' '.repeat(indent)}${k}: ${v}`);
 
@@ -101,7 +104,7 @@ function serializeNutrition(macro, scores, computedAt, foodById, ingredients, nu
     kv(4, 'giBand', scores.glycemic.giBand);
     kv(4, 'glBand', scores.glycemic.glBand);
     kv(4, 'gi_source', scores.glycemic.gi_source);
-    kv(4, 'carbCoveragePct', scores.glycemic.carbCoveragePct);
+    kv(4, 'measuredGiPct', scores.glycemic.measuredGiPct);
   }
   if (scores.nutriScore) {
     L.push('  nutriScore:');
@@ -140,19 +143,9 @@ function serializeNutrition(macro, scores, computedAt, foodById, ingredients, nu
   }
   kv(2, 'computedAt', `"${computedAt ?? new Date().toISOString().slice(0, 10)}"`);
 
-  // dataSources — mirror addLib.dataSourcesFor: base + national table (if used) + one per score.
+  // dataSources — the shared recipeScore.dataSourcesFor (same list the /add island emits).
   L.push('  dataSources:');
-  const usesJp = (ingredients ?? []).some(
-    (i) => !i.excludeFromNutrition && i.fdcId != null && foodById.get(i.fdcId)?.source === 'JP-MEXT',
-  );
-  const src = ['USDA FoodData Central'];
-  if (usesJp) src.push('MEXT Standard Tables of Food Composition in Japan 2020');
-  if (scores.glycemic) src.push('Atkinson 2021 GI tables');
-  if (scores.nutriScore) src.push('Nutri-Score 2023');
-  if (scores.inflammation) src.push('Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols');
-  if (scores.balance) src.push('Nutrient-Rich Foods Index (NRF9.3)');
-  if (scores.processing) src.push('NOVA food classification (energy-weighted)');
-  for (const s of src) L.push(`    - ${s}`);
+  for (const s of sources) L.push(`    - ${s}`);
 
   return L.join('\n') + '\n';
 }

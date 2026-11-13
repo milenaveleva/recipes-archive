@@ -25,13 +25,15 @@ import { round } from './num';
 import referenceData from '../data/inflammation-reference.json';
 
 /** Quintile edges of the per-food tag distribution, from inflammation-reference.json. */
-interface InflammationBandEdges {
+export interface InflammationBandEdges {
   antiMax: number;
   mildlyAntiMax: number;
   neutralMax: number;
   mildlyProMax: number;
 }
 const BANDS = (referenceData as { bands: InflammationBandEdges }).bands;
+/** The band edges, shared with the dial presentation so its colour follows the same cut-offs. */
+export const INFLAMMATION_BAND_EDGES: Readonly<InflammationBandEdges> = BANDS;
 if (!BANDS || typeof BANDS.antiMax !== 'number') {
   // The band edges are generated as a unit with the rest of the reference; a file
   // without them means a stale or partial regen, not a recoverable state.

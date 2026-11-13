@@ -19,6 +19,8 @@ import {
   splitMethodBody,
   initialGrams,
   selectMatch,
+  rowsToScored,
+  rowsToResolved,
   EMPTY_FORM,
 } from './addLib';
 import { toRecipeMarkdown } from '../../core/markdown';
@@ -187,15 +189,34 @@ describe('selectMatch (re-derives weight when the match changes)', () => {
   });
 });
 
+describe('selectMatch re-suggests cooking for the new food', () => {
+  it('re-runs the suggestion when the author has not set the method', () => {
+    const row = buildRow('200 g red lentils');
+    expect(row.cooking).toBe('boiled');
+    expect(selectMatch(row, 169230).cooking).toBe('raw'); // garlic — not a dry staple
+  });
+
+  it('keeps a method the author set', () => {
+    const row = { ...buildRow('200 g red lentils'), cooking: 'steamed' as const, userSetCooking: true };
+    expect(selectMatch(row, 169230).cooking).toBeUndefined();
+  });
+
+  it('treats a stored method as author-set when editing', () => {
+    const [row] = rowsFromIngredients([{ raw: '200 g red lentils', fdcId: 172420, grams: 200, cooking: 'raw' }]);
+    expect(row.userSetCooking).toBe(true);
+    expect(selectMatch(row, 174284).cooking).toBeUndefined();
+  });
+});
+
 describe('buildDraft → markdown', () => {
   it('assembles a draft with computed macros and serialises it', () => {
-    const form = { ...EMPTY_FORM, title: 'Test Dahl', servings: 2, prepMin: 10, tags: 'vegan, one-pot' };
+    const form = { ...EMPTY_FORM, title: 'Test Dahl', servings: 2, prepMin: 10, lists: 'weeknight, batch' };
     const rows = [buildRow('200 g red lentils'), buildRow('100 g spinach')];
     const macro = computeNutrition(rows, form.servings);
     const draft = buildDraft(form, rows, macro, '2026-06-19');
 
     expect(draft.title).toBe('Test Dahl');
-    expect(draft.tags).toEqual(['vegan', 'one-pot']);
+    expect(draft.lists).toEqual(['weeknight', 'batch']);
     expect(draft.prepTime).toBe('PT10M');
     expect(draft.ingredients).toHaveLength(2);
     expect(draft.nutrition?.perServing?.energyKcal).toBeGreaterThan(0);
@@ -239,6 +260,24 @@ describe('buildDraft → markdown', () => {
     const rows = [buildRow('100 g spinach')];
     const draft = buildDraft({ ...EMPTY_FORM, title: 'Spinach', servings: 2 }, rows, computeNutrition(rows, 2), '2026-06-27');
     expect(draft.nutrition?.dataSources ?? []).not.toContain('MEXT Standard Tables of Food Composition in Japan 2020');
+    expect(draft.nutrition?.dataSources ?? []).not.toContain('ANSES Ciqual French food composition table 2020');
+  });
+
+  it('credits each national table used, once, in a stable order', () => {
+    const rows = [buildRow('200 g gnocchi'), buildRow('30 g mirin'), buildRow('400 g gnocchi')];
+    expect(rows[0].selectedFdcId).toBe(82025510); // matched the FR-CIQUAL gnocchi record
+    const draft = buildDraft({ ...EMPTY_FORM, title: 'Gnocchi test', servings: 2 }, rows, computeNutrition(rows, 2), '2026-11-13');
+    const national = (draft.nutrition?.dataSources ?? []).filter((s) => /MEXT|Ciqual/.test(s));
+    expect(national).toEqual([
+      'MEXT Standard Tables of Food Composition in Japan 2020',
+      'ANSES Ciqual French food composition table 2020',
+    ]);
+  });
+
+  it('does not credit a national table for an excluded ingredient', () => {
+    const rows = [{ ...buildRow('200 g gnocchi'), excludeFromNutrition: true }, buildRow('100 g spinach')];
+    const draft = buildDraft({ ...EMPTY_FORM, title: 'Excluded', servings: 2 }, rows, computeNutrition(rows, 2), '2026-11-13');
+    expect(draft.nutrition?.dataSources ?? []).not.toContain('ANSES Ciqual French food composition table 2020');
   });
 });
 
@@ -277,7 +316,6 @@ describe('editing round-trip (formFromRecipe / rowsFromIngredients)', () => {
         cuisine: 'Indian',
         course: 'Main',
         category: 'Mains',
-        tags: ['vegan', 'one-pot'],
         lists: ['weeknight'],
         imageUrl: 'https://ex.com/x.jpg',
         source: { name: 'Blog', url: 'https://ex.com/r' },
@@ -288,7 +326,6 @@ describe('editing round-trip (formFromRecipe / rowsFromIngredients)', () => {
     expect(form.title).toBe('Lentil Dahl');
     expect(form.prepMin).toBe(15);
     expect(form.cookMin).toBe(30);
-    expect(form.tags).toBe('vegan, one-pot');
     expect(form.lists).toBe('weeknight');
     expect(form.nutriCategory).toBe('beverage');
     expect(form.sourceName).toBe('Blog');
@@ -514,5 +551,32 @@ describe('helpers', () => {
     expect(isoToMinutes('PT1H30M')).toBe(90);
     expect(isoToMinutes('P1DT30M')).toBe(1470); // days included
     expect(isoToMinutes(undefined)).toBeNull();
+  });
+});
+
+describe('cooking method plumbing', () => {
+  it('suggests boiled for a dry staple and raw otherwise', () => {
+    expect(buildRow('200 g red lentils').cooking).toBe('boiled');
+    expect(buildRow('2 cloves garlic, minced').cooking).toBe('raw');
+  });
+
+  it('restores a stored method, defaults an absent one to raw, and round-trips through the draft', () => {
+    const rows = rowsFromIngredients([
+      { raw: '200 g red lentils', fdcId: 172420, grams: 200, matchConfidence: 'high', cooking: 'boiled' },
+      { raw: '2 cloves garlic, minced', fdcId: 169230, grams: 6, matchConfidence: 'high' },
+    ]);
+    expect(rows.map((r) => r.cooking)).toEqual(['boiled', 'raw']);
+    const draft = buildDraft({ ...EMPTY_FORM, title: 'D', servings: 2 }, rows, computeNutrition(rows, 2), '2026-06-20');
+    expect(draft.ingredients.map((i) => i.cooking)).toEqual(['boiled', 'raw']);
+    expect(rowsFromIngredients(draft.ingredients).map((r) => r.cooking)).toEqual(['boiled', 'raw']);
+  });
+
+  it('scores the cooked mass: boiled dry lentils weigh in at the Bognár yield', () => {
+    const [row] = rowsFromIngredients([
+      { raw: '200 g red lentils', fdcId: 172420, grams: 200, matchConfidence: 'high', cooking: 'boiled' },
+    ]);
+    expect(rowsToScored([row])[0].grams).toBeCloseTo(200 * 2.73, 5); // Bognár 2002 Table 20 lentils
+    expect(rowsToResolved([row])[0].grams).toBeCloseTo(200 * 2.73, 5);
+    expect(rowsToScored([{ ...row, cooking: 'raw' }])[0].grams).toBe(200);
   });
 });

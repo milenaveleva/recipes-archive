@@ -8,16 +8,12 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10335-husito-gyoemberital
 author: Kifli Kukták
-servings: 1
+servings: 4
 prepTime: PT10M
 cookTime: PT20M
 totalTime: PT30M
 cuisine: International
 course: Drink
-tags:
-  - vegan
-  - refreshing
-  - non-alcoholic
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +25,7 @@ ingredients:
     grams: 200
     fdcId: 169231
     matchConfidence: high
+    cooking: boiled
   - raw: 2 lemons (zest and juice)
     quantity: 2
     item: lemons
@@ -36,20 +33,15 @@ ingredients:
     grams: 90
     fdcId: 167747
     matchConfidence: high
-  - raw: 75 g golden brown sugar
-    quantity: 75
+    cooking: boiled
+  - raw: 130 g honey
+    quantity: 130
     unit: g
-    item: golden brown sugar
-    grams: 75
-    fdcId: 168833
+    item: honey
+    grams: 130
+    fdcId: 169640
     matchConfidence: high
-  - raw: 100 g muscovado sugar
-    quantity: 100
-    unit: g
-    item: muscovado sugar
-    grams: 100
-    fdcId: 170674
-    matchConfidence: medium
+    cooking: boiled
   - raw: 100 g ice
     quantity: 100
     unit: g
@@ -58,6 +50,7 @@ ingredients:
     fdcId: 175001
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: raw
   - raw: 1000 ml soda water
     quantity: 1000
     unit: ml
@@ -67,39 +60,40 @@ ingredients:
     fdcId: 169301
     matchConfidence: medium
     excludeFromNutrition: true
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 864
-    energyKj: 3614
-    protein_g: 4
-    fat_g: 1.7
-    satFat_g: 0.4
-    carbs_g: 215.2
-    fiber_g: 4.3
-    sugar_g: 177.6
-    sodium_mg: 51
-    availableCarb_g: 210.9
+    energyKcal: 144
+    energyKj: 601
+    protein_g: 1.1
+    fat_g: 0.4
+    satFat_g: 0.1
+    carbs_g: 37.2
+    fiber_g: 1.1
+    sugar_g: 28.1
+    sodium_mg: 8
+    availableCarb_g: 36.1
   glycemic:
-    gi: 64
-    gl: 135
+    gi: 61
+    gl: 22
     giBand: medium
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 74
   nutriScore:
     grade: E
     points: 16
     category: beverage
     version: "2023"
-    coverage: 0.78
+    coverage: 1
   inflammation:
-    score: 1.1
+    score: 0.9
     band: pro-inflammatory
     method: fii v3
   balance:
     score: 1
     band: poor
-    nrf: -25
+    nrf: -17.4
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -109,6 +103,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -119,5 +114,5 @@ createdAt: "2026-11-13"
 
 ## Method
 
-1. Put the ginger in a saucepan with the lemon zest, both sugars and 500 ml water, then stir over low heat until the sugar dissolves. Increase the heat to medium and cook for another 15-20 minutes, until the water has cooked off and the mixture is syrupy. Remove from the heat and let it cool completely.
+1. Put the ginger in a saucepan with the lemon zest, the honey and 500 ml water, then stir over low heat until the honey dissolves. Increase the heat to medium and cook for another 15-20 minutes, until the water has cooked off and the mixture is syrupy. Remove from the heat and let it cool completely.
 2. Strain the syrup through a fine sieve into a jug. (If you like, transfer the syrup to a small sterilised bottle or jar; it keeps in the fridge for up to two weeks.) Pour in the lemon juice, fill with ice and top up with soda water.

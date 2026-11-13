@@ -13,11 +13,6 @@ prepTime: PT15M
 totalTime: PT15M
 cuisine: Mexican
 course: Sauce
-tags:
-  - vegan
-  - dip
-  - gluten-free
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -27,12 +22,14 @@ ingredients:
     grams: 300
     fdcId: 171706
     matchConfidence: high
+    cooking: raw
   - raw: ½ lime
     quantity: 0.5
     item: lime
     grams: 22
     fdcId: 168156
     matchConfidence: high
+    cooking: raw
   - raw: 1 clove garlic
     quantity: 1
     unit: clove
@@ -40,24 +37,28 @@ ingredients:
     grams: 3
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: ½ jalapeño pepper
     quantity: 0.5
     item: jalapeño pepper
     grams: 7
     fdcId: 169395
     matchConfidence: medium
+    cooking: raw
   - raw: 1 shallot
     quantity: 1
     item: shallot
     grams: 40
     fdcId: 170499
     matchConfidence: high
+    cooking: raw
   - raw: 1 tomato
     quantity: 1
     item: tomato
     grams: 120
     fdcId: 321360
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -66,6 +67,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -74,6 +76,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 144
@@ -83,16 +86,16 @@ nutrition:
     satFat_g: 1.6
     carbs_g: 10.7
     fiber_g: 6.2
-    sugar_g: 1.2
+    sugar_g: 2.6
     sodium_mg: 48
     availableCarb_g: 4.5
   glycemic:
-    gi: 37
+    gi: 39
     gl: 2
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 23
   nutriScore:
     grade: A
     points: -5
@@ -100,13 +103,13 @@ nutrition:
     version: "2023"
     coverage: 0.76
   inflammation:
-    score: -1.6
+    score: -1.5
     band: anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 46.1
+    score: 7
+    band: high
+    nrf: 47.3
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

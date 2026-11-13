@@ -14,8 +14,6 @@ cookTime: PT35M
 totalTime: PT1H
 cuisine: Hungarian
 course: Main Course
-tags:
-  - vegetarian
 lists:
   - Kifli favourites
 ingredients:
@@ -25,6 +23,7 @@ ingredients:
     grams: 800
     fdcId: 168424
     matchConfidence: high
+    cooking: boiled
   - raw: 250 g cremini mushrooms
     quantity: 250
     unit: g
@@ -32,19 +31,23 @@ ingredients:
     grams: 250
     fdcId: 169251
     matchConfidence: high
-  - raw: 120 g pearl barley
+    cooking: boiled
+  - raw: 120 g pearl barley, uncooked
     quantity: 120
     unit: g
     item: pearl barley
+    note: uncooked
     grams: 120
-    fdcId: 170285
+    fdcId: 170284
     matchConfidence: high
+    cooking: boiled
   - raw: 1 onion
     quantity: 1
     item: onion
     grams: 110
     fdcId: 170000
     matchConfidence: high
+    cooking: boiled
   - raw: 3 cloves garlic
     quantity: 3
     unit: cloves
@@ -52,6 +55,7 @@ ingredients:
     grams: 9
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 400 ml vegetable broth
     quantity: 400
     unit: ml
@@ -60,6 +64,7 @@ ingredients:
     milliliters: 400
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 2 tbsp sunflower oil
     quantity: 2
     unit: tbsp
@@ -68,6 +73,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171025
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tsp fine salt
     quantity: 1
     unit: tsp
@@ -76,6 +82,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: medium
+    cooking: boiled
   - raw: ½ tsp ground black pepper
     quantity: 0.5
     unit: tsp
@@ -84,6 +91,7 @@ ingredients:
     milliliters: 2.46446
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 tsp fresh thyme
     quantity: 1
     unit: tsp
@@ -92,6 +100,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173470
     matchConfidence: high
+    cooking: boiled
   - raw: 150 g sour cream
     group: For serving
     quantity: 150
@@ -100,6 +109,7 @@ ingredients:
     grams: 150
     fdcId: 171257
     matchConfidence: high
+    cooking: raw
   - raw: 1 bunch fresh parsley
     group: For serving
     quantity: 1
@@ -108,48 +118,50 @@ ingredients:
     grams: 30
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 262
-    energyKj: 1095
-    protein_g: 7.9
-    fat_g: 14.8
-    satFat_g: 4.6
-    carbs_g: 29.5
-    fiber_g: 9.8
-    sugar_g: 9.6
-    sodium_mg: 930
-    availableCarb_g: 19.7
+    energyKcal: 330
+    energyKj: 1382
+    protein_g: 10.2
+    fat_g: 15
+    satFat_g: 4.7
+    carbs_g: 44.4
+    fiber_g: 13.4
+    sugar_g: 9.7
+    sodium_mg: 929
+    availableCarb_g: 31
   glycemic:
-    gi: 21
-    gl: 4
+    gi: 25
+    gl: 8
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 60
   nutriScore:
-    grade: A
-    points: 0
+    grade: B
+    points: 1
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.4
-    band: mildly-pro-inflammatory
+    score: 0
+    band: neutral
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 83.7
+    score: 7
+    band: high
+    nrf: 59.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98.2
+    minimallyProcessedPct: 98.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

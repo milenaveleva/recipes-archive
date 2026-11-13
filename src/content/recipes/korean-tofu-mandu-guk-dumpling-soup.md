@@ -14,10 +14,6 @@ cookTime: PT15M
 totalTime: PT35M
 cuisine: Korean
 course: Soup
-tags:
-  - vegetarian
-  - soup
-  - tofu
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 250
     fdcId: 172475
     matchConfidence: high
+    cooking: boiled
   - raw: 200 g wonton wrappers
     quantity: 200
     unit: g
@@ -35,19 +32,22 @@ ingredients:
     grams: 200
     fdcId: 172802
     matchConfidence: high
+    cooking: boiled
   - raw: 150 g Chinese cabbage
     quantity: 150
     unit: g
     item: Chinese cabbage
     grams: 150
-    fdcId: 168572
-    matchConfidence: high
+    fdcId: 169979
+    matchConfidence: medium
+    cooking: boiled
   - raw: 3 spring onions
     quantity: 3
     item: spring onions
     grams: 45
     fdcId: 170005
     matchConfidence: high
+    cooking: boiled
   - raw: 3 cloves garlic
     quantity: 3
     unit: cloves
@@ -55,6 +55,7 @@ ingredients:
     grams: 9
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 15 g ginger
     quantity: 15
     unit: g
@@ -62,6 +63,7 @@ ingredients:
     grams: 15
     fdcId: 169231
     matchConfidence: high
+    cooking: boiled
   - raw: 2 tbsp soy sauce
     quantity: 2
     unit: tbsp
@@ -70,6 +72,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 81017008
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 tbsp sesame oil
     quantity: 1
     unit: tbsp
@@ -78,6 +81,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 171016
     matchConfidence: high
+    cooking: boiled
   - raw: 1200 ml vegetable broth
     quantity: 1200
     unit: ml
@@ -86,6 +90,7 @@ ingredients:
     milliliters: 1200
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -94,49 +99,51 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 299
-    energyKj: 1251
+    energyKcal: 300
+    energyKj: 1257
     protein_g: 17.7
     fat_g: 9.9
     satFat_g: 1.5
-    carbs_g: 36.8
-    fiber_g: 2.8
-    sugar_g: 2.1
-    sodium_mg: 1635
-    availableCarb_g: 34.1
+    carbs_g: 37.2
+    fiber_g: 3.2
+    sugar_g: 2.6
+    sodium_mg: 1634
+    availableCarb_g: 34
   glycemic:
     gi: 49
     gl: 17
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
     points: 3
     category: general
     version: "2023"
-    coverage: 0.67
+    coverage: 0.75
   inflammation:
-    score: 0.4
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 18
+    nrf: 20.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 63.6
-    ultraProcessedPct: 0
-    band: moderately-processed
+    minimallyProcessedPct: 15.3
+    ultraProcessedPct: 48.4
+    band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

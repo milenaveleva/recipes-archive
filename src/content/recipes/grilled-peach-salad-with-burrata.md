@@ -14,10 +14,6 @@ cookTime: PT10M
 totalTime: PT20M
 cuisine: Italian
 course: Salad
-tags:
-  - vegetarian
-  - salad
-  - summer
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +23,7 @@ ingredients:
     grams: 600
     fdcId: 169928
     matchConfidence: high
+    cooking: grilled
   - raw: 150 g mixed tomatoes
     quantity: 150
     unit: g
@@ -34,12 +31,14 @@ ingredients:
     grams: 150
     fdcId: 321360
     matchConfidence: medium
+    cooking: raw
   - raw: 1 burrata
     quantity: 1
     item: burrata
     grams: 125
     fdcId: 170845
     matchConfidence: high
+    cooking: raw
   - raw: 50 g sun-dried tomatoes
     quantity: 50
     unit: g
@@ -47,18 +46,21 @@ ingredients:
     grams: 50
     fdcId: 168567
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful arugula
     quantity: 1
     item: handful arugula
     grams: 20
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful fresh basil
     quantity: 1
     item: handful fresh basil
     grams: 10
     fdcId: 172232
     matchConfidence: high
+    cooking: raw
   - raw: 2 tbsp olive oil
     quantity: 2
     unit: tbsp
@@ -67,6 +69,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171413
     matchConfidence: high
+    cooking: grilled
   - raw: 1 tbsp balsamic glaze
     quantity: 1
     unit: tbsp
@@ -74,7 +77,8 @@ ingredients:
     grams: 16
     milliliters: 14.7868
     fdcId: 172241
-    matchConfidence: high
+    matchConfidence: low
+    cooking: raw
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -83,6 +87,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -91,6 +96,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 519
@@ -100,30 +106,30 @@ nutrition:
     satFat_g: 10.7
     carbs_g: 50.1
     fiber_g: 9.4
-    sugar_g: 36
+    sugar_g: 39.6
     sodium_mg: 418
-    availableCarb_g: 40.7
+    availableCarb_g: 40.6
   glycemic:
-    gi: 62
-    gl: 25
+    gi: 60
+    gl: 24
     giBand: medium
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 6
   nutriScore:
     grade: A
     points: 0
     category: general
     version: "2023"
-    coverage: 0.85
+    coverage: 0.84
   inflammation:
-    score: 0.4
-    band: mildly-pro-inflammatory
+    score: 0.1
+    band: neutral
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 26.7
+    score: 5
+    band: moderate
+    nrf: 28.3
     version: NRF9.3
   processing:
     minimallyProcessedPct: 64
@@ -133,6 +139,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

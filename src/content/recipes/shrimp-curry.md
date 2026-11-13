@@ -14,11 +14,6 @@ cookTime: PT10M
 totalTime: PT20M
 cuisine: Thai
 course: Main Course
-tags:
-  - seafood
-  - shrimp
-  - curry
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -27,8 +22,9 @@ ingredients:
     unit: g
     item: shrimp tails
     grams: 200
-    fdcId: 175180
+    fdcId: 175179
     matchConfidence: medium
+    cooking: fried
   - raw: 2 tbsp olive oil
     quantity: 2
     unit: tbsp
@@ -37,6 +33,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171413
     matchConfidence: high
+    cooking: fried
   - raw: 3 cloves garlic
     quantity: 3
     unit: cloves
@@ -44,6 +41,7 @@ ingredients:
     grams: 12
     fdcId: 169230
     matchConfidence: high
+    cooking: fried
   - raw: 1 large red onion
     quantity: 1
     unit: large
@@ -51,6 +49,7 @@ ingredients:
     grams: 150
     fdcId: 790577
     matchConfidence: high
+    cooking: fried
   - raw: 2 tbsp finely chopped fresh ginger
     quantity: 2
     unit: tbsp
@@ -59,6 +58,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 169231
     matchConfidence: high
+    cooking: fried
   - raw: 1-2 tbsp curry paste
     quantity: 1
     quantity2: 2
@@ -68,6 +68,7 @@ ingredients:
     milliliters: 22.1802
     fdcId: 170924
     matchConfidence: high
+    cooking: boiled
   - raw: 1 can coconut cream
     quantity: 1
     unit: can
@@ -75,66 +76,72 @@ ingredients:
     grams: 200
     fdcId: 170580
     matchConfidence: high
-  - raw: cooked rice
+    cooking: boiled
+  - raw: cooked brown rice (≈ 101 g uncooked)
     group: For serving
-    item: cooked rice
-    grams: 300
-    fdcId: 169757
+    item: cooked brown rice
+    note: ≈ 101 g uncooked
+    grams: 101
+    fdcId: 169703
     matchConfidence: high
+    cooking: boiled
   - raw: lime
     group: For serving
     item: lime
     grams: 30
     fdcId: 168156
     matchConfidence: high
+    cooking: raw
   - raw: fresh cilantro
     group: For serving
     item: fresh cilantro
     grams: 5
     fdcId: 169997
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 809
-    energyKj: 3385
-    protein_g: 33.6
-    fat_g: 49.7
-    satFat_g: 32.9
-    carbs_g: 63.5
-    fiber_g: 7.2
-    sugar_g: 0.6
-    sodium_mg: 123
-    availableCarb_g: 56.3
+    energyKcal: 785
+    energyKj: 3286
+    protein_g: 29.5
+    fat_g: 51.1
+    satFat_g: 33.3
+    carbs_g: 59.5
+    fiber_g: 8.4
+    sugar_g: 5.2
+    sodium_mg: 132
+    availableCarb_g: 51.1
   glycemic:
-    gi: 51
-    gl: 29
-    giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi: 59
+    gl: 30
+    giBand: medium
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 72
   nutriScore:
     grade: C
-    points: 6
+    points: 7
     category: general
     version: "2023"
-    coverage: 0.42
+    coverage: 0.76
   inflammation:
-    score: 0.6
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
     score: 2
     band: poor
-    nrf: 1.4
+    nrf: 4.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 100
-    ultraProcessedPct: 0
-    band: minimally-processed
+    minimallyProcessedPct: 56.1
+    ultraProcessedPct: 1.9
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

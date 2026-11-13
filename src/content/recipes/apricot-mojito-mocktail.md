@@ -13,10 +13,6 @@ prepTime: PT10M
 totalTime: PT10M
 cuisine: International
 course: Drink
-tags:
-  - vegan
-  - fruit
-  - non-alcoholic
 lists:
   - Kifli favourites
 ingredients:
@@ -26,69 +22,75 @@ ingredients:
     grams: 210
     fdcId: 171697
     matchConfidence: high
-  - raw: 2 tsp cane sugar
-    quantity: 2
+    cooking: raw
+  - raw: 1 tsp honey
+    quantity: 1
     unit: tsp
-    item: cane sugar
-    grams: 9.2
-    milliliters: 9.85784
-    fdcId: 170674
-    matchConfidence: medium
+    item: honey
+    grams: 7.1
+    milliliters: 4.92892
+    fdcId: 169640
+    matchConfidence: high
+    cooking: raw
   - raw: ½ lime plus 20 ml lime juice
     quantity: 0.5
     item: lime plus 20 ml lime juice
     grams: 45
     fdcId: 168156
     matchConfidence: medium
+    cooking: raw
   - raw: 1 handful fresh mint
     quantity: 1
     item: handful fresh mint
     grams: 10
     fdcId: 173475
     matchConfidence: high
+    cooking: raw
   - raw: soda water
     item: soda water
     fdcId: 169301
     matchConfidence: medium
     excludeFromNutrition: true
+    cooking: raw
   - raw: ice
     item: ice
     fdcId: 175001
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 77
-    energyKj: 320
+    energyKcal: 69
+    energyKj: 289
     protein_g: 1.7
     fat_g: 0.5
     satFat_g: 0
-    carbs_g: 18.6
+    carbs_g: 16.9
     fiber_g: 2.5
-    sugar_g: 14.6
+    sugar_g: 13
     sodium_mg: 3
-    availableCarb_g: 16
+    availableCarb_g: 14.4
   glycemic:
-    gi: 46
-    gl: 7
+    gi: 42
+    gl: 6
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 87
   nutriScore:
     grade: D
-    points: 8
+    points: 7
     category: beverage
     version: "2023"
     coverage: 0.96
   inflammation:
-    score: 0.5
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 51
+    score: 8
+    band: high
+    nrf: 61.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -109,6 +111,6 @@ createdAt: "2026-11-13"
 ## Method
 
 1. Pit the apricots, halve them and put them in a blender with a tablespoon of water. Blend until smooth; for a really creamy texture, strain through a fine sieve.
-2. Divide the lime juice, the halved lime, 1 tsp cane sugar each and a few mint leaves between two glasses. Muddle well with a muddler or the end of a wooden spoon to release the flavours.
+2. Divide the lime juice, the halved lime, ½ tsp honey each and a few mint leaves between two glasses. Muddle well with a muddler or the end of a wooden spoon to release the flavours.
 3. Spoon 3 tsp of apricot purée into each glass, add a few ice cubes, top up with soda water, add a straw and stir.
 4. For a more grown-up version, you can spike it with a little white rum.

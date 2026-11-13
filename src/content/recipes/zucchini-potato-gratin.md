@@ -14,10 +14,6 @@ cookTime: PT1H35M
 totalTime: PT1H50M
 cuisine: International
 course: Main Course
-tags:
-  - vegetarian
-  - gratin
-  - baked
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +25,7 @@ ingredients:
     grams: 400
     fdcId: 170028
     matchConfidence: high
+    cooking: baked
   - raw: 400 g zucchini
     quantity: 400
     unit: g
@@ -36,6 +33,7 @@ ingredients:
     grams: 400
     fdcId: 168565
     matchConfidence: medium
+    cooking: baked
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -43,6 +41,7 @@ ingredients:
     grams: 8
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 2 tbsp olive oil
     quantity: 2
     unit: tbsp
@@ -51,6 +50,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 1 tsp dried thyme
     quantity: 1
     unit: tsp
@@ -59,6 +59,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173470
     matchConfidence: high
+    cooking: baked
   - raw: 125 g mozzarella cheese
     quantity: 125
     unit: g
@@ -66,6 +67,7 @@ ingredients:
     grams: 125
     fdcId: 170845
     matchConfidence: high
+    cooking: baked
   - raw: 100 ml cooking cream (10–12%)
     quantity: 100
     unit: ml
@@ -75,6 +77,7 @@ ingredients:
     milliliters: 100
     fdcId: 170858
     matchConfidence: high
+    cooking: baked
   - raw: 2 eggs (size M)
     quantity: 2
     item: eggs
@@ -82,6 +85,7 @@ ingredients:
     grams: 100
     fdcId: 748967
     matchConfidence: high
+    cooking: baked
   - raw: 1 pinch black pepper
     quantity: 1
     unit: pinch
@@ -90,6 +94,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -98,6 +103,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
 nutrition:
   perServing:
     energyKcal: 357
@@ -107,30 +113,30 @@ nutrition:
     satFat_g: 11.1
     carbs_g: 21.3
     fiber_g: 3.6
-    sugar_g: 1.9
+    sugar_g: 2
     sodium_mg: 251
     availableCarb_g: 17.7
   glycemic:
-    gi: 57
-    gl: 10
-    giBand: medium
+    gi: 51
+    gl: 9
+    giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 3
+    points: 4
     category: general
     version: "2023"
-    coverage: 0.57
+    coverage: 0.64
   inflammation:
-    score: 0.6
+    score: 0.5
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 31.8
+    score: 5
+    band: moderate
+    nrf: 30.1
     version: NRF9.3
   processing:
     minimallyProcessedPct: 73.9
@@ -140,6 +146,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

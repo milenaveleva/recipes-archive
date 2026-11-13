@@ -1,6 +1,6 @@
 ---
 title: Shrimp Cocktail with Capers
-description: Cooked shrimp in a tangy mayonnaise, Dijon and ketchup dressing with capers, served chilled.
+description: Cooked shrimp in a tangy Greek yogurt, Dijon and ketchup dressing with capers, served chilled.
 image: ./images/shrimp-cocktail-with-capers.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_11576_1776980169216_shrimp-cocktail-with-capers_c3baef24.jpg
 imageAlt: Shrimp Cocktail with Capers
@@ -13,19 +13,18 @@ prepTime: PT10M
 totalTime: PT10M
 cuisine: International
 course: Appetizer
-tags:
-  - seafood
-  - quick
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g cooked shrimp
+  - raw: 300 g cooked shrimp (≈ 357 g raw)
     quantity: 300
     unit: g
     item: cooked shrimp
-    grams: 300
-    fdcId: 175180
+    note: ≈ 357 g raw
+    grams: 357
+    fdcId: 175179
     matchConfidence: medium
+    cooking: raw
   - raw: 20 g capers
     quantity: 20
     unit: g
@@ -33,20 +32,24 @@ ingredients:
     grams: 20
     fdcId: 172238
     matchConfidence: high
-  - raw: 160 g mayonnaise
+    cooking: raw
+  - raw: 160 g Greek yogurt
     quantity: 160
     unit: g
-    item: mayonnaise
-    grams: 123.2
-    fdcId: 171411
-    matchConfidence: medium
-  - raw: 20 g Dijon mustard
-    quantity: 20
-    unit: g
+    item: Greek yogurt
+    grams: 160
+    fdcId: 171304
+    matchConfidence: high
+    cooking: raw
+  - raw: 1½ tbsp Dijon mustard
+    quantity: 1.5
+    unit: tbsp
     item: Dijon mustard
     grams: 20
+    milliliters: 22.1802
     fdcId: 172234
     matchConfidence: high
+    cooking: raw
   - raw: 30 g ketchup
     quantity: 30
     unit: g
@@ -54,6 +57,7 @@ ingredients:
     grams: 30
     fdcId: 168556
     matchConfidence: high
+    cooking: raw
   - raw: 8 ml lemon juice
     quantity: 8
     unit: ml
@@ -62,6 +66,7 @@ ingredients:
     milliliters: 8
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -70,43 +75,44 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 359
-    energyKj: 1501
-    protein_g: 18.4
-    fat_g: 31.2
-    satFat_g: 4.9
-    carbs_g: 2.9
+    energyKcal: 127
+    energyKj: 531
+    protein_g: 21.9
+    fat_g: 2.7
+    satFat_g: 1.1
+    carbs_g: 4.3
     fiber_g: 0.4
-    sugar_g: 1.7
-    sodium_mg: 363
-    availableCarb_g: 2.5
+    sugar_g: 3.3
+    sodium_mg: 400
+    availableCarb_g: 3.9
   glycemic:
-    gi: 60
+    gi: 29
     gl: 1
-    giBand: medium
+    giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
-    grade: C
-    points: 3
+    grade: A
+    points: -2
     category: general
     version: "2023"
-    coverage: 0.4
+    coverage: 1
   inflammation:
-    score: -0.7
-    band: mildly-anti-inflammatory
+    score: 0.3
+    band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 8.4
+    score: 6
+    band: moderate
+    nrf: 37.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 96.7
-    ultraProcessedPct: 2.1
+    minimallyProcessedPct: 90.8
+    ultraProcessedPct: 6
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
@@ -122,7 +128,7 @@ createdAt: "2026-11-13"
 
 ## Method
 
-1. In a bowl, mix all the ingredients together: the cooked shrimp, capers, mayonnaise, Dijon mustard, ketchup and lemon juice.
+1. In a bowl, mix all the ingredients together: the cooked shrimp, capers, Greek yogurt, Dijon mustard, ketchup and lemon juice.
 2. Season with salt to taste and toss thoroughly.
 3. Chill in the fridge before serving so the flavours meld and the cocktail gets nicely cold.
 

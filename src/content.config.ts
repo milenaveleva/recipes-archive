@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { COOKING_METHODS } from './core/cooking';
 
 /**
  * The recipe archive's single source of truth.
@@ -12,7 +13,9 @@ import { glob } from 'astro/loaders';
  * shopping-list / kifli.hu integration need no re-parsing.
  *
  * All quantities are stored in METRIC (grams precomputed); the original
- * `raw` line is always retained for provenance/auditability.
+ * `raw` line is always retained for provenance/auditability. Weights and food
+ * matches describe the RAW ingredient; its `cooking` method turns it into the
+ * cooked, as-eaten state every score is computed on (src/core/cooking.ts).
  */
 
 // ISO-8601 duration (e.g. PT30M, PT1H15M, P1DT2H) — keeps schema.org JSON-LD clean.
@@ -66,6 +69,12 @@ const ingredient = z.object({
   matchConfidence: matchConfidence.optional(),
   /** Whether this item is excluded from nutrition totals (e.g. "water"). */
   excludeFromNutrition: z.boolean().default(false),
+  /**
+   * How the ingredient is cooked; absent = raw. `boiled` covers simmered / poached /
+   * cooked in liquid, `baked` covers oven-roasted, `fried` covers pan-fried / sautéed /
+   * stir-fried / deep-fried. Scores apply the method's nutrient retention and mass yield.
+   */
+  cooking: z.enum(COOKING_METHODS).optional(),
 });
 
 const perServing = z
@@ -92,8 +101,9 @@ const nutrition = z.object({
       giBand: band3.optional(),
       glBand: band3.optional(),
       gi_source: z.string().optional(),
-      /** % of the recipe's available carbohydrate that carried a published GI (<100 → GL biased low). */
-      carbCoveragePct: z.number().optional(),
+      /** % of the recipe's available carbohydrate whose GI is a measured table match
+       *  (giConfidence high|medium) rather than a category/composition estimate. */
+      measuredGiPct: z.number().optional(),
     })
     .optional(),
   nutriScore: z
@@ -180,7 +190,6 @@ const recipes = defineCollection({
       cuisine: z.string().optional(),
       course: z.string().optional(),
 
-      tags: z.array(z.string()).default([]),
       category: z.string().optional(),
       /** Curated user lists this recipe belongs to. */
       lists: z.array(z.string()).default([]),

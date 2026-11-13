@@ -1,0 +1,160 @@
+---
+title: Pear and Gorgonzola Whole-Wheat Tagliatelle with Toasted Walnuts
+description: Creamy whole-wheat tagliatelle with caramelised pears and melted gorgonzola, finished with toasted walnuts and Parmesan.
+image: ./images/pear-and-gorgonzola-whole-wheat-tagliatelle-with-toasted-walnuts.jpg
+imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14634_1792335894554_pear-and-gorgonzola-tagliatelle-with-walnuts_576a6ac6.jpg
+imageAlt: Pear and Gorgonzola Whole-Wheat Tagliatelle with Toasted Walnuts
+source:
+  name: kifli.hu
+  url: https://www.kifli.hu/sef/14634-koertes-gorgonzolas-tagliatelle-piritott-dioval
+author: Kifli Kukták
+servings: 4
+prepTime: PT10M
+cookTime: PT15M
+totalTime: PT25M
+cuisine: Italian
+course: Main Course
+lists:
+  - Kifli favourites
+ingredients:
+  - raw: 400 g dried whole-wheat tagliatelle
+    quantity: 400
+    unit: g
+    item: dried whole-wheat tagliatelle
+    grams: 400
+    fdcId: 169738
+    matchConfidence: high
+    cooking: boiled
+  - raw: 2 pears
+    quantity: 2
+    item: pears
+    grams: 340
+    fdcId: 169118
+    matchConfidence: high
+    cooking: fried
+  - raw: 200 g gorgonzola (or other blue cheese)
+    quantity: 200
+    unit: g
+    item: gorgonzola
+    note: or other blue cheese
+    grams: 200
+    fdcId: 172175
+    matchConfidence: high
+    cooking: fried
+  - raw: 30 g butter
+    quantity: 30
+    unit: g
+    item: butter
+    grams: 30
+    fdcId: 173430
+    matchConfidence: high
+    cooking: fried
+  - raw: 20 ml extra virgin olive oil
+    quantity: 20
+    unit: ml
+    item: extra virgin olive oil
+    grams: 18.3
+    milliliters: 20
+    fdcId: 171413
+    matchConfidence: high
+    cooking: fried
+  - raw: ¾ tsp fine salt
+    quantity: 0.75
+    unit: tsp
+    item: fine salt
+    grams: 5
+    milliliters: 3.69669
+    fdcId: 173468
+    matchConfidence: medium
+    cooking: fried
+  - raw: ¾ tsp black pepper
+    quantity: 0.75
+    unit: tsp
+    item: black pepper
+    grams: 2
+    milliliters: 3.69669
+    fdcId: 170931
+    matchConfidence: medium
+    cooking: fried
+  - raw: 60 g walnuts
+    group: For serving
+    quantity: 60
+    unit: g
+    item: walnuts
+    grams: 60
+    fdcId: 170187
+    matchConfidence: high
+    cooking: fried
+  - raw: 40 g parmesan cheese
+    group: For serving
+    quantity: 40
+    unit: g
+    item: parmesan cheese
+    grams: 40
+    fdcId: 173431
+    matchConfidence: high
+    cooking: raw
+nutrition:
+  perServing:
+    energyKcal: 812
+    energyKj: 3398
+    protein_g: 31.1
+    fat_g: 40.6
+    satFat_g: 16.9
+    carbs_g: 90.2
+    fiber_g: 13
+    sugar_g: 11.8
+    sodium_mg: 1235
+    availableCarb_g: 75.3
+  glycemic:
+    gi: 47
+    gl: 36
+    giBand: low
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 96
+  nutriScore:
+    grade: C
+    points: 4
+    category: general
+    version: "2023"
+    coverage: 1
+  inflammation:
+    score: -0.4
+    band: mildly-anti-inflammatory
+    method: fii v3
+  balance:
+    score: 3
+    band: low
+    nrf: 9.9
+    version: NRF9.3
+  processing:
+    minimallyProcessedPct: 73.2
+    ultraProcessedPct: 0
+    band: minimally-processed
+    method: NOVA (energy-weighted)
+  computedAt: "2026-11-13"
+  dataSources:
+    - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
+    - Atkinson 2021 GI tables
+    - Nutri-Score 2023
+    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
+    - Nutrient-Rich Foods Index (NRF9.3)
+    - NOVA food classification (energy-weighted)
+createdAt: "2026-11-13"
+---
+
+## Method
+
+1. **Preparation and toasting the walnuts:** Toast the walnuts in a dry pan over medium heat for 2-3 minutes until fragrant, then tip onto a chopping board, chop roughly and set aside.
+2. Peel the pears, remove the cores and cut them into thin wedges or cubes. Break the gorgonzola into smaller pieces.
+3. **Cooking and assembly:** Bring plenty of water to the boil in a large pot, salt it, and cook the tagliatelle al dente according to the package instructions. Before draining, set aside 1-2 ladlefuls of the cooking water!
+4. In a deeper frying pan, heat the olive oil and butter. Add the pears and lightly caramelise them for 3-4 minutes until golden brown.
+5. Reduce the heat, add the gorgonzola and a little of the reserved pasta water. Melt the cheese until creamy, stirring constantly, then season with freshly ground black pepper.
+6. Toss the cooked tagliatelle directly into the sauce. If needed, loosen the sauce with more cooking water so it coats the pasta strands silkily.
+7. **Serving:** Divide the hot pasta among deep plates, sprinkle with the reserved fragrant toasted walnuts and freshly grated Parmesan, and finish with another touch of black pepper. Serve immediately!
+
+## Tips
+
+- For the creamiest result choose gorgonzola dolce, and always keep some of the starchy pasta cooking water, as it helps emulsify the cheese sauce!

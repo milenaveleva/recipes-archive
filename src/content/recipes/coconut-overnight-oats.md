@@ -8,16 +8,11 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10557-kokuszos-ejszakai-zabkasa
 author: Kifli Kukták
-servings: 1
+servings: 5
 prepTime: PT10M
 totalTime: PT10M
 cuisine: International
 course: Breakfast
-tags:
-  - vegan
-  - breakfast
-  - oats
-  - make-ahead
 lists:
   - Kifli favourites
 ingredients:
@@ -25,10 +20,11 @@ ingredients:
     quantity: 600
     unit: ml
     item: coconut milk
-    grams: 608.7
+    grams: 573.1
     milliliters: 600
-    fdcId: 170172
+    fdcId: 170173
     matchConfidence: high
+    cooking: raw
   - raw: 300 g rolled oats
     quantity: 300
     unit: g
@@ -36,6 +32,7 @@ ingredients:
     grams: 300
     fdcId: 2346396
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp chia seeds
     quantity: 1
     unit: tbsp
@@ -44,6 +41,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 170554
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp pumpkin seeds
     quantity: 1
     unit: tbsp
@@ -52,14 +50,16 @@ ingredients:
     milliliters: 14.7868
     fdcId: 170556
     matchConfidence: high
-  - raw: 1 tbsp maple syrup
-    quantity: 1
-    unit: tbsp
-    item: maple syrup
-    grams: 20
-    milliliters: 14.7868
-    fdcId: 169661
+    cooking: raw
+  - raw: 2 tsp honey
+    quantity: 2
+    unit: tsp
+    item: honey
+    grams: 14.1
+    milliliters: 9.85784
+    fdcId: 169640
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch cinnamon
     quantity: 1
     unit: pinch
@@ -68,62 +68,66 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 171320
     matchConfidence: medium
+    cooking: raw
   - raw: toasted shredded coconut
     group: To top
     item: toasted shredded coconut
     grams: 10
     fdcId: 170579
     matchConfidence: medium
+    cooking: raw
   - raw: coconut yogurt
     group: To top
     item: coconut yogurt
     grams: 60
-    fdcId: 171284
-    matchConfidence: high
+    fdcId: 170173
+    matchConfidence: medium
+    cooking: raw
   - raw: banana
     group: To top
     item: banana
     grams: 120
     fdcId: 173944
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 2896
-    energyKj: 12116
-    protein_g: 62.8
-    fat_g: 177.3
-    satFat_g: 135.1
-    carbs_g: 293.9
-    fiber_g: 21.2
-    sugar_g: 50
-    sodium_mg: 131
-    availableCarb_g: 272.7
+    energyKcal: 539
+    energyKj: 2257
+    protein_g: 11.9
+    fat_g: 33.1
+    satFat_g: 25.7
+    carbs_g: 54.7
+    fiber_g: 7.8
+    sugar_g: 5.9
+    sodium_mg: 18
+    availableCarb_g: 46.9
   glycemic:
-    gi: 54
-    gl: 147
+    gi: 53
+    gl: 25
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 90
   nutriScore:
     grade: D
-    points: 14
+    points: 12
     category: general
     version: "2023"
-    coverage: 0.72
+    coverage: 0.41
   inflammation:
-    score: 0.2
+    score: 0.1
     band: neutral
     method: fii v3
   balance:
-    score: 1
+    score: 2
     band: poor
-    nrf: -13.7
+    nrf: -0.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 100
+    minimallyProcessedPct: 53.8
     ultraProcessedPct: 0
-    band: minimally-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:

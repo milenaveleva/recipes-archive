@@ -13,15 +13,16 @@ totalTime: PT50M
 cuisine: Japanese
 course: Side Dish
 ingredients:
-  - raw: 1½ cups Japanese short-grain white rice (uncooked)
+  - raw: 1½ cups Japanese short-grain brown rice (uncooked)
     quantity: 1.5
     unit: cups
-    item: Japanese short-grain white rice
+    item: Japanese short-grain brown rice
     note: uncooked
-    grams: 300
+    grams: 285
     milliliters: 354.882
-    fdcId: 168931
+    fdcId: 169706
     matchConfidence: high
+    cooking: boiled
   - raw: 1 piece aburaage
     quantity: 1
     unit: piece
@@ -29,6 +30,7 @@ ingredients:
     grams: 30
     fdcId: 81004040
     matchConfidence: high
+    cooking: boiled
   - raw: 30g young ginger
     quantity: 30
     unit: g
@@ -36,6 +38,7 @@ ingredients:
     grams: 30
     fdcId: 169231
     matchConfidence: medium
+    cooking: boiled
   - raw: 1⅓ cups water
     quantity: 1.333
     unit: cups
@@ -44,6 +47,7 @@ ingredients:
     milliliters: 315.371804
     fdcId: 174158
     matchConfidence: high
+    cooking: boiled
   - raw: 1 Tbsp soy sauce
     quantity: 1
     unit: Tbsp
@@ -52,6 +56,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 81017007
     matchConfidence: high
+    cooking: boiled
   - raw: 1 Tbsp sake
     quantity: 1
     unit: Tbsp
@@ -60,6 +65,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 81016023
     matchConfidence: high
+    cooking: boiled
   - raw: 1 Tbsp mirin
     quantity: 1
     unit: Tbsp
@@ -68,6 +74,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 81016025
     matchConfidence: high
+    cooking: boiled
   - raw: ¼ tsp salt
     quantity: 0.25
     unit: tsp
@@ -76,42 +83,43 @@ ingredients:
     milliliters: 1.23223
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 321
-    energyKj: 1343
-    protein_g: 7.1
-    fat_g: 3
-    satFat_g: 0.4
-    carbs_g: 63.3
-    fiber_g: 0.2
-    sugar_g: 1.4
-    sodium_mg: 406
-    availableCarb_g: 63.1
+    energyKcal: 310
+    energyKj: 1299
+    protein_g: 7.6
+    fat_g: 4.5
+    satFat_g: 0.7
+    carbs_g: 58.2
+    fiber_g: 2.7
+    sugar_g: 1.9
+    sodium_mg: 408
+    availableCarb_g: 55.5
   glycemic:
-    gi: 77
-    gl: 48
-    giBand: high
-    glBand: high
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
-    carbCoveragePct: 100
+    gi: 69
+    gl: 38
+    giBand: medium
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 93
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 1
     category: general
     version: "2023"
-    coverage: 0.54
+    coverage: 0.97
   inflammation:
-    score: 0.2
-    band: neutral
+    score: -0.7
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 3.3
+    score: 3
+    band: low
+    nrf: 15.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 85.5
+    minimallyProcessedPct: 85
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -119,6 +127,7 @@ nutrition:
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -131,11 +140,11 @@ updatedAt: "2026-06-28"
 ## Method
 
 1. Gather all the ingredients.
-2. Rinse 1½ cups uncooked Japanese short-grain white rice and drain well. For detailed instructions on rinsing and cooking Japanese rice, read my How to Make Rice post.
+2. Rinse 1½ cups uncooked Japanese short-grain brown rice and drain well. For detailed instructions on rinsing and cooking Japanese rice, read my How to Make Rice post.
 3. Boil some water in a small saucepan and pour the boiling water onto 1 piece aburaage (deep-fried tofu pouch) set in a strainer in the sink. This step will rinse off the manufacturer’s oil and improve the flavor.
 4. Cut the aburaage in half lengthwise, then slice crosswise into thin strips.
 5. Peel 2 inches ginger and cut it into julienned pieces.
-6. In a 2-cup measuring cup, mix all the ingredients for the seasonings: 1 Tbsp soy sauce, 1 Tbsp sake, 1 Tbsp mirin, and ¼ tsp Diamond Crystal kosher salt. Then, add 1⅓ cups water to the seasonings so that the liquid totals 1½ cups or 360 ml (equal volume as the rice).
+6. In a 2-cup measuring cup, mix all the ingredients for the seasonings: 1 Tbsp soy sauce, 1 Tbsp sake, 1 Tbsp mirin, and ¼ tsp Diamond Crystal kosher salt. Then, add 1¾ cups water to the seasonings so that the liquid totals about 2 cups or 480 ml (brown rice needs more liquid than white rice).
 7. Place the well-drained rice into the rice cooker. No rice cooker? You can also make rice in a pot over the stove, Instant Pot, or donabe. Pour the measured liquid into the rice cooker and mix well. Then, scatter the ginger and aburaage on top of the rice. Do not mix. The rice will not cook evenly if mixed with other ingredients.
-8. Soak the rice for 20–30 minutes. Then, start cooking. Select the Mixed Rice option if you have it (see Notes below). When the rice cooker turns off, let the rice steam for another 10 minutes before opening the lid. Fluff the rice with a rice paddle and serve.
+8. Soak the rice for 20–30 minutes. Then, start cooking. Select the Brown Rice option if you have it. When the rice cooker turns off, let the rice steam for another 10 minutes before opening the lid. Fluff the rice with a rice paddle and serve.
 9. You can keep the leftovers in an airtight container and store it n the freezer for up to a month.

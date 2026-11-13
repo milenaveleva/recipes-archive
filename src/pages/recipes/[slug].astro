@@ -219,21 +219,6 @@ const bodyHasMethodHeading = /^##\s+Method\b/im.test(recipe.body ?? '');
             <div class="recipe-prose">
               <Content />
             </div>
-
-            {
-              data.tags.length > 0 && (
-                <div class="mt-10 flex flex-wrap gap-2">
-                  {data.tags.map((t) => (
-                    <a
-                      href={withBase(`/tags/${slugifyTerm(t)}`)}
-                      class="rounded-full border border-line bg-card px-3 py-1 font-ui text-xs text-ink-soft no-underline transition-colors hover:border-spice hover:text-spice"
-                    >
-                      #{t}
-                    </a>
-                  ))}
-                </div>
-              )
-            }
           </section>
         </div>
       </div>

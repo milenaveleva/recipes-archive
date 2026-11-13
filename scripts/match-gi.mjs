@@ -23,10 +23,20 @@
  *   (0)       — no available carbohydrate (oils, water, salt): GI 0 by convention (it
  *               never reaches the composite, which ignores contributions ≤ 0.5 g)
  *
- * Any GI already present in food-scoring.json is preserved, never overwritten — so
- * hand-curated values and prior measured matches survive a re-run untouched.
+ * Staple starches (pasta, oats, couscous, brown rice) and a few plain foods are first
+ * matched against an as-eaten STAPLES reference — the mean of the Atkinson Table 1
+ * entries for the boiled/cooked food (e.g. "White spaghetti, boiled, mean of 11 foods"),
+ * since GI is measured on the food as eaten and a dry and a cooked record of the same
+ * food share one GI. Other matches prefer a cooked/boiled reference entry among
+ * near-equal candidates for the same reason.
  *
- * Usage: node scripts/match-gi.mjs [--write]   (default: dry-run report to stderr)
+ * Any GI already present in food-scoring.json is preserved, never overwritten — so
+ * hand-curated values and prior measured matches survive a re-run untouched. The one
+ * exception is --rematch-predicted, which clears and re-assigns only the estimated tiers
+ * (giConfidence 'predicted' or 'low'), e.g. after the reference table or the matcher
+ * improves; 'high'/'medium' matches and carb-free entries are never touched.
+ *
+ * Usage: node scripts/match-gi.mjs [--write] [--rematch-predicted]   (default: dry-run report to stderr)
  */
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -34,6 +44,7 @@ import { dirname, join } from 'node:path';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const WRITE = process.argv.includes('--write');
+const REMATCH = process.argv.includes('--rematch-predicted');
 const read = (p) => JSON.parse(readFileSync(join(ROOT, p), 'utf8'));
 const log = (...a) => process.stderr.write(a.join(' ') + '\n');
 
@@ -46,10 +57,13 @@ const NONSTARCHY_GI = 15;  // low nominal GI for that non-starchy starch fractio
 const SUGAR_GI = 65;       // GI of the sugar fraction in the composition estimate — sucrose (the dominant dietary sugar, ISO reference behaviour)
 const SUGAR_MIN = 5;       // g sugar / 100 g at/above which a low-carb food's sugar is glycemically significant (a sweet melon) rather than trace (a leafy green whose fibre ≈ total carb)
 
-/** Map a USDA `category` string to the reference table's category, for scoping. */
+/** Map a USDA `category` string to the reference table's category, for scoping. The
+ * USDA "Cereal Grains and Pasta" category holds both, so pasta and noodle foods are
+ * routed by name first (PASTA_RE) and only the rest fall through to CEREAL GRAINS. */
+const PASTA_RE = /\b(pasta|noodles?|spaghetti|macaroni|vermicelli|lasagn[ae]|fettuccine|linguine|penne|udon|soba|somen)\b/i;
 const CAT_MAP = [
   [/bread/i, 'BREADS'], [/breakfast cereal/i, 'BREAKFAST CEREALS'],
-  [/cereal grain|pasta|rice|grain/i, 'CEREAL GRAINS'], [/pasta|noodle/i, 'PASTA AND NOODLES'],
+  [/cereal grain|pasta|rice|grain/i, 'CEREAL GRAINS'],
   [/fruit/i, 'FRUIT AND FRUIT PRODUCTS'], [/vegetable/i, 'VEGETABLES'],
   [/legume|bean|lentil|pea/i, 'LEGUMES'], [/nut and seed|nut/i, 'NUTS'],
   [/dairy|milk|yogurt|cheese/i, 'DAIRY PRODUCTS AND ALTERNATIVES'],
@@ -57,7 +71,10 @@ const CAT_MAP = [
   [/snack|cookie|cracker|confection/i, 'SNACK FOODS AND CONFECTIONERY'],
   [/soup/i, 'SOUPS'], [/baked|bakery/i, 'BAKERY PRODUCTS'],
 ];
-const refCategoryFor = (usdaCat = '') => CAT_MAP.find(([re]) => re.test(usdaCat))?.[1] ?? null;
+const refCategoryFor = (food) => {
+  if (/cereal grain|pasta/i.test(food.category ?? '') && PASTA_RE.test(food.description ?? '')) return 'PASTA AND NOODLES';
+  return CAT_MAP.find(([re]) => re.test(food.category ?? ''))?.[1] ?? null;
+};
 
 const STOP = new Set(['raw', 'cooked', 'boiled', 'prepared', 'with', 'without', 'and', 'or', 'the',
   'of', 'in', 'all', 'commercial', 'varieties', 'includes', 'usda', 'ns', 'as', 'to', 'from', 'made',
@@ -65,8 +82,13 @@ const STOP = new Set(['raw', 'cooked', 'boiled', 'prepared', 'with', 'without', 
   // fat-level qualifiers describe fat content, not food identity — matching on these
   // alone pairs unrelated foods ("low fat yogurt" ↔ "low-fat apricot cake").
   'low', 'fat', 'reduced', 'skim', 'nonfat', 'lowfat']);
+// Plural → singular, so "Mangos"/"mangoes", "tomatoes", "berries" meet the singular
+// reference names.
+const singular = (w) => (w.length > 4 && /ies$/.test(w) ? w.slice(0, -3) + 'y'
+  : w.length > 4 && /(oes|ches|shes|sses|xes)$/.test(w) ? w.slice(0, -2)
+    : w.length > 3 && /s$/.test(w) && !/(ss|us|is)$/.test(w) ? w.slice(0, -1) : w);
 const toks = (s) => new Set(
-  s.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter((w) => w.length > 2 && !STOP.has(w)));
+  s.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter((w) => w.length > 2 && !STOP.has(w)).map(singular));
 const jaccard = (a, b) => {
   let inter = 0;
   for (const t of a) if (b.has(t)) inter++;
@@ -87,6 +109,27 @@ const globalMedian = median(reference.map((r) => r.gi));
 
 const refToks = reference.map((r) => ({ ...r, t: toks(r.food) }));
 
+// As-eaten staple references: USDA description pattern → the Atkinson Table 1 entries
+// (category + name pattern) for the cooked food; the GI is their mean. Ordered — the
+// first matching staple wins, so the specific forms come before the generic ones.
+const STAPLES = [
+  { food: /^pasta\b.*\bgluten-free\b/i, cat: 'PASTA AND NOODLES', ref: /^Gluten-free pasta$/i },
+  { food: /^pasta\b.*\b(whole-wheat|whole grain|whole wheat)\b/i, cat: 'PASTA AND NOODLES', ref: /^Wholemeal spaghetti, boiled$/i },
+  { food: /^(pasta|spaghetti|macaroni)\b(?!.*\b(spinach|corn|rice|quinoa)\b)/i, cat: 'PASTA AND NOODLES', ref: /^White spaghetti, boiled$/i },
+  { food: /^oats\b.*\bsteel cut\b/i, cat: 'BREAKFAST CEREALS', ref: /^Porridge made from steel-cut oats$/i },
+  { food: /^oats\b/i, cat: 'BREAKFAST CEREALS', ref: /^Porridge made from rolled oats$/i },
+  { food: /^couscous\b/i, cat: 'CEREAL GRAINS', ref: /^Couscous, rehydrated with hot water/i },
+  { food: /^rice, brown\b(?!.*\b(parboiled|instant)\b)/i, cat: 'CEREAL GRAINS', ref: /^Brown rice(?! chips)(?!.*\b(instant|flavou?red|chicken|microwaved|parboiled)\b)/i },
+  { food: /^mangos?\b.*\braw\b/i, cat: 'FRUIT AND FRUIT PRODUCTS', ref: /^Mango, raw\b/i },
+].map((st) => {
+  const refs = reference.filter((r) => r.category === st.cat && st.ref.test(r.food));
+  if (!refs.length) throw new Error(`STAPLES reference ${st.ref} matched no ${st.cat} entry — regenerate gi-reference.json`);
+  const gi = Math.round(refs.reduce((a, r) => a + r.gi, 0) / refs.length);
+  const label = refs.length === 1 ? refs[0].food.slice(0, 60).trim() : `${st.ref.source.replace(/[\^$\\]|\(\?.*$/g, '').trim()}: mean of ${refs.length} entries`;
+  return { ...st, gi, label };
+});
+const COOKED_REF = /\b(boiled|cooked|steamed|baked|roasted|porridge)\b/i;
+
 const clampGi = (n) => Math.min(120, Math.max(1, Math.round(n)));
 
 function assign(food) {
@@ -98,15 +141,25 @@ function assign(food) {
   // is inert — the Louie/Hernandez convention for non-carb foods.
   if (avail <= 0) return { gi: 0, source: 'no available carbohydrate', conf: 'none' };
 
+  // 0) As-eaten staple reference (see STAPLES).
+  const staple = STAPLES.find((st) => st.food.test(food.description ?? ''));
+  if (staple) return { gi: staple.gi, source: `Atkinson 2021 (${staple.label})`, conf: 'high' };
+
   // 1) Measured match — only within the same reference category, since cross-category
   //    token matches (e.g. "rice vinegar" ↔ "rice") are the main source of nonsense.
-  const refCat = refCategoryFor(food.category);
+  //    Among near-equal candidates (within 0.05), a cooked/boiled reference entry wins:
+  //    GI is measured on the food as eaten.
+  const refCat = refCategoryFor(food);
   const ft = toks(food.description ?? '');
   let best = null;
   if (refCat) for (const r of refToks) {
     if (r.category !== refCat) continue;
     const score = jaccard(ft, r.t);
-    if (!best || score > best.score) best = { r, score };
+    const cooked = COOKED_REF.test(r.food);
+    const nearTie = best && Math.abs(score - best.score) <= 0.05;
+    const better = !best || score > best.score + 0.05 ||
+      (nearTie && ((cooked && !best.cooked) || (cooked === best.cooked && score > best.score)));
+    if (better) best = { r, score, cooked };
   }
   const cite = (r) => `Atkinson 2021 (${r.food.slice(0, 60).trim()})`;
   if (best && best.score >= 0.6) return { gi: best.r.gi, source: cite(best.r), conf: 'high' };
@@ -152,7 +205,9 @@ const report = [];
 for (const food of foods) {
   const key = String(food.fdcId);
   const existing = scoring[key];
-  if (existing?.gi != null) { preserved++; continue; } // never overwrite a curated or prior value
+  // --rematch-predicted clears the estimated tiers only; a curated or measured match stays.
+  const estimated = existing?.giConfidence === 'predicted' || existing?.giConfidence === 'low';
+  if (existing?.gi != null && !(REMATCH && estimated)) { preserved++; continue; } // never overwrite a curated or prior value
   const a = assign(food);
   scoring[key] = { ...(existing ?? {}), gi: a.gi, giSource: a.source, giConfidence: a.conf };
   counts[a.conf]++;

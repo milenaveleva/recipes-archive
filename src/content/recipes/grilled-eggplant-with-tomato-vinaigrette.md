@@ -14,11 +14,6 @@ cookTime: PT10M
 totalTime: PT20M
 cuisine: Mediterranean
 course: Side Dish
-tags:
-  - vegan
-  - eggplant
-  - grilled
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +24,7 @@ ingredients:
     grams: 250
     fdcId: 169228
     matchConfidence: high
+    cooking: grilled
   - raw: 150 g cherry tomatoes
     quantity: 150
     unit: g
@@ -36,6 +32,7 @@ ingredients:
     grams: 150
     fdcId: 321360
     matchConfidence: medium
+    cooking: raw
   - raw: 1 clove garlic
     quantity: 1
     unit: clove
@@ -43,6 +40,7 @@ ingredients:
     grams: 3
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 2 tsp capers
     quantity: 2
     unit: tsp
@@ -51,12 +49,14 @@ ingredients:
     milliliters: 9.85784
     fdcId: 172238
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful fresh basil leaves
     quantity: 1
     item: handful fresh basil leaves
     grams: 10
     fdcId: 172232
     matchConfidence: high
+    cooking: raw
   - raw: 2 tbsp olive oil
     quantity: 2
     unit: tbsp
@@ -65,6 +65,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171413
     matchConfidence: high
+    cooking: grilled
   - raw: 1 tbsp red wine vinegar
     quantity: 1
     unit: tbsp
@@ -73,6 +74,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 172240
     matchConfidence: high
+    cooking: raw
   - raw: black pepper, 1 pinch
     quantity: 1
     unit: pinch
@@ -81,6 +83,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
   - raw: salt, 1 pinch
     quantity: 1
     unit: pinch
@@ -89,6 +92,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: grilled
 nutrition:
   perServing:
     energyKcal: 176
@@ -98,30 +102,30 @@ nutrition:
     satFat_g: 1.9
     carbs_g: 12.3
     fiber_g: 5.5
-    sugar_g: 4.5
+    sugar_g: 8.1
     sodium_mg: 153
     availableCarb_g: 6.8
   glycemic:
-    gi: 24
+    gi: 28
     gl: 2
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 39
   nutriScore:
     grade: A
-    points: -5
+    points: -4
     category: general
     version: "2023"
-    coverage: 0.67
+    coverage: 0.66
   inflammation:
     score: -0.6
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
+    score: 6
     band: moderate
-    nrf: 37.2
+    nrf: 40.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 99.6
@@ -131,6 +135,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -149,4 +154,4 @@ createdAt: "2026-11-13"
 
 ## Tips
 
-- For a more filling dish, serve with fresh baguette or sprinkle with a little crumbled feta.
+- For a more filling dish, serve with fresh whole-wheat baguette or sprinkle with a little crumbled feta.

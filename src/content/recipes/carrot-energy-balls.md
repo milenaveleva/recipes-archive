@@ -13,10 +13,6 @@ prepTime: PT20M
 totalTime: PT20M
 cuisine: International
 course: Snack
-tags:
-  - vegan
-  - snack
-  - no-bake
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 150
     fdcId: 170393
     matchConfidence: high
+    cooking: raw
   - raw: 200 g rolled oats
     quantity: 200
     unit: g
@@ -35,6 +32,7 @@ ingredients:
     grams: 200
     fdcId: 2346396
     matchConfidence: high
+    cooking: raw
   - raw: 50 g desiccated coconut
     quantity: 50
     unit: g
@@ -42,6 +40,7 @@ ingredients:
     grams: 50
     fdcId: 170579
     matchConfidence: medium
+    cooking: raw
   - raw: 50 g almonds
     quantity: 50
     unit: g
@@ -49,6 +48,7 @@ ingredients:
     grams: 50
     fdcId: 170568
     matchConfidence: high
+    cooking: raw
   - raw: 80 g pitted dates (about 8)
     quantity: 80
     unit: g
@@ -57,6 +57,7 @@ ingredients:
     grams: 80
     fdcId: 168191
     matchConfidence: medium
+    cooking: raw
   - raw: 1 tsp cinnamon
     quantity: 1
     unit: tsp
@@ -65,6 +66,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 171320
     matchConfidence: medium
+    cooking: raw
   - raw: pinch of salt
     quantity: 1
     unit: pinch
@@ -73,6 +75,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 55
@@ -81,31 +84,31 @@ nutrition:
     fat_g: 2.1
     satFat_g: 0.8
     carbs_g: 8.2
-    fiber_g: 0.5
-    sugar_g: 2.1
+    fiber_g: 1.2
+    sugar_g: 2.2
     sodium_mg: 10
-    availableCarb_g: 7.7
+    availableCarb_g: 7
   glycemic:
-    gi: 54
-    gl: 4
+    gi: 50
+    gl: 3
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 87
   nutriScore:
-    grade: C
-    points: 6
+    grade: B
+    points: 2
     category: general
     version: "2023"
-    coverage: 0.47
+    coverage: 0.85
   inflammation:
-    score: -0.6
+    score: -0.8
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 9.8
+    score: 5
+    band: moderate
+    nrf: 26.1
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

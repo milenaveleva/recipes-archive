@@ -14,35 +14,34 @@ cookTime: PT25M
 totalTime: PT45M
 cuisine: International
 course: Main Course
-tags:
-  - vegetarian
-  - legumes
-  - rice
-  - bowl
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 150 g brown rice
+  - raw: 150 g brown rice, uncooked
     quantity: 150
     unit: g
     item: brown rice
+    note: uncooked
     grams: 150
     fdcId: 169706
     matchConfidence: high
-  - raw: 240 g canned chickpeas, drained
+    cooking: boiled
+  - raw: 240 g canned chickpeas, drained (≈ 82 g uncooked)
     quantity: 240
     unit: g
-    item: canned chickpeas
-    note: drained
-    grams: 240
-    fdcId: 2644288
-    matchConfidence: high
+    item: canned chickpeas, drained
+    note: ≈ 82 g uncooked
+    grams: 82
+    fdcId: 173756
+    matchConfidence: medium
+    cooking: baked
   - raw: 1 cucumber
     quantity: 1
     item: cucumber
     grams: 200
     fdcId: 169225
     matchConfidence: high
+    cooking: raw
   - raw: 150 g cottage cheese
     quantity: 150
     unit: g
@@ -50,6 +49,7 @@ ingredients:
     grams: 150
     fdcId: 173417
     matchConfidence: high
+    cooking: raw
   - raw: 1 bunch fresh dill
     quantity: 1
     unit: bunch
@@ -57,12 +57,14 @@ ingredients:
     grams: 20
     fdcId: 172233
     matchConfidence: high
+    cooking: raw
   - raw: 1 red onion
     quantity: 1
     item: red onion
     grams: 110
     fdcId: 790577
     matchConfidence: high
+    cooking: raw
   - raw: 200 g cherry tomatoes
     quantity: 200
     unit: g
@@ -70,6 +72,7 @@ ingredients:
     grams: 200
     fdcId: 321360
     matchConfidence: medium
+    cooking: raw
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -78,6 +81,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -86,48 +90,50 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 367
-    energyKj: 1536
+    energyKcal: 364
+    energyKj: 1523
     protein_g: 17.1
-    fat_g: 5
-    satFat_g: 0.7
-    carbs_g: 64.9
-    fiber_g: 4.5
-    sugar_g: 2.3
-    sodium_mg: 428
-    availableCarb_g: 60.4
+    fat_g: 4.1
+    satFat_g: 0.9
+    carbs_g: 65.9
+    fiber_g: 7.9
+    sugar_g: 10.9
+    sodium_mg: 273
+    availableCarb_g: 58.1
   glycemic:
-    gi: 49
-    gl: 29
-    giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi: 59
+    gl: 34
+    giBand: medium
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 67
   nutriScore:
     grade: A
     points: -1
     category: general
     version: "2023"
-    coverage: 0.33
+    coverage: 0.84
   inflammation:
-    score: -0.1
-    band: neutral
+    score: -0.7
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 32.3
+    score: 6
+    band: moderate
+    nrf: 38.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 61.2
+    minimallyProcessedPct: 61.7
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

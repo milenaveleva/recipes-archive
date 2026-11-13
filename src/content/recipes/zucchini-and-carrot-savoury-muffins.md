@@ -14,10 +14,6 @@ cookTime: PT20M
 totalTime: PT35M
 cuisine: International
 course: Snack
-tags:
-  - vegetarian
-  - baking
-  - kids
 lists:
   - Kifli favourites
 ingredients:
@@ -27,25 +23,29 @@ ingredients:
     grams: 200
     fdcId: 168565
     matchConfidence: medium
+    cooking: baked
   - raw: 1 carrot
     quantity: 1
     item: carrot
     grams: 60
     fdcId: 170393
     matchConfidence: high
+    cooking: baked
   - raw: 2 eggs
     quantity: 2
     item: eggs
     grams: 100
-    fdcId: 173424
-    matchConfidence: high
-  - raw: 200 g all-purpose flour
+    fdcId: 171287
+    matchConfidence: medium
+    cooking: baked
+  - raw: 200 g whole-wheat flour
     quantity: 200
     unit: g
-    item: all-purpose flour
+    item: whole-wheat flour
     grams: 200
-    fdcId: 790018
+    fdcId: 790085
     matchConfidence: high
+    cooking: baked
   - raw: 1 tsp baking powder
     quantity: 1
     unit: tsp
@@ -54,6 +54,7 @@ ingredients:
     milliliters: 4.92892
     matchConfidence: none
     excludeFromNutrition: true
+    cooking: baked
   - raw: 3 tbsp sunflower oil
     quantity: 3
     unit: tbsp
@@ -62,12 +63,14 @@ ingredients:
     milliliters: 44.3604
     fdcId: 171025
     matchConfidence: high
+    cooking: baked
   - raw: 1 handful grated Trappist cheese
     quantity: 1
     item: handful grated Trappist cheese
     grams: 40
     fdcId: 173419
     matchConfidence: high
+    cooking: baked
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -76,48 +79,50 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
 nutrition:
   perServing:
     energyKcal: 145
-    energyKj: 606
-    protein_g: 5.3
-    fat_g: 6.7
-    satFat_g: 1.5
-    carbs_g: 16.3
-    fiber_g: 1
+    energyKj: 608
+    protein_g: 5.9
+    fat_g: 6.8
+    satFat_g: 1.6
+    carbs_g: 15.6
+    fiber_g: 2.5
     sugar_g: 0.4
-    sodium_mg: 72
-    availableCarb_g: 15.3
+    sodium_mg: 74
+    availableCarb_g: 13.1
   glycemic:
     gi: 57
-    gl: 9
+    gl: 7
     giBand: medium
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 3
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: -1
     category: general
     version: "2023"
-    coverage: 0.38
+    coverage: 0.69
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.7
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 28.1
+    score: 7
+    band: high
+    nrf: 41.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 90.1
+    minimallyProcessedPct: 90.2
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

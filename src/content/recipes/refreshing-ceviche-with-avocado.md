@@ -11,11 +11,6 @@ author: Kifli Kukták
 servings: 2
 cuisine: Mexican
 course: Appetizer
-tags:
-  - fish
-  - seafood
-  - gluten-free
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -25,8 +20,9 @@ ingredients:
     item: white sea fish fillet
     note: cod or halibut
     grams: 250
-    fdcId: 175178
+    fdcId: 171955
     matchConfidence: medium
+    cooking: raw
   - raw: 4 limes (juiced)
     quantity: 4
     item: limes
@@ -34,6 +30,7 @@ ingredients:
     grams: 120
     fdcId: 168155
     matchConfidence: high
+    cooking: raw
   - raw: 1 lemon (juiced)
     quantity: 1
     item: lemon
@@ -41,36 +38,42 @@ ingredients:
     grams: 45
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: 1 tomato
     quantity: 1
     item: tomato
     grams: 120
     fdcId: 321360
     matchConfidence: high
+    cooking: raw
   - raw: 1 cucumber
     quantity: 1
     item: cucumber
     grams: 200
     fdcId: 169225
     matchConfidence: high
+    cooking: raw
   - raw: 1 avocado
     quantity: 1
     item: avocado
     grams: 150
     fdcId: 171707
     matchConfidence: high
+    cooking: raw
   - raw: ½ red onion
     quantity: 0.5
     item: red onion
     grams: 50
     fdcId: 790577
     matchConfidence: high
+    cooking: raw
   - raw: 1 jalapeño pepper
     quantity: 1
     item: jalapeño pepper
     grams: 15
     fdcId: 169395
     matchConfidence: medium
+    cooking: raw
   - raw: ½ bunch fresh cilantro
     quantity: 0.5
     unit: bunch
@@ -78,6 +81,7 @@ ingredients:
     grams: 15
     fdcId: 169997
     matchConfidence: medium
+    cooking: raw
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -86,39 +90,40 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 259
-    energyKj: 1085
-    protein_g: 29.3
-    fat_g: 8.7
-    satFat_g: 1.6
+    energyKcal: 257
+    energyKj: 1074
+    protein_g: 26
+    fat_g: 9.2
+    satFat_g: 1.8
     carbs_g: 22.4
     fiber_g: 8.9
-    sugar_g: 5.1
-    sodium_mg: 258
+    sugar_g: 9.4
+    sodium_mg: 158
     availableCarb_g: 13.5
   glycemic:
-    gi: 19
+    gi: 17
     gl: 2
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 15
   nutriScore:
     grade: A
     points: -4
     category: general
     version: "2023"
-    coverage: 0.56
+    coverage: 0.88
   inflammation:
     score: -0.5
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 81.3
+    score: 9
+    band: excellent
+    nrf: 87.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

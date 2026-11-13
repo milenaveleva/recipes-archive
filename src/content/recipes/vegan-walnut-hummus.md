@@ -8,27 +8,24 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10405-vegan-dios-hummusz
 author: Pataky Péter
-servings: 4
+servings: 8
 prepTime: PT10M
 cookTime: PT5M
 totalTime: PT15M
 cuisine: Middle Eastern
 course: Appetizer
-tags:
-  - vegan
-  - legumes
-  - dip
-  - quick
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 500 g cooked chickpeas
+  - raw: 500 g cooked chickpeas (≈ 216 g uncooked)
     quantity: 500
     unit: g
     item: cooked chickpeas
-    grams: 500
-    fdcId: 175206
-    matchConfidence: high
+    note: ≈ 216 g uncooked
+    grams: 216
+    fdcId: 173756
+    matchConfidence: medium
+    cooking: raw
   - raw: 100 g walnuts
     quantity: 100
     unit: g
@@ -36,6 +33,7 @@ ingredients:
     grams: 100
     fdcId: 170187
     matchConfidence: high
+    cooking: raw
   - raw: 30 ml orange juice
     quantity: 30
     unit: ml
@@ -44,13 +42,16 @@ ingredients:
     milliliters: 30
     fdcId: 169098
     matchConfidence: high
-  - raw: 5 g curry powder
-    quantity: 5
-    unit: g
+    cooking: raw
+  - raw: 2½ tsp curry powder
+    quantity: 2.5
+    unit: tsp
     item: curry powder
     grams: 5
+    milliliters: 12.322299999999998
     fdcId: 170924
     matchConfidence: medium
+    cooking: raw
   - raw: 100 ml tahini
     quantity: 100
     unit: ml
@@ -59,6 +60,7 @@ ingredients:
     milliliters: 100
     fdcId: 169410
     matchConfidence: medium
+    cooking: raw
   - raw: 1 clove garlic
     quantity: 1
     unit: clove
@@ -66,6 +68,7 @@ ingredients:
     grams: 4
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 100 ml olive oil
     quantity: 100
     unit: ml
@@ -74,6 +77,7 @@ ingredients:
     milliliters: 100
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: 10 ml lime juice
     quantity: 10
     unit: ml
@@ -82,65 +86,72 @@ ingredients:
     milliliters: 10
     fdcId: 168156
     matchConfidence: high
-  - raw: 3 g ground cumin
-    quantity: 3
-    unit: g
+    cooking: raw
+  - raw: 1½ tsp ground cumin
+    quantity: 1.5
+    unit: tsp
     item: ground cumin
     grams: 3
+    milliliters: 7.39338
     fdcId: 170923
     matchConfidence: medium
-  - raw: 2 g salt
-    quantity: 2
-    unit: g
+    cooking: raw
+  - raw: ¼ tsp salt
+    quantity: 0.25
+    unit: tsp
     item: salt
     grams: 2
+    milliliters: 1.23223
     fdcId: 173468
     matchConfidence: high
-  - raw: 1 g black pepper
-    quantity: 1
-    unit: g
+    cooking: raw
+  - raw: ½ tsp black pepper
+    quantity: 0.5
+    unit: tsp
     item: black pepper
     grams: 1
+    milliliters: 2.46446
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 633
-    energyKj: 2648
-    protein_g: 14.9
-    fat_g: 54.1
-    satFat_g: 6.7
-    carbs_g: 29.5
-    fiber_g: 10.4
-    sugar_g: 1.4
-    sodium_mg: 563
-    availableCarb_g: 19.1
+    energyKcal: 364
+    energyKj: 1521
+    protein_g: 9.9
+    fat_g: 27.5
+    satFat_g: 3.4
+    carbs_g: 23.3
+    fiber_g: 5.7
+    sugar_g: 3.6
+    sodium_mg: 114
+    availableCarb_g: 17.6
   glycemic:
-    gi: 26
-    gl: 5
+    gi: 39
+    gl: 7
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 4
+    points: 8
     category: general
     version: "2023"
-    coverage: 0.29
+    coverage: 0.82
   inflammation:
-    score: -1.2
+    score: -1.7
     band: anti-inflammatory
     method: fii v3
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 16.1
+    nrf: 18.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 59.8
-    ultraProcessedPct: 22.8
-    band: moderately-processed
+    minimallyProcessedPct: 100
+    ultraProcessedPct: 0
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
@@ -156,4 +167,4 @@ createdAt: "2026-11-13"
 ## Method
 
 1. Put the cooked or canned chickpeas into a blender with the tahini, garlic, a few drops of citrus juice, cumin and a little curry powder, then blend until completely smooth. Taste and add more salt or spices if needed.
-2. Serve with pita or flatbread, a handful of iceberg lettuce and olive oil.
+2. Serve with whole-wheat pita or flatbread, a handful of iceberg lettuce and olive oil.

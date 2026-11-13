@@ -1,544 +1,1318 @@
 {
+  "167746": {
+    "polyphenol_mg": 59.8,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Lemon)",
+    "confidence": "high"
+  },
   "167755": {
     "polyphenol_mg": 154.6,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Red raspberry, raw)",
     "confidence": "high"
   },
   "167762": {
     "polyphenol_mg": 289.2,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Strawberry, raw)",
     "confidence": "high"
   },
   "167765": {
     "polyphenol_mg": 51.4,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Watermelon)",
     "confidence": "high"
   },
   "168156": {
     "polyphenol_mg": 183,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Lime, pure juice)",
+    "confidence": "high"
+  },
+  "168165": {
+    "polyphenol_mg": 1065,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Grape, raisin)",
+    "confidence": "high"
+  },
+  "168166": {
+    "polyphenol_mg": 1065,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Grape, raisin)",
     "confidence": "high"
   },
   "168191": {
     "polyphenol_mg": 61.3,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Date, fresh)",
     "confidence": "high"
   },
   "168389": {
     "polyphenol_mg": 75.1,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Asparagus, raw)",
     "confidence": "high"
   },
   "168409": {
     "polyphenol_mg": 20.1,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Cucumber, raw)",
     "confidence": "high"
   },
   "168421": {
     "polyphenol_mg": 176.7,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Kale, raw)",
     "confidence": "high"
   },
   "168424": {
     "polyphenol_mg": 168,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Kohlrabi, raw)",
     "confidence": "high"
   },
   "168448": {
     "polyphenol_mg": 110,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Pumpkin, raw)",
     "confidence": "high"
   },
   "168462": {
     "polyphenol_mg": 248.1,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Spinach, raw)",
     "confidence": "high"
   },
   "168482": {
     "polyphenol_mg": 74,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Sweet potato, raw)",
+    "confidence": "high"
+  },
+  "168564": {
+    "polyphenol_mg": 129.5,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Chicory [Red], raw)",
+    "confidence": "high"
+  },
+  "168565": {
+    "polyphenol_mg": 30.4,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Zucchini, raw)",
     "confidence": "high"
   },
   "168573": {
     "polyphenol_mg": 662,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Lemon grass, fresh)",
     "confidence": "high"
   },
   "169089": {
     "polyphenol_mg": 15.4,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Longan)",
     "confidence": "high"
   },
   "169092": {
     "polyphenol_mg": 109.6,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Cantaloupe)",
+    "confidence": "high"
+  },
+  "169098": {
+    "polyphenol_mg": 48.9,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Orange [Blond], pure juice)",
     "confidence": "high"
   },
   "169105": {
     "polyphenol_mg": 192,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Tangerine)",
     "confidence": "high"
   },
   "169108": {
     "polyphenol_mg": 57.4,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Passion fruit)",
     "confidence": "high"
   },
   "169118": {
     "polyphenol_mg": 107.9,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Pear, whole)",
+    "confidence": "high"
+  },
+  "169145": {
+    "polyphenol_mg": 164.1,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Red beetroot, raw)",
+    "confidence": "high"
+  },
+  "169205": {
+    "polyphenol_mg": 1142.4,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Globe artichoke, heads, raw)",
     "confidence": "high"
   },
   "169226": {
     "polyphenol_mg": 385.5,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Dandelion, raw)",
     "confidence": "high"
   },
   "169228": {
     "polyphenol_mg": 61.1,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Eggplant [Purple], whole, raw)",
     "confidence": "high"
   },
   "169230": {
     "polyphenol_mg": 87,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Garlic, fresh)",
     "confidence": "high"
   },
   "169231": {
     "polyphenol_mg": 204.7,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Ginger, fresh)",
+    "confidence": "high"
+  },
+  "169247": {
+    "polyphenol_mg": 65.9,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Lettuce [Green], raw)",
+    "confidence": "high"
+  },
+  "169249": {
+    "polyphenol_mg": 65.9,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Lettuce [Green], raw)",
+    "confidence": "high"
+  },
+  "169276": {
+    "polyphenol_mg": 44.3,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Radish, raw)",
+    "confidence": "high"
+  },
+  "169279": {
+    "polyphenol_mg": 67,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Sauerkraut)",
     "confidence": "high"
   },
   "169336": {
     "polyphenol_mg": 88.6,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Common cabbage [Green], raw)",
     "confidence": "high"
   },
   "169385": {
     "polyphenol_mg": 27.5,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Fennel)",
     "confidence": "high"
   },
   "169387": {
     "polyphenol_mg": 136.4,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Arugula, raw)",
+    "confidence": "high"
+  },
+  "169395": {
+    "polyphenol_mg": 243.4,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Chilli pepper [Green], raw)",
     "confidence": "high"
   },
   "169593": {
     "polyphenol_mg": 5624.2,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Cocoa, powder)",
+    "confidence": "high"
+  },
+  "169703": {
+    "polyphenol_mg": 94.5,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Rice, whole grain)",
     "confidence": "high"
   },
   "169705": {
     "polyphenol_mg": 26.4,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Oat, rolled)",
     "confidence": "high"
   },
   "169706": {
     "polyphenol_mg": 94.5,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Rice, whole grain)",
     "confidence": "high"
   },
   "169716": {
     "polyphenol_mg": 412.8,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Sorghum, whole grain)",
     "confidence": "high"
   },
   "169908": {
     "polyphenol_mg": 116,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Loquat)",
     "confidence": "high"
   },
   "169910": {
     "polyphenol_mg": 144.8,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Mango)",
     "confidence": "high"
   },
   "169911": {
     "polyphenol_mg": 59.3,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Honeydew melon)",
     "confidence": "high"
   },
   "169914": {
     "polyphenol_mg": 55.4,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Nectarine, whole)",
     "confidence": "high"
   },
   "169926": {
     "polyphenol_mg": 57.6,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Papaya)",
+    "confidence": "high"
+  },
+  "169928": {
+    "polyphenol_mg": 279.1,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Peach, whole)",
     "confidence": "high"
   },
   "169949": {
     "polyphenol_mg": 409.8,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Plum, fresh)",
     "confidence": "high"
   },
   "169961": {
     "polyphenol_mg": 31.7,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Green bean, raw)",
     "confidence": "high"
   },
   "169974": {
     "polyphenol_mg": 141.2,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Burdock root, raw)",
+    "confidence": "high"
+  },
+  "169975": {
+    "polyphenol_mg": 88.6,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Common cabbage [Green], raw)",
     "confidence": "high"
   },
   "169977": {
     "polyphenol_mg": 451,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Common cabbage [Red], raw)",
     "confidence": "high"
   },
   "169986": {
     "polyphenol_mg": 81.7,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Cauliflower, raw)",
     "confidence": "high"
   },
   "169988": {
     "polyphenol_mg": 13.6,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Celery stalks, raw)",
     "confidence": "high"
   },
   "169992": {
     "polyphenol_mg": 129.5,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Chicory [Red], raw)",
     "confidence": "high"
   },
   "169994": {
     "polyphenol_mg": 80.9,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Chives, fresh)",
+    "confidence": "high"
+  },
+  "169997": {
+    "polyphenol_mg": 158.9,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Coriander, fresh)",
     "confidence": "high"
   },
   "170000": {
     "polyphenol_mg": 60.1,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Onion [Yellow], raw)",
     "confidence": "high"
   },
   "170026": {
     "polyphenol_mg": 70.2,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Potato, raw)",
+    "confidence": "high"
+  },
+  "170027": {
+    "polyphenol_mg": 70.2,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Potato, raw)",
+    "confidence": "high"
+  },
+  "170028": {
+    "polyphenol_mg": 70.2,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Potato, raw)",
+    "confidence": "high"
+  },
+  "170029": {
+    "polyphenol_mg": 70.2,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Potato, raw)",
+    "confidence": "high"
+  },
+  "170106": {
+    "polyphenol_mg": 326.4,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Chilli pepper [Red], raw)",
+    "confidence": "high"
+  },
+  "170108": {
+    "polyphenol_mg": 229,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Sweet pepper [Red], raw)",
     "confidence": "high"
   },
   "170162": {
     "polyphenol_mg": 232.9,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Cashew nut, raw)",
     "confidence": "high"
   },
   "170178": {
     "polyphenol_mg": 126,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Macadamia nut)",
     "confidence": "high"
   },
   "170182": {
     "polyphenol_mg": 1284,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Pecan nut)",
     "confidence": "high"
   },
   "170184": {
     "polyphenol_mg": 1420,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Pistachio)",
+    "confidence": "high"
+  },
+  "170187": {
+    "polyphenol_mg": 1574.8,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Walnut)",
     "confidence": "high"
   },
   "170271": {
     "polyphenol_mg": 1859.9,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Chocolate, dark)",
+    "confidence": "high"
+  },
+  "170273": {
+    "polyphenol_mg": 1859.9,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Chocolate, dark)",
     "confidence": "high"
   },
   "170375": {
     "polyphenol_mg": 61.1,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Beet greens, raw)",
     "confidence": "high"
   },
   "170379": {
     "polyphenol_mg": 198.6,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Broccoli, raw)",
     "confidence": "high"
   },
   "170383": {
     "polyphenol_mg": 220.8,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Brussel sprouts, raw)",
     "confidence": "high"
   },
   "170388": {
     "polyphenol_mg": 119.9,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Savoy cabbage, raw)",
+    "confidence": "high"
+  },
+  "170390": {
+    "polyphenol_mg": 193.5,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Pak choy, raw)",
     "confidence": "high"
   },
   "170393": {
     "polyphenol_mg": 57.8,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Carrot, raw)",
     "confidence": "high"
   },
   "170400": {
     "polyphenol_mg": 59,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Celeriac, raw)",
     "confidence": "high"
   },
   "170416": {
     "polyphenol_mg": 89.3,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Parsley, fresh)",
     "confidence": "high"
   },
   "170427": {
     "polyphenol_mg": 181.5,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Sweet pepper [Green], raw)",
     "confidence": "high"
   },
   "170465": {
     "polyphenol_mg": 54.5,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Turnip root, raw)",
+    "confidence": "high"
+  },
+  "170497": {
+    "polyphenol_mg": 243.4,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Chilli pepper [Green], raw)",
     "confidence": "high"
   },
   "170499": {
     "polyphenol_mg": 114.7,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Shallot [Pink], raw)",
     "confidence": "high"
   },
   "170567": {
     "polyphenol_mg": 287.1,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Almond)",
+    "confidence": "high"
+  },
+  "170568": {
+    "polyphenol_mg": 61.8,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Almond, dehulled)",
+    "confidence": "high"
+  },
+  "170581": {
+    "polyphenol_mg": 671.8,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Hazelnut, raw)",
+    "confidence": "high"
+  },
+  "170591": {
+    "polyphenol_mg": 58.2,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Pines)",
+    "confidence": "high"
+  },
+  "170845": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "170846": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "170851": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "170858": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "170859": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "170886": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "170917": {
+    "polyphenol_mg": 4170,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Sweet bay, dried)",
+    "confidence": "high"
+  },
+  "170918": {
+    "polyphenol_mg": 2913.3,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Caraway)",
     "confidence": "high"
   },
   "170919": {
     "polyphenol_mg": 602.6,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Cardamom)",
     "confidence": "high"
   },
   "170922": {
     "polyphenol_mg": 357.4,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Coriander seed)",
+    "confidence": "high"
+  },
+  "170923": {
+    "polyphenol_mg": 2038.3,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Cumin)",
     "confidence": "high"
   },
   "170924": {
     "polyphenol_mg": 1075,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Curry, powder)",
     "confidence": "high"
   },
   "170928": {
     "polyphenol_mg": 3846,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Marjoram, dried)",
     "confidence": "high"
   },
   "170930": {
     "polyphenol_mg": 1584.7,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Parsley, dried)",
     "confidence": "high"
   },
   "170931": {
     "polyphenol_mg": 1000,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Pepper spice [Black])",
     "confidence": "high"
   },
   "170933": {
     "polyphenol_mg": 780,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Pepper spice [White])",
+    "confidence": "high"
+  },
+  "170935": {
+    "polyphenol_mg": 2919.7,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Common sage, dried)",
     "confidence": "high"
   },
   "170938": {
     "polyphenol_mg": 1815,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Common thyme, dried)",
     "confidence": "high"
   },
+  "171016": {
+    "polyphenol_mg": 2.3,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Sesame seed, oil)",
+    "confidence": "high"
+  },
+  "171025": {
+    "polyphenol_mg": 1,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Sunflower seed, oil)",
+    "confidence": "high"
+  },
+  "171241": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "171244": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "171249": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "171257": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "171284": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "171287": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "171304": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
   "171317": {
     "polyphenol_mg": 4317.9,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Sweet basil, dried)",
     "confidence": "high"
   },
   "171320": {
     "polyphenol_mg": 9700,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Ceylan cinnamon)",
     "confidence": "high"
   },
   "171321": {
     "polyphenol_mg": 16047.5,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Cloves)",
     "confidence": "high"
   },
   "171324": {
     "polyphenol_mg": 830,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Fenugreek seed)",
+    "confidence": "high"
+  },
+  "171326": {
+    "polyphenol_mg": 1905,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Nutmeg)",
     "confidence": "high"
   },
   "171328": {
     "polyphenol_mg": 3117,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Oregano, dried (wild marjoram))",
     "confidence": "high"
   },
   "171333": {
     "polyphenol_mg": 2518.7,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Rosemary, dried)",
     "confidence": "high"
   },
   "171413": {
     "polyphenol_mg": 55.1,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Olive, oil, extra virgin)",
     "confidence": "high"
   },
   "171688": {
     "polyphenol_mg": 201,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Apple [Dessert], whole, raw)",
     "confidence": "high"
   },
   "171697": {
     "polyphenol_mg": 133,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Apricot, raw)",
     "confidence": "high"
   },
   "171705": {
     "polyphenol_mg": 152.1,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Avocado, raw)",
+    "confidence": "high"
+  },
+  "171706": {
+    "polyphenol_mg": 152.1,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Avocado, raw)",
+    "confidence": "high"
+  },
+  "171707": {
+    "polyphenol_mg": 152.1,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Avocado, raw)",
     "confidence": "high"
   },
   "171711": {
     "polyphenol_mg": 223.4,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Highbush blueberry, raw)",
     "confidence": "high"
   },
   "171719": {
     "polyphenol_mg": 174.9,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Sweet cherry, raw)",
     "confidence": "high"
   },
   "171722": {
     "polyphenol_mg": 315,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (American cranberry)",
     "confidence": "high"
   },
   "171881": {
     "polyphenol_mg": 266.7,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Coffee beverage [Filter])",
+    "confidence": "high"
+  },
+  "171890": {
+    "polyphenol_mg": 266.7,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Coffee beverage [Filter])",
     "confidence": "high"
   },
   "171917": {
     "polyphenol_mg": 61.9,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Tea [Green], infusion)",
+    "confidence": "high"
+  },
+  "171955": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "172015": {
+    "polyphenol_mg": 102,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Maize, refined flour)",
+    "confidence": "high"
+  },
+  "172175": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "172177": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "172178": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "172184": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "172231": {
+    "polyphenol_mg": 2117,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Turmeric, dried)",
     "confidence": "high"
   },
   "172232": {
     "polyphenol_mg": 231.8,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Sweet basil, fresh)",
     "confidence": "high"
   },
   "172233": {
     "polyphenol_mg": 208.2,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Dill, fresh)",
     "confidence": "high"
   },
   "172239": {
     "polyphenol_mg": 6575,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Spearmint, dried)",
+    "confidence": "high"
+  },
+  "172336": {
+    "polyphenol_mg": 18.3,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Rape seed, oil)",
+    "confidence": "high"
+  },
+  "172370": {
+    "polyphenol_mg": 0.7,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Soy, oil)",
     "confidence": "high"
   },
   "172420": {
     "polyphenol_mg": 3697.3,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Lentils, whole, raw)",
     "confidence": "high"
   },
   "172430": {
     "polyphenol_mg": 406.3,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Peanut)",
     "confidence": "high"
   },
   "172436": {
     "polyphenol_mg": 185.9,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Pigeon pea, whole, raw)",
+    "confidence": "high"
+  },
+  "172688": {
+    "polyphenol_mg": 215.8,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Bread, common wheat, whole grain flour)",
     "confidence": "high"
   },
   "173021": {
     "polyphenol_mg": 95.7,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Fig, whole, fresh)",
     "confidence": "high"
   },
   "173044": {
     "polyphenol_mg": 126.4,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Guava)",
     "confidence": "high"
   },
   "173227": {
     "polyphenol_mg": 104.5,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Tea [Black], infusion)",
     "confidence": "high"
   },
+  "173414": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "173417": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "173418": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "173419": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "173420": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "173430": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "173431": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "173435": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "173468": {
+    "polyphenol_mg": 0,
+    "basis": "absent:mineral",
+    "source": "Rule: mineral — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
   "173470": {
     "polyphenol_mg": 1173.3,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Common thyme, fresh)",
     "confidence": "high"
   },
   "173473": {
     "polyphenol_mg": 1082.4,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Rosemary, fresh)",
     "confidence": "high"
   },
   "173474": {
     "polyphenol_mg": 980.4,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Peppermint, fresh)",
     "confidence": "high"
   },
   "173475": {
     "polyphenol_mg": 246.9,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Spearmint, fresh)",
     "confidence": "high"
   },
+  "173687": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "173709": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
   "173727": {
     "polyphenol_mg": 8970,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Adzuki bean, whole, raw)",
+    "confidence": "high"
+  },
+  "173744": {
+    "polyphenol_mg": 1234.4,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Common bean [Others], whole, raw)",
     "confidence": "high"
   },
   "173944": {
     "polyphenol_mg": 154.7,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Banana, raw)",
     "confidence": "high"
   },
   "173946": {
     "polyphenol_mg": 569.4,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Blackberry, raw)",
+    "confidence": "high"
+  },
+  "173954": {
+    "polyphenol_mg": 352.2,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Sour cherry)",
     "confidence": "high"
   },
   "173963": {
     "polyphenol_mg": 820.6,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Blackcurrant, raw)",
     "confidence": "high"
   },
   "173964": {
     "polyphenol_mg": 448.4,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Redcurrant, raw)",
+    "confidence": "high"
+  },
+  "174091": {
+    "polyphenol_mg": 215.8,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Bread, common wheat, whole grain flour)",
+    "confidence": "high"
+  },
+  "174158": {
+    "polyphenol_mg": 0,
+    "basis": "absent:mineral",
+    "source": "Rule: mineral — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "174182": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "174216": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "174263": {
+    "polyphenol_mg": 406.3,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Peanut)",
+    "confidence": "high"
+  },
+  "174837": {
+    "polyphenol_mg": 32.1,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Wine [White])",
+    "confidence": "high"
+  },
+  "174916": {
+    "polyphenol_mg": 215.8,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Bread, common wheat, whole grain flour)",
+    "confidence": "high"
+  },
+  "175103": {
+    "polyphenol_mg": 0,
+    "basis": "absent:mineral",
+    "source": "Rule: mineral — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "175141": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "175142": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "175154": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "175165": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "175167": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "175179": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "175189": {
+    "polyphenol_mg": 1234.4,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Common bean [Others], whole, raw)",
+    "confidence": "high"
+  },
+  "175202": {
+    "polyphenol_mg": 137.8,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Common bean [White], whole, raw)",
+    "confidence": "high"
+  },
+  "175205": {
+    "polyphenol_mg": 1039,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Broad bean seed, whole, raw)",
+    "confidence": "high"
+  },
+  "321360": {
+    "polyphenol_mg": 45.1,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Tomato, whole, raw)",
+    "confidence": "high"
+  },
+  "323604": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "330137": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "333476": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "748236": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "748967": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "790085": {
+    "polyphenol_mg": 90.5,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Common wheat, whole grain flour)",
+    "confidence": "high"
+  },
+  "790577": {
+    "polyphenol_mg": 102.8,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Onion [Red], raw)",
+    "confidence": "high"
+  },
+  "1999632": {
+    "polyphenol_mg": 248.1,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Spinach, raw)",
+    "confidence": "high"
+  },
+  "2258589": {
+    "polyphenol_mg": 214.2,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Sweet pepper [Yellow], raw)",
+    "confidence": "high"
+  },
+  "2258590": {
+    "polyphenol_mg": 229,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Sweet pepper [Red], raw)",
     "confidence": "high"
   },
   "2261421": {
     "polyphenol_mg": 82.2,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Oat, whole grain flour)",
     "confidence": "high"
   },
   "2262072": {
     "polyphenol_mg": 183,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Peanut, butter)",
     "confidence": "high"
   },
+  "2346386": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
   "2346392": {
     "polyphenol_mg": 58.2,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Pines)",
+    "confidence": "high"
+  },
+  "2346393": {
+    "polyphenol_mg": 287.1,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Almond)",
+    "confidence": "high"
+  },
+  "2346396": {
+    "polyphenol_mg": 26.4,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Oat, rolled)",
     "confidence": "high"
   },
   "2346398": {
     "polyphenol_mg": 147.9,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Pineapple)",
     "confidence": "high"
   },
   "2512374": {
     "polyphenol_mg": 791.4,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Buckwheat, whole grain flour)",
     "confidence": "high"
   },
   "2512375": {
     "polyphenol_mg": 72,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Rye, whole grain flour)",
     "confidence": "high"
   },
   "2512376": {
     "polyphenol_mg": 72.9,
+    "basis": "analysed:folin",
     "source": "Phenol-Explorer Folin total (Barley, whole grain flour)",
     "confidence": "high"
   },
-  "_doc": "Total polyphenol content (mg/100g) per USDA fdcId, merged into NutrientVector.polyphenol_mg and read by the FII (src/core/fii.ts). GENERATED by scripts/build-phenol-explorer.mjs from a Phenol-Explorer \"Complete composition data\" export — the Folin-Ciocalteu \"Polyphenols, total\" value per food, joined to USDA via a hand-maintained crosswalk. Re-run to refresh.",
+  "2515376": {
+    "polyphenol_mg": 406.3,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Peanut)",
+    "confidence": "high"
+  },
+  "2644283": {
+    "polyphenol_mg": 3697.3,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Lentils, whole, raw)",
+    "confidence": "high"
+  },
+  "2647437": {
+    "polyphenol_mg": 0,
+    "basis": "absent:animal-product",
+    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
+    "confidence": "rule"
+  },
+  "2685568": {
+    "polyphenol_mg": 30.4,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Zucchini, raw)",
+    "confidence": "high"
+  },
+  "2710823": {
+    "polyphenol_mg": 75.1,
+    "basis": "analysed:folin",
+    "source": "Phenol-Explorer Folin total (Asparagus, raw)",
+    "confidence": "high"
+  },
+  "_doc": "Total polyphenol content (mg/100g) per USDA fdcId, merged into NutrientVector.polyphenol_mg and read by the FII (src/core/fii.ts). GENERATED by scripts/build-phenol-explorer.mjs from a Phenol-Explorer \"Complete composition data\" export — the Folin-Ciocalteu \"Polyphenols, total\" value per food (basis \"analysed:folin\"), joined to USDA via a hand-maintained crosswalk, plus rule-based zeros for food classes with no plant matter (basis \"absent:<rule>\"). Re-run to refresh.",
   "_source": "Phenol-Explorer (Folin total polyphenols), joined to USDA fdcId via src/data/phenol-crosswalk.json."
 }

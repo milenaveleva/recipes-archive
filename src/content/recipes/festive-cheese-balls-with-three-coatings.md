@@ -11,10 +11,6 @@ author: Kifli Kukták
 servings: 4
 cuisine: International
 course: Appetizer
-tags:
-  - vegetarian
-  - party
-  - no-cook
 lists:
   - Kifli favourites
 ingredients:
@@ -26,6 +22,7 @@ ingredients:
     grams: 200
     fdcId: 173418
     matchConfidence: high
+    cooking: raw
   - raw: 100 g grated Gouda cheese
     group: Cheese base
     quantity: 100
@@ -34,6 +31,7 @@ ingredients:
     grams: 100
     fdcId: 171241
     matchConfidence: high
+    cooking: raw
   - raw: 50 g chopped pistachios
     group: For the coating
     quantity: 50
@@ -42,6 +40,7 @@ ingredients:
     grams: 50
     fdcId: 170184
     matchConfidence: medium
+    cooking: raw
   - raw: 50 g chopped walnuts
     group: For the coating
     quantity: 50
@@ -50,14 +49,16 @@ ingredients:
     grams: 50
     fdcId: 170187
     matchConfidence: high
+    cooking: raw
   - raw: 50 g chopped dried cranberries
     group: For the coating
     quantity: 50
     unit: g
     item: chopped dried cranberries
     grams: 50
-    fdcId: 171722
-    matchConfidence: high
+    fdcId: 168165
+    matchConfidence: medium
+    cooking: raw
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -66,44 +67,45 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 422
-    energyKj: 1764
-    protein_g: 13.8
+    energyKcal: 453
+    energyKj: 1896
+    protein_g: 14.1
     fat_g: 37.9
     satFat_g: 16
-    carbs_g: 9.9
-    fiber_g: 2.6
-    sugar_g: 4.3
-    sodium_mg: 362
-    availableCarb_g: 7.3
+    carbs_g: 18.4
+    fiber_g: 2.7
+    sugar_g: 11.9
+    sodium_mg: 365
+    availableCarb_g: 15.6
   glycemic:
-    gi: 34
-    gl: 2
+    gi: 39
+    gl: 6
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: E
-    points: 19
+    points: 22
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.5
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
     score: 2
     band: poor
-    nrf: 1.7
+    nrf: -1.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 37.4
+    minimallyProcessedPct: 41.7
     ultraProcessedPct: 0
-    band: highly-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
@@ -122,7 +124,7 @@ createdAt: "2026-11-13"
 2. Shape the mixture into small, bite-sized balls. If the mixture is too soft, chill it in the fridge for 15-20 minutes so it is easier to shape.
 3. Prepare the coatings: in separate bowls, coarsely chop the pistachios, walnuts and dried cranberries.
 4. Roll the cheese balls in the different coatings: some in the pistachios, some in the walnuts and the rest in the dried cranberries.
-5. Keep in the fridge until serving. Serve with salty crackers or slices of fresh baguette.
+5. Keep in the fridge until serving. Serve with salty crackers or slices of fresh whole-wheat baguette.
 
 ## Tips
 

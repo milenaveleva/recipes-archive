@@ -14,10 +14,6 @@ cookTime: PT20M
 totalTime: PT35M
 cuisine: International
 course: Soup
-tags:
-  - vegan
-  - soup
-  - peas
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +25,7 @@ ingredients:
     grams: 400
     fdcId: 170419
     matchConfidence: high
+    cooking: boiled
   - raw: 2 small potatoes
     group: For the soup
     quantity: 2
@@ -37,6 +34,7 @@ ingredients:
     grams: 200
     fdcId: 170026
     matchConfidence: high
+    cooking: boiled
   - raw: 1 red onion
     group: For the soup
     quantity: 1
@@ -44,6 +42,7 @@ ingredients:
     grams: 110
     fdcId: 790577
     matchConfidence: high
+    cooking: boiled
   - raw: 2 cloves garlic
     group: For the soup
     quantity: 2
@@ -52,6 +51,7 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 500 ml vegetable broth
     group: For the soup
     quantity: 500
@@ -61,6 +61,7 @@ ingredients:
     milliliters: 500
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: fresh mint, a few leaves
     group: For the soup
     item: fresh mint
@@ -68,6 +69,7 @@ ingredients:
     grams: 2
     fdcId: 173475
     matchConfidence: high
+    cooking: raw
   - raw: 1 medium sweet potato
     group: For the roasted vegetables
     quantity: 1
@@ -76,6 +78,7 @@ ingredients:
     grams: 200
     fdcId: 169306
     matchConfidence: high
+    cooking: baked
   - raw: 15–20 Brussels sprouts
     group: For the roasted vegetables
     quantity: 15
@@ -84,6 +87,7 @@ ingredients:
     grams: 250
     fdcId: 170383
     matchConfidence: high
+    cooking: baked
   - raw: 2 tbsp olive oil
     group: For the roasted vegetables
     quantity: 2
@@ -93,12 +97,14 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171413
     matchConfidence: high
+    cooking: boiled
   - raw: fresh mint leaves
     group: For serving
     item: fresh mint leaves
     grams: 2
     fdcId: 173475
     matchConfidence: high
+    cooking: raw
   - raw: pistachios, a few
     group: For serving
     item: pistachios
@@ -106,6 +112,7 @@ ingredients:
     grams: 10
     fdcId: 170184
     matchConfidence: high
+    cooking: raw
   - raw: almonds, a few
     group: For serving
     item: almonds
@@ -113,6 +120,7 @@ ingredients:
     grams: 10
     fdcId: 170568
     matchConfidence: high
+    cooking: raw
   - raw: cashews, a few
     group: For serving
     item: cashews
@@ -120,18 +128,21 @@ ingredients:
     grams: 10
     fdcId: 170572
     matchConfidence: high
+    cooking: raw
   - raw: salt, a few pinches
     item: salt
     note: a few pinches
     grams: 2
     fdcId: 173468
     matchConfidence: medium
+    cooking: baked
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 2
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
     energyKcal: 318
@@ -141,39 +152,40 @@ nutrition:
     satFat_g: 1.6
     carbs_g: 46.1
     fiber_g: 11.3
-    sugar_g: 8.5
+    sugar_g: 10.1
     sodium_mg: 762
     availableCarb_g: 34.9
   glycemic:
-    gi: 52
-    gl: 18
+    gi: 55
+    gl: 19
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 47
   nutriScore:
     grade: A
     points: 0
     category: general
     version: "2023"
-    coverage: 0.82
+    coverage: 0.88
   inflammation:
     score: -0.5
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 79
+    score: 8
+    band: high
+    nrf: 69.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98.2
+    minimallyProcessedPct: 93.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

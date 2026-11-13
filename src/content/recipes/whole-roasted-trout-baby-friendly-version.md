@@ -14,10 +14,6 @@ cookTime: PT20M
 totalTime: PT35M
 cuisine: International
 course: Main Course
-tags:
-  - fish
-  - baby-friendly
-  - gluten-free
 lists:
   - Kifli favourites
 ingredients:
@@ -28,12 +24,14 @@ ingredients:
     grams: 500
     fdcId: 175154
     matchConfidence: medium
+    cooking: baked
   - raw: orange and/or lemon slices (unwaxed)
     item: orange and/or lemon slices
     note: unwaxed
     grams: 40
     fdcId: 167747
     matchConfidence: high
+    cooking: baked
   - raw: 1 clove garlic (or dried garlic powder)
     quantity: 1
     unit: clove
@@ -42,6 +40,7 @@ ingredients:
     grams: 4
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 1 small sprig fresh rosemary
     quantity: 1
     unit: small
@@ -49,6 +48,7 @@ ingredients:
     grams: 2
     fdcId: 173473
     matchConfidence: high
+    cooking: baked
   - raw: 1 tbsp cooking oil
     quantity: 1
     unit: tbsp
@@ -57,18 +57,21 @@ ingredients:
     milliliters: 14.7868
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 2
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
     energyKcal: 183
@@ -82,26 +85,26 @@ nutrition:
     sodium_mg: 233
     availableCarb_g: 1.1
   glycemic:
-    gi: 15
+    gi: 23
     gl: 0
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: A
-    points: -4
+    points: -3
     category: general
     version: "2023"
-    coverage: 0.11
+    coverage: 1
   inflammation:
-    score: -0.6
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 43.2
+    score: 7
+    band: high
+    nrf: 44.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -111,6 +114,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

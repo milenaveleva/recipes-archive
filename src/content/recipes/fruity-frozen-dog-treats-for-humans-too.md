@@ -13,10 +13,6 @@ prepTime: PT10M
 totalTime: PT10M
 cuisine: International
 course: Snack
-tags:
-  - frozen
-  - fruit
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -24,8 +20,9 @@ ingredients:
     quantity: 0.5
     item: apple
     grams: 90
-    fdcId: 173928
+    fdcId: 171688
     matchConfidence: high
+    cooking: raw
   - raw: 1 large banana
     quantity: 1
     unit: large
@@ -33,6 +30,7 @@ ingredients:
     grams: 120
     fdcId: 173944
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful blueberries, raspberries or strawberries
     quantity: 1
     item: handful blueberries
@@ -40,6 +38,7 @@ ingredients:
     grams: 70
     fdcId: 171711
     matchConfidence: medium
+    cooking: raw
   - raw: plain yogurt, optional (instead of water)
     group: If you want to make it differently
     item: plain yogurt, optional
@@ -47,30 +46,32 @@ ingredients:
     grams: 50
     fdcId: 171284
     matchConfidence: high
+    cooking: raw
   - raw: ice pop mould
     group: What else you may need
     item: ice pop mould
     matchConfidence: none
     excludeFromNutrition: true
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 15
-    energyKj: 63
+    energyKj: 62
     protein_g: 0.3
     fat_g: 0.2
     satFat_g: 0.1
     carbs_g: 3.5
     fiber_g: 0.5
-    sugar_g: 2.3
+    sugar_g: 2.2
     sodium_mg: 2
     availableCarb_g: 3
   glycemic:
-    gi: 48
+    gi: 47
     gl: 1
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 100
   nutriScore:
     grade: A
     points: -2
@@ -78,13 +79,13 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.5
+    score: 0.4
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 7.7
+    score: 3
+    band: low
+    nrf: 10.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

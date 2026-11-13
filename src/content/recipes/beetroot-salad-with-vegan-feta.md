@@ -20,6 +20,7 @@ ingredients:
     grams: 250
     fdcId: 169146
     matchConfidence: high
+    cooking: baked
   - raw: 3/4 cup walnuts and pecans
     quantity: 0.75
     unit: cup
@@ -28,6 +29,7 @@ ingredients:
     milliliters: 177.441
     fdcId: 170182
     matchConfidence: low
+    cooking: raw
   - raw: 100 g feta
     quantity: 100
     unit: g
@@ -35,12 +37,14 @@ ingredients:
     grams: 100
     fdcId: 9000003
     matchConfidence: high
+    cooking: raw
   - raw: 1 pear
     quantity: 1
     item: pear
     grams: 178
     fdcId: 169118
     matchConfidence: high
+    cooking: raw
   - raw: 1 cup arugula
     quantity: 1
     unit: cup
@@ -49,6 +53,7 @@ ingredients:
     milliliters: 236.588
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 1 cup spinach
     quantity: 1
     unit: cup
@@ -57,6 +62,7 @@ ingredients:
     milliliters: 236.588
     fdcId: 168462
     matchConfidence: high
+    cooking: raw
   - raw: 2 tablespoon extra virgin olive oil
     quantity: 2
     unit: tablespoon
@@ -65,6 +71,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: 1 tablespoon balsamic vinegar
     quantity: 1
     unit: tablespoon
@@ -73,12 +80,14 @@ ingredients:
     milliliters: 14.7868
     fdcId: 172241
     matchConfidence: high
+    cooking: raw
   - raw: 6 leaves fresh mint
     quantity: 6
     item: leaves fresh mint
     grams: 0.9
     fdcId: 173475
     matchConfidence: low
+    cooking: raw
   - raw: 1 teaspoon Dijon mustard
     quantity: 1
     unit: teaspoon
@@ -87,11 +96,13 @@ ingredients:
     milliliters: 4.92892
     fdcId: 172234
     matchConfidence: medium
+    cooking: raw
   - raw: A pinch of salt
     item: A pinch of salt
     fdcId: 173468
     matchConfidence: medium
     excludeFromNutrition: true
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 319
@@ -103,20 +114,20 @@ nutrition:
     fiber_g: 5
     sugar_g: 11
     sodium_mg: 246
-    availableCarb_g: 15
+    availableCarb_g: 14
   glycemic:
-    gi: 46
-    gl: 7
+    gi: 47
+    gl: 6
     giBand: low
     glBand: low
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
-    carbCoveragePct: 100
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 68
   nutriScore:
     grade: C
     points: 5
     category: general
     version: "2023"
-    coverage: 0.98
+    coverage: 1
   inflammation:
     score: -0.5
     band: mildly-anti-inflammatory

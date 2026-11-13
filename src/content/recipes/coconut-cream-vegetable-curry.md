@@ -14,11 +14,6 @@ cookTime: PT20M
 totalTime: PT30M
 cuisine: Indian
 course: Main Course
-tags:
-  - vegan
-  - curry
-  - legumes
-  - gluten-free
 lists:
   - Kifli favourites
 ingredients:
@@ -28,8 +23,9 @@ ingredients:
     item: sweet potatoes
     note: peeled and cubed
     grams: 250
-    fdcId: 170134
-    matchConfidence: high
+    fdcId: 168482
+    matchConfidence: medium
+    cooking: boiled
   - raw: 2 cups broccoli florets (about ½ head)
     quantity: 2
     unit: cups
@@ -39,6 +35,7 @@ ingredients:
     milliliters: 473.176
     fdcId: 170379
     matchConfidence: high
+    cooking: boiled
   - raw: 2 medium carrots, peeled and cut into pieces
     quantity: 2
     unit: medium
@@ -47,6 +44,7 @@ ingredients:
     grams: 120
     fdcId: 170393
     matchConfidence: high
+    cooking: boiled
   - raw: 1 red bell pepper, seeded and sliced
     quantity: 1
     item: red bell pepper
@@ -54,27 +52,31 @@ ingredients:
     grams: 150
     fdcId: 2258590
     matchConfidence: high
+    cooking: boiled
   - raw: 2 handfuls fresh baby spinach
     quantity: 2
     item: handfuls fresh baby spinach
     grams: 60
     fdcId: 1999632
     matchConfidence: high
-  - raw: 1 can (about 240 g) lentils or chickpeas, rinsed and drained
+    cooking: boiled
+  - raw: 1 can (about 240 g) lentils or chickpeas, rinsed and drained (≈ 56 g uncooked)
     quantity: 240
     unit: g
-    item: lentils or chickpeas
-    note: rinsed and drained
-    grams: 240
-    fdcId: 175206
-    matchConfidence: high
+    item: lentils or chickpeas, rinsed and drained
+    note: ≈ 56 g uncooked
+    grams: 56
+    fdcId: 173756
+    matchConfidence: medium
+    cooking: boiled
   - raw: 2 cans (2 × 400 ml) coconut milk
     quantity: 2
     unit: cans
     item: (2 × 400 ml) coconut milk
     grams: 800
-    fdcId: 170172
+    fdcId: 170173
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tbsp olive oil
     quantity: 1
     unit: tbsp
@@ -83,6 +85,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 171413
     matchConfidence: high
+    cooking: boiled
   - raw: 1 medium red onion, finely chopped
     quantity: 1
     unit: medium
@@ -91,6 +94,7 @@ ingredients:
     grams: 110
     fdcId: 790577
     matchConfidence: high
+    cooking: boiled
   - raw: 2 cloves garlic, finely chopped
     quantity: 2
     unit: cloves
@@ -99,6 +103,7 @@ ingredients:
     grams: 8
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tbsp fresh ginger, grated
     quantity: 1
     unit: tbsp
@@ -108,6 +113,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 169231
     matchConfidence: high
+    cooking: boiled
   - raw: 2 tbsp curry powder
     quantity: 2
     unit: tbsp
@@ -116,6 +122,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 170924
     matchConfidence: medium
+    cooking: boiled
   - raw: 2 tbsp Thai red curry paste
     quantity: 2
     unit: tbsp
@@ -124,6 +131,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 170106
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tbsp cornstarch
     quantity: 1
     unit: tbsp
@@ -132,27 +140,31 @@ ingredients:
     milliliters: 14.7868
     fdcId: 169698
     matchConfidence: high
-  - raw: 1 tbsp plant-based syrup, to taste
-    quantity: 1
-    unit: tbsp
-    item: plant-based syrup
+    cooking: boiled
+  - raw: 2 tsp honey, to taste
+    quantity: 2
+    unit: tsp
+    item: honey
     note: to taste
-    grams: 20
-    milliliters: 14.7868
-    fdcId: 169661
+    grams: 14.1
+    milliliters: 9.85784
+    fdcId: 169640
     matchConfidence: high
+    cooking: boiled
   - raw: juice of 1 lime
     quantity: 1
     item: juice of lime
     grams: 30
     fdcId: 168156
     matchConfidence: high
+    cooking: boiled
   - raw: fresh cilantro, chopped (optional)
     item: fresh cilantro, chopped
     note: optional
     grams: 5
     fdcId: 169997
     matchConfidence: high
+    cooking: raw
   - raw: 1½ tsp salt (or more to taste)
     quantity: 1.5
     unit: tsp
@@ -162,48 +174,50 @@ ingredients:
     milliliters: 7.39338
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 460
-    energyKj: 1925
-    protein_g: 8
-    fat_g: 35.4
-    satFat_g: 28.6
-    carbs_g: 34.9
-    fiber_g: 9.5
-    sugar_g: 11
-    sodium_mg: 860
-    availableCarb_g: 25.5
+    energyKcal: 413
+    energyKj: 1728
+    protein_g: 7.5
+    fat_g: 31.8
+    satFat_g: 25.7
+    carbs_g: 31.2
+    fiber_g: 5.8
+    sugar_g: 8.6
+    sodium_mg: 665
+    availableCarb_g: 25.2
   glycemic:
-    gi: 43
-    gl: 11
+    gi: 46
+    gl: 12
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 13
   nutriScore:
-    grade: D
-    points: 11
+    grade: C
+    points: 9
     category: general
     version: "2023"
-    coverage: 0.73
+    coverage: 0.6
   inflammation:
-    score: 0.7
-    band: mildly-pro-inflammatory
+    score: 0.9
+    band: pro-inflammatory
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 3.8
+    score: 3
+    band: low
+    nrf: 15.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 92.3
-    ultraProcessedPct: 0
-    band: minimally-processed
+    minimallyProcessedPct: 27.5
+    ultraProcessedPct: 0.3
+    band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -217,5 +231,5 @@ createdAt: "2026-11-13"
 1. A creamy, filling, genuinely comforting dish, this curry can become a family favourite in no time. The soft-cooked vegetables and legumes make it a hit with kids too, while the creamy, spiced coconut sauce coats everything silkily. Gluten-free, dairy-free, egg-free and vegan. Preparation time: 30 minutes.
 2. Heat the oil in a large pot over medium heat, add the onion and sauté for 2–3 minutes. Add the garlic and ginger and cook for 1 more minute, then sprinkle in the curry powder and toast for 1–2 minutes until fragrant.
 3. Add the sweet potato, broccoli, carrots, bell pepper and lentils or chickpeas. Pour in the coconut milk, add the curry paste and salt, stir well, bring to a boil, then cook over moderate heat for about 10 minutes until the vegetables are tender.
-4. Meanwhile, stir the cornstarch with 2 tablespoons of water until smooth and add it to the curry to thicken. Then stir in the syrup, lime juice and spinach and cook until the leaves wilt. Serve hot with cooked rice or rice noodles, fresh cilantro, lime and, if you like, hot sauce.
+4. Meanwhile, stir the cornstarch with 2 tablespoons of water until smooth and add it to the curry to thicken. Then stir in the honey, lime juice and spinach and cook until the leaves wilt. Serve hot with cooked brown rice or whole-wheat thin noodles, fresh cilantro, lime and, if you like, hot sauce.
 5. Source: Mentes Anyu expressz szakácskönyve. Photo: Gábor Nemes.

@@ -16,8 +16,8 @@ export interface FoodRecord {
   description: string;
   category?: string;
   /**
-   * Provenance of a non-USDA record (e.g. `'JP-MEXT'` for a Japanese national-table
-   * food); absent on USDA generics. Read by the `searchFoods` tie-break to keep a
+   * Provenance of a non-USDA record (`'JP-MEXT'` for a Japanese, `'FR-CIQUAL'` for a
+   * French national-table food); absent on USDA generics. Read by the `searchFoods` tie-break to keep a
    * national record from displacing a USDA generic on an exact score tie.
    */
   source?: string;

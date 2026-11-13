@@ -14,20 +14,18 @@ cookTime: PT25M
 totalTime: PT40M
 cuisine: Italian
 course: Main Course
-tags:
-  - vegetarian
-  - rice
-  - asparagus
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g risotto rice
+  - raw: 250 g brown arborio rice, uncooked
     quantity: 250
     unit: g
-    item: risotto rice
+    item: brown arborio rice
+    note: uncooked
     grams: 250
-    fdcId: 169759
+    fdcId: 169706
     matchConfidence: high
+    cooking: boiled
   - raw: 100 g cold butter
     quantity: 100
     unit: g
@@ -35,6 +33,7 @@ ingredients:
     grams: 100
     fdcId: 173430
     matchConfidence: medium
+    cooking: boiled
   - raw: 30 g peeled shallots
     quantity: 30
     unit: g
@@ -42,6 +41,7 @@ ingredients:
     grams: 30
     fdcId: 170499
     matchConfidence: high
+    cooking: boiled
   - raw: 8 tbsp olive oil
     quantity: 8
     unit: tbsp
@@ -50,6 +50,7 @@ ingredients:
     milliliters: 118.2944
     fdcId: 171413
     matchConfidence: high
+    cooking: boiled
   - raw: 80 ml dry white wine
     quantity: 80
     unit: ml
@@ -58,6 +59,7 @@ ingredients:
     milliliters: 80
     fdcId: 174837
     matchConfidence: medium
+    cooking: boiled
   - raw: 80 g finely grated parmesan cheese
     quantity: 80
     unit: g
@@ -65,60 +67,64 @@ ingredients:
     grams: 80
     fdcId: 173431
     matchConfidence: high
+    cooking: boiled
   - raw: freshly ground black pepper, to taste
     item: freshly ground black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 3
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 600
-    energyKj: 2510
-    protein_g: 9.8
-    fat_g: 53
-    satFat_g: 19.9
-    carbs_g: 18.8
-    fiber_g: 0.8
-    sugar_g: 1
-    sodium_mg: 637
-    availableCarb_g: 18
+    energyKcal: 749
+    energyKj: 3135
+    protein_g: 12.7
+    fat_g: 54.4
+    satFat_g: 20.2
+    carbs_g: 50.2
+    fiber_g: 2.4
+    sugar_g: 1.4
+    sodium_mg: 639
+    availableCarb_g: 47.8
   glycemic:
-    gi: 59
-    gl: 11
+    gi: 69
+    gl: 33
     giBand: medium
     glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 95
   nutriScore:
     grade: D
-    points: 18
+    points: 13
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: -0.1
+    band: neutral
     method: fii v3
   balance:
-    score: 1
+    score: 2
     band: poor
-    nrf: -3.3
+    nrf: 2.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 83.4
+    minimallyProcessedPct: 86.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -133,9 +139,9 @@ createdAt: "2026-11-13"
 2. Bring 1.2 litres of water to a boil and set aside.
 3. Cut the tips off the peeled asparagus and set them aside. Trim off and discard the bottom 2 cm of the stalks, then slice the stalks into 0.5 cm rounds.
 4. Heat 3 tablespoons of olive oil and sauté the shallots in it.
-5. Add the risotto rice, stirring constantly; if it sticks to the side of the pot, scrape it off with a wooden spoon. Add the white wine and bring to a boil, stirring constantly.
+5. Add the brown arborio rice, stirring constantly; if it sticks to the side of the pot, scrape it off with a wooden spoon. Add the white wine and bring to a boil, stirring constantly.
 6. Reduce the heat by half, add the asparagus rounds, a little salt and about 100 ml of water, just enough to cover the rice. Stir constantly until it starts to boil.
-7. When the water has almost boiled away, add a little more, just enough to cover the rice. Bring to a boil again, until the rice is firm inside and soft outside. This takes about 16-20 minutes. Stir often.
+7. When the water has almost boiled away, add a little more, just enough to cover the rice. Bring to a boil again, until the rice is firm inside and soft outside. Brown arborio takes about 40-45 minutes and more liquid than white risotto rice. Stir often.
 8. When the rice is cooked, take the pot off the heat, stir in the Parmesan and the butter cubes, then add 3 tablespoons of olive oil.
 9. Once the risotto has thickened, loosen it with a little warm water to taste. Stir until it reaches a pleasantly thick risotto consistency. Season with salt and pepper, let it rest for 1 more minute and stir again.
 10. Halve the asparagus tips lengthwise. Heat 2 tablespoons of olive oil in a pan, add the asparagus tips and fry for 1.5 minutes, stirring constantly. Remove from the heat, season with salt and pepper and serve on top of the risotto.

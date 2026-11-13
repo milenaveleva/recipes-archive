@@ -14,10 +14,6 @@ cookTime: PT5M
 totalTime: PT15M
 cuisine: International
 course: Breakfast
-tags:
-  - fish
-  - eggs
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -27,35 +23,41 @@ ingredients:
     grams: 100
     fdcId: 173687
     matchConfidence: medium
+    cooking: raw
   - raw: 2 slices rye bread
     quantity: 2
     item: slices rye bread
     grams: 80
     fdcId: 172684
     matchConfidence: high
+    cooking: fried
   - raw: 2 eggs
     quantity: 2
     item: eggs
     grams: 100
     fdcId: 748967
     matchConfidence: high
+    cooking: boiled
   - raw: 1 lime
     quantity: 1
     item: lime
     grams: 65
     fdcId: 168156
     matchConfidence: high
+    cooking: raw
   - raw: fresh parsley, for garnish
     item: fresh parsley
     note: for garnish
     grams: 3
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: guacamole
     item: guacamole
     grams: 100
     fdcId: 171707
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp white vinegar
     quantity: 1
     unit: tbsp
@@ -64,18 +66,21 @@ ingredients:
     milliliters: 14.7868
     fdcId: 173469
     matchConfidence: medium
+    cooking: boiled
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 1
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 307
@@ -85,30 +90,30 @@ nutrition:
     satFat_g: 3.3
     carbs_g: 26.8
     fiber_g: 5.4
-    sugar_g: 3.3
+    sugar_g: 3.4
     sodium_mg: 839
     availableCarb_g: 21.4
   glycemic:
-    gi: 48
-    gl: 10
+    gi: 41
+    gl: 9
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
     points: 3
     category: general
     version: "2023"
-    coverage: 0.78
+    coverage: 1
   inflammation:
-    score: -0.5
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 29
+    score: 5
+    band: moderate
+    nrf: 30.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 47.2
@@ -118,6 +123,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

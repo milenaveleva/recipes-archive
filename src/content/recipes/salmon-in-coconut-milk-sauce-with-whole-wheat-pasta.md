@@ -14,20 +14,18 @@ cookTime: PT20M
 totalTime: PT30M
 cuisine: International
 course: Main Course
-tags:
-  - fish
-  - salmon
-  - pasta
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g whole wheat pasta
+  - raw: 300 g whole wheat pasta, dry
     quantity: 300
     unit: g
     item: whole wheat pasta
+    note: dry
     grams: 300
     fdcId: 169738
     matchConfidence: high
+    cooking: boiled
   - raw: 800 g salmon fillet (4 pieces)
     quantity: 800
     unit: g
@@ -36,6 +34,7 @@ ingredients:
     grams: 800
     fdcId: 175167
     matchConfidence: high
+    cooking: baked
   - raw: 130 g red onion (1 small)
     quantity: 130
     unit: g
@@ -44,14 +43,17 @@ ingredients:
     grams: 130
     fdcId: 790577
     matchConfidence: high
-  - raw: 21 g garlic (3 cloves)
-    quantity: 21
-    unit: g
+    cooking: baked
+  - raw: 3.25 tbsp garlic (3 cloves)
+    quantity: 3.25
+    unit: tbsp
     item: garlic
     note: 3 cloves
     grams: 21
+    milliliters: 48.0571
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 200 g fresh spinach
     quantity: 200
     unit: g
@@ -59,6 +61,7 @@ ingredients:
     grams: 200
     fdcId: 168462
     matchConfidence: high
+    cooking: baked
   - raw: 800 g coconut milk (2 cans)
     quantity: 800
     unit: g
@@ -67,6 +70,7 @@ ingredients:
     grams: 800
     fdcId: 170173
     matchConfidence: high
+    cooking: baked
   - raw: 10 g fresh dill (1 handful)
     quantity: 10
     unit: g
@@ -75,6 +79,7 @@ ingredients:
     grams: 10
     fdcId: 172233
     matchConfidence: medium
+    cooking: raw
   - raw: 15 ml olive oil (1 tbsp)
     quantity: 15
     unit: ml
@@ -84,53 +89,58 @@ ingredients:
     milliliters: 15
     fdcId: 171413
     matchConfidence: high
-  - raw: 4 g salt
-    quantity: 4
-    unit: g
+    cooking: baked
+  - raw: ¾ tsp salt
+    quantity: 0.75
+    unit: tsp
     item: salt
     grams: 4
+    milliliters: 3.69669
     fdcId: 173468
     matchConfidence: high
-  - raw: 2 g ground black pepper
-    quantity: 2
-    unit: g
+    cooking: baked
+  - raw: ¾ tsp ground black pepper
+    quantity: 0.75
+    unit: tsp
     item: ground black pepper
     grams: 2
+    milliliters: 3.69669
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
     energyKcal: 1140
     energyKj: 4771
     protein_g: 57.5
     fat_g: 75.3
-    satFat_g: 44.7
+    satFat_g: 44.8
     carbs_g: 67.9
     fiber_g: 9
-    sugar_g: 2.3
-    sodium_mg: 579
+    sugar_g: 4.2
+    sodium_mg: 577
     availableCarb_g: 58.9
   glycemic:
-    gi: 51
-    gl: 30
+    gi: 41
+    gl: 24
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 82
   nutriScore:
     grade: C
-    points: 6
+    points: 7
     category: general
     version: "2023"
-    coverage: 0.59
+    coverage: 0.69
   inflammation:
-    score: -0.3
-    band: mildly-anti-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v3
   balance:
     score: 3
     band: low
-    nrf: 17.2
+    nrf: 15.2
     version: NRF9.3
   processing:
     minimallyProcessedPct: 65.4
@@ -140,6 +150,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

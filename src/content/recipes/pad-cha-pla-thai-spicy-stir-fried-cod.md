@@ -1,6 +1,6 @@
 ---
 title: Pad Cha Pla (Thai Spicy Stir-Fried Cod)
-description: Tender cod stir-fried with chilli, ginger, garlic and peppercorns in a savoury sauce, finished with fresh basil and served on jasmine rice.
+description: Tender cod stir-fried with chilli, ginger, garlic and peppercorns in a savoury sauce, finished with fresh basil and served on brown jasmine rice.
 image: ./images/pad-cha-pla-thai-spicy-stir-fried-cod.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14651_1792390477177_thai-stir-fried-cod-fish-pad-cha_9f056128.jpg
 imageAlt: Pad Cha Pla (Thai Spicy Stir-Fried Cod)
@@ -14,10 +14,6 @@ cookTime: PT10M
 totalTime: PT25M
 cuisine: Thai
 course: Main Course
-tags:
-  - fish
-  - stir-fry
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -27,16 +23,19 @@ ingredients:
     unit: g
     item: cod fillet
     grams: 500
-    fdcId: 175178
+    fdcId: 171955
     matchConfidence: medium
-  - raw: 200 g jasmine rice
+    cooking: fried
+  - raw: 200 g brown jasmine rice, uncooked
     group: Main ingredients
     quantity: 200
     unit: g
-    item: jasmine rice
+    item: brown jasmine rice
+    note: uncooked
     grams: 200
-    fdcId: 169756
+    fdcId: 169703
     matchConfidence: high
+    cooking: boiled
   - raw: 30 g fresh ginger
     group: Main ingredients
     quantity: 30
@@ -45,6 +44,7 @@ ingredients:
     grams: 30
     fdcId: 169231
     matchConfidence: high
+    cooking: fried
   - raw: 4 cloves garlic
     group: Main ingredients
     quantity: 4
@@ -53,6 +53,7 @@ ingredients:
     grams: 12
     fdcId: 169230
     matchConfidence: high
+    cooking: fried
   - raw: 2 red chillies
     group: Main ingredients
     quantity: 2
@@ -60,6 +61,7 @@ ingredients:
     grams: 20
     fdcId: 170106
     matchConfidence: high
+    cooking: fried
   - raw: 20 g fresh basil
     group: Main ingredients
     quantity: 20
@@ -68,6 +70,7 @@ ingredients:
     grams: 20
     fdcId: 172232
     matchConfidence: high
+    cooking: fried
   - raw: 10 g whole black peppercorns
     group: Main ingredients
     quantity: 10
@@ -76,6 +79,7 @@ ingredients:
     grams: 10
     fdcId: 170931
     matchConfidence: high
+    cooking: fried
   - raw: 30 ml oyster sauce
     group: Sauce and frying
     quantity: 30
@@ -85,6 +89,7 @@ ingredients:
     milliliters: 30
     fdcId: 174529
     matchConfidence: high
+    cooking: fried
   - raw: 20 ml soy sauce
     group: Sauce and frying
     quantity: 20
@@ -94,6 +99,7 @@ ingredients:
     milliliters: 20
     fdcId: 174277
     matchConfidence: high
+    cooking: fried
   - raw: 15 ml fish sauce
     group: Sauce and frying
     quantity: 15
@@ -103,14 +109,17 @@ ingredients:
     milliliters: 15
     fdcId: 174531
     matchConfidence: high
-  - raw: 10 g cane sugar
+    cooking: fried
+  - raw: 1 tsp honey
     group: Sauce and frying
-    quantity: 10
-    unit: g
-    item: cane sugar
-    grams: 10
-    fdcId: 170674
-    matchConfidence: medium
+    quantity: 1
+    unit: tsp
+    item: honey
+    grams: 7.1
+    milliliters: 4.92892
+    fdcId: 169640
+    matchConfidence: high
+    cooking: fried
   - raw: 30 ml sunflower oil
     group: Sauce and frying
     quantity: 30
@@ -120,48 +129,50 @@ ingredients:
     milliliters: 30
     fdcId: 171025
     matchConfidence: high
+    cooking: fried
 nutrition:
   perServing:
-    energyKcal: 775
-    energyKj: 3242
-    protein_g: 61.4
-    fat_g: 15.6
-    satFat_g: 1.9
-    carbs_g: 96.8
-    fiber_g: 3.4
-    sugar_g: 6.4
-    sodium_mg: 2155
-    availableCarb_g: 93.4
+    energyKcal: 763
+    energyKj: 3192
+    protein_g: 55.3
+    fat_g: 19.2
+    satFat_g: 2.5
+    carbs_g: 91
+    fiber_g: 5.7
+    sugar_g: 4.9
+    sodium_mg: 1955
+    availableCarb_g: 85.2
   glycemic:
-    gi: 70
-    gl: 65
-    giBand: high
+    gi: 63
+    gl: 53
+    giBand: medium
     glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 89
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
-    coverage: 0.44
+    coverage: 1
   inflammation:
-    score: 0.1
-    band: neutral
+    score: -0.5
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 3
-    band: low
-    nrf: 20.7
+    score: 5
+    band: moderate
+    nrf: 29.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 97.6
-    ultraProcessedPct: 0
+    ultraProcessedPct: 1.2
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -172,9 +183,9 @@ createdAt: "2026-11-13"
 
 ## Method
 
-1. **Preparation:** Rinse the jasmine rice thoroughly in cold water, then steam it in twice its volume of lightly salted water for 12–15 minutes until tender, and let it rest covered. Carefully pat the cod fillet dry with paper towels, then cut it into bite-sized cubes of about 3–4 cm. Crush the garlic and chillies coarsely in a mortar or chopper. Peel the ginger and cut it into thin matchsticks (julienne). Crush the black peppercorns coarsely in a mortar. In a small bowl, mix the oyster sauce, soy sauce, fish sauce and cane sugar with a little water to make a smooth wok sauce.
+1. **Preparation:** Rinse the brown jasmine rice thoroughly in cold water, then cook it in about 2-2.25 times its volume of lightly salted water for 30–40 minutes until tender, and let it rest covered for 10 minutes. Carefully pat the cod fillet dry with paper towels, then cut it into bite-sized cubes of about 3–4 cm. Crush the garlic and chillies coarsely in a mortar or chopper. Peel the ginger and cut it into thin matchsticks (julienne). Crush the black peppercorns coarsely in a mortar. In a small bowl, mix the oyster sauce, soy sauce, fish sauce and honey with a little water to make a smooth wok sauce.
 2. **Frying and tossing:** In a wok or deep frying pan, heat the sunflower oil over high heat. Add the crushed garlic-chilli and the ginger strips and fry for 30–45 seconds until intensely fragrant. Carefully place the cod pieces in the wok in a single layer. Leave them to brown for 1–2 minutes without moving so they get a nice crust, then turn gently. Pour the prepared wok sauce over the fish, add the coarsely crushed black pepper and bring to the boil for 1 minute, until the sauce thickens slightly and coats the fish. Turn off the heat, immediately stir in the fresh basil leaves and toss them in the residual heat of the pan until the basil has just wilted.
-3. **Serving:** Serve the spicy, steaming wok cod immediately and hot on a bed of fresh jasmine rice, drizzled generously with the sauce.
+3. **Serving:** Serve the spicy, steaming wok cod immediately and hot on a bed of fresh brown jasmine rice, drizzled generously with the sauce.
 
 ## Tips
 

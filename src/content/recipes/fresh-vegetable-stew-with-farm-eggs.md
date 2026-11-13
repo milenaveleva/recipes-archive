@@ -14,10 +14,6 @@ cookTime: PT15M
 totalTime: PT25M
 cuisine: Hungarian
 course: Main Course
-tags:
-  - vegetarian
-  - eggs
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -29,13 +25,15 @@ ingredients:
     grams: 1000
     fdcId: 170472
     matchConfidence: high
+    cooking: blanched
   - raw: 8 eggs, boiled for 6 minutes and peeled
     quantity: 8
     item: eggs
     note: boiled for 6 minutes and peeled
-    grams: 400
-    fdcId: 173424
-    matchConfidence: high
+    grams: 427
+    fdcId: 171287
+    matchConfidence: medium
+    cooking: boiled
   - raw: 150 g butter
     quantity: 150
     unit: g
@@ -43,6 +41,7 @@ ingredients:
     grams: 150
     fdcId: 173430
     matchConfidence: high
+    cooking: boiled
   - raw: 100 ml vegetable broth
     quantity: 100
     unit: ml
@@ -51,47 +50,52 @@ ingredients:
     milliliters: 100
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: a little lemon juice or wine vinegar
     item: a little lemon juice or wine vinegar
     grams: 10
-    fdcId: 167747
-    matchConfidence: high
+    fdcId: 172240
+    matchConfidence: medium
+    cooking: boiled
   - raw: fresh herbs
     item: fresh herbs
     grams: 5
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 3
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 589
-    energyKj: 2464
-    protein_g: 20.2
-    fat_g: 41.4
-    satFat_g: 22.3
-    carbs_g: 34.4
+    energyKcal: 586
+    energyKj: 2454
+    protein_g: 21
+    fat_g: 41
+    satFat_g: 22.4
+    carbs_g: 33.9
     fiber_g: 11.1
-    sugar_g: 9.1
-    sodium_mg: 576
-    availableCarb_g: 23.4
+    sugar_g: 8.4
+    sodium_mg: 604
+    availableCarb_g: 22.9
   glycemic:
-    gi: 15
+    gi: 13
     gl: 3
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
     points: 3
@@ -99,13 +103,13 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.5
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 20
+    nrf: 21.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 99.8
@@ -115,6 +119,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

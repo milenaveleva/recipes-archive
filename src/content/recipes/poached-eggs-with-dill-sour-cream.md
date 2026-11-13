@@ -1,6 +1,6 @@
 ---
 title: Poached Eggs with Dill Sour Cream
-description: A creamy Hungarian-style breakfast of poached eggs on dill sour cream, drizzled with paprika butter and served with sourdough toast.
+description: A creamy Hungarian-style breakfast of poached eggs on dill sour cream, drizzled with paprika butter and served with whole-wheat sourdough toast.
 image: ./images/poached-eggs-with-dill-sour-cream.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14731_1792655576189_hungarian-poached-eggs-with-dill-sour-cream_735aac83.jpg
 imageAlt: Poached Eggs with Dill Sour Cream
@@ -14,10 +14,6 @@ cookTime: PT10M
 totalTime: PT20M
 cuisine: Hungarian
 course: Breakfast
-tags:
-  - vegetarian
-  - eggs
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -26,8 +22,9 @@ ingredients:
     quantity: 4
     item: eggs
     grams: 200
-    fdcId: 173424
-    matchConfidence: high
+    fdcId: 172186
+    matchConfidence: medium
+    cooking: boiled
   - raw: 250 g sour cream (20% fat)
     group: Main ingredients
     quantity: 250
@@ -37,6 +34,7 @@ ingredients:
     grams: 250
     fdcId: 171256
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful fresh dill
     group: Main ingredients
     quantity: 1
@@ -44,6 +42,7 @@ ingredients:
     grams: 10
     fdcId: 172233
     matchConfidence: medium
+    cooking: raw
   - raw: 40 g butter
     group: Main ingredients
     quantity: 40
@@ -52,13 +51,15 @@ ingredients:
     grams: 40
     fdcId: 173430
     matchConfidence: high
-  - raw: 4 slices sourdough bread
+    cooking: fried
+  - raw: 4 slices whole-wheat sourdough bread
     group: Main ingredients
     quantity: 4
-    item: slices sourdough bread
+    item: slices whole-wheat sourdough bread
     grams: 160
-    fdcId: 174918
-    matchConfidence: medium
+    fdcId: 172688
+    matchConfidence: high
+    cooking: fried
   - raw: 2 tbsp vinegar (10%)
     group: Seasonings and basics
     quantity: 2
@@ -69,6 +70,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 173469
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tsp sweet paprika
     group: Seasonings and basics
     quantity: 1
@@ -78,6 +80,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 171329
     matchConfidence: high
+    cooking: fried
   - raw: 1 pinch fine salt
     group: Seasonings and basics
     quantity: 1
@@ -87,6 +90,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: medium
+    cooking: raw
   - raw: 1 pinch ground black pepper
     group: Seasonings and basics
     quantity: 1
@@ -96,44 +100,45 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 676
-    energyKj: 2828
-    protein_g: 23.7
-    fat_g: 44.5
-    satFat_g: 23.1
-    carbs_g: 45.6
-    fiber_g: 5.7
-    sugar_g: 1.9
-    sodium_mg: 796
-    availableCarb_g: 39.9
+    energyKcal: 665
+    energyKj: 2784
+    protein_g: 26.6
+    fat_g: 43.7
+    satFat_g: 23.2
+    carbs_g: 41.4
+    fiber_g: 5.3
+    sugar_g: 4.3
+    sodium_mg: 857
+    availableCarb_g: 36
   glycemic:
     gi: 48
-    gl: 19
+    gl: 17
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
-    grade: C
-    points: 8
+    grade: D
+    points: 11
     category: general
     version: "2023"
-    coverage: 0.99
+    coverage: 1
   inflammation:
-    score: 0.5
-    band: mildly-pro-inflammatory
+    score: 0.2
+    band: neutral
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 8.8
+    score: 3
+    band: low
+    nrf: 12.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 70.4
-    ultraProcessedPct: 0
-    band: minimally-processed
+    minimallyProcessedPct: 69.7
+    ultraProcessedPct: 30.3
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:

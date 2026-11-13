@@ -11,10 +11,6 @@ author: Kifli Kukták
 servings: 4
 cuisine: Mexican
 course: Side Dish
-tags:
-  - vegetarian
-  - corn
-  - street-food
 lists:
   - Kifli favourites
 ingredients:
@@ -25,13 +21,15 @@ ingredients:
     grams: 600
     fdcId: 169998
     matchConfidence: high
-  - raw: 120 g mayonnaise
+    cooking: grilled
+  - raw: 120 g Greek yogurt
     quantity: 120
     unit: g
-    item: mayonnaise
-    grams: 92.4
-    fdcId: 171411
-    matchConfidence: medium
+    item: Greek yogurt
+    grams: 120
+    fdcId: 171304
+    matchConfidence: high
+    cooking: raw
   - raw: 120 g sour cream
     quantity: 120
     unit: g
@@ -39,12 +37,14 @@ ingredients:
     grams: 120
     fdcId: 171257
     matchConfidence: high
+    cooking: raw
   - raw: juice of 1 lime
     quantity: 1
     item: juice of lime
     grams: 30
     fdcId: 168156
     matchConfidence: high
+    cooking: raw
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -52,6 +52,7 @@ ingredients:
     grams: 8
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 40 g cheddar cheese
     quantity: 40
     unit: g
@@ -59,6 +60,7 @@ ingredients:
     grams: 40
     fdcId: 173414
     matchConfidence: high
+    cooking: raw
   - raw: 1 tsp chilli flakes
     quantity: 1
     unit: tsp
@@ -67,6 +69,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170932
     matchConfidence: high
+    cooking: raw
   - raw: 2 tbsp fresh coriander
     quantity: 2
     unit: tbsp
@@ -75,6 +78,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 169997
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -83,6 +87,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
   - raw: 6 tortilla chips (nachos)
     group: Optional toppings
     quantity: 6
@@ -91,6 +96,7 @@ ingredients:
     grams: 18
     fdcId: 175036
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp butter
     group: Optional toppings
     quantity: 1
@@ -100,48 +106,50 @@ ingredients:
     milliliters: 14.7868
     fdcId: 173430
     matchConfidence: high
+    cooking: grilled
 nutrition:
   perServing:
-    energyKcal: 475
-    energyKj: 1986
-    protein_g: 8.4
-    fat_g: 37.4
-    satFat_g: 10.8
-    carbs_g: 33.4
+    energyKcal: 299
+    energyKj: 1253
+    protein_g: 11.1
+    fat_g: 15.8
+    satFat_g: 8
+    carbs_g: 34.5
     fiber_g: 3.5
-    sugar_g: 10.7
-    sodium_mg: 139
-    availableCarb_g: 29.9
+    sugar_g: 11.9
+    sodium_mg: 150
+    availableCarb_g: 31.1
   glycemic:
     gi: 49
     gl: 15
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 81
   nutriScore:
-    grade: C
-    points: 4
+    grade: B
+    points: 1
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
-    band: neutral
+    score: 0.8
+    band: pro-inflammatory
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 6.9
+    score: 3
+    band: low
+    nrf: 13.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 89.4
+    minimallyProcessedPct: 83.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -154,10 +162,10 @@ createdAt: "2026-11-13"
 
 1. If using fresh corn, remove the husks and silks, then wash the cobs thoroughly and pat them dry.
 2. Preheat a grill or a pan to medium heat. Grill the corn for about 10-15 minutes, turning regularly, until evenly browned and golden. The lightly charred kernels add extra smoky flavour.
-3. While the corn cooks, mix the mayonnaise, sour cream, lime juice, finely crushed garlic and a pinch of salt in a bowl until you get a smooth cream.
+3. While the corn cooks, mix the Greek yogurt, sour cream, lime juice, finely crushed garlic and a pinch of salt in a bowl until you get a smooth cream.
 4. Brush the grilled corn with melted butter (optional), then coat generously with the prepared creamy sauce. Sprinkle with grated cheddar, chilli flakes, chopped coriander and crumbled nachos for extra crunch.
 5. Serve the elotes immediately while hot, so the flavours are at their best.
 
 ## Tips
 
-- If you like sweet and salty combinations, drizzle a little agave syrup or honey over the finished corn for an extra flavour twist.
+- If you like sweet and salty combinations, drizzle a little honey over the finished corn for an extra flavour twist.

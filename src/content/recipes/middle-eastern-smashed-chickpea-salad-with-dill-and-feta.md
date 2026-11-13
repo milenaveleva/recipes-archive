@@ -14,22 +14,19 @@ cookTime: PT5M
 totalTime: PT20M
 cuisine: Middle Eastern
 course: Salad
-tags:
-  - vegetarian
-  - legumes
-  - salad
-  - quick
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g canned chickpeas
+  - raw: 400 g canned chickpeas (≈ 93 g uncooked)
     group: Salad base
     quantity: 400
     unit: g
     item: canned chickpeas
-    grams: 400
-    fdcId: 175206
-    matchConfidence: high
+    note: ≈ 93 g uncooked
+    grams: 93
+    fdcId: 173756
+    matchConfidence: medium
+    cooking: raw
   - raw: 1 long cucumber
     group: Salad base
     quantity: 1
@@ -37,6 +34,7 @@ ingredients:
     grams: 300
     fdcId: 169225
     matchConfidence: high
+    cooking: raw
   - raw: 250 g cherry tomatoes
     group: Salad base
     quantity: 250
@@ -45,6 +43,7 @@ ingredients:
     grams: 250
     fdcId: 321360
     matchConfidence: medium
+    cooking: raw
   - raw: 1 red onion
     group: Salad base
     quantity: 1
@@ -52,6 +51,7 @@ ingredients:
     grams: 110
     fdcId: 790577
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful fresh parsley
     group: Salad base
     quantity: 1
@@ -59,6 +59,7 @@ ingredients:
     grams: 15
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful fresh dill
     group: Salad base
     quantity: 1
@@ -66,6 +67,7 @@ ingredients:
     grams: 10
     fdcId: 172233
     matchConfidence: medium
+    cooking: raw
   - raw: 3 tbsp tahini
     group: Tahini dressing
     quantity: 3
@@ -75,6 +77,7 @@ ingredients:
     milliliters: 44.3604
     fdcId: 169410
     matchConfidence: medium
+    cooking: raw
   - raw: juice of 1 lemon
     group: Tahini dressing
     quantity: 1
@@ -82,6 +85,7 @@ ingredients:
     grams: 45
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: 3 tbsp extra virgin olive oil
     group: Tahini dressing
     quantity: 3
@@ -91,6 +95,7 @@ ingredients:
     milliliters: 44.3604
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: 1 clove garlic
     group: Tahini dressing
     quantity: 1
@@ -99,6 +104,7 @@ ingredients:
     grams: 4
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 1 tsp ground cumin
     group: Tahini dressing
     quantity: 1
@@ -108,6 +114,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170923
     matchConfidence: medium
+    cooking: raw
   - raw: 1 pinch fine salt
     group: Tahini dressing
     quantity: 1
@@ -117,6 +124,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: medium
+    cooking: raw
   - raw: 1 pinch ground black pepper
     group: Tahini dressing
     quantity: 1
@@ -126,6 +134,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
   - raw: 150 g feta cheese
     group: For serving and topping
     quantity: 150
@@ -134,6 +143,7 @@ ingredients:
     grams: 150
     fdcId: 173420
     matchConfidence: high
+    cooking: raw
   - raw: 30 g pine nuts
     group: For serving and topping
     quantity: 30
@@ -142,55 +152,58 @@ ingredients:
     grams: 30
     fdcId: 170591
     matchConfidence: high
-  - raw: 4 pita breads
+    cooking: fried
+  - raw: 4 whole-wheat pita breads
     group: Side
     quantity: 4
-    item: pita breads
+    item: whole-wheat pita breads
     grams: 240
     fdcId: 174916
     matchConfidence: high
+    cooking: fried
 nutrition:
   perServing:
-    energyKcal: 594
-    energyKj: 2484
-    protein_g: 20.8
-    fat_g: 32.4
+    energyKcal: 593
+    energyKj: 2483
+    protein_g: 20.6
+    fat_g: 31.9
     satFat_g: 7.9
-    carbs_g: 62
-    fiber_g: 12.1
-    sugar_g: 3.4
-    sodium_mg: 1016
-    availableCarb_g: 49.9
+    carbs_g: 63.1
+    fiber_g: 10.6
+    sugar_g: 10.5
+    sodium_mg: 743
+    availableCarb_g: 52.6
   glycemic:
-    gi: 42
-    gl: 21
+    gi: 48
+    gl: 25
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 4
   nutriScore:
     grade: B
     points: 1
     category: general
     version: "2023"
-    coverage: 0.5
+    coverage: 0.81
   inflammation:
-    score: -0.3
+    score: -0.7
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 24.5
+    score: 5
+    band: moderate
+    nrf: 25.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 31.1
-    ultraProcessedPct: 10.8
-    band: highly-processed
+    minimallyProcessedPct: 42
+    ultraProcessedPct: 0
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

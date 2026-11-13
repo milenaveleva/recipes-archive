@@ -1,6 +1,6 @@
 ---
 title: French Oyster Mushroom Country Soup with Potatoes
-description: A rustic French soup of oyster mushrooms and tender potatoes with white wine and thyme, served with toasted baguette.
+description: A rustic French soup of oyster mushrooms and tender potatoes with white wine and thyme, served with toasted whole-wheat baguette.
 image: ./images/french-oyster-mushroom-country-soup-with-potatoes.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14727_1792634893523_french-rustic-oyster-mushroom-potato-soup_c6420664.jpg
 imageAlt: French Oyster Mushroom Country Soup with Potatoes
@@ -14,10 +14,6 @@ cookTime: PT25M
 totalTime: PT40M
 cuisine: French
 course: Soup
-tags:
-  - vegetarian
-  - soup
-  - mushroom
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +25,7 @@ ingredients:
     grams: 500
     fdcId: 168580
     matchConfidence: high
+    cooking: boiled
   - raw: 400 g potatoes
     group: Soup base
     quantity: 400
@@ -37,6 +34,7 @@ ingredients:
     grams: 400
     fdcId: 170026
     matchConfidence: high
+    cooking: boiled
   - raw: 3 shallots
     group: Soup base
     quantity: 3
@@ -44,6 +42,7 @@ ingredients:
     grams: 90
     fdcId: 170499
     matchConfidence: high
+    cooking: boiled
   - raw: 3 cloves garlic
     group: Soup base
     quantity: 3
@@ -52,6 +51,7 @@ ingredients:
     grams: 12
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 100 ml dry white wine
     group: Soup base
     quantity: 100
@@ -61,6 +61,7 @@ ingredients:
     milliliters: 100
     fdcId: 174837
     matchConfidence: medium
+    cooking: boiled
   - raw: 1000 ml vegetable broth
     group: Soup base
     quantity: 1000
@@ -70,6 +71,7 @@ ingredients:
     milliliters: 1000
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 4 sprigs thyme
     group: Soup base
     quantity: 4
@@ -78,6 +80,7 @@ ingredients:
     grams: 2
     fdcId: 173470
     matchConfidence: high
+    cooking: boiled
   - raw: 1 bunch fresh parsley
     group: Soup base
     quantity: 1
@@ -86,6 +89,7 @@ ingredients:
     grams: 25
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: 2 tbsp extra virgin olive oil
     group: Pantry basics
     quantity: 2
@@ -95,6 +99,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171413
     matchConfidence: high
+    cooking: boiled
   - raw: 30 g butter
     group: Pantry basics
     quantity: 30
@@ -103,6 +108,7 @@ ingredients:
     grams: 30
     fdcId: 173430
     matchConfidence: high
+    cooking: boiled
   - raw: 1 pinch fine salt
     group: Pantry basics
     quantity: 1
@@ -112,6 +118,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 pinch ground black pepper
     group: Pantry basics
     quantity: 1
@@ -121,55 +128,58 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
-  - raw: 1 baguette
+    cooking: boiled
+  - raw: 1 whole-wheat baguette
     group: For serving
     quantity: 1
-    item: baguette
+    item: whole-wheat baguette
     grams: 250
-    fdcId: 172675
+    fdcId: 174091
     matchConfidence: high
+    cooking: fried
 nutrition:
   perServing:
-    energyKcal: 457
-    energyKj: 1913
-    protein_g: 14.5
-    fat_g: 15.2
-    satFat_g: 5.2
-    carbs_g: 65.7
-    fiber_g: 7.4
-    sugar_g: 8.5
-    sodium_mg: 1144
-    availableCarb_g: 58.3
+    energyKcal: 437
+    energyKj: 1827
+    protein_g: 13
+    fat_g: 14.3
+    satFat_g: 4.9
+    carbs_g: 63.9
+    fiber_g: 8.7
+    sugar_g: 5.6
+    sodium_mg: 1000
+    availableCarb_g: 55.3
   glycemic:
-    gi: 56
-    gl: 33
+    gi: 57
+    gl: 31
     giBand: medium
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 28
   nutriScore:
     grade: B
-    points: 1
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.5
-    band: mildly-pro-inflammatory
+    score: 0.2
+    band: neutral
     method: fii v3
   balance:
     score: 4
     band: low
-    nrf: 22.8
+    nrf: 23.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 55.8
+    minimallyProcessedPct: 58.4
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

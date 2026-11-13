@@ -50,6 +50,28 @@ export interface NutrientVector {
   iron_mg?: number;
   potassium_mg?: number;
   magnesium_mg?: number;
+  /* The remaining USDA columns the bundled foods carry. Not read by any score directly;
+   * typed so the cooking step (cooking.ts) applies retention to — and books the cooked
+   * mass change as — the full vector. */
+  water_g?: number;
+  cholesterol_mg?: number;
+  alcohol_g?: number;
+  caffeine_mg?: number;
+  phosphorus_mg?: number;
+  zinc_mg?: number;
+  copper_mg?: number;
+  manganese_mg?: number;
+  selenium_ug?: number;
+  vitD_ug?: number;
+  vitK_ug?: number;
+  thiamin_mg?: number;
+  riboflavin_mg?: number;
+  niacin_mg?: number;
+  pantothenicAcid_mg?: number;
+  vitB6_mg?: number;
+  folate_ug?: number;
+  vitB12_ug?: number;
+  choline_mg?: number;
 }
 
 /**

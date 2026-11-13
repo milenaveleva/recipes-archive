@@ -14,10 +14,6 @@ cookTime: PT30M
 totalTime: PT45M
 cuisine: International
 course: Soup
-tags:
-  - vegan
-  - gluten-free
-  - soup
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 220
     fdcId: 170000
     matchConfidence: high
+    cooking: boiled
   - raw: 300 g carrots
     quantity: 300
     unit: g
@@ -35,6 +32,7 @@ ingredients:
     grams: 300
     fdcId: 170393
     matchConfidence: high
+    cooking: boiled
   - raw: 30 g fresh ginger
     quantity: 30
     unit: g
@@ -42,6 +40,7 @@ ingredients:
     grams: 30
     fdcId: 169231
     matchConfidence: high
+    cooking: boiled
   - raw: 2 tbsp olive oil
     quantity: 2
     unit: tbsp
@@ -50,6 +49,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171413
     matchConfidence: high
+    cooking: boiled
   - raw: 600 ml vegetable broth
     quantity: 600
     unit: ml
@@ -58,6 +58,7 @@ ingredients:
     milliliters: 600
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 165 ml canned coconut milk
     quantity: 165
     unit: ml
@@ -66,6 +67,7 @@ ingredients:
     milliliters: 165
     fdcId: 170173
     matchConfidence: high
+    cooking: boiled
   - raw: 1 pinch black pepper
     quantity: 1
     unit: pinch
@@ -74,6 +76,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -82,6 +85,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
     energyKcal: 203
@@ -92,18 +96,18 @@ nutrition:
     carbs_g: 16.1
     fiber_g: 3.2
     sugar_g: 6.8
-    sodium_mg: 514
+    sodium_mg: 511
     availableCarb_g: 12.9
   glycemic:
     gi: 30
     gl: 4
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 39
   nutriScore:
-    grade: B
-    points: 2
+    grade: C
+    points: 3
     category: general
     version: "2023"
     coverage: 0.88
@@ -112,9 +116,9 @@ nutrition:
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 30.2
+    score: 5
+    band: moderate
+    nrf: 24.8
     version: NRF9.3
   processing:
     minimallyProcessedPct: 58.3
@@ -124,6 +128,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

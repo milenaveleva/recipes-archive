@@ -3,12 +3,12 @@
  * before the static rebuild lands. Mirrors the markup of the Astro detail page
  * (src/pages/recipes/[slug].astro) and its ScoreMedallions / IngredientList /
  * NutritionPanel components, driven by the stored RecipeDraft so every field —
- * description, GI/GL, ingredients, nutrition, method, scores, tags — reflects the
+ * description, GI/GL, ingredients, nutrition, method, scores — reflects the
  * change. Pure + presentational; the rebuilt static page remains the source of truth.
  */
 import { Fragment, useEffect } from 'react';
 import type { RecipeDraft, DraftIngredient } from '../../core/markdown';
-import { round, slugifyTerm, buildScoreDials, hasAnyScore, buildRecipeMeta, formatIngredientAmount } from '../../lib/recipe';
+import { round, slugifyTerm, buildScoreDials, hasAnyScore, buildRecipeMeta, formatIngredientAmount, showRawFallback } from '../../lib/recipe';
 import { META_ICONS } from '../../lib/icons';
 import { withBase } from '../../lib/url';
 import ScoreDial from './ScoreDial';
@@ -51,7 +51,7 @@ function Ingredients({ ingredients }: { ingredients: DraftIngredient[] }) {
                   <span className="font-body text-ink">
                     {ing.item}
                     {ing.note && <span className="text-ink-faint"> · {ing.note}</span>}
-                    {amt == null && <span className="text-ink-faint"> {ing.raw}</span>}
+                    {showRawFallback(ing, amt) && <span className="text-ink-faint"> {ing.raw}</span>}
                   </span>
                 </li>
               );
@@ -180,7 +180,6 @@ export default function RecipePreview({
   const data = recipe;
   const meta = buildRecipeMeta(data);
   const steps = data.instructions.filter((s) => s.trim());
-  const tags = data.tags ?? [];
 
   return (
     <>
@@ -294,20 +293,6 @@ export default function RecipePreview({
                   {data.bodyAfter?.trim() && <Prose text={data.bodyAfter} />}
                 </div>
               </>
-            )}
-
-            {tags.length > 0 && (
-              <div className="mt-10 flex flex-wrap gap-2">
-                {tags.map((t) => (
-                  <a
-                    key={t}
-                    href={withBase(`/tags/${slugifyTerm(t)}`)}
-                    className="rounded-full border border-line bg-card px-3 py-1 font-ui text-xs text-ink-soft no-underline transition-colors hover:border-spice hover:text-spice"
-                  >
-                    #{t}
-                  </a>
-                ))}
-              </div>
             )}
           </section>
         </div>

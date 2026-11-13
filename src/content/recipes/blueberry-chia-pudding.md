@@ -13,11 +13,6 @@ prepTime: PT10M
 totalTime: PT10M
 cuisine: International
 course: Breakfast
-tags:
-  - vegan
-  - chia
-  - quick
-  - gluten-free
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +23,7 @@ ingredients:
     grams: 125
     fdcId: 171711
     matchConfidence: high
+    cooking: raw
   - raw: 235 ml almond milk
     quantity: 235
     unit: ml
@@ -36,20 +32,25 @@ ingredients:
     milliliters: 235
     fdcId: 174832
     matchConfidence: high
-  - raw: 10 g maple syrup
-    quantity: 10
-    unit: g
-    item: maple syrup
-    grams: 10
-    fdcId: 169661
+    cooking: raw
+  - raw: 1 tsp honey
+    quantity: 1
+    unit: tsp
+    item: honey
+    grams: 7.1
+    milliliters: 4.92892
+    fdcId: 169640
     matchConfidence: high
-  - raw: 2 g vanilla extract
-    quantity: 2
-    unit: g
+    cooking: raw
+  - raw: ½ tsp vanilla extract
+    quantity: 0.5
+    unit: tsp
     item: vanilla extract
     grams: 2
+    milliliters: 2.46446
     fdcId: 173471
     matchConfidence: high
+    cooking: raw
   - raw: 45 g chia seeds
     quantity: 45
     unit: g
@@ -57,43 +58,44 @@ ingredients:
     grams: 45
     fdcId: 170554
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 180
-    energyKj: 755
+    energyKcal: 178
+    energyKj: 745
     protein_g: 4.7
     fat_g: 8.4
     satFat_g: 0.9
-    carbs_g: 23.7
+    carbs_g: 23.3
     fiber_g: 9.5
-    sugar_g: 10.4
-    sodium_mg: 99
-    availableCarb_g: 14.2
+    sugar_g: 10.7
+    sodium_mg: 98
+    availableCarb_g: 13.8
   glycemic:
-    gi: 45
+    gi: 46
     gl: 6
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 77
   nutriScore:
     grade: A
     points: 0
     category: general
     version: "2023"
-    coverage: 0.9
+    coverage: 1
   inflammation:
     score: -1
     band: anti-inflammatory
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 80.7
+    score: 9
+    band: excellent
+    nrf: 82.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 89.2
-    ultraProcessedPct: 10.8
+    minimallyProcessedPct: 89
+    ultraProcessedPct: 11
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
@@ -109,6 +111,6 @@ createdAt: "2026-11-13"
 
 ## Method
 
-1. Put the milk, blueberries, maple syrup and vanilla in a blender and blend until smooth and everything is well combined.
+1. Put the milk, blueberries, honey and vanilla in a blender and blend until smooth and everything is well combined.
 2. Pour the blueberry milk into a jar or small bowl, then stir in the chia seeds. Let stand for 5 minutes and stir again to get rid of any lumps. Refrigerate and let set for at least 30 minutes, or up to 12 hours.
 3. To serve, top with fresh blueberries and muesli.

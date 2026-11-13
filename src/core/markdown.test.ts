@@ -7,7 +7,7 @@ const draft: RecipeDraft = {
   description: 'Cozy: a weeknight dahl.',
   servings: 4,
   prepTime: 'PT10M',
-  tags: ['vegan', 'one-pot'],
+  lists: ['weeknight'],
   ingredients: [
     {
       raw: '1 cup red lentils, rinsed',
@@ -52,7 +52,8 @@ describe('toRecipeMarkdown', () => {
     expect(fm.title).toBe('Spinach & Lentil Dahl');
     expect(fm.description).toBe('Cozy: a weeknight dahl.');
     expect(fm.servings).toBe(4);
-    expect(fm.tags).toEqual(['vegan', 'one-pot']);
+    expect(fm.lists).toEqual(['weeknight']);
+    expect(fm).not.toHaveProperty('tags');
     expect(fm.ingredients).toHaveLength(2);
     expect(fm.nutrition.perServing.energyKcal).toBe(310);
   });
@@ -68,6 +69,17 @@ describe('toRecipeMarkdown', () => {
     const fm = frontmatter(md);
     expect('excludeFromNutrition' in fm.ingredients[0]).toBe(false);
     expect(fm.ingredients[1].excludeFromNutrition).toBe(true);
+  });
+
+  it('emits an ingredient cooking method whenever set and round-trips it', () => {
+    const cooked = toRecipeMarkdown({
+      ...draft,
+      ingredients: [{ ...draft.ingredients[0], cooking: 'boiled' }, { ...draft.ingredients[1], cooking: 'raw' }],
+    });
+    const fm = frontmatter(cooked);
+    expect(fm.ingredients[0].cooking).toBe('boiled');
+    expect(fm.ingredients[1].cooking).toBe('raw');
+    expect('cooking' in frontmatter(md).ingredients[0]).toBe(false); // unset → omitted
   });
 
   it('emits a local image path when set, and omits it otherwise', () => {

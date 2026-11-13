@@ -8,16 +8,12 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10394-vegan-tiramisu
 author: Kifli Kukták
-servings: 5
+servings: 8
 prepTime: PT30M
 cookTime: PT30M
 totalTime: PT1H
 cuisine: Italian
 course: Dessert
-tags:
-  - vegan
-  - gluten-free
-  - dessert
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +25,7 @@ ingredients:
     grams: 150
     fdcId: 1104867
     matchConfidence: high
+    cooking: baked
   - raw: 100 g almond flour
     group: For the sponge
     quantity: 100
@@ -37,6 +34,7 @@ ingredients:
     grams: 100
     fdcId: 2261420
     matchConfidence: high
+    cooking: baked
   - raw: 120 ml coffee
     group: For the sponge
     quantity: 120
@@ -46,6 +44,7 @@ ingredients:
     milliliters: 120
     fdcId: 171881
     matchConfidence: medium
+    cooking: baked
   - raw: 100 ml almond milk
     group: For the sponge
     quantity: 100
@@ -55,6 +54,7 @@ ingredients:
     milliliters: 100
     fdcId: 174832
     matchConfidence: high
+    cooking: baked
   - raw: 100 g erythritol
     group: For the sponge
     quantity: 100
@@ -64,6 +64,7 @@ ingredients:
     fdcId: 170277
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: baked
   - raw: 1 tsp baking powder
     group: For the sponge
     quantity: 1
@@ -73,6 +74,7 @@ ingredients:
     milliliters: 4.92892
     matchConfidence: none
     excludeFromNutrition: true
+    cooking: baked
   - raw: 80 g coconut oil
     group: For the sponge
     quantity: 80
@@ -81,6 +83,7 @@ ingredients:
     grams: 80
     fdcId: 171412
     matchConfidence: high
+    cooking: baked
   - raw: 350 g tofu
     group: For the cream
     quantity: 350
@@ -89,6 +92,7 @@ ingredients:
     grams: 350
     fdcId: 172475
     matchConfidence: high
+    cooking: raw
   - raw: 60 g erythritol
     group: For the cream
     quantity: 60
@@ -98,6 +102,7 @@ ingredients:
     fdcId: 170277
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: raw
   - raw: 400 g vegan mascarpone-style cream (VeganChef)
     group: For the cream
     quantity: 400
@@ -107,6 +112,7 @@ ingredients:
     grams: 400
     fdcId: 172475
     matchConfidence: high
+    cooking: raw
   - raw: 40 ml almond milk
     group: For the cream
     quantity: 40
@@ -116,6 +122,7 @@ ingredients:
     milliliters: 40
     fdcId: 174832
     matchConfidence: high
+    cooking: raw
   - raw: ¼ tsp vanilla flavouring
     group: For the cream
     quantity: 0.25
@@ -125,6 +132,7 @@ ingredients:
     milliliters: 1.23223
     fdcId: 173471
     matchConfidence: high
+    cooking: raw
   - raw: 400 g vegan mascarpone-style cream (VeganChef)
     group: For the cream
     quantity: 400
@@ -135,6 +143,7 @@ ingredients:
     fdcId: 172475
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: raw
   - raw: 120 ml coffee
     group: For layering
     quantity: 120
@@ -144,6 +153,7 @@ ingredients:
     milliliters: 120
     fdcId: 171881
     matchConfidence: medium
+    cooking: raw
   - raw: 2 tbsp cocoa powder
     group: For layering
     quantity: 2
@@ -153,6 +163,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 169593
     matchConfidence: medium
+    cooking: raw
   - raw: salt, 1 pinch
     quantity: 1
     unit: pinch
@@ -161,39 +172,40 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 593
-    energyKj: 2481
-    protein_g: 33.9
-    fat_g: 39.9
-    satFat_g: 15.3
-    carbs_g: 33.2
-    fiber_g: 6.2
-    sugar_g: 0.3
-    sodium_mg: 77
-    availableCarb_g: 27
+    energyKcal: 371
+    energyKj: 1551
+    protein_g: 21.2
+    fat_g: 24.9
+    satFat_g: 9.6
+    carbs_g: 20.8
+    fiber_g: 3.9
+    sugar_g: 0.2
+    sodium_mg: 48
+    availableCarb_g: 16.8
   glycemic:
-    gi: 55
-    gl: 15
+    gi: 41
+    gl: 7
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: B
     points: 2
     category: general
     version: "2023"
-    coverage: 0.33
+    coverage: 0.43
   inflammation:
     score: -0.3
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 29.1
+    score: 5
+    band: moderate
+    nrf: 30.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 62.8
@@ -203,6 +215,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

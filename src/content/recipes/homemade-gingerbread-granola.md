@@ -14,11 +14,6 @@ cookTime: PT40M
 totalTime: PT50M
 cuisine: International
 course: Breakfast
-tags:
-  - vegetarian
-  - granola
-  - baked
-  - snack
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +24,7 @@ ingredients:
     grams: 180
     fdcId: 2346396
     matchConfidence: high
+    cooking: baked
   - raw: 70 g walnuts, coarsely chopped
     quantity: 70
     unit: g
@@ -37,6 +33,7 @@ ingredients:
     grams: 70
     fdcId: 170187
     matchConfidence: medium
+    cooking: baked
   - raw: 20 g desiccated coconut
     quantity: 20
     unit: g
@@ -44,6 +41,7 @@ ingredients:
     grams: 20
     fdcId: 170579
     matchConfidence: medium
+    cooking: baked
   - raw: 40 g honey
     quantity: 40
     unit: g
@@ -51,6 +49,7 @@ ingredients:
     grams: 40
     fdcId: 169640
     matchConfidence: high
+    cooking: baked
   - raw: 2 tbsp cold-pressed oil
     quantity: 2
     unit: tbsp
@@ -59,6 +58,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 172370
     matchConfidence: high
+    cooking: baked
   - raw: 50 g dried fruit, finely chopped
     quantity: 50
     unit: g
@@ -67,6 +67,7 @@ ingredients:
     grams: 50
     fdcId: 168165
     matchConfidence: high
+    cooking: baked
   - raw: 1 tsp gingerbread spice mix
     quantity: 1
     unit: tsp
@@ -75,39 +76,40 @@ ingredients:
     milliliters: 4.92892
     fdcId: 171320
     matchConfidence: high
+    cooking: baked
 nutrition:
   perServing:
     energyKcal: 444
     energyKj: 1858
     protein_g: 9.5
     fat_g: 23.2
-    satFat_g: 4.2
+    satFat_g: 4.8
     carbs_g: 54.2
-    fiber_g: 2.1
-    sugar_g: 16.8
+    fiber_g: 6.8
+    sugar_g: 17.3
     sodium_mg: 6
-    availableCarb_g: 52.1
+    availableCarb_g: 47.4
   glycemic:
-    gi: 59
-    gl: 31
+    gi: 57
+    gl: 27
     giBand: medium
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 73
   nutriScore:
-    grade: D
-    points: 14
+    grade: C
+    points: 10
     category: general
     version: "2023"
-    coverage: 0.49
+    coverage: 0.95
   inflammation:
-    score: -0.8
-    band: mildly-anti-inflammatory
+    score: -1.1
+    band: anti-inflammatory
     method: fii v3
   balance:
-    score: 1
+    score: 2
     band: poor
-    nrf: -5.8
+    nrf: 8.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -117,6 +119,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

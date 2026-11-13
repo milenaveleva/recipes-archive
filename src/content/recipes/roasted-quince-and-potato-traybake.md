@@ -14,10 +14,6 @@ cookTime: PT45M
 totalTime: PT1H
 cuisine: Hungarian
 course: Side Dish
-tags:
-  - gluten-free
-  - roasted
-  - autumn
 lists:
   - Kifli favourites
 ingredients:
@@ -30,6 +26,7 @@ ingredients:
     grams: 1000
     fdcId: 170026
     matchConfidence: high
+    cooking: baked
   - raw: 500 g quince
     group: For the tray
     quantity: 500
@@ -38,6 +35,7 @@ ingredients:
     grams: 500
     fdcId: 168163
     matchConfidence: high
+    cooking: baked
   - raw: 2 onions
     group: For the tray
     quantity: 2
@@ -45,6 +43,7 @@ ingredients:
     grams: 220
     fdcId: 170000
     matchConfidence: high
+    cooking: baked
   - raw: 5 cloves garlic
     group: For the tray
     quantity: 5
@@ -53,6 +52,7 @@ ingredients:
     grams: 15
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 4 tbsp olive oil
     group: For roasting and seasoning
     quantity: 4
@@ -62,6 +62,7 @@ ingredients:
     milliliters: 59.1472
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 1 tsp whole caraway seeds
     group: For roasting and seasoning
     quantity: 1
@@ -71,6 +72,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170918
     matchConfidence: medium
+    cooking: baked
   - raw: 1 tsp fine salt
     group: For roasting and seasoning
     quantity: 1
@@ -80,6 +82,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: medium
+    cooking: baked
   - raw: ½ tsp ground black pepper
     group: For roasting and seasoning
     quantity: 0.5
@@ -89,6 +92,7 @@ ingredients:
     milliliters: 2.46446
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
   - raw: 1 bunch fresh parsley
     group: For serving
     quantity: 1
@@ -97,6 +101,7 @@ ingredients:
     grams: 20
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: 200 g sour cream
     group: For serving
     quantity: 200
@@ -105,6 +110,7 @@ ingredients:
     grams: 200
     fdcId: 171257
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 514
@@ -114,30 +120,30 @@ nutrition:
     satFat_g: 7
     carbs_g: 72.3
     fiber_g: 9.1
-    sugar_g: 6.2
+    sugar_g: 14
     sodium_mg: 633
     availableCarb_g: 63.2
   glycemic:
-    gi: 63
-    gl: 40
+    gi: 66
+    gl: 42
     giBand: medium
     glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 61
   nutriScore:
     grade: C
     points: 3
     category: general
     version: "2023"
-    coverage: 0.75
+    coverage: 1
   inflammation:
-    score: 0.1
+    score: 0.2
     band: neutral
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 32
+    score: 5
+    band: moderate
+    nrf: 27.3
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -147,6 +153,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

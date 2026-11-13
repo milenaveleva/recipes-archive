@@ -14,21 +14,19 @@ cookTime: PT20M
 totalTime: PT35M
 cuisine: Italian
 course: Salad
-tags:
-  - vegetarian
-  - salad
-  - millet
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g millet
+  - raw: 200 g millet, uncooked
     group: Millet base
     quantity: 200
     unit: g
     item: millet
+    note: uncooked
     grams: 200
     fdcId: 169702
     matchConfidence: high
+    cooking: boiled
   - raw: 500 ml water
     group: Millet base
     quantity: 500
@@ -39,6 +37,7 @@ ingredients:
     fdcId: 169301
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: boiled
   - raw: salt, 1 pinch
     group: Millet base
     quantity: 1
@@ -48,6 +47,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
   - raw: 2 pears
     group: Roasted pears and toppings
     quantity: 2
@@ -55,6 +55,7 @@ ingredients:
     grams: 360
     fdcId: 169118
     matchConfidence: high
+    cooking: baked
   - raw: 120 g goat cheese
     group: Roasted pears and toppings
     quantity: 120
@@ -63,6 +64,7 @@ ingredients:
     grams: 120
     fdcId: 173435
     matchConfidence: high
+    cooking: raw
   - raw: 80 g arugula
     group: Roasted pears and toppings
     quantity: 80
@@ -71,6 +73,7 @@ ingredients:
     grams: 80
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 40 g almonds
     group: Roasted pears and toppings
     quantity: 40
@@ -79,6 +82,7 @@ ingredients:
     grams: 40
     fdcId: 170568
     matchConfidence: high
+    cooking: fried
   - raw: 45 ml extra virgin olive oil
     group: Tuscan balsamic dressing
     quantity: 45
@@ -88,6 +92,7 @@ ingredients:
     milliliters: 45
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 20 ml balsamic vinegar
     group: Tuscan balsamic dressing
     quantity: 20
@@ -97,6 +102,7 @@ ingredients:
     milliliters: 20
     fdcId: 172241
     matchConfidence: high
+    cooking: raw
   - raw: 15 g honey
     group: Tuscan balsamic dressing
     quantity: 15
@@ -105,6 +111,7 @@ ingredients:
     grams: 15
     fdcId: 169640
     matchConfidence: high
+    cooking: raw
   - raw: black pepper, 1 pinch
     group: Tuscan balsamic dressing
     quantity: 1
@@ -114,6 +121,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 981
@@ -122,31 +130,31 @@ nutrition:
     fat_g: 48.4
     satFat_g: 13.2
     carbs_g: 113.4
-    fiber_g: 16.7
+    fiber_g: 16.8
     sugar_g: 27.1
     sodium_mg: 378
-    availableCarb_g: 96.7
+    availableCarb_g: 92.6
   glycemic:
-    gi: 67
-    gl: 65
+    gi: 69
+    gl: 63
     giBand: medium
     glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 95
   nutriScore:
     grade: C
     points: 3
     category: general
     version: "2023"
-    coverage: 0.77
+    coverage: 0.57
   inflammation:
-    score: -0.7
+    score: -0.8
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
     score: 3
     band: low
-    nrf: 17.8
+    nrf: 15
     version: NRF9.3
   processing:
     minimallyProcessedPct: 83.9
@@ -156,6 +164,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

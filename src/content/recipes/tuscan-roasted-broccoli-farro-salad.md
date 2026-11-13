@@ -14,20 +14,18 @@ cookTime: PT20M
 totalTime: PT35M
 cuisine: Italian
 course: Salad
-tags:
-  - vegetarian
-  - grains
-  - broccoli
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g farro
+  - raw: 200 g farro, uncooked
     quantity: 200
     unit: g
     item: farro
+    note: uncooked
     grams: 200
     fdcId: 2710828
     matchConfidence: high
+    cooking: boiled
   - raw: 400 g broccoli florets
     quantity: 400
     unit: g
@@ -35,6 +33,7 @@ ingredients:
     grams: 400
     fdcId: 170379
     matchConfidence: high
+    cooking: baked
   - raw: 80 g sun-dried tomatoes
     quantity: 80
     unit: g
@@ -42,6 +41,7 @@ ingredients:
     grams: 80
     fdcId: 168567
     matchConfidence: high
+    cooking: raw
   - raw: 60 g rocket (arugula)
     quantity: 60
     unit: g
@@ -50,6 +50,7 @@ ingredients:
     grams: 60
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 40 g sliced almonds
     quantity: 40
     unit: g
@@ -57,6 +58,7 @@ ingredients:
     grams: 40
     fdcId: 170568
     matchConfidence: high
+    cooking: fried
   - raw: 50 g Parmesan cheese
     quantity: 50
     unit: g
@@ -64,6 +66,7 @@ ingredients:
     grams: 50
     fdcId: 173431
     matchConfidence: high
+    cooking: raw
   - raw: 4 tbsp extra virgin olive oil
     quantity: 4
     unit: tbsp
@@ -72,6 +75,7 @@ ingredients:
     milliliters: 59.1472
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 45 ml lemon juice
     quantity: 45
     unit: ml
@@ -80,6 +84,7 @@ ingredients:
     milliliters: 45
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -87,6 +92,7 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 1 tsp fine salt
     quantity: 1
     unit: tsp
@@ -95,6 +101,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: medium
+    cooking: baked
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -103,6 +110,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
     energyKcal: 993
@@ -116,26 +124,26 @@ nutrition:
     sodium_mg: 1731
     availableCarb_g: 96
   glycemic:
-    gi: 54
+    gi: 55
     gl: 52
     giBand: low
     glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: B
     points: 1
     category: general
     version: "2023"
-    coverage: 0.79
+    coverage: 0.55
   inflammation:
-    score: -0.9
-    band: mildly-anti-inflammatory
+    score: -1
+    band: anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 51.9
+    score: 7
+    band: high
+    nrf: 43.8
     version: NRF9.3
   processing:
     minimallyProcessedPct: 89.6
@@ -145,6 +153,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

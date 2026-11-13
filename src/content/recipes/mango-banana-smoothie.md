@@ -13,10 +13,6 @@ prepTime: PT5M
 totalTime: PT5M
 cuisine: International
 course: Drink
-tags:
-  - vegan
-  - fruit
-  - smoothie
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     milliliters: 200
     fdcId: 174832
     matchConfidence: high
+    cooking: raw
   - raw: 85 g mango
     quantity: 85
     unit: g
@@ -35,6 +32,7 @@ ingredients:
     grams: 85
     fdcId: 169910
     matchConfidence: high
+    cooking: raw
   - raw: 60 g ripe banana
     quantity: 60
     unit: g
@@ -42,57 +40,60 @@ ingredients:
     grams: 60
     fdcId: 173944
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful fresh mint
     quantity: 1
     item: handful fresh mint
     grams: 5
     fdcId: 173475
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch flaxseed
     quantity: 1
     unit: pinch
     item: flaxseed
-    grams: 1
+    grams: 0.2
     milliliters: 0.3080575
-    fdcId: 2262075
-    matchConfidence: high
+    fdcId: 169414
+    matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 145
-    energyKj: 607
-    protein_g: 2.6
-    fat_g: 3.1
-    satFat_g: 0.4
-    carbs_g: 30.1
-    fiber_g: 3.9
+    energyKcal: 141
+    energyKj: 589
+    protein_g: 2.4
+    fat_g: 2.8
+    satFat_g: 0.3
+    carbs_g: 29.8
+    fiber_g: 3.8
     sugar_g: 20.8
-    sodium_mg: 163
-    availableCarb_g: 26.2
+    sodium_mg: 162
+    availableCarb_g: 26
   glycemic:
-    gi: 54
-    gl: 14
+    gi: 46
+    gl: 12
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 91
   nutriScore:
     grade: D
     points: 7
     category: beverage
     version: "2023"
-    coverage: 0.98
+    coverage: 0.99
   inflammation:
-    score: -0
+    score: 0
     band: neutral
     method: fii v3
   balance:
-    score: 7
-    band: high
-    nrf: 123.1
+    score: 10
+    band: excellent
+    nrf: 125.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 77.1
-    ultraProcessedPct: 22.9
+    minimallyProcessedPct: 76.4
+    ultraProcessedPct: 23.6
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"

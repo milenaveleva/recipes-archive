@@ -14,28 +14,27 @@ cookTime: PT10M
 totalTime: PT25M
 cuisine: Middle Eastern
 course: Appetizer
-tags:
-  - vegan
-  - legumes
-  - quick
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 260 g cooked beetroot
+  - raw: 260 g cooked beetroot (≈ 270 g raw)
     quantity: 260
     unit: g
     item: cooked beetroot
-    grams: 260
-    fdcId: 169146
+    note: ≈ 270 g raw
+    grams: 270
+    fdcId: 169145
     matchConfidence: high
-  - raw: 240 g canned chickpeas, drained
+    cooking: raw
+  - raw: 240 g canned chickpeas, drained (≈ 82 g uncooked)
     quantity: 240
     unit: g
-    item: canned chickpeas
-    note: drained
-    grams: 240
-    fdcId: 2644288
-    matchConfidence: high
+    item: canned chickpeas, drained
+    note: ≈ 82 g uncooked
+    grams: 82
+    fdcId: 173756
+    matchConfidence: medium
+    cooking: raw
   - raw: 20 g tahini
     quantity: 20
     unit: g
@@ -43,6 +42,7 @@ ingredients:
     grams: 20
     fdcId: 169410
     matchConfidence: medium
+    cooking: raw
   - raw: 2 tbsp olive oil
     quantity: 2
     unit: tbsp
@@ -51,6 +51,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: 1-2 cloves garlic
     quantity: 1
     quantity2: 2
@@ -59,67 +60,72 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 3-4 ice cubes
     quantity: 3
     quantity2: 4
     item: ice cubes
     matchConfidence: none
     excludeFromNutrition: true
+    cooking: raw
   - raw: freshly squeezed lemon juice, to taste
     item: freshly squeezed lemon juice
     note: to taste
     grams: 20
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 3
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 400
-    energyKj: 1675
+    energyKcal: 397
+    energyKj: 1660
     protein_g: 12.6
-    fat_g: 22.3
-    satFat_g: 2.6
-    carbs_g: 41.8
-    fiber_g: 3.7
-    sugar_g: 10.6
-    sodium_mg: 933
-    availableCarb_g: 38.1
+    fat_g: 21.1
+    satFat_g: 2.8
+    carbs_g: 43.2
+    fiber_g: 9.9
+    sugar_g: 13.8
+    sodium_mg: 705
+    availableCarb_g: 33.3
   glycemic:
-    gi: 45
-    gl: 17
+    gi: 48
+    gl: 16
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: A
-    points: 0
+    points: -1
     category: general
     version: "2023"
-    coverage: 0.55
+    coverage: 0.95
   inflammation:
-    score: 0
-    band: neutral
+    score: -1.3
+    band: anti-inflammatory
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 4.2
+    score: 4
+    band: low
+    nrf: 19.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 45.9
-    ultraProcessedPct: 14.2
+    minimallyProcessedPct: 60.9
+    ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"

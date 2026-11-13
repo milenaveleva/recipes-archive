@@ -65,7 +65,11 @@ for (const p of parameters) {
   const vals = [];
   for (const f of foods) {
     const v = valueOf(f, p.nutrient);
-    if (v !== undefined) vals.push(v);
+    // A one-sided signal's scale is the median ANALYSED content: the rule-based zeros
+    // (polyphenols.json basis "absent:<rule>") still score as present, but they would
+    // drag the median toward 0 and inflate every analysed food's z, so they stay out
+    // of the scale estimate.
+    if (v !== undefined && !(p.oneSided && v <= 0)) vals.push(v);
   }
   const stats = robustStats(vals);
   if (p.oneSided) {

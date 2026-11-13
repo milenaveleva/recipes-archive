@@ -14,10 +14,6 @@ cookTime: PT50M
 totalTime: PT1H5M
 cuisine: Mediterranean
 course: Side Dish
-tags:
-  - vegan
-  - artichoke
-  - roasted
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +23,7 @@ ingredients:
     grams: 600
     fdcId: 169205
     matchConfidence: high
+    cooking: baked
   - raw: 2 tbsp balsamic glaze
     quantity: 2
     unit: tbsp
@@ -34,7 +31,8 @@ ingredients:
     grams: 32
     milliliters: 29.5736
     fdcId: 172241
-    matchConfidence: high
+    matchConfidence: low
+    cooking: baked
   - raw: 3 tbsp olive oil
     quantity: 3
     unit: tbsp
@@ -43,6 +41,7 @@ ingredients:
     milliliters: 44.3604
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -50,6 +49,7 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 2 sprigs fresh rosemary
     quantity: 2
     unit: sprigs
@@ -57,6 +57,7 @@ ingredients:
     grams: 2
     fdcId: 173473
     matchConfidence: high
+    cooking: baked
   - raw: 2 sprigs fresh thyme
     quantity: 2
     unit: sprigs
@@ -64,6 +65,7 @@ ingredients:
     grams: 2
     fdcId: 173470
     matchConfidence: high
+    cooking: baked
   - raw: 2 sprigs fresh oregano
     quantity: 2
     unit: sprigs
@@ -71,6 +73,7 @@ ingredients:
     grams: 2
     fdcId: 171328
     matchConfidence: medium
+    cooking: baked
   - raw: 1 pinch black pepper
     quantity: 1
     unit: pinch
@@ -79,11 +82,13 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
   - raw: 1 sheet baking paper
     quantity: 1
     item: sheet baking paper
     matchConfidence: none
     excludeFromNutrition: true
+    cooking: baked
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -92,6 +97,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
 nutrition:
   perServing:
     energyKcal: 344
@@ -100,31 +106,31 @@ nutrition:
     fat_g: 20.8
     satFat_g: 3
     carbs_g: 36.4
-    fiber_g: 17
+    fiber_g: 17.1
     sugar_g: 5.4
     sodium_mg: 365
-    availableCarb_g: 19.4
+    availableCarb_g: 19.3
   glycemic:
-    gi: 22
-    gl: 4
+    gi: 25
+    gl: 5
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: A
-    points: -6
+    points: -7
     category: general
     version: "2023"
-    coverage: 0.95
+    coverage: 0.99
   inflammation:
-    score: -0.5
+    score: -0.9
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 62.7
+    score: 8
+    band: high
+    nrf: 61.1
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -134,6 +140,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

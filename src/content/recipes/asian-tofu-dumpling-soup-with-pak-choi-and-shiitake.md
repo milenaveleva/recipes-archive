@@ -14,11 +14,6 @@ cookTime: PT15M
 totalTime: PT30M
 cuisine: Chinese
 course: Soup
-tags:
-  - vegan
-  - tofu
-  - soup
-  - mushrooms
 lists:
   - Kifli favourites
 ingredients:
@@ -30,6 +25,7 @@ ingredients:
     grams: 400
     fdcId: 172475
     matchConfidence: high
+    cooking: boiled
   - raw: 30 g cornstarch
     group: For the tofu balls and soup
     quantity: 30
@@ -38,6 +34,7 @@ ingredients:
     grams: 30
     fdcId: 169698
     matchConfidence: high
+    cooking: boiled
   - raw: 2 pak choi
     group: For the tofu balls and soup
     quantity: 2
@@ -45,14 +42,16 @@ ingredients:
     grams: 300
     fdcId: 170390
     matchConfidence: medium
+    cooking: boiled
   - raw: 150 g shiitake mushrooms
     group: For the tofu balls and soup
     quantity: 150
     unit: g
     item: shiitake mushrooms
     grams: 150
-    fdcId: 170097
+    fdcId: 169242
     matchConfidence: high
+    cooking: boiled
   - raw: 1 carrot
     group: For the tofu balls and soup
     quantity: 1
@@ -60,6 +59,7 @@ ingredients:
     grams: 60
     fdcId: 170393
     matchConfidence: high
+    cooking: boiled
   - raw: 1000 ml vegetable broth
     group: For the tofu balls and soup
     quantity: 1000
@@ -69,6 +69,7 @@ ingredients:
     milliliters: 1000
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 20 g ginger
     group: Flavourings and spices
     quantity: 20
@@ -77,6 +78,7 @@ ingredients:
     grams: 20
     fdcId: 169231
     matchConfidence: high
+    cooking: boiled
   - raw: 2 cloves garlic
     group: Flavourings and spices
     quantity: 2
@@ -85,6 +87,7 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 30 ml soy sauce
     group: Flavourings and spices
     quantity: 30
@@ -94,6 +97,7 @@ ingredients:
     milliliters: 30
     fdcId: 174277
     matchConfidence: high
+    cooking: boiled
   - raw: 15 ml sesame oil
     group: Flavourings and spices
     quantity: 15
@@ -103,6 +107,7 @@ ingredients:
     milliliters: 15
     fdcId: 171016
     matchConfidence: high
+    cooking: boiled
   - raw: 2 spring onions
     group: For serving
     quantity: 2
@@ -110,6 +115,7 @@ ingredients:
     grams: 30
     fdcId: 170005
     matchConfidence: high
+    cooking: raw
   - raw: 10 g sesame seeds
     group: For serving
     quantity: 10
@@ -118,25 +124,26 @@ ingredients:
     grams: 10
     fdcId: 170150
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 279
-    energyKj: 1167
-    protein_g: 21.2
-    fat_g: 14
+    energyKcal: 271
+    energyKj: 1132
+    protein_g: 21.4
+    fat_g: 14.1
     satFat_g: 2.1
-    carbs_g: 23.2
-    fiber_g: 5
-    sugar_g: 4.6
-    sodium_mg: 1303
-    availableCarb_g: 18.2
+    carbs_g: 20.3
+    fiber_g: 5.2
+    sugar_g: 4.1
+    sodium_mg: 1214
+    availableCarb_g: 15.2
   glycemic:
-    gi: 50
-    gl: 9
+    gi: 29
+    gl: 4
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 7
   nutriScore:
     grade: B
     points: 1
@@ -148,18 +155,19 @@ nutrition:
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 66.7
+    score: 8
+    band: high
+    nrf: 64.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 42.6
+    minimallyProcessedPct: 40.9
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

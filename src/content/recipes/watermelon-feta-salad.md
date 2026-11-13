@@ -13,10 +13,6 @@ prepTime: PT15M
 totalTime: PT15M
 cuisine: Mediterranean
 course: Salad
-tags:
-  - vegetarian
-  - quick
-  - salad
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 200
     fdcId: 167765
     matchConfidence: high
+    cooking: raw
   - raw: 150 g cucumber
     quantity: 150
     unit: g
@@ -35,6 +32,7 @@ ingredients:
     grams: 150
     fdcId: 169225
     matchConfidence: high
+    cooking: raw
   - raw: 80 g feta cheese
     quantity: 80
     unit: g
@@ -42,18 +40,21 @@ ingredients:
     grams: 80
     fdcId: 173420
     matchConfidence: high
+    cooking: raw
   - raw: fresh basil, a handful
     item: fresh basil
     note: a handful
     grams: 10
     fdcId: 172232
     matchConfidence: high
+    cooking: raw
   - raw: fresh mint, a handful
     item: fresh mint
     note: a handful
     grams: 10
     fdcId: 173475
     matchConfidence: high
+    cooking: raw
   - raw: 2 tbsp olive oil
     quantity: 2
     unit: tbsp
@@ -62,6 +63,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: 1 tsp honey
     quantity: 1
     unit: tsp
@@ -70,6 +72,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 169640
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp lime juice
     quantity: 1
     unit: tbsp
@@ -78,6 +81,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 168156
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 279
@@ -91,12 +95,12 @@ nutrition:
     sodium_mg: 461
     availableCarb_g: 13.5
   glycemic:
-    gi: 44
+    gi: 41
     gl: 6
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 76
   nutriScore:
     grade: C
     points: 3
@@ -104,7 +108,7 @@ nutrition:
     version: "2023"
     coverage: 0.98
   inflammation:
-    score: 0.4
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v3
   balance:

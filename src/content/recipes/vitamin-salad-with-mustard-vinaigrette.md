@@ -13,11 +13,6 @@ prepTime: PT15M
 totalTime: PT15M
 cuisine: International
 course: Salad
-tags:
-  - vegetarian
-  - vegan
-  - salad
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -28,17 +23,20 @@ ingredients:
     grams: 250
     fdcId: 169249
     matchConfidence: high
+    cooking: raw
   - raw: 2 carrots
     quantity: 2
     item: carrots
     grams: 120
     fdcId: 170393
     matchConfidence: high
+    cooking: raw
   - raw: a few spring onions
     item: a few spring onions
     grams: 30
     fdcId: 170005
     matchConfidence: high
+    cooking: raw
   - raw: 200 g cherry tomatoes
     quantity: 200
     unit: g
@@ -46,6 +44,7 @@ ingredients:
     grams: 200
     fdcId: 321360
     matchConfidence: medium
+    cooking: raw
   - raw: 100 g arugula
     quantity: 100
     unit: g
@@ -53,6 +52,7 @@ ingredients:
     grams: 100
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 100 g blanched green peas
     quantity: 100
     unit: g
@@ -60,6 +60,7 @@ ingredients:
     grams: 100
     fdcId: 170419
     matchConfidence: high
+    cooking: raw
   - raw: 100 ml extra virgin olive oil
     quantity: 100
     unit: ml
@@ -68,14 +69,16 @@ ingredients:
     milliliters: 100
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp mustard
     quantity: 1
     unit: tbsp
     item: mustard
-    grams: 3.5
+    grams: 15.6
     milliliters: 14.7868
-    fdcId: 169256
+    fdcId: 172234
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp white wine vinegar
     quantity: 1
     unit: tbsp
@@ -84,37 +87,40 @@ ingredients:
     milliliters: 14.7868
     fdcId: 172240
     matchConfidence: high
+    cooking: raw
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 2
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 267
-    energyKj: 1118
-    protein_g: 3.7
-    fat_g: 23.6
+    energyKcal: 269
+    energyKj: 1126
+    protein_g: 3.8
+    fat_g: 23.7
     satFat_g: 3.2
-    carbs_g: 12.6
-    fiber_g: 4.8
-    sugar_g: 4
-    sodium_mg: 245
-    availableCarb_g: 7.8
+    carbs_g: 12.8
+    fiber_g: 4.9
+    sugar_g: 6.5
+    sodium_mg: 288
+    availableCarb_g: 7.9
   glycemic:
     gi: 32
     gl: 3
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 76
   nutriScore:
     grade: A
     points: -2
@@ -126,12 +132,12 @@ nutrition:
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 55.8
+    score: 7
+    band: high
+    nrf: 56.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 100
+    minimallyProcessedPct: 99.1
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

@@ -14,10 +14,6 @@ cookTime: PT15M
 totalTime: PT35M
 cuisine: Hungarian
 course: Soup
-tags:
-  - fish
-  - cold-soup
-  - summer
 lists:
   - Kifli favourites
 ingredients:
@@ -28,11 +24,13 @@ ingredients:
     grams: 400
     fdcId: 175165
     matchConfidence: high
+    cooking: fried
   - raw: fish fillet (alternative to catfish)
     item: fish fillet
     note: alternative to catfish
     matchConfidence: none
     excludeFromNutrition: true
+    cooking: fried
   - raw: 1 kg butternut squash and zucchini
     quantity: 1
     unit: kg
@@ -40,6 +38,7 @@ ingredients:
     grams: 1000
     fdcId: 168565
     matchConfidence: medium
+    cooking: boiled
   - raw: 100 g onion
     quantity: 100
     unit: g
@@ -47,6 +46,7 @@ ingredients:
     grams: 100
     fdcId: 170000
     matchConfidence: high
+    cooking: boiled
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -54,6 +54,7 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 100 g Greek yogurt
     quantity: 100
     unit: g
@@ -61,18 +62,21 @@ ingredients:
     grams: 100
     fdcId: 330137
     matchConfidence: high
+    cooking: raw
   - raw: fresh dill, a little
     item: fresh dill
     note: a little
     grams: 3
     fdcId: 172233
     matchConfidence: medium
+    cooking: raw
   - raw: chives, a little
     item: chives
     note: a little
     grams: 3
     fdcId: 169994
     matchConfidence: high
+    cooking: raw
   - raw: 1500 ml vegetable broth
     quantity: 1500
     unit: ml
@@ -81,6 +85,7 @@ ingredients:
     milliliters: 1500
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 100 g cornmeal
     quantity: 100
     unit: g
@@ -88,12 +93,14 @@ ingredients:
     grams: 100
     fdcId: 172015
     matchConfidence: high
+    cooking: fried
   - raw: wine vinegar, a little
     item: wine vinegar
     note: a little
     grams: 5
     fdcId: 172240
     matchConfidence: high
+    cooking: raw
   - raw: 100 ml extra virgin olive oil
     quantity: 100
     unit: ml
@@ -102,24 +109,28 @@ ingredients:
     milliliters: 100
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: vegetable oil, for deep frying
     item: vegetable oil
     note: for deep frying
     grams: 40
     fdcId: 172370
     matchConfidence: medium
+    cooking: fried
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 3
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
 nutrition:
   perServing:
     energyKcal: 600
@@ -129,30 +140,30 @@ nutrition:
     satFat_g: 6.4
     carbs_g: 34.8
     fiber_g: 4.2
-    sugar_g: 3.4
+    sugar_g: 4.2
     sodium_mg: 1446
     availableCarb_g: 30.5
   glycemic:
-    gi: 42
-    gl: 13
+    gi: 36
+    gl: 11
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: B
     points: 1
     category: general
     version: "2023"
-    coverage: 0.66
+    coverage: 0.69
   inflammation:
-    score: -0.4
+    score: -0.3
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 33.1
+    score: 5
+    band: moderate
+    nrf: 28.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 97.1
@@ -162,6 +173,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

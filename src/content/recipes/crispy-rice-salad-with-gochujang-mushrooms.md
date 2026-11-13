@@ -12,14 +12,15 @@ totalTime: PT50M
 cuisine: Asian-Inspired
 course: Main Course
 ingredients:
-  - raw: 1 cup rice
+  - raw: 1 cup brown rice
     quantity: 1
     unit: cup
-    item: rice
+    item: brown rice
     grams: 185
     milliliters: 236.588
-    fdcId: 169756
+    fdcId: 169703
     matchConfidence: high
+    cooking: baked
   - raw: 1 tbsp chili oil
     quantity: 1
     unit: tbsp
@@ -28,6 +29,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 9000004
     matchConfidence: high
+    cooking: baked
   - raw: 9 oz king oyster mushrooms
     quantity: 9
     unit: oz
@@ -35,6 +37,7 @@ ingredients:
     grams: 255.1
     fdcId: 2003599
     matchConfidence: high
+    cooking: fried
   - raw: 6 oz shimeji mushrooms
     quantity: 6
     unit: oz
@@ -42,6 +45,7 @@ ingredients:
     grams: 170.1
     fdcId: 81008016
     matchConfidence: high
+    cooking: fried
   - raw: 1/2 tbsp gochujang paste
     quantity: 0.5
     unit: tbsp
@@ -50,6 +54,7 @@ ingredients:
     milliliters: 7.3934
     fdcId: 9000002
     matchConfidence: high
+    cooking: fried
   - raw: 2 tsp tamari (low sodium preferred)
     quantity: 2
     unit: tsp
@@ -59,14 +64,16 @@ ingredients:
     milliliters: 9.85784
     fdcId: 174278
     matchConfidence: medium
-  - raw: 1/2 tbsp maple syrup
+    cooking: fried
+  - raw: 1/2 tbsp honey
     quantity: 0.5
     unit: tbsp
-    item: maple syrup
-    grams: 10
+    item: honey
+    grams: 10.5
     milliliters: 7.3934
-    fdcId: 169661
+    fdcId: 169640
     matchConfidence: high
+    cooking: fried
   - raw: 1 tsp rice vinegar
     quantity: 1
     unit: tsp
@@ -75,6 +82,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 81017016
     matchConfidence: high
+    cooking: fried
   - raw: 1 tsp sesame oil
     quantity: 1
     unit: tsp
@@ -83,6 +91,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 171016
     matchConfidence: high
+    cooking: fried
   - raw: 1 1/2 tbsp peanut butter ((or tahini for nut-free option))
     quantity: 1.5
     unit: tbsp
@@ -91,6 +100,7 @@ ingredients:
     milliliters: 22.1802
     fdcId: 2262072
     matchConfidence: low
+    cooking: fried
   - raw: 1 tbsp fresh ginger (finely grated)
     quantity: 1
     unit: tbsp
@@ -100,6 +110,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 169231
     matchConfidence: high
+    cooking: raw
   - raw: 1 clove garlic (peeled)
     quantity: 1
     unit: clove
@@ -108,6 +119,7 @@ ingredients:
     grams: 3
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 2 tbsp lime juice
     quantity: 2
     unit: tbsp
@@ -116,6 +128,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 168156
     matchConfidence: high
+    cooking: raw
   - raw: 2 tsp tamari (low sodium preferred)
     quantity: 2
     unit: tsp
@@ -125,23 +138,25 @@ ingredients:
     milliliters: 9.85784
     fdcId: 174278
     matchConfidence: medium
-  - raw: 2 tsp maple syrup
+    cooking: raw
+  - raw: 2 tsp honey
     quantity: 2
     unit: tsp
-    item: maple syrup
-    grams: 13.3
+    item: honey
+    grams: 14
     milliliters: 9.85784
-    fdcId: 169661
+    fdcId: 169640
     matchConfidence: high
-  - raw: 1/4 cup dairy-free milk (I used soy)
+    cooking: raw
+  - raw: 1/4 cup unsweetened oat milk
     quantity: 0.25
     unit: cup
-    item: dairy-free milk
-    note: I used soy
-    grams: 61
+    item: unsweetened oat milk
+    grams: 60
     milliliters: 59.147
-    fdcId: 1999630
+    fdcId: 82018905
     matchConfidence: high
+    cooking: raw
   - raw: 1 tsp gochujang paste
     quantity: 1
     unit: tsp
@@ -150,6 +165,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 9000002
     matchConfidence: high
+    cooking: raw
   - raw: 1 1/2 cups shelled frozen edamame (thawed)
     quantity: 1.5
     unit: cups
@@ -159,6 +175,7 @@ ingredients:
     milliliters: 354.882
     fdcId: 168411
     matchConfidence: high
+    cooking: raw
   - raw: 1 medium cucumbers (diced)
     quantity: 1
     unit: medium
@@ -167,6 +184,7 @@ ingredients:
     grams: 301
     fdcId: 168409
     matchConfidence: high
+    cooking: raw
   - raw: 2 spring onions (finely chopped)
     quantity: 2
     item: spring onions
@@ -174,6 +192,7 @@ ingredients:
     grams: 10
     fdcId: 170005
     matchConfidence: high
+    cooking: raw
   - raw: 1 avocado (diced)
     quantity: 1
     item: avocado
@@ -181,6 +200,7 @@ ingredients:
     grams: 150
     fdcId: 171705
     matchConfidence: high
+    cooking: raw
   - raw: 1/4 cup fresh mint (finely chopped)
     quantity: 0.25
     unit: cup
@@ -190,49 +210,52 @@ ingredients:
     milliliters: 59.147
     fdcId: 173475
     matchConfidence: low
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 920
-    energyKj: 3850
-    protein_g: 34.3
-    fat_g: 34.3
-    satFat_g: 5
-    carbs_g: 129.3
-    fiber_g: 21.1
-    sugar_g: 16
-    sodium_mg: 931
-    availableCarb_g: 108.2
+    energyKcal: 930
+    energyKj: 3892
+    protein_g: 33.7
+    fat_g: 36.4
+    satFat_g: 5.4
+    carbs_g: 130
+    fiber_g: 23.3
+    sugar_g: 25.4
+    sodium_mg: 926
+    availableCarb_g: 106.7
   glycemic:
-    gi: 59
-    gl: 63
+    gi: 57
+    gl: 60
     giBand: medium
     glBand: high
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
-    carbCoveragePct: 100
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 75
   nutriScore:
     grade: A
-    points: -1
+    points: 0
     category: general
     version: "2023"
-    coverage: 0.77
+    coverage: 0.97
   inflammation:
-    score: -0.4
+    score: -0.9
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 26.1
+    score: 5
+    band: moderate
+    nrf: 27.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88.5
-    ultraProcessedPct: 9
+    minimallyProcessedPct: 88.6
+    ultraProcessedPct: 1.4
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-06-30"
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
+    - ANSES Ciqual French food composition table 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -246,5 +269,5 @@ updatedAt: "2026-06-30"
 
 1. Prepare the rice: Preheat the oven to 400°F (200°C) fan-forced. To a large baking tray lined with baking paper, combine the cooked rice and chili oil. Spread into a thin layer. Bake for 30 minutes on the middle rack, stirring halfway. Once the rice has cooled down a bit, fold the baking paper over it and use a jar to crush the rice; this avoids large clumps of crispy rice.
 2. Prepare the Mushrooms: Separate the caps and stems of the king oyster mushrooms. Slice the caps with a knife and shred the stems with a fork. Chop the base of the shimeji mushrooms and ensure they are separated. Marinate the Mushrooms: In a large lidded container, combine 1/2 tbsp gochujang, 2 tsp tamari, 1/2 tbsp maple syrup, and 1 tsp rice vinegar, stirring until a homogenous paste is formed. Add the mushrooms to the container, close the lid, and shake well to coat them evenly.Cook the Mushrooms: In a large pan over medium heat, add the mushrooms and cook for about 10 minutes until they release their juices. Once they start looking dry, add the sesame oil, stir, and cook for 2 minutes without stirring to allow browning. Stir again, then leave them undisturbed for another 2 minutes to brown further.
-3. Prepare the peanut sauce: In a small blender, add peanut butter, ginger, garlic, lime juice, tamari, maple syrup, soy milk, and gochujang. Blend until smooth.Or mince the ginger and garlic, and whisk together with the rest of the ingredients.
+3. Prepare the peanut sauce: In a small blender, add peanut butter, ginger, garlic, lime juice, tamari, honey, oat milk, and gochujang. Blend until smooth.Or mince the ginger and garlic, and whisk together with the rest of the ingredients.
 4. Assemble the salad: Between 2 bowls, divide the edamame, cucumber, spring onion, avocado, mint, mushrooms, and crispy rice. Cover with peanut sauce, and enjoy!

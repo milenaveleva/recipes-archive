@@ -83,6 +83,8 @@ const CURATED_EN = {
   '17008': 'Soy sauce, usukuchi (light)',
   '17044': 'Miso, rice, light (shiro)',
   '17045': 'Miso, rice, red (aka)',
+  '17082': "Yeast, baker's, fresh (compressed)",
+  '17083': "Yeast, baker's, active dry",
 };
 
 function buildVector(main, fat, carb) {

@@ -19,25 +19,27 @@ const base = (over: Partial<BalanceInput>): BalanceInput => ({
   ...over,
 });
 
-describe('balanceScoreOf (NRF → 1–10 breakpoints [0,10,22,36,56,90,140,210,340])', () => {
+describe('balanceScoreOf (NRF → 1–10 breakpoints [-4,9,18,24,31,41,61,77,100])', () => {
   it('maps a net-negative balance to 1 and climbs by breakpoint', () => {
-    expect(balanceScoreOf(-1)).toBe(1);
     expect(balanceScoreOf(-500)).toBe(1);
-    expect(balanceScoreOf(0)).toBe(2);
-    expect(balanceScoreOf(9.9)).toBe(2);
-    expect(balanceScoreOf(10)).toBe(3);
-    expect(balanceScoreOf(35)).toBe(4);
-    expect(balanceScoreOf(36)).toBe(5); // p50≈40 of the food set → mid-scale
-    expect(balanceScoreOf(55)).toBe(5);
-    expect(balanceScoreOf(56)).toBe(6);
-    expect(balanceScoreOf(89)).toBe(6);
-    expect(balanceScoreOf(90)).toBe(7);
-    expect(balanceScoreOf(139)).toBe(7);
-    expect(balanceScoreOf(140)).toBe(8); // ≈ p83
-    expect(balanceScoreOf(209)).toBe(8);
-    expect(balanceScoreOf(210)).toBe(9); // ≈ p91
-    expect(balanceScoreOf(339)).toBe(9);
-    expect(balanceScoreOf(340)).toBe(10);
+    expect(balanceScoreOf(-4.1)).toBe(1);
+    expect(balanceScoreOf(-4)).toBe(2);
+    expect(balanceScoreOf(8.9)).toBe(2);
+    expect(balanceScoreOf(9)).toBe(3);
+    expect(balanceScoreOf(17.9)).toBe(3);
+    expect(balanceScoreOf(18)).toBe(4);
+    expect(balanceScoreOf(23.9)).toBe(4);
+    expect(balanceScoreOf(24)).toBe(5); // ≈ the median dish → mid-scale
+    expect(balanceScoreOf(30.9)).toBe(5);
+    expect(balanceScoreOf(31)).toBe(6);
+    expect(balanceScoreOf(40.9)).toBe(6);
+    expect(balanceScoreOf(41)).toBe(7);
+    expect(balanceScoreOf(60.9)).toBe(7);
+    expect(balanceScoreOf(61)).toBe(8); // ≈ p90 of dishes
+    expect(balanceScoreOf(76.9)).toBe(8);
+    expect(balanceScoreOf(77)).toBe(9); // ≈ p95
+    expect(balanceScoreOf(99.9)).toBe(9);
+    expect(balanceScoreOf(100)).toBe(10); // ≈ p98
     expect(balanceScoreOf(10_000)).toBe(10); // clamped by the breakpoint count
   });
 
@@ -95,7 +97,7 @@ describe('computeBalance — NRF9.3 per 100 kcal', () => {
     const tenDv = computeBalance(base({ protein_g: 500 })); // 1000% DV — must not exceed the cap
     expect(oneDv!.nrf).toBeCloseTo(100, 5);
     expect(tenDv!.nrf).toBeCloseTo(100, 5); // capped, identical to a single DV
-    expect(oneDv!.score).toBe(7);
+    expect(oneDv!.score).toBe(10);
   });
 
   it('normalises by energy density (per 100 kcal, not per 100 g)', () => {

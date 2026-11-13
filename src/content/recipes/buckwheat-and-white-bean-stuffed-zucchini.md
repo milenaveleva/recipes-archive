@@ -14,10 +14,6 @@ cookTime: PT40M
 totalTime: PT1H
 cuisine: Mediterranean
 course: Main Course
-tags:
-  - vegan
-  - gluten-free
-  - legumes
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +23,7 @@ ingredients:
     grams: 600
     fdcId: 2685568
     matchConfidence: high
+    cooking: baked
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -34,39 +31,46 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 1 red onion
     quantity: 1
     item: red onion
     grams: 110
     fdcId: 790577
     matchConfidence: high
-  - raw: 100 g buckwheat groats
+    cooking: baked
+  - raw: 100 g buckwheat groats, uncooked
     quantity: 100
     unit: g
     item: buckwheat groats
+    note: uncooked
     grams: 100
-    fdcId: 170686
-    matchConfidence: high
-  - raw: 1 can white beans, drained
+    fdcId: 170685
+    matchConfidence: medium
+    cooking: baked
+  - raw: 1 can white beans, drained (≈ 81 g uncooked)
     quantity: 1
     unit: can
-    item: white beans
-    note: drained
-    grams: 240
+    item: white beans, drained
+    note: ≈ 81 g uncooked
+    grams: 81
     fdcId: 175202
     matchConfidence: high
+    cooking: baked
   - raw: 5 sun-dried tomatoes
     quantity: 5
     item: sun-dried tomatoes
     grams: 25
     fdcId: 168567
     matchConfidence: high
+    cooking: baked
   - raw: fresh basil leaves, a handful
     item: fresh basil leaves
     note: a handful
     grams: 15
     fdcId: 172232
     matchConfidence: high
+    cooking: baked
   - raw: 1 tbsp olive oil
     quantity: 1
     unit: tbsp
@@ -75,60 +79,64 @@ ingredients:
     milliliters: 14.7868
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 3
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 617
-    energyKj: 2580
-    protein_g: 35.4
-    fat_g: 9.2
-    satFat_g: 1.3
-    carbs_g: 105.9
-    fiber_g: 24.8
-    sugar_g: 7.7
-    sodium_mg: 618
-    availableCarb_g: 81.1
+    energyKcal: 479
+    energyKj: 2003
+    protein_g: 21
+    fat_g: 9.6
+    satFat_g: 1.7
+    carbs_g: 85.5
+    fiber_g: 16.5
+    sugar_g: 16.3
+    sodium_mg: 609
+    availableCarb_g: 69
   glycemic:
-    gi: 38
-    gl: 31
+    gi: 49
+    gl: 33
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: A
-    points: -7
+    points: -5
     category: general
     version: "2023"
-    coverage: 0.36
+    coverage: 0.9
   inflammation:
-    score: -0.8
-    band: mildly-anti-inflammatory
+    score: -1
+    band: anti-inflammatory
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 67.2
+    score: 7
+    band: high
+    nrf: 53.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 100
+    minimallyProcessedPct: 71.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

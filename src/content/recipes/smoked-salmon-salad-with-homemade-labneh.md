@@ -13,10 +13,6 @@ prepTime: PT15M
 totalTime: PT15M
 cuisine: Middle Eastern
 course: Salad
-tags:
-  - fish
-  - quick
-  - salad
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +23,7 @@ ingredients:
     grams: 200
     fdcId: 173687
     matchConfidence: medium
+    cooking: raw
   - raw: 200 g mixed salad leaves
     quantity: 200
     unit: g
@@ -34,12 +31,14 @@ ingredients:
     grams: 200
     fdcId: 169249
     matchConfidence: high
+    cooking: raw
   - raw: 1 lime
     quantity: 1
     item: lime
     grams: 65
     fdcId: 168156
     matchConfidence: high
+    cooking: raw
   - raw: 2 tbsp capers
     quantity: 2
     unit: tbsp
@@ -48,6 +47,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 172238
     matchConfidence: high
+    cooking: raw
   - raw: 200 ml sour cream
     quantity: 200
     unit: ml
@@ -56,6 +56,7 @@ ingredients:
     milliliters: 200
     fdcId: 171257
     matchConfidence: high
+    cooking: raw
   - raw: 200 ml Greek yogurt
     quantity: 200
     unit: ml
@@ -64,6 +65,7 @@ ingredients:
     milliliters: 200
     fdcId: 330137
     matchConfidence: high
+    cooking: raw
   - raw: 1 bunch chives
     quantity: 1
     unit: bunch
@@ -71,6 +73,7 @@ ingredients:
     grams: 20
     fdcId: 169994
     matchConfidence: high
+    cooking: raw
   - raw: 50 ml extra virgin olive oil
     quantity: 50
     unit: ml
@@ -79,6 +82,7 @@ ingredients:
     milliliters: 50
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 284
@@ -88,30 +92,30 @@ nutrition:
     satFat_g: 6.2
     carbs_g: 6.9
     fiber_g: 1
-    sugar_g: 2.2
+    sugar_g: 3.8
     sodium_mg: 482
     availableCarb_g: 6
   glycemic:
-    gi: 15
+    gi: 10
     gl: 1
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
     points: 3
     category: general
     version: "2023"
-    coverage: 0.78
+    coverage: 1
   inflammation:
     score: 0.2
     band: neutral
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 24.7
+    score: 5
+    band: moderate
+    nrf: 24
     version: NRF9.3
   processing:
     minimallyProcessedPct: 79.1
@@ -139,5 +143,5 @@ createdAt: "2026-11-13"
 ## Tips
 
 - It can also be made with cured salmon or even tuna.
-- Labneh is excellent as a sandwich spread. If served as a main course, offer brown bread or sourdough toast with it.
+- Labneh is excellent as a sandwich spread. If served as a main course, offer brown bread or whole-wheat sourdough toast with it.
 - It also goes well alongside aubergine dip.

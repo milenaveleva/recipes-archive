@@ -14,10 +14,6 @@ cookTime: PT15M
 totalTime: PT40M
 cuisine: Mediterranean
 course: Appetizer
-tags:
-  - vegetarian
-  - eggplant
-  - gluten-free
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +23,7 @@ ingredients:
     grams: 500
     fdcId: 169228
     matchConfidence: high
+    cooking: fried
   - raw: 200 g feta cheese
     quantity: 200
     unit: g
@@ -34,12 +31,14 @@ ingredients:
     grams: 200
     fdcId: 173420
     matchConfidence: high
+    cooking: raw
   - raw: 1 avocado
     quantity: 1
     item: avocado
     grams: 150
     fdcId: 171707
     matchConfidence: high
+    cooking: raw
   - raw: 50 g pitted green olives
     quantity: 50
     unit: g
@@ -47,6 +46,7 @@ ingredients:
     grams: 50
     fdcId: 332791
     matchConfidence: high
+    cooking: raw
   - raw: 2 tbsp olive oil
     quantity: 2
     unit: tbsp
@@ -55,6 +55,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171413
     matchConfidence: high
+    cooking: fried
   - raw: 1 pinch black pepper
     quantity: 1
     unit: pinch
@@ -63,6 +64,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: fried
   - raw: 1 tbsp parmesan cheese
     quantity: 1
     unit: tbsp
@@ -71,12 +73,14 @@ ingredients:
     milliliters: 14.7868
     fdcId: 173431
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful fresh parsley
     quantity: 1
     item: handful fresh parsley
     grams: 10
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -85,6 +89,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: fried
 nutrition:
   perServing:
     energyKcal: 388
@@ -98,18 +103,18 @@ nutrition:
     sodium_mg: 1116
     availableCarb_g: 8.8
   glycemic:
-    gi: 15
+    gi: 10
     gl: 1
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 5
+    points: 6
     category: general
     version: "2023"
-    coverage: 0.95
+    coverage: 1
   inflammation:
     score: 0.2
     band: neutral
@@ -120,13 +125,14 @@ nutrition:
     nrf: 14
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 52.7
+    minimallyProcessedPct: 47.1
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

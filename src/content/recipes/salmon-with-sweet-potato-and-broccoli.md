@@ -14,11 +14,6 @@ cookTime: PT25M
 totalTime: PT40M
 cuisine: International
 course: Main Course
-tags:
-  - fish
-  - salmon
-  - one-pot
-  - sheet-pan
 lists:
   - Kifli favourites
 ingredients:
@@ -27,8 +22,9 @@ ingredients:
     unit: g
     item: sweet potato
     grams: 350
-    fdcId: 170026
-    matchConfidence: high
+    fdcId: 168482
+    matchConfidence: medium
+    cooking: baked
   - raw: 250 g broccoli
     quantity: 250
     unit: g
@@ -36,12 +32,14 @@ ingredients:
     grams: 250
     fdcId: 170379
     matchConfidence: high
+    cooking: baked
   - raw: ½ lemon
     quantity: 0.5
     item: lemon
-    grams: 40
-    fdcId: 167749
+    grams: 22
+    fdcId: 167747
     matchConfidence: high
+    cooking: baked
   - raw: 20 g butter
     quantity: 20
     unit: g
@@ -49,6 +47,7 @@ ingredients:
     grams: 20
     fdcId: 173430
     matchConfidence: high
+    cooking: baked
   - raw: 1 tsp ground chilli
     quantity: 1
     unit: tsp
@@ -57,6 +56,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 171319
     matchConfidence: high
+    cooking: baked
   - raw: 400 g salmon fillet (about 2 pieces)
     quantity: 400
     unit: g
@@ -65,12 +65,14 @@ ingredients:
     grams: 400
     fdcId: 175167
     matchConfidence: high
+    cooking: baked
   - raw: 1 handful fresh parsley
     quantity: 1
     item: handful fresh parsley
     grams: 10
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: 100 g cream cheese (soft white cheese)
     quantity: 100
     unit: g
@@ -79,6 +81,7 @@ ingredients:
     grams: 100
     fdcId: 173418
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -87,11 +90,13 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
   - raw: 1 sheet baking paper
     quantity: 1
     item: sheet baking paper
     matchConfidence: none
     excludeFromNutrition: true
+    cooking: baked
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -100,48 +105,50 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 428
-    energyKj: 1789
-    protein_g: 25.9
+    energyKcal: 432
+    energyKj: 1807
+    protein_g: 25.3
     fat_g: 26.5
     satFat_g: 10.7
-    carbs_g: 23
-    fiber_g: 4.8
-    sugar_g: 3.2
-    sodium_mg: 224
-    availableCarb_g: 18.1
+    carbs_g: 24
+    fiber_g: 4.6
+    sugar_g: 5.9
+    sodium_mg: 266
+    availableCarb_g: 19.4
   glycemic:
-    gi: 62
-    gl: 11
-    giBand: medium
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi: 43
+    gl: 8
+    giBand: low
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
-    grade: B
-    points: 1
+    grade: C
+    points: 3
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.2
+    score: 0
     band: neutral
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 49.6
+    score: 7
+    band: high
+    nrf: 50.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 79.5
+    minimallyProcessedPct: 79.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

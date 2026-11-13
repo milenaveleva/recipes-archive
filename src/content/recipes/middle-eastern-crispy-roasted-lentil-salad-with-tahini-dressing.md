@@ -14,21 +14,19 @@ cookTime: PT25M
 totalTime: PT40M
 cuisine: Middle Eastern
 course: Salad
-tags:
-  - vegetarian
-  - legumes
-  - salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g cooked brown lentils
+  - raw: 400 g cooked brown lentils (≈ 133 g uncooked)
     group: Crispy spiced lentils
     quantity: 400
     unit: g
     item: cooked brown lentils
-    grams: 400
-    fdcId: 175254
-    matchConfidence: high
+    note: ≈ 133 g uncooked
+    grams: 133
+    fdcId: 172420
+    matchConfidence: medium
+    cooking: baked
   - raw: 1 tsp smoked paprika
     group: Crispy spiced lentils
     quantity: 1
@@ -38,6 +36,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 171329
     matchConfidence: high
+    cooking: baked
   - raw: 1 tsp ground cumin
     group: Crispy spiced lentils
     quantity: 1
@@ -47,6 +46,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170923
     matchConfidence: medium
+    cooking: baked
   - raw: 60 ml extra virgin olive oil
     group: Crispy spiced lentils
     quantity: 60
@@ -56,6 +56,7 @@ ingredients:
     milliliters: 60
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 1 tsp fine salt
     group: Crispy spiced lentils
     quantity: 1
@@ -65,6 +66,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: medium
+    cooking: baked
   - raw: 1 pinch ground black pepper
     group: Crispy spiced lentils
     quantity: 1
@@ -74,6 +76,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
   - raw: 100 g fresh spinach
     group: Salad base and vegetables
     quantity: 100
@@ -82,6 +85,7 @@ ingredients:
     grams: 100
     fdcId: 168462
     matchConfidence: high
+    cooking: raw
   - raw: 1 cucumber
     group: Salad base and vegetables
     quantity: 1
@@ -89,6 +93,7 @@ ingredients:
     grams: 200
     fdcId: 169225
     matchConfidence: high
+    cooking: raw
   - raw: 1 red onion
     group: Salad base and vegetables
     quantity: 1
@@ -96,6 +101,7 @@ ingredients:
     grams: 110
     fdcId: 790577
     matchConfidence: high
+    cooking: raw
   - raw: 1 bunch fresh mint
     group: Salad base and vegetables
     quantity: 1
@@ -104,6 +110,7 @@ ingredients:
     grams: 20
     fdcId: 173475
     matchConfidence: high
+    cooking: raw
   - raw: 50 g tahini
     group: Tahini dressing
     quantity: 50
@@ -112,6 +119,7 @@ ingredients:
     grams: 50
     fdcId: 169410
     matchConfidence: medium
+    cooking: raw
   - raw: 1 lemon, juiced
     group: Tahini dressing
     quantity: 1
@@ -120,6 +128,7 @@ ingredients:
     grams: 45
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: 1 clove garlic
     group: Tahini dressing
     quantity: 1
@@ -128,6 +137,7 @@ ingredients:
     grams: 3
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 150 g feta cheese
     group: Toppings and serving
     quantity: 150
@@ -136,6 +146,7 @@ ingredients:
     grams: 150
     fdcId: 173420
     matchConfidence: high
+    cooking: raw
   - raw: 1 pomegranate, seeds only
     group: Toppings and serving
     quantity: 1
@@ -144,48 +155,50 @@ ingredients:
     grams: 100
     fdcId: 169134
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 918
-    energyKj: 3839
-    protein_g: 37.4
-    fat_g: 57.8
-    satFat_g: 15.8
-    carbs_g: 71.3
-    fiber_g: 24.4
-    sugar_g: 12.8
-    sodium_mg: 2583
-    availableCarb_g: 46.8
+    energyKcal: 924
+    energyKj: 3864
+    protein_g: 35.7
+    fat_g: 57.7
+    satFat_g: 15.9
+    carbs_g: 74.4
+    fiber_g: 15.8
+    sugar_g: 13.7
+    sodium_mg: 2111
+    availableCarb_g: 58.7
   glycemic:
-    gi: 39
-    gl: 18
+    gi: 35
+    gl: 20
     giBand: low
     glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 60
   nutriScore:
     grade: C
     points: 3
     category: general
     version: "2023"
-    coverage: 0.86
+    coverage: 0.94
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.6
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
     score: 4
     band: low
-    nrf: 27.9
+    nrf: 23
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 62.8
-    ultraProcessedPct: 15.5
-    band: moderately-processed
+    minimallyProcessedPct: 78.5
+    ultraProcessedPct: 0
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

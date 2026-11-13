@@ -20,6 +20,7 @@ ingredients:
     grams: 453.6
     fdcId: 2258590
     matchConfidence: high
+    cooking: baked
   - raw: 1 lb plum tomatoes
     quantity: 1
     unit: lb
@@ -27,6 +28,7 @@ ingredients:
     grams: 453.6
     fdcId: 321360
     matchConfidence: medium
+    cooking: baked
   - raw: 1 cup onion (diced)
     quantity: 1
     unit: cup
@@ -36,6 +38,7 @@ ingredients:
     milliliters: 236.588
     fdcId: 170000
     matchConfidence: high
+    cooking: baked
   - raw: 3 garlic cloves (roughly chopped)
     quantity: 3
     item: garlic cloves
@@ -43,6 +46,7 @@ ingredients:
     grams: 9
     fdcId: 169230
     matchConfidence: low
+    cooking: baked
   - raw: 1/2 cup celery (chopped)
     quantity: 0.5
     unit: cup
@@ -52,6 +56,7 @@ ingredients:
     milliliters: 118.294
     fdcId: 169988
     matchConfidence: high
+    cooking: baked
   - raw: 1 tsp dried thyme
     quantity: 1
     unit: tsp
@@ -60,6 +65,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173470
     matchConfidence: high
+    cooking: baked
   - raw: 1/2 tsp red pepper flakes
     quantity: 0.5
     unit: tsp
@@ -68,6 +74,7 @@ ingredients:
     milliliters: 2.46446
     fdcId: 170932
     matchConfidence: low
+    cooking: baked
   - raw: 11/2 cups water
     quantity: 5.5
     unit: cups
@@ -76,45 +83,47 @@ ingredients:
     milliliters: 1301.234
     fdcId: 174158
     matchConfidence: high
+    cooking: boiled
   - raw: basil (fresh)
     item: basil
     note: fresh
     grams: 5
     fdcId: 172232
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 84
     energyKj: 351
     protein_g: 2.7
     fat_g: 1
-    satFat_g: 0
+    satFat_g: 0.1
     carbs_g: 18.9
     fiber_g: 4.8
-    sugar_g: 1.9
+    sugar_g: 12.2
     sodium_mg: 27
-    availableCarb_g: 14.2
+    availableCarb_g: 13
   glycemic:
-    gi: 21
+    gi: 25
     gl: 3
     giBand: low
     glBand: low
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
-    carbCoveragePct: 100
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 30
   nutriScore:
     grade: A
     points: -1
     category: general
     version: "2023"
-    coverage: 0.63
+    coverage: 0.82
   inflammation:
     score: 0.2
     band: neutral
     method: fii v3
   balance:
-    score: 8
-    band: high
-    nrf: 170.6
+    score: 10
+    band: excellent
+    nrf: 201.4
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -124,6 +133,7 @@ nutrition:
   computedAt: "2026-07-11"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

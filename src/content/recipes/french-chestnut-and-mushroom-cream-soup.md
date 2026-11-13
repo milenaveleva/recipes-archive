@@ -1,6 +1,6 @@
 ---
 title: French Chestnut and Mushroom Cream Soup
-description: A silky autumn velouté of cremini mushrooms and sweet chestnuts with white wine and thyme, served with crispy baguette.
+description: A silky autumn velouté of cremini mushrooms and sweet chestnuts with white wine and thyme, served with crispy whole-wheat baguette.
 image: ./images/french-chestnut-and-mushroom-cream-soup.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14104_1790438880513_french-chestnut-mushroom-veloute_a2609286.jpg
 imageAlt: French Chestnut and Mushroom Cream Soup
@@ -14,10 +14,6 @@ cookTime: PT20M
 totalTime: PT35M
 cuisine: French
 course: Soup
-tags:
-  - vegetarian
-  - soup
-  - mushroom
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 500
     fdcId: 169251
     matchConfidence: high
+    cooking: boiled
   - raw: 250 g cooked chestnuts
     quantity: 250
     unit: g
@@ -35,12 +32,14 @@ ingredients:
     grams: 250
     fdcId: 170573
     matchConfidence: high
+    cooking: boiled
   - raw: 3 shallots
     quantity: 3
     item: shallots
     grams: 90
     fdcId: 170499
     matchConfidence: high
+    cooking: boiled
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -48,6 +47,7 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 100 ml dry white wine
     quantity: 100
     unit: ml
@@ -56,6 +56,7 @@ ingredients:
     milliliters: 100
     fdcId: 174837
     matchConfidence: high
+    cooking: boiled
   - raw: 800 ml vegetable broth
     quantity: 800
     unit: ml
@@ -64,6 +65,7 @@ ingredients:
     milliliters: 800
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 150 ml heavy cream
     quantity: 150
     unit: ml
@@ -72,6 +74,7 @@ ingredients:
     milliliters: 150
     fdcId: 2346386
     matchConfidence: high
+    cooking: boiled
   - raw: 40 g butter
     quantity: 40
     unit: g
@@ -79,6 +82,7 @@ ingredients:
     grams: 40
     fdcId: 173430
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tbsp extra virgin olive oil
     quantity: 1
     unit: tbsp
@@ -87,6 +91,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 171413
     matchConfidence: high
+    cooking: boiled
   - raw: 4 sprigs fresh thyme
     quantity: 4
     unit: sprigs
@@ -94,6 +99,7 @@ ingredients:
     grams: 2
     fdcId: 173470
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tsp salt
     quantity: 1
     unit: tsp
@@ -102,6 +108,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -110,55 +117,58 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
-  - raw: 1 crusty baguette
+    cooking: boiled
+  - raw: 1 crusty whole-wheat baguette
     group: For serving
     quantity: 1
-    item: crusty baguette
+    item: crusty whole-wheat baguette
     grams: 250
-    fdcId: 172675
-    matchConfidence: medium
+    fdcId: 174091
+    matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 622
-    energyKj: 2604
-    protein_g: 15.4
-    fat_g: 27.6
-    satFat_g: 13.7
-    carbs_g: 77.5
-    fiber_g: 3.5
-    sugar_g: 8.4
-    sodium_mg: 1543
-    availableCarb_g: 74
+    energyKcal: 602
+    energyKj: 2518
+    protein_g: 13.9
+    fat_g: 26.7
+    satFat_g: 13.4
+    carbs_g: 75.7
+    fiber_g: 10
+    sugar_g: 10.2
+    sodium_mg: 1400
+    availableCarb_g: 65.7
   glycemic:
-    gi: 50
-    gl: 37
+    gi: 40
+    gl: 27
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
     points: 5
     category: general
     version: "2023"
-    coverage: 0.81
+    coverage: 1
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: 0.1
+    band: neutral
     method: fii v3
   balance:
     score: 2
     band: poor
-    nrf: 2.2
+    nrf: 8.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 67.9
+    minimallyProcessedPct: 70.2
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

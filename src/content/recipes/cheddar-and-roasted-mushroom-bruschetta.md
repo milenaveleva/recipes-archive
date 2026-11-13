@@ -1,6 +1,6 @@
 ---
 title: Cheddar and Roasted Mushroom Bruschetta
-description: Crunchy sourdough toast topped with garlicky sautéed mushrooms and melted cheddar.
+description: Crunchy whole-wheat sourdough toast topped with garlicky sautéed mushrooms and melted cheddar.
 image: ./images/cheddar-and-roasted-mushroom-bruschetta.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10529_1775304089226_cheddar-mushroom-bruschetta_97951403.png
 imageAlt: Cheddar and Roasted Mushroom Bruschetta
@@ -14,20 +14,17 @@ cookTime: PT15M
 totalTime: PT25M
 cuisine: Italian
 course: Appetizer
-tags:
-  - vegetarian
-  - mushroom
-  - quick
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 8 slices sourdough bread, toasted
+  - raw: 8 slices whole-wheat sourdough bread, toasted
     quantity: 8
-    item: slices sourdough bread
+    item: slices whole-wheat sourdough bread
     note: toasted
     grams: 240
-    fdcId: 167532
+    fdcId: 172688
     matchConfidence: high
+    cooking: grilled
   - raw: 500 g small white button mushrooms
     quantity: 500
     unit: g
@@ -35,6 +32,7 @@ ingredients:
     grams: 500
     fdcId: 1999629
     matchConfidence: high
+    cooking: fried
   - raw: 1 small onion
     quantity: 1
     unit: small
@@ -42,6 +40,7 @@ ingredients:
     grams: 70
     fdcId: 170000
     matchConfidence: high
+    cooking: fried
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -49,12 +48,14 @@ ingredients:
     grams: 8
     fdcId: 169230
     matchConfidence: high
+    cooking: fried
   - raw: 2 spring onions
     quantity: 2
     item: spring onions
     grams: 30
     fdcId: 170005
     matchConfidence: high
+    cooking: raw
   - raw: 100 g cheddar cheese, grated
     quantity: 100
     unit: g
@@ -63,6 +64,7 @@ ingredients:
     grams: 100
     fdcId: 173414
     matchConfidence: high
+    cooking: grilled
   - raw: 1 tbsp butter
     quantity: 1
     unit: tbsp
@@ -71,11 +73,13 @@ ingredients:
     milliliters: 14.7868
     fdcId: 173430
     matchConfidence: high
+    cooking: fried
   - raw: fresh thyme
     item: fresh thyme
     grams: 2
     fdcId: 173470
     matchConfidence: high
+    cooking: fried
   - raw: 1 tbsp olive oil
     quantity: 1
     unit: tbsp
@@ -84,65 +88,70 @@ ingredients:
     milliliters: 14.7868
     fdcId: 171413
     matchConfidence: high
+    cooking: fried
   - raw: a few drops balsamic vinegar
     item: a few drops balsamic vinegar
     grams: 3
     fdcId: 172241
     matchConfidence: high
+    cooking: fried
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 2
     fdcId: 173468
     matchConfidence: high
+    cooking: fried
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: fried
 nutrition:
   perServing:
-    energyKcal: 344
-    energyKj: 1439
-    protein_g: 16.3
-    fat_g: 16.4
-    satFat_g: 7.4
-    carbs_g: 35.5
-    fiber_g: 8.3
-    sugar_g: 4.2
-    sodium_mg: 655
-    availableCarb_g: 27.2
+    energyKcal: 352
+    energyKj: 1474
+    protein_g: 17.3
+    fat_g: 17.2
+    satFat_g: 7.5
+    carbs_g: 34.7
+    fiber_g: 6.4
+    sugar_g: 6.3
+    sodium_mg: 641
+    availableCarb_g: 27.8
   glycemic:
-    gi: 47
+    gi: 48
     gl: 13
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
-    grade: B
-    points: 2
+    grade: C
+    points: 3
     category: general
     version: "2023"
-    coverage: 0.49
+    coverage: 1
   inflammation:
-    score: 0.6
-    band: mildly-pro-inflammatory
+    score: -0.1
+    band: neutral
     method: fii v3
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 16.1
+    nrf: 22.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 29.2
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 28.5
+    ultraProcessedPct: 42.9
     band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

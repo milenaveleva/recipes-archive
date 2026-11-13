@@ -8,35 +8,33 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12182-kokuszos-tejberizs-kokuszos-mandulavajjal
 author: Kifli Kukták
-servings: 2
+servings: 4
 prepTime: PT5M
 cookTime: PT15M
 totalTime: PT20M
 cuisine: International
 course: Dessert
-tags:
-  - vegetarian
-  - dessert
-  - rice
-  - coconut
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 150 g short-grain rice
+  - raw: 150 g short-grain brown rice, uncooked
     quantity: 150
     unit: g
-    item: short-grain rice
+    item: short-grain brown rice
+    note: uncooked
     grams: 150
-    fdcId: 169759
+    fdcId: 169706
     matchConfidence: high
+    cooking: boiled
   - raw: 400 ml coconut milk
     quantity: 400
     unit: ml
     item: coconut milk
-    grams: 405.8
+    grams: 382.1
     milliliters: 400
-    fdcId: 170172
+    fdcId: 170173
     matchConfidence: high
+    cooking: boiled
   - raw: 4 tbsp coconut almond butter
     quantity: 4
     unit: tbsp
@@ -45,72 +43,82 @@ ingredients:
     milliliters: 59.1472
     fdcId: 2262074
     matchConfidence: medium
+    cooking: raw
   - raw: 1 handful fresh blueberries
     quantity: 1
     item: handful fresh blueberries
     grams: 60
     fdcId: 171711
     matchConfidence: high
+    cooking: raw
   - raw: fruit, for decoration, to taste
     item: fruit
     note: for decoration, to taste
     grams: 50
     fdcId: 167762
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful coconut chips
     quantity: 1
     item: handful coconut chips
     grams: 15
     fdcId: 170579
     matchConfidence: medium
-  - raw: milk, as needed
-    item: milk
+    cooking: raw
+  - raw: 60 ml unsweetened oat milk, as needed
+    quantity: 60
+    unit: ml
+    item: unsweetened oat milk
     note: as needed
     grams: 60
-    fdcId: 171284
-    matchConfidence: medium
+    milliliters: 60
+    fdcId: 82018905
+    matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 840
-    energyKj: 3513
-    protein_g: 15.3
-    fat_g: 70.2
-    satFat_g: 48
-    carbs_g: 48.5
-    fiber_g: 9.5
-    sugar_g: 12.5
-    sodium_mg: 49
-    availableCarb_g: 39.1
+    energyKcal: 462
+    energyKj: 1931
+    protein_g: 8.5
+    fat_g: 31.8
+    satFat_g: 20.5
+    carbs_g: 40.6
+    fiber_g: 3.4
+    sugar_g: 3.8
+    sodium_mg: 20
+    availableCarb_g: 37.2
   glycemic:
-    gi: 49
-    gl: 19
-    giBand: low
+    gi: 60
+    gl: 22
+    giBand: medium
     glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 80
   nutriScore:
-    grade: D
-    points: 12
+    grade: C
+    points: 9
     category: general
     version: "2023"
-    coverage: 0.9
+    coverage: 0.55
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: 0.1
+    band: neutral
     method: fii v3
   balance:
-    score: 1
+    score: 2
     band: poor
-    nrf: -3.8
+    nrf: 4.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 77
-    ultraProcessedPct: 23
-    band: minimally-processed
+    minimallyProcessedPct: 36.9
+    ultraProcessedPct: 1.4
+    band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -122,8 +130,8 @@ createdAt: "2026-11-13"
 ## Method
 
 1. Rinse the rice thoroughly in cold water until the water runs clear, to remove excess starch. Then put it in a saucepan and pour in the coconut milk.
-2. Cook for about 15 minutes until the rice is soft. Stir continuously, and if necessary add a little regular milk to reach the desired consistency. Let the rice pudding cool.
-3. To serve, divide the rice between bowls. Decorate with fresh blueberries, coconut chips and other fruit. The coconut almond butter is the crowning touch and gives the dish a special flavour. Thanks to the natural sweetness of the coconut, no added sugar is needed, but it can be sweetened with honey or maple syrup if you like.
+2. Cook for about 40-45 minutes until the rice is soft (brown rice takes much longer than white; add more coconut or oat milk as it thickens). Stir continuously, and if necessary add a little oat milk to reach the desired consistency. Let the rice pudding cool.
+3. To serve, divide the rice between bowls. Decorate with fresh blueberries, coconut chips and other fruit. The coconut almond butter is the crowning touch and gives the dish a special flavour. Thanks to the natural sweetness of the coconut, no added sugar is needed, but it can be sweetened with honey if you like.
 
 ## Tips
 

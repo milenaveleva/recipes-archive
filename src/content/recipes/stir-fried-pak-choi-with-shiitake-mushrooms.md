@@ -1,6 +1,6 @@
 ---
 title: Stir-Fried Pak Choi with Shiitake Mushrooms
-description: Quick wok-fried pak choi and shiitake with garlic, ginger and chilli in a soy and fish sauce glaze, served with jasmine rice.
+description: Quick wok-fried pak choi and shiitake with garlic, ginger and chilli in a soy and fish sauce glaze, served with brown jasmine rice.
 image: ./images/stir-fried-pak-choi-with-shiitake-mushrooms.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_12520_1777217231425_stir-fried-pak-choi-with-shiitake-mushrooms-and-jasmine-rice_f9caeb81.jpg
 imageAlt: Stir-Fried Pak Choi with Shiitake Mushrooms
@@ -14,10 +14,6 @@ cookTime: PT10M
 totalTime: PT15M
 cuisine: Chinese
 course: Main Course
-tags:
-  - mushrooms
-  - stir-fry
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -27,12 +23,14 @@ ingredients:
     grams: 500
     fdcId: 170390
     matchConfidence: medium
+    cooking: fried
   - raw: 8 shiitake mushrooms
     quantity: 8
     item: shiitake mushrooms
     grams: 120
-    fdcId: 170097
+    fdcId: 169242
     matchConfidence: high
+    cooking: fried
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -40,6 +38,7 @@ ingredients:
     grams: 6
     fdcId: 169230
     matchConfidence: high
+    cooking: fried
   - raw: 1 piece ginger (about 2 cm)
     quantity: 1
     unit: piece
@@ -48,12 +47,14 @@ ingredients:
     grams: 10
     fdcId: 169231
     matchConfidence: medium
+    cooking: fried
   - raw: 1 red chilli
     quantity: 1
     item: red chilli
     grams: 10
     fdcId: 170106
     matchConfidence: medium
+    cooking: fried
   - raw: 4 tbsp soy sauce
     quantity: 4
     unit: tbsp
@@ -62,6 +63,7 @@ ingredients:
     milliliters: 59.1472
     fdcId: 174277
     matchConfidence: high
+    cooking: fried
   - raw: ½ tbsp fish sauce
     quantity: 0.5
     unit: tbsp
@@ -70,6 +72,7 @@ ingredients:
     milliliters: 7.3934
     fdcId: 174531
     matchConfidence: high
+    cooking: fried
   - raw: black pepper, 1 pinch
     quantity: 1
     unit: pinch
@@ -78,6 +81,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: fried
   - raw: 1 tbsp sesame oil
     quantity: 1
     unit: tbsp
@@ -86,6 +90,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 171016
     matchConfidence: high
+    cooking: fried
   - raw: 1 tbsp sesame seeds
     quantity: 1
     unit: tbsp
@@ -94,13 +99,16 @@ ingredients:
     milliliters: 14.7868
     fdcId: 170150
     matchConfidence: high
-  - raw: 200 g jasmine rice
+    cooking: raw
+  - raw: 200 g brown jasmine rice, uncooked
     quantity: 200
     unit: g
-    item: jasmine rice
+    item: brown jasmine rice
+    note: uncooked
     grams: 200
-    fdcId: 169756
+    fdcId: 169703
     matchConfidence: high
+    cooking: boiled
   - raw: salt, 1 pinch
     quantity: 1
     unit: pinch
@@ -109,48 +117,50 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: fried
 nutrition:
   perServing:
-    energyKcal: 273
-    energyKj: 1142
-    protein_g: 7.9
-    fat_g: 5.3
-    satFat_g: 0.8
-    carbs_g: 49.6
-    fiber_g: 3
-    sugar_g: 3
-    sodium_mg: 1251
-    availableCarb_g: 46.6
+    energyKcal: 267
+    energyKj: 1119
+    protein_g: 8.3
+    fat_g: 6.6
+    satFat_g: 1
+    carbs_g: 45.4
+    fiber_g: 4.3
+    sugar_g: 2.9
+    sodium_mg: 1181
+    availableCarb_g: 41.1
   glycemic:
-    gi: 69
-    gl: 32
+    gi: 65
+    gl: 27
     giBand: medium
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 88
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
-    band: neutral
+    score: -0.8
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 42.1
+    score: 7
+    band: high
+    nrf: 46.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 96.6
+    minimallyProcessedPct: 96.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -164,7 +174,7 @@ createdAt: "2026-11-13"
 1. Clean the mushrooms and cut them into smaller pieces. Wash the pak choi and halve it. Finely chop the garlic, ginger and chilli.
 2. Heat the sesame oil in a wok or frying pan, then stir-fry the garlic, ginger and chilli. Add the shiitake mushrooms and stir-fry for about 3 minutes, then add the halved pak choi.
 3. Pour in the soy sauce and season with fish sauce. Add 5 tablespoons of water (or stock) and simmer for 2–3 minutes, until the sauce thickens.
-4. Season with salt and pepper and garnish with sesame seeds. Serve with freshly cooked jasmine rice.
+4. Season with salt and pepper and garnish with sesame seeds. Serve with freshly cooked brown jasmine rice.
 
 ## Tips
 

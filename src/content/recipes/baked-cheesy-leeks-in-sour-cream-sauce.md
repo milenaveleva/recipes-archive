@@ -1,6 +1,6 @@
 ---
 title: Baked Cheesy Leeks in Sour Cream Sauce
-description: Leeks braised in broth, covered with a paprika-sour cream sauce and a crisp cheese-breadcrumb topping, baked until golden.
+description: Leeks braised in broth, covered with a paprika-sour cream sauce and a crisp cheese and whole-wheat breadcrumb topping, baked until golden.
 image: ./images/baked-cheesy-leeks-in-sour-cream-sauce.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14508_1791831948215_gratinated-cheesy-leeks_02c4b852.jpg
 imageAlt: Baked Cheesy Leeks in Sour Cream Sauce
@@ -14,9 +14,6 @@ cookTime: PT30M
 totalTime: PT45M
 cuisine: Hungarian
 course: Side Dish
-tags:
-  - vegetarian
-  - baked
 lists:
   - Kifli favourites
 ingredients:
@@ -26,13 +23,15 @@ ingredients:
     grams: 600
     fdcId: 169246
     matchConfidence: high
+    cooking: baked
   - raw: 150 g trappista cheese
     quantity: 150
     unit: g
     item: trappista cheese
     grams: 150
-    fdcId: 170848
-    matchConfidence: high
+    fdcId: 173419
+    matchConfidence: medium
+    cooking: baked
   - raw: 200 g sour cream
     quantity: 200
     unit: g
@@ -40,6 +39,7 @@ ingredients:
     grams: 200
     fdcId: 171257
     matchConfidence: high
+    cooking: baked
   - raw: 300 ml vegetable broth
     quantity: 300
     unit: ml
@@ -48,6 +48,7 @@ ingredients:
     milliliters: 300
     fdcId: 171583
     matchConfidence: medium
+    cooking: baked
   - raw: 3 cloves garlic
     quantity: 3
     unit: cloves
@@ -55,6 +56,7 @@ ingredients:
     grams: 12
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 30 g butter
     quantity: 30
     unit: g
@@ -62,20 +64,23 @@ ingredients:
     grams: 30
     fdcId: 173430
     matchConfidence: high
-  - raw: 20 g all-purpose flour
+    cooking: baked
+  - raw: 20 g whole-wheat flour
     quantity: 20
     unit: g
-    item: all-purpose flour
+    item: whole-wheat flour
     grams: 20
-    fdcId: 790018
+    fdcId: 790085
     matchConfidence: high
-  - raw: 30 g breadcrumbs
+    cooking: baked
+  - raw: 30 g whole-wheat breadcrumbs
     quantity: 30
     unit: g
-    item: breadcrumbs
+    item: whole-wheat breadcrumbs
     grams: 30
-    fdcId: 174928
-    matchConfidence: medium
+    fdcId: 172689
+    matchConfidence: high
+    cooking: baked
   - raw: 1 tsp sweet paprika
     quantity: 1
     unit: tsp
@@ -84,6 +89,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 171329
     matchConfidence: medium
+    cooking: baked
   - raw: 1 tsp fine salt
     quantity: 1
     unit: tsp
@@ -92,6 +98,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: medium
+    cooking: baked
   - raw: ½ tsp ground black pepper
     quantity: 0.5
     unit: tsp
@@ -100,6 +107,7 @@ ingredients:
     milliliters: 2.46446
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
   - raw: 1 pinch ground nutmeg
     quantity: 1
     unit: pinch
@@ -108,6 +116,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 171326
     matchConfidence: medium
+    cooking: baked
   - raw: 1 handful fresh parsley
     group: For garnish
     quantity: 1
@@ -115,48 +124,50 @@ ingredients:
     grams: 10
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 450
-    energyKj: 1884
-    protein_g: 19.1
-    fat_g: 26.3
-    satFat_g: 14.6
-    carbs_g: 36.3
-    fiber_g: 3.6
-    sugar_g: 8.6
-    sodium_mg: 1345
-    availableCarb_g: 32.7
+    energyKcal: 431
+    energyKj: 1803
+    protein_g: 15.4
+    fat_g: 27.6
+    satFat_g: 16.1
+    carbs_g: 33.9
+    fiber_g: 4.2
+    sugar_g: 8.5
+    sodium_mg: 1255
+    availableCarb_g: 29.6
   glycemic:
-    gi: 58
-    gl: 19
+    gi: 60
+    gl: 17
     giBand: medium
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 7
+    points: 10
     category: general
     version: "2023"
-    coverage: 0.99
+    coverage: 1
   inflammation:
-    score: 1.2
+    score: 1
     band: pro-inflammatory
     method: fii v3
   balance:
     score: 3
     band: low
-    nrf: 17.1
+    nrf: 12.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 60
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 62.8
+    ultraProcessedPct: 5.3
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -178,5 +189,5 @@ createdAt: "2026-11-13"
 
 ## Tips
 
-- Great dipped with fresh, crusty homemade sourdough, but also an excellent side to steamed jasmine rice or buttery mashed potatoes.
+- Great dipped with fresh, crusty homemade whole-wheat sourdough, but also an excellent side to steamed brown jasmine rice or buttery mashed potatoes.
 - If you like more piquant, smokier flavours, replace part of the trappista cheese with smoked cheese or aged mountain cheese.

@@ -14,10 +14,6 @@ cookTime: PT22M
 totalTime: PT35M
 cuisine: Italian
 course: Main Course
-tags:
-  - vegetarian
-  - one-pot
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 110
     fdcId: 790577
     matchConfidence: high
+    cooking: baked
   - raw: 250 g cherry tomatoes
     quantity: 250
     unit: g
@@ -35,12 +32,14 @@ ingredients:
     grams: 250
     fdcId: 321360
     matchConfidence: medium
+    cooking: baked
   - raw: 1 yellow bell pepper
     quantity: 1
     item: yellow bell pepper
     grams: 150
     fdcId: 2258589
     matchConfidence: high
+    cooking: baked
   - raw: 3 cloves garlic
     quantity: 3
     unit: cloves
@@ -48,6 +47,7 @@ ingredients:
     grams: 9
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 1 tbsp canola oil
     quantity: 1
     unit: tbsp
@@ -56,6 +56,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 172336
     matchConfidence: high
+    cooking: baked
   - raw: 1 tsp dried basil
     quantity: 1
     unit: tsp
@@ -64,13 +65,15 @@ ingredients:
     milliliters: 4.92892
     fdcId: 172232
     matchConfidence: high
+    cooking: baked
   - raw: 250 g potato gnocchi
     quantity: 250
     unit: g
     item: potato gnocchi
     grams: 250
-    fdcId: 169728
+    fdcId: 82025510
     matchConfidence: high
+    cooking: baked
   - raw: 125 g mozzarella cheese
     quantity: 125
     unit: g
@@ -78,6 +81,7 @@ ingredients:
     grams: 125
     fdcId: 170845
     matchConfidence: high
+    cooking: baked
   - raw: 30 g grated parmesan cheese
     quantity: 30
     unit: g
@@ -85,48 +89,51 @@ ingredients:
     grams: 30
     fdcId: 173431
     matchConfidence: high
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 557
-    energyKj: 2332
-    protein_g: 28.5
-    fat_g: 26.9
-    satFat_g: 12
-    carbs_g: 51.9
-    fiber_g: 4.7
-    sugar_g: 0.2
-    sodium_mg: 575
-    availableCarb_g: 47.2
+    energyKcal: 615
+    energyKj: 2572
+    protein_g: 28.3
+    fat_g: 28.2
+    satFat_g: 12.2
+    carbs_g: 65.3
+    fiber_g: 7.2
+    sugar_g: 13.9
+    sodium_mg: 1070
+    availableCarb_g: 58.1
   glycemic:
-    gi: 46
-    gl: 22
+    gi: 51
+    gl: 30
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 7
   nutriScore:
     grade: B
-    points: 1
+    points: 2
     category: general
     version: "2023"
-    coverage: 0.19
+    coverage: 0.74
   inflammation:
-    score: 0.6
+    score: 0.5
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 35.8
+    score: 6
+    band: moderate
+    nrf: 36
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 55.3
+    minimallyProcessedPct: 23.5
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

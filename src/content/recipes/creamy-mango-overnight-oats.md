@@ -13,10 +13,6 @@ prepTime: PT10M
 totalTime: PT10M
 cuisine: International
 course: Breakfast
-tags:
-  - vegetarian
-  - oats
-  - make-ahead
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +23,7 @@ ingredients:
     grams: 120
     fdcId: 174832
     matchConfidence: high
+    cooking: raw
   - raw: 45 g fine rolled oats
     quantity: 45
     unit: g
@@ -34,13 +31,15 @@ ingredients:
     grams: 45
     fdcId: 2346396
     matchConfidence: high
+    cooking: raw
   - raw: 100 g Greek yogurt or skyr
     quantity: 100
     unit: g
     item: Greek yogurt or skyr
     grams: 100
-    fdcId: 330415
+    fdcId: 330137
     matchConfidence: high
+    cooking: raw
   - raw: 80 g fresh mango
     quantity: 80
     unit: g
@@ -48,13 +47,15 @@ ingredients:
     grams: 80
     fdcId: 169910
     matchConfidence: high
+    cooking: raw
   - raw: 40 g freeze-dried mango
     quantity: 40
     unit: g
     item: freeze-dried mango
-    grams: 40
-    fdcId: 169910
-    matchConfidence: high
+    grams: 55
+    fdcId: 173941
+    matchConfidence: medium
+    cooking: raw
   - raw: 1 tbsp chia seeds
     quantity: 1
     unit: tbsp
@@ -63,65 +64,69 @@ ingredients:
     milliliters: 14.7868
     fdcId: 170554
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp shredded coconut
     quantity: 1
     unit: tbsp
     item: shredded coconut
-    grams: 13.6
+    grams: 6
     milliliters: 14.7868
-    fdcId: 171412
+    fdcId: 170170
     matchConfidence: medium
-  - raw: 1 tbsp maple syrup
-    quantity: 1
-    unit: tbsp
-    item: maple syrup
-    grams: 20
-    milliliters: 14.7868
-    fdcId: 169661
+    cooking: raw
+  - raw: 2 tsp honey
+    quantity: 2
+    unit: tsp
+    item: honey
+    grams: 14.1
+    milliliters: 9.85784
+    fdcId: 169640
     matchConfidence: high
+    cooking: raw
   - raw: blueberries, to serve
     item: blueberries
     note: to serve
     grams: 30
     fdcId: 171711
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 296
-    energyKj: 1239
-    protein_g: 8.9
-    fat_g: 10.8
-    satFat_g: 6
-    carbs_g: 42.7
-    fiber_g: 3.8
-    sugar_g: 16.3
-    sodium_mg: 62
-    availableCarb_g: 38.9
+    energyKcal: 294
+    energyKj: 1230
+    protein_g: 11
+    fat_g: 6.2
+    satFat_g: 2.3
+    carbs_g: 52.5
+    fiber_g: 8
+    sugar_g: 30.1
+    sodium_mg: 67
+    availableCarb_g: 40.9
   glycemic:
-    gi: 54
-    gl: 21
+    gi: 50
+    gl: 20
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 93
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
-    coverage: 0.66
+    coverage: 1
   inflammation:
-    score: 0.1
-    band: neutral
+    score: -0.6
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 3
-    band: low
-    nrf: 19
+    score: 6
+    band: moderate
+    nrf: 35.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 97
-    ultraProcessedPct: 3
+    minimallyProcessedPct: 96.9
+    ultraProcessedPct: 3.1
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"

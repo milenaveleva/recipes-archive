@@ -14,11 +14,6 @@ cookTime: PT35M
 totalTime: PT55M
 cuisine: Italian
 course: Main Course
-tags:
-  - vegetarian
-  - eggplant
-  - rice
-  - baked
 lists:
   - Kifli favourites
 ingredients:
@@ -29,13 +24,16 @@ ingredients:
     grams: 600
     fdcId: 169228
     matchConfidence: high
-  - raw: 300 g risotto rice
+    cooking: baked
+  - raw: 300 g brown arborio rice, uncooked
     quantity: 300
     unit: g
-    item: risotto rice
+    item: brown arborio rice
+    note: uncooked
     grams: 300
-    fdcId: 169760
+    fdcId: 169706
     matchConfidence: high
+    cooking: baked
   - raw: 800 g canned chopped tomatoes
     quantity: 800
     unit: g
@@ -43,6 +41,7 @@ ingredients:
     grams: 800
     fdcId: 170501
     matchConfidence: high
+    cooking: baked
   - raw: 250 g mozzarella cheese
     quantity: 250
     unit: g
@@ -50,6 +49,7 @@ ingredients:
     grams: 250
     fdcId: 170845
     matchConfidence: high
+    cooking: baked
   - raw: 50 g Parmesan cheese
     quantity: 50
     unit: g
@@ -57,12 +57,14 @@ ingredients:
     grams: 50
     fdcId: 173431
     matchConfidence: high
+    cooking: baked
   - raw: 1 onion
     quantity: 1
     item: onion
     grams: 110
     fdcId: 170000
     matchConfidence: high
+    cooking: baked
   - raw: 3 cloves garlic
     quantity: 3
     unit: cloves
@@ -70,6 +72,7 @@ ingredients:
     grams: 9
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 1 bunch fresh basil
     quantity: 1
     unit: bunch
@@ -77,6 +80,7 @@ ingredients:
     grams: 20
     fdcId: 172232
     matchConfidence: high
+    cooking: baked
   - raw: 4 tbsp extra virgin olive oil
     quantity: 4
     unit: tbsp
@@ -85,6 +89,7 @@ ingredients:
     milliliters: 59.1472
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 700 ml vegetable broth
     quantity: 700
     unit: ml
@@ -93,6 +98,7 @@ ingredients:
     milliliters: 700
     fdcId: 171583
     matchConfidence: medium
+    cooking: baked
   - raw: 1 tsp dried oregano
     quantity: 1
     unit: tsp
@@ -101,6 +107,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 171328
     matchConfidence: medium
+    cooking: baked
   - raw: 1 tsp fine salt
     quantity: 1
     unit: tsp
@@ -109,6 +116,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: medium
+    cooking: baked
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -117,39 +125,40 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 754
-    energyKj: 3155
-    protein_g: 29.3
-    fat_g: 32.2
-    satFat_g: 13
-    carbs_g: 90
-    fiber_g: 9
-    sugar_g: 16.3
-    sodium_mg: 1970
-    availableCarb_g: 80.9
+    energyKcal: 755
+    energyKj: 3161
+    protein_g: 30
+    fat_g: 33.8
+    satFat_g: 13.3
+    carbs_g: 87.6
+    fiber_g: 11.6
+    sugar_g: 16.8
+    sodium_mg: 1972
+    availableCarb_g: 76.1
   glycemic:
-    gi: 50
-    gl: 40
+    gi: 55
+    gl: 42
     giBand: low
     glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 72
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
-    coverage: 0.89
+    coverage: 1
   inflammation:
-    score: 0.6
-    band: mildly-pro-inflammatory
+    score: 0.1
+    band: neutral
     method: fii v3
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 14.7
+    nrf: 19.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 58.8
@@ -159,6 +168,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -172,10 +182,10 @@ createdAt: "2026-11-13"
 1. **Preparation and searing the vegetables:** Preheat the oven to 200 °C (180 °C with fan). Wash the eggplants, wipe dry and cut into 1.5-2 cm cubes. Finely chop the onion, and crush or chop the garlic.
 2. In a large pan, heat 2 tablespoons of extra virgin olive oil. Add the eggplant cubes, sprinkle with a pinch of salt and pepper, and sauté over medium-high heat for 8-10 minutes until golden brown and soft. Transfer to a bowl.
 3. **The saucy rice and tomato sauce:** Pour another 2 tablespoons of olive oil into the same pan, sauté the finely chopped onion in it for 3-4 minutes, then add the garlic for 1 minute until its wonderful aroma hits your nose.
-4. Pour in the chopped tomatoes, the hot vegetable broth and the dry risotto rice. Season with the oregano, salt and freshly ground black pepper, and stir in half of the torn fresh basil leaves. Bring to a boil, then cook on low heat for 5 minutes until the rice just starts to absorb the sauce.
+4. Pour in the chopped tomatoes, the hot vegetable broth and the dry brown arborio rice. Season with the oregano, salt and freshly ground black pepper, and stir in half of the torn fresh basil leaves. Bring to a boil, then cook on low heat for 5 minutes until the rice just starts to absorb the sauce.
 5. **Layering and baking:** Stir two thirds of the pre-fried eggplant cubes into the tomato-rice base, then smooth it all into a medium ovenproof dish or baking tray.
 6. Spread the remaining fried eggplant on top, sprinkle with diced or torn mozzarella, and scatter generously with freshly grated Parmesan.
-7. Put it in the oven and bake for 25-30 minutes until the rice is perfectly tender, the sauce has thickened and the cheese has melted golden brown and bubbly on top. Let rest for 5 minutes before serving, then sprinkle with the remaining fresh basil.
+7. Put it in the oven and bake for 40-45 minutes (brown arborio takes longer than white; add a splash of hot broth if it dries out) until the rice is perfectly tender, the sauce has thickened and the cheese has melted golden brown and bubbly on top. Let rest for 5 minutes before serving, then sprinkle with the remaining fresh basil.
 
 ## Tips
 

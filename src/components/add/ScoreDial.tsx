@@ -16,7 +16,7 @@ export default function ScoreDial({ dial, align = 'center' }: { dial: ScoreDialD
       className="group relative flex flex-col items-center text-center gap-1.5 rounded-xl bg-card border border-line px-3 py-4 outline-none focus-visible:ring-2 focus-visible:ring-spice focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
       role="img"
       tabIndex={0}
-      aria-label={`${dial.label}: ${ariaValue}. ${dial.blurb}`}
+      aria-label={`${dial.label}: ${ariaValue}${dial.caption ? ` (${dial.caption})` : ''}. ${dial.blurb}`}
     >
       <div className="relative h-16 w-16">
         <svg viewBox="0 0 36 36" className="absolute inset-0 h-full w-full -rotate-90" aria-hidden="true">
@@ -45,6 +45,7 @@ export default function ScoreDial({ dial, align = 'center' }: { dial: ScoreDialD
       </div>
 
       <div className="eyebrow !text-[0.62rem] !tracking-[0.14em] leading-tight text-ink-soft">{dial.label}</div>
+      {dial.caption && <div className="font-ui text-[0.64rem] leading-snug text-ink-faint">{dial.caption}</div>}
 
       <div
         aria-hidden="true"

@@ -1,0 +1,188 @@
+---
+title: Caramelised Shallot Whole-Wheat Spaghetti (Pasta allo Scalogno)
+description: Authentic Italian whole-wheat spaghetti with slowly caramelised shallots, fried tomato paste, butter and Parmesan, ready in 25 minutes.
+image: ./images/caramelised-shallot-whole-wheat-spaghetti-pasta-allo-scalogno.jpg
+imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14761_1793545772644_caramelized-shallot-spaghetti_18d49934.jpg
+imageAlt: Caramelised Shallot Whole-Wheat Spaghetti (Pasta allo Scalogno)
+source:
+  name: kifli.hu
+  url: https://www.kifli.hu/sef/14761-karamellizalt-salottahagymas-spagetti-pasta-allo-scalogno
+author: Kifli Kukták
+servings: 4
+prepTime: PT10M
+cookTime: PT15M
+totalTime: PT25M
+cuisine: Italian
+course: Main Course
+lists:
+  - Kifli favourites
+ingredients:
+  - raw: 400 g dry whole-wheat spaghetti
+    group: Main ingredients
+    quantity: 400
+    unit: g
+    item: dry whole-wheat spaghetti
+    grams: 400
+    fdcId: 169738
+    matchConfidence: high
+    cooking: boiled
+  - raw: 350 g shallots
+    group: Main ingredients
+    quantity: 350
+    unit: g
+    item: shallots
+    grams: 350
+    fdcId: 170499
+    matchConfidence: high
+    cooking: fried
+  - raw: 4 cloves garlic
+    group: Main ingredients
+    quantity: 4
+    unit: cloves
+    item: garlic
+    grams: 16
+    fdcId: 169230
+    matchConfidence: high
+    cooking: fried
+  - raw: 70 g tomato paste
+    group: Main ingredients
+    quantity: 70
+    unit: g
+    item: tomato paste
+    grams: 70
+    fdcId: 2685580
+    matchConfidence: medium
+    cooking: fried
+  - raw: 1 tsp chilli flakes
+    group: Main ingredients
+    quantity: 1
+    unit: tsp
+    item: chilli flakes
+    grams: 2
+    milliliters: 4.92892
+    fdcId: 170932
+    matchConfidence: high
+    cooking: fried
+  - raw: 40 ml extra virgin olive oil
+    group: Pantry basics
+    quantity: 40
+    unit: ml
+    item: extra virgin olive oil
+    grams: 36.5
+    milliliters: 40
+    fdcId: 171413
+    matchConfidence: high
+    cooking: fried
+  - raw: 30 g butter
+    group: Pantry basics
+    quantity: 30
+    unit: g
+    item: butter
+    grams: 30
+    fdcId: 173430
+    matchConfidence: high
+    cooking: fried
+  - raw: ¾ tsp fine salt
+    group: Pantry basics
+    quantity: 0.75
+    unit: tsp
+    item: fine salt
+    grams: 5
+    milliliters: 3.69669
+    fdcId: 173468
+    matchConfidence: medium
+    cooking: fried
+  - raw: ¾ tsp ground black pepper
+    group: Pantry basics
+    quantity: 0.75
+    unit: tsp
+    item: ground black pepper
+    grams: 2
+    milliliters: 3.69669
+    fdcId: 170931
+    matchConfidence: medium
+    cooking: fried
+  - raw: 60 g parmesan cheese
+    group: For garnish and serving
+    quantity: 60
+    unit: g
+    item: parmesan cheese
+    grams: 60
+    fdcId: 173431
+    matchConfidence: high
+    cooking: raw
+  - raw: 15 g fresh parsley
+    group: For garnish and serving
+    quantity: 15
+    unit: g
+    item: fresh parsley
+    grams: 15
+    fdcId: 170416
+    matchConfidence: high
+    cooking: raw
+nutrition:
+  perServing:
+    energyKcal: 637
+    energyKj: 2667
+    protein_g: 23.1
+    fat_g: 22.6
+    satFat_g: 8.2
+    carbs_g: 94.3
+    fiber_g: 13.3
+    sugar_g: 11.9
+    sodium_mg: 768
+    availableCarb_g: 81
+  glycemic:
+    gi: 53
+    gl: 43
+    giBand: low
+    glBand: high
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 79
+  nutriScore:
+    grade: C
+    points: 3
+    category: general
+    version: "2023"
+    coverage: 1
+  inflammation:
+    score: -0.7
+    band: mildly-anti-inflammatory
+    method: fii v3
+  balance:
+    score: 4
+    band: low
+    nrf: 22.4
+    version: NRF9.3
+  processing:
+    minimallyProcessedPct: 87.8
+    ultraProcessedPct: 0
+    band: minimally-processed
+    method: NOVA (energy-weighted)
+  computedAt: "2026-11-13"
+  dataSources:
+    - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
+    - Atkinson 2021 GI tables
+    - Nutri-Score 2023
+    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
+    - Nutrient-Rich Foods Index (NRF9.3)
+    - NOVA food classification (energy-weighted)
+createdAt: "2026-11-13"
+---
+
+## Method
+
+1. **Preparation and caramelising the shallots:** Peel the shallots and cut them into fine, thin rounds. Crush or finely chop the garlic cloves. Chop the fresh parsley finely.
+2. In a deeper, heavy-bottomed pan over medium heat, heat the extra virgin olive oil and half of the butter. Add the sliced shallots and a pinch of fine salt.
+3. Reduce the heat and, stirring regularly, slowly fry the onions for about 12-15 minutes until they are a beautiful deep golden brown, soft and sweetly caramelised.
+4. **Making the sauce and tossing:** Add the crushed garlic, tomato paste and chilli flakes to the pan. Fry, stirring constantly, for 2-3 minutes until the tomato paste turns a deep rusty brown and caramelises.
+5. Meanwhile, bring plenty of salted water to a boil in a large pot and cook the spaghetti until al dente. Before draining the pasta, scoop out and set aside about 150-200 ml of the starchy cooking water.
+6. Pour about 100 ml of the pasta water onto the tomato and shallot base and stir into a smooth, glossy sauce. Add the remaining butter and toss in the cooked spaghetti.
+7. Sprinkle with half of the grated Parmesan and emulsify the pasta with vigorous stirring so the sauce coats the strands perfectly. Add a little more cooking water if needed.
+8. Serve immediately hot, sprinkled with the remaining freshly grated Parmesan and the chopped parsley.
+
+## Tips
+
+- Shallots have a higher natural sugar content than onions, so they caramelise more easily, but keep the heat moderate so they do not burn.
+- Thoroughly frying the tomato paste is an essential step: it loses its raw acidity and turns into a deep, rich umami flavour.

@@ -14,9 +14,6 @@ cookTime: PT15M
 totalTime: PT30M
 cuisine: International
 course: Main Course
-tags:
-  - fish
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -26,13 +23,15 @@ ingredients:
     grams: 600
     fdcId: 175142
     matchConfidence: medium
+    cooking: fried
   - raw: 1000 g new potatoes
     quantity: 1000
     unit: g
     item: new potatoes
     grams: 1000
-    fdcId: 170520
-    matchConfidence: high
+    fdcId: 170026
+    matchConfidence: medium
+    cooking: boiled
   - raw: 100 g butter
     quantity: 100
     unit: g
@@ -40,12 +39,14 @@ ingredients:
     grams: 100
     fdcId: 173430
     matchConfidence: high
+    cooking: boiled
   - raw: 1 wild garlic bunch
     quantity: 1
     item: wild garlic bunch
-    grams: 15
-    fdcId: 169230
-    matchConfidence: high
+    grams: 100
+    fdcId: 169246
+    matchConfidence: medium
+    cooking: fried
   - raw: 50 g spinach
     quantity: 50
     unit: g
@@ -53,6 +54,7 @@ ingredients:
     grams: 50
     fdcId: 168462
     matchConfidence: high
+    cooking: fried
   - raw: 10 g fresh parsley
     quantity: 10
     unit: g
@@ -60,6 +62,7 @@ ingredients:
     grams: 10
     fdcId: 170416
     matchConfidence: high
+    cooking: fried
   - raw: 10 g fresh chives
     quantity: 10
     unit: g
@@ -67,6 +70,7 @@ ingredients:
     grams: 10
     fdcId: 169994
     matchConfidence: high
+    cooking: fried
   - raw: 100 ml vegetable broth
     quantity: 100
     unit: ml
@@ -75,6 +79,7 @@ ingredients:
     milliliters: 100
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: ½ lemon, juiced
     quantity: 0.5
     item: lemon
@@ -82,53 +87,58 @@ ingredients:
     grams: 25
     fdcId: 167747
     matchConfidence: high
-  - raw: 5 g salt
-    quantity: 5
-    unit: g
+    cooking: boiled
+  - raw: ¾ tsp salt
+    quantity: 0.75
+    unit: tsp
     item: salt
     grams: 5
+    milliliters: 3.69669
     fdcId: 173468
     matchConfidence: high
-  - raw: 2 g black pepper
-    quantity: 2
-    unit: g
+    cooking: boiled
+  - raw: ¾ tsp black pepper
+    quantity: 0.75
+    unit: tsp
     item: black pepper
     grams: 2
+    milliliters: 3.69669
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 554
-    energyKj: 2317
-    protein_g: 33
+    energyKcal: 541
+    energyKj: 2263
+    protein_g: 34
     fat_g: 23.7
     satFat_g: 13.5
-    carbs_g: 52.9
-    fiber_g: 5.6
-    sugar_g: 2.7
-    sodium_mg: 1274
-    availableCarb_g: 47.3
+    carbs_g: 49
+    fiber_g: 6.3
+    sugar_g: 3.4
+    sodium_mg: 690
+    availableCarb_g: 42.7
   glycemic:
-    gi: 70
-    gl: 33
-    giBand: high
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi: 67
+    gl: 29
+    giBand: medium
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 90
   nutriScore:
-    grade: C
-    points: 4
+    grade: B
+    points: 1
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.5
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 3
-    band: low
-    nrf: 20.9
+    score: 6
+    band: moderate
+    nrf: 33.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 99.8
@@ -138,6 +148,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

@@ -13,46 +13,45 @@ prepTime: PT15M
 totalTime: PT15M
 cuisine: Mediterranean
 course: Salad
-tags:
-  - vegan
-  - legumes
-  - salad
-  - quick
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g cooked green lentils (or canned)
+  - raw: 250 g cooked green lentils (or canned) (≈ 83 g uncooked)
     quantity: 250
     unit: g
-    item: cooked green lentils
-    note: or canned
-    grams: 250
-    fdcId: 175254
-    matchConfidence: high
-  - raw: 250 g cooked red kidney beans (or canned)
+    item: cooked green lentils (or canned)
+    note: ≈ 83 g uncooked
+    grams: 83
+    fdcId: 172420
+    matchConfidence: medium
+    cooking: raw
+  - raw: 250 g cooked red kidney beans (or canned) (≈ 94 g uncooked)
     quantity: 250
     unit: g
-    item: cooked red kidney beans
-    note: or canned
-    grams: 250
-    fdcId: 175242
-    matchConfidence: high
-  - raw: 250 g cooked white beans (or canned)
+    item: cooked red kidney beans (or canned)
+    note: ≈ 94 g uncooked
+    grams: 94
+    fdcId: 173744
+    matchConfidence: medium
+    cooking: raw
+  - raw: 250 g cooked white beans (or canned) (≈ 104 g uncooked)
     quantity: 250
     unit: g
-    item: cooked white beans
-    note: or canned
-    grams: 250
-    fdcId: 175249
-    matchConfidence: high
-  - raw: 250 g cooked chickpeas (or canned)
+    item: cooked white beans (or canned)
+    note: ≈ 104 g uncooked
+    grams: 104
+    fdcId: 175202
+    matchConfidence: medium
+    cooking: raw
+  - raw: 250 g cooked chickpeas (or canned) (≈ 108 g uncooked)
     quantity: 250
     unit: g
-    item: cooked chickpeas
-    note: or canned
-    grams: 250
-    fdcId: 174288
-    matchConfidence: high
+    item: cooked chickpeas (or canned)
+    note: ≈ 108 g uncooked
+    grams: 108
+    fdcId: 173756
+    matchConfidence: medium
+    cooking: raw
   - raw: 250 g tomatoes
     quantity: 250
     unit: g
@@ -60,6 +59,7 @@ ingredients:
     grams: 250
     fdcId: 321360
     matchConfidence: high
+    cooking: raw
   - raw: 80 g spring onions
     quantity: 80
     unit: g
@@ -67,6 +67,7 @@ ingredients:
     grams: 80
     fdcId: 170005
     matchConfidence: high
+    cooking: raw
   - raw: 70 g red onion
     quantity: 70
     unit: g
@@ -74,6 +75,7 @@ ingredients:
     grams: 70
     fdcId: 790577
     matchConfidence: high
+    cooking: raw
   - raw: 60 ml lemon juice
     quantity: 60
     unit: ml
@@ -82,6 +84,7 @@ ingredients:
     milliliters: 60
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
   - raw: 1 clove garlic
     quantity: 1
     unit: clove
@@ -89,6 +92,7 @@ ingredients:
     grams: 4
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 6 tbsp olive oil
     quantity: 6
     unit: tbsp
@@ -97,6 +101,7 @@ ingredients:
     milliliters: 88.7208
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp fresh parsley
     quantity: 1
     unit: tbsp
@@ -105,12 +110,14 @@ ingredients:
     milliliters: 14.7868
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: freshly ground black pepper, to taste
     item: freshly ground black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
   - raw: ½ tsp ground cumin
     quantity: 0.5
     unit: tsp
@@ -119,45 +126,47 @@ ingredients:
     milliliters: 2.46446
     fdcId: 170923
     matchConfidence: medium
+    cooking: raw
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 3
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 464
-    energyKj: 1941
-    protein_g: 21.6
-    fat_g: 17.2
-    satFat_g: 2.3
-    carbs_g: 57.7
-    fiber_g: 15.1
-    sugar_g: 6.1
-    sodium_mg: 526
-    availableCarb_g: 42.6
+    energyKcal: 372
+    energyKj: 1555
+    protein_g: 15.5
+    fat_g: 15.4
+    satFat_g: 2.1
+    carbs_g: 45.7
+    fiber_g: 10.3
+    sugar_g: 6.2
+    sodium_mg: 210
+    availableCarb_g: 35.4
   glycemic:
-    gi: 39
-    gl: 17
+    gi: 37
+    gl: 13
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 25
   nutriScore:
     grade: A
-    points: -7
+    points: -8
     category: general
     version: "2023"
-    coverage: 0.79
+    coverage: 0.74
   inflammation:
-    score: -0.9
-    band: mildly-anti-inflammatory
+    score: -1.3
+    band: anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 41.5
+    score: 7
+    band: high
+    nrf: 42.3
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

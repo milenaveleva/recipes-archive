@@ -14,10 +14,6 @@ cookTime: PT35M
 totalTime: PT50M
 cuisine: American
 course: Snack
-tags:
-  - vegetarian
-  - cauliflower
-  - spicy
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 300
     fdcId: 169986
     matchConfidence: high
+    cooking: baked
   - raw: 120 g plain yogurt
     quantity: 120
     unit: g
@@ -35,13 +32,15 @@ ingredients:
     grams: 120
     fdcId: 171284
     matchConfidence: high
-  - raw: 100 g flour
+    cooking: raw
+  - raw: 100 g whole-wheat flour
     quantity: 100
     unit: g
-    item: flour
+    item: whole-wheat flour
     grams: 100
-    fdcId: 2003586
+    fdcId: 790085
     matchConfidence: high
+    cooking: baked
   - raw: 7 g garlic, pressed
     quantity: 7
     unit: g
@@ -50,13 +49,16 @@ ingredients:
     grams: 7
     fdcId: 169230
     matchConfidence: high
-  - raw: 5 g sweet paprika
-    quantity: 5
-    unit: g
+    cooking: raw
+  - raw: 2¼ tsp sweet paprika
+    quantity: 2.25
+    unit: tsp
     item: sweet paprika
     grams: 5
+    milliliters: 11.090069999999999
     fdcId: 171329
     matchConfidence: medium
+    cooking: baked
   - raw: 5 ml lime juice
     quantity: 5
     unit: ml
@@ -65,13 +67,16 @@ ingredients:
     milliliters: 5
     fdcId: 168156
     matchConfidence: high
-  - raw: 5 g garlic powder
-    quantity: 5
-    unit: g
+    cooking: raw
+  - raw: 1½ tsp garlic powder
+    quantity: 1.5
+    unit: tsp
     item: garlic powder
     grams: 5
+    milliliters: 7.39338
     fdcId: 171325
     matchConfidence: medium
+    cooking: baked
   - raw: 10 g fresh parsley
     quantity: 10
     unit: g
@@ -79,6 +84,7 @@ ingredients:
     grams: 10
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: 40 g butter
     quantity: 40
     unit: g
@@ -86,13 +92,16 @@ ingredients:
     grams: 40
     fdcId: 173430
     matchConfidence: high
-  - raw: 15 g sugar
-    quantity: 15
-    unit: g
-    item: sugar
-    grams: 15
-    fdcId: 170674
+    cooking: baked
+  - raw: 1½ tsp honey
+    quantity: 1.5
+    unit: tsp
+    item: honey
+    grams: 10.6
+    milliliters: 7.39338
+    fdcId: 169640
     matchConfidence: high
+    cooking: baked
   - raw: 40 g sriracha
     quantity: 40
     unit: g
@@ -100,67 +109,74 @@ ingredients:
     grams: 40
     fdcId: 171186
     matchConfidence: high
-  - raw: 2 g salt
-    quantity: 2
-    unit: g
+    cooking: baked
+  - raw: ¼ tsp salt
+    quantity: 0.25
+    unit: tsp
     item: salt
     grams: 2
+    milliliters: 1.23223
     fdcId: 173468
     matchConfidence: high
-  - raw: 2 g black pepper
-    quantity: 2
-    unit: g
+    cooking: baked
+  - raw: ¾ tsp black pepper
+    quantity: 0.75
+    unit: tsp
     item: black pepper
     grams: 2
+    milliliters: 3.69669
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
   - raw: water
     item: water
     fdcId: 169301
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 475
-    energyKj: 1985
-    protein_g: 12.5
-    fat_g: 20
-    satFat_g: 11.6
-    carbs_g: 64.3
-    fiber_g: 6.4
-    sugar_g: 16.6
-    sodium_mg: 894
-    availableCarb_g: 57.9
+    energyKcal: 463
+    energyKj: 1936
+    protein_g: 14.3
+    fat_g: 20.6
+    satFat_g: 11.9
+    carbs_g: 59.6
+    fiber_g: 10.3
+    sugar_g: 13.7
+    sodium_mg: 895
+    availableCarb_g: 49.2
   glycemic:
     gi: 54
-    gl: 31
+    gl: 26
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 15
   nutriScore:
     grade: C
-    points: 6
+    points: 5
     category: general
     version: "2023"
-    coverage: 0.76
+    coverage: 0.94
   inflammation:
-    score: 0.4
-    band: mildly-pro-inflammatory
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 3
-    band: low
-    nrf: 19.4
+    score: 6
+    band: moderate
+    nrf: 32.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 96.1
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 96
+    ultraProcessedPct: 4
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -174,6 +190,6 @@ createdAt: "2026-11-13"
 1. Preheat the oven to 235 °C and line a baking tray with baking paper. Break the cauliflower into small florets and set aside.
 2. In a bowl, mix the flour with the paprika, garlic powder and a pinch of salt. Add water and stir into a smooth, thick batter. Add the cauliflower florets and toss so they are coated all over.
 3. Spread the battered cauliflower on the tray with a little space between the pieces. Bake in the preheated oven for 25 minutes, turning halfway through so they crisp evenly.
-4. Meanwhile, make the buffalo sauce: melt the butter with the sugar, then stir in the sriracha.
+4. Meanwhile, make the buffalo sauce: melt the butter with the honey, then stir in the sriracha.
 5. When the cauliflower is baked, brush it with the buffalo sauce on all sides and return it to the oven for another 10 minutes, taking care that it doesn't burn.
 6. Finally, make the yogurt dip: mix the yogurt with the pressed garlic, the lime juice, the finely chopped parsley, and salt to taste.

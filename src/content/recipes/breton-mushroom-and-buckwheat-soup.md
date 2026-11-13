@@ -14,10 +14,6 @@ cookTime: PT40M
 totalTime: PT55M
 cuisine: French
 course: Soup
-tags:
-  - vegetarian
-  - mushroom
-  - soup
 lists:
   - Kifli favourites
 ingredients:
@@ -29,14 +25,17 @@ ingredients:
     grams: 400
     fdcId: 1999629
     matchConfidence: high
-  - raw: 150 g buckwheat groats
+    cooking: boiled
+  - raw: 150 g buckwheat groats, uncooked
     group: Soup base
     quantity: 150
     unit: g
     item: buckwheat groats
+    note: uncooked
     grams: 150
-    fdcId: 170686
-    matchConfidence: high
+    fdcId: 170685
+    matchConfidence: medium
+    cooking: boiled
   - raw: 3 shallots
     group: Soup base
     quantity: 3
@@ -44,6 +43,7 @@ ingredients:
     grams: 90
     fdcId: 170499
     matchConfidence: high
+    cooking: boiled
   - raw: 3 cloves garlic
     group: Soup base
     quantity: 3
@@ -52,6 +52,7 @@ ingredients:
     grams: 9
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 100 ml dry white wine
     group: Soup base
     quantity: 100
@@ -61,6 +62,7 @@ ingredients:
     milliliters: 100
     fdcId: 174837
     matchConfidence: medium
+    cooking: boiled
   - raw: 1200 ml vegetable broth
     group: Soup base
     quantity: 1200
@@ -70,6 +72,7 @@ ingredients:
     milliliters: 1200
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 40 g butter
     group: For frying and seasoning
     quantity: 40
@@ -78,6 +81,7 @@ ingredients:
     grams: 40
     fdcId: 173430
     matchConfidence: high
+    cooking: boiled
   - raw: 20 ml extra virgin olive oil
     group: For frying and seasoning
     quantity: 20
@@ -87,6 +91,7 @@ ingredients:
     milliliters: 20
     fdcId: 171413
     matchConfidence: high
+    cooking: boiled
   - raw: 5 g fresh thyme
     group: For frying and seasoning
     quantity: 5
@@ -95,6 +100,7 @@ ingredients:
     grams: 5
     fdcId: 173470
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tsp fine salt
     group: For frying and seasoning
     quantity: 1
@@ -104,6 +110,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 tsp ground black pepper
     group: For frying and seasoning
     quantity: 1
@@ -113,6 +120,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 bunch fresh parsley
     group: For serving
     quantity: 1
@@ -121,48 +129,50 @@ ingredients:
     grams: 20
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 230
-    energyKj: 962
-    protein_g: 5.9
-    fat_g: 13.6
-    satFat_g: 5.8
-    carbs_g: 20.3
-    fiber_g: 4
-    sugar_g: 4
-    sodium_mg: 1438
-    availableCarb_g: 16.3
+    energyKcal: 325
+    energyKj: 1361
+    protein_g: 9
+    fat_g: 14.4
+    satFat_g: 6.1
+    carbs_g: 41
+    fiber_g: 6.8
+    sugar_g: 5.6
+    sodium_mg: 1440
+    availableCarb_g: 33.7
   glycemic:
-    gi: 43
-    gl: 7
+    gi: 53
+    gl: 18
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
     points: 4
     category: general
     version: "2023"
-    coverage: 0.79
+    coverage: 0.92
   inflammation:
-    score: 0.6
-    band: mildly-pro-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v3
   balance:
-    score: 1
+    score: 2
     band: poor
-    nrf: -5.2
+    nrf: 8.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 85
+    minimallyProcessedPct: 89.4
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

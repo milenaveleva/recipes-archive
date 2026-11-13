@@ -21,6 +21,7 @@ ingredients:
     grams: 226.8
     fdcId: 169242
     matchConfidence: high
+    cooking: boiled
   - raw: ¼ cup soy sauce
     quantity: 0.25
     unit: cup
@@ -28,6 +29,7 @@ ingredients:
     milliliters: 59.147
     fdcId: 81017007
     matchConfidence: medium
+    cooking: boiled
   - raw: ¼ cup rice vinegar
     quantity: 0.25
     unit: cup
@@ -35,14 +37,16 @@ ingredients:
     milliliters: 59.147
     fdcId: 81017016
     matchConfidence: high
-  - raw: 2 tbsp sugar
-    quantity: 2
+    cooking: boiled
+  - raw: 1½ tbsp honey
+    quantity: 1.5
     unit: tbsp
-    item: sugar
-    grams: 25
-    milliliters: 29.5736
-    fdcId: 169655
+    item: honey
+    grams: 31.5
+    milliliters: 22.1802
+    fdcId: 169640
     matchConfidence: high
+    cooking: boiled
   - raw: ½ cup water
     quantity: 0.5
     unit: cup
@@ -51,45 +55,47 @@ ingredients:
     milliliters: 118.294
     fdcId: 174158
     matchConfidence: high
+    cooking: boiled
   - raw: 4 slices fresh ginger
     quantity: 4
     item: slices fresh ginger
     grams: 8.8
     fdcId: 169231
     matchConfidence: medium
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 23
-    energyKj: 95
+    energyKcal: 22
+    energyKj: 94
     protein_g: 0.7
     fat_g: 0.1
     satFat_g: 0
-    carbs_g: 5.2
+    carbs_g: 5.4
     fiber_g: 0.7
-    sugar_g: 3.8
+    sugar_g: 3.9
     sodium_mg: 3
-    availableCarb_g: 4.5
+    availableCarb_g: 4.6
   glycemic:
-    gi: 52
+    gi: 49
     gl: 2
     giBand: low
     glBand: low
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
-    carbCoveragePct: 100
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 70
   nutriScore:
-    grade: A
-    points: 0
+    grade: B
+    points: 1
     category: general
     version: "2023"
-    coverage: 0.4
+    coverage: 1
   inflammation:
-    score: 0.8
+    score: 0.9
     band: pro-inflammatory
     method: fii v3
   balance:
     score: 2
     band: poor
-    nrf: 2.4
+    nrf: 0.8
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -100,6 +106,7 @@ nutrition:
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

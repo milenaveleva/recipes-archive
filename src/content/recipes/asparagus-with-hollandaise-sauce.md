@@ -1,6 +1,6 @@
 ---
 title: Asparagus with Hollandaise Sauce
-description: White and green asparagus served with a silky homemade hollandaise, best with boiled potatoes or white bread.
+description: White and green asparagus served with a silky homemade hollandaise, best with boiled potatoes or whole-wheat bread.
 image: ./images/asparagus-with-hollandaise-sauce.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10316_1775306559664_asparagus-with-hollandaise-sauce_265f31be.png
 imageAlt: Asparagus with Hollandaise Sauce
@@ -14,10 +14,6 @@ cookTime: PT15M
 totalTime: PT30M
 cuisine: French
 course: Main Course
-tags:
-  - vegetarian
-  - asparagus
-  - spring
 lists:
   - Kifli favourites
 ingredients:
@@ -26,8 +22,9 @@ ingredients:
     unit: kg
     item: white asparagus
     grams: 1500
-    fdcId: 168390
+    fdcId: 168389
     matchConfidence: high
+    cooking: boiled
   - raw: 200 g butter
     quantity: 200
     unit: g
@@ -35,13 +32,15 @@ ingredients:
     grams: 200
     fdcId: 173430
     matchConfidence: high
-  - raw: 1 slice white bread, to serve
+    cooking: boiled
+  - raw: 1 slice whole-wheat bread, to serve
     quantity: 1
-    item: slice white bread
+    item: slice whole-wheat bread
     note: to serve
     grams: 30
-    fdcId: 174924
+    fdcId: 172688
     matchConfidence: high
+    cooking: raw
   - raw: 500 g green asparagus
     quantity: 500
     unit: g
@@ -49,6 +48,7 @@ ingredients:
     grams: 500
     fdcId: 2710823
     matchConfidence: high
+    cooking: boiled
   - raw: 51 g egg yolk
     quantity: 51
     unit: g
@@ -56,6 +56,7 @@ ingredients:
     grams: 51
     fdcId: 172184
     matchConfidence: high
+    cooking: boiled
   - raw: 500 g potatoes
     quantity: 500
     unit: g
@@ -63,21 +64,16 @@ ingredients:
     grams: 500
     fdcId: 170026
     matchConfidence: high
-  - raw: 120 g powdered sugar
-    quantity: 120
-    unit: g
-    item: powdered sugar
-    grams: 120
-    fdcId: 169656
-    matchConfidence: high
+    cooking: boiled
   - raw: 30 ml white wine vinegar
     quantity: 30
     unit: ml
     item: white wine vinegar
     grams: 30.2
     milliliters: 30
-    fdcId: 172237
+    fdcId: 172240
     matchConfidence: high
+    cooking: boiled
   - raw: 60 ml dry white wine
     quantity: 60
     unit: ml
@@ -86,6 +82,7 @@ ingredients:
     milliliters: 60
     fdcId: 174837
     matchConfidence: high
+    cooking: boiled
   - raw: 10 ml lime juice
     quantity: 10
     unit: ml
@@ -94,62 +91,68 @@ ingredients:
     milliliters: 10
     fdcId: 168156
     matchConfidence: high
-  - raw: 15 g salt
-    quantity: 15
-    unit: g
+    cooking: raw
+  - raw: 2½ tsp salt
+    quantity: 2.5
+    unit: tsp
     item: salt
     grams: 15
+    milliliters: 12.322299999999998
     fdcId: 173468
     matchConfidence: high
-  - raw: 5 g black pepper
-    quantity: 5
-    unit: g
+    cooking: boiled
+  - raw: 2¼ tsp black pepper
+    quantity: 2.25
+    unit: tsp
     item: black pepper
     grams: 5
+    milliliters: 11.090069999999999
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 762
-    energyKj: 3187
-    protein_g: 16.6
-    fat_g: 45.4
+    energyKcal: 637
+    energyKj: 2663
+    protein_g: 16.1
+    fat_g: 45.1
     satFat_g: 26.8
-    carbs_g: 79.2
-    fiber_g: 13
-    sugar_g: 36
-    sodium_mg: 1568
-    availableCarb_g: 66.2
+    carbs_g: 47.9
+    fiber_g: 13.6
+    sugar_g: 11
+    sodium_mg: 1520
+    availableCarb_g: 34.3
   glycemic:
-    gi: 58
-    gl: 39
-    giBand: medium
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi: 53
+    gl: 18
+    giBand: low
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 56
   nutriScore:
     grade: C
-    points: 5
+    points: 4
     category: general
     version: "2023"
-    coverage: 0.83
+    coverage: 1
   inflammation:
-    score: 0.6
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 7.7
+    score: 4
+    band: low
+    nrf: 23.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 95.8
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 95.1
+    ultraProcessedPct: 3
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -164,4 +167,4 @@ createdAt: "2026-11-13"
 2. Whisk the egg yolks with a little water and salt in a stainless steel saucepan or glass bowl. Mix the vinegar and white wine in a pot and add freshly ground pepper. Bring 2 tablespoons of it to a boil and add it to the egg yolks, whisking constantly.
 3. Melt the butter in a pan, then set it aside. Bring about 2 cm of water to a boil in a saucepan, then turn the heat to low. Hold the egg yolk bowl over it so the bottom doesn't touch the water, and whisk until sufficiently thickened. Set aside once ready.
 4. Gradually add the hot butter to the egg yolks, whisking continuously, at first drop by drop and then in a thin stream. Add lemon juice and salt to taste.
-5. In a tall pot, bring 3 litres of water to a boil with the powdered sugar and salt to taste. Add the asparagus: boil the green for 5 minutes and the white for 10 minutes, until tender. Transfer to a preheated plate and untie the bundles. Pour part of the hollandaise over the asparagus and serve the rest separately in a small bowl. It is best with boiled potatoes or white bread.
+5. In a tall pot, bring 3 litres of water to a boil with salt to taste. Add the asparagus: boil the green for 5 minutes and the white for 10 minutes, until tender. Transfer to a preheated plate and untie the bundles. Pour part of the hollandaise over the asparagus and serve the rest separately in a small bowl. It is best with boiled potatoes or whole-wheat bread.

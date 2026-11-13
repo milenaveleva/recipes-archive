@@ -14,11 +14,6 @@ cookTime: PT10M
 totalTime: PT15M
 cuisine: International
 course: Side Dish
-tags:
-  - vegetarian
-  - vegan
-  - cabbage
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -29,6 +24,7 @@ ingredients:
     grams: 100
     fdcId: 170190
     matchConfidence: medium
+    cooking: fried
   - raw: 250 g savoy cabbage
     quantity: 250
     unit: g
@@ -36,6 +32,7 @@ ingredients:
     grams: 250
     fdcId: 170388
     matchConfidence: high
+    cooking: fried
   - raw: 2 tbsp olive oil
     quantity: 2
     unit: tbsp
@@ -44,23 +41,27 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171413
     matchConfidence: high
+    cooking: fried
   - raw: juice and grated zest of ½ lemon
     item: juice and grated zest of ½ lemon
     grams: 25
     fdcId: 167747
     matchConfidence: high
+    cooking: fried
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 2
     fdcId: 173468
     matchConfidence: high
+    cooking: fried
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: fried
 nutrition:
   perServing:
     energyKcal: 279
@@ -74,12 +75,12 @@ nutrition:
     sodium_mg: 424
     availableCarb_g: 28.6
   glycemic:
-    gi: 48
-    gl: 14
+    gi: 29
+    gl: 8
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: B
     points: 2
@@ -87,13 +88,13 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.8
+    score: -0.9
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
+    score: 6
     band: moderate
-    nrf: 38.6
+    nrf: 36
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -103,6 +104,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

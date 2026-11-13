@@ -1,17 +1,17 @@
 /**
- * Orchestrates the recipe scoring engines: from resolved ingredients (metric
+ * Orchestrates the recipe scoring engines: from resolved ingredients (cooked, as-eaten metric
  * weight + per-100g nutrients + a GI value, inflammation tag and FVL flag for
  * the matched food) it produces the glycemic, Nutri-Score and inflammation
  * block stored in recipe frontmatter and shown by the score medallions.
  *
- * GI/GL is carb-weighted (gi.ts); Nutri-Score is the general-foods 2023
+ * GI/GL is carb-weighted and protein-adjusted (gi.ts); Nutri-Score is the general-foods 2023
  * algorithm computed per 100 g (nutriscore.ts); inflammation is the energy-weighted
  * mean of per-food Food Inflammation Index scores (fii.ts + inflammation.ts). All
  * figures are estimates.
  *
  * Nutri-Score and NRF9.3 both profile the finished dish as one per-100 g
- * composition over the full nutrition-contributing mass (`basisGrams`, the mass of
- * foods carrying a usable energy value) — the single-basis model Nutri-Score
+ * composition over the full nutrition-contributing mass (`basisGrams`, the cooked,
+ * as-eaten mass of foods carrying a usable energy value) — the single-basis model Nutri-Score
  * applies to a labelled product. A food that omits a field contributes 0 to that
  * field's sum but still counts in the basis, so its concentration is diluted
  * rather than re-based per nutrient. The one exception is NRF's nutrients-to-limit
@@ -24,20 +24,20 @@
  */
 import { availableCarbOf, energyKcalOf, KJ_PER_KCAL } from './nutrition';
 import { round } from './num';
-import { computeGlycemics, type Glycemics } from './gi';
+import { computeGlycemics, CARB_EPSILON_G, type Glycemics, type GiCarbSource } from './gi';
 import { computeNutriScore, type NutriResult, type NutriCategory } from './nutriscore';
 import { computeInflammation, type Inflammation, type InflammationItem } from './inflammation';
 import { foodFII } from './fii';
 import { applyFoodForm } from './foodAdjust';
 import { computeBalance, type BalanceResult } from './balance';
-import { computeProcessing, type ProcessingItem, type ProcessingResult, type NovaGroup } from './processing';
+import { computeProcessing, promoteNova, type ProcessingItem, type ProcessingResult, type NovaGroup } from './processing';
 import type { NutrientVector } from './types';
 
 /** Sodium (g) → salt (g) conversion used by Nutri-Score. */
 const SALT_PER_SODIUM = 2.5;
 
 /** GI source citation for the composite estimate (all GI values cite this). */
-export const GI_SOURCE = 'Atkinson 2021 GI tables (carb-weighted composite estimate)';
+export const GI_SOURCE = 'Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)';
 
 /**
  * One recipe ingredient resolved for scoring: metric weight, the matched food's
@@ -54,10 +54,20 @@ export interface ScoredIngredient {
   fdcId?: number | null;
   /** Published GI of the matched food, or null when unknown. */
   gi?: number | null;
+  /** Whether that GI is a measured table match (giConfidence high|medium), not an estimate. */
+  giMeasured?: boolean;
   /** Whether the matched food is a fruit/vegetable/legume (Nutri-Score FVL). */
   fvl?: boolean;
+  /**
+   * Nutrients the Food Inflammation Index reads, when they differ from `nutrients`: the
+   * cooked ingredient's retained nutrients per 100 g of raw mass (recipeScore.ts
+   * cookIngredient). Defaults to `nutrients`.
+   */
+  fiiNutrients?: NutrientVector | null;
   /** Matched food's NOVA processing group, energy-weighted into the processing score. */
   nova?: NovaGroup | null;
+  /** The ingredient's original line; its processing markers can raise `nova` (processing.ts). */
+  raw?: string | null;
 }
 
 export interface ScoreResult {
@@ -100,13 +110,37 @@ const FIELDS = [
 ] as const;
 type Field = (typeof FIELDS)[number];
 
+/**
+ * Whether a food's protein counts as ADDED protein for the GI mixed-meal correction
+ * (gi.ts). It must be protein-dominant (protein ≥ available carb per 100 g) with known
+ * carbohydrate data — a food with no carb figure can't be placed and is ignored — and its
+ * protein must not already be inside the composite: a food that enters the carb-weighted
+ * composite with a MEASURED GI (yogurt, milk) was tested on its own protein, so counting
+ * that protein again would double-correct. A food left out of the composite (≤ 0.5 g
+ * available carb in the dish, or no GI) or carrying only a nominal/estimated GI (eggs,
+ * tofu, cheese — minor carb sources) adds its protein.
+ */
+export function isAddedProtein(
+  protein_g: number | null | undefined,
+  availPer100: number | null,
+  availInDish_g: number | null,
+  gi: number | null | undefined,
+  giMeasured: boolean,
+): boolean {
+  if (protein_g == null || !Number.isFinite(protein_g) || protein_g <= 0) return false;
+  if (availPer100 == null || availInDish_g == null) return false;
+  if (protein_g < availPer100) return false;
+  const inComposite = availInDish_g > CARB_EPSILON_G && gi != null && Number.isFinite(gi) && gi >= 0;
+  return !(inComposite && giMeasured);
+}
+
 /** Compute the glycemic, Nutri-Score and inflammation block for a recipe. */
 export function computeScores(
   ingredients: ScoredIngredient[],
   servings: number,
   options: ScoreOptions = {},
 ): ScoreResult {
-  const carbSources: { availableCarb_g: number; gi: number | null }[] = [];
+  const carbSources: GiCarbSource[] = [];
   const inflammationItems: InflammationItem[] = [];
   const processingItems: ProcessingItem[] = [];
 
@@ -116,6 +150,7 @@ export function computeScores(
   const mass = Object.fromEntries(FIELDS.map((f) => [f, 0])) as Record<Field, number>;
   let basisGrams = 0; // mass of foods in the Nutri-Score basis (those with energy)
   let fvlGrams = 0;
+  let addedProtein = 0; // protein not already inside the GI composite → the mixed-meal correction (isAddedProtein)
 
   for (const ing of ingredients) {
     if (ing.excludeFromNutrition) continue;
@@ -129,14 +164,16 @@ export function computeScores(
 
     // Inflammation: a per-food FII computed from composition (fii.ts), energy-weighted
     // at the recipe level. Weight by the food's absolute energy contribution when known.
-    const fii = foodFII(ing.nutrients);
+    const fii = foodFII(ing.fiiNutrients ?? ing.nutrients);
     if (fii) {
       const tag = applyFoodForm(fii.tag, ing.fdcId);
       inflammationItems.push({ grams, energyKcal, tag });
     }
 
-    // Processing: the food's NOVA group, energy-weighted into the recipe distribution.
-    if (ing.nova != null) processingItems.push({ energyKcal, nova: ing.nova });
+    // Processing: the food's NOVA group (raised by explicit markers in the original
+    // line, e.g. "puff pastry"), energy-weighted into the recipe distribution.
+    const nova = promoteNova(ing.nova, ing.raw);
+    if (nova != null) processingItems.push({ energyKcal, nova });
 
     const n = ing.nutrients;
     if (!n) continue;
@@ -144,7 +181,10 @@ export function computeScores(
 
     const avail = availableCarbOf(n);
     if (avail != null) {
-      carbSources.push({ availableCarb_g: avail * factor, gi: ing.gi ?? null });
+      carbSources.push({ availableCarb_g: avail * factor, gi: ing.gi ?? null, measured: ing.giMeasured === true });
+    }
+    if (isAddedProtein(n.protein_g, avail, avail != null ? avail * factor : null, ing.gi, ing.giMeasured === true)) {
+      addedProtein += n.protein_g! * factor;
     }
 
     // A food enters the Nutri-Score basis only with a usable energy value;
@@ -173,7 +213,7 @@ export function computeScores(
 
   const result: ScoreResult = {};
 
-  const glycemic = computeGlycemics(carbSources, servings);
+  const glycemic = computeGlycemics(carbSources, servings, { addedProtein_g: addedProtein });
   if (glycemic) result.glycemic = { ...glycemic, gi_source: GI_SOURCE };
 
   if (basisGrams > 0) {

@@ -14,10 +14,6 @@ cookTime: PT20M
 totalTime: PT30M
 cuisine: International
 course: Sauce
-tags:
-  - vegan
-  - jam
-  - sugar-free
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 1000
     fdcId: 167762
     matchConfidence: high
+    cooking: boiled
   - raw: 2 tbsp fresh lemon juice (or 1 tsp citric acid)
     quantity: 2
     unit: tbsp
@@ -37,6 +34,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 167747
     matchConfidence: high
+    cooking: boiled
   - raw: 4 tbsp erythritol (if not sweet enough)
     quantity: 4
     unit: tbsp
@@ -47,10 +45,12 @@ ingredients:
     fdcId: 170679
     matchConfidence: high
     excludeFromNutrition: true
+    cooking: boiled
   - raw: glass jars
     item: glass jars
     matchConfidence: none
     excludeFromNutrition: true
+    cooking: boiled
 nutrition:
   perServing:
     energyKcal: 163
@@ -67,9 +67,9 @@ nutrition:
     gi: 39
     gl: 12
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 97
   nutriScore:
     grade: A
     points: -4
@@ -81,9 +81,9 @@ nutrition:
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 7
-    band: high
-    nrf: 132.2
+    score: 10
+    band: excellent
+    nrf: 130.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -93,6 +93,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

@@ -14,10 +14,6 @@ cookTime: PT15M
 totalTime: PT30M
 cuisine: Chinese
 course: Soup
-tags:
-  - vegetarian
-  - tofu
-  - soup
 lists:
   - Kifli favourites
 ingredients:
@@ -29,14 +25,16 @@ ingredients:
     grams: 300
     fdcId: 172475
     matchConfidence: high
+    cooking: boiled
   - raw: 150 g shiitake mushrooms
     group: Main ingredients
     quantity: 150
     unit: g
     item: shiitake mushrooms
     grams: 150
-    fdcId: 170097
+    fdcId: 169242
     matchConfidence: high
+    cooking: boiled
   - raw: 1 carrot
     group: Main ingredients
     quantity: 1
@@ -44,6 +42,7 @@ ingredients:
     grams: 60
     fdcId: 170393
     matchConfidence: high
+    cooking: boiled
   - raw: 15 g ginger
     group: Main ingredients
     quantity: 15
@@ -52,6 +51,7 @@ ingredients:
     grams: 15
     fdcId: 169231
     matchConfidence: high
+    cooking: boiled
   - raw: 2 spring onions
     group: Main ingredients
     quantity: 2
@@ -59,6 +59,7 @@ ingredients:
     grams: 30
     fdcId: 170005
     matchConfidence: high
+    cooking: boiled
   - raw: 2 eggs
     group: Main ingredients
     quantity: 2
@@ -66,6 +67,7 @@ ingredients:
     grams: 100
     fdcId: 748967
     matchConfidence: high
+    cooking: boiled
   - raw: 1000 ml vegetable broth
     group: Seasonings and broth
     quantity: 1000
@@ -75,6 +77,7 @@ ingredients:
     milliliters: 1000
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 3 tbsp soy sauce
     group: Seasonings and broth
     quantity: 3
@@ -84,6 +87,7 @@ ingredients:
     milliliters: 44.3604
     fdcId: 81017008
     matchConfidence: medium
+    cooking: boiled
   - raw: 3 tbsp rice vinegar
     group: Seasonings and broth
     quantity: 3
@@ -93,6 +97,7 @@ ingredients:
     milliliters: 44.3604
     fdcId: 81017016
     matchConfidence: high
+    cooking: raw
   - raw: 2 tbsp cornstarch
     group: Seasonings and broth
     quantity: 2
@@ -102,6 +107,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 169698
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tbsp sesame oil
     group: Seasonings and broth
     quantity: 1
@@ -111,6 +117,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 171016
     matchConfidence: high
+    cooking: raw
   - raw: 1 tsp ground white pepper
     group: Seasonings and broth
     quantity: 1
@@ -120,42 +127,43 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170933
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 249
-    energyKj: 1040
-    protein_g: 18.3
-    fat_g: 12.8
+    energyKcal: 240
+    energyKj: 1006
+    protein_g: 18.6
+    fat_g: 12.9
     satFat_g: 2.3
-    carbs_g: 18.1
-    fiber_g: 3.4
-    sugar_g: 4
-    sodium_mg: 1594
-    availableCarb_g: 14.7
+    carbs_g: 15.3
+    fiber_g: 3.5
+    sugar_g: 3.5
+    sodium_mg: 1506
+    availableCarb_g: 11.7
   glycemic:
-    gi: 48
-    gl: 7
+    gi: 24
+    gl: 3
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 9
   nutriScore:
     grade: C
     points: 3
     category: general
     version: "2023"
-    coverage: 0.74
+    coverage: 0.8
   inflammation:
     score: -0.2
     band: neutral
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 27.7
+    score: 6
+    band: moderate
+    nrf: 32
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 49
+    minimallyProcessedPct: 47.2
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
@@ -163,6 +171,7 @@ nutrition:
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

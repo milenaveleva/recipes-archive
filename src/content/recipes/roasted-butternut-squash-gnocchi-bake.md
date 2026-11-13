@@ -14,10 +14,6 @@ cookTime: PT50M
 totalTime: PT1H
 cuisine: Italian
 course: Main Course
-tags:
-  - vegetarian
-  - pasta
-  - baked
 lists:
   - Kifli favourites
 ingredients:
@@ -27,6 +23,7 @@ ingredients:
     grams: 800
     fdcId: 169295
     matchConfidence: high
+    cooking: baked
   - raw: 1 head garlic
     quantity: 1
     unit: head
@@ -34,13 +31,15 @@ ingredients:
     grams: 40
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 500 g gnocchi
     quantity: 500
     unit: g
     item: gnocchi
     grams: 500
-    fdcId: 169728
+    fdcId: 82025510
     matchConfidence: high
+    cooking: baked
   - raw: 70 g heavy cream (31%)
     quantity: 70
     unit: g
@@ -49,6 +48,7 @@ ingredients:
     grams: 70
     fdcId: 2346386
     matchConfidence: high
+    cooking: baked
   - raw: 150 ml vegetable broth
     quantity: 150
     unit: ml
@@ -57,6 +57,7 @@ ingredients:
     milliliters: 150
     fdcId: 171583
     matchConfidence: medium
+    cooking: baked
   - raw: 60 g mozzarella cheese
     quantity: 60
     unit: g
@@ -64,12 +65,14 @@ ingredients:
     grams: 60
     fdcId: 170845
     matchConfidence: high
+    cooking: baked
   - raw: fresh thyme, a handful
     item: fresh thyme
     note: a handful
     grams: 5
     fdcId: 173470
     matchConfidence: high
+    cooking: baked
   - raw: 30 g parmesan cheese
     quantity: 30
     unit: g
@@ -77,6 +80,7 @@ ingredients:
     grams: 30
     fdcId: 173431
     matchConfidence: high
+    cooking: baked
   - raw: 1 tbsp olive oil
     quantity: 1
     unit: tbsp
@@ -85,6 +89,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -93,6 +98,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -101,48 +107,51 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 436
-    energyKj: 1826
-    protein_g: 15.8
-    fat_g: 16.6
-    satFat_g: 7.7
-    carbs_g: 59.8
-    fiber_g: 4.4
-    sugar_g: 4.8
-    sodium_mg: 364
-    availableCarb_g: 55.4
+    energyKcal: 494
+    energyKj: 2066
+    protein_g: 15.6
+    fat_g: 17.8
+    satFat_g: 7.8
+    carbs_g: 73.1
+    fiber_g: 6.9
+    sugar_g: 6.6
+    sodium_mg: 859
+    availableCarb_g: 66.2
   glycemic:
-    gi: 40
-    gl: 22
+    gi: 46
+    gl: 30
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: B
-    points: 1
+    points: 2
     category: general
     version: "2023"
-    coverage: 0.65
+    coverage: 1
   inflammation:
-    score: 0.4
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 6
-    band: moderate
-    nrf: 60.3
+    score: 7
+    band: high
+    nrf: 51.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 82.2
+    minimallyProcessedPct: 39.5
     ultraProcessedPct: 0
-    band: minimally-processed
+    band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

@@ -14,68 +14,71 @@ cookTime: PT5M
 totalTime: PT20M
 cuisine: Vietnamese
 course: Appetizer
-tags:
-  - vegetarian
-  - quick
-  - no-cook
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 6 rice paper sheets
+  - raw: 6 rice paper sheets, uncooked
     quantity: 6
     item: rice paper sheets
+    note: uncooked
     grams: 36
     fdcId: 169742
     matchConfidence: high
+    cooking: boiled
   - raw: 2 eggs
     quantity: 2
     item: eggs
     grams: 100
-    fdcId: 173424
-    matchConfidence: high
+    fdcId: 172185
+    matchConfidence: medium
+    cooking: fried
   - raw: ½ ripe avocado
     quantity: 0.5
     item: ripe avocado
     grams: 75
     fdcId: 171707
     matchConfidence: high
+    cooking: raw
   - raw: ½ cucumber
     quantity: 0.5
     item: cucumber
     grams: 100
     fdcId: 169225
     matchConfidence: high
+    cooking: raw
   - raw: 1 carrot
     quantity: 1
     item: carrot
     grams: 60
     fdcId: 170393
     matchConfidence: high
+    cooking: raw
   - raw: 6 lettuce leaves
     quantity: 6
     item: lettuce leaves
     grams: 60
     fdcId: 169249
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 70
-    energyKj: 293
-    protein_g: 3.1
-    fat_g: 3.1
+    energyKj: 292
+    protein_g: 2.7
+    fat_g: 3.3
     satFat_g: 0.8
-    carbs_g: 7.6
+    carbs_g: 7.5
     fiber_g: 1.3
-    sugar_g: 1.3
+    sugar_g: 1.1
     sodium_mg: 42
-    availableCarb_g: 6.3
+    availableCarb_g: 6.2
   glycemic:
-    gi: 51
+    gi: 44
     gl: 3
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 11
   nutriScore:
     grade: A
     points: -1
@@ -83,13 +86,13 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 52.3
+    score: 7
+    band: high
+    nrf: 53.1
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -99,6 +102,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

@@ -1,6 +1,6 @@
 ---
 title: Classic Bruschetta al Pomodoro
-description: Classic Italian starter of grilled bread rubbed with garlic and piled with a fresh tomato, red onion and basil topping.
+description: Classic Italian starter of grilled whole-wheat bread rubbed with garlic and piled with a fresh tomato, red onion and basil topping.
 image: ./images/classic-bruschetta-al-pomodoro.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_12251_1777205518537_bruschetta-al-pomodoro_99ea80d5.jpg
 imageAlt: Classic Bruschetta al Pomodoro
@@ -11,19 +11,17 @@ author: Kifli Kukták
 servings: 2
 cuisine: Italian
 course: Appetizer
-tags:
-  - vegetarian
-  - quick
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 2 large slices bread
+  - raw: 2 large slices whole-wheat bread
     quantity: 2
     unit: large
-    item: slices bread
+    item: slices whole-wheat bread
     grams: 80
-    fdcId: 174924
+    fdcId: 172688
     matchConfidence: high
+    cooking: fried
   - raw: 400 g tomatoes
     quantity: 400
     unit: g
@@ -31,6 +29,7 @@ ingredients:
     grams: 400
     fdcId: 321360
     matchConfidence: high
+    cooking: raw
   - raw: 10 g red onion
     quantity: 10
     unit: g
@@ -38,6 +37,7 @@ ingredients:
     grams: 10
     fdcId: 790577
     matchConfidence: high
+    cooking: raw
   - raw: 30 g parmesan cheese shavings
     quantity: 30
     unit: g
@@ -45,6 +45,7 @@ ingredients:
     grams: 30
     fdcId: 173431
     matchConfidence: high
+    cooking: raw
   - raw: 60 ml extra virgin olive oil
     quantity: 60
     unit: ml
@@ -53,6 +54,7 @@ ingredients:
     milliliters: 60
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: ½ tbsp red wine vinegar
     quantity: 0.5
     unit: tbsp
@@ -61,6 +63,7 @@ ingredients:
     milliliters: 7.3934
     fdcId: 172240
     matchConfidence: high
+    cooking: raw
   - raw: 1 clove garlic
     quantity: 1
     unit: clove
@@ -68,6 +71,7 @@ ingredients:
     grams: 3
     fdcId: 169230
     matchConfidence: high
+    cooking: raw
   - raw: 5 large basil leaves
     quantity: 5
     unit: large
@@ -75,55 +79,58 @@ ingredients:
     grams: 3
     fdcId: 172232
     matchConfidence: high
+    cooking: raw
   - raw: freshly ground black pepper, to taste
     item: freshly ground black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 2
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 471
-    energyKj: 1971
-    protein_g: 11.1
-    fat_g: 34.1
+    energyKcal: 465
+    energyKj: 1947
+    protein_g: 12.5
+    fat_g: 34.2
     satFat_g: 6.7
-    carbs_g: 32.5
-    fiber_g: 5.5
-    sugar_g: 2.4
-    sodium_mg: 852
-    availableCarb_g: 27
+    carbs_g: 29.8
+    fiber_g: 6.8
+    sugar_g: 11.8
+    sodium_mg: 838
+    availableCarb_g: 23
   glycemic:
-    gi: 49
-    gl: 13
+    gi: 50
+    gl: 11
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 30
   nutriScore:
     grade: C
-    points: 3
+    points: 4
     category: general
     version: "2023"
-    coverage: 0.31
+    coverage: 0.32
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.5
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 9.5
+    score: 4
+    band: low
+    nrf: 18.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 64.2
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 65
+    ultraProcessedPct: 21.7
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"

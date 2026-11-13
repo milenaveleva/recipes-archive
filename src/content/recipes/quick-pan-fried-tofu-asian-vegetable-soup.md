@@ -14,11 +14,6 @@ cookTime: PT10M
 totalTime: PT20M
 cuisine: Chinese
 course: Soup
-tags:
-  - vegan
-  - tofu
-  - soup
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -27,8 +22,9 @@ ingredients:
     unit: g
     item: tofu
     grams: 300
-    fdcId: 172451
-    matchConfidence: high
+    fdcId: 172475
+    matchConfidence: medium
+    cooking: fried
   - raw: 200 g broccoli florets
     quantity: 200
     unit: g
@@ -36,13 +32,15 @@ ingredients:
     grams: 200
     fdcId: 170379
     matchConfidence: high
+    cooking: boiled
   - raw: 150 g shiitake mushrooms
     quantity: 150
     unit: g
     item: shiitake mushrooms
     grams: 150
-    fdcId: 170097
+    fdcId: 169242
     matchConfidence: high
+    cooking: boiled
   - raw: 100 g carrot
     quantity: 100
     unit: g
@@ -50,6 +48,7 @@ ingredients:
     grams: 100
     fdcId: 170393
     matchConfidence: high
+    cooking: boiled
   - raw: 800 ml vegetable broth
     quantity: 800
     unit: ml
@@ -58,6 +57,7 @@ ingredients:
     milliliters: 800
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 20 ml sunflower oil
     quantity: 20
     unit: ml
@@ -66,6 +66,7 @@ ingredients:
     milliliters: 20
     fdcId: 171025
     matchConfidence: high
+    cooking: fried
   - raw: 15 g ginger
     quantity: 15
     unit: g
@@ -73,6 +74,7 @@ ingredients:
     grams: 15
     fdcId: 169231
     matchConfidence: high
+    cooking: fried
   - raw: 10 g garlic
     quantity: 10
     unit: g
@@ -80,6 +82,7 @@ ingredients:
     grams: 10
     fdcId: 169230
     matchConfidence: high
+    cooking: fried
   - raw: 30 ml soy sauce
     quantity: 30
     unit: ml
@@ -88,6 +91,7 @@ ingredients:
     milliliters: 30
     fdcId: 174277
     matchConfidence: high
+    cooking: boiled
   - raw: 40 g spring onions
     group: For serving
     quantity: 40
@@ -96,48 +100,50 @@ ingredients:
     grams: 40
     fdcId: 170005
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 630
-    energyKj: 2636
-    protein_g: 35.7
-    fat_g: 40.6
-    satFat_g: 5.6
-    carbs_g: 44.3
-    fiber_g: 12.3
-    sugar_g: 13.8
-    sodium_mg: 2275
-    availableCarb_g: 31.9
+    energyKcal: 424
+    energyKj: 1776
+    protein_g: 34
+    fat_g: 23.6
+    satFat_g: 3.1
+    carbs_g: 29.4
+    fiber_g: 10.2
+    sugar_g: 8.6
+    sodium_mg: 2095
+    availableCarb_g: 19.2
   glycemic:
-    gi: 36
-    gl: 11
+    gi: 19
+    gl: 4
     giBand: low
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 18
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.81
   inflammation:
-    score: -0.5
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 51.2
+    score: 9
+    band: excellent
+    nrf: 78.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 31.4
+    minimallyProcessedPct: 42.7
     ultraProcessedPct: 0
-    band: highly-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

@@ -1,6 +1,6 @@
 ---
 title: Vegetable Lentil Khichdi
-description: A comforting Indian one-pot of basmati rice, red lentils, carrot and cauliflower with warming spices, ghee and fresh cilantro.
+description: A comforting Indian one-pot of brown basmati rice, red lentils, carrot and cauliflower with warming spices, ghee and fresh cilantro.
 image: ./images/vegetable-lentil-khichdi.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14772_1794139451399_vegetable-khichdi-with-lentils_d72e394b.jpg
 imageAlt: Vegetable Lentil Khichdi
@@ -14,30 +14,29 @@ cookTime: PT25M
 totalTime: PT40M
 cuisine: Indian
 course: Main Course
-tags:
-  - vegetarian
-  - legumes
-  - rice
-  - one-pot
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g basmati rice
+  - raw: 200 g brown basmati rice, uncooked
     group: Main ingredients
     quantity: 200
     unit: g
-    item: basmati rice
+    item: brown basmati rice
+    note: uncooked
     grams: 200
-    fdcId: 169756
+    fdcId: 169703
     matchConfidence: high
-  - raw: 150 g red lentils
+    cooking: boiled
+  - raw: 150 g red lentils, uncooked
     group: Main ingredients
     quantity: 150
     unit: g
     item: red lentils
+    note: uncooked
     grams: 150
     fdcId: 174284
     matchConfidence: high
+    cooking: boiled
   - raw: 150 g carrot
     group: Main ingredients
     quantity: 150
@@ -46,6 +45,7 @@ ingredients:
     grams: 150
     fdcId: 170393
     matchConfidence: high
+    cooking: boiled
   - raw: 200 g cauliflower
     group: Main ingredients
     quantity: 200
@@ -54,6 +54,7 @@ ingredients:
     grams: 200
     fdcId: 169986
     matchConfidence: high
+    cooking: boiled
   - raw: 100 g frozen green peas
     group: Main ingredients
     quantity: 100
@@ -62,6 +63,7 @@ ingredients:
     grams: 100
     fdcId: 170419
     matchConfidence: high
+    cooking: boiled
   - raw: 50 g baby spinach
     group: Main ingredients
     quantity: 50
@@ -70,6 +72,7 @@ ingredients:
     grams: 50
     fdcId: 168462
     matchConfidence: high
+    cooking: boiled
   - raw: 1 onion
     group: Main ingredients
     quantity: 1
@@ -77,6 +80,7 @@ ingredients:
     grams: 110
     fdcId: 170000
     matchConfidence: high
+    cooking: boiled
   - raw: 3 cloves garlic
     group: Main ingredients
     quantity: 3
@@ -85,6 +89,7 @@ ingredients:
     grams: 12
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 20 g fresh ginger
     group: Main ingredients
     quantity: 20
@@ -93,6 +98,7 @@ ingredients:
     grams: 20
     fdcId: 169231
     matchConfidence: high
+    cooking: boiled
   - raw: 30 g ghee
     group: Spices and fat
     quantity: 30
@@ -101,6 +107,7 @@ ingredients:
     grams: 30
     fdcId: 171314
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 tsp ground cumin
     group: Spices and fat
     quantity: 1
@@ -110,6 +117,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170923
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 tsp ground turmeric
     group: Spices and fat
     quantity: 1
@@ -119,6 +127,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 172231
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 tsp garam masala
     group: Spices and fat
     quantity: 1
@@ -128,6 +137,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170924
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tsp fine salt
     group: Spices and fat
     quantity: 1
@@ -137,6 +147,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 pinch ground black pepper
     group: Spices and fat
     quantity: 1
@@ -146,6 +157,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
   - raw: 1 bunch fresh cilantro
     group: For serving
     quantity: 1
@@ -154,6 +166,7 @@ ingredients:
     grams: 20
     fdcId: 169997
     matchConfidence: medium
+    cooking: raw
   - raw: ½ lemon (juiced)
     group: For serving
     quantity: 0.5
@@ -162,39 +175,40 @@ ingredients:
     grams: 22
     fdcId: 167747
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 463
-    energyKj: 1938
-    protein_g: 16.5
-    fat_g: 9.4
-    satFat_g: 4.9
-    carbs_g: 79.8
-    fiber_g: 9.7
-    sugar_g: 5.8
-    sodium_mg: 655
-    availableCarb_g: 70.1
+    energyKcal: 464
+    energyKj: 1942
+    protein_g: 16.7
+    fat_g: 10.6
+    satFat_g: 5.1
+    carbs_g: 77.9
+    fiber_g: 10.9
+    sugar_g: 6.5
+    sodium_mg: 652
+    availableCarb_g: 67.1
   glycemic:
-    gi: 55
-    gl: 38
+    gi: 53
+    gl: 36
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 91
   nutriScore:
     grade: B
     points: 1
     category: general
     version: "2023"
-    coverage: 0.86
+    coverage: 1
   inflammation:
-    score: -0.1
-    band: neutral
+    score: -0.6
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
+    score: 6
     band: moderate
-    nrf: 38.4
+    nrf: 39.2
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -204,6 +218,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
@@ -214,10 +229,10 @@ createdAt: "2026-11-13"
 
 ## Method
 
-1. **Preparation:** Rinse the basmati rice and red lentils thoroughly under cold running water in a sieve until the water runs completely clear, then drain. Peel the carrot and cut into small dice, and break the cauliflower into very small florets. Chop the onion, garlic and fresh ginger finely.
+1. **Preparation:** Rinse the brown basmati rice and red lentils thoroughly under cold running water in a sieve until the water runs completely clear, then drain. Peel the carrot and cut into small dice, and break the cauliflower into very small florets. Chop the onion, garlic and fresh ginger finely.
 2. **Cooking:** In a heavy-bottomed pot heat the ghee over medium heat. Add the chopped onion and cook for 3-4 minutes until glassy. Then stir in the finely chopped garlic, grated ginger, ground cumin and ground turmeric and fry, stirring constantly, for about 1 minute until the spices smell wonderful.
-3. Add the drained basmati rice and red lentils to the spiced base and stir thoroughly so the spiced ghee coats every grain. Stir in the diced carrot and small cauliflower florets too.
-4. Pour in about 900 ml of water (or vegetable broth), salt and sprinkle with freshly ground black pepper. Bring to the boil, then turn the heat to low, cover the pot and simmer for 18-20 minutes until the lentils are creamy-soft and the rice has absorbed the spiced liquid. Stir occasionally so it does not stick.
+3. Add the drained brown basmati rice and red lentils to the spiced base and stir thoroughly so the spiced ghee coats every grain. Stir in the diced carrot and small cauliflower florets too.
+4. Pour in about 900 ml of water (or vegetable broth), salt and sprinkle with freshly ground black pepper. Bring to the boil, then turn the heat to low, cover the pot and simmer for 35-40 minutes (brown basmati takes longer than white; add a little more water if it gets dry) until the lentils are creamy-soft and the rice has absorbed the spiced liquid. Stir occasionally so it does not stick.
 5. When the rice and lentils are butter-soft, add the frozen green peas, the fresh baby spinach and the garam masala. Gently fold together, cover again and leave on the heat for another 2-3 minutes until the spinach leaves wilt slightly and the peas warm through. Taste and, if needed, adjust the seasoning with a little salt.
 6. **Serving:** Take the pot off the heat and serve the warm, creamy khichdi in deep bowls. Sprinkle generously with fresh chopped cilantro and drizzle with freshly squeezed lemon juice. A spoon of cooling plain yogurt or crispy Indian papadum goes excellently with it.
 

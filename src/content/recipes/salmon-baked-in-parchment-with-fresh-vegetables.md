@@ -14,10 +14,6 @@ cookTime: PT25M
 totalTime: PT35M
 cuisine: International
 course: Main Course
-tags:
-  - fish
-  - salmon
-  - gluten-free
 lists:
   - Kifli favourites
 ingredients:
@@ -27,24 +23,28 @@ ingredients:
     grams: 300
     fdcId: 175167
     matchConfidence: high
+    cooking: baked
   - raw: 1 sweet potato
     quantity: 1
     item: sweet potato
     grams: 150
-    fdcId: 170134
-    matchConfidence: high
+    fdcId: 168482
+    matchConfidence: medium
+    cooking: baked
   - raw: 1 carrot
     quantity: 1
     item: carrot
     grams: 60
     fdcId: 170393
     matchConfidence: high
+    cooking: baked
   - raw: 1 spring onion
     quantity: 1
     item: spring onion
     grams: 15
     fdcId: 170005
     matchConfidence: high
+    cooking: baked
   - raw: 50 g green peas (in the pod)
     quantity: 50
     unit: g
@@ -53,6 +53,7 @@ ingredients:
     grams: 50
     fdcId: 170419
     matchConfidence: high
+    cooking: baked
   - raw: 20 ml olive oil
     quantity: 20
     unit: ml
@@ -61,11 +62,13 @@ ingredients:
     milliliters: 20
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 1 sheet baking paper
     quantity: 1
     item: sheet baking paper
     matchConfidence: none
     excludeFromNutrition: true
+    cooking: baked
   - raw: 100 g salad leaves
     quantity: 100
     unit: g
@@ -73,12 +76,14 @@ ingredients:
     grams: 100
     fdcId: 169249
     matchConfidence: high
+    cooking: raw
   - raw: 1 avocado
     quantity: 1
     item: avocado
     grams: 150
     fdcId: 171707
     matchConfidence: high
+    cooking: raw
   - raw: 100 g tomatoes
     quantity: 100
     unit: g
@@ -86,6 +91,7 @@ ingredients:
     grams: 100
     fdcId: 321360
     matchConfidence: high
+    cooking: raw
   - raw: 10 g sprouts
     quantity: 10
     unit: g
@@ -93,6 +99,7 @@ ingredients:
     grams: 10
     fdcId: 168384
     matchConfidence: high
+    cooking: raw
   - raw: 1 tsp salt
     quantity: 1
     unit: tsp
@@ -101,39 +108,40 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 607
-    energyKj: 2542
-    protein_g: 36.8
+    energyKcal: 604
+    energyKj: 2529
+    protein_g: 36.5
     fat_g: 37.5
     satFat_g: 7.4
-    carbs_g: 32.7
-    fiber_g: 10.9
-    sugar_g: 10.1
-    sodium_mg: 1499
-    availableCarb_g: 21.8
+    carbs_g: 32.3
+    fiber_g: 10.7
+    sugar_g: 10.8
+    sodium_mg: 1355
+    availableCarb_g: 21.6
   glycemic:
-    gi: 65
-    gl: 14
-    giBand: medium
-    glBand: medium
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi: 37
+    gl: 8
+    giBand: low
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 27
   nutriScore:
     grade: B
     points: 1
     category: general
     version: "2023"
-    coverage: 0.9
+    coverage: 0.89
   inflammation:
-    score: -1.1
-    band: anti-inflammatory
+    score: -0.9
+    band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 43.3
+    score: 7
+    band: high
+    nrf: 48.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -143,6 +151,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

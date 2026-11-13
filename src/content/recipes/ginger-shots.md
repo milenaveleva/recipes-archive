@@ -13,10 +13,6 @@ prepTime: PT15M
 totalTime: PT15M
 cuisine: International
 course: Drink
-tags:
-  - vegan-friendly
-  - immune boost
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -26,8 +22,9 @@ ingredients:
     item: lemons
     note: peeled
     grams: 300
-    fdcId: 167749
+    fdcId: 167746
     matchConfidence: high
+    cooking: raw
   - raw: 1 medium orange, peeled
     quantity: 1
     unit: medium
@@ -36,6 +33,7 @@ ingredients:
     grams: 130
     fdcId: 169919
     matchConfidence: high
+    cooking: raw
   - raw: 200 g fresh ginger
     quantity: 200
     unit: g
@@ -43,6 +41,7 @@ ingredients:
     grams: 200
     fdcId: 169231
     matchConfidence: high
+    cooking: raw
   - raw: 50 g liquid honey
     quantity: 50
     unit: g
@@ -50,39 +49,40 @@ ingredients:
     grams: 50
     fdcId: 169640
     matchConfidence: high
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 53
-    energyKj: 224
-    protein_g: 1
+    energyKcal: 48
+    energyKj: 201
+    protein_g: 0.9
     fat_g: 0.3
     satFat_g: 0.1
-    carbs_g: 14.5
-    fiber_g: 4.2
-    sugar_g: 5.7
-    sodium_mg: 5
-    availableCarb_g: 10.3
+    carbs_g: 12.5
+    fiber_g: 1.8
+    sugar_g: 5.2
+    sodium_mg: 4
+    availableCarb_g: 10.7
   glycemic:
-    gi: 55
+    gi: 54
     gl: 6
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 39
   nutriScore:
     grade: C
-    points: 4
+    points: 5
     category: beverage
     version: "2023"
     coverage: 0.81
   inflammation:
-    score: -0
+    score: 0.1
     band: neutral
     method: fii v3
   balance:
-    score: 7
+    score: 8
     band: high
-    nrf: 132.1
+    nrf: 73.2
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

@@ -14,10 +14,6 @@ cookTime: PT10M
 totalTime: PT20M
 cuisine: Mediterranean
 course: Salad
-tags:
-  - vegetarian
-  - salad
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -26,14 +22,16 @@ ingredients:
     unit: g
     item: halloumi cheese
     grams: 150
-    fdcId: 169051
-    matchConfidence: high
+    fdcId: 170846
+    matchConfidence: medium
+    cooking: grilled
   - raw: 2 peaches
     quantity: 2
     item: peaches
     grams: 300
     fdcId: 169928
     matchConfidence: high
+    cooking: grilled
   - raw: 100 g rocket
     quantity: 100
     unit: g
@@ -41,12 +39,14 @@ ingredients:
     grams: 100
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 1 handful mixed seeds
     quantity: 1
     item: handful mixed seeds
     grams: 25
     fdcId: 170562
     matchConfidence: high
+    cooking: raw
   - raw: 2 tbsp olive oil
     group: Dressing and seasoning
     quantity: 2
@@ -56,6 +56,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 171413
     matchConfidence: high
+    cooking: raw
   - raw: 1 tbsp balsamic vinegar
     group: Dressing and seasoning
     quantity: 1
@@ -65,6 +66,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 172241
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -73,6 +75,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch black pepper
     quantity: 1
     unit: pinch
@@ -81,48 +84,50 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 170931
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
-    energyKcal: 376
-    energyKj: 1574
-    protein_g: 29.1
-    fat_g: 20.6
-    satFat_g: 2.5
-    carbs_g: 22.7
-    fiber_g: 5.5
-    sugar_g: 16.2
-    sodium_mg: 652
-    availableCarb_g: 17.2
+    energyKcal: 509
+    energyKj: 2130
+    protein_g: 21.5
+    fat_g: 39.1
+    satFat_g: 14.2
+    carbs_g: 21.9
+    fiber_g: 4.2
+    sugar_g: 15.9
+    sodium_mg: 627
+    availableCarb_g: 17.7
   glycemic:
-    gi: 57
-    gl: 10
-    giBand: medium
+    gi: 40
+    gl: 7
+    giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
-    grade: A
-    points: -1
+    grade: C
+    points: 4
     category: general
     version: "2023"
-    coverage: 0.97
+    coverage: 1
   inflammation:
-    score: -0.2
-    band: neutral
+    score: 0.5
+    band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 5
-    band: moderate
-    nrf: 55.5
+    score: 4
+    band: low
+    nrf: 21.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 71.9
+    minimallyProcessedPct: 53.1
     ultraProcessedPct: 0
-    band: minimally-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

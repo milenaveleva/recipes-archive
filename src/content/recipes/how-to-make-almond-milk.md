@@ -20,6 +20,7 @@ ingredients:
     milliliters: 473.176
     fdcId: 2346393
     matchConfidence: medium
+    cooking: raw
   - raw: 8 cups filtered water
     quantity: 8
     unit: cups
@@ -28,12 +29,14 @@ ingredients:
     milliliters: 1892.704
     fdcId: 175103
     matchConfidence: low
+    cooking: raw
   - raw: 2 Medjool dates
     quantity: 2
     item: Medjool dates
     grams: 48
     fdcId: 168191
     matchConfidence: high
+    cooking: raw
   - raw: pinch of sea salt
     quantity: 1
     unit: pinch
@@ -42,6 +45,7 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 1009
@@ -51,30 +55,30 @@ nutrition:
     satFat_g: 5.7
     carbs_g: 66
     fiber_g: 19.4
-    sugar_g: 31.9
+    sugar_g: 38.4
     sodium_mg: 212
     availableCarb_g: 46.6
   glycemic:
-    gi: 40
-    gl: 18
+    gi: 35
+    gl: 16
     giBand: low
-    glBand: medium
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
-    carbCoveragePct: 100
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 70
   nutriScore:
     grade: A
     points: 0
     category: general
     version: "2023"
-    coverage: 0.93
+    coverage: 0.98
   inflammation:
-    score: -0.8
+    score: -0.9
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 23
+    score: 7
+    band: high
+    nrf: 47.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

@@ -9,6 +9,7 @@
  */
 import { Document, isScalar } from 'yaml';
 import type { PerServingMacros } from './types';
+import type { CookingMethod } from './cooking';
 
 export interface DraftIngredient {
   raw: string;
@@ -23,6 +24,8 @@ export interface DraftIngredient {
   fdcId?: number | null;
   matchConfidence?: 'high' | 'medium' | 'low' | 'none';
   excludeFromNutrition?: boolean;
+  /** How the ingredient is cooked (absent = raw); emitted whenever set. */
+  cooking?: CookingMethod;
 }
 
 export interface DraftNutrition {
@@ -33,8 +36,8 @@ export interface DraftNutrition {
     giBand?: 'low' | 'medium' | 'high';
     glBand?: 'low' | 'medium' | 'high';
     gi_source?: string;
-    /** % of the recipe's available carbohydrate that carried a published GI. */
-    carbCoveragePct?: number;
+    /** % of the recipe's available carbohydrate whose GI is a measured table match. */
+    measuredGiPct?: number;
   };
   nutriScore?: {
     grade: 'A' | 'B' | 'C' | 'D' | 'E';
@@ -94,7 +97,6 @@ export interface RecipeDraft {
   difficulty?: 'easy' | 'medium' | 'hard';
   cuisine?: string;
   course?: string;
-  tags?: string[];
   category?: string;
   lists?: string[];
   ingredients: DraftIngredient[];
@@ -165,6 +167,7 @@ function cleanIngredient(ing: DraftIngredient): Record<string, unknown> {
   };
   // The schema defaults excludeFromNutrition to false — only emit when true.
   if (ing.excludeFromNutrition) out.excludeFromNutrition = true;
+  if (ing.cooking) out.cooking = ing.cooking;
   return out;
 }
 
@@ -196,7 +199,6 @@ export function toRecipeMarkdown(draft: RecipeDraft): string {
     difficulty: draft.difficulty,
     cuisine: draft.cuisine,
     course: draft.course,
-    tags: draft.tags,
     category: draft.category,
     lists: draft.lists,
     ingredients: draft.ingredients.map(cleanIngredient),

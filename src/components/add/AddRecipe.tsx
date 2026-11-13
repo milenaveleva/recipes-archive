@@ -14,6 +14,7 @@ import { commitTextFile, GitHubError, RECIPE_REPO } from '../../core/github';
 import { fetchAndCommitHeroImage } from '../../core/hero-image';
 import { recordPending, prunePending, isBuildFresh } from '../../core/pending';
 import type { NutriCategory } from '../../core/nutriscore';
+import { COOKING_METHODS, type CookingMethod } from '../../core/cooking';
 import {
   EMPTY_FORM,
   loadFoods,
@@ -460,9 +461,6 @@ export default function AddRecipe() {
             </Field>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <Field label="Tags (comma-separated)">
-              <input value={form.tags} onChange={(e) => setField('tags', e.target.value)} className={inputCls} />
-            </Field>
             <Field label="Lists (comma-separated)">
               <input value={form.lists} onChange={(e) => setField('lists', e.target.value)} className={inputCls} />
             </Field>
@@ -642,7 +640,7 @@ function IngredientRowEditor({
         <span className="font-ui text-sm text-ink">{row.raw}</span>
         <ConfidenceBadge confidence={confidence} />
       </div>
-      <div className="mt-2 grid grid-cols-1 sm:grid-cols-[1fr_7rem_auto] gap-2 items-center">
+      <div className="mt-2 grid grid-cols-1 sm:grid-cols-[1fr_7rem_8rem_auto] gap-2 items-center">
         <select
           value={row.selectedFdcId ?? ''}
           onChange={(e) => onPatch(selectMatch(row, e.target.value ? Number(e.target.value) : null))}
@@ -667,6 +665,19 @@ function IngredientRowEditor({
           />
           <span className="text-ink-faint">g</span>
         </label>
+        <select
+          value={row.cooking}
+          onChange={(e) => onPatch({ cooking: e.target.value as CookingMethod, userSetCooking: true })}
+          aria-label="Cooking method"
+          title="How this ingredient is cooked — scores use the cooked, as-eaten state"
+          className={`${inputCls} text-sm`}
+        >
+          {COOKING_METHODS.map((m) => (
+            <option key={m} value={m}>
+              {m}
+            </option>
+          ))}
+        </select>
         <label className="flex items-center gap-1.5 text-xs text-ink-soft whitespace-nowrap">
           <input
             type="checkbox"

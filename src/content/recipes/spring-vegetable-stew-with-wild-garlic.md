@@ -14,10 +14,6 @@ cookTime: PT10M
 totalTime: PT25M
 cuisine: International
 course: Side Dish
-tags:
-  - vegetarian
-  - quick
-  - spring
 lists:
   - Kifli favourites
 ingredients:
@@ -27,13 +23,15 @@ ingredients:
     grams: 120
     fdcId: 169276
     matchConfidence: high
+    cooking: boiled
   - raw: 1 wild garlic leaf (ramsons)
     quantity: 1
     item: wild garlic leaf
     note: ramsons
     grams: 5
-    fdcId: 169230
-    matchConfidence: high
+    fdcId: 169246
+    matchConfidence: medium
+    cooking: raw
   - raw: 100 g green asparagus
     quantity: 100
     unit: g
@@ -41,12 +39,14 @@ ingredients:
     grams: 100
     fdcId: 2710823
     matchConfidence: high
+    cooking: blanched
   - raw: 1 zucchini
     quantity: 1
     item: zucchini
     grams: 200
     fdcId: 168565
     matchConfidence: medium
+    cooking: blanched
   - raw: 200 g green peas
     quantity: 200
     unit: g
@@ -54,6 +54,7 @@ ingredients:
     grams: 200
     fdcId: 170419
     matchConfidence: high
+    cooking: blanched
   - raw: 10 g fresh parsley
     quantity: 10
     unit: g
@@ -61,6 +62,7 @@ ingredients:
     grams: 10
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: 10 g fresh dill
     quantity: 10
     unit: g
@@ -68,6 +70,7 @@ ingredients:
     grams: 10
     fdcId: 172233
     matchConfidence: high
+    cooking: raw
   - raw: 100 ml vegetable broth
     quantity: 100
     unit: ml
@@ -76,6 +79,7 @@ ingredients:
     milliliters: 100
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 140 g butter
     quantity: 140
     unit: g
@@ -83,6 +87,7 @@ ingredients:
     grams: 140
     fdcId: 173430
     matchConfidence: high
+    cooking: boiled
   - raw: 50 g baby spinach
     quantity: 50
     unit: g
@@ -90,6 +95,7 @@ ingredients:
     grams: 50
     fdcId: 1999632
     matchConfidence: high
+    cooking: boiled
   - raw: 1 lime, juiced
     quantity: 1
     item: lime
@@ -97,60 +103,58 @@ ingredients:
     grams: 30
     fdcId: 168155
     matchConfidence: high
-  - raw: 5 g sugar
-    quantity: 5
-    unit: g
-    item: sugar
-    grams: 5
-    fdcId: 170674
-    matchConfidence: high
-  - raw: 5 g salt
-    quantity: 5
-    unit: g
+    cooking: boiled
+  - raw: ¾ tsp salt
+    quantity: 0.75
+    unit: tsp
     item: salt
     grams: 5
+    milliliters: 3.69669
     fdcId: 173468
     matchConfidence: high
-  - raw: 2 g black pepper
-    quantity: 2
-    unit: g
+    cooking: boiled
+  - raw: ¾ tsp black pepper
+    quantity: 0.75
+    unit: tsp
     item: black pepper
     grams: 2
+    milliliters: 3.69669
     fdcId: 170931
     matchConfidence: medium
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 329
-    energyKj: 1375
-    protein_g: 5.7
+    energyKcal: 323
+    energyKj: 1350
+    protein_g: 5.6
     fat_g: 29
     satFat_g: 17.8
-    carbs_g: 14.7
+    carbs_g: 13.2
     fiber_g: 5
-    sugar_g: 4.9
-    sodium_mg: 592
-    availableCarb_g: 9.6
+    sugar_g: 4.3
+    sodium_mg: 590
+    availableCarb_g: 8.2
   glycemic:
-    gi: 32
-    gl: 3
+    gi: 29
+    gl: 2
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 55
   nutriScore:
     grade: C
     points: 9
     category: general
     version: "2023"
-    coverage: 0.63
+    coverage: 0.79
   inflammation:
-    score: 0.6
+    score: 0.5
     band: mildly-pro-inflammatory
     method: fii v3
   balance:
-    score: 2
-    band: poor
-    nrf: 8.9
+    score: 3
+    band: low
+    nrf: 12.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 99.6
@@ -160,6 +164,7 @@ nutrition:
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

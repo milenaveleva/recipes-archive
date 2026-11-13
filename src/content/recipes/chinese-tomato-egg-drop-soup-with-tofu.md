@@ -14,11 +14,6 @@ cookTime: PT15M
 totalTime: PT25M
 cuisine: Chinese
 course: Soup
-tags:
-  - vegetarian
-  - tofu
-  - soup
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -27,20 +22,23 @@ ingredients:
     unit: g
     item: tofu
     grams: 300
-    fdcId: 172451
-    matchConfidence: high
+    fdcId: 172475
+    matchConfidence: medium
+    cooking: boiled
   - raw: 3 tomatoes
     quantity: 3
     item: tomatoes
     grams: 360
     fdcId: 321360
     matchConfidence: high
+    cooking: boiled
   - raw: 2 eggs
     quantity: 2
     item: eggs
     grams: 100
-    fdcId: 173424
-    matchConfidence: high
+    fdcId: 171287
+    matchConfidence: medium
+    cooking: boiled
   - raw: 800 ml vegetable broth
     quantity: 800
     unit: ml
@@ -49,12 +47,14 @@ ingredients:
     milliliters: 800
     fdcId: 171583
     matchConfidence: medium
+    cooking: boiled
   - raw: 2 spring onions
     quantity: 2
     item: spring onions
     grams: 30
     fdcId: 170005
     matchConfidence: high
+    cooking: boiled
   - raw: 2 cloves garlic
     quantity: 2
     unit: cloves
@@ -62,6 +62,7 @@ ingredients:
     grams: 8
     fdcId: 169230
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tsp ginger
     quantity: 1
     unit: tsp
@@ -70,6 +71,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 169231
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tbsp cooking oil
     quantity: 1
     unit: tbsp
@@ -78,6 +80,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 172370
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tbsp soy sauce
     quantity: 1
     unit: tbsp
@@ -86,6 +89,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 174277
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tbsp cornstarch
     quantity: 1
     unit: tbsp
@@ -94,6 +98,7 @@ ingredients:
     milliliters: 14.7868
     fdcId: 169698
     matchConfidence: high
+    cooking: boiled
   - raw: 1 tsp sesame oil
     quantity: 1
     unit: tsp
@@ -102,6 +107,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 171016
     matchConfidence: high
+    cooking: raw
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch
@@ -110,48 +116,50 @@ ingredients:
     milliliters: 0.3080575
     fdcId: 173468
     matchConfidence: high
+    cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 330
-    energyKj: 1382
-    protein_g: 19
-    fat_g: 23.1
-    satFat_g: 3.8
-    carbs_g: 16.9
-    fiber_g: 5.1
-    sugar_g: 3.6
-    sodium_mg: 862
-    availableCarb_g: 11.8
+    energyKcal: 233
+    energyKj: 975
+    protein_g: 17.9
+    fat_g: 14.2
+    satFat_g: 2.5
+    carbs_g: 12.3
+    fiber_g: 3.9
+    sugar_g: 5.7
+    sodium_mg: 865
+    availableCarb_g: 8.4
   glycemic:
-    gi: 28
-    gl: 3
+    gi: 26
+    gl: 2
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 37
   nutriScore:
-    grade: B
-    points: 2
+    grade: A
+    points: 0
     category: general
     version: "2023"
-    coverage: 0.77
+    coverage: 0.78
   inflammation:
-    score: -0.5
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
-    score: 4
-    band: low
-    nrf: 32.7
+    score: 7
+    band: high
+    nrf: 53.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 35.2
+    minimallyProcessedPct: 48.7
     ultraProcessedPct: 0
-    band: highly-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

@@ -14,22 +14,19 @@ cookTime: PT25M
 totalTime: PT40M
 cuisine: Italian
 course: Salad
-tags:
-  - vegetarian
-  - grains
-  - autumn
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g farro (spelt grains)
+  - raw: 250 g farro (spelt grains), uncooked
     group: Salad base and toppings
     quantity: 250
     unit: g
-    item: farro
-    note: spelt grains
+    item: farro (spelt grains)
+    note: uncooked
     grams: 250
-    fdcId: 2710828
+    fdcId: 81017015
     matchConfidence: medium
+    cooking: boiled
   - raw: 500 g parsnips
     group: Salad base and toppings
     quantity: 500
@@ -38,6 +35,7 @@ ingredients:
     grams: 500
     fdcId: 170417
     matchConfidence: high
+    cooking: baked
   - raw: 80 g aged pecorino
     group: Salad base and toppings
     quantity: 80
@@ -46,6 +44,7 @@ ingredients:
     grams: 80
     fdcId: 171249
     matchConfidence: high
+    cooking: raw
   - raw: 40 g pine nuts
     group: Salad base and toppings
     quantity: 40
@@ -54,6 +53,7 @@ ingredients:
     grams: 40
     fdcId: 170591
     matchConfidence: high
+    cooking: fried
   - raw: 60 g rocket (arugula)
     group: Salad base and toppings
     quantity: 60
@@ -63,6 +63,7 @@ ingredients:
     grams: 60
     fdcId: 169387
     matchConfidence: high
+    cooking: raw
   - raw: 4 tbsp extra virgin olive oil
     group: Dressing and seasoning
     quantity: 4
@@ -72,6 +73,7 @@ ingredients:
     milliliters: 59.1472
     fdcId: 171413
     matchConfidence: high
+    cooking: baked
   - raw: 2 tbsp balsamic vinegar
     group: Dressing and seasoning
     quantity: 2
@@ -81,6 +83,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 172241
     matchConfidence: high
+    cooking: raw
   - raw: 3 cloves garlic
     group: Dressing and seasoning
     quantity: 3
@@ -89,6 +92,7 @@ ingredients:
     grams: 9
     fdcId: 169230
     matchConfidence: high
+    cooking: baked
   - raw: 1 tsp fine salt
     group: Dressing and seasoning
     quantity: 1
@@ -98,6 +102,7 @@ ingredients:
     milliliters: 4.92892
     fdcId: 173468
     matchConfidence: medium
+    cooking: baked
   - raw: 1 tsp ground black pepper
     group: Dressing and seasoning
     quantity: 1
@@ -107,48 +112,51 @@ ingredients:
     milliliters: 4.92892
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 588
-    energyKj: 2462
-    protein_g: 17.7
-    fat_g: 28.2
+    energyKcal: 389
+    energyKj: 1628
+    protein_g: 9.9
+    fat_g: 26.2
     satFat_g: 5.9
-    carbs_g: 72.6
-    fiber_g: 11.5
+    carbs_g: 29.1
+    fiber_g: 7
     sugar_g: 8
-    sodium_mg: 898
-    availableCarb_g: 61.1
+    sodium_mg: 901
+    availableCarb_g: 22.1
   glycemic:
-    gi: 55
-    gl: 34
+    gi: 46
+    gl: 10
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: low
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 74
   nutriScore:
     grade: C
-    points: 3
+    points: 6
     category: general
     version: "2023"
-    coverage: 0.76
+    coverage: 0.74
   inflammation:
-    score: -0.8
+    score: -0.3
     band: mildly-anti-inflammatory
     method: fii v3
   balance:
     score: 4
     band: low
-    nrf: 24.1
+    nrf: 19.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 86.8
+    minimallyProcessedPct: 80.1
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - MEXT Standard Tables of Food Composition in Japan 2020
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

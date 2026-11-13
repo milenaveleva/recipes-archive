@@ -1,6 +1,6 @@
 ---
 title: Whole Roasted Pointed Cabbage with Homemade Labneh and Crunchy Crumbs
-description: Slow-roasted pointed cabbage with caramelised edges, served with homemade labneh, toasted seeds and panko, and a soy-lemon drizzle.
+description: Slow-roasted pointed cabbage with caramelised edges, served with homemade labneh, toasted seeds and whole-wheat panko, and a soy-lemon drizzle.
 image: ./images/whole-roasted-pointed-cabbage-with-homemade-labneh-and-crunchy-crumbs.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10406_1775302858999_roasted-pointed-cabbage-with-labneh-and-toasted-seeds_2bbd49ff.png
 imageAlt: Whole Roasted Pointed Cabbage with Homemade Labneh and Crunchy Crumbs
@@ -14,10 +14,6 @@ cookTime: PT1H10M
 totalTime: PT1H30M
 cuisine: Middle Eastern
 course: Main Course
-tags:
-  - vegetarian
-  - cabbage
-  - roasted
 lists:
   - Kifli favourites
 ingredients:
@@ -28,6 +24,7 @@ ingredients:
     grams: 1200
     fdcId: 169975
     matchConfidence: medium
+    cooking: baked
   - raw: 400 g Greek yogurt
     quantity: 400
     unit: g
@@ -35,6 +32,7 @@ ingredients:
     grams: 400
     fdcId: 330137
     matchConfidence: high
+    cooking: raw
   - raw: 400 ml sour cream
     quantity: 400
     unit: ml
@@ -43,6 +41,7 @@ ingredients:
     milliliters: 400
     fdcId: 171257
     matchConfidence: high
+    cooking: raw
   - raw: 200 g butter
     quantity: 200
     unit: g
@@ -50,14 +49,16 @@ ingredients:
     grams: 200
     fdcId: 173430
     matchConfidence: high
-  - raw: 1 tbsp panko breadcrumbs
+    cooking: baked
+  - raw: 1 tbsp whole-wheat panko breadcrumbs
     quantity: 1
     unit: tbsp
-    item: panko breadcrumbs
-    grams: 6.8
+    item: whole-wheat panko breadcrumbs
+    grams: 7
     milliliters: 14.7868
-    fdcId: 174928
+    fdcId: 172689
     matchConfidence: high
+    cooking: fried
   - raw: 2 tbsp mixed seeds and nuts (cashews, hazelnuts, macadamia, etc.)
     quantity: 2
     unit: tbsp
@@ -67,6 +68,7 @@ ingredients:
     milliliters: 29.5736
     fdcId: 170572
     matchConfidence: high
+    cooking: fried
   - raw: 100 g soy sauce
     quantity: 100
     unit: g
@@ -74,72 +76,78 @@ ingredients:
     grams: 100
     fdcId: 174277
     matchConfidence: high
+    cooking: raw
   - raw: lemon juice, a few drops
     item: lemon juice
     note: a few drops
     grams: 10
     fdcId: 167747
     matchConfidence: medium
+    cooking: raw
   - raw: fresh herbs, a little
     item: fresh herbs
     note: a little
     grams: 5
     fdcId: 170416
     matchConfidence: high
+    cooking: raw
   - raw: salt, to taste
     item: salt
     note: to taste
     grams: 3
     fdcId: 173468
     matchConfidence: high
+    cooking: baked
   - raw: black pepper, to taste
     item: black pepper
     note: to taste
     grams: 0.5
     fdcId: 170931
     matchConfidence: medium
+    cooking: baked
 nutrition:
   perServing:
-    energyKcal: 700
-    energyKj: 2928
-    protein_g: 19.5
+    energyKcal: 698
+    energyKj: 2922
+    protein_g: 19.6
     fat_g: 59.1
     satFat_g: 34
-    carbs_g: 28.8
+    carbs_g: 28.5
     fiber_g: 8
-    sugar_g: 12.9
-    sodium_mg: 1798
-    availableCarb_g: 20.8
+    sugar_g: 16.1
+    sodium_mg: 1795
+    availableCarb_g: 20.4
   glycemic:
-    gi: 19
-    gl: 4
+    gi: 15
+    gl: 3
     giBand: low
     glBand: low
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 8
+    points: 10
     category: general
     version: "2023"
-    coverage: 0.82
+    coverage: 1
   inflammation:
-    score: 0.8
-    band: pro-inflammatory
+    score: 0.7
+    band: mildly-pro-inflammatory
     method: fii v3
   balance:
     score: 2
     band: poor
-    nrf: 8.3
+    nrf: 3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 97.1
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 94
+    ultraProcessedPct: 0.8
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-13"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols

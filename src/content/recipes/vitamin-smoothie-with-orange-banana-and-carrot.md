@@ -13,10 +13,6 @@ prepTime: PT5M
 totalTime: PT5M
 cuisine: International
 course: Drink
-tags:
-  - vegan
-  - smoothie
-  - quick
 lists:
   - Kifli favourites
 ingredients:
@@ -26,18 +22,21 @@ ingredients:
     grams: 130
     fdcId: 169919
     matchConfidence: high
+    cooking: raw
   - raw: 1 banana
     quantity: 1
     item: banana
     grams: 120
     fdcId: 173944
     matchConfidence: high
+    cooking: raw
   - raw: 1 carrot
     quantity: 1
     item: carrot
     grams: 60
     fdcId: 170393
     matchConfidence: high
+    cooking: raw
   - raw: 1½ tsp ground ginger
     quantity: 1.5
     unit: tsp
@@ -46,6 +45,7 @@ ingredients:
     milliliters: 7.39338
     fdcId: 169231
     matchConfidence: high
+    cooking: raw
   - raw: ½ tsp ground turmeric
     quantity: 0.5
     unit: tsp
@@ -54,6 +54,7 @@ ingredients:
     milliliters: 2.46446
     fdcId: 172231
     matchConfidence: medium
+    cooking: raw
 nutrition:
   perServing:
     energyKcal: 220
@@ -70,9 +71,9 @@ nutrition:
     gi: 50
     gl: 22
     giBand: low
-    glBand: high
-    carbCoveragePct: 100
-    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+    glBand: medium
+    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
+    measuredGiPct: 65
   nutriScore:
     grade: C
     points: 3
@@ -84,8 +85,8 @@ nutrition:
     band: neutral
     method: fii v3
   balance:
-    score: 7
-    band: high
+    score: 10
+    band: excellent
     nrf: 100.2
     version: NRF9.3
   processing:
