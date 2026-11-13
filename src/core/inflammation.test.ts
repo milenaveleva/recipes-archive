@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { computeInflammation, inflammationBandOf, FLOOR_KCAL_PER_G } from './inflammation';
+import { MIN_KCAL_PER_100G } from './fii';
 import referenceData from '../data/inflammation-reference.json';
 
 const BANDS = (referenceData as {
@@ -41,17 +42,17 @@ describe('computeInflammation (energy-weighted)', () => {
       { grams: 200, energyKcal: 20, tag: -2 }, // bulky watery veg
       { grams: 50, energyKcal: 400, tag: 2 }, // a splash of fat
     ])!;
-    // weights: max(20, 0.3·200)=60 vs max(400, 0.3·50)=400 → (−2·60 + 2·400)/460 = +1.48
-    expect(r.score).toBeCloseTo(1.5, 5);
+    // weights: max(20, 0.2·200)=40 vs max(400, 0.2·50)=400 → (−2·40 + 2·400)/440 = +1.64
+    expect(r.score).toBeCloseTo(1.6, 5);
     expect(r.band).toBe('pro-inflammatory');
   });
 
   it('floors weight by mass so a near-zero-calorie anti food still counts', () => {
     const r = computeInflammation([{ grams: 100, energyKcal: 0, tag: -2 }])!;
-    expect(r.score).toBe(-2); // weight = max(0, 0.3·100) = 30
+    expect(r.score).toBe(-2); // weight = max(0, 0.2·100) = 20
   });
 
-  it('uses the mass floor when a food’s energy is unknown (null)', () => {
+  it('uses the weight floor when a food’s energy is unknown (null)', () => {
     const r = computeInflammation([{ grams: 80, energyKcal: null, tag: 1 }])!;
     expect(r.score).toBe(1);
   });
@@ -61,7 +62,21 @@ describe('computeInflammation (energy-weighted)', () => {
     expect(computeInflammation([{ grams: 0, energyKcal: 0, tag: -2 }])).toBeNull();
   });
 
-  it('pins the mass-floor calibration constant', () => {
-    expect(FLOOR_KCAL_PER_G).toBe(0.3);
+  it('weights by the per-kcal conversion floor, per gram', () => {
+    expect(FLOOR_KCAL_PER_G).toBe(MIN_KCAL_PER_100G / 100);
+    expect(FLOOR_KCAL_PER_G).toBe(0.2);
+  });
+
+  it('adds the aromatic adjustment to the energy-weighted mean and reports it', () => {
+    const items = [{ grams: 100, energyKcal: 300, tag: 1.0 }];
+    const r = computeInflammation(items, -0.23)!;
+    expect(r.score).toBe(0.8); // round(1.0 − 0.23, 1)
+    expect(r.aromaticAdjustment).toBe(-0.23);
+    expect(computeInflammation(items)!.aromaticAdjustment).toBeUndefined();
+  });
+
+  it('keeps the adjusted score on the −2…+2 axis and ignores a non-negative adjustment', () => {
+    expect(computeInflammation([{ grams: 100, energyKcal: 100, tag: -1.9 }], -0.5)!.score).toBe(-2);
+    expect(computeInflammation([{ grams: 100, energyKcal: 100, tag: 0.5 }], 0.4)!.score).toBe(0.5);
   });
 });

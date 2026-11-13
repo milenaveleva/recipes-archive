@@ -1,0 +1,72 @@
+{
+  "_doc": "Aromatic bioactive adjustment to a recipe's Food Inflammation Index (src/core/aromatics.ts). Strongly bioactive aromatics (gingerols, curcumin, organosulfur compounds, crocin, piperine, thymol/carvacrol, rosmarinic acid) act at gram doses that their composition columns cannot carry, and under energy weighting a pinch of spice has almost no weight. Each aromatic's `effect` is its overall inflammatory effect score from Shivappa 2014 (Public Health Nutr 17(8):1689–96, Table 2) and is used ONLY for direction and relative size; the score is applied per recipe as Δ = k · Σ effect · min(1, grams per serving / doseG), capped at −maxTotal. `doseG` is a typical culinary amount per serving of that form (a calibration value): a dried or powdered form's dose is the fresh dose scaled by the fresh:dried energy-density ratio (dry-matter equivalence). Shivappa 2014's own intake referents (global daily means, e.g. 59 g/d ginger) describe whole diets, not one dish, so they are not used as doses. The dose saturates — grams beyond one typical dose add nothing — and k = 0.5 maps the effect-score scale onto the −2…+2 FII axis: whole-diet DII-type scores of real diets span roughly ±4 against the axis' ±2. The total cap keeps the term under one quintile band width, so a heavily sweetened ginger drink gains credit but its free-sugar load still dominates. This is an extrapolation of diet-level evidence to the recipe level, not a per-food validated effect. Green/black tea and eugenol (Shivappa 2014 also lists them) are left out: brewed tea's flavan-3-ols already enter the FII through its Phenol-Explorer polyphenol value at a whole-drink weight, and eugenol is a compound with no reliable per-food mapping. Keys of `foods` are matched USDA fdcIds.",
+  "k": 0.5,
+  "maxTotal": 0.5,
+  "aromatics": {
+    "turmeric": {
+      "effect": -0.785,
+      "foods": { "172231": { "form": "ground", "doseG": 1 } }
+    },
+    "ginger": {
+      "effect": -0.453,
+      "foods": {
+        "169231": { "form": "fresh root", "doseG": 5 },
+        "170926": { "form": "ground", "doseG": 1.2 }
+      }
+    },
+    "garlic": {
+      "effect": -0.412,
+      "foods": {
+        "169230": { "form": "fresh", "doseG": 3 },
+        "171325": { "form": "powder", "doseG": 1.4 }
+      }
+    },
+    "onion": {
+      "effect": -0.301,
+      "foods": {
+        "170000": { "form": "fresh", "doseG": 40 },
+        "790577": { "form": "fresh (red)", "doseG": 40 },
+        "1104962": { "form": "fresh (white)", "doseG": 40 },
+        "790646": { "form": "fresh (yellow)", "doseG": 40 },
+        "170008": { "form": "fresh (sweet)", "doseG": 40 },
+        "170499": { "form": "shallot, fresh", "doseG": 40 },
+        "170410": { "form": "frozen, chopped", "doseG": 40 },
+        "170412": { "form": "frozen, whole", "doseG": 40 },
+        "170001": { "form": "boiled", "doseG": 40 },
+        "170100": { "form": "boiled, salted", "doseG": 40 },
+        "170411": { "form": "frozen, boiled", "doseG": 40 },
+        "170101": { "form": "frozen, boiled, salted", "doseG": 40 },
+        "170413": { "form": "frozen whole, boiled", "doseG": 40 },
+        "170507": { "form": "frozen whole, boiled, salted", "doseG": 40 },
+        "170003": { "form": "canned", "doseG": 40 },
+        "170004": { "form": "sautéed", "doseG": 25 },
+        "170002": { "form": "dehydrated flakes", "doseG": 4.6 },
+        "171327": { "form": "powder", "doseG": 4.7 },
+        "170082": { "form": "shallot, freeze-dried", "doseG": 8.3 }
+      }
+    },
+    "saffron": {
+      "effect": -0.14,
+      "foods": { "170934": { "form": "threads", "doseG": 0.05 } }
+    },
+    "pepper": {
+      "effect": -0.131,
+      "foods": { "170931": { "form": "black, ground", "doseG": 0.5 } }
+    },
+    "thyme/oregano": {
+      "effect": -0.102,
+      "foods": {
+        "170938": { "form": "thyme, dried", "doseG": 0.5 },
+        "173470": { "form": "thyme, fresh", "doseG": 1.4 },
+        "171328": { "form": "oregano, dried", "doseG": 0.5 }
+      }
+    },
+    "rosemary": {
+      "effect": -0.013,
+      "foods": {
+        "171333": { "form": "dried", "doseG": 0.5 },
+        "173473": { "form": "fresh", "doseG": 1.3 }
+      }
+    }
+  }
+}

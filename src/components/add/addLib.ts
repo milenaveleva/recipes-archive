@@ -278,10 +278,10 @@ export function rowsToScored(rows: IngredientRow[]): ScoredIngredient[] {
       const cooked = cookIngredient(safeGrams(r.grams), nutrientsFor(food), food, r.cooking, r.excludeFromNutrition);
       return {
         grams: cooked.grams,
+        rawGrams: safeGrams(r.grams),
         excludeFromNutrition: r.excludeFromNutrition,
         fdcId: r.selectedFdcId,
         nutrients: cooked.nutrients,
-        fiiNutrients: cooked.fiiNutrients,
         gi: s?.gi ?? null,
         giMeasured: isMeasuredGi(s),
         fvl: s?.fvl ?? fvlFromCategory(food),
@@ -610,7 +610,15 @@ export function buildDraft(
           glycemic: scores.glycemic,
           nutriScore: nutriScoreDraft,
           inflammation: scores.inflammation
-            ? { ...scores.inflammation, method: 'fii v3' }
+            ? {
+                score: scores.inflammation.score,
+                band: scores.inflammation.band,
+                method: 'fii v4',
+                // Same key order as the rescorer's serializer (scripts/rescore-recipes.mjs).
+                ...(scores.inflammation.aromaticAdjustment != null
+                  ? { aromaticAdjustment: scores.inflammation.aromaticAdjustment }
+                  : {}),
+              }
             : undefined,
           balance: scores.balance,
           processing: scores.processing

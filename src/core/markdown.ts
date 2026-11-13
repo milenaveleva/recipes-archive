@@ -61,6 +61,8 @@ export interface DraftNutrition {
       | 'mildly-pro-inflammatory'
       | 'pro-inflammatory';
     method?: string;
+    /** Aromatic adjustment included in `score` (aromatics.ts); absent when none applies. */
+    aromaticAdjustment?: number;
   };
   balance?: {
     score: number;

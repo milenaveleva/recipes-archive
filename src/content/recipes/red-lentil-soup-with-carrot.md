@@ -86,9 +86,9 @@ ingredients:
     quantity: 750
     unit: ml
     item: water
-    grams: 177.5
+    grams: 751.3
     milliliters: 750
-    fdcId: 169301
+    fdcId: 174158
     matchConfidence: high
     excludeFromNutrition: true
     cooking: boiled
@@ -134,7 +134,8 @@ nutrition:
   inflammation:
     score: -0.8
     band: mildly-anti-inflammatory
-    method: fii v3
+    method: fii v4
+    aromaticAdjustment: -0.32
   balance:
     score: 7
     band: high
@@ -151,7 +152,8 @@ nutrition:
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
+    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
+    - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-13"

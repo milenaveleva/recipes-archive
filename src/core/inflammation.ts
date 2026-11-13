@@ -1,17 +1,19 @@
 /**
  * Recipe inflammation estimate — the energy-weighted aggregate of its ingredients'
- * per-food Food Inflammation Index scores (fii.ts).
+ * per-food Food Inflammation Index scores (fii.ts), plus a bounded aromatic adjustment
+ * (aromatics.ts).
  *
- * Each ingredient carries a composition-derived FII tag in −2 (anti) … +2 (pro). The
- * recipe score weights each by its ENERGY contribution to the dish, not its raw mass:
- * energy-adjustment is how every biomarker-validated dietary inflammation index is
- * computed (EDIP servings/1000 kcal; energy-adjusted DII per 1000 kcal), and it stops a
- * watery, voluminous ingredient from dominating a raw-gram mean. A small mass floor
- * (`FLOOR_KCAL_PER_G` = 0.3 kcal/g) keeps near-zero-calorie anti-inflammatory foods —
- * leafy greens, tea, most spices, broth — from vanishing under pure energy weighting,
- * while foods above ~30 kcal/100 g are weighted by their actual energy. Honest limit of
- * the choice: energy weighting still under-credits those low-calorie foods relative to
- * mass, and the floor constant is a calibration value, not a biomarker-derived one.
+ * Each ingredient carries a composition-derived FII tag in −2 (anti) … +2 (pro), read per
+ * 100 kcal. The recipe score weights each tag by the food's ENERGY contribution to the
+ * dish, not its raw mass: energy adjustment is how every biomarker-validated dietary
+ * inflammation index is computed (EDIP servings/1000 kcal; energy-adjusted DII per
+ * 1000 kcal). With per-kcal tags the two fit together — were the tags linear in the
+ * nutrient densities, the energy-weighted mean would be exactly the dish's own
+ * per-kcal profile (Σ nutrient ÷ Σ kcal). The per-gram weight floor (`FLOOR_KCAL_PER_G`)
+ * is the per-kcal conversion's energy floor expressed per gram, so a near-zero-energy
+ * food (a leafy herb, salt, tea) is weighted by the same effective energy its tag was
+ * divided by and that identity still holds. Honest limit: the per-parameter clamps make
+ * the tags non-linear, so a pinch of salt or herb is capped rather than counted in full.
  *
  * The five bands are read by quantile of the USDA per-food reference distribution
  * (inflammation-reference.json `bands`, regenerated with the reference): the bottom
@@ -21,7 +23,8 @@
  * clinical category. This is an estimate for comparison only — deliberately NOT the
  * licensed Dietary Inflammatory Index, and never labelled "DII".
  */
-import { round } from './num';
+import { round, clamp } from './num';
+import { MIN_KCAL_PER_100G } from './fii';
 import referenceData from '../data/inflammation-reference.json';
 
 /** Quintile edges of the per-food tag distribution, from inflammation-reference.json. */
@@ -59,19 +62,20 @@ export interface InflammationItem {
 }
 
 export interface Inflammation {
-  /** Energy-weighted mean FII tag, rounded to 0.1. */
+  /** Energy-weighted mean FII tag plus the aromatic adjustment, rounded to 0.1, within −2…+2. */
   score: number;
   band: InflammationBand;
+  /** The aromatic adjustment already included in `score` (FII units, < 0); absent when 0. */
+  aromaticAdjustment?: number;
 }
 
 /**
- * Energy-per-gram floor: a food contributes at least this much weight per gram even
- * when nearly calorie-free, so leafy greens / tea / spices / broth still register
- * without a pinch dominating. At 0.3 kcal/g the floor binds only below ~30 kcal/100 g,
- * so energy weighting governs everything above it. A calibration constant, not a
- * biomarker-derived value.
+ * Energy-per-gram weight floor: a food weighs at least this much per gram even when nearly
+ * calorie-free. It equals the FII's per-kcal conversion floor (fii.ts MIN_KCAL_PER_100G,
+ * 20 kcal/100 g) per gram, so a food below that energy density is weighted by the same
+ * effective energy its per-kcal tag was computed against.
  */
-export const FLOOR_KCAL_PER_G = 0.3;
+export const FLOOR_KCAL_PER_G = MIN_KCAL_PER_100G / 100;
 
 /**
  * Map a −2..+2 score to the five-band scale by quintile edges of the USDA per-food
@@ -87,11 +91,11 @@ export function inflammationBandOf(score: number): InflammationBand {
 }
 
 /**
- * Energy-weighted mean of ingredient FII tags, or null when no scorable ingredient
- * has a positive weight. Each ingredient's weight is its energy contribution, floored
- * at `FLOOR_KCAL_PER_G` per gram so low-calorie foods are not silently dropped.
+ * Energy-weighted mean of ingredient FII tags plus the recipe's aromatic adjustment
+ * (aromatics.ts, ≤ 0), or null when no scorable ingredient has a positive weight. Each
+ * ingredient's weight is its energy contribution, floored at `FLOOR_KCAL_PER_G` per gram.
  */
-export function computeInflammation(items: InflammationItem[]): Inflammation | null {
+export function computeInflammation(items: InflammationItem[], aromaticAdjustment = 0): Inflammation | null {
   let weighted = 0;
   let totalWeight = 0;
   for (const it of items) {
@@ -104,6 +108,9 @@ export function computeInflammation(items: InflammationItem[]): Inflammation | n
     totalWeight += weight;
   }
   if (totalWeight <= 0) return null;
-  const score = round(weighted / totalWeight, 1);
-  return { score, band: inflammationBandOf(score) };
+  const adj = Number.isFinite(aromaticAdjustment) && aromaticAdjustment < 0 ? aromaticAdjustment : 0;
+  const score = clamp(round(weighted / totalWeight + adj, 1), -2, 2);
+  const result: Inflammation = { score, band: inflammationBandOf(score) };
+  if (adj < 0) result.aromaticAdjustment = adj;
+  return result;
 }

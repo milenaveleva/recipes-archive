@@ -125,7 +125,8 @@ function serializeNutrition(macro, scores, computedAt, sources, nutriInputs = {}
     L.push('  inflammation:');
     kv(4, 'score', scores.inflammation.score);
     kv(4, 'band', scores.inflammation.band);
-    kv(4, 'method', 'fii v3');
+    kv(4, 'method', 'fii v4');
+    if (scores.inflammation.aromaticAdjustment != null) kv(4, 'aromaticAdjustment', scores.inflammation.aromaticAdjustment);
   }
   if (scores.balance) {
     L.push('  balance:');

@@ -47,17 +47,17 @@ ingredients:
     unit: g
     item: ice
     grams: 100
-    fdcId: 175001
-    matchConfidence: high
+    fdcId: 174158
+    matchConfidence: medium
     excludeFromNutrition: true
     cooking: raw
   - raw: 1000 ml soda water
     quantity: 1000
     unit: ml
     item: soda water
-    grams: 236.7
+    grams: 1001.7
     milliliters: 1000
-    fdcId: 169301
+    fdcId: 174158
     matchConfidence: medium
     excludeFromNutrition: true
     cooking: raw
@@ -87,9 +87,10 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.9
+    score: 0.8
     band: pro-inflammatory
-    method: fii v3
+    method: fii v4
+    aromaticAdjustment: -0.23
   balance:
     score: 1
     band: poor
@@ -106,7 +107,8 @@ nutrition:
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
+    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
+    - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-13"

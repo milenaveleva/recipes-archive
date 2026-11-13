@@ -6,9 +6,14 @@
  * merged NutrientVector); src/core/fii.test.ts pins the engine to the committed data so
  * the two cannot silently drift.
  */
+import { readFileSync } from 'node:fs';
+
+const PARAMS_FILE = JSON.parse(readFileSync(new URL('../../src/data/fii-parameters.json', import.meta.url), 'utf8'));
+/** Energy floor (kcal/100 g) of the per-100-kcal conversion (mirror of src/core/fii.ts MIN_KCAL_PER_100G). */
+export const MIN_KCAL_PER_100G = PARAMS_FILE.minKcalPer100g;
 
 /** Per-100g value of one parameter for a food, or undefined when the food lacks it. */
-export function valueOf(food, key, polyphenols) {
+function per100gOf(food, key, polyphenols) {
   if (key === 'polyphenol_mg') {
     const p = polyphenols?.[String(food.fdcId)];
     return p && Number.isFinite(p.polyphenol_mg) ? p.polyphenol_mg : undefined;
@@ -30,6 +35,18 @@ export function valueOf(food, key, polyphenols) {
   return Number.isFinite(v) ? v : undefined;
 }
 
+/**
+ * Per-100-kcal value of one parameter (mirror of src/core/fii.ts valueOf): the per-100g
+ * value × 100 / max(kcal per 100 g, MIN_KCAL_PER_100G). Undefined when the datum or the
+ * food's energy is unknown.
+ */
+export function valueOf(food, key, polyphenols) {
+  const kcal = energyKcalOf(food.n);
+  if (kcal == null || kcal < 0) return undefined;
+  const v = per100gOf(food, key, polyphenols);
+  return v === undefined ? undefined : (v * 100) / Math.max(kcal, MIN_KCAL_PER_100G);
+}
+
 export const makeClamp = (clampZ) => (z) => (z < -clampZ ? -clampZ : z > clampZ ? clampZ : z);
 
 /**
@@ -37,7 +54,13 @@ export const makeClamp = (clampZ) => (z) => (z < -clampZ ? -clampZ : z > clampZ 
  * values, signed so + = pro-inflammatory. null when no parameter is present.
  * `paramStats` is the per-nutrient { center, scale } map.
  */
+// Energy-free, sodium-free foods (water) are neutral — no tag (mirror of src/core/fii.ts).
+const NEUTRAL_MAX_KCAL_PER_100G = 5;
+const NEUTRAL_MAX_SODIUM_MG_PER_100G = 200;
+
 export function rawFII(food, { parameters, paramStats, polyphenols, clampZ }) {
+  const kcal = energyKcalOf(food.n);
+  if (kcal != null && kcal < NEUTRAL_MAX_KCAL_PER_100G && !((food.n?.sodium_mg ?? 0) >= NEUTRAL_MAX_SODIUM_MG_PER_100G)) return null;
   let sum = 0;
   let wsum = 0;
   let present = 0;
@@ -76,7 +99,8 @@ export function foodTag(food, ctx) {
 
 // ---- recipe-level aggregation — mirrors src/core/inflammation.ts + nutrition.ts ----
 
-export const FLOOR_KCAL_PER_G = 0.3; // mirror src/core/inflammation.ts FLOOR_KCAL_PER_G
+/** Per-gram weight floor of the recipe aggregate (mirror of src/core/inflammation.ts FLOOR_KCAL_PER_G). */
+export const FLOOR_KCAL_PER_G = MIN_KCAL_PER_100G / 100;
 const KJ_PER_KCAL = 4.184; // mirror src/core/nutrition.ts
 
 /** Per-100g kcal for a food, deriving from energyKj when energyKcal is absent (mirrors energyKcalOf). */
@@ -113,11 +137,36 @@ export function bandOf(score, bands) {
 }
 
 /**
- * Energy-weighted mean of per-food tags (mirrors computeInflammation): each item
- * { grams, energyKcal, tag } weighted by max(energyKcal, FLOOR·grams). null when nothing
- * weighs. `bands` are the corpus-quantile band edges from inflammation-reference.json.
+ * Aromatic adjustment (mirrors src/core/aromatics.ts aromaticAdjustment): `items` are
+ * { fdcId, grams } as written, `aromatics` is src/data/fii-aromatics.json. ≤ 0, rounded 0.01.
  */
-export function aggregateInflammation(items, bands) {
+export function aromaticAdjustment(items, servings, aromatics) {
+  if (!(servings > 0)) return 0;
+  const byFdc = new Map();
+  for (const [key, a] of Object.entries(aromatics.aromatics)) {
+    for (const [fdcId, f] of Object.entries(a.foods)) byFdc.set(Number(fdcId), { key, effect: a.effect, doseG: f.doseG });
+  }
+  const fraction = new Map();
+  for (const it of items) {
+    const a = it.fdcId != null ? byFdc.get(it.fdcId) : undefined;
+    if (!a || !(it.grams > 0)) continue;
+    const prev = fraction.get(a.key) ?? { effect: a.effect, f: 0 };
+    prev.f += it.grams / servings / a.doseG;
+    fraction.set(a.key, prev);
+  }
+  let delta = 0;
+  for (const { effect, f } of fraction.values()) delta += effect * Math.min(1, f);
+  const d = Math.max(aromatics.k * delta, -aromatics.maxTotal);
+  return Math.round(d * 100) / 100 + 0;
+}
+
+/**
+ * Energy-weighted mean of per-food tags plus the aromatic adjustment (mirrors
+ * computeInflammation): each item { grams, energyKcal, tag } weighted by
+ * max(energyKcal, FLOOR·grams). null when nothing weighs. `bands` are the corpus-quantile
+ * band edges from inflammation-reference.json.
+ */
+export function aggregateInflammation(items, bands, aromatic = 0) {
   let weighted = 0;
   let total = 0;
   for (const it of items) {
@@ -129,6 +178,8 @@ export function aggregateInflammation(items, bands) {
     total += weight;
   }
   if (total <= 0) return null;
-  const score = Math.round((weighted / total) * 10) / 10;
-  return { score, band: bandOf(score, bands) };
+  const adj = Number.isFinite(aromatic) && aromatic < 0 ? aromatic : 0;
+  const r = Math.round((weighted / total + adj) * 10) / 10 + 0;
+  const score = r < -2 ? -2 : r > 2 ? 2 : r;
+  return { score, band: bandOf(score, bands), ...(adj < 0 ? { aromaticAdjustment: adj } : {}) };
 }

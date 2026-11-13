@@ -6,8 +6,8 @@
  *
  * GI/GL is carb-weighted and protein-adjusted (gi.ts); Nutri-Score is the general-foods 2023
  * algorithm computed per 100 g (nutriscore.ts); inflammation is the energy-weighted
- * mean of per-food Food Inflammation Index scores (fii.ts + inflammation.ts). All
- * figures are estimates.
+ * mean of per-food Food Inflammation Index scores (fii.ts + inflammation.ts) plus a
+ * bounded aromatic adjustment (aromatics.ts). All figures are estimates.
  *
  * Nutri-Score and NRF9.3 both profile the finished dish as one per-100 g
  * composition over the full nutrition-contributing mass (`basisGrams`, the cooked,
@@ -28,6 +28,7 @@ import { computeGlycemics, CARB_EPSILON_G, type Glycemics, type GiCarbSource } f
 import { computeNutriScore, type NutriResult, type NutriCategory } from './nutriscore';
 import { computeInflammation, type Inflammation, type InflammationItem } from './inflammation';
 import { foodFII } from './fii';
+import { aromaticAdjustment } from './aromatics';
 import { applyFoodForm } from './foodAdjust';
 import { computeBalance, type BalanceResult } from './balance';
 import { computeProcessing, promoteNova, type ProcessingItem, type ProcessingResult, type NovaGroup } from './processing';
@@ -59,11 +60,10 @@ export interface ScoredIngredient {
   /** Whether the matched food is a fruit/vegetable/legume (Nutri-Score FVL). */
   fvl?: boolean;
   /**
-   * Nutrients the Food Inflammation Index reads, when they differ from `nutrients`: the
-   * cooked ingredient's retained nutrients per 100 g of raw mass (recipeScore.ts
-   * cookIngredient). Defaults to `nutrients`.
+   * The ingredient's weight as written, before any cooking yield (`grams` is the cooked,
+   * as-eaten mass). The aromatic adjustment's culinary doses read it. Defaults to `grams`.
    */
-  fiiNutrients?: NutrientVector | null;
+  rawGrams?: number | null;
   /** Matched food's NOVA processing group, energy-weighted into the processing score. */
   nova?: NovaGroup | null;
   /** The ingredient's original line; its processing markers can raise `nova` (processing.ts). */
@@ -162,9 +162,10 @@ export function computeScores(
     const kcalPer100 = ing.nutrients ? energyKcalOf(ing.nutrients) : null;
     const energyKcal = kcalPer100 != null ? (kcalPer100 * grams) / 100 : null;
 
-    // Inflammation: a per-food FII computed from composition (fii.ts), energy-weighted
-    // at the recipe level. Weight by the food's absolute energy contribution when known.
-    const fii = foodFII(ing.fiiNutrients ?? ing.nutrients);
+    // Inflammation: a per-food FII computed per 100 kcal from the cooked composition
+    // (fii.ts) — the per-kcal basis cancels the cooking water, so only retention losses
+    // move it — energy-weighted at the recipe level by the food's absolute energy.
+    const fii = foodFII(ing.nutrients);
     if (fii) {
       const tag = applyFoodForm(fii.tag, ing.fdcId);
       inflammationItems.push({ grams, energyKcal, tag });
@@ -278,7 +279,15 @@ export function computeScores(
     if (balance) result.balance = balance;
   }
 
-  const inflammation = computeInflammation(inflammationItems);
+  // Aromatic adjustment: culinary doses per serving of the listed bioactive aromatics,
+  // read from the as-written weights of the ingredients that count toward the dish.
+  const aromatic = aromaticAdjustment(
+    ingredients
+      .filter((ing) => !ing.excludeFromNutrition)
+      .map((ing) => ({ fdcId: ing.fdcId, grams: ing.rawGrams ?? ing.grams })),
+    servings,
+  );
+  const inflammation = computeInflammation(inflammationItems, aromatic);
   if (inflammation) result.inflammation = inflammation;
 
   const processing = computeProcessing(processingItems);

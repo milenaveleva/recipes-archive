@@ -87,13 +87,12 @@ export function storedScoringFields(ing: Record<string, unknown>): StoredScoring
 }
 
 /**
- * An ingredient's cooked, as-eaten view for the engines: the cooked mass, the cooked
+ * An ingredient's cooked, as-eaten view for the engines: the cooked mass and the cooked
  * composition per 100 g of that mass (so mass × concentration = the retained totals, and
- * the Nutri-Score / NRF per-100 g basis is the summed cooked mass), and — for the Food
- * Inflammation Index — the retained nutrients per 100 g of RAW mass. The FII standardises
- * per-100 g concentrations against a raw-food reference distribution, so it reads the
- * nutrient losses but not the water change (boiling pasta must not make it look
- * "diluted" toward neutral). Excluded, weightless or unmatched ingredients pass through.
+ * the Nutri-Score / NRF per-100 g basis is the summed cooked mass). The Food Inflammation
+ * Index reads the same composition per 100 kcal, which cancels the water change, so it
+ * sees the nutrient losses but never a dilution (boiled pasta scores as dry pasta less
+ * its retention losses). Excluded, weightless or unmatched ingredients pass through.
  */
 export function cookIngredient(
   grams: number | null,
@@ -101,12 +100,12 @@ export function cookIngredient(
   food: FoodRecord | undefined,
   cooking: CookingMethod | null | undefined,
   excluded?: boolean,
-): { grams: number | null; nutrients: NutrientVector | null; fiiNutrients: NutrientVector | null } {
+): { grams: number | null; nutrients: NutrientVector | null } {
   if (excluded || grams == null || !(grams > 0) || !nutrients || !cooking || cooking === 'raw') {
-    return { grams, nutrients, fiiNutrients: nutrients };
+    return { grams, nutrients };
   }
   const c = applyCooking(grams, nutrients, food, cooking);
-  return { grams: c.cookedGrams, nutrients: c.cookedPer100, fiiNutrients: c.retainedPer100Raw };
+  return { grams: c.cookedGrams, nutrients: c.cookedPer100 };
 }
 
 /** Recipe-level scoring context (Nutri-Score category + retained flags). */
@@ -126,10 +125,10 @@ export function toScored(
   const cooked = cookIngredient(ing.grams ?? null, nutrientsFor(food, polyphenols), food, ing.cooking, ing.excludeFromNutrition);
   return {
     grams: cooked.grams,
+    rawGrams: ing.grams ?? null,
     excludeFromNutrition: ing.excludeFromNutrition,
     fdcId: ing.fdcId ?? null,
     nutrients: cooked.nutrients,
-    fiiNutrients: cooked.fiiNutrients,
     gi: s?.gi ?? null,
     giMeasured: isMeasuredGi(s),
     fvl: s?.fvl ?? fvlFromCategory(food),
@@ -186,6 +185,11 @@ export const NATIONAL_TABLE_CREDITS: Record<string, string> = {
   'FR-CIQUAL': 'ANSES Ciqual French food composition table 2020',
 };
 
+/** Credit line for the inflammation score (the composition FII). */
+export const INFLAMMATION_CREDIT = 'Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols';
+/** Credit line for the aromatic adjustment, emitted only when it applies. */
+export const AROMATIC_CREDIT = 'Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)';
+
 /** Credit line for the cooking retention + yield tables (cooking.ts). */
 export const COOKING_FACTORS_CREDIT = 'USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields';
 
@@ -214,7 +218,8 @@ export function dataSourcesFor(
   if (cooked) sources.push(COOKING_FACTORS_CREDIT);
   if (scores.glycemic) sources.push('Atkinson 2021 GI tables');
   if (scores.nutriScore) sources.push('Nutri-Score 2023');
-  if (scores.inflammation) sources.push('Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols');
+  if (scores.inflammation) sources.push(INFLAMMATION_CREDIT);
+  if (scores.inflammation?.aromaticAdjustment) sources.push(AROMATIC_CREDIT);
   if (scores.balance) sources.push('Nutrient-Rich Foods Index (NRF9.3)');
   if (scores.processing) sources.push('NOVA food classification (energy-weighted)');
   return sources;

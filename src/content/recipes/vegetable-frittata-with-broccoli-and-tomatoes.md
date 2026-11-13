@@ -121,7 +121,7 @@ nutrition:
   inflammation:
     score: 0.4
     band: mildly-pro-inflammatory
-    method: fii v3
+    method: fii v4
   balance:
     score: 6
     band: moderate
@@ -138,7 +138,7 @@ nutrition:
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
+    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-13"

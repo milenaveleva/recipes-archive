@@ -38,8 +38,8 @@ ingredients:
   - raw: ice
     group: What else you may need
     item: ice
-    fdcId: 175001
-    matchConfidence: high
+    fdcId: 174158
+    matchConfidence: medium
     excludeFromNutrition: true
     cooking: raw
 nutrition:
@@ -68,9 +68,9 @@ nutrition:
     version: "2023"
     coverage: 0.74
   inflammation:
-    score: 0.8
+    score: 2
     band: pro-inflammatory
-    method: fii v3
+    method: fii v4
   balance:
     score: 6
     band: moderate
@@ -86,7 +86,7 @@ nutrition:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
+    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-13"

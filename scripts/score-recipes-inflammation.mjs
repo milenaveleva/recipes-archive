@@ -5,9 +5,9 @@
  * mirroring src/core/fii.ts + src/core/inflammation.ts). The site is fully prerendered, so
  * recipe scores are stored in frontmatter and must be regenerated when the method changes.
  *
- * Only the inflammation block is rewritten (score, band, method) — glycemic / Nutri-Score /
+ * Only the inflammation block is rewritten (score, band, method, aromaticAdjustment) — glycemic / Nutri-Score /
  * balance are left untouched. Per-food tags come from each matched food's composition; the
- * recipe score is the energy-weighted mean with a per-gram mass floor.
+ * recipe score is the energy-weighted mean with a per-gram energy floor, plus the aromatic adjustment.
  *
  * Usage: node scripts/score-recipes-inflammation.mjs
  */
@@ -15,13 +15,14 @@ import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { parse as parseYaml } from 'yaml';
-import { foodTag, energyKcalOf, aggregateInflammation, applyFoodForm } from './lib/fii.mjs';
+import { foodTag, energyKcalOf, aggregateInflammation, applyFoodForm, aromaticAdjustment } from './lib/fii.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const log = (...a) => process.stderr.write(a.join(' ') + '\n');
 const read = (p) => JSON.parse(readFileSync(join(ROOT, p), 'utf8'));
 
-const DATA_SOURCE = 'Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols';
+const DATA_SOURCE = 'Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols'; // mirror recipeScore.ts INFLAMMATION_CREDIT
+const AROMATIC_SOURCE = 'Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)'; // mirror AROMATIC_CREDIT
 
 log('→ loading composition + FII reference…');
 const byId = new Map(read('src/data/usda-foods.json').map((f) => [f.fdcId, f]));
@@ -29,13 +30,16 @@ const { parameters, clampZ } = read('src/data/fii-parameters.json');
 const reference = read('src/data/inflammation-reference.json');
 const polyphenols = read('src/data/polyphenols.json');
 const adjustments = read('src/data/food-adjustments.json');
+const aromatics = read('src/data/fii-aromatics.json');
 const ctx = { parameters, paramStats: reference.params, fiiRaw: reference.fiiRaw, polyphenols, clampZ };
 
 /** Energy-weighted recipe inflammation from resolved ingredients, or null. Mirrors the
  *  engine: per-food FII tag (foodTag) + composition-blind food-form adjustment
- *  (applyFoodForm) + absolute kcal (energyKcalOf), aggregated by quantile bands
- *  (aggregateInflammation) — all from the shared scripts/lib/fii.mjs. */
-function recipeInflammation(ingredients) {
+ *  (applyFoodForm) + absolute kcal (energyKcalOf), aggregated by quantile bands with the
+ *  aromatic adjustment (aggregateInflammation, aromaticAdjustment) — all from the shared
+ *  scripts/lib/fii.mjs. Ingredients are scored raw: the cooking path (yield/retention) lives
+ *  only in the compiled engine, which scripts/rescore-recipes.mjs uses. */
+function recipeInflammation(ingredients, servings) {
   const items = [];
   for (const ing of ingredients ?? []) {
     if (ing.excludeFromNutrition) continue;
@@ -50,7 +54,12 @@ function recipeInflammation(ingredients) {
     const energyKcal = kcalPer100 != null ? (kcalPer100 * grams) / 100 : null;
     items.push({ grams, energyKcal, tag });
   }
-  return aggregateInflammation(items, reference.bands);
+  const aromatic = aromaticAdjustment(
+    (ingredients ?? []).filter((i) => !i.excludeFromNutrition).map((i) => ({ fdcId: i.fdcId, grams: i.grams })),
+    servings,
+    aromatics,
+  );
+  return aggregateInflammation(items, reference.bands, aromatic);
 }
 
 const dir = join(ROOT, 'src/content/recipes');
@@ -64,13 +73,14 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith('.md'))) {
   const existing = data?.nutrition?.inflammation;
   if (!existing) continue; // only rescore recipes that already carry the block
 
-  const next = recipeInflammation(data.ingredients);
+  const next = recipeInflammation(data.ingredients, data.servings ?? 4);
   if (!next) {
     log(`  ${file}: no scorable ingredients — left as-is (${existing.score})`);
     continue;
   }
   const block =
-    `  inflammation:\n    score: ${next.score}\n    band: ${next.band}\n    method: fii v3\n`;
+    `  inflammation:\n    score: ${next.score}\n    band: ${next.band}\n    method: fii v4\n` +
+    (next.aromaticAdjustment != null ? `    aromaticAdjustment: ${next.aromaticAdjustment}\n` : '');
   // Replace the whole inflammation block (its 4-space-indented children), in place,
   // and refresh the inflammation provenance line so dataSources can't drift from method.
   const blockRe = /^  inflammation:\n(?:    .*(?:\n|$))*/m;
@@ -80,7 +90,11 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith('.md'))) {
   }
   const updated = text
     .replace(blockRe, block)
-    .replace(/^    - Food Inflammation Index .*$/m, `    - ${DATA_SOURCE}`);
+    .replace(/^    - Aromatic adjustment.*\n/gm, '')
+    .replace(
+      /^    - Food Inflammation Index .*$/m,
+      `    - ${DATA_SOURCE}` + (next.aromaticAdjustment != null ? `\n    - ${AROMATIC_SOURCE}` : ''),
+    );
   if (updated === text) {
     log(`  ${file}: unchanged (already current)`);
     continue;

@@ -114,9 +114,9 @@ nutrition:
     version: "2023"
     coverage: 0.79
   inflammation:
-    score: -0.7
-    band: mildly-anti-inflammatory
-    method: fii v3
+    score: 0.1
+    band: neutral
+    method: fii v4
   balance:
     score: 3
     band: low
@@ -133,7 +133,7 @@ nutrition:
     - ANSES Ciqual French food composition table 2020
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
+    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-13"

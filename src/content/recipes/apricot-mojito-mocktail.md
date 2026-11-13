@@ -48,14 +48,14 @@ ingredients:
     cooking: raw
   - raw: soda water
     item: soda water
-    fdcId: 169301
+    fdcId: 174158
     matchConfidence: medium
     excludeFromNutrition: true
     cooking: raw
   - raw: ice
     item: ice
-    fdcId: 175001
-    matchConfidence: high
+    fdcId: 174158
+    matchConfidence: medium
     excludeFromNutrition: true
     cooking: raw
 nutrition:
@@ -84,9 +84,9 @@ nutrition:
     version: "2023"
     coverage: 0.96
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
-    method: fii v3
+    score: -0.1
+    band: neutral
+    method: fii v4
   balance:
     score: 8
     band: high
@@ -102,7 +102,7 @@ nutrition:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
+    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-13"

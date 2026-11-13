@@ -90,6 +90,7 @@ describe('recipe nutrition blocks reproduce from the engine', () => {
       if (stored.inflammation) {
         expect(scores.inflammation?.score).toBe(stored.inflammation.score);
         expect(scores.inflammation?.band).toBe(stored.inflammation.band);
+        expect(scores.inflammation?.aromaticAdjustment, 'inflammation.aromaticAdjustment').toBe(stored.inflammation.aromaticAdjustment);
       }
       // balance (NRF9.3)
       if (stored.balance) {

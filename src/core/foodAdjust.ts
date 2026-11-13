@@ -7,7 +7,7 @@
  * make the composition FII read it as pro-inflammatory. This layer applies a small,
  * cited additive delta (src/data/food-adjustments.json, keyed by USDA fdcId) to the
  * per-food tag and re-clamps to the −2…+2 axis. The delta's direction is evidence-based;
- * its magnitude is a calibration value, like the energy mass floor (inflammation.ts).
+ * its magnitude is a calibration value, like the energy floor (fii.ts, inflammation.ts).
  *
  * Applied at the recipe-assembly layer (score.ts) so the FII itself stays purely
  * compositional; the rescorer mirrors this via scripts/lib/fii.mjs (applyFoodForm).

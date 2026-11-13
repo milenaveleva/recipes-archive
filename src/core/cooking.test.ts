@@ -13,6 +13,7 @@ import {
 import { scoreRecipe, storedScoringFields, toScored, dataSourcesFor, COOKING_FACTORS_CREDIT, NATIONAL_TABLE_CREDITS, type FoodScoring } from './recipeScore';
 import type { FoodRecord } from './match';
 import { computeScores } from './score';
+import { foodFII } from './fii';
 import usdaFoods from '../data/usda-foods.json';
 import retentionData from '../data/retention-factors.json';
 import yieldData from '../data/cooking-yields.json';
@@ -158,13 +159,22 @@ describe('scores read the cooked state', () => {
     expect(boiled.scores.nutriScore!.points).not.toBe(asRaw.scores.nutriScore!.points);
   });
 
-  it('the FII reads retained nutrients on the raw-mass basis (losses, no water dilution)', () => {
+  it('the FII reads the cooked composition per kcal: the water change cancels, losses remain', () => {
     const s = toScored({ grams: 100, fdcId: BROCCOLI, cooking: 'boiled' }, foodById, noScoring, {});
     const b = food(BROCCOLI);
     expect(s.grams).toBeCloseTo(111, 5);
-    expect(s.fiiNutrients!.fiber_g).toBeCloseTo(b.n.fiber_g!, 10);
-    expect(s.fiiNutrients!.vitC_mg).toBeCloseTo(b.n.vitC_mg! * 0.8, 10);
+    expect(s.rawGrams).toBe(100);
+    const perKcal = (n: { energyKcal?: number }, v: number) => v / n.energyKcal!;
+    expect(perKcal(s.nutrients!, s.nutrients!.fiber_g!)).toBeCloseTo(perKcal(b.n, b.n.fiber_g!), 10);
+    expect(perKcal(s.nutrients!, s.nutrients!.vitC_mg!)).toBeCloseTo(perKcal(b.n, b.n.vitC_mg! * 0.8), 10);
     expect(s.nutrients!.fiber_g).toBeCloseTo(b.n.fiber_g! / 1.11, 10);
+  });
+
+  it('boiling dry pasta leaves its FII at the dry record\'s value up to retention losses', () => {
+    const dry = toScored({ grams: 100, fdcId: PASTA_DRY }, foodById, noScoring, {});
+    const boiled = toScored({ grams: 100, fdcId: PASTA_DRY, cooking: 'boiled' }, foodById, noScoring, {});
+    expect(boiled.grams).toBeCloseTo(210, 5);
+    expect(Math.abs(foodFII(boiled.nutrients)!.tag - foodFII(dry.nutrients)!.tag)).toBeLessThanOrEqual(0.2);
   });
 
   it('excluded ingredients are untouched by cooking', () => {
