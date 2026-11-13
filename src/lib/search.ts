@@ -97,7 +97,7 @@ interface FacetDef {
  * grows into (or out of) using a given field.
  */
 export const FACET_DEFS: FacetDef[] = [
-  { key: 'course', label: 'Course', primary: true, pick: (d) => (d.course ? [d.course] : []), labelOf: titleCase },
+  { key: 'course', label: 'Course', primary: false, pick: (d) => (d.course ? [d.course] : []), labelOf: titleCase },
   { key: 'cuisine', label: 'Cuisine', primary: false, pick: (d) => (d.cuisine ? [d.cuisine] : []), labelOf: titleCase },
   { key: 'list', label: 'Lists', primary: false, pick: (d) => d.lists },
   { key: 'difficulty', label: 'Difficulty', primary: false, pick: (d) => (d.difficulty ? [d.difficulty] : []), labelOf: titleCase, order: ['easy', 'medium', 'hard'] },
