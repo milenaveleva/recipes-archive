@@ -1,0 +1,169 @@
+---
+title: Tuscan Roasted Broccoli Farro Salad
+description: A hearty autumn salad of nutty farro with roasted broccoli, sun-dried tomatoes, rocket, toasted almonds and Parmesan in a lemony garlic dressing.
+image: ./images/tuscan-roasted-broccoli-farro-salad.jpg
+imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14421_1791533111461_tuscan-roasted-broccoli-farro-salad_c5e4eec8.jpg
+imageAlt: Tuscan Roasted Broccoli Farro Salad
+source:
+  name: kifli.hu
+  url: https://www.kifli.hu/sef/14421-toszkan-suelt-brokkolis-farrosalata-oszi-olasz-tal
+author: Kifli Kukták
+servings: 2
+prepTime: PT15M
+cookTime: PT20M
+totalTime: PT35M
+cuisine: Italian
+course: Salad
+tags:
+  - vegetarian
+  - grains
+  - broccoli
+lists:
+  - Kifli favourites
+ingredients:
+  - raw: 200 g farro
+    quantity: 200
+    unit: g
+    item: farro
+    grams: 200
+    fdcId: 2710828
+    matchConfidence: high
+  - raw: 400 g broccoli florets
+    quantity: 400
+    unit: g
+    item: broccoli florets
+    grams: 400
+    fdcId: 170379
+    matchConfidence: high
+  - raw: 80 g sun-dried tomatoes
+    quantity: 80
+    unit: g
+    item: sun-dried tomatoes
+    grams: 80
+    fdcId: 168567
+    matchConfidence: high
+  - raw: 60 g rocket (arugula)
+    quantity: 60
+    unit: g
+    item: rocket
+    note: arugula
+    grams: 60
+    fdcId: 169387
+    matchConfidence: high
+  - raw: 40 g sliced almonds
+    quantity: 40
+    unit: g
+    item: sliced almonds
+    grams: 40
+    fdcId: 170568
+    matchConfidence: high
+  - raw: 50 g Parmesan cheese
+    quantity: 50
+    unit: g
+    item: Parmesan cheese
+    grams: 50
+    fdcId: 173431
+    matchConfidence: high
+  - raw: 4 tbsp extra virgin olive oil
+    quantity: 4
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 54
+    milliliters: 59.1472
+    fdcId: 171413
+    matchConfidence: high
+  - raw: 45 ml lemon juice
+    quantity: 45
+    unit: ml
+    item: lemon juice
+    grams: 46.4
+    milliliters: 45
+    fdcId: 167747
+    matchConfidence: high
+  - raw: 2 cloves garlic
+    quantity: 2
+    unit: cloves
+    item: garlic
+    grams: 6
+    fdcId: 169230
+    matchConfidence: high
+  - raw: 1 tsp fine salt
+    quantity: 1
+    unit: tsp
+    item: fine salt
+    grams: 6.1
+    milliliters: 4.92892
+    fdcId: 173468
+    matchConfidence: medium
+  - raw: 1 pinch ground black pepper
+    quantity: 1
+    unit: pinch
+    item: ground black pepper
+    grams: 0.1
+    milliliters: 0.3080575
+    fdcId: 170931
+    matchConfidence: medium
+nutrition:
+  perServing:
+    energyKcal: 993
+    energyKj: 4154
+    protein_g: 38.7
+    fat_g: 49.6
+    satFat_g: 9.3
+    carbs_g: 116
+    fiber_g: 20
+    sugar_g: 20.8
+    sodium_mg: 1731
+    availableCarb_g: 96
+  glycemic:
+    gi: 54
+    gl: 52
+    giBand: low
+    glBand: high
+    carbCoveragePct: 100
+    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+  nutriScore:
+    grade: B
+    points: 1
+    category: general
+    version: "2023"
+    coverage: 0.79
+  inflammation:
+    score: -0.9
+    band: mildly-anti-inflammatory
+    method: fii v3
+  balance:
+    score: 5
+    band: moderate
+    nrf: 51.9
+    version: NRF9.3
+  processing:
+    minimallyProcessedPct: 89.6
+    ultraProcessedPct: 0
+    band: minimally-processed
+    method: NOVA (energy-weighted)
+  computedAt: "2026-11-13"
+  dataSources:
+    - USDA FoodData Central
+    - Atkinson 2021 GI tables
+    - Nutri-Score 2023
+    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
+    - Nutrient-Rich Foods Index (NRF9.3)
+    - NOVA food classification (energy-weighted)
+createdAt: "2026-11-13"
+---
+
+## Method
+
+1. **Preparation and roasting:** Preheat the oven to 200 °C and line a baking tray with baking paper. Break the broccoli into small, bite-sized florets, wash them and dry thoroughly with a clean kitchen towel.
+2. Place the broccoli florets on the tray, toss with 2 tablespoons of extra virgin olive oil, a little salt and freshly ground black pepper. Roast in the oven for 18-20 minutes until the edges are golden brown and caramelised crisp.
+3. Meanwhile, toast the sliced almonds in a dry pan over medium heat for 2-3 minutes until golden brown, taking care not to burn them, then set aside to cool.
+4. **Cooking the grain and making the dressing:** Rinse the farro under cold water, then put it into plenty of lightly salted boiling water. Cook over medium heat for about 20-25 minutes until pleasantly chewy (al dente). Drain thoroughly and let it cool to room temperature.
+5. In a small bowl, mix the remaining 2 tablespoons of extra virgin olive oil, the freshly squeezed juice and finely grated zest of the organic lemon, the finely crushed garlic, and a pinch of salt and ground black pepper.
+6. **Assembly and serving:** In a spacious mixing bowl, toss the lukewarm or room-temperature cooked farro with the roasted broccoli florets, the sun-dried tomatoes cut into strips and the fresh rocket.
+7. Drizzle with the lemon-garlic dressing and toss gently so the flavours coat every grain. Divide between two deep plates and top with the toasted sliced almonds and shaved Parmesan. Eat immediately, while fresh!
+
+## Tips
+
+- The farro can be cooked ahead and keeps in the fridge for 2-3 days, so this salad is a perfect choice for meal-prep lunches or office lunch boxes.
+- If you want even more piquant Italian flavours, add half a teaspoon of dried oregano or chilli flakes to the dressing!

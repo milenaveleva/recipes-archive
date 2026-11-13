@@ -1,0 +1,142 @@
+---
+title: Asparagus Risotto
+description: Creamy Italian-style risotto with tender asparagus, shallots and Parmesan, finished with cold butter.
+image: ./images/asparagus-risotto.jpg
+imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10317_1775306522290_creamy-asparagus-risotto_5b44894d.png
+imageAlt: Asparagus Risotto
+source:
+  name: kifli.hu
+  url: https://www.kifli.hu/sef/10317-spargas-rizotto
+author: Kifli Kukták
+servings: 4
+prepTime: PT15M
+cookTime: PT25M
+totalTime: PT40M
+cuisine: Italian
+course: Main Course
+tags:
+  - vegetarian
+  - rice
+  - asparagus
+lists:
+  - Kifli favourites
+ingredients:
+  - raw: 250 g risotto rice
+    quantity: 250
+    unit: g
+    item: risotto rice
+    grams: 250
+    fdcId: 169759
+    matchConfidence: high
+  - raw: 100 g cold butter
+    quantity: 100
+    unit: g
+    item: cold butter
+    grams: 100
+    fdcId: 173430
+    matchConfidence: medium
+  - raw: 30 g peeled shallots
+    quantity: 30
+    unit: g
+    item: peeled shallots
+    grams: 30
+    fdcId: 170499
+    matchConfidence: high
+  - raw: 8 tbsp olive oil
+    quantity: 8
+    unit: tbsp
+    item: olive oil
+    grams: 108
+    milliliters: 118.2944
+    fdcId: 171413
+    matchConfidence: high
+  - raw: 80 ml dry white wine
+    quantity: 80
+    unit: ml
+    item: dry white wine
+    grams: 79.5
+    milliliters: 80
+    fdcId: 174837
+    matchConfidence: medium
+  - raw: 80 g finely grated parmesan cheese
+    quantity: 80
+    unit: g
+    item: finely grated parmesan cheese
+    grams: 80
+    fdcId: 173431
+    matchConfidence: high
+  - raw: freshly ground black pepper, to taste
+    item: freshly ground black pepper
+    note: to taste
+    grams: 0.5
+    fdcId: 170931
+    matchConfidence: medium
+  - raw: salt, to taste
+    item: salt
+    note: to taste
+    grams: 3
+    fdcId: 173468
+    matchConfidence: high
+nutrition:
+  perServing:
+    energyKcal: 600
+    energyKj: 2510
+    protein_g: 9.8
+    fat_g: 53
+    satFat_g: 19.9
+    carbs_g: 18.8
+    fiber_g: 0.8
+    sugar_g: 1
+    sodium_mg: 637
+    availableCarb_g: 18
+  glycemic:
+    gi: 59
+    gl: 11
+    giBand: medium
+    glBand: medium
+    carbCoveragePct: 100
+    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+  nutriScore:
+    grade: D
+    points: 18
+    category: general
+    version: "2023"
+    coverage: 1
+  inflammation:
+    score: 0.3
+    band: mildly-pro-inflammatory
+    method: fii v3
+  balance:
+    score: 1
+    band: poor
+    nrf: -3.3
+    version: NRF9.3
+  processing:
+    minimallyProcessedPct: 83.4
+    ultraProcessedPct: 0
+    band: minimally-processed
+    method: NOVA (energy-weighted)
+  computedAt: "2026-11-13"
+  dataSources:
+    - USDA FoodData Central
+    - Atkinson 2021 GI tables
+    - Nutri-Score 2023
+    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
+    - Nutrient-Rich Foods Index (NRF9.3)
+    - NOVA food classification (energy-weighted)
+createdAt: "2026-11-13"
+---
+
+## Method
+
+1. Cut the cold, firm butter into cubes and return it to the fridge. Chop the shallots very finely.
+2. Bring 1.2 litres of water to a boil and set aside.
+3. Cut the tips off the peeled asparagus and set them aside. Trim off and discard the bottom 2 cm of the stalks, then slice the stalks into 0.5 cm rounds.
+4. Heat 3 tablespoons of olive oil and sauté the shallots in it.
+5. Add the risotto rice, stirring constantly; if it sticks to the side of the pot, scrape it off with a wooden spoon. Add the white wine and bring to a boil, stirring constantly.
+6. Reduce the heat by half, add the asparagus rounds, a little salt and about 100 ml of water, just enough to cover the rice. Stir constantly until it starts to boil.
+7. When the water has almost boiled away, add a little more, just enough to cover the rice. Bring to a boil again, until the rice is firm inside and soft outside. This takes about 16-20 minutes. Stir often.
+8. When the rice is cooked, take the pot off the heat, stir in the Parmesan and the butter cubes, then add 3 tablespoons of olive oil.
+9. Once the risotto has thickened, loosen it with a little warm water to taste. Stir until it reaches a pleasantly thick risotto consistency. Season with salt and pepper, let it rest for 1 more minute and stir again.
+10. Halve the asparagus tips lengthwise. Heat 2 tablespoons of olive oil in a pan, add the asparagus tips and fry for 1.5 minutes, stirring constantly. Remove from the heat, season with salt and pepper and serve on top of the risotto.
+11. Italian risotto differs from the Hungarian version in that the rice is cooked less: if the centre stays slightly firm, the finished dish is much easier to digest. If it dries out during cooking, loosen it with water. Good to know about shallots: once they start to "sweat", that is, turn glossy while frying, they start to brown and darken. Their flavour suits risotto perfectly, so do try them!

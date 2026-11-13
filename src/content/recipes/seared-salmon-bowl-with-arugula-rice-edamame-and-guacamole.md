@@ -1,0 +1,137 @@
+---
+title: Seared Salmon Bowl with Arugula, Rice, Edamame and Guacamole
+description: A healthy, quick salmon bowl with peppery arugula, rice, edamame and a generous scoop of creamy guacamole.
+image: ./images/seared-salmon-bowl-with-arugula-rice-edamame-and-guacamole.jpg
+imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10480_1787927276006_grilled-salmon-bowl-with-guacamole-and-edamame_4a5b25d7.jpg
+imageAlt: Seared Salmon Bowl with Arugula, Rice, Edamame and Guacamole
+source:
+  name: kifli.hu
+  url: https://www.kifli.hu/sef/10480-roston-suelt-lazac-rukkolaval-rizzsel-edamame-babbal-es-guau-guacamole-val
+author: Kifli Kukták
+servings: 1
+prepTime: PT15M
+cookTime: PT10M
+totalTime: PT25M
+cuisine: International
+course: Main Course
+tags:
+  - fish
+  - salmon
+  - rice
+lists:
+  - Kifli favourites
+ingredients:
+  - raw: 2 salmon fillets
+    quantity: 2
+    item: salmon fillets
+    grams: 300
+    fdcId: 175167
+    matchConfidence: high
+  - raw: arugula, for the salad
+    item: arugula
+    note: for the salad
+    grams: 40
+    fdcId: 169387
+    matchConfidence: high
+  - raw: 1 cup shelled edamame
+    quantity: 1
+    unit: cup
+    item: shelled edamame
+    grams: 155
+    milliliters: 236.588
+    fdcId: 168411
+    matchConfidence: high
+  - raw: guacamole
+    item: guacamole
+    grams: 100
+    fdcId: 171707
+    matchConfidence: high
+  - raw: 2 cups cooked rice
+    quantity: 2
+    unit: cups
+    item: cooked rice
+    grams: 316
+    milliliters: 473.176
+    fdcId: 169759
+    matchConfidence: high
+  - raw: 1 tbsp oil
+    quantity: 1
+    unit: tbsp
+    item: oil
+    grams: 13.6
+    milliliters: 14.7868
+    fdcId: 172370
+    matchConfidence: high
+  - raw: salt, to taste
+    item: salt
+    note: to taste
+    grams: 2
+    fdcId: 173468
+    matchConfidence: high
+  - raw: black pepper, to taste
+    item: black pepper
+    note: to taste
+    grams: 0.5
+    fdcId: 170931
+    matchConfidence: medium
+nutrition:
+  perServing:
+    energyKcal: 1452
+    energyKj: 6074
+    protein_g: 92.2
+    fat_g: 73.4
+    satFat_g: 14.4
+    carbs_g: 105.6
+    fiber_g: 17.3
+    sugar_g: 7
+    sodium_mg: 982
+    availableCarb_g: 88.3
+  glycemic:
+    gi: 58
+    gl: 51
+    giBand: medium
+    glBand: high
+    carbCoveragePct: 100
+    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+  nutriScore:
+    grade: A
+    points: -1
+    category: general
+    version: "2023"
+    coverage: 1
+  inflammation:
+    score: -0.8
+    band: mildly-anti-inflammatory
+    method: fii v3
+  balance:
+    score: 4
+    band: low
+    nrf: 32.1
+    version: NRF9.3
+  processing:
+    minimallyProcessedPct: 100
+    ultraProcessedPct: 0
+    band: minimally-processed
+    method: NOVA (energy-weighted)
+  computedAt: "2026-11-13"
+  dataSources:
+    - USDA FoodData Central
+    - Atkinson 2021 GI tables
+    - Nutri-Score 2023
+    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
+    - Nutrient-Rich Foods Index (NRF9.3)
+    - NOVA food classification (energy-weighted)
+createdAt: "2026-11-13"
+---
+
+## Method
+
+1. Preheat the oven to 200 °C.
+2. Heat the oil in a pan over medium-high heat.
+3. Season the salmon fillets with salt and pepper and place them in the pan. Cook for 3-4 minutes on each side until crisp and golden brown.
+4. Remove the salmon from the pan and set it aside to cool.
+5. Meanwhile, prepare the salad base by dividing the arugula between the plates.
+6. Add the cooked rice and shelled edamame to the salad.
+7. Flake the cooled salmon into smaller pieces and add it to the salad.
+8. Top with a big scoop of guacamole.
+9. Serve immediately and enjoy your seared salmon with arugula, rice, edamame and guacamole.

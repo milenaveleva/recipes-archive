@@ -1,0 +1,161 @@
+---
+title: Salmon Baked in Parchment with Fresh Vegetables
+description: Tender salmon fillets steamed in a baking-paper parcel with sweet potato, carrot and peas, served with fresh salad.
+image: ./images/salmon-baked-in-parchment-with-fresh-vegetables.jpg
+imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10454_1775306323859_salmon-en-papillote-with-fresh-vegetables_a3c6fb86.png
+imageAlt: Salmon Baked in Parchment with Fresh Vegetables
+source:
+  name: kifli.hu
+  url: https://www.kifli.hu/sef/10454-suetopapiros-lazac-friss-zoeldsegekkel
+author: Báder Gabka
+servings: 2
+prepTime: PT10M
+cookTime: PT25M
+totalTime: PT35M
+cuisine: International
+course: Main Course
+tags:
+  - fish
+  - salmon
+  - gluten-free
+lists:
+  - Kifli favourites
+ingredients:
+  - raw: 2 salmon fillets
+    quantity: 2
+    item: salmon fillets
+    grams: 300
+    fdcId: 175167
+    matchConfidence: high
+  - raw: 1 sweet potato
+    quantity: 1
+    item: sweet potato
+    grams: 150
+    fdcId: 170134
+    matchConfidence: high
+  - raw: 1 carrot
+    quantity: 1
+    item: carrot
+    grams: 60
+    fdcId: 170393
+    matchConfidence: high
+  - raw: 1 spring onion
+    quantity: 1
+    item: spring onion
+    grams: 15
+    fdcId: 170005
+    matchConfidence: high
+  - raw: 50 g green peas (in the pod)
+    quantity: 50
+    unit: g
+    item: green peas
+    note: in the pod
+    grams: 50
+    fdcId: 170419
+    matchConfidence: high
+  - raw: 20 ml olive oil
+    quantity: 20
+    unit: ml
+    item: olive oil
+    grams: 18.3
+    milliliters: 20
+    fdcId: 171413
+    matchConfidence: high
+  - raw: 1 sheet baking paper
+    quantity: 1
+    item: sheet baking paper
+    matchConfidence: none
+    excludeFromNutrition: true
+  - raw: 100 g salad leaves
+    quantity: 100
+    unit: g
+    item: salad leaves
+    grams: 100
+    fdcId: 169249
+    matchConfidence: high
+  - raw: 1 avocado
+    quantity: 1
+    item: avocado
+    grams: 150
+    fdcId: 171707
+    matchConfidence: high
+  - raw: 100 g tomatoes
+    quantity: 100
+    unit: g
+    item: tomatoes
+    grams: 100
+    fdcId: 321360
+    matchConfidence: high
+  - raw: 10 g sprouts
+    quantity: 10
+    unit: g
+    item: sprouts
+    grams: 10
+    fdcId: 168384
+    matchConfidence: high
+  - raw: 1 tsp salt
+    quantity: 1
+    unit: tsp
+    item: salt
+    grams: 6.1
+    milliliters: 4.92892
+    fdcId: 173468
+    matchConfidence: high
+nutrition:
+  perServing:
+    energyKcal: 607
+    energyKj: 2542
+    protein_g: 36.8
+    fat_g: 37.5
+    satFat_g: 7.4
+    carbs_g: 32.7
+    fiber_g: 10.9
+    sugar_g: 10.1
+    sodium_mg: 1499
+    availableCarb_g: 21.8
+  glycemic:
+    gi: 65
+    gl: 14
+    giBand: medium
+    glBand: medium
+    carbCoveragePct: 100
+    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+  nutriScore:
+    grade: B
+    points: 1
+    category: general
+    version: "2023"
+    coverage: 0.9
+  inflammation:
+    score: -1.1
+    band: anti-inflammatory
+    method: fii v3
+  balance:
+    score: 5
+    band: moderate
+    nrf: 43.3
+    version: NRF9.3
+  processing:
+    minimallyProcessedPct: 100
+    ultraProcessedPct: 0
+    band: minimally-processed
+    method: NOVA (energy-weighted)
+  computedAt: "2026-11-13"
+  dataSources:
+    - USDA FoodData Central
+    - Atkinson 2021 GI tables
+    - Nutri-Score 2023
+    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
+    - Nutrient-Rich Foods Index (NRF9.3)
+    - NOVA food classification (energy-weighted)
+createdAt: "2026-11-13"
+---
+
+## Method
+
+1. Spread out a sheet of baking paper in front of you.
+2. Cut the sweet potato and carrot into thin slices and slice the spring onion lengthways into strips. Pile these vegetables and the peas, in their pods, onto one half of the baking paper. Drizzle thinly with olive oil and salt lightly.
+3. Salt both sides of the salmon fillets and place them on top of the vegetables.
+4. Fold the other half of the baking paper over the vegetables and fish and fold the edges over all the way round, so you end up with a half-moon parcel.
+5. Bake in an oven preheated to 200 °C for 20-25 minutes until done.
+6. Serve the fish and vegetables with fresh salad.

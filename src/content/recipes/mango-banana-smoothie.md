@@ -1,0 +1,118 @@
+---
+title: Mango Banana Smoothie
+description: A creamy, healthy breakfast smoothie of mango, ripe banana and almond drink, topped with flaxseed and mint.
+image: ./images/mango-banana-smoothie.jpg
+imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_12917_1777235307545_mango-banana-almond-smoothie_3304c2c6.jpg
+imageAlt: Mango Banana Smoothie
+source:
+  name: kifli.hu
+  url: https://www.kifli.hu/sef/12917-mangos-bananos-smoothie-kremes-es-egeszseges-reggeli
+author: Kifli Kukták
+servings: 1
+prepTime: PT5M
+totalTime: PT5M
+cuisine: International
+course: Drink
+tags:
+  - vegan
+  - fruit
+  - smoothie
+lists:
+  - Kifli favourites
+ingredients:
+  - raw: 200 ml almond drink
+    quantity: 200
+    unit: ml
+    item: almond drink
+    grams: 221.5
+    milliliters: 200
+    fdcId: 174832
+    matchConfidence: high
+  - raw: 85 g mango
+    quantity: 85
+    unit: g
+    item: mango
+    grams: 85
+    fdcId: 169910
+    matchConfidence: high
+  - raw: 60 g ripe banana
+    quantity: 60
+    unit: g
+    item: ripe banana
+    grams: 60
+    fdcId: 173944
+    matchConfidence: high
+  - raw: 1 handful fresh mint
+    quantity: 1
+    item: handful fresh mint
+    grams: 5
+    fdcId: 173475
+    matchConfidence: high
+  - raw: 1 pinch flaxseed
+    quantity: 1
+    unit: pinch
+    item: flaxseed
+    grams: 1
+    milliliters: 0.3080575
+    fdcId: 2262075
+    matchConfidence: high
+nutrition:
+  perServing:
+    energyKcal: 145
+    energyKj: 607
+    protein_g: 2.6
+    fat_g: 3.1
+    satFat_g: 0.4
+    carbs_g: 30.1
+    fiber_g: 3.9
+    sugar_g: 20.8
+    sodium_mg: 163
+    availableCarb_g: 26.2
+  glycemic:
+    gi: 54
+    gl: 14
+    giBand: low
+    glBand: medium
+    carbCoveragePct: 100
+    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+  nutriScore:
+    grade: D
+    points: 7
+    category: beverage
+    version: "2023"
+    coverage: 0.98
+  inflammation:
+    score: -0
+    band: neutral
+    method: fii v3
+  balance:
+    score: 7
+    band: high
+    nrf: 123.1
+    version: NRF9.3
+  processing:
+    minimallyProcessedPct: 77.1
+    ultraProcessedPct: 22.9
+    band: minimally-processed
+    method: NOVA (energy-weighted)
+  computedAt: "2026-11-13"
+  dataSources:
+    - USDA FoodData Central
+    - Atkinson 2021 GI tables
+    - Nutri-Score 2023
+    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
+    - Nutrient-Rich Foods Index (NRF9.3)
+    - NOVA food classification (energy-weighted)
+createdAt: "2026-11-13"
+---
+
+## Method
+
+1. Peel the mango and banana and cut them into smaller pieces.
+2. Put the fruit in a blender and pour in the almond drink.
+3. Blend until completely creamy and smooth.
+4. Pour into a glass and garnish the top with flaxseed and fresh mint leaves. Drink immediately!
+
+## Tips
+
+- For an even more refreshing drink, use frozen mango cubes or add a few ice cubes before blending.

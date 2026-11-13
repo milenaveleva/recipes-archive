@@ -1,0 +1,161 @@
+---
+title: Whole Roasted Pointed Cabbage with Homemade Labneh and Crunchy Crumbs
+description: Slow-roasted pointed cabbage with caramelised edges, served with homemade labneh, toasted seeds and panko, and a soy-lemon drizzle.
+image: ./images/whole-roasted-pointed-cabbage-with-homemade-labneh-and-crunchy-crumbs.jpg
+imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10406_1775302858999_roasted-pointed-cabbage-with-labneh-and-toasted-seeds_2bbd49ff.png
+imageAlt: Whole Roasted Pointed Cabbage with Homemade Labneh and Crunchy Crumbs
+source:
+  name: kifli.hu
+  url: https://www.kifli.hu/sef/10406-egeszben-suelt-kaposzta-hazi-labneh-vel-es-ropogos-morzsaval
+author: Pataky Péter
+servings: 4
+prepTime: PT20M
+cookTime: PT1H10M
+totalTime: PT1H30M
+cuisine: Middle Eastern
+course: Main Course
+tags:
+  - vegetarian
+  - cabbage
+  - roasted
+lists:
+  - Kifli favourites
+ingredients:
+  - raw: 2 large heads pointed cabbage
+    quantity: 2
+    unit: large
+    item: heads pointed cabbage
+    grams: 1200
+    fdcId: 169975
+    matchConfidence: medium
+  - raw: 400 g Greek yogurt
+    quantity: 400
+    unit: g
+    item: Greek yogurt
+    grams: 400
+    fdcId: 330137
+    matchConfidence: high
+  - raw: 400 ml sour cream
+    quantity: 400
+    unit: ml
+    item: sour cream
+    grams: 324.6
+    milliliters: 400
+    fdcId: 171257
+    matchConfidence: high
+  - raw: 200 g butter
+    quantity: 200
+    unit: g
+    item: butter
+    grams: 200
+    fdcId: 173430
+    matchConfidence: high
+  - raw: 1 tbsp panko breadcrumbs
+    quantity: 1
+    unit: tbsp
+    item: panko breadcrumbs
+    grams: 6.8
+    milliliters: 14.7868
+    fdcId: 174928
+    matchConfidence: high
+  - raw: 2 tbsp mixed seeds and nuts (cashews, hazelnuts, macadamia, etc.)
+    quantity: 2
+    unit: tbsp
+    item: mixed seeds and nuts
+    note: cashews, hazelnuts, macadamia, etc.
+    grams: 16.1
+    milliliters: 29.5736
+    fdcId: 170572
+    matchConfidence: high
+  - raw: 100 g soy sauce
+    quantity: 100
+    unit: g
+    item: soy sauce
+    grams: 100
+    fdcId: 174277
+    matchConfidence: high
+  - raw: lemon juice, a few drops
+    item: lemon juice
+    note: a few drops
+    grams: 10
+    fdcId: 167747
+    matchConfidence: medium
+  - raw: fresh herbs, a little
+    item: fresh herbs
+    note: a little
+    grams: 5
+    fdcId: 170416
+    matchConfidence: high
+  - raw: salt, to taste
+    item: salt
+    note: to taste
+    grams: 3
+    fdcId: 173468
+    matchConfidence: high
+  - raw: black pepper, to taste
+    item: black pepper
+    note: to taste
+    grams: 0.5
+    fdcId: 170931
+    matchConfidence: medium
+nutrition:
+  perServing:
+    energyKcal: 700
+    energyKj: 2928
+    protein_g: 19.5
+    fat_g: 59.1
+    satFat_g: 34
+    carbs_g: 28.8
+    fiber_g: 8
+    sugar_g: 12.9
+    sodium_mg: 1798
+    availableCarb_g: 20.8
+  glycemic:
+    gi: 19
+    gl: 4
+    giBand: low
+    glBand: low
+    carbCoveragePct: 100
+    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+  nutriScore:
+    grade: C
+    points: 8
+    category: general
+    version: "2023"
+    coverage: 0.82
+  inflammation:
+    score: 0.8
+    band: pro-inflammatory
+    method: fii v3
+  balance:
+    score: 2
+    band: poor
+    nrf: 8.3
+    version: NRF9.3
+  processing:
+    minimallyProcessedPct: 97.1
+    ultraProcessedPct: 0
+    band: minimally-processed
+    method: NOVA (energy-weighted)
+  computedAt: "2026-11-13"
+  dataSources:
+    - USDA FoodData Central
+    - Atkinson 2021 GI tables
+    - Nutri-Score 2023
+    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
+    - Nutrient-Rich Foods Index (NRF9.3)
+    - NOVA food classification (energy-weighted)
+createdAt: "2026-11-13"
+---
+
+## Method
+
+1. Labneh is simply strained yogurt, but it is worth trying a mixture of half yogurt and half sour cream. Mix them, salt lightly and pour into a sieve lined with cheesecloth; leave to drain in the fridge until it reaches the thickness of cream cheese. You can flavour it with fresh herbs.
+2. Halve the cabbages lengthwise and sprinkle with salt so it gets between the leaves; if the cabbages are large, cut them into quarters instead.
+3. Spread the cut surface with soft butter, season with pepper and place cut side up in a 140 °C oven for at least 1 hour, until the inside no longer feels hard when pierced with a sharp knife. Then turn the oven up to 200 °C so the cabbage caramelises slightly.
+4. Toast the seeds in the remaining butter, then the panko, and serve the roasted cabbage with the homemade labneh, the toasted seeds and soy sauce livened up with a few drops of lemon juice.
+
+## Tips
+
+- Any winter vegetable benefits from long roasting.
+- Labneh is a great accompaniment to sandwiches or any vegetarian dish.

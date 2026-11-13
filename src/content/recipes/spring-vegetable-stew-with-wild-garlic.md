@@ -1,0 +1,178 @@
+---
+title: Spring Vegetable Stew with Wild Garlic
+description: A light spring vegetable dish of asparagus, zucchini, peas and radishes in a buttery wild garlic and lime sauce.
+image: ./images/spring-vegetable-stew-with-wild-garlic.jpg
+imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10308_1775307506137_spring-vegetable-stew-with-wild-garlic-and-asparagus_4be18151.png
+imageAlt: Spring Vegetable Stew with Wild Garlic
+source:
+  name: kifli.hu
+  url: https://www.kifli.hu/sef/10308-medvehagymas-tavaszi-fozelek
+author: Pataky Péter
+servings: 4
+prepTime: PT15M
+cookTime: PT10M
+totalTime: PT25M
+cuisine: International
+course: Side Dish
+tags:
+  - vegetarian
+  - quick
+  - spring
+lists:
+  - Kifli favourites
+ingredients:
+  - raw: 8 radishes
+    quantity: 8
+    item: radishes
+    grams: 120
+    fdcId: 169276
+    matchConfidence: high
+  - raw: 1 wild garlic leaf (ramsons)
+    quantity: 1
+    item: wild garlic leaf
+    note: ramsons
+    grams: 5
+    fdcId: 169230
+    matchConfidence: high
+  - raw: 100 g green asparagus
+    quantity: 100
+    unit: g
+    item: green asparagus
+    grams: 100
+    fdcId: 2710823
+    matchConfidence: high
+  - raw: 1 zucchini
+    quantity: 1
+    item: zucchini
+    grams: 200
+    fdcId: 168565
+    matchConfidence: medium
+  - raw: 200 g green peas
+    quantity: 200
+    unit: g
+    item: green peas
+    grams: 200
+    fdcId: 170419
+    matchConfidence: high
+  - raw: 10 g fresh parsley
+    quantity: 10
+    unit: g
+    item: fresh parsley
+    grams: 10
+    fdcId: 170416
+    matchConfidence: high
+  - raw: 10 g fresh dill
+    quantity: 10
+    unit: g
+    item: fresh dill
+    grams: 10
+    fdcId: 172233
+    matchConfidence: high
+  - raw: 100 ml vegetable broth
+    quantity: 100
+    unit: ml
+    item: vegetable broth
+    grams: 93.4
+    milliliters: 100
+    fdcId: 171583
+    matchConfidence: medium
+  - raw: 140 g butter
+    quantity: 140
+    unit: g
+    item: butter
+    grams: 140
+    fdcId: 173430
+    matchConfidence: high
+  - raw: 50 g baby spinach
+    quantity: 50
+    unit: g
+    item: baby spinach
+    grams: 50
+    fdcId: 1999632
+    matchConfidence: high
+  - raw: 1 lime, juiced
+    quantity: 1
+    item: lime
+    note: juiced
+    grams: 30
+    fdcId: 168155
+    matchConfidence: high
+  - raw: 5 g sugar
+    quantity: 5
+    unit: g
+    item: sugar
+    grams: 5
+    fdcId: 170674
+    matchConfidence: high
+  - raw: 5 g salt
+    quantity: 5
+    unit: g
+    item: salt
+    grams: 5
+    fdcId: 173468
+    matchConfidence: high
+  - raw: 2 g black pepper
+    quantity: 2
+    unit: g
+    item: black pepper
+    grams: 2
+    fdcId: 170931
+    matchConfidence: medium
+nutrition:
+  perServing:
+    energyKcal: 329
+    energyKj: 1375
+    protein_g: 5.7
+    fat_g: 29
+    satFat_g: 17.8
+    carbs_g: 14.7
+    fiber_g: 5
+    sugar_g: 4.9
+    sodium_mg: 592
+    availableCarb_g: 9.6
+  glycemic:
+    gi: 32
+    gl: 3
+    giBand: low
+    glBand: low
+    carbCoveragePct: 100
+    gi_source: Atkinson 2021 GI tables (carb-weighted composite estimate)
+  nutriScore:
+    grade: C
+    points: 9
+    category: general
+    version: "2023"
+    coverage: 0.63
+  inflammation:
+    score: 0.6
+    band: mildly-pro-inflammatory
+    method: fii v3
+  balance:
+    score: 2
+    band: poor
+    nrf: 8.9
+    version: NRF9.3
+  processing:
+    minimallyProcessedPct: 99.6
+    ultraProcessedPct: 0
+    band: minimally-processed
+    method: NOVA (energy-weighted)
+  computedAt: "2026-11-13"
+  dataSources:
+    - USDA FoodData Central
+    - Atkinson 2021 GI tables
+    - Nutri-Score 2023
+    - Food Inflammation Index (composition-derived, energy-weighted); Phenol-Explorer polyphenols
+    - Nutrient-Rich Foods Index (NRF9.3)
+    - NOVA food classification (energy-weighted)
+createdAt: "2026-11-13"
+---
+
+## Method
+
+1. Cut the green vegetables, such as zucchini and asparagus, into bite-sized pieces and blanch them in salted water for 3-4 minutes, then refresh in ice water.
+2. Prepare the peas the same way.
+3. Make a quick sauce from the broth and butter, boiling them together until nicely creamy. Season with the fresh herbs, salt, pepper and lime juice.
+4. Cut the radishes into wedges and simmer them gently in the buttery sauce for 2 minutes, then fold in the leafy greens and the blanched vegetables.
+5. Serve warm.
+6. It is perfect as a starter or a main course, or as a side dish to roast meats, fish or grilled cheese.
