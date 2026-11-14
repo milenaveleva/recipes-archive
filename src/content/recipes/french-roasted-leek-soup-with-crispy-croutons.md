@@ -85,13 +85,13 @@ ingredients:
     fdcId: 2346386
     matchConfidence: high
     cooking: boiled
-  - raw: 40 g butter
+  - raw: 30 g extra virgin olive oil
     group: For cooking and seasoning
-    quantity: 40
+    quantity: 30
     unit: g
-    item: butter
-    grams: 40
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 30
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 1 tsp thyme
@@ -134,15 +134,15 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 622
-    energyKj: 2604
-    protein_g: 10.6
-    fat_g: 33
-    satFat_g: 14.2
+    energyKcal: 617
+    energyKj: 2581
+    protein_g: 10.5
+    fat_g: 32.4
+    satFat_g: 10.2
     carbs_g: 70.3
     fiber_g: 7
     sugar_g: 8.9
-    sodium_mg: 1425
+    sodium_mg: 1424
     availableCarb_g: 63.3
   glycemic:
     gi: 62
@@ -153,26 +153,26 @@ nutrition:
     measuredGiPct: 18
   nutriScore:
     grade: C
-    points: 6
+    points: 5
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: 0.1
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.22
   balance:
     score: 3
     band: low
-    nrf: 11.2
+    nrf: 14.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 71.2
+    minimallyProcessedPct: 71
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -182,7 +182,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -193,7 +193,7 @@ createdAt: "2026-11-13"
 4. **Cooking and smoothing:** Transfer the roasted vegetables to a deep pot. Squeeze the roasted garlic cloves out of their skins straight into the pot.
 5. Put the pot over medium heat, pour in the dry white wine and boil for 2-3 minutes until the alcohol evaporates and the intense flavours dissolve. Then pour in the warm vegetable broth.
 6. Bring to a boil, then simmer gently for another 8-10 minutes so the flavours meld perfectly.
-7. Take off the heat, add the cold butter and the cream, then blend with a hand blender until completely velvety and smooth. Taste and, if needed, adjust with more salt and pepper.
+7. Take off the heat, add the olive oil and the cream, then blend with a hand blender until completely velvety and smooth. Taste and, if needed, adjust with more salt and pepper.
 8. **Making the croutons and serving:** While the soup rests, cut the baguette into thin slices or bite-sized cubes. Fry in a pan in a few drops of olive oil until crispy and golden brown.
 9. Ladle the steaming cream soup into bowls, drizzle a few drops of extra virgin olive oil or cream on top and sprinkle with the crispy golden baguette croutons.
 

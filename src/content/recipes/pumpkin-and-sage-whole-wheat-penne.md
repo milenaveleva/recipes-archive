@@ -1,6 +1,6 @@
 ---
 title: Pumpkin and Sage Whole-Wheat Penne
-description: Autumnal whole-wheat penne with roasted squash, sage brown butter, toasted pumpkin seeds and Parmesan. Simple, creamy and irresistible.
+description: Autumnal whole-wheat penne with roasted squash, crispy sage olive oil, toasted pumpkin seeds and Parmesan. Simple, creamy and irresistible.
 image: ./images/pumpkin-and-sage-whole-wheat-penne.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_13641_1788854781477_butternut-squash-sage-penne_d67430e8.jpg
 imageAlt: Pumpkin and Sage Whole-Wheat Penne
@@ -53,13 +53,13 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 80 g butter
+  - raw: 60 g extra virgin olive oil
     group: Spices and fats
-    quantity: 80
+    quantity: 60
     unit: g
-    item: butter
-    grams: 80
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 60
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: 30 ml extra virgin olive oil
@@ -122,16 +122,16 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 773
-    energyKj: 3235
-    protein_g: 25.1
-    fat_g: 35.4
-    satFat_g: 15.1
+    energyKcal: 762
+    energyKj: 3190
+    protein_g: 25
+    fat_g: 34.1
+    satFat_g: 7
     carbs_g: 100.4
     fiber_g: 14.4
     sugar_g: 7.5
-    sodium_mg: 861
-    availableCarb_g: 86
+    sodium_mg: 860
+    availableCarb_g: 85.9
   glycemic:
     gi: 42
     gl: 36
@@ -140,27 +140,27 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 75
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
-    band: neutral
+    score: -0.5
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.27
   balance:
     score: 7
     band: high
-    nrf: 41.2
+    nrf: 46.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 92
+    minimallyProcessedPct: 91.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -170,7 +170,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -178,12 +178,12 @@ createdAt: "2026-11-13"
 1. **Preparation and roasting:** Preheat the oven to 200 °C (180 °C fan). Peel the butternut squash, remove the seeds and cut into roughly 1.5-2 cm cubes. On a baking tray lined with baking paper, toss with the extra virgin olive oil, 1 teaspoon of salt and freshly ground black pepper. Roast for 25-30 minutes until the squash cubes are soft and the edges are caramelised golden brown.
 2. In a dry pan over medium heat, toast the pumpkin seeds for 2-3 minutes until fragrant, then transfer to a plate to cool.
 3. **Cooking the pasta and sage sauce:** Bring plenty of salted water to a boil in a large pot. Cook the dry penne for 1 minute less than the package time (al dente). Before draining, scoop out and set aside about 150 ml of the starchy pasta water.
-4. Meanwhile, melt the butter in a deep pan over medium heat. When it starts to foam, add the fresh sage leaves. Fry for 1-2 minutes until the butter turns a nice hazelnut brown and the sage is crisp. Add the crushed garlic and the pinch of nutmeg, then after half a minute reduce the heat to low.
-5. Purée half of the roasted squash cubes with a fork or hand blender with a little of the reserved pasta water, then stir into the sage brown butter in the pan. Fold in the remaining whole squash cubes too.
+4. Meanwhile, warm the olive oil in a deep pan over medium heat. When it shimmers, add the fresh sage leaves. Fry for 1-2 minutes until the sage is crisp and the oil is richly flavoured. Add the crushed garlic and the pinch of nutmeg, then after half a minute reduce the heat to low.
+5. Purée half of the roasted squash cubes with a fork or hand blender with a little of the reserved pasta water, then stir into the sage olive oil in the pan. Fold in the remaining whole squash cubes too.
 6. **Assembly and serving:** Add the drained penne to the pan. Pour in a little more hot pasta water so a creamy emulsion coats the pasta. Stir in half of the grated Parmesan and toss thoroughly.
 7. Divide the pasta between plates and sprinkle with the toasted pumpkin seeds, the remaining grated Parmesan and the crispy sage leaves saved from the pan. Serve hot.
 
 ## Tips
 
 - The mixture of squash purée and starchy pasta water makes a naturally velvety, creamy sauce on the pasta without any cream.
-- Watch the butter as it browns: keep it over medium heat so it gains a pleasant nutty aroma without burning.
+- Watch the oil as the sage fries: keep it over medium heat so it takes on a pleasant aroma without smoking.

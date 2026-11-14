@@ -175,7 +175,7 @@ nutrition:
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -185,7 +185,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -196,7 +196,7 @@ createdAt: "2026-11-13"
 4. **The sofrito and cooking the fideuà:** Add another 1 tablespoon of olive oil to the fat remaining in the pan, add the broken dry spaghetti, and toast over medium heat, stirring constantly, for 3-4 minutes until golden brown and nutty-smelling, then transfer to a bowl.
 5. Pour the remaining olive oil into the pan and sweat the chopped onion and kápia pepper for 5-6 minutes until soft. Stir in most of the chopped garlic and the smoked paprika, fry for 30 seconds, then stir in the diced tomatoes. Cook for 4-5 minutes until you have a thick sofrito base.
 6. Return the toasted pasta to the sofrito so every piece is coated in the flavourful sauce. Pour in the hot vegetable broth, season to taste with salt and pepper, and shake the pan to distribute evenly. Cook over moderate heat for 10-12 minutes until the pasta has absorbed most of the liquid and stands upright in the pan.
-7. **Finishing and serving:** In the last 3 minutes of cooking, place the pre-seared sea bass pieces on top of the pan, gently pressing them into the pasta so they warm through and steam until buttery soft. Leave the pan for another minute without moving so the bottom crisps and forms the famous crunchy 'socarrat' pasta crust.
+7. **Finishing and serving:** In the last 3 minutes of cooking, place the pre-seared sea bass pieces on top of the pan, gently pressing them into the pasta so they warm through and steam until tender. Leave the pan for another minute without moving so the bottom crisps and forms the famous crunchy 'socarrat' pasta crust.
 8. For the quick garlic yogurt sauce, mix the Greek yogurt with the reserved crushed garlic and a few drops of fresh lemon juice. Sprinkle the fideuà with freshly chopped parsley and serve straight from the hot pan with lemon wedges and the creamy garlic yogurt sauce.
 
 ## Tips

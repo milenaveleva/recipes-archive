@@ -42,12 +42,12 @@ ingredients:
     fdcId: 171257
     matchConfidence: high
     cooking: raw
-  - raw: 200 g butter
-    quantity: 200
+  - raw: 150 g extra virgin olive oil
+    quantity: 150
     unit: g
-    item: butter
-    grams: 200
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 150
+    fdcId: 171413
     matchConfidence: high
     cooking: baked
   - raw: 1 tbsp whole-wheat panko breadcrumbs
@@ -107,18 +107,18 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 698
-    energyKj: 2922
-    protein_g: 19.6
-    fat_g: 59.1
-    satFat_g: 34
+    energyKcal: 671
+    energyKj: 2809
+    protein_g: 19.2
+    fat_g: 56.1
+    satFat_g: 14
     carbs_g: 28.5
     fiber_g: 8
     sugar_g: 16.1
-    sodium_mg: 1795
+    sodium_mg: 1791
     availableCarb_g: 20.4
   glycemic:
-    gi: 15
+    gi: 16
     gl: 3
     giBand: low
     glBand: low
@@ -126,26 +126,26 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 10
+    points: 5
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.9
-    band: pro-inflammatory
+    score: -0.1
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.02
   balance:
-    score: 2
-    band: poor
-    nrf: 3
+    score: 3
+    band: low
+    nrf: 16.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 94
+    minimallyProcessedPct: 93.8
     ultraProcessedPct: 0.8
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -155,15 +155,15 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. Labneh is simply strained yogurt, but it is worth trying a mixture of half yogurt and half sour cream. Mix them, salt lightly and pour into a sieve lined with cheesecloth; leave to drain in the fridge until it reaches the thickness of cream cheese. You can flavour it with fresh herbs.
 2. Halve the cabbages lengthwise and sprinkle with salt so it gets between the leaves; if the cabbages are large, cut them into quarters instead.
-3. Spread the cut surface with soft butter, season with pepper and place cut side up in a 140 °C oven for at least 1 hour, until the inside no longer feels hard when pierced with a sharp knife. Then turn the oven up to 200 °C so the cabbage caramelises slightly.
-4. Toast the seeds in the remaining butter, then the panko, and serve the roasted cabbage with the homemade labneh, the toasted seeds and soy sauce livened up with a few drops of lemon juice.
+3. Brush the cut surface with olive oil, season with pepper and place cut side up in a 140 °C oven for at least 1 hour, until the inside no longer feels hard when pierced with a sharp knife. Then turn the oven up to 200 °C so the cabbage caramelises slightly.
+4. Toast the seeds in the remaining olive oil, then the panko, and serve the roasted cabbage with the homemade labneh, the toasted seeds and soy sauce livened up with a few drops of lemon juice.
 
 ## Tips
 

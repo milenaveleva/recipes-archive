@@ -1,9 +1,9 @@
 ---
-title: Asparagus with Buttered Whole-Wheat Breadcrumbs
-description: Tender white asparagus served with golden toasted whole-wheat breadcrumbs and melted butter.
-image: ./images/asparagus-with-buttered-whole-wheat-breadcrumbs.jpg
+title: Asparagus with Olive-Oil Toasted Whole-Wheat Breadcrumbs
+description: Tender white asparagus served with golden toasted whole-wheat breadcrumbs and warm olive oil.
+image: ./images/asparagus-with-olive-oil-toasted-whole-wheat-breadcrumbs.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_11551_1776979559243_white-asparagus-with-buttery-breadcrumbs-and-herbs_4f7426b9.jpg
-imageAlt: Asparagus with Buttered Whole-Wheat Breadcrumbs
+imageAlt: Asparagus with Olive-Oil Toasted Whole-Wheat Breadcrumbs
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11551-sparga-vajas-zsemlemorzsaval
@@ -33,12 +33,12 @@ ingredients:
     fdcId: 172689
     matchConfidence: high
     cooking: fried
-  - raw: 250 g butter
-    quantity: 250
+  - raw: 190 g extra virgin olive oil
+    quantity: 190
     unit: g
-    item: butter
-    grams: 250
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 190
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: 1 kitchen twine
@@ -59,15 +59,15 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 663
-    energyKj: 2773
-    protein_g: 17.6
-    fat_g: 52.8
-    satFat_g: 32.1
+    energyKcal: 635
+    energyKj: 2655
+    protein_g: 17.1
+    fat_g: 49.6
+    satFat_g: 7.1
     carbs_g: 38.6
     fiber_g: 13.3
     sugar_g: 11.6
-    sodium_mg: 228
+    sodium_mg: 222
     availableCarb_g: 25.3
   glycemic:
     gi: 39
@@ -78,25 +78,25 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: A
-    points: 0
+    points: -4
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.7
-    band: mildly-pro-inflammatory
+    score: -0.5
+    band: mildly-anti-inflammatory
     method: fii v4
   balance:
-    score: 4
-    band: low
-    nrf: 23.1
+    score: 7
+    band: high
+    nrf: 41.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 82.7
-    ultraProcessedPct: 17.3
+    minimallyProcessedPct: 81.9
+    ultraProcessedPct: 18.1
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -105,7 +105,7 @@ nutrition:
     - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -113,8 +113,8 @@ createdAt: "2026-11-13"
 1. **Preparation and cooking:** Peel the asparagus thoroughly from the head downwards and cut or snap off the woody ends. Divide the spears into portions and tie them into bundles with kitchen twine.
 2. Bring water to the boil with salt in a tall, narrow pot. Stand the asparagus bundles in the boiling water (ideally with the tips sticking out of the water) and cook for about 10 minutes, depending on thickness, or until just tender (al dente). Immerse the tips in the water for the last minute.
 3. Remove the cooked asparagus, take off the twine and divide the spears among plates.
-4. **Making the crumbs and serving:** Melt the butter in a small saucepan. In a frying pan, toast the breadcrumbs over medium heat without any fat until golden brown. It is important to stir constantly because they burn quickly. As soon as they are done, tip them into a bowl so they do not keep browning in the hot pan.
-5. Sprinkle the toasted crumbs over the asparagus, or roll the spears in them, then drizzle with the melted butter. Serve immediately.
+4. **Making the crumbs and serving:** Warm the olive oil in a small saucepan. In a frying pan, toast the breadcrumbs in a spoonful of the warm oil over medium heat until golden brown. It is important to stir constantly because they burn quickly. As soon as they are done, tip them into a bowl so they do not keep browning in the hot pan.
+5. Sprinkle the toasted crumbs over the asparagus, or roll the spears in them, then drizzle with the remaining warm olive oil. Serve immediately.
 
 ## Tips
 

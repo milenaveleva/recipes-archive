@@ -85,12 +85,12 @@ ingredients:
     fdcId: 170416
     matchConfidence: high
     cooking: raw
-  - raw: 40 g butter
-    quantity: 40
+  - raw: 30 g extra virgin olive oil
+    quantity: 30
     unit: g
-    item: butter
-    grams: 40
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 30
+    fdcId: 171413
     matchConfidence: high
     cooking: baked
   - raw: 1½ tsp honey
@@ -136,15 +136,15 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 463
-    energyKj: 1936
-    protein_g: 14.3
-    fat_g: 20.6
-    satFat_g: 11.9
+    energyKcal: 452
+    energyKj: 1891
+    protein_g: 14.2
+    fat_g: 19.4
+    satFat_g: 3.8
     carbs_g: 59.6
     fiber_g: 10.3
     sugar_g: 13.7
-    sodium_mg: 895
+    sodium_mg: 893
     availableCarb_g: 49.2
   glycemic:
     gi: 54
@@ -155,26 +155,26 @@ nutrition:
     measuredGiPct: 15
   nutriScore:
     grade: C
-    points: 5
+    points: 3
     category: general
     version: "2023"
     coverage: 0.94
   inflammation:
-    score: 0.2
-    band: neutral
+    score: -0.4
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.27
   balance:
-    score: 6
-    band: moderate
-    nrf: 32.3
+    score: 7
+    band: high
+    nrf: 41.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 96
-    ultraProcessedPct: 4
+    minimallyProcessedPct: 95.9
+    ultraProcessedPct: 4.1
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -184,7 +184,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -192,6 +192,6 @@ createdAt: "2026-11-13"
 1. Preheat the oven to 235 °C and line a baking tray with baking paper. Break the cauliflower into small florets and set aside.
 2. In a bowl, mix the flour with the paprika, garlic powder and a pinch of salt. Add water and stir into a smooth, thick batter. Add the cauliflower florets and toss so they are coated all over.
 3. Spread the battered cauliflower on the tray with a little space between the pieces. Bake in the preheated oven for 25 minutes, turning halfway through so they crisp evenly.
-4. Meanwhile, make the buffalo sauce: melt the butter with the honey, then stir in the sriracha.
+4. Meanwhile, make the buffalo sauce: warm the olive oil with the honey, then stir in the sriracha.
 5. When the cauliflower is baked, brush it with the buffalo sauce on all sides and return it to the oven for another 10 minutes, taking care that it doesn't burn.
 6. Finally, make the yogurt dip: mix the yogurt with the pressed garlic, the lime juice, the finely chopped parsley, and salt to taste.

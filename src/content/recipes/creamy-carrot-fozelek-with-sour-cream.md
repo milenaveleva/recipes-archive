@@ -71,13 +71,14 @@ ingredients:
     fdcId: 790085
     matchConfidence: high
     cooking: boiled
-  - raw: 30 g butter
+  - raw: 1½ tbsp extra virgin olive oil
     group: Pantry and spices
-    quantity: 30
-    unit: g
-    item: butter
-    grams: 30
-    fdcId: 173430
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 22
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: ¾ tsp fine salt
@@ -148,15 +149,15 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 305
-    energyKj: 1278
-    protein_g: 7.3
-    fat_g: 17.9
-    satFat_g: 8.4
+    energyKcal: 300
+    energyKj: 1257
+    protein_g: 7.2
+    fat_g: 17.4
+    satFat_g: 5.4
     carbs_g: 32.6
     fiber_g: 7.6
     sugar_g: 13.2
-    sodium_mg: 1118
+    sodium_mg: 1117
     availableCarb_g: 25
   glycemic:
     gi: 38
@@ -172,21 +173,21 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: 0
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.24
   balance:
     score: 8
     band: high
-    nrf: 67.2
+    nrf: 72.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 97.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -196,15 +197,15 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparation and toasting:** Peel the carrots and cut them into thin, even rounds. Chop the onion and garlic finely. Chop the parsley and get the pumpkin seeds ready.
 2. In a dry pan, toast the pumpkin seeds over medium heat for 2-3 minutes until they start to pop and smell fragrant. Pour them into a bowl and set aside for serving.
-3. **Cooking and thickening:** Melt the butter in a medium saucepan, then add the finely chopped onion. Sweat over low heat until translucent, 3-4 minutes, then stir in the chopped garlic for half a minute.
-4. Add the sliced carrots to the pan and fry for 2 minutes in the buttery base. Add salt, sprinkle in the ground caraway and black pepper, and add the bay leaves. Pour in the hot vegetable broth so that it just covers the carrots.
+3. **Cooking and thickening:** Heat the olive oil in a medium saucepan, then add the finely chopped onion. Sweat over low heat until translucent, 3-4 minutes, then stir in the chopped garlic for half a minute.
+4. Add the sliced carrots to the pan and fry for 2 minutes in the olive-oil base. Add salt, sprinkle in the ground caraway and black pepper, and add the bay leaves. Pour in the hot vegetable broth so that it just covers the carrots.
 5. Cook covered over medium heat for 12-15 minutes, until the carrots are tender but still slightly crisp. Take out a third of the cooked carrots into a small bowl, purée it smooth with a hand blender, then pour it back into the pot for a silkier texture.
 6. In a small bowl, stir the sour cream with the flour and a few tablespoons of hot cooking liquid until smooth, to temper it. Drizzle the mixture into the stew, stirring constantly, then simmer for 2-3 minutes until nicely thickened. Turn off the heat, fish out the bay leaves and season with the fresh lemon juice.
 7. **Serving:** Ladle the hot, creamy carrot stew into deep plates. Spoon a little extra sour cream on top and sprinkle generously with fresh parsley and the crisply toasted pumpkin seeds.

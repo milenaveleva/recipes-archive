@@ -1,9 +1,9 @@
 ---
-title: Asparagus with Golden Butter Crumbs
-description: Tender white asparagus topped with golden, buttery toasted whole-wheat breadcrumbs, a quick and elegant spring dish.
-image: ./images/asparagus-with-golden-butter-crumbs.jpg
+title: Asparagus with Golden Olive-Oil Crumbs
+description: Tender white asparagus topped with golden, olive-oil toasted whole-wheat breadcrumbs, a quick and elegant spring dish.
+image: ./images/asparagus-with-golden-olive-oil-crumbs.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10315_1775302027079_white-asparagus-with-buttery-breadcrumbs_58459ed6.png
-imageAlt: Asparagus with Golden Butter Crumbs
+imageAlt: Asparagus with Golden Olive-Oil Crumbs
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10315-sparga-vajas-morzsaval
@@ -33,12 +33,12 @@ ingredients:
     fdcId: 172689
     matchConfidence: high
     cooking: fried
-  - raw: 250 g butter
-    quantity: 250
+  - raw: 190 g extra virgin olive oil
+    quantity: 190
     unit: g
-    item: butter
-    grams: 250
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 190
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: 1 tbsp salt
@@ -53,15 +53,15 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 663
-    energyKj: 2773
-    protein_g: 17.6
-    fat_g: 52.8
-    satFat_g: 32.1
+    energyKcal: 635
+    energyKj: 2655
+    protein_g: 17.1
+    fat_g: 49.6
+    satFat_g: 7.1
     carbs_g: 38.6
     fiber_g: 13.3
     sugar_g: 11.6
-    sodium_mg: 228
+    sodium_mg: 222
     availableCarb_g: 25.3
   glycemic:
     gi: 39
@@ -72,25 +72,25 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: A
-    points: 0
+    points: -4
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.7
-    band: mildly-pro-inflammatory
+    score: -0.5
+    band: mildly-anti-inflammatory
     method: fii v4
   balance:
-    score: 4
-    band: low
-    nrf: 23.1
+    score: 7
+    band: high
+    nrf: 41.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 82.7
-    ultraProcessedPct: 17.3
+    minimallyProcessedPct: 81.9
+    ultraProcessedPct: 18.1
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -99,14 +99,14 @@ nutrition:
     - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. Carefully peel the asparagus and remove the woody ends. Tie the asparagus into a bundle.
 2. In a tall pot, bring water to the boil with salt, then place the asparagus in the boiling water. After 10 minutes of cooking, take the bundle apart and arrange the asparagus on a plate.
-3. Melt the butter in a frying pan. Toast the breadcrumbs until golden brown, then pour them over the asparagus. Or, if it is more convenient, toss the asparagus in the breadcrumbs and then pour the melted butter over it.
+3. Warm the olive oil in a frying pan. Toast the breadcrumbs until golden brown, then pour them over the asparagus. Or, if it is more convenient, toss the asparagus in the breadcrumbs and then drizzle the warm olive oil over it.
 
 ## Tips
 

@@ -73,12 +73,13 @@ ingredients:
     fdcId: 790085
     matchConfidence: high
     cooking: boiled
-  - raw: 25 g butter
-    quantity: 25
-    unit: g
-    item: butter
-    grams: 25
-    fdcId: 173430
+  - raw: 1½ tbsp extra virgin olive oil
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 19
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 20 ml sunflower oil
@@ -144,15 +145,15 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 307
-    energyKj: 1285
+    energyKcal: 304
+    energyKj: 1273
     protein_g: 6.4
-    fat_g: 20.3
-    satFat_g: 8.9
+    fat_g: 20
+    satFat_g: 6.4
     carbs_g: 28.9
     fiber_g: 7.2
     sugar_g: 11.4
-    sodium_mg: 1018
+    sodium_mg: 1017
     availableCarb_g: 21.7
   glycemic:
     gi: 32
@@ -163,26 +164,26 @@ nutrition:
     measuredGiPct: 24
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: 0.1
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.29
   balance:
     score: 6
     band: moderate
-    nrf: 36.3
+    nrf: 40.3
     version: NRF9.3
   processing:
     minimallyProcessedPct: 98.1
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -192,14 +193,14 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparation and roasting the vegetables:** Prepare the vegetables: peel the carrots and slice them thinly into rounds, cut the onion into fine dice, and crush or finely chop the garlic. Trim the ends of the green beans and cut them into 3-4 cm pieces (if using frozen beans, let them thaw slightly).
-2. In a frying pan, heat 10 ml of sunflower oil and half of the 25 g butter. Add the carrot rounds, sprinkle with a pinch of salt and fry over medium heat for 8-10 minutes until nicely golden, slightly caramelised. Set aside for serving.
-3. **Making the stew:** In a larger pot, heat the remaining 10 ml of oil and butter. Add the finely chopped onion and fry until translucent, about 4-5 minutes. Stir in the crushed garlic, then after half a minute take it off the heat and sprinkle with the sweet paprika.
+2. In a frying pan, heat 10 ml of sunflower oil and half of the extra virgin olive oil. Add the carrot rounds, sprinkle with a pinch of salt and fry over medium heat for 8-10 minutes until nicely golden, slightly caramelised. Set aside for serving.
+3. **Making the stew:** In a larger pot, heat the remaining 10 ml of oil and the rest of the extra virgin olive oil. Add the finely chopped onion and fry until translucent, about 4-5 minutes. Stir in the crushed garlic, then after half a minute take it off the heat and sprinkle with the sweet paprika.
 4. Add the chopped green beans to the pot, toss thoroughly in the paprika base, then pour in the vegetable broth. Add the bay leaves and season with salt and ground black pepper. Bring to the boil, then cook covered over medium heat for 12-15 minutes until the green beans are just tender but still crunchy.
 5. Meanwhile, make the thickener: stir the sour cream with the flour and a few tablespoons of the warm cooking liquid (tempering) until completely smooth. Slowly drizzle it into the green beans, stirring constantly. Bring back to the boil and cook over low heat for 2-3 minutes until the stew thickens nicely. At the end, season with the apple cider vinegar for a pleasant tang, then turn off the heat.
 6. **Serving:** Ladle the hot, creamy green bean stew into deep plates. Pile the golden pan-roasted, sweet carrot rounds on top and sprinkle generously with freshly chopped dill. Serve with fresh whole-wheat sourdough bread!

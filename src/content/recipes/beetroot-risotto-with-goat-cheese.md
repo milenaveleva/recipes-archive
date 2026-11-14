@@ -55,12 +55,12 @@ ingredients:
     fdcId: 173435
     matchConfidence: high
     cooking: raw
-  - raw: 100 g butter
-    quantity: 100
+  - raw: 75 g extra virgin olive oil
+    quantity: 75
     unit: g
-    item: butter
-    grams: 100
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 75
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 100 g mascarpone
@@ -151,15 +151,15 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 987
-    energyKj: 4131
-    protein_g: 22.5
-    fat_g: 52.3
-    satFat_g: 25.8
+    energyKcal: 974
+    energyKj: 4074
+    protein_g: 22.3
+    fat_g: 50.8
+    satFat_g: 15.8
     carbs_g: 100.8
     fiber_g: 7.8
-    sugar_g: 14.8
-    sodium_mg: 2382
+    sugar_g: 14.7
+    sodium_mg: 2380
     availableCarb_g: 93
   glycemic:
     gi: 63
@@ -170,26 +170,26 @@ nutrition:
     measuredGiPct: 78
   nutriScore:
     grade: C
-    points: 5
+    points: 4
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: 0
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.42
   balance:
     score: 2
     band: poor
-    nrf: 1
+    nrf: 5.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 72.7
+    minimallyProcessedPct: 72.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -199,7 +199,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -212,5 +212,5 @@ createdAt: "2026-11-13"
 6. Pour in the white wine and stir it in.
 7. The rice absorbs the wine in about 2 minutes, then you can start adding the hot broth.
 8. Add it one ladleful at a time, as much as the rice takes up, making sure the grains always stay under the liquid and the risotto keeps simmering gently. Brown arborio needs about 40-45 minutes and more broth than white risotto rice. These two points are very important!
-9. When the rice is almost tender, season with salt, pepper, a few drops of lemon juice and the mascarpone-beetroot puree. Always leave the result a little looser, because it will thicken by the time it reaches the table. Stir in the butter and grated Parmesan only at the very end with a wooden spoon or silicone spatula. The ideal texture is when it spreads slightly on the plate by itself once served.
+9. When the rice is almost tender, season with salt, pepper, a few drops of lemon juice and the mascarpone-beetroot puree. Always leave the result a little looser, because it will thicken by the time it reaches the table. Stir in the olive oil and grated Parmesan only at the very end with a wooden spoon or silicone spatula. The ideal texture is when it spreads slightly on the plate by itself once served.
 10. Serve with good soft goat cheese, the roasted beetroot wedges, a few beet leaves and fresh herbs; you can brighten it with a little grated lemon zest or preserved lemon.

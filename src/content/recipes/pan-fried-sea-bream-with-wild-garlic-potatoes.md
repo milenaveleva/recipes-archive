@@ -1,6 +1,6 @@
 ---
 title: Pan-Fried Sea Bream with Wild Garlic Potatoes
-description: Crisp-skinned sea bream fillets served with baby potatoes and spinach tossed in a lemony wild garlic butter sauce.
+description: Crisp-skinned sea bream fillets served with baby potatoes and spinach tossed in a lemony wild garlic olive-oil sauce.
 image: ./images/pan-fried-sea-bream-with-wild-garlic-potatoes.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/10307-1649319107087.jpg
 imageAlt: Pan-Fried Sea Bream with Wild Garlic Potatoes
@@ -32,12 +32,12 @@ ingredients:
     fdcId: 170026
     matchConfidence: medium
     cooking: boiled
-  - raw: 100 g butter
-    quantity: 100
+  - raw: 75 g extra virgin olive oil
+    quantity: 75
     unit: g
-    item: butter
-    grams: 100
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 75
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 1 wild garlic bunch
@@ -108,15 +108,15 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 541
-    energyKj: 2263
-    protein_g: 34
-    fat_g: 23.7
-    satFat_g: 13.5
+    energyKcal: 527
+    energyKj: 2206
+    protein_g: 33.7
+    fat_g: 22.2
+    satFat_g: 3.5
     carbs_g: 49
     fiber_g: 6.3
     sugar_g: 3.4
-    sodium_mg: 690
+    sodium_mg: 687
     availableCarb_g: 42.7
   glycemic:
     gi: 67
@@ -126,27 +126,27 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 90
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: -1
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.4
-    band: mildly-pro-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.07
   balance:
-    score: 6
-    band: moderate
-    nrf: 33.6
+    score: 7
+    band: high
+    nrf: 43
     version: NRF9.3
   processing:
     minimallyProcessedPct: 99.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -156,7 +156,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -164,10 +164,10 @@ createdAt: "2026-11-13"
 1. Salt the fish fillets on both sides.
 2. Halve the potatoes and boil them in salted water.
 3. Wash the spinach and wild garlic as well.
-4. Bring the broth to the boil in a frying pan, add the butter, season with salt and pepper, add a few drops of lemon and the fresh herbs, and simmer until slightly thickened.
+4. Bring the broth to the boil in a frying pan, add the olive oil, season with salt and pepper, add a few drops of lemon and the fresh herbs, and simmer until slightly thickened.
 5. Toss the greens and the cooked potatoes in this sauce.
-6. Fry the fish fillets in a hot, preferably non-stick pan in a little oil until crisp, then add a small knob of butter and baste the fish with the foaming butter.
-7. Serve with the buttery vegetables.
+6. Fry the fish fillets in a hot, preferably non-stick pan in a little oil until crisp, then add a small drizzle of olive oil and baste the fish with the hot oil.
+7. Serve with the silky vegetables.
 
 ## Tips
 

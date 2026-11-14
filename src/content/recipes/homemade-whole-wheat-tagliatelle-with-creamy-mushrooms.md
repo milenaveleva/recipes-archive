@@ -43,14 +43,14 @@ ingredients:
     fdcId: 169251
     matchConfidence: high
     cooking: fried
-  - raw: 2 tbsp butter
+  - raw: 1½ tbsp extra virgin olive oil
     group: Creamy mushroom sauce
-    quantity: 2
+    quantity: 1.5
     unit: tbsp
-    item: butter
-    grams: 28.4
-    milliliters: 29.5736
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 20
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: 3 cloves garlic
@@ -129,15 +129,15 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 974
-    energyKj: 4075
-    protein_g: 37.5
-    fat_g: 50.1
-    satFat_g: 28.6
+    energyKcal: 961
+    energyKj: 4019
+    protein_g: 37.4
+    fat_g: 48.6
+    satFat_g: 22.8
     carbs_g: 83.6
     fiber_g: 12.5
     sugar_g: 6
-    sodium_mg: 1709
+    sodium_mg: 1708
     availableCarb_g: 71
   glycemic:
     gi: 53
@@ -148,26 +148,26 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: D
-    points: 12
+    points: 11
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.4
-    band: mildly-pro-inflammatory
+    score: 0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.32
   balance:
     score: 3
     band: low
-    nrf: 12.2
+    nrf: 15
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 83.1
+    minimallyProcessedPct: 82.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -177,7 +177,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -185,7 +185,7 @@ createdAt: "2026-11-13"
 1. **Making the homemade pasta:** Pour the flour onto a clean work surface and make a well in the middle. Crack the eggs into it and, using a fork, gradually start working in the flour from the edges.
 2. Knead the mass by hand into a smooth, elastic dough for about 8–10 minutes. If it feels a little dry, add 1 teaspoon of water. Wrap in cling film and rest in the fridge for at least 30 minutes.
 3. After resting, divide the dough into two parts. On a lightly floured surface, roll it thin with a rolling pin or pasta machine (about 1–1.5 mm thick). Dust lightly with flour, roll it up loosely and cut with a sharp knife into strips 8–10 mm wide. Shake out the ribbons into little nests.
-4. **Creamy mushroom sauce and serving:** In a larger pan, melt the butter over medium heat. Add the cleaned mushrooms, cut into wedges or slices, and sauté over high heat for 5–6 minutes until golden brown.
+4. **Creamy mushroom sauce and serving:** In a larger pan, heat the olive oil over medium heat. Add the cleaned mushrooms, cut into wedges or slices, and sauté over high heat for 5–6 minutes until golden brown.
 5. Add the thinly sliced garlic and the thyme leaves picked from the stems to the mushrooms. Sauté for another half minute until fragrant, then pour in the dry white wine. Boil for 2 minutes until the alcohol evaporates.
 6. Reduce the heat, pour in the whipping cream and season with salt and pepper to taste. Simmer on low heat for 3–4 minutes until the sauce thickens slightly.
 7. Meanwhile, bring generously salted water to a boil in a large pot. Drop in the fresh homemade tagliatelle and cook for exactly 1–2 minutes. Drain, reserving a little of the cooking water.

@@ -1,6 +1,6 @@
 ---
 title: Pumpkin Whole-Wheat Rigatoni with Crispy Sage
-description: A quick, creamy autumn whole-wheat pasta with butter-roasted butternut squash, crispy sage, garlic and Parmesan.
+description: A quick, creamy autumn whole-wheat pasta with olive-oil-roasted butternut squash, crispy sage, garlic and Parmesan.
 image: ./images/pumpkin-whole-wheat-rigatoni-with-crispy-sage.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_13552_1788570382779_butternut-squash-rigatoni-with-crispy-sage_0188f620.jpg
 imageAlt: Pumpkin Whole-Wheat Rigatoni with Crispy Sage
@@ -41,12 +41,12 @@ ingredients:
     fdcId: 170935
     matchConfidence: medium
     cooking: fried
-  - raw: 40 g butter
-    quantity: 40
+  - raw: 30 g extra virgin olive oil
+    quantity: 30
     unit: g
-    item: butter
-    grams: 40
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 30
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: 2 tbsp extra virgin olive oil
@@ -95,15 +95,15 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 620
-    energyKj: 2593
-    protein_g: 21.4
-    fat_g: 22.2
-    satFat_g: 9.1
+    energyKcal: 614
+    energyKj: 2570
+    protein_g: 21.3
+    fat_g: 21.6
+    satFat_g: 5.1
     carbs_g: 92.8
     fiber_g: 12.7
     sugar_g: 6.2
-    sodium_mg: 857
+    sodium_mg: 856
     availableCarb_g: 80.2
   glycemic:
     gi: 44
@@ -114,26 +114,26 @@ nutrition:
     measuredGiPct: 80
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
+    score: -0.1
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.16
   balance:
-    score: 6
-    band: moderate
-    nrf: 38.8
+    score: 7
+    band: high
+    nrf: 42
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 90
+    minimallyProcessedPct: 89.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -143,16 +143,16 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
-1. **Preparation and roasting the squash:** Peel the butternut squash, remove the seeds and cut the flesh into even cubes of about 1.5 cm. Put plenty of water on to boil in a large pot for the pasta and salt it with the fine salt. In a wide frying pan, heat the extra virgin olive oil and half of the butter (20 g). Add the squash cubes, season with salt and pepper, then fry over medium heat for 8–10 minutes until golden outside and creamy-soft inside.
-2. **Sage base and cooking the pasta:** When the squash is almost soft, add the remaining butter (20 g), the finely chopped garlic and the whole fresh sage leaves to the pan. Cook over medium heat for 2–3 minutes, until the butter turns lightly nutty brown, the garlic is fragrant and the sage leaves are crisp. Take care that the butter does not burn. Meanwhile, drop the dry rigatoni into the rolling boiling salted water and cook for 1 minute less than the package time (al dente). Before draining, set aside about 1.5 dl of the starchy cooking water.
-3. **Tossing and serving:** Using a slotted spoon, lift the cooked rigatoni straight into the pan with the squash and crispy sage. Add 1 dl of cooking water and toss over high heat, shaking continuously, for 1–2 minutes, until the butter and starchy water form a silky, glossy emulsion on the pasta. Take off the heat, sprinkle with half of the freshly grated Parmesan and stir once more. Serve immediately in deep plates, topped with the remaining Parmesan and the crispy sage leaves.
+1. **Preparation and roasting the squash:** Peel the butternut squash, remove the seeds and cut the flesh into even cubes of about 1.5 cm. Put plenty of water on to boil in a large pot for the pasta and salt it with the fine salt. In a wide frying pan, heat the extra virgin olive oil and half of the additional olive oil (15 g). Add the squash cubes, season with salt and pepper, then fry over medium heat for 8–10 minutes until golden outside and creamy-soft inside.
+2. **Sage base and cooking the pasta:** When the squash is almost soft, add the remaining olive oil (15 g), the finely chopped garlic and the whole fresh sage leaves to the pan. Cook over medium heat for 2–3 minutes, until the oil is fragrant, the garlic is golden and the sage leaves are crisp. Take care that the garlic does not burn. Meanwhile, drop the dry rigatoni into the rolling boiling salted water and cook for 1 minute less than the package time (al dente). Before draining, set aside about 1.5 dl of the starchy cooking water.
+3. **Tossing and serving:** Using a slotted spoon, lift the cooked rigatoni straight into the pan with the squash and crispy sage. Add 1 dl of cooking water and toss over high heat, shaking continuously, for 1–2 minutes, until the olive oil and starchy water form a silky, glossy emulsion on the pasta. Take off the heat, sprinkle with half of the freshly grated Parmesan and stir once more. Serve immediately in deep plates, topped with the remaining Parmesan and the crispy sage leaves.
 
 ## Tips
 
-- When frying the squash, do not keep moving the pan: let the cubes caramelise nicely in the butter, as this gives the deep, sweet aroma.
-- The pasta water is essential for the silky sauce: the starch and butter form a perfect emulsion on the surface of the pasta.
+- When frying the squash, do not keep moving the pan: let the cubes caramelise nicely in the olive oil, as this gives the deep, sweet aroma.
+- The pasta water is essential for the silky sauce: the starch and olive oil form a perfect emulsion on the surface of the pasta.

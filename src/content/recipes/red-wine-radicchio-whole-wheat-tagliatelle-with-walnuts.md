@@ -63,12 +63,12 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: fried
-  - raw: 40 g butter
-    quantity: 40
+  - raw: 30 g extra virgin olive oil
+    quantity: 30
     unit: g
-    item: butter
-    grams: 40
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 30
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: 1 tsp fine salt
@@ -109,15 +109,15 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 585
-    energyKj: 2449
+    energyKcal: 580
+    energyKj: 2426
     protein_g: 17.9
-    fat_g: 28.3
-    satFat_g: 8.9
+    fat_g: 27.6
+    satFat_g: 4.9
     carbs_g: 65.2
     fiber_g: 8.8
     sugar_g: 3.2
-    sodium_mg: 781
+    sodium_mg: 780
     availableCarb_g: 56.4
   glycemic:
     gi: 47
@@ -128,26 +128,26 @@ nutrition:
     measuredGiPct: 91
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
+    score: -0.1
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.14
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 15.3
+    nrf: 18.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 87.5
+    minimallyProcessedPct: 87.4
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -157,7 +157,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -165,15 +165,15 @@ createdAt: "2026-11-13"
 1. **Preparation:** Toast the walnuts in a dry pan over medium heat for 2-3 minutes until fragrant, then tip onto a cutting board and chop coarsely.
 2. Remove the outer leaves of the radicchio, cut in half and into quarters, remove the core, then slice the leaves into finger-width strips and rinse in cold water.
 3. **Cooking and braising:** Bring plenty of salted water to the boil in a large pot for the pasta.
-4. In a wide pan heat the olive oil with a walnut-sized knob of butter, add the finely crushed garlic and fry for half a minute, taking care it does not brown.
+4. In a wide pan heat the olive oil with a small drizzle of the extra virgin olive oil, add the finely crushed garlic and fry for half a minute, taking care it does not brown.
 5. Add the drained radicchio, season lightly with salt and pepper, and wilt over high heat for 3-4 minutes until it collapses and caramelises slightly.
 6. Pour in the dry red wine and boil over medium heat for 4-5 minutes until the alcohol has evaporated and the liquid has reduced by half, forming a beautiful purple-red glaze.
 7. **Assembly and serving:** Meanwhile cook the tagliatelle in the boiling salted water until al dente. Before draining, scoop out 1 ladle (about 80-100 ml) of starchy cooking water.
-8. Tip the drained pasta straight onto the red wine radicchio. Add the remaining butter and half of the reserved cooking water and, over lively heat, stir and toss continuously for 1-2 minutes until it emulsifies into a silky sauce.
+8. Tip the drained pasta straight onto the red wine radicchio. Add the remaining extra virgin olive oil and half of the reserved cooking water and, over lively heat, stir and toss continuously for 1-2 minutes until it emulsifies into a silky sauce.
 9. Take off the heat, stir in two thirds of the freshly grated Parmesan, taste and, if needed, season with another pinch of pepper.
 10. Pile onto plates, sprinkle with the coarsely chopped fragrant toasted walnuts and the remaining grated Parmesan, and serve immediately, piping hot.
 
 ## Tips
 
-- The pasta cooking water is a treasure: its starch forms a perfect, glossy emulsion with the butter and wine reduction that coats the long noodles beautifully.
+- The pasta cooking water is a treasure: its starch forms a perfect, glossy emulsion with the olive oil and wine reduction that coats the long noodles beautifully.
 - If you want to tone down the radicchio's slightly bitter taste even more, soak the strips in cold water for 5 minutes after cutting, then drain thoroughly before frying.

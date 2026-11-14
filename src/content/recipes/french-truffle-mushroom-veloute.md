@@ -68,12 +68,12 @@ ingredients:
     fdcId: 2346386
     matchConfidence: high
     cooking: boiled
-  - raw: 40 g butter
-    quantity: 40
+  - raw: 30 g extra virgin olive oil
+    quantity: 30
     unit: g
-    item: butter
-    grams: 40
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 30
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 2 sprigs fresh thyme
@@ -122,15 +122,15 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 492
-    energyKj: 2056
-    protein_g: 9.6
-    fat_g: 29.2
-    satFat_g: 13.7
+    energyKcal: 486
+    energyKj: 2034
+    protein_g: 9.5
+    fat_g: 28.6
+    satFat_g: 9.7
     carbs_g: 47.2
     fiber_g: 6.7
     sugar_g: 6.4
-    sodium_mg: 1393
+    sodium_mg: 1392
     availableCarb_g: 40.4
   glycemic:
     gi: 47
@@ -146,21 +146,21 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.5
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.23
   balance:
     score: 2
     band: poor
-    nrf: -3.9
+    nrf: -0.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 63.6
+    minimallyProcessedPct: 63.2
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -170,18 +170,18 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparation and frying:** Clean the cremini mushrooms and slice thinly. Set aside a handful of nice slices for garnish later. Chop the shallots and garlic finely.
-2. In a pot melt half of the butter, then add the finely chopped shallots and a pinch of salt. Cook until glassy over medium heat, about 3-4 minutes.
+2. In a pot heat half of the olive oil, then add the finely chopped shallots and a pinch of salt. Cook until glassy over medium heat, about 3-4 minutes.
 3. Add the crushed garlic, the thyme sprigs and the sliced cremini mushrooms. Fry over higher heat for 6-8 minutes until the mushrooms release liquid, then take on a nice golden-brown colour.
 4. **Cooking and puréeing:** Pour the dry white wine over the mushrooms and boil for 2 minutes until the alcohol has evaporated and the flavours concentrate.
 5. Add the hot vegetable broth. Bring to the boil, then reduce the heat and simmer for 15 minutes until the flavours come together. Remove the thyme sprigs now.
 6. Purée the soup with a stick blender or in a blender until completely velvety and silky. Stir in the cream, bring gently to the boil once more, then season with salt and freshly ground black pepper.
-7. **Finishing and serving:** In a small pan fry the reserved mushroom slices in the remaining butter until crisp, 2-3 minutes. Meanwhile slice the baguette and toast lightly.
+7. **Finishing and serving:** In a small pan fry the reserved mushroom slices in the remaining olive oil until crisp, 2-3 minutes. Meanwhile slice the baguette and toast lightly.
 8. Ladle the hot velouté into deep plates, place some of the fried mushroom slices on top, then drizzle each portion with the noble black truffle oil. Offer with the freshly toasted crisp baguette.
 
 ## Tips

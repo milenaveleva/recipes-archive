@@ -182,7 +182,7 @@ nutrition:
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -192,13 +192,13 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparation:** Rinse the sea bream fillet, then pat it thoroughly dry with paper towels. Cut into bite-sized pieces of about 3–4 cm, then season lightly with salt and pepper. Cut the red onion and kápia pepper into small cubes, crush the garlic and chop the parsley finely. Heat the vegetable broth to boiling in a small saucepan, add the saffron, and keep it warm over low heat so the golden colour and rich aroma infuse fully.
-2. **Cooking and serving:** In a wide, flat frying pan or paella pan, heat the extra virgin olive oil over medium heat. Place the sea bream pieces in it skin side down, fry for one and a half minutes, then turn and cook for another minute so they just turn white. Lift onto a plate and set aside. Into the same pan, add the diced red onion and kápia pepper. Sweat over medium heat for 5 minutes until softened. Add the crushed garlic, the chopped tomatoes and the smoked paprika. Fry, stirring, for 2–3 minutes until you have a fragrant, thick sofrito base. Sprinkle the brown arborio rice into the pan and mix it thoroughly with the vegetable base for 1 minute, until the grains become slightly glassy. Pour in the dry white wine and boil for 2 minutes until the alcohol evaporates. Pour the hot saffron broth over the rice, stir it in evenly, then bring to the boil. Then reduce the heat to medium-low and cook uncovered for about 35-40 minutes (brown arborio needs longer and more liquid than white rice; add a little more hot broth if it dries out). Shake the pan carefully from time to time but do not stir, so the rice softens to a silky, perfect texture. For the last 3 minutes, place the pre-seared sea bream pieces on top of the rice so they warm through and steam to butter-soft in the rising steam. Take off the heat, sprinkle with fresh parsley, squeeze over a little fresh lemon juice and let rest for 3 minutes before serving. Serve with fresh lemon wedges.
+2. **Cooking and serving:** In a wide, flat frying pan or paella pan, heat the extra virgin olive oil over medium heat. Place the sea bream pieces in it skin side down, fry for one and a half minutes, then turn and cook for another minute so they just turn white. Lift onto a plate and set aside. Into the same pan, add the diced red onion and kápia pepper. Sweat over medium heat for 5 minutes until softened. Add the crushed garlic, the chopped tomatoes and the smoked paprika. Fry, stirring, for 2–3 minutes until you have a fragrant, thick sofrito base. Sprinkle the brown arborio rice into the pan and mix it thoroughly with the vegetable base for 1 minute, until the grains become slightly glassy. Pour in the dry white wine and boil for 2 minutes until the alcohol evaporates. Pour the hot saffron broth over the rice, stir it in evenly, then bring to the boil. Then reduce the heat to medium-low and cook uncovered for about 35-40 minutes (brown arborio needs longer and more liquid than white rice; add a little more hot broth if it dries out). Shake the pan carefully from time to time but do not stir, so the rice softens to a silky, perfect texture. For the last 3 minutes, place the pre-seared sea bream pieces on top of the rice so they warm through and steam to meltingly soft in the rising steam. Take off the heat, sprinkle with fresh parsley, squeeze over a little fresh lemon juice and let rest for 3 minutes before serving. Serve with fresh lemon wedges.
 
 ## Tips
 

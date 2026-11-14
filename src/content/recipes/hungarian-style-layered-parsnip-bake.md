@@ -78,13 +78,14 @@ ingredients:
     fdcId: 173419
     matchConfidence: high
     cooking: baked
-  - raw: 30 g butter
+  - raw: 1½ tbsp extra virgin olive oil
     group: Seasonings and fat
-    quantity: 30
-    unit: g
-    item: butter
-    grams: 30
-    fdcId: 173430
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 22
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: baked
   - raw: 20 ml sunflower oil
@@ -148,11 +149,11 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 765
-    energyKj: 3200
-    protein_g: 25.1
-    fat_g: 46.5
-    satFat_g: 23.8
+    energyKcal: 760
+    energyKj: 3179
+    protein_g: 25
+    fat_g: 45.9
+    satFat_g: 20.8
     carbs_g: 67.1
     fiber_g: 13.5
     sugar_g: 15
@@ -172,21 +173,21 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.4
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.27
   balance:
-    score: 4
-    band: low
-    nrf: 22.6
+    score: 5
+    band: moderate
+    nrf: 24.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 76.7
+    minimallyProcessedPct: 76.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -196,7 +197,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -205,8 +206,8 @@ createdAt: "2026-11-13"
 2. In a large pot, boil lightly salted water and parboil the parsnip and potato rounds in it for 8-10 minutes, until slightly softened but still firm and not falling apart. Drain thoroughly.
 3. Chop the onion finely and crush the garlic. In a frying pan, heat 20 ml sunflower oil, cook the onion until translucent in 3-4 minutes, then pull it off the heat and stir in the crushed garlic, 3 g sweet paprika and 1 g ground caraway.
 4. **Making the custard and layering:** In a bowl, whisk the 350 g sour cream with the 3 whole eggs, the salt and the ground black pepper until lump-free, giving a silky, homogeneous cream.
-5. Grease a medium baking tray or ovenproof dish thoroughly with half of the 30 g butter. Lay down the first layer of parboiled potatoes and parsnips, salt lightly, then spread half of the spiced onion over it.
-6. Drizzle over a third of the sour cream and egg mixture, then sprinkle with a third of the grated Trappist cheese. Repeat the layering with the remaining vegetables and onion, and finish the top with the remaining custard, the remaining butter flakes and plenty of grated cheese.
+5. Grease a medium baking tray or ovenproof dish thoroughly with half of the olive oil. Lay down the first layer of parboiled potatoes and parsnips, salt lightly, then spread half of the spiced onion over it.
+6. Drizzle over a third of the sour cream and egg mixture, then sprinkle with a third of the grated Trappist cheese. Repeat the layering with the remaining vegetables and onion, and finish the top with the remaining custard, a drizzle of the remaining olive oil and plenty of grated cheese.
 7. **Baking and serving:** Place the dish in an oven preheated to 190 °C and bake on top and bottom heat for 35-40 minutes, until the cheese layer is golden and crisp on top and the vegetables are juicy and tender.
 8. Take it out of the oven and let the parsnip bake rest for at least 10 minutes so the custard sets and the slices serve nicely. Sprinkle with finely chopped fresh parsley before serving.
 

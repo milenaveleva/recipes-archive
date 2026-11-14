@@ -66,12 +66,13 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 25 g butter
-    quantity: 25
-    unit: g
-    item: butter
-    grams: 25
-    fdcId: 173430
+  - raw: 1½ tbsp extra virgin olive oil
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 19
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 150 g cheddar cheese
@@ -120,15 +121,15 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 371
-    energyKj: 1553
+    energyKcal: 369
+    energyKj: 1546
     protein_g: 12
-    fat_g: 27.7
-    satFat_g: 15.1
+    fat_g: 27.4
+    satFat_g: 13.4
     carbs_g: 21.5
     fiber_g: 3.7
     sugar_g: 6.2
-    sodium_mg: 671
+    sodium_mg: 670
     availableCarb_g: 17.8
   glycemic:
     gi: 30
@@ -144,21 +145,21 @@ nutrition:
     version: "2023"
     coverage: 0.79
   inflammation:
-    score: 0.9
-    band: pro-inflammatory
+    score: 0.7
+    band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.2
   balance:
-    score: 4
-    band: low
-    nrf: 23.8
+    score: 5
+    band: moderate
+    nrf: 26.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 59.9
+    minimallyProcessedPct: 59.7
     ultraProcessedPct: 11.2
     band: moderately-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -168,13 +169,13 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparation:** Peel and finely chop the onion and garlic. Wash the broccoli, break it into florets, and clean the stems and cut them into smaller pieces. Rinse the spinach and finely grate the cheddar.
-2. **Cooking:** Melt the butter in a pot and sauté the onion and garlic until translucent. Sprinkle in the flour and toast briefly (make a light roux).
+2. **Cooking:** Heat the olive oil in a pot and sauté the onion and garlic until translucent. Sprinkle in the flour and toast briefly (make a light roux).
 3. Gradually pour in the broth and oat milk, add the broccoli stems and cook, stirring occasionally, for about 10 minutes.
 4. Remove the broccoli stems (or leave them in if completely soft), add the broccoli florets and most of the grated cheddar, and keep cooking until the broccoli is tender.
 5. Finally add the spinach and cooking cream, cook for another 5 minutes, then blend everything silky smooth with an immersion blender.

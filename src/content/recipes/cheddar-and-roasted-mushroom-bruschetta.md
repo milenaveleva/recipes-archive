@@ -65,13 +65,13 @@ ingredients:
     fdcId: 173414
     matchConfidence: high
     cooking: grilled
-  - raw: 1 tbsp butter
-    quantity: 1
+  - raw: ¾ tbsp extra virgin olive oil
+    quantity: 0.75
     unit: tbsp
-    item: butter
-    grams: 14.2
-    milliliters: 14.7868
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 10
+    milliliters: 11.0901
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: fresh thyme
@@ -111,14 +111,14 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 352
-    energyKj: 1474
+    energyKcal: 349
+    energyKj: 1460
     protein_g: 17.3
-    fat_g: 17.2
-    satFat_g: 7.5
+    fat_g: 16.8
+    satFat_g: 6
     carbs_g: 34.7
     fiber_g: 6.4
-    sugar_g: 6.3
+    sugar_g: 6.2
     sodium_mg: 641
     availableCarb_g: 27.8
   glycemic:
@@ -129,27 +129,27 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
+    score: 0
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.24
   balance:
-    score: 4
-    band: low
-    nrf: 22.9
+    score: 5
+    band: moderate
+    nrf: 25
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 28.5
-    ultraProcessedPct: 42.9
+    minimallyProcessedPct: 27.8
+    ultraProcessedPct: 43.3
     band: highly-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -159,14 +159,14 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. Clean the mushrooms but do not soak them in water.
 2. Cut the mushroom caps into slices or wedges.
-3. Put the butter and olive oil in a pan and sauté the finely chopped onion and crushed garlic.
+3. Put the olive oil in a pan and sauté the finely chopped onion and crushed garlic.
 4. Add the mushrooms, season with salt and pepper, and cook until all their liquid has cooked off.
 5. Season with a few drops of balsamic vinegar and fresh thyme.
 6. Pile the mushroom ragout on the toast and sprinkle generously with cheddar.

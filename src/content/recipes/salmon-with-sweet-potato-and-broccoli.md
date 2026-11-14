@@ -40,12 +40,12 @@ ingredients:
     fdcId: 167747
     matchConfidence: high
     cooking: baked
-  - raw: 20 g butter
-    quantity: 20
+  - raw: 15 g extra virgin olive oil
+    quantity: 15
     unit: g
-    item: butter
-    grams: 20
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 15
+    fdcId: 171413
     matchConfidence: high
     cooking: baked
   - raw: 1 tsp ground chilli
@@ -108,11 +108,11 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 432
-    energyKj: 1807
+    energyKcal: 429
+    energyKj: 1796
     protein_g: 25.3
-    fat_g: 26.5
-    satFat_g: 10.7
+    fat_g: 26.2
+    satFat_g: 8.7
     carbs_g: 24
     fiber_g: 4.6
     sugar_g: 5.9
@@ -126,26 +126,26 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
+    score: -0.1
     band: neutral
     method: fii v4
   balance:
     score: 7
     band: high
-    nrf: 50.5
+    nrf: 52.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 79.7
+    minimallyProcessedPct: 79.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -154,13 +154,13 @@ nutrition:
     - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. Preheat the oven to 180-185 °C. Prepare a roughly 20 × 30 cm baking tray or dish and line it with baking paper.
-2. Peel the sweet potato and cut it into thin slices. Break the broccoli into florets and cut half of the lemon into thin rounds. Melt the butter in a small saucepan over low heat (about 1-2 minutes). Put the sweet potato and lemon slices and the broccoli florets in the tray, sprinkle with salt, pepper and ground chilli, pour over the melted butter and toss thoroughly. Lay the salmon fillets on top of the vegetable mixture and season them with salt and pepper as well. Slide the tray into the oven and bake for 20-25 minutes at 180-185 °C.
+2. Peel the sweet potato and cut it into thin slices. Break the broccoli into florets and cut half of the lemon into thin rounds. Warm the olive oil in a small saucepan over low heat (about 1-2 minutes). Put the sweet potato and lemon slices and the broccoli florets in the tray, sprinkle with salt, pepper and ground chilli, pour over the warm olive oil and toss thoroughly. Lay the salmon fillets on top of the vegetable mixture and season them with salt and pepper as well. Slide the tray into the oven and bake for 20-25 minutes at 180-185 °C.
 3. While the salmon bakes, roughly chop the parsley and crumble the cream cheese.
 4. When the salmon and vegetables are done, take the tray out of the oven. Sprinkle the top with the crumbled cheese and fresh parsley and serve immediately.
 

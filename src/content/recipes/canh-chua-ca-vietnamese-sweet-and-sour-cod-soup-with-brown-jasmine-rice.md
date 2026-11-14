@@ -166,7 +166,7 @@ nutrition:
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -176,7 +176,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -193,5 +193,5 @@ createdAt: "2026-11-13"
 
 ## Tips
 
-- Don't overcook the cod: as soon as the flesh turns opaque and flaky, take it off the heat immediately so it stays juicy and buttery soft.
+- Don't overcook the cod: as soon as the flesh turns opaque and flaky, take it off the heat immediately so it stays juicy and tender.
 - If the tamarind paste is very thick, dissolve it in a little warm water before adding it to the soup.

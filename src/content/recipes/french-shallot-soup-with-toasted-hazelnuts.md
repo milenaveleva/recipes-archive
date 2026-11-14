@@ -26,13 +26,13 @@ ingredients:
     fdcId: 170499
     matchConfidence: high
     cooking: boiled
-  - raw: 50 g butter
+  - raw: 40 g extra virgin olive oil
     group: Ingredients
-    quantity: 50
+    quantity: 40
     unit: g
-    item: butter
-    grams: 50
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 38
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 750 ml vegetable broth
@@ -97,15 +97,15 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 394
-    energyKj: 1648
-    protein_g: 6.4
-    fat_g: 31.3
-    satFat_g: 14.6
-    carbs_g: 26.6
+    energyKcal: 388
+    energyKj: 1624
+    protein_g: 6.2
+    fat_g: 30.6
+    satFat_g: 9.6
+    carbs_g: 26.5
     fiber_g: 5.4
     sugar_g: 12.4
-    sodium_mg: 1134
+    sodium_mg: 1132
     availableCarb_g: 21.2
   glycemic:
     gi: 58
@@ -116,26 +116,26 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 9
+    points: 7
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.6
-    band: mildly-pro-inflammatory
+    score: 0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.22
   balance:
-    score: 1
+    score: 2
     band: poor
-    nrf: -4.1
+    nrf: 1.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 97.8
+    minimallyProcessedPct: 97.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -145,12 +145,12 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
-1. Peel the shallots and slice them finely. In a heavy-bottomed pot, melt the butter over medium heat, add the shallots and a pinch of salt and slowly sweat for about 15-20 minutes until golden and sweet, taking care not to let them burn.
+1. Peel the shallots and slice them finely. In a heavy-bottomed pot, warm the olive oil over medium heat, add the shallots and a pinch of salt and slowly sweat for about 15-20 minutes until golden and sweet, taking care not to let them burn.
 2. Sprinkle with the thyme and freshly ground black pepper and stir for 1-2 minutes over higher heat until the aromas are released.
 3. Pour in the vegetable broth, bring to a boil, then simmer covered over low heat for another 15 minutes until the shallots are completely soft.
 4. Take off the heat, add the cream, then blend with a hand blender until completely smooth and velvety. Adjust the salt and pepper to taste.
@@ -159,5 +159,5 @@ createdAt: "2026-11-13"
 
 ## Tips
 
-- For an even more intense texture, you can serve whole-wheat baguette slices fried in butter alongside the toasted hazelnuts.
+- For an even more intense texture, you can serve whole-wheat baguette slices fried in olive oil alongside the toasted hazelnuts.
 - Sweat the shallots patiently over low-medium heat so their natural sugars caramelise beautifully without turning bitter.

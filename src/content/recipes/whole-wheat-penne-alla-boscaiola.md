@@ -81,12 +81,13 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: fried
-  - raw: 25 g butter
-    quantity: 25
-    unit: g
-    item: butter
-    grams: 25
-    fdcId: 173430
+  - raw: 1½ tbsp extra virgin olive oil
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 19
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: ¾ tsp fine salt
@@ -127,15 +128,15 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 735
-    energyKj: 3077
+    energyKcal: 733
+    energyKj: 3065
     protein_g: 24.8
-    fat_g: 34.7
-    satFat_g: 17
+    fat_g: 34.4
+    satFat_g: 14.5
     carbs_g: 89.8
     fiber_g: 14.1
     sugar_g: 9.1
-    sodium_mg: 763
+    sodium_mg: 762
     availableCarb_g: 75.7
   glycemic:
     gi: 47
@@ -151,21 +152,21 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.4
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.22
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 17.8
+    nrf: 19.4
     version: NRF9.3
   processing:
     minimallyProcessedPct: 91.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -175,13 +176,13 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Making the vegetable base:** Clean the cremini mushrooms and cut them into even slices. Chop the shallots and garlic finely. Have the frozen peas ready on the counter; they do not need to be thawed beforehand.
-2. Heat the extra virgin olive oil and butter in a deep pan. Add the finely chopped shallots and cook until glassy over low heat, about 2 or 3 minutes. Then add the garlic and fry for another minute, taking care it does not burn.
+2. Heat the extra virgin olive oil in a deep pan. Add the finely chopped shallots and cook until glassy over low heat, about 2 or 3 minutes. Then add the garlic and fry for another minute, taking care it does not burn.
 3. Raise the heat to medium, add the sliced cremini mushrooms and fry for 5 or 6 minutes until nicely browned and the liquid they release has evaporated. Add the peas, season with the fine salt and ground black pepper and toss for another 2 minutes.
 4. **Cooking the pasta and finishing the sauce:** Bring plenty of water to the boil in a large pot, salt it well, then cook the dried penne until al dente, 1 minute less than the time on the package. Before draining, scoop out a cup of starchy cooking water.
 5. Pour the cream into the mushroom and pea base in the pan and simmer over low heat for 2 or 3 minutes until it thickens slightly and forms a creamy sauce. If you find it thick, add a few tablespoons of pasta cooking water.

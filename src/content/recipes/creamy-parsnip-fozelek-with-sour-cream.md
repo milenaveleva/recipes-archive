@@ -40,12 +40,13 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: 30 g butter
-    quantity: 30
-    unit: g
-    item: butter
-    grams: 30
-    fdcId: 173430
+  - raw: 1½ tbsp extra virgin olive oil
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 22
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 600 ml vegetable broth
@@ -117,15 +118,15 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 356
-    energyKj: 1491
-    protein_g: 5.9
-    fat_g: 16.8
-    satFat_g: 9
+    energyKcal: 351
+    energyKj: 1470
+    protein_g: 5.8
+    fat_g: 16.2
+    satFat_g: 6
     carbs_g: 49.3
     fiber_g: 11.5
     sugar_g: 13.5
-    sodium_mg: 1047
+    sodium_mg: 1046
     availableCarb_g: 37.8
   glycemic:
     gi: 47
@@ -136,26 +137,26 @@ nutrition:
     measuredGiPct: 69
   nutriScore:
     grade: C
-    points: 5
+    points: 4
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.2
+    score: -0.1
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.31
   balance:
-    score: 4
-    band: low
-    nrf: 21.6
+    score: 5
+    band: moderate
+    nrf: 25.8
     version: NRF9.3
   processing:
     minimallyProcessedPct: 98
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -165,14 +166,14 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. Peel the parsnips and cut them into roughly equal 1.5-2 cm cubes or rounds. Chop the onion finely and crush the garlic.
-2. In a medium saucepan, melt the butter, add the finely chopped onion and sweat over low heat until translucent, 3-4 minutes. Add the crushed garlic and fry for another half minute until fragrant.
-3. Add the prepared parsnips to the pot and toss in the buttery base for 2 minutes. Pour in the warm vegetable broth, add the bay leaves, then season with salt and pepper to taste.
+2. In a medium saucepan, warm the olive oil, add the finely chopped onion and sweat over low heat until translucent, 3-4 minutes. Add the crushed garlic and fry for another half minute until fragrant.
+3. Add the prepared parsnips to the pot and toss in the olive-oil base for 2 minutes. Pour in the warm vegetable broth, add the bay leaves, then season with salt and pepper to taste.
 4. Cook covered over medium heat for about 12-15 minutes until the parsnips are completely tender but not yet falling apart. Take out 2-3 ladlefuls of vegetables together with the liquid, blend until completely smooth, then pour back into the pot for natural creaminess.
 5. In a small bowl, stir the sour cream with the flour and a few tablespoons of warm cooking liquid until smooth, to temper it. Slowly pour the mixture into the stew, stirring continuously, then simmer for 2-3 minutes until nicely thickened.
 6. Turn off the heat, remove the bay leaves and drizzle in the fresh lemon juice, which perfectly counterbalances the natural sweetness of the parsnips. Sprinkle with finely chopped fresh parsley and serve warm on its own, with crispy croutons or with a fried egg.

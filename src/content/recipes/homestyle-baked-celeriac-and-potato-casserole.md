@@ -78,13 +78,14 @@ ingredients:
     fdcId: 173419
     matchConfidence: high
     cooking: baked
-  - raw: 30 g butter
+  - raw: 1½ tbsp extra virgin olive oil
     group: Spices and fat
-    quantity: 30
-    unit: g
-    item: butter
-    grams: 30
-    fdcId: 173430
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 22
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: baked
   - raw: 20 ml sunflower oil
@@ -148,15 +149,15 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 704
-    energyKj: 2944
-    protein_g: 25.7
-    fat_g: 46.7
-    satFat_g: 24
+    energyKcal: 699
+    energyKj: 2923
+    protein_g: 25.6
+    fat_g: 46.1
+    satFat_g: 20.9
     carbs_g: 50.3
     fiber_g: 6.3
     sugar_g: 8.3
-    sodium_mg: 1258
+    sodium_mg: 1257
     availableCarb_g: 44
   glycemic:
     gi: 41
@@ -172,21 +173,21 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.6
+    score: 0.5
     band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.27
   balance:
     score: 3
     band: low
-    nrf: 14.6
+    nrf: 16.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 74.6
+    minimallyProcessedPct: 74.4
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -196,7 +197,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -205,12 +206,12 @@ createdAt: "2026-11-13"
 2. In a large saucepan, bring lightly salted water to the boil, then add the celeriac slices and potatoes. Parboil them for about 8-10 minutes until slightly softened but not falling apart. Drain and let them steam off for a moment.
 3. Meanwhile, chop the onion finely and crush the garlic. In a frying pan, heat 20 ml sunflower oil and cook the onion until translucent, adding the crushed garlic and 3 g sweet paprika at the end.
 4. **Making the topping and layering:** In a bowl, mix the 350 g sour cream with the 3 whole eggs, 1 g ground nutmeg, the fine salt and ground black pepper. Stir until completely smooth and creamy.
-5. Grease a medium baking tray or ovenproof dish well with half of the 30 g butter. Lay down the first layer of parboiled potatoes and celeriac, salt lightly, then spread half of the onion mixture over it.
-6. Drizzle with part of the spiced sour cream mixture and sprinkle with a third of the grated Trappista cheese. Repeat the layering with the remaining vegetables and onion, and finish the top with the remaining sour cream mixture, the remaining butter flakes and plenty of Trappista cheese.
-7. **Baking and serving:** Place the dish in an oven preheated to 190 °C and bake with top and bottom heat for about 35-40 minutes until the cheese on top is golden and bubbling and the vegetables are butter-soft.
+5. Grease a medium baking tray or ovenproof dish well with half of the olive oil. Lay down the first layer of parboiled potatoes and celeriac, salt lightly, then spread half of the onion mixture over it.
+6. Drizzle with part of the spiced sour cream mixture and sprinkle with a third of the grated Trappista cheese. Repeat the layering with the remaining vegetables and onion, and finish the top with the remaining sour cream mixture, a drizzle of the remaining olive oil and plenty of Trappista cheese.
+7. **Baking and serving:** Place the dish in an oven preheated to 190 °C and bake with top and bottom heat for about 35-40 minutes until the cheese on top is golden and bubbling and the vegetables are tender.
 8. Remove from the oven and let the casserole rest for 10 minutes so the slices can be cut neatly. Sprinkle with the finely chopped fresh parsley before serving.
 
 ## Tips
 
-- The pleasantly sweet, nutty flavour of celeriac concentrates during baking; if you want an especially intense aroma, instead of parboiling you can pan-fry the slices in butter before layering.
+- The pleasantly sweet, nutty flavour of celeriac concentrates during baking; if you want an especially intense aroma, instead of parboiling you can pan-fry the slices in olive oil before layering.
 - If you like smoky flavours, replace half of the Trappista cheese with smoked cheese, or put a few sautéed mushrooms between the layers.

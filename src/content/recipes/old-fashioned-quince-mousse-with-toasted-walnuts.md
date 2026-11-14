@@ -122,7 +122,7 @@ nutrition:
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -131,7 +131,7 @@ nutrition:
     - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -142,4 +142,4 @@ createdAt: "2026-11-13"
 ## Tips
 
 - It is important that the quince purée cools completely before mixing it into the whipped cream, otherwise the heat would make the cream collapse and run.
-- To make it even more special, you can crumble a few butter biscuits or ladyfingers into the bottom of the glass before layering the quince mousse.
+- To make it even more special, you can crumble a few plain biscuits or ladyfingers into the bottom of the glass before layering the quince mousse.

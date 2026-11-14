@@ -83,12 +83,12 @@ ingredients:
     fdcId: 2346386
     matchConfidence: high
     cooking: boiled
-  - raw: 40 g butter
-    quantity: 40
+  - raw: 30 g extra virgin olive oil
+    quantity: 30
     unit: g
-    item: butter
-    grams: 40
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 30
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 30 ml extra virgin olive oil
@@ -146,15 +146,15 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 528
-    energyKj: 2208
-    protein_g: 12
-    fat_g: 29.5
-    satFat_g: 13.8
+    energyKcal: 522
+    energyKj: 2185
+    protein_g: 11.9
+    fat_g: 28.9
+    satFat_g: 9.7
     carbs_g: 54
     fiber_g: 6.1
     sugar_g: 7.9
-    sodium_mg: 1497
+    sodium_mg: 1496
     availableCarb_g: 47.8
   glycemic:
     gi: 43
@@ -165,26 +165,26 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 5
+    points: 4
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.5
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.25
   balance:
     score: 2
     band: poor
-    nrf: 4.3
+    nrf: 7.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 66.1
+    minimallyProcessedPct: 65.7
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -194,17 +194,17 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparation and sautéing the vegetables:** Peel the celeriac and cut it into 1.5-2 cm cubes. Chop the shallots and garlic finely. Clean the cremini mushrooms: cut half of them (250 g) into thicker slices for serving, and dice the other half for the base of the soup.
-2. In a heavy-bottomed pot, heat 20 g butter and 1 tablespoon olive oil. Add the chopped shallots and the diced mushrooms. Sauté over medium heat for 5-6 minutes until the onion is soft and the mushrooms take on a little colour. Stir in the garlic and thyme, then sauté for another minute.
+2. In a heavy-bottomed pot, heat 15 g extra virgin olive oil and 1 tablespoon olive oil. Add the chopped shallots and the diced mushrooms. Sauté over medium heat for 5-6 minutes until the onion is soft and the mushrooms take on a little colour. Stir in the garlic and thyme, then sauté for another minute.
 3. **Cooking and making it silky (velouté):** Pour in the dry white wine and boil over high heat for 2 minutes until the alcohol evaporates. Add the diced celeriac, then pour in the vegetable broth. Season with salt and pepper to taste.
 4. Bring to the boil, then reduce the heat to low and simmer covered for about 20 minutes until the celeriac is completely soft.
 5. Take the soup off the heat and blend with a hand blender until completely creamy, with a silky velouté texture. Stir in the cream, then return it to the heat and bring together for 1-2 minutes. Taste and, if needed, season with a little more salt and pepper.
-6. **Mushroom garnish and serving:** In a frying pan, heat the remaining 20 g butter and 1 tablespoon olive oil. Over high heat, sear the reserved 250 g sliced mushrooms until golden brown, 4-5 minutes. Season with salt and pepper only at the end of frying and sprinkle with finely chopped fresh parsley.
+6. **Mushroom garnish and serving:** In a frying pan, heat the remaining 15 g extra virgin olive oil and 1 tablespoon olive oil. Over high heat, sear the reserved 250 g sliced mushrooms until golden brown, 4-5 minutes. Season with salt and pepper only at the end of frying and sprinkle with finely chopped fresh parsley.
 7. Slice the baguette and toast it crisp in a dry frying pan or toaster. Ladle the warm, creamy velouté into bowls, pile the seared parsley mushroom slices on top and serve with fresh, crusty baguette.
 
 ## Tips

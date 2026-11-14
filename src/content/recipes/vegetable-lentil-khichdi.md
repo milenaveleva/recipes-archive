@@ -1,6 +1,6 @@
 ---
 title: Vegetable Lentil Khichdi
-description: A comforting Indian one-pot of brown basmati rice, red lentils, carrot and cauliflower with warming spices, ghee and fresh cilantro.
+description: A comforting Indian one-pot of brown basmati rice, red lentils, carrot and cauliflower with warming spices, olive oil and fresh cilantro.
 image: ./images/vegetable-lentil-khichdi.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14772_1794139451399_vegetable-khichdi-with-lentils_d72e394b.jpg
 imageAlt: Vegetable Lentil Khichdi
@@ -99,14 +99,15 @@ ingredients:
     fdcId: 169231
     matchConfidence: high
     cooking: boiled
-  - raw: 30 g ghee
+  - raw: 1½ tbsp extra virgin olive oil
     group: Spices and fat
-    quantity: 30
-    unit: g
-    item: ghee
-    grams: 30
-    fdcId: 171314
-    matchConfidence: medium
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 22
+    milliliters: 22.1802
+    fdcId: 171413
+    matchConfidence: high
     cooking: boiled
   - raw: 1 tsp ground cumin
     group: Spices and fat
@@ -178,11 +179,11 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 464
-    energyKj: 1942
+    energyKcal: 445
+    energyKj: 1863
     protein_g: 16.7
-    fat_g: 10.6
-    satFat_g: 5.1
+    fat_g: 8.6
+    satFat_g: 1.4
     carbs_g: 77.9
     fiber_g: 10.9
     sugar_g: 6.5
@@ -196,27 +197,27 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 91
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: 0
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.5
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.5
   balance:
-    score: 6
-    band: moderate
-    nrf: 39.2
+    score: 7
+    band: high
+    nrf: 44.4
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -226,16 +227,16 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparation:** Rinse the brown basmati rice and red lentils thoroughly under cold running water in a sieve until the water runs completely clear, then drain. Peel the carrot and cut into small dice, and break the cauliflower into very small florets. Chop the onion, garlic and fresh ginger finely.
-2. **Cooking:** In a heavy-bottomed pot heat the ghee over medium heat. Add the chopped onion and cook for 3-4 minutes until glassy. Then stir in the finely chopped garlic, grated ginger, ground cumin and ground turmeric and fry, stirring constantly, for about 1 minute until the spices smell wonderful.
-3. Add the drained brown basmati rice and red lentils to the spiced base and stir thoroughly so the spiced ghee coats every grain. Stir in the diced carrot and small cauliflower florets too.
+2. **Cooking:** In a heavy-bottomed pot heat the olive oil over medium heat. Add the chopped onion and cook for 3-4 minutes until glassy. Then stir in the finely chopped garlic, grated ginger, ground cumin and ground turmeric and fry, stirring constantly, for about 1 minute until the spices smell wonderful.
+3. Add the drained brown basmati rice and red lentils to the spiced base and stir thoroughly so the spiced oil coats every grain. Stir in the diced carrot and small cauliflower florets too.
 4. Pour in about 900 ml of water (or vegetable broth), salt and sprinkle with freshly ground black pepper. Bring to the boil, then turn the heat to low, cover the pot and simmer for 35-40 minutes (brown basmati takes longer than white; add a little more water if it gets dry) until the lentils are creamy-soft and the rice has absorbed the spiced liquid. Stir occasionally so it does not stick.
-5. When the rice and lentils are butter-soft, add the frozen green peas, the fresh baby spinach and the garam masala. Gently fold together, cover again and leave on the heat for another 2-3 minutes until the spinach leaves wilt slightly and the peas warm through. Taste and, if needed, adjust the seasoning with a little salt.
+5. When the rice and lentils are tender, add the frozen green peas, the fresh baby spinach and the garam masala. Gently fold together, cover again and leave on the heat for another 2-3 minutes until the spinach leaves wilt slightly and the peas warm through. Taste and, if needed, adjust the seasoning with a little salt.
 6. **Serving:** Take the pot off the heat and serve the warm, creamy khichdi in deep bowls. Sprinkle generously with fresh chopped cilantro and drizzle with freshly squeezed lemon juice. A spoon of cooling plain yogurt or crispy Indian papadum goes excellently with it.
 
 ## Tips

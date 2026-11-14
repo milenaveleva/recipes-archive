@@ -82,12 +82,13 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: fried
-  - raw: 25 g butter
-    quantity: 25
-    unit: g
-    item: butter
-    grams: 25
-    fdcId: 173430
+  - raw: 1½ tbsp extra virgin olive oil
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 19
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: 1 tsp fine salt
@@ -120,11 +121,11 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 585
-    energyKj: 2446
-    protein_g: 23.4
-    fat_g: 23.1
-    satFat_g: 9.9
+    energyKcal: 582
+    energyKj: 2434
+    protein_g: 23.3
+    fat_g: 22.8
+    satFat_g: 7.4
     carbs_g: 78.3
     fiber_g: 9.4
     sugar_g: 5.6
@@ -138,27 +139,27 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 82
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: 0.1
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.21
   balance:
     score: 4
     band: low
-    nrf: 19.3
+    nrf: 21.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 78.3
+    minimallyProcessedPct: 78.2
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -168,14 +169,14 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparation and cooking the pasta:** Bring plenty of lightly salted water to a boil in a large pot. When it is boiling, add the dry penne and cook it 1 minute less than the package instructions so it stays pleasantly 'al dente'. Before draining, scoop out at least 150 ml of the cooking water for the sauce.
 2. Meanwhile, prepare the vegetables: clean the cremini mushrooms and cut them into neat wedges or thicker slices. Halve the leek lengthwise, wash thoroughly between the layers, then slice into half-moons. Finely chop the garlic.
-3. **Browning the vegetables and making the creamy ragù:** In a large, deep pan, heat the extra virgin olive oil and butter over medium-high heat. Add the sliced mushrooms and brown them for 4-5 minutes until golden. Only salt and pepper them at the end of browning, so the mushrooms get a nice browned crust instead of releasing liquid.
+3. **Browning the vegetables and making the creamy ragù:** In a large, deep pan, heat the extra virgin olive oil over medium-high heat. Add the sliced mushrooms and brown them for 4-5 minutes until golden. Only salt and pepper them at the end of browning, so the mushrooms get a nice browned crust instead of releasing liquid.
 4. Add the sliced leek, finely chopped garlic and the picked fresh thyme leaves to the pan. Cook for another 3-4 minutes until the leek is soft, sweet and translucent.
 5. Lower the heat, add the ricotta and two thirds of the reserved pasta water. Stir thoroughly until the ricotta coats the vegetables with the hot pasta water, forming a creamy, silky emulsion. Stir in two thirds of the finely grated Parmesan as well.
 6. **Assembly and serving:** Pour the drained penne straight into the pan with the creamy sauce. Toss thoroughly over high heat for half a minute so every ridge of the pasta absorbs the flavours. If the sauce seems thick, add a little more cooking water.
@@ -183,5 +184,5 @@ createdAt: "2026-11-13"
 
 ## Tips
 
-- The starchy pasta water is the secret to the perfect sauce: mixed with ricotta and butter, it forms a velvety, restaurant-quality emulsion without adding heavy cream.
+- The starchy pasta water is the secret to the perfect sauce: mixed with ricotta and olive oil, it forms a velvety, restaurant-quality emulsion without adding heavy cream.
 - When browning the mushrooms, don't keep moving the pan: leave the slices undisturbed on the bottom of the pan for 1-2 minutes so they develop a more intense, caramelised aroma.

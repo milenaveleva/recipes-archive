@@ -90,13 +90,13 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: baked
-  - raw: 20 g butter
+  - raw: 15 g extra virgin olive oil
     group: For baking and seasoning
-    quantity: 20
+    quantity: 15
     unit: g
-    item: butter
-    grams: 20
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 15
+    fdcId: 171413
     matchConfidence: high
     cooking: baked
   - raw: 30 g whole-wheat breadcrumbs
@@ -140,11 +140,11 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 478
-    energyKj: 1999
+    energyKcal: 475
+    energyKj: 1987
     protein_g: 20.6
-    fat_g: 36.1
-    satFat_g: 18
+    fat_g: 35.8
+    satFat_g: 16
     carbs_g: 19.6
     fiber_g: 5.2
     sugar_g: 6.9
@@ -164,21 +164,21 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.7
+    score: 0.6
     band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.11
   balance:
-    score: 2
-    band: poor
-    nrf: 8.9
+    score: 3
+    band: low
+    nrf: 10.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 58.2
+    minimallyProcessedPct: 58
     ultraProcessedPct: 4.8
     band: moderately-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -188,13 +188,13 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
-1. **Preparing and roasting the eggplant:** Preheat the oven to 200 °C. Wash the eggplants, cut them in half lengthwise and score the flesh crosswise. Brush with extra virgin olive oil and salt lightly. Place cut side down on a baking tray lined with baking paper and bake for 30–35 minutes, until the skin wrinkles and the flesh is completely butter-soft. Let the roasted eggplant cool slightly, then scrape out the creamy flesh with a spoon into a sieve. Press out the excess moisture, then mash it in a mixing bowl with a fork or a chopper together with the crushed garlic.
-2. **Assembling and baking the soufflé:** Lower the oven temperature to 180 °C. Grease the moulds (4 soufflé dishes or one small ceramic baking dish) thoroughly with soft butter and sprinkle with breadcrumbs so the soufflé does not stick and can rise nicely. Mix the ricotta, whipping cream, three quarters of the grated Parmesan and the finely chopped fresh basil into the eggplant purée. Season with salt, freshly ground black pepper and a pinch of ground nutmeg. Separate the eggs. Stir the yolks one by one into the ricotta-eggplant mixture. Beat the whites with a pinch of salt to stiff, glossy peaks, then fold them into the cream with a spatula using gentle, loose movements, taking care that the foam does not collapse. Divide the mixture between the prepared moulds, filling them to two thirds of the way up. Sprinkle the tops with the remaining Parmesan. Bake at 180 °C for about 30–35 minutes, until the soufflé has risen nicely and has a golden, crisp crust. Serve immediately, warm, garnished with fresh basil leaves!
+1. **Preparing and roasting the eggplant:** Preheat the oven to 200 °C. Wash the eggplants, cut them in half lengthwise and score the flesh crosswise. Brush with extra virgin olive oil and salt lightly. Place cut side down on a baking tray lined with baking paper and bake for 30–35 minutes, until the skin wrinkles and the flesh is completely completely soft. Let the roasted eggplant cool slightly, then scrape out the creamy flesh with a spoon into a sieve. Press out the excess moisture, then mash it in a mixing bowl with a fork or a chopper together with the crushed garlic.
+2. **Assembling and baking the soufflé:** Lower the oven temperature to 180 °C. Grease the moulds (4 soufflé dishes or one small ceramic baking dish) thoroughly with olive oil and sprinkle with breadcrumbs so the soufflé does not stick and can rise nicely. Mix the ricotta, whipping cream, three quarters of the grated Parmesan and the finely chopped fresh basil into the eggplant purée. Season with salt, freshly ground black pepper and a pinch of ground nutmeg. Separate the eggs. Stir the yolks one by one into the ricotta-eggplant mixture. Beat the whites with a pinch of salt to stiff, glossy peaks, then fold them into the cream with a spatula using gentle, loose movements, taking care that the foam does not collapse. Divide the mixture between the prepared moulds, filling them to two thirds of the way up. Sprinkle the tops with the remaining Parmesan. Bake at 180 °C for about 30–35 minutes, until the soufflé has risen nicely and has a golden, crisp crust. Serve immediately, warm, garnished with fresh basil leaves!
 
 ## Tips
 

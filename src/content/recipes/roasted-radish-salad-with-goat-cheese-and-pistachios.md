@@ -1,6 +1,6 @@
 ---
 title: Roasted Radish Salad with Goat Cheese and Pistachios
-description: Roasted radishes tossed with arugula, goat cheese, mint and pistachios in a brown butter honey-lemon dressing.
+description: Roasted radishes tossed with arugula, goat cheese, mint and pistachios in a warm olive oil honey-lemon dressing.
 image: ./images/roasted-radish-salad-with-goat-cheese-and-pistachios.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/11526-1776088395240.jpg
 imageAlt: Roasted Radish Salad with Goat Cheese and Pistachios
@@ -64,12 +64,13 @@ ingredients:
     fdcId: 173475
     matchConfidence: high
     cooking: raw
-  - raw: 30 g butter
-    quantity: 30
-    unit: g
-    item: butter
-    grams: 30
-    fdcId: 173430
+  - raw: 1½ tbsp extra virgin olive oil
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 22
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: 1 tsp honey
@@ -114,45 +115,45 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 435
-    energyKj: 1820
-    protein_g: 13.6
-    fat_g: 36.8
-    satFat_g: 15.6
+    energyKcal: 425
+    energyKj: 1777
+    protein_g: 13.5
+    fat_g: 35.6
+    satFat_g: 9.6
     carbs_g: 16.6
     fiber_g: 5.4
     sugar_g: 7.9
-    sodium_mg: 640
+    sodium_mg: 639
     availableCarb_g: 11.3
   glycemic:
-    gi: 31
-    gl: 3
+    gi: 32
+    gl: 4
     giBand: low
     glBand: low
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 26
   nutriScore:
     grade: C
-    points: 9
+    points: 4
     category: general
     version: "2023"
     coverage: 0.98
   inflammation:
-    score: 0.1
-    band: neutral
+    score: -0.4
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.24
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 12.5
+    nrf: 19.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 75.7
+    minimallyProcessedPct: 75.1
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -162,13 +163,13 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. Preheat the oven to 200 °C (400 °F) and line a baking tray with baking paper. Wash the radishes, trim off the stems and roots, and cut them in half. Season with salt and pepper, drizzle with olive oil and toss so the oil coats everything.
 2. Spread the radishes evenly on the tray and roast in the preheated oven for about 35 minutes until tender and lightly browned.
-3. When done, melt the butter in a pan and heat until it foams strongly and turns lightly brown. Add the finely chopped garlic and the roasted radishes and sauté for a few minutes, stirring occasionally.
-4. Remove the radishes from the pan. Pour the remaining butter into a small bowl, add a pinch of salt and pepper, the lemon juice and the honey. Whisk into a creamy dressing.
+3. When done, warm the olive oil in a pan until it shimmers. Add the finely chopped garlic and the roasted radishes and sauté for a few minutes, stirring occasionally.
+4. Remove the radishes from the pan. Pour the remaining oil into a small bowl, add a pinch of salt and pepper, the lemon juice and the honey. Whisk into a creamy dressing.
 5. In a large bowl, combine the arugula, goat cheese pieces, roasted radishes, chopped mint and pistachios. Drizzle with the dressing and toss everything together.

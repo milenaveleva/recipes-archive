@@ -35,12 +35,12 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 100 g butter
-    quantity: 100
+  - raw: 75 g extra virgin olive oil
+    quantity: 75
     unit: g
-    item: butter
-    grams: 100
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 75
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 200 ml heavy cream
@@ -100,18 +100,18 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 437
-    energyKj: 1829
-    protein_g: 8.9
-    fat_g: 41.9
-    satFat_g: 25.1
+    energyKcal: 424
+    energyKj: 1773
+    protein_g: 8.7
+    fat_g: 40.3
+    satFat_g: 15
     carbs_g: 9.6
     fiber_g: 1.7
     sugar_g: 5.1
-    sodium_mg: 1213
+    sodium_mg: 1211
     availableCarb_g: 7.6
   glycemic:
-    gi: 13
+    gi: 14
     gl: 1
     giBand: low
     glBand: low
@@ -119,26 +119,26 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 10
+    points: 7
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 1.3
-    band: pro-inflammatory
+    score: 0.6
+    band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.14
   balance:
     score: 1
     band: poor
-    nrf: -16.5
+    nrf: -6.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 85.5
+    minimallyProcessedPct: 85
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -148,12 +148,12 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
-1. Sauté the finely chopped onion and garlic in the butter until soft, then add the well-washed mushrooms and cook until all the liquid they release has evaporated from the pot. This takes at least half an hour over medium heat. Season with salt, pepper and thyme, pour in the broth and cream, simmer for 10 minutes, then blend thoroughly; adjust the seasoning if needed.
+1. Sauté the finely chopped onion and garlic in the olive oil until soft, then add the well-washed mushrooms and cook until all the liquid they release has evaporated from the pot. This takes at least half an hour over medium heat. Season with salt, pepper and thyme, pour in the broth and cream, simmer for 10 minutes, then blend thoroughly; adjust the seasoning if needed.
 2. Sprinkle the Parmesan into a non-stick pan in rounds about 5 cm across and heat slowly until golden, then lift them out while hot and leave to cool.
 3. Serve the soup with the Parmesan crisps and a few nice salad leaves.
 

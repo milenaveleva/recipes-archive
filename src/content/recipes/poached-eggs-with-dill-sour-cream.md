@@ -1,6 +1,6 @@
 ---
 title: Poached Eggs with Dill Sour Cream
-description: A creamy Hungarian-style breakfast of poached eggs on dill sour cream, drizzled with paprika butter and served with whole-wheat sourdough toast.
+description: A creamy Hungarian-style breakfast of poached eggs on dill sour cream, drizzled with paprika oil and served with whole-wheat sourdough toast.
 image: ./images/poached-eggs-with-dill-sour-cream.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14731_1792655576189_hungarian-poached-eggs-with-dill-sour-cream_735aac83.jpg
 imageAlt: Poached Eggs with Dill Sour Cream
@@ -43,13 +43,13 @@ ingredients:
     fdcId: 172233
     matchConfidence: medium
     cooking: raw
-  - raw: 40 g butter
+  - raw: 30 g extra virgin olive oil
     group: Main ingredients
-    quantity: 40
+    quantity: 30
     unit: g
-    item: butter
-    grams: 40
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 30
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: 4 slices whole-wheat sourdough bread
@@ -103,15 +103,15 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 665
-    energyKj: 2784
-    protein_g: 26.6
-    fat_g: 43.7
-    satFat_g: 23.2
-    carbs_g: 41.4
+    energyKcal: 655
+    energyKj: 2739
+    protein_g: 26.4
+    fat_g: 42.5
+    satFat_g: 15.1
+    carbs_g: 41.3
     fiber_g: 5.3
     sugar_g: 4.3
-    sodium_mg: 857
+    sodium_mg: 855
     availableCarb_g: 36
   glycemic:
     gi: 48
@@ -121,27 +121,27 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
-    grade: D
-    points: 11
+    grade: C
+    points: 6
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.6
-    band: mildly-pro-inflammatory
+    score: 0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.01
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 12.5
+    nrf: 18.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 69.7
-    ultraProcessedPct: 30.3
+    minimallyProcessedPct: 69.2
+    ultraProcessedPct: 30.8
     band: moderately-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
@@ -150,15 +150,15 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparation and sour cream base:** Mix the room-temperature 20% sour cream thoroughly in a bowl with the finely chopped fresh dill, a pinch of fine salt and freshly ground black pepper. Spread the creamy base evenly on the bottom of two deeper breakfast plates.
-2. In a small frying pan over low heat, melt the butter, stir in the sweet paprika, then take off the heat so the paprika doesn't burn and stays pleasantly aromatic.
+2. In a small frying pan over low heat, warm the olive oil, stir in the sweet paprika, then take off the heat so the paprika doesn't burn and stays pleasantly aromatic.
 3. **Poaching the eggs and serving:** Bring water to the boil in a pot, then reduce to a simmer. Add the 10% vinegar and a pinch of salt. Crack the eggs one by one into a small bowl, create a whirlpool in the simmering water with a spoon and slide the egg into the centre. Cook gently for 3-3.5 minutes until the white sets but the yolk stays runny, then lift out carefully with a slotted spoon and drain.
-4. Place the warm poached eggs (2 per serving) on the chilled or room-temperature dill sour cream. Drizzle with the golden paprika butter and serve immediately with slices of freshly toasted crisp sourdough bread.
+4. Place the warm poached eggs (2 per serving) on the chilled or room-temperature dill sour cream. Drizzle with the golden paprika oil and serve immediately with slices of freshly toasted crisp sourdough bread.
 
 ## Tips
 

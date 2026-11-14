@@ -35,13 +35,13 @@ ingredients:
     fdcId: 2710823
     matchConfidence: high
     cooking: boiled
-  - raw: 200 g butter
+  - raw: 150 g extra virgin olive oil
     group: Hollandaise and side
-    quantity: 200
+    quantity: 150
     unit: g
-    item: butter
-    grams: 200
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 150
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 3 egg yolks
@@ -120,16 +120,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 616
-    energyKj: 2578
-    protein_g: 15.1
-    fat_g: 45.1
-    satFat_g: 26.7
+    energyKcal: 589
+    energyKj: 2465
+    protein_g: 14.7
+    fat_g: 42
+    satFat_g: 6.6
     carbs_g: 43.6
     fiber_g: 12.9
-    sugar_g: 10.8
-    sodium_mg: 30
-    availableCarb_g: 30.8
+    sugar_g: 10.7
+    sodium_mg: 25
+    availableCarb_g: 30.7
   glycemic:
     gi: 53
     gl: 16
@@ -138,26 +138,26 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 63
   nutriScore:
-    grade: B
-    points: 2
+    grade: A
+    points: -1
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.5
-    band: mildly-pro-inflammatory
+    score: -0.6
+    band: mildly-anti-inflammatory
     method: fii v4
   balance:
-    score: 6
-    band: moderate
-    nrf: 33.1
+    score: 7
+    band: high
+    nrf: 49.8
     version: NRF9.3
   processing:
     minimallyProcessedPct: 98
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -166,7 +166,7 @@ nutrition:
     - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -174,11 +174,11 @@ createdAt: "2026-11-13"
 1. **Preparing and cooking the asparagus:** Peel the white asparagus and cut off the woody ends. Green asparagus does not need peeling; just remove the small leaves from the stalks. Tie the white and green asparagus into separate bundles with kitchen string.
 2. Bring 3 litres of water to a boil with 1 tablespoon of salt in a narrow, tall pot. Stand the asparagus bundles in it: cook the green for 5 minutes and the white for 10 minutes. Untie the cooked asparagus and divide it between warmed plates. Drizzle with part of the hollandaise sauce and serve the rest in a separate bowl.
 3. Serve with boiled potatoes or fresh whole-wheat bread.
-4. **Making the hollandaise sauce:** Melt the butter in a small saucepan until hot, then set aside.
+4. **Making the hollandaise sauce:** Warm the olive oil (a light extra virgin one keeps the flavour mild) in a small saucepan, then set aside.
 5. Whisk the egg yolks in a stainless steel or glass bowl with a little water and a pinch of salt.
 6. In another saucepan, pour in the vinegar and wine and add the pepper. Boil until about 2 tablespoons of liquid remain, then add it to the egg yolks, stirring constantly.
 7. Pour 2 cm of water into a pan, bring to a boil, then reduce the heat to the minimum. Set the egg yolk bowl over it so that the bottom does not touch the water. Whisk constantly until the sauce starts to thicken. Take it off the heat.
-8. Gradually pour the hot butter into the egg mixture, whisking constantly. At first only drop by drop, then in a thin stream. Finally stir in the lemon juice and season with salt.
+8. Gradually pour the warm olive oil into the egg mixture, whisking constantly. At first only drop by drop, then in a thin stream. Finally stir in the lemon juice and season with salt.
 
 ## Tips
 

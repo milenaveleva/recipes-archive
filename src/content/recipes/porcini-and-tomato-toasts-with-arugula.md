@@ -65,12 +65,12 @@ ingredients:
     fdcId: 2346386
     matchConfidence: high
     cooking: boiled
-  - raw: 100 g butter
-    quantity: 100
+  - raw: 75 g extra virgin olive oil
+    quantity: 75
     unit: g
-    item: butter
-    grams: 100
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 75
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: fresh basil, a little
@@ -136,15 +136,15 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 843
-    energyKj: 3529
-    protein_g: 17.3
-    fat_g: 65
-    satFat_g: 26.6
+    energyKcal: 830
+    energyKj: 3472
+    protein_g: 17.1
+    fat_g: 63.5
+    satFat_g: 16.6
     carbs_g: 53.9
     fiber_g: 10
     sugar_g: 16
-    sodium_mg: 786
+    sodium_mg: 784
     availableCarb_g: 43.9
   glycemic:
     gi: 46
@@ -155,26 +155,26 @@ nutrition:
     measuredGiPct: 10
   nutriScore:
     grade: C
-    points: 6
+    points: 4
     category: general
     version: "2023"
     coverage: 0.74
   inflammation:
-    score: 0
-    band: neutral
+    score: -0.4
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.39
   balance:
-    score: 2
-    band: poor
-    nrf: 8.6
+    score: 3
+    band: low
+    nrf: 16.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 76.1
-    ultraProcessedPct: 23.9
+    minimallyProcessedPct: 75.7
+    ultraProcessedPct: 24.3
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -184,7 +184,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -192,7 +192,7 @@ createdAt: "2026-11-13"
 1. Toast the bread.
 2. Finely dice the onions and crush the garlic.
 3. For the porcini ragout, clean the mushrooms; if using frozen ones, wash them thoroughly while still frozen.
-4. Sauté half of the onion and garlic in a little butter, then add the mushrooms and fry until their own liquid has cooked off. Season with salt, pepper and thyme, add the cream and simmer until it reaches a ragout consistency.
+4. Sauté half of the onion and garlic in a little olive oil, then add the mushrooms and fry until their own liquid has cooked off. Season with salt, pepper and thyme, add the cream and simmer until it reaches a ragout consistency.
 5. Mix the other half of the onion and garlic with the diced tomatoes, season with fresh herbs, salt, pepper and extra virgin olive oil, and a few drops of wine vinegar if you like.
 6. Serve the toasts with the two toppings and fresh arugula, and spoon over some of the juices that collect from the tomatoes when serving.
 

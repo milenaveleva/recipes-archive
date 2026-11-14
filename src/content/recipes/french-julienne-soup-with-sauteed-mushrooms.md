@@ -88,13 +88,14 @@ ingredients:
     fdcId: 170416
     matchConfidence: high
     cooking: raw
-  - raw: 30 g butter
+  - raw: 1½ tbsp extra virgin olive oil
     group: Spices and pantry
-    quantity: 30
-    unit: g
-    item: butter
-    grams: 30
-    fdcId: 173430
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 22
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 15 ml extra virgin olive oil
@@ -139,15 +140,15 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 191
-    energyKj: 799
+    energyKcal: 186
+    energyKj: 778
     protein_g: 3.9
-    fat_g: 10.2
-    satFat_g: 4.4
+    fat_g: 9.6
+    satFat_g: 1.4
     carbs_g: 19.8
     fiber_g: 4.9
     sugar_g: 6.8
-    sodium_mg: 1333
+    sodium_mg: 1332
     availableCarb_g: 14.9
   glycemic:
     gi: 38
@@ -163,21 +164,21 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.5
-    band: mildly-pro-inflammatory
+    score: 0.1
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.15
   balance:
-    score: 4
-    band: low
-    nrf: 18.2
+    score: 5
+    band: moderate
+    nrf: 25.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 83.2
+    minimallyProcessedPct: 82.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -187,16 +188,16 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparation and julienne vegetables:** Wash and clean the vegetables carefully. Cut the carrot and celery into even, thin matchstick strips (julienne, about 4–5 cm long). Halve the white and light green part of the leek lengthwise and also slice into fine thin strips. Finely chop the garlic.
 2. Clean the cremini mushrooms with a paper towel and cut them into neat slices about 3–4 mm thick. Finely chop the fresh parsley.
-3. **Cooking the soup base and searing the mushrooms:** In a medium pot, heat 15 g butter and the extra virgin olive oil. Add the julienned carrot, leek and celery and cook over medium heat for 4–5 minutes until the vegetables soften slightly but are still pleasantly crisp. Add the crushed garlic and thyme and cook for another half minute until fragrant.
+3. **Cooking the soup base and searing the mushrooms:** In a medium pot, heat half of the additional olive oil and the extra virgin olive oil. Add the julienned carrot, leek and celery and cook over medium heat for 4–5 minutes until the vegetables soften slightly but are still pleasantly crisp. Add the crushed garlic and thyme and cook for another half minute until fragrant.
 4. Pour in the dry white wine and boil over lively heat for 1–2 minutes to cook off the alcohol. Then pour in the warm vegetable broth and season with fine salt and ground black pepper. From the boil, simmer on low heat for 8–10 minutes so the vegetables become perfectly tender but keep their shape and colour.
-5. While the soup simmers, heat the remaining 15 g butter in a separate pan over high heat. Add the sliced cremini in a single layer (do not overcrowd the pan). Cook for 4–5 minutes without stirring until the underside is deep golden, then toss and sauté another 2–3 minutes seasoned with a pinch of salt and pepper until temptingly caramelised.
+5. While the soup simmers, heat the remaining additional olive oil in a separate pan over high heat. Add the sliced cremini in a single layer (do not overcrowd the pan). Cook for 4–5 minutes without stirring until the underside is deep golden, then toss and sauté another 2–3 minutes seasoned with a pinch of salt and pepper until temptingly caramelised.
 6. **Serving:** Ladle the simmering, fragrant julienne soup into deep plates. Pile plenty of the freshly seared, crispy cremini on top and sprinkle with fresh chopped parsley. Serve hot, with crusty French baguette if you like.
 
 ## Tips

@@ -197,7 +197,7 @@ nutrition:
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -207,7 +207,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -218,7 +218,7 @@ createdAt: "2026-11-13"
 4. In the fat left in the pan, fry the finely chopped onion for 4-5 minutes until soft and translucent. Add the grated garlic and ginger and fry for another minute to release the aromatic oils.
 5. Sprinkle in the spices: the curry powder, ground turmeric and ground cumin. Fry for 30-40 seconds, stirring constantly, taking care not to burn them.
 6. Pour in the chopped tomatoes and the creamy coconut milk, then stir in the drained chickpeas and the previously browned mushrooms. Season with 1 tsp fine salt.
-7. Bring the stew to the boil, then reduce the heat and simmer covered for 12-15 minutes until the flavours meld, the mushrooms are butter-soft and the sauce has thickened pleasantly.
+7. Bring the stew to the boil, then reduce the heat and simmer covered for 12-15 minutes until the flavours meld, the mushrooms are silky-soft and the sauce has thickened pleasantly.
 8. **Serving:** Turn off the heat and squeeze the fresh lime juice into the curry. Serve on a bed of hot brown basmati rice, sprinkled generously with chopped fresh coriander.
 
 ## Tips

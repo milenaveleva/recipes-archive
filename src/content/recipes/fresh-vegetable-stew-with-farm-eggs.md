@@ -1,6 +1,6 @@
 ---
 title: Fresh Vegetable Stew with Farm Eggs
-description: Lightly cooked seasonal vegetables in a lemony butter sauce, served with soft-boiled farm eggs.
+description: Lightly cooked seasonal vegetables in a lemony olive-oil sauce, served with soft-boiled farm eggs.
 image: ./images/fresh-vegetable-stew-with-farm-eggs.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10486_1775303721326_spring-vegetable-stew-with-soft-boiled-eggs_2714c967.png
 imageAlt: Fresh Vegetable Stew with Farm Eggs
@@ -34,12 +34,12 @@ ingredients:
     fdcId: 171287
     matchConfidence: medium
     cooking: boiled
-  - raw: 150 g butter
-    quantity: 150
+  - raw: 110 g extra virgin olive oil
+    quantity: 110
     unit: g
-    item: butter
-    grams: 150
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 112
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 100 ml vegetable broth
@@ -79,45 +79,45 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 586
-    energyKj: 2454
-    protein_g: 21
-    fat_g: 41
-    satFat_g: 22.4
+    energyKcal: 565
+    energyKj: 2364
+    protein_g: 20.7
+    fat_g: 38.6
+    satFat_g: 7.3
     carbs_g: 33.9
     fiber_g: 11.1
-    sugar_g: 8.4
-    sodium_mg: 604
-    availableCarb_g: 22.9
+    sugar_g: 8.3
+    sodium_mg: 601
+    availableCarb_g: 22.8
   glycemic:
-    gi: 13
+    gi: 14
     gl: 3
     giBand: low
     glBand: low
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
-    grade: C
-    points: 3
+    grade: A
+    points: -1
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.5
-    band: mildly-pro-inflammatory
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.02
   balance:
-    score: 4
-    band: low
-    nrf: 21.7
+    score: 6
+    band: moderate
+    nrf: 34.4
     version: NRF9.3
   processing:
     minimallyProcessedPct: 99.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -127,16 +127,16 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. Blanch the green vegetables in hot salted water, then refresh them in ice water.
-2. Steam the kohlrabi in a little butter.
-3. For the butter sauce, slice a spring onion into rings, cook it gently in butter, then pour in the broth and season with salt, pepper and a few drops of lemon.
+2. Steam the kohlrabi in a little olive oil.
+3. For the olive-oil sauce, slice a spring onion into rings, cook it gently in olive oil, then pour in the broth and season with salt, pepper and a few drops of lemon.
 4. The cauliflower can be steamed or boiled for a few minutes.
-5. Serve the cooked vegetables with the butter sauce and soft-boiled eggs.
+5. Serve the cooked vegetables with the olive-oil sauce and soft-boiled eggs.
 
 ## Tips
 

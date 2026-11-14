@@ -57,12 +57,13 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: baked
-  - raw: 30 g butter
-    quantity: 30
-    unit: g
-    item: butter
-    grams: 30
-    fdcId: 173430
+  - raw: 1½ tbsp extra virgin olive oil
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 22
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: baked
   - raw: 20 g whole-wheat flour
@@ -127,15 +128,15 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 431
-    energyKj: 1803
+    energyKcal: 426
+    energyKj: 1781
     protein_g: 15.4
-    fat_g: 27.6
-    satFat_g: 16.1
+    fat_g: 27
+    satFat_g: 13
     carbs_g: 33.9
     fiber_g: 4.2
     sugar_g: 8.5
-    sodium_mg: 1255
+    sodium_mg: 1254
     availableCarb_g: 29.6
   glycemic:
     gi: 60
@@ -146,26 +147,26 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 10
+    points: 7
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.8
-    band: pro-inflammatory
+    score: 0.6
+    band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.24
   balance:
     score: 3
     band: low
-    nrf: 12.5
+    nrf: 15.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 62.8
-    ultraProcessedPct: 5.3
+    minimallyProcessedPct: 62.3
+    ultraProcessedPct: 5.4
     band: moderately-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -175,21 +176,21 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparing and braising the leeks:** Preheat the oven to 200 °C (top and bottom heat). Wash the leeks thoroughly, also between the layers, remove the damaged outer leaves and the root end, then cut into 8-10 cm pieces.
 2. Bring the vegetable broth to the boil in a wide pan with a pinch of salt. Add the leek pieces, cover and simmer for 8-10 minutes until slightly softened but still holding together nicely. Lift out with a slotted spoon and drain, and set the remaining vegetable broth aside.
-3. **Silky sauce and assembly:** Melt 20 g of butter in a small saucepan, add the flour and cook until light blond, about 1 minute. Gradually pour in the reserved warm vegetable broth and whisk until smooth, thick and lump-free.
+3. **Silky sauce and assembly:** Warm 15 g of olive oil in a small saucepan, add the flour and cook until light blond, about 1 minute. Gradually pour in the reserved warm vegetable broth and whisk until smooth, thick and lump-free.
 4. Take off the heat and stir in the sour cream, crushed garlic, sweet paprika, salt, freshly ground black pepper and a pinch of ground nutmeg. Taste; it should be pleasantly full, creamy and harmoniously spiced.
-5. Grease a medium ovenproof dish with the remaining 10 g of butter. Lay the drained leeks tightly side by side in it, then pour the rich spiced sour cream sauce evenly over them.
+5. Grease a medium ovenproof dish with the remaining 7 g of olive oil. Lay the drained leeks tightly side by side in it, then pour the rich spiced sour cream sauce evenly over them.
 6. **Baking and serving:** In a small bowl mix the grated trappista cheese with the breadcrumbs and sprinkle evenly over the leeks coated in sauce. This crumbly cheese layer gives the wonderful crisp golden crust.
 7. Place in the preheated oven and bake for 20-25 minutes until the cheese has fully melted, the sauce bubbles at the edges and the top is a beautiful golden brown.
 8. After baking, leave to rest for 5 minutes so the creamy layers set nicely, then sprinkle with freshly chopped parsley and serve hot.
 
 ## Tips
 
-- Great dipped with fresh, crusty homemade whole-wheat sourdough, but also an excellent side to steamed brown jasmine rice or buttery mashed potatoes.
+- Great dipped with fresh, crusty homemade whole-wheat sourdough, but also an excellent side to steamed brown jasmine rice or creamy mashed potatoes.
 - If you like more piquant, smokier flavours, replace part of the trappista cheese with smoked cheese or aged mountain cheese.

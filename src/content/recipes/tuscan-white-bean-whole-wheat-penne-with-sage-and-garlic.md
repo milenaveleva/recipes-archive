@@ -58,12 +58,13 @@ ingredients:
     fdcId: 173431
     matchConfidence: high
     cooking: raw
-  - raw: 30 g butter
-    quantity: 30
-    unit: g
-    item: butter
-    grams: 30
-    fdcId: 173430
+  - raw: 1½ tbsp extra virgin olive oil
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 22
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: 30 ml extra virgin olive oil
@@ -104,15 +105,15 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 605
-    energyKj: 2531
-    protein_g: 26.1
-    fat_g: 20
-    satFat_g: 7.9
+    energyKcal: 600
+    energyKj: 2509
+    protein_g: 26
+    fat_g: 19.4
+    satFat_g: 4.8
     carbs_g: 86.8
     fiber_g: 13.7
     sugar_g: 3.3
-    sodium_mg: 856
+    sodium_mg: 855
     availableCarb_g: 73.1
   glycemic:
     gi: 47
@@ -122,27 +123,27 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 77
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
+    score: 0
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.21
   balance:
     score: 5
     band: moderate
-    nrf: 24.5
+    nrf: 27
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 71.1
+    minimallyProcessedPct: 70.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -152,19 +153,19 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparation and cooking the pasta:** Bring plenty of water to the boil in a large pot and add salt (the pasta water should be pleasantly salty, like sea water). When it boils, add the penne and cook until al dente, 1-2 minutes less than the time on the package. Before draining, scoop out 1-1.5 cups of the cooking water for the silky emulsion.
 2. Peel the garlic cloves and slice them into thin slivers. Wash the fresh sage leaves, then gently pat dry. Rinse the canned white beans and drain thoroughly.
-3. **Making the sage and bean sauce:** In a deep, wide pan heat the extra virgin olive oil and butter over medium heat. When the butter foams, add the whole sage leaves and fry for about 1-2 minutes until crisp and they flavour the fat wonderfully. With tongs take out a few nice leaves for serving.
+3. **Making the sage and bean sauce:** In a deep, wide pan heat the extra virgin olive oil over medium heat. When it shimmers, add the whole sage leaves and fry for about 1-2 minutes until crisp and they flavour the fat wonderfully. With tongs take out a few nice leaves for serving.
 4. Add the thinly sliced garlic to the fat left in the pan and fry gently for half a minute, taking care it does not burn and turn bitter. Then add the rinsed white beans. With a wooden spoon or fork gently mash about a third of the beans, so they form a creamy, thick base. Season with salt and freshly ground black pepper.
 5. **Assembly and serving:** Pour about 100-150 ml of the reserved hot pasta water into the pan and simmer together with the bean base for 1 minute. Add the cooked penne directly to the pan. Stir vigorously and shake the pan until the starchy cooking water, fat and mashed beans form a silky, creamy coating on the pasta.
 6. Take the pan off the heat. Stir in half of the freshly grated Parmesan and a little fresh organic lemon juice, which gives the rich flavours perfect freshness. Divide the pasta among deep plates, sprinkle with the remaining Parmesan and the reserved crisp sage leaves, and finish with a few drops of extra virgin olive oil.
 
 ## Tips
 
-- The great secret of Tuscan pasta is the pasta water: its starch emulsifies perfectly with the butter, olive oil and the slightly mashed beans, so you get an irresistibly silky sauce without cream.
+- The great secret of Tuscan pasta is the pasta water: its starch emulsifies perfectly with the olive oil and the slightly mashed beans, so you get an irresistibly silky sauce without cream.
 - If you like it spicier, fry a pinch of dried chili flakes in the oil along with the garlic.

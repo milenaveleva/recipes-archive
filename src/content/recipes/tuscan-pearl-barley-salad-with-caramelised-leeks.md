@@ -75,12 +75,13 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 25 g butter
-    quantity: 25
-    unit: g
-    item: butter
-    grams: 25
-    fdcId: 173430
+  - raw: 1½ tbsp extra virgin olive oil
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 19
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: 45 ml extra virgin olive oil
@@ -130,11 +131,11 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 525
-    energyKj: 2199
-    protein_g: 14.1
-    fat_g: 29.6
-    satFat_g: 7.9
+    energyKcal: 523
+    energyKj: 2187
+    protein_g: 14
+    fat_g: 29.2
+    satFat_g: 5.4
     carbs_g: 55.3
     fiber_g: 10.6
     sugar_g: 5.7
@@ -149,26 +150,26 @@ nutrition:
     measuredGiPct: 69
   nutriScore:
     grade: C
-    points: 5
+    points: 4
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
+    score: -0.1
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.11
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 16.7
+    nrf: 18.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 89
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -178,14 +179,14 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparing the barley and ingredients:** Rinse the pearl barley thoroughly in a sieve under cold water. Put it in a pot with the vegetable broth, add a pinch of salt and bring to a boil. Cook covered over low heat for about 25-30 minutes until pleasantly al dente, springy and tender. Drain off any excess liquid, then let it cool to lukewarm.
 2. Cut off the green parts of the leeks, halve the white and light green stalks lengthwise, wash the layers out thoroughly, then slice into half-moons about 1 cm thick. Finely chop the garlic, toast the walnuts in a dry pan for 2-3 minutes until fragrant, then chop them roughly.
-3. **Caramelising the leeks:** In a wide pan over medium heat, melt the butter together with 1 tablespoon of extra virgin olive oil. Add the sliced leeks and thyme, and salt lightly.
+3. **Caramelising the leeks:** In a wide pan over medium heat, heat 1 tablespoon of extra virgin olive oil together with the additional olive oil. Add the sliced leeks and thyme, and salt lightly.
 4. Cook and sauté the leeks over low-medium heat, stirring often, for 12-15 minutes until completely soft and a beautiful golden-brown, sweet caramelised colour. In the last minutes add the finely chopped garlic.
 5. Drizzle the caramelised leeks with 1 teaspoon of balsamic vinegar, stir well to dissolve the flavourful bits stuck to the bottom, then turn off the heat.
 6. **Assembling and serving the salad:** In a small bowl, whisk the remaining extra virgin olive oil with the remaining balsamic vinegar, fine salt and freshly ground black pepper until you get a glossy, silky dressing.

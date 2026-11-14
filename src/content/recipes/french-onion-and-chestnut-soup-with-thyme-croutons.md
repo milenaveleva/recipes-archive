@@ -56,13 +56,13 @@ ingredients:
     fdcId: 170859
     matchConfidence: high
     cooking: boiled
-  - raw: 40 g butter
+  - raw: 30 g extra virgin olive oil
     group: Seasonings and basics
-    quantity: 40
+    quantity: 30
     unit: g
-    item: butter
-    grams: 40
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 30
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 15 ml olive oil
@@ -115,11 +115,11 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 518
-    energyKj: 2169
+    energyKcal: 513
+    energyKj: 2146
     protein_g: 7.2
-    fat_g: 27
-    satFat_g: 14.6
+    fat_g: 26.4
+    satFat_g: 10.6
     carbs_g: 63
     fiber_g: 7.2
     sugar_g: 15.9
@@ -134,26 +134,26 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 6
+    points: 5
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.6
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.16
   balance:
     score: 2
     band: poor
-    nrf: 2.5
+    nrf: 6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 84.5
+    minimallyProcessedPct: 84.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -163,14 +163,14 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
-1. **Preparation and caramelisation:** Peel the red onions and cut them into thin slices. In a heavy-bottomed saucepan, melt half of the butter with the olive oil, then add the onion slices and a pinch of salt. Cook and caramelise the onions over medium-low heat, stirring often, for about 20–25 minutes, until deep golden brown and naturally sweet.
+1. **Preparation and caramelisation:** Peel the red onions and cut them into thin slices. In a heavy-bottomed saucepan, warm half of the additional olive oil with the olive oil, then add the onion slices and a pinch of salt. Cook and caramelise the onions over medium-low heat, stirring often, for about 20–25 minutes, until deep golden brown and naturally sweet.
 2. **Cooking and puréeing:** Add the cooked, peeled chestnuts to the caramelised onions (set aside a few for serving). Sprinkle in half of the thyme, then pour in the warm vegetable broth. Bring to the boil, then simmer gently, covered, for 15 minutes so the flavours come together perfectly. Take off the heat, add the whipping cream, season with freshly ground black pepper, then blend completely smooth with a hand blender into a velvety texture. Adjust the seasoning with salt if needed.
-3. **Making the croutons and serving:** Cut the baguette into bite-sized cubes. In a frying pan, melt the remaining butter, add the remaining thyme and fry the bread cubes in it until golden brown and crisp. Ladle the hot onion and chestnut soup into bowls, sprinkle with the crispy thyme croutons and the reserved chopped chestnut pieces, and serve immediately.
+3. **Making the croutons and serving:** Cut the baguette into bite-sized cubes. In a frying pan, warm the remaining olive oil, add the remaining thyme and fry the bread cubes in it until golden brown and crisp. Ladle the hot onion and chestnut soup into bowls, sprinkle with the crispy thyme croutons and the reserved chopped chestnut pieces, and serve immediately.
 
 ## Tips
 

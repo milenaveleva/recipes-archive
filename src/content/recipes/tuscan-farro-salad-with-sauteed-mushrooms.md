@@ -71,13 +71,14 @@ ingredients:
     fdcId: 173431
     matchConfidence: high
     cooking: raw
-  - raw: 30 g butter
+  - raw: 1½ tbsp extra virgin olive oil
     group: Dressing and sautéing
-    quantity: 30
-    unit: g
-    item: butter
-    grams: 30
-    fdcId: 173430
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 22
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: 3 tbsp extra virgin olive oil
@@ -141,15 +142,15 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 946
-    energyKj: 3957
-    protein_g: 33.4
-    fat_g: 55.1
-    satFat_g: 16.4
+    energyKcal: 935
+    energyKj: 3914
+    protein_g: 33.3
+    fat_g: 54
+    satFat_g: 10.4
     carbs_g: 91.3
     fiber_g: 14.7
     sugar_g: 16
-    sodium_mg: 1645
+    sodium_mg: 1644
     availableCarb_g: 76.6
   glycemic:
     gi: 55
@@ -160,26 +161,26 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 5
+    points: 4
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.4
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.34
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 16.1
+    nrf: 19.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 89
+    minimallyProcessedPct: 88.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -189,13 +190,13 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparing and cooking the grain:** Rinse the farro thoroughly under cold running water in a fine sieve. Put it in a medium saucepan, pour over plenty of lightly salted water and bring to the boil. Cook covered over medium heat for about 20–25 minutes, until the grains are pleasantly chewy (al dente). Drain and leave to cool to lukewarm in a bowl.
-2. **Sautéing the mushrooms and dressing:** Clean the cremini mushrooms with a damp cloth, then cut them into thicker wedges or quarters. Finely chop the shallots and garlic cloves. In a larger, heavy frying pan, heat 1 tablespoon of extra virgin olive oil and 15 g of butter over medium-high heat. Add the shallots and fry for 2–3 minutes until translucent. Add the cremini mushrooms to the pan. Fry over high heat for 5–6 minutes, shaking the pan without stirring too much, so the mushrooms get a nice golden crust. Add the remaining 15 g of butter, the crushed garlic and the fresh thyme. Season to taste with salt and pepper, then drizzle with the Modena balsamic vinegar and toss for 1–2 minutes until a silky glaze forms on the mushrooms. Turn off the heat. In a dry pan, without any fat, toast the walnuts for 2–3 minutes until golden brown, then chop coarsely.
+2. **Sautéing the mushrooms and dressing:** Clean the cremini mushrooms with a damp cloth, then cut them into thicker wedges or quarters. Finely chop the shallots and garlic cloves. In a larger, heavy frying pan, heat 1 tablespoon of extra virgin olive oil and 11 g more extra virgin olive oil over medium-high heat. Add the shallots and fry for 2–3 minutes until translucent. Add the cremini mushrooms to the pan. Fry over high heat for 5–6 minutes, shaking the pan without stirring too much, so the mushrooms get a nice golden crust. Add the remaining 11 g of olive oil, the crushed garlic and the fresh thyme. Season to taste with salt and pepper, then drizzle with the Modena balsamic vinegar and toss for 1–2 minutes until a silky glaze forms on the mushrooms. Turn off the heat. In a dry pan, without any fat, toast the walnuts for 2–3 minutes until golden brown, then chop coarsely.
 3. **Assembly and serving:** In a large mixing bowl, toss the lukewarm cooked farro with the fresh arugula and the remaining 2 tablespoons of extra virgin olive oil. Divide the grain base among deep plates and pile the warm, fragrant sautéed mushrooms on top, together with the spicy balsamic juices left in the pan. Sprinkle with the crunchy toasted walnuts and freshly shaved Parmesan. Eat immediately, fresh!
 
 ## Tips

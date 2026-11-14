@@ -1,6 +1,6 @@
 ---
 title: Whole Roasted Cauliflower with Tahini Yogurt
-description: A spectacular Middle Eastern whole roasted cauliflower in a spiced butter, served over tahini yogurt with pistachios, pomegranate and parsley.
+description: A spectacular Middle Eastern whole roasted cauliflower in spiced olive oil, served over tahini yogurt with pistachios, pomegranate and parsley.
 image: ./images/whole-roasted-cauliflower-with-tahini-yogurt.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14752_1793090888699_whole-roasted-cauliflower-with-tahini_30ea24a7.jpg
 imageAlt: Whole Roasted Cauliflower with Tahini Yogurt
@@ -26,13 +26,13 @@ ingredients:
     fdcId: 169986
     matchConfidence: high
     cooking: baked
-  - raw: 40 g butter
+  - raw: 30 g extra virgin olive oil
     group: For the spiced roasted cauliflower
-    quantity: 40
+    quantity: 30
     unit: g
-    item: butter
-    grams: 40
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 30
+    fdcId: 171413
     matchConfidence: high
     cooking: baked
   - raw: 40 g extra virgin olive oil
@@ -167,15 +167,15 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 339
-    energyKj: 1420
-    protein_g: 8.4
-    fat_g: 28.2
-    satFat_g: 8.5
+    energyKcal: 334
+    energyKj: 1397
+    protein_g: 8.3
+    fat_g: 27.5
+    satFat_g: 4.4
     carbs_g: 18.7
     fiber_g: 6.3
     sugar_g: 7
-    sodium_mg: 679
+    sodium_mg: 678
     availableCarb_g: 12.4
   glycemic:
     gi: 29
@@ -185,27 +185,27 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 12
   nutriScore:
-    grade: C
-    points: 4
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 0.96
   inflammation:
-    score: -0.4
+    score: -0.8
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.16
   balance:
-    score: 6
-    band: moderate
-    nrf: 36
+    score: 7
+    band: high
+    nrf: 42
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -215,20 +215,20 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparing and steaming:** Remove the outer green leaves of the cauliflower and trim the stem flat so the cauliflower head stands stably on its base. Bring plenty of lightly salted water to the boil in a large pot.
 2. Place the cauliflower head-down in the boiling water and par-cook over medium heat for 12 minutes until slightly softened but still holding its shape. Carefully lift out with a slotted spoon, let drain thoroughly, then pat dry with paper towel.
-3. **Seasoning and roasting:** Preheat the oven to 220 °C (top and bottom heat). In a small bowl mix the melted butter, extra virgin olive oil, smoked paprika, garlic powder, chili, ground cumin, salt and freshly ground black pepper.
+3. **Seasoning and roasting:** Preheat the oven to 220 °C (top and bottom heat). In a small bowl mix the extra virgin olive oil, smoked paprika, garlic powder, chili, ground cumin, salt and freshly ground black pepper.
 4. Place the par-cooked cauliflower on a baking tray lined with baking paper, standing on its base. With a brush coat it generously on all sides with the spiced marinade, working plenty into the crevices as well.
-5. Put it in the oven preheated to 220 °C and roast for about 45 minutes until the outside is deep red and crisp, and the inside is butter-soft. Once or twice during roasting brush with the spiced fat collected in the tray.
+5. Put it in the oven preheated to 220 °C and roast for about 45 minutes until the outside is deep red and crisp, and the inside is tender. Once or twice during roasting brush with the spiced fat collected in the tray.
 6. **Tahini cream and serving:** While the cauliflower roasts, make the dip: mix the plain yogurt, tahini, freshly squeezed lemon juice and finely grated garlic until you get a completely silky cream. Enrich with a pinch of salt to taste.
 7. To serve, spread the tahini yogurt cream on a large flat serving plate. Set the hot roasted cauliflower in the middle, then sprinkle with coarsely chopped pistachios, fresh pomegranate seeds and finely chopped parsley. Serve immediately!
 
 ## Tips
 
-- For a vegan version, simply replace the butter entirely with extra virgin olive oil and the yogurt with plain plant-based yogurt.
+- For a vegan version, simply replace the yogurt with plain plant-based yogurt.
 - The tart sweetness of the pomegranate and the crunch of plain roasted pistachios form a perfect harmony with the smoky-spicy roasted cauliflower and the creamy tahini.

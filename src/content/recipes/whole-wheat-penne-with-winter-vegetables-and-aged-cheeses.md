@@ -1,6 +1,6 @@
 ---
 title: Whole-Wheat Penne with Winter Vegetables and Aged Cheeses
-description: Whole-wheat penne tossed in a creamy leek and butter sauce with blanched broccoli and Parmesan.
+description: Whole-wheat penne tossed in a creamy leek and olive oil sauce with blanched broccoli and Parmesan.
 image: ./images/whole-wheat-penne-with-winter-vegetables-and-aged-cheeses.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10378_1775302603842_penne-with-winter-vegetables-and-aged-cheese_1aec7d21.png
 imageAlt: Whole-Wheat Penne with Winter Vegetables and Aged Cheeses
@@ -49,12 +49,12 @@ ingredients:
     fdcId: 173431
     matchConfidence: high
     cooking: raw
-  - raw: 150 g butter
-    quantity: 150
+  - raw: 110 g extra virgin olive oil
+    quantity: 110
     unit: g
-    item: butter
-    grams: 150
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 112
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 200 ml heavy cream
@@ -142,16 +142,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 998
-    energyKj: 4177
-    protein_g: 26.5
-    fat_g: 55.7
-    satFat_g: 31.9
-    carbs_g: 109.6
+    energyKcal: 977
+    energyKj: 4087
+    protein_g: 26.2
+    fat_g: 53.3
+    satFat_g: 16.8
+    carbs_g: 109.5
     fiber_g: 14.6
     sugar_g: 9.3
-    sodium_mg: 792
-    availableCarb_g: 95
+    sodium_mg: 789
+    availableCarb_g: 94.9
   glycemic:
     gi: 50
     gl: 47
@@ -161,26 +161,26 @@ nutrition:
     measuredGiPct: 85
   nutriScore:
     grade: C
-    points: 7
+    points: 4
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.7
-    band: mildly-pro-inflammatory
+    score: 0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.02
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 14.8
+    nrf: 22.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 94.6
+    minimallyProcessedPct: 94.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -190,14 +190,14 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. Blanch the broccoli florets briefly in boiling salted water, about 3-4 minutes, then transfer to ice water so they stay green and fresh.
 2. Put the pasta on to cook in salted water (follow the packet; whole-wheat pasta usually needs 1-2 minutes longer than white).
-3. While the pasta cooks, sauté the leek rings in the butter, pour in the broth and quickly boil off two thirds of the liquid. This is our sauce.
+3. While the pasta cooks, sauté the leek rings in the olive oil, pour in the broth and quickly boil off two thirds of the liquid. This is our sauce.
 4. Once two thirds of the liquid has boiled away, add the cream, season with salt and pepper and keep simmering until you have a thin sauce. Lift the al dente pasta into it with a strainer and toss thoroughly. Add the broccoli, sprinkle with Parmesan and serve.
 
 ## Tips

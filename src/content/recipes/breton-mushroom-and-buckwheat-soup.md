@@ -73,13 +73,13 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 40 g butter
+  - raw: 30 g extra virgin olive oil
     group: For frying and seasoning
-    quantity: 40
+    quantity: 30
     unit: g
-    item: butter
-    grams: 40
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 30
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 20 ml extra virgin olive oil
@@ -132,15 +132,15 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 325
-    energyKj: 1361
+    energyKcal: 320
+    energyKj: 1338
     protein_g: 9
-    fat_g: 14.4
-    satFat_g: 6.1
+    fat_g: 13.8
+    satFat_g: 2
     carbs_g: 41
     fiber_g: 6.8
     sugar_g: 5.6
-    sodium_mg: 1440
+    sodium_mg: 1439
     availableCarb_g: 33.7
   glycemic:
     gi: 53
@@ -151,26 +151,26 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
     coverage: 0.92
   inflammation:
-    score: 0.1
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.35
   balance:
-    score: 2
-    band: poor
-    nrf: 8.9
+    score: 3
+    band: low
+    nrf: 14.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 89.4
+    minimallyProcessedPct: 89.2
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -180,7 +180,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -188,8 +188,8 @@ createdAt: "2026-11-13"
 1. **Preparation:** Rinse the buckwheat groats thoroughly in a fine sieve under cold running water, then let them drain well.
 2. Clean the brown button mushrooms with a kitchen towel or soft brush and cut into even wedges or thicker slices. Finely chop the shallots and garlic cloves.
 3. **Cooking:** In a dry, heavy-bottomed saucepan over medium heat, toast the buckwheat for 2-3 minutes until it starts to give off a pleasant nutty aroma, then remove it and set aside in a bowl.
-4. In the same pan, put the olive oil and half of the butter (20 g). Add the chopped shallots and cook until translucent, 3-4 minutes over low-medium heat.
-5. Add the sliced brown mushrooms and the remaining butter (20 g) to the shallots. Raise the heat slightly and fry briskly for 6-8 minutes until the mushrooms turn a nice caramelised golden brown. Stir in the finely chopped garlic and fresh thyme and fry for another minute.
+4. In the same pan, put the olive oil and half of the additional olive oil (15 g). Add the chopped shallots and cook until translucent, 3-4 minutes over low-medium heat.
+5. Add the sliced brown mushrooms and the remaining olive oil (15 g) to the shallots. Raise the heat slightly and fry briskly for 6-8 minutes until the mushrooms turn a nice caramelised golden brown. Stir in the finely chopped garlic and fresh thyme and fry for another minute.
 6. Pour the dry white wine over the vegetables, loosen the flavourful browned bits from the bottom of the pan with a wooden spoon, and boil for 2 minutes until the alcohol evaporates.
 7. Add the toasted buckwheat to the mushrooms, pour in the hot vegetable broth, and season with salt and freshly ground black pepper. Bring to the boil, then simmer covered over very low heat for 20-25 minutes until the buckwheat is tender but still holds its pleasant bite.
 8. **Serving:** Turn off the heat, taste the soup and adjust the seasoning with a little more salt or pepper if needed. Ladle into deep bowls, sprinkle generously with fresh chopped parsley, and serve with a crusty French baguette.

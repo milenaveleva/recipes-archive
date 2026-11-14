@@ -1,9 +1,9 @@
 ---
-title: Mussels in Herb Broth with Herb Butter Whole-Wheat Baguette
-description: Mussels steamed in vegetable broth with a squeeze of lemon, with onion and garlic, served with toasted whole-wheat baguette spread with herb butter.
-image: ./images/mussels-in-herb-broth-with-herb-butter-whole-wheat-baguette.jpg
+title: Mussels in Herb Broth with Herb Olive Oil Whole-Wheat Baguette
+description: Mussels steamed in vegetable broth with a squeeze of lemon, with onion and garlic, served with toasted whole-wheat baguette drizzled with herb olive oil.
+image: ./images/mussels-in-herb-broth-with-herb-olive-oil-whole-wheat-baguette.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10347_1775302364726_blue-mussels-in-wheat-beer-with-herb-butter-baguette_a9044faf.png
-imageAlt: Mussels in Herb Broth with Herb Butter Whole-Wheat Baguette
+imageAlt: Mussels in Herb Broth with Herb Olive Oil Whole-Wheat Baguette
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10347-buzasoeroes-kek-kagylo-fuszeres-bagettel
@@ -58,12 +58,12 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: 200 g butter
-    quantity: 200
+  - raw: 150 g extra virgin olive oil
+    quantity: 150
     unit: g
-    item: butter
-    grams: 200
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 150
+    fdcId: 171413
     matchConfidence: high
     cooking: raw
   - raw: fresh parsley, a little
@@ -133,15 +133,15 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 802
-    energyKj: 3354
-    protein_g: 35.1
-    fat_g: 56.9
-    satFat_g: 27.8
-    carbs_g: 38.2
+    energyKcal: 775
+    energyKj: 3241
+    protein_g: 34.6
+    fat_g: 53.9
+    satFat_g: 7.7
+    carbs_g: 38.1
     fiber_g: 2.6
     sugar_g: 1.5
-    sodium_mg: 1312
+    sodium_mg: 1308
     availableCarb_g: 35.5
   glycemic:
     gi: 35
@@ -151,27 +151,27 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
-    grade: D
-    points: 11
+    grade: C
+    points: 3
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.4
-    band: mildly-pro-inflammatory
+    score: -0.5
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.29
   balance:
-    score: 3
-    band: low
-    nrf: 12.4
+    score: 5
+    band: moderate
+    nrf: 24.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 84.7
+    minimallyProcessedPct: 84.1
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -181,18 +181,18 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. Wash the mussels thoroughly and discard any that are open.
-2. Take the butter out to soften to room temperature, and finely chop the herbs and garlic.
-3. Mix the herbs and about three quarters of the soft butter together, and season lightly with salt and pepper.
-4. Sauté the finely chopped onion and garlic in a little olive oil and butter, then pour in the vegetable broth with a squeeze of lemon and boil for two to three minutes.
+2. Measure out the olive oil and finely chop the herbs and garlic.
+3. Mix the herbs and about three quarters of the olive oil together, and season lightly with salt and pepper.
+4. Sauté the finely chopped onion and garlic in a little olive oil, then pour in the vegetable broth with a squeeze of lemon and boil for two to three minutes.
 5. Add the mussels and cook covered over high heat for 3 minutes until they all open. Discard any that remain closed after cooking.
-6. Toast the baguettes and spread with the herb butter.
-7. Season the steamed mussels with salt, pepper and lemon juice if needed, and add a generous piece of herb butter.
+6. Toast the baguettes and brush or drizzle with the herb olive oil.
+7. Season the steamed mussels with salt, pepper and lemon juice if needed, and add a generous drizzle of herb olive oil.
 8. Serve hot and fresh, with the baguette.
 
 ## Tips

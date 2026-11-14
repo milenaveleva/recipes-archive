@@ -75,12 +75,12 @@ ingredients:
     fdcId: 2346386
     matchConfidence: high
     cooking: boiled
-  - raw: 40 g butter
-    quantity: 40
+  - raw: 30 g extra virgin olive oil
+    quantity: 30
     unit: g
-    item: butter
-    grams: 40
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 30
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 1 tbsp extra virgin olive oil
@@ -128,11 +128,11 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 602
-    energyKj: 2518
-    protein_g: 13.9
-    fat_g: 26.7
-    satFat_g: 13.4
+    energyKcal: 596
+    energyKj: 2495
+    protein_g: 13.8
+    fat_g: 26.1
+    satFat_g: 9.3
     carbs_g: 75.7
     fiber_g: 10
     sugar_g: 10.2
@@ -147,26 +147,26 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 5
+    points: 4
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.4
-    band: mildly-pro-inflammatory
+    score: 0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.21
   balance:
-    score: 2
-    band: poor
-    nrf: 8.6
+    score: 3
+    band: low
+    nrf: 11.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 70.2
+    minimallyProcessedPct: 70
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -176,17 +176,17 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparation:** Clean the cremini mushrooms and cut them into thin slices (set aside 4-5 nice slices for serving). Roughly chop the cooked or roasted chestnuts. Finely chop the shallots and garlic.
-2. **Cooking:** In a deep pot, heat half of the butter and the olive oil. Add the finely chopped shallots and sweat over medium heat until translucent, about 3-4 minutes. Stir in the crushed garlic and the picked fresh thyme leaves and fry for another minute until fragrant.
+2. **Cooking:** In a deep pot, heat the olive oil and half of the extra virgin olive oil. Add the finely chopped shallots and sweat over medium heat until translucent, about 3-4 minutes. Stir in the crushed garlic and the picked fresh thyme leaves and fry for another minute until fragrant.
 3. Add the sliced mushrooms to the onion base and fry over high heat for 5-6 minutes until their moisture has evaporated and they turn a nice golden brown. Stir in the prepared chestnuts.
 4. Pour in the dry white wine and boil for 2-3 minutes until the alcohol has evaporated and the flavours have come together. Then pour in the warm vegetable broth, season with salt and pepper, and simmer gently under a lid for 15 minutes so the chestnuts become completely soft.
 5. Remove from the heat, add the cream, then blend with an immersion blender until completely silky, smooth and velvety. Taste and adjust the seasoning if necessary.
-6. **Serving:** In a small pan, melt the remaining butter and fry the reserved mushroom slices until crisp and golden brown, about 2 minutes. Meanwhile slice the fresh baguette.
+6. **Serving:** In a small pan, heat the remaining extra virgin olive oil and fry the reserved mushroom slices until crisp and golden brown, about 2 minutes. Meanwhile slice the fresh baguette.
 7. Ladle the hot, velvety chestnut and mushroom soup into deep plates. Top with the fried mushroom slices, garnish with a few fresh thyme leaves and a few drops of extra virgin olive oil, and serve with crusty baguette.
 
 ## Tips

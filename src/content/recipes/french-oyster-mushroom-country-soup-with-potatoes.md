@@ -100,13 +100,14 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: boiled
-  - raw: 30 g butter
+  - raw: 1½ tbsp extra virgin olive oil
     group: Pantry basics
-    quantity: 30
-    unit: g
-    item: butter
-    grams: 30
-    fdcId: 173430
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 22
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 1 pinch fine salt
@@ -139,11 +140,11 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 437
-    energyKj: 1827
-    protein_g: 13
-    fat_g: 14.3
-    satFat_g: 4.9
+    energyKcal: 431
+    energyKj: 1805
+    protein_g: 12.9
+    fat_g: 13.8
+    satFat_g: 1.9
     carbs_g: 63.9
     fiber_g: 8.7
     sugar_g: 5.6
@@ -163,21 +164,21 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
+    score: -0.1
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.31
   balance:
-    score: 4
-    band: low
-    nrf: 23.3
+    score: 5
+    band: moderate
+    nrf: 26.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 58.4
+    minimallyProcessedPct: 57.9
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -187,17 +188,17 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparation and vegetable base:** Peel the potatoes and cut them into 1.5 cm cubes. Chop the shallots and garlic finely. Clean the oyster mushrooms with a dry paper towel, remove the tough stems and cut or tear the caps into rustic strips.
-2. In a heavy-bottomed pot, heat the olive oil and half of the butter (15 g). Add the shallots and sweat over medium heat for 3-4 minutes until translucent. Then stir in the garlic and fry for 1 more minute until fragrant.
+2. In a heavy-bottomed pot, heat the olive oil and half of the additional olive oil (11 g). Add the shallots and sweat over medium heat for 3-4 minutes until translucent. Then stir in the garlic and fry for 1 more minute until fragrant.
 3. **Frying the mushrooms and cooking:** Add the oyster mushrooms to the pot and fry over higher heat for 5-6 minutes until lightly browned and their own liquid has cooked off. Pour in the dry white wine and let it bubble for 1-2 minutes until the alcohol evaporates, dissolving the flavourful browned bits stuck to the bottom of the pot.
 4. Stir in the diced potatoes, then pour in the vegetable broth. Add the fresh thyme sprigs, and season with salt and pepper to taste.
 5. Bring the soup to a boil, then reduce the heat and simmer half covered for about 15-18 minutes until the potato cubes are perfectly tender but still hold together nicely.
-6. **Finishing and serving:** At the end of cooking, remove the thyme sprigs from the soup. Add the remaining 15 g of cold butter and stir gently so the clear soup base gets a velvety shine. Sprinkle generously with finely chopped fresh parsley.
+6. **Finishing and serving:** At the end of cooking, remove the thyme sprigs from the soup. Add the remaining 11 g of extra virgin olive oil and stir gently so the clear soup base gets a velvety shine. Sprinkle generously with finely chopped fresh parsley.
 7. Cut the baguette into diagonal slices and toast in a pan or the oven until crispy golden brown. Ladle the hot, rustic oyster mushroom soup into deep bowls and serve with the freshly toasted baguette.
 
 ## Tips

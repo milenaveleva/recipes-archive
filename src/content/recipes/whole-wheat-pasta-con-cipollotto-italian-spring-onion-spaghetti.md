@@ -1,6 +1,6 @@
 ---
 title: Whole-Wheat Pasta con Cipollotto (Italian Spring Onion Spaghetti)
-description: Whole-wheat spaghetti tossed in a silky butter and pasta-water sauce of slowly softened spring onions, finished with Parmesan and lemon zest.
+description: Whole-wheat spaghetti tossed in a silky olive-oil and pasta-water sauce of slowly softened spring onions, finished with Parmesan and lemon zest.
 image: ./images/whole-wheat-pasta-con-cipollotto-italian-spring-onion-spaghetti.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14455_1791651855883_spaghetti-with-spring-onions-and-parmesan_5f557820.jpg
 imageAlt: Whole-Wheat Pasta con Cipollotto (Italian Spring Onion Spaghetti)
@@ -41,12 +41,12 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 40 g butter
-    quantity: 40
+  - raw: 30 g extra virgin olive oil
+    quantity: 30
     unit: g
-    item: butter
-    grams: 40
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 30
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: 40 g parmesan cheese
@@ -105,15 +105,15 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 739
-    energyKj: 3093
-    protein_g: 23.8
-    fat_g: 38.5
-    satFat_g: 15.9
+    energyKcal: 728
+    energyKj: 3047
+    protein_g: 23.6
+    fat_g: 37.3
+    satFat_g: 7.9
     carbs_g: 83.3
     fiber_g: 12.2
     sugar_g: 5.4
-    sodium_mg: 440
+    sodium_mg: 438
     availableCarb_g: 71.1
   glycemic:
     gi: 48
@@ -123,27 +123,27 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 91
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 1
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.2
+    score: -0.2
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.21
   balance:
-    score: 4
-    band: low
-    nrf: 20
+    score: 5
+    band: moderate
+    nrf: 25.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88.8
+    minimallyProcessedPct: 88.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -153,7 +153,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -163,11 +163,11 @@ createdAt: "2026-11-13"
 3. **Making the sauce and cooking the pasta:** In a deep pan, heat the extra virgin olive oil over medium-low heat. Add the white and light green spring onion rings with a pinch of salt. Cook slowly for 4–5 minutes until completely soft and sweet-smelling, taking care that they don't brown.
 4. Now drop the spaghetti into the boiling water and cook it 2 minutes less than the package says, so it stays truly al dente.
 5. Add the thinly sliced garlic and the pinch of chilli flakes to the pan. Cook gently for 1 minute until the garlic is fragrant.
-6. **Tossing and serving:** When the pasta is almost done, ladle 1–1.5 ladlefuls of starchy pasta water into the spring onion base. Add the butter too and swirl the pan in circular motions until a silky, glossy emulsion forms.
+6. **Tossing and serving:** When the pasta is almost done, ladle 1–1.5 ladlefuls of starchy pasta water into the spring onion base. Add the olive oil too and swirl the pan in circular motions until a silky, glossy emulsion forms.
 7. Using tongs, transfer the cooked spaghetti directly into the pan with the sauce. Toss vigorously for 1–2 minutes over higher heat so the sauce coats the strands perfectly. If needed, add a little more cooking water.
 8. Remove the pan from the heat and toss in the finely grated Parmesan, the fresh organic lemon zest and the reserved dark green spring onion rings. Season with freshly ground pepper to taste and serve immediately, sprinkled with extra Parmesan.
 
 ## Tips
 
-- The combination of starchy pasta water and cold butter creates the pasta's irresistible creamy sauce without any cream.
-- The freshness of the lemon zest wonderfully balances the sweetness of the caramelised onion and the richness of the butter.
+- The combination of starchy pasta water and olive oil creates the pasta's irresistible creamy sauce without any cream.
+- The freshness of the lemon zest wonderfully balances the sweetness of the caramelised onion and the richness of the olive oil.

@@ -97,27 +97,27 @@ ingredients:
     fdcId: 175036
     matchConfidence: high
     cooking: raw
-  - raw: 1 tbsp butter
+  - raw: ¾ tbsp extra virgin olive oil
     group: Optional toppings
-    quantity: 1
+    quantity: 0.75
     unit: tbsp
-    item: butter
-    grams: 14.2
-    milliliters: 14.7868
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 10
+    milliliters: 11.0901
+    fdcId: 171413
     matchConfidence: high
     cooking: grilled
 nutrition:
   perServing:
-    energyKcal: 299
-    energyKj: 1253
+    energyKcal: 296
+    energyKj: 1239
     protein_g: 11.1
-    fat_g: 15.8
-    satFat_g: 8
+    fat_g: 15.4
+    satFat_g: 6.5
     carbs_g: 34.5
     fiber_g: 3.5
     sugar_g: 11.9
-    sodium_mg: 150
+    sodium_mg: 149
     availableCarb_g: 31.1
   glycemic:
     gi: 49
@@ -127,27 +127,27 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 81
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: 0
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.6
+    score: 0.5
     band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.14
   balance:
     score: 3
     band: low
-    nrf: 13.2
+    nrf: 15.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 83.3
+    minimallyProcessedPct: 83.1
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -157,7 +157,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -165,7 +165,7 @@ createdAt: "2026-11-13"
 1. If using fresh corn, remove the husks and silks, then wash the cobs thoroughly and pat them dry.
 2. Preheat a grill or a pan to medium heat. Grill the corn for about 10-15 minutes, turning regularly, until evenly browned and golden. The lightly charred kernels add extra smoky flavour.
 3. While the corn cooks, mix the Greek yogurt, sour cream, lime juice, finely crushed garlic and a pinch of salt in a bowl until you get a smooth cream.
-4. Brush the grilled corn with melted butter (optional), then coat generously with the prepared creamy sauce. Sprinkle with grated cheddar, chilli flakes, chopped coriander and crumbled nachos for extra crunch.
+4. Brush the grilled corn with olive oil (optional), then coat generously with the prepared creamy sauce. Sprinkle with grated cheddar, chilli flakes, chopped coriander and crumbled nachos for extra crunch.
 5. Serve the elotes immediately while hot, so the flavours are at their best.
 
 ## Tips

@@ -41,12 +41,13 @@ ingredients:
     fdcId: 172175
     matchConfidence: high
     cooking: fried
-  - raw: 30 g butter
-    quantity: 30
-    unit: g
-    item: butter
-    grams: 30
-    fdcId: 173430
+  - raw: 1½ tbsp extra virgin olive oil
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 22
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: 20 ml extra virgin olive oil
@@ -96,15 +97,15 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 812
-    energyKj: 3398
-    protein_g: 31.1
-    fat_g: 40.6
-    satFat_g: 16.9
+    energyKcal: 807
+    energyKj: 3376
+    protein_g: 31
+    fat_g: 40
+    satFat_g: 13.9
     carbs_g: 90.2
     fiber_g: 13
     sugar_g: 11.8
-    sodium_mg: 1235
+    sodium_mg: 1234
     availableCarb_g: 75.3
   glycemic:
     gi: 47
@@ -120,21 +121,21 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.4
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.07
   balance:
     score: 3
     band: low
-    nrf: 9.9
+    nrf: 11.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 73.2
+    minimallyProcessedPct: 73
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -144,7 +145,7 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
@@ -152,7 +153,7 @@ createdAt: "2026-11-13"
 1. **Preparation and toasting the walnuts:** Toast the walnuts in a dry pan over medium heat for 2-3 minutes until fragrant, then tip onto a chopping board, chop roughly and set aside.
 2. Peel the pears, remove the cores and cut them into thin wedges or cubes. Break the gorgonzola into smaller pieces.
 3. **Cooking and assembly:** Bring plenty of water to the boil in a large pot, salt it, and cook the tagliatelle al dente according to the package instructions. Before draining, set aside 1-2 ladlefuls of the cooking water!
-4. In a deeper frying pan, heat the olive oil and butter. Add the pears and lightly caramelise them for 3-4 minutes until golden brown.
+4. In a deeper frying pan, heat the olive oil. Add the pears and lightly caramelise them for 3-4 minutes until golden brown.
 5. Reduce the heat, add the gorgonzola and a little of the reserved pasta water. Melt the cheese until creamy, stirring constantly, then season with freshly ground black pepper.
 6. Toss the cooked tagliatelle directly into the sauce. If needed, loosen the sauce with more cooking water so it coats the pasta strands silkily.
 7. **Serving:** Divide the hot pasta among deep plates, sprinkle with the reserved fragrant toasted walnuts and freshly grated Parmesan, and finish with another touch of black pepper. Serve immediately!

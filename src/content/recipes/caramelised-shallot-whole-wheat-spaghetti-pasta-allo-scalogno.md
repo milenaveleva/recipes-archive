@@ -1,6 +1,6 @@
 ---
 title: Caramelised Shallot Whole-Wheat Spaghetti (Pasta allo Scalogno)
-description: Authentic Italian whole-wheat spaghetti with slowly caramelised shallots, fried tomato paste, butter and Parmesan, ready in 25 minutes.
+description: Authentic Italian whole-wheat spaghetti with slowly caramelised shallots, fried tomato paste, olive oil and Parmesan, ready in 25 minutes.
 image: ./images/caramelised-shallot-whole-wheat-spaghetti-pasta-allo-scalogno.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14761_1793545772644_caramelized-shallot-spaghetti_18d49934.jpg
 imageAlt: Caramelised Shallot Whole-Wheat Spaghetti (Pasta allo Scalogno)
@@ -73,13 +73,14 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: fried
-  - raw: 30 g butter
+  - raw: 1½ tbsp extra virgin olive oil
     group: Pantry basics
-    quantity: 30
-    unit: g
-    item: butter
-    grams: 30
-    fdcId: 173430
+    quantity: 1.5
+    unit: tbsp
+    item: extra virgin olive oil
+    grams: 22
+    milliliters: 22.1802
+    fdcId: 171413
     matchConfidence: high
     cooking: fried
   - raw: ¾ tsp fine salt
@@ -122,11 +123,11 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 637
-    energyKj: 2667
-    protein_g: 23.1
-    fat_g: 22.6
-    satFat_g: 8.2
+    energyKcal: 632
+    energyKj: 2645
+    protein_g: 23
+    fat_g: 22
+    satFat_g: 5.1
     carbs_g: 94.3
     fiber_g: 13.3
     sugar_g: 11.9
@@ -140,27 +141,27 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 79
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: -0.2
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.42
   balance:
-    score: 4
-    band: low
-    nrf: 22.4
+    score: 5
+    band: moderate
+    nrf: 24.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 87.8
+    minimallyProcessedPct: 87.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -170,17 +171,17 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. **Preparation and caramelising the shallots:** Peel the shallots and cut them into fine, thin rounds. Crush or finely chop the garlic cloves. Chop the fresh parsley finely.
-2. In a deeper, heavy-bottomed pan over medium heat, heat the extra virgin olive oil and half of the butter. Add the sliced shallots and a pinch of fine salt.
+2. In a deeper, heavy-bottomed pan over medium heat, heat the extra virgin olive oil and half of the additional olive oil. Add the sliced shallots and a pinch of fine salt.
 3. Reduce the heat and, stirring regularly, slowly fry the onions for about 12-15 minutes until they are a beautiful deep golden brown, soft and sweetly caramelised.
 4. **Making the sauce and tossing:** Add the crushed garlic, tomato paste and chilli flakes to the pan. Fry, stirring constantly, for 2-3 minutes until the tomato paste turns a deep rusty brown and caramelises.
 5. Meanwhile, bring plenty of salted water to a boil in a large pot and cook the spaghetti until al dente. Before draining the pasta, scoop out and set aside about 150-200 ml of the starchy cooking water.
-6. Pour about 100 ml of the pasta water onto the tomato and shallot base and stir into a smooth, glossy sauce. Add the remaining butter and toss in the cooked spaghetti.
+6. Pour about 100 ml of the pasta water onto the tomato and shallot base and stir into a smooth, glossy sauce. Add the remaining olive oil and toss in the cooked spaghetti.
 7. Sprinkle with half of the grated Parmesan and emulsify the pasta with vigorous stirring so the sauce coats the strands perfectly. Add a little more cooking water if needed.
 8. Serve immediately hot, sprinkled with the remaining freshly grated Parmesan and the chopped parsley.
 

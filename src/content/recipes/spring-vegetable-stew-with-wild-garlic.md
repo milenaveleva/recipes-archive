@@ -1,6 +1,6 @@
 ---
 title: Spring Vegetable Stew with Wild Garlic
-description: A light spring vegetable dish of asparagus, zucchini, peas and radishes in a buttery wild garlic and lime sauce.
+description: A light spring vegetable dish of asparagus, zucchini, peas and radishes in a silky wild garlic and lime sauce.
 image: ./images/spring-vegetable-stew-with-wild-garlic.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10308_1775307506137_spring-vegetable-stew-with-wild-garlic-and-asparagus_4be18151.png
 imageAlt: Spring Vegetable Stew with Wild Garlic
@@ -80,12 +80,12 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 140 g butter
-    quantity: 140
+  - raw: 105 g extra virgin olive oil
+    quantity: 105
     unit: g
-    item: butter
-    grams: 140
-    fdcId: 173430
+    item: extra virgin olive oil
+    grams: 105
+    fdcId: 171413
     matchConfidence: high
     cooking: boiled
   - raw: 50 g baby spinach
@@ -124,16 +124,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 323
-    energyKj: 1350
-    protein_g: 5.6
-    fat_g: 29
-    satFat_g: 17.8
+    energyKcal: 304
+    energyKj: 1271
+    protein_g: 5.3
+    fat_g: 26.9
+    satFat_g: 3.7
     carbs_g: 13.2
     fiber_g: 5
     sugar_g: 4.3
-    sodium_mg: 590
-    availableCarb_g: 8.2
+    sodium_mg: 587
+    availableCarb_g: 8.1
   glycemic:
     gi: 29
     gl: 2
@@ -143,26 +143,26 @@ nutrition:
     measuredGiPct: 55
   nutriScore:
     grade: C
-    points: 9
+    points: 3
     category: general
     version: "2023"
-    coverage: 0.79
+    coverage: 0.78
   inflammation:
-    score: 0.8
-    band: pro-inflammatory
+    score: -0.7
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.07
   balance:
-    score: 3
-    band: low
-    nrf: 12.6
+    score: 6
+    band: moderate
+    nrf: 34
     version: NRF9.3
   processing:
     minimallyProcessedPct: 99.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
-  computedAt: "2026-11-13"
+  computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
@@ -172,14 +172,14 @@ nutrition:
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
-createdAt: "2026-11-13"
+createdAt: "2026-11-14"
 ---
 
 ## Method
 
 1. Cut the green vegetables, such as zucchini and asparagus, into bite-sized pieces and blanch them in salted water for 3-4 minutes, then refresh in ice water.
 2. Prepare the peas the same way.
-3. Make a quick sauce from the broth and butter, boiling them together until nicely creamy. Season with the fresh herbs, salt, pepper and lime juice.
-4. Cut the radishes into wedges and simmer them gently in the buttery sauce for 2 minutes, then fold in the leafy greens and the blanched vegetables.
+3. Make a quick sauce from the broth and olive oil, boiling them together until nicely emulsified. Season with the fresh herbs, salt, pepper and lime juice.
+4. Cut the radishes into wedges and simmer them gently in the olive-oil sauce for 2 minutes, then fold in the leafy greens and the blanched vegetables.
 5. Serve warm.
 6. It is perfect as a starter or a main course, or as a side dish to roast meats, fish or grilled cheese.
