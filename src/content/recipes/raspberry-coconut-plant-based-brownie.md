@@ -117,6 +117,7 @@ ingredients:
     fdcId: 1999630
     matchConfidence: high
     cooking: boiled
+    proxyOk: true
   - raw: 6 g agar-agar
     group: For the raspberry layer
     quantity: 6
@@ -151,6 +152,7 @@ nutrition:
     gl: 9
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 71
   nutriScore:

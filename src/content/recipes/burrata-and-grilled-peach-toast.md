@@ -32,8 +32,8 @@ ingredients:
     quantity: 2
     item: slices whole-wheat sourdough bread
     grams: 90
-    fdcId: 172688
-    matchConfidence: high
+    fdcId: 174091
+    matchConfidence: medium
     cooking: fried
   - raw: 1 handful arugula
     quantity: 1
@@ -69,42 +69,43 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 430
-    energyKj: 1797
-    protein_g: 21.3
-    fat_g: 22.7
-    satFat_g: 10.1
-    carbs_g: 36.9
-    fiber_g: 5.2
-    sugar_g: 16
-    sodium_mg: 513
-    availableCarb_g: 31.7
+    energyKcal: 424
+    energyKj: 1773
+    protein_g: 19.4
+    fat_g: 21.6
+    satFat_g: 9.8
+    carbs_g: 39.8
+    fiber_g: 4.4
+    sugar_g: 14
+    sodium_mg: 477
+    availableCarb_g: 35.3
   glycemic:
-    gi: 54
-    gl: 17
-    giBand: low
-    glBand: low
+    gi: 63
+    gl: 22
+    giBand: medium
+    glBand: high
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 0
+    measuredGiPct: 58
   nutriScore:
     grade: C
-    points: 3
+    points: 4
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.3
+    score: 0.4
     band: mildly-pro-inflammatory
     method: fii v4
   balance:
     score: 3
     band: low
-    nrf: 17.5
+    nrf: 13.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 30.1
-    ultraProcessedPct: 26.4
-    band: highly-processed
+    minimallyProcessedPct: 30.5
+    ultraProcessedPct: 0
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

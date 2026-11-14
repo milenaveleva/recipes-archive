@@ -7,6 +7,7 @@ imageAlt: Porcini and Tomato Toasts with Arugula
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10484-varganyas-es-paradicsomos-piritosok-rukkolaval
+  kcalPerServing: 685
 author: Pataky Péter
 servings: 4
 prepTime: PT10M
@@ -21,8 +22,8 @@ ingredients:
     quantity: 8
     item: slices whole-wheat sourdough bread
     grams: 320
-    fdcId: 172688
-    matchConfidence: high
+    fdcId: 174091
+    matchConfidence: medium
     cooking: fried
   - raw: 500 g mixed tomatoes, preferably colourful
     quantity: 500
@@ -136,42 +137,43 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 830
-    energyKj: 3472
-    protein_g: 17.1
-    fat_g: 63.5
-    satFat_g: 16.6
-    carbs_g: 53.9
-    fiber_g: 10
-    sugar_g: 16
-    sodium_mg: 784
-    availableCarb_g: 43.9
+    energyKcal: 820
+    energyKj: 3429
+    protein_g: 13.8
+    fat_g: 61.5
+    satFat_g: 16
+    carbs_g: 59.1
+    fiber_g: 8.6
+    sugar_g: 12.6
+    sodium_mg: 720
+    availableCarb_g: 50.5
   glycemic:
-    gi: 46
-    gl: 20
-    giBand: low
-    glBand: medium
+    gi: 57
+    gl: 29
+    giBand: medium
+    glBand: high
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 10
+    measuredGiPct: 80
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
     coverage: 0.74
   inflammation:
-    score: -0.4
+    score: -0.3
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.39
   balance:
     score: 3
     band: low
-    nrf: 16.2
+    nrf: 12.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 75.7
-    ultraProcessedPct: 24.3
+    minimallyProcessedPct: 76.7
+    ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

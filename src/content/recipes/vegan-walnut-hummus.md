@@ -7,6 +7,7 @@ imageAlt: Vegan Walnut Hummus
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10405-vegan-dios-hummusz
+  kcalPerServing: 258
 author: Pataky Péter
 servings: 8
 prepTime: PT10M
@@ -131,6 +132,7 @@ nutrition:
     gl: 7
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

@@ -13,11 +13,11 @@ import { META_ICONS } from '../../lib/icons';
 import { withBase } from '../../lib/url';
 import ScoreDial from './ScoreDial';
 
-function Medallions({ nutrition }: { nutrition: RecipeDraft['nutrition'] }) {
+function Medallions({ nutrition, course }: { nutrition: RecipeDraft['nutrition']; course?: string }) {
   if (!hasAnyScore(nutrition)) return null;
   return (
     <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
-      {buildScoreDials(nutrition).map((d) => (
+      {buildScoreDials(nutrition, course).map((d) => (
         <ScoreDial key={d.key} dial={d} />
       ))}
     </div>
@@ -262,7 +262,7 @@ export default function RecipePreview({
 
         {data.nutrition && (
           <section className="mt-8">
-            <Medallions nutrition={data.nutrition} />
+            <Medallions nutrition={data.nutrition} course={data.course} />
           </section>
         )}
       </article>

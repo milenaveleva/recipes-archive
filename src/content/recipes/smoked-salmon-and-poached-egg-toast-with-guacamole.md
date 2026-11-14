@@ -41,7 +41,7 @@ ingredients:
   - raw: 1 lime
     quantity: 1
     item: lime
-    grams: 65
+    grams: 44
     fdcId: 168156
     matchConfidence: high
     cooking: raw
@@ -55,9 +55,10 @@ ingredients:
   - raw: guacamole
     item: guacamole
     grams: 100
-    fdcId: 171707
+    fdcId: 171705
     matchConfidence: high
     cooking: raw
+    proxyOk: true
   - raw: 1 tbsp white vinegar
     quantity: 1
     unit: tbsp
@@ -83,23 +84,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 307
-    energyKj: 1284
-    protein_g: 20.1
-    fat_g: 13.6
-    satFat_g: 3.3
-    carbs_g: 26.8
-    fiber_g: 5.4
-    sugar_g: 3.4
-    sodium_mg: 839
-    availableCarb_g: 21.4
+    energyKcal: 324
+    energyKj: 1357
+    protein_g: 19.9
+    fat_g: 15.8
+    satFat_g: 3.4
+    carbs_g: 26.2
+    fiber_g: 5.9
+    sugar_g: 2.4
+    sodium_mg: 841
+    availableCarb_g: 20.4
   glycemic:
-    gi: 41
+    gi: 44
     gl: 9
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 0
+    measuredGiPct: 84
   nutriScore:
     grade: C
     points: 3
@@ -114,10 +116,10 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 30.7
+    nrf: 27.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 47.2
+    minimallyProcessedPct: 50
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

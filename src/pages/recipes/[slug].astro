@@ -237,7 +237,7 @@ const bodyHasMethodHeading = /^##\s+Method\b/im.test(recipe.body ?? '');
               <h2 id="scores-heading" class="sr-only">
                 Nutrition scores &amp; facts
               </h2>
-              {hasScores && <ScoreMedallions nutrition={data.nutrition} size="lg" />}
+              {hasScores && <ScoreMedallions nutrition={data.nutrition} course={data.course} size="lg" />}
               {hasNutritionPanel && <NutritionPanel nutrition={data.nutrition} />}
             </div>
           </aside>

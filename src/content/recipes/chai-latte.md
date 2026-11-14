@@ -39,7 +39,7 @@ ingredients:
     quantity: 1
     unit: tbsp
     item: loose-leaf black tea
-    grams: 120
+    grams: 6
     milliliters: 14.7868
     fdcId: 173227
     matchConfidence: medium
@@ -80,29 +80,30 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 102
-    energyKj: 429
+    energyKcal: 101
+    energyKj: 424
     protein_g: 1.3
     fat_g: 3.5
     satFat_g: 0
-    carbs_g: 17.6
+    carbs_g: 17.3
     fiber_g: 0.8
     sugar_g: 11.7
-    sodium_mg: 57
-    availableCarb_g: 16.8
+    sodium_mg: 54
+    availableCarb_g: 16.5
   glycemic:
     gi: 43
     gl: 7
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 55
   nutriScore:
-    grade: C
-    points: 6
+    grade: E
+    points: 12
     category: beverage
     version: "2023"
-    coverage: 0.53
+    coverage: 0.16
   inflammation:
     score: 1.4
     band: pro-inflammatory
@@ -111,12 +112,12 @@ nutrition:
   balance:
     score: 2
     band: poor
-    nrf: 8.1
+    nrf: 6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 41.6
-    ultraProcessedPct: 58.4
-    band: moderately-processed
+    minimallyProcessedPct: 40.9
+    ultraProcessedPct: 59.1
+    band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

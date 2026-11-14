@@ -7,6 +7,7 @@ imageAlt: Whole-Wheat Pasta Puttanesca
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10615-puttanesca-teszta
+  kcalPerServing: 585
 author: Kifli Kukták
 servings: 2
 prepTime: PT10M
@@ -105,6 +106,7 @@ nutrition:
     gl: 42
     giBand: low
     glBand: high
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 88
   nutriScore:

@@ -7,6 +7,7 @@ imageAlt: Creamy Mushroom and Mustard Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10450-gombas-mustaros-tejszines-teszta
+  kcalPerServing: 565
 author: Báder Gabka
 servings: 4
 prepTime: PT10M
@@ -99,6 +100,7 @@ nutrition:
     gl: 50
     giBand: medium
     glBand: high
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 96
   nutriScore:

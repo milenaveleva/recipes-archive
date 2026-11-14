@@ -7,6 +7,7 @@ imageAlt: Baked Salmon on Herby Lemon Whole-Wheat Couscous
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10683-suelt-lazac-fuszeres-kuszkusszal
+  kcalPerServing: 435
 author: Kifli Kukták
 servings: 3
 prepTime: PT13M
@@ -110,6 +111,7 @@ nutrition:
     gl: 13
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 94
   nutriScore:

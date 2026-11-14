@@ -7,6 +7,7 @@ imageAlt: Buckwheat and White Bean Stuffed Zucchini
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10464-hajdinas-babos-toeltoett-cukkini
+  kcalPerServing: 385
 author: Báder Gabka
 servings: 2
 prepTime: PT20M
@@ -111,6 +112,7 @@ nutrition:
     gl: 33
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

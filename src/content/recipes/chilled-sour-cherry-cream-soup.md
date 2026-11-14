@@ -7,6 +7,7 @@ imageAlt: Chilled Sour Cherry Cream Soup
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10475-hideg-meggy-kremleves
+  kcalPerServing: 285
 author: Báder Gabka
 servings: 4
 prepTime: PT15M
@@ -81,6 +82,7 @@ nutrition:
     gl: 13
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 37
   nutriScore:

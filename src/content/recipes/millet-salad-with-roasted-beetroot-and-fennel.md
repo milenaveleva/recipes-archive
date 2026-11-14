@@ -7,6 +7,7 @@ imageAlt: Millet Salad with Roasted Beetroot and Fennel
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10476-koelessalata
+  kcalPerServing: 315
 author: Báder Gabka
 servings: 4
 prepTime: PT15M
@@ -105,6 +106,7 @@ nutrition:
     gl: 27
     giBand: medium
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 79
   nutriScore:

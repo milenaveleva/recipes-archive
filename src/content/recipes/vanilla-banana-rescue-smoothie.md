@@ -7,6 +7,7 @@ imageAlt: Vanilla Banana Rescue Smoothie
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10645-trendrako-marci-kedvenc-bananmento-vanilias-turmixa
+  kcalPerServing: 183
 author: Bartus Marci (tRENDrakó)
 servings: 2
 prepTime: PT5M
@@ -63,7 +64,8 @@ nutrition:
     gi: 40
     gl: 14
     giBand: low
-    glBand: low
+    glBand: medium
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 70
   nutriScore:
@@ -84,7 +86,7 @@ nutrition:
   processing:
     minimallyProcessedPct: 52.9
     ultraProcessedPct: 47.1
-    band: moderately-processed
+    band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

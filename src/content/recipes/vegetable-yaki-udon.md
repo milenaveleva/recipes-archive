@@ -7,6 +7,7 @@ imageAlt: Vegetable Yaki Udon
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12764-zoeldseges-yaki-udon-gyors-azsiai-vacsora
+  kcalPerServing: 420
 author: Kifli Kukták
 servings: 2
 prepTime: PT10M
@@ -121,6 +122,7 @@ nutrition:
     gl: 44
     giBand: low
     glBand: high
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 93
   nutriScore:

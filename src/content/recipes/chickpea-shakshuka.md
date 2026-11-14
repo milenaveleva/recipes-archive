@@ -7,6 +7,7 @@ imageAlt: Chickpea Shakshuka
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10637-csicseriborsos-shakshuka
+  kcalPerServing: 485
 author: Lőrincz Eszter
 servings: 4
 prepTime: PT15M
@@ -106,8 +107,8 @@ ingredients:
     unit: g
     item: whole-grain sourdough bread
     grams: 200
-    fdcId: 172688
-    matchConfidence: high
+    fdcId: 174091
+    matchConfidence: medium
     cooking: raw
   - raw: ½ tsp ground cumin
     quantity: 0.5
@@ -138,23 +139,24 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 432
-    energyKj: 1806
-    protein_g: 21.5
-    fat_g: 18
-    satFat_g: 4.8
-    carbs_g: 48.2
-    fiber_g: 8.2
-    sugar_g: 10.4
-    sodium_mg: 599
-    availableCarb_g: 39.5
+    energyKcal: 425
+    energyKj: 1779
+    protein_g: 19.4
+    fat_g: 16.7
+    satFat_g: 4.4
+    carbs_g: 51.4
+    fiber_g: 7.3
+    sugar_g: 8.2
+    sodium_mg: 559
+    availableCarb_g: 43.6
   glycemic:
-    gi: 45
-    gl: 18
+    gi: 54
+    gl: 23
     giBand: low
-    glBand: low
+    glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 0
+    measuredGiPct: 52
   nutriScore:
     grade: A
     points: 0
@@ -162,19 +164,19 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.3
-    band: mildly-anti-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.21
   balance:
     score: 7
     band: high
-    nrf: 45.4
+    nrf: 41.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 36.4
-    ultraProcessedPct: 29.2
-    band: highly-processed
+    minimallyProcessedPct: 37
+    ultraProcessedPct: 0
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

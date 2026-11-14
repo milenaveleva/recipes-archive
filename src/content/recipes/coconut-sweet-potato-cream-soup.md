@@ -7,6 +7,7 @@ imageAlt: Coconut Sweet Potato Cream Soup
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10634-kokuszos-edesburgonya-kremleves
+  kcalPerServing: 315
 author: Nemes Dóra (Mentes Anyu)
 servings: 4
 prepTime: PT10M
@@ -125,6 +126,7 @@ nutrition:
     gl: 19
     giBand: medium
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

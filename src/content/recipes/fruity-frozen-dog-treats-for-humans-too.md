@@ -47,13 +47,6 @@ ingredients:
     fdcId: 171284
     matchConfidence: high
     cooking: raw
-  - raw: ice pop mould
-    group: What else you may need
-    item: ice pop mould
-    fdcId: 174158
-    matchConfidence: medium
-    excludeFromNutrition: true
-    cooking: raw
 nutrition:
   perServing:
     energyKcal: 15
@@ -71,6 +64,7 @@ nutrition:
     gl: 1
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 100
   nutriScore:

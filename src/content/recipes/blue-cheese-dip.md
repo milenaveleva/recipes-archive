@@ -7,6 +7,7 @@ imageAlt: Blue Cheese Dip
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10523-keksajt-martas-a-mindenhez-is-toekeletes-martogatos
+  kcalPerServing: 142
 author: Kifli Kukták
 servings: 6
 prepTime: PT10M
@@ -86,6 +87,7 @@ nutrition:
     gl: 0
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
@@ -107,7 +109,7 @@ nutrition:
   processing:
     minimallyProcessedPct: 38.5
     ultraProcessedPct: 0
-    band: highly-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

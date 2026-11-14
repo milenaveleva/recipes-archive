@@ -55,7 +55,7 @@ ingredients:
     fdcId: 9000002
     matchConfidence: high
     cooking: fried
-  - raw: 2 tsp tamari (low sodium preferred)
+  - raw: 2 tsp tamari (low sodium preferred), for the mushroom marinade
     quantity: 2
     unit: tsp
     item: tamari
@@ -129,7 +129,7 @@ ingredients:
     fdcId: 168156
     matchConfidence: high
     cooking: raw
-  - raw: 2 tsp tamari (low sodium preferred)
+  - raw: 2 tsp tamari (low sodium preferred), for the peanut sauce
     quantity: 2
     unit: tsp
     item: tamari
@@ -228,6 +228,7 @@ nutrition:
     gl: 60
     giBand: medium
     glBand: high
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 75
   nutriScore:

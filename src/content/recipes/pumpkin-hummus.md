@@ -7,6 +7,7 @@ imageAlt: Pumpkin Hummus
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10644-suetotoekoes-hummusz
+  kcalPerServing: 435
 author: Kifli Kukták
 servings: 2
 prepTime: PT10M
@@ -110,7 +111,8 @@ nutrition:
     gi: 41
     gl: 12
     giBand: low
-    glBand: low
+    glBand: medium
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 10
   nutriScore:

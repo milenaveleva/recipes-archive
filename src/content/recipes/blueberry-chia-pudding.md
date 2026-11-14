@@ -7,6 +7,7 @@ imageAlt: Blueberry Chia Pudding
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10569-afonyas-chia-puding
+  kcalPerServing: 215
 author: Kifli Kukták
 servings: 2
 prepTime: PT10M
@@ -76,6 +77,7 @@ nutrition:
     gl: 6
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 77
   nutriScore:

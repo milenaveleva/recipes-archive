@@ -55,7 +55,7 @@ ingredients:
     group: Main ingredients and marinade
     quantity: 2
     item: limes
-    grams: 130
+    grams: 88
     fdcId: 168156
     matchConfidence: high
     cooking: raw
@@ -120,23 +120,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 750
-    energyKj: 3139
-    protein_g: 46.8
+    energyKcal: 745
+    energyKj: 3117
+    protein_g: 46.7
     fat_g: 21
     satFat_g: 3
-    carbs_g: 93.5
-    fiber_g: 4.4
-    sugar_g: 9.1
+    carbs_g: 91.7
+    fiber_g: 4.3
+    sugar_g: 8.7
     sodium_mg: 2346
-    availableCarb_g: 89.2
+    availableCarb_g: 87.5
   glycemic:
-    gi: 62
+    gi: 63
     gl: 55
     giBand: medium
     glBand: high
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 88
+    measuredGiPct: 90
   nutriScore:
     grade: C
     points: 3
@@ -151,7 +152,7 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 25.4
+    nrf: 24.4
     version: NRF9.3
   processing:
     minimallyProcessedPct: 98.7

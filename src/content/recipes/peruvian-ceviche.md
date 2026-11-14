@@ -7,6 +7,7 @@ imageAlt: Peruvian Ceviche
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10524-ceviche-pikans-nyari-halfogas-perubol
+  kcalPerServing: 115
 author: Kifli Kukták
 servings: 4
 prepTime: PT20M
@@ -24,6 +25,7 @@ ingredients:
     fdcId: 175141
     matchConfidence: high
     cooking: raw
+    proxyOk: true
   - raw: juice of ½ lemon
     item: juice of ½ lemon
     grams: 22
@@ -94,6 +96,7 @@ nutrition:
     gl: 2
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

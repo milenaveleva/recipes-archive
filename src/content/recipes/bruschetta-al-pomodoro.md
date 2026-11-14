@@ -7,6 +7,7 @@ imageAlt: Bruschetta al Pomodoro
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11584-bruschetta-al-pomodoro
+  kcalPerServing: 485
 author: Kifli Kukták
 servings: 2
 prepTime: PT10M
@@ -112,12 +113,13 @@ nutrition:
     sodium_mg: 573
     availableCarb_g: 26.7
   glycemic:
-    gi: 51
-    gl: 14
-    giBand: low
-    glBand: low
+    gi: 61
+    gl: 16
+    giBand: medium
+    glBand: medium
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 26
+    measuredGiPct: 94
   nutriScore:
     grade: C
     points: 4

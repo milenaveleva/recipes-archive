@@ -26,6 +26,8 @@ export interface DraftIngredient {
   excludeFromNutrition?: boolean;
   /** How the ingredient is cooked (absent = raw); emitted whenever set. */
   cooking?: CookingMethod;
+  /** A reviewed stand-in match: silences the validation gate's identity/state checks. */
+  proxyOk?: boolean;
 }
 
 export interface DraftNutrition {
@@ -35,6 +37,8 @@ export interface DraftNutrition {
     gl: number | null;
     giBand?: 'low' | 'medium' | 'high';
     glBand?: 'low' | 'medium' | 'high';
+    /** Cut-offs `glBand` was drawn with: 'meal' (full-meal course) or 'portion'. */
+    glBasis?: 'meal' | 'portion';
     gi_source?: string;
     /** % of the recipe's available carbohydrate whose GI is a measured table match. */
     measuredGiPct?: number;
@@ -89,7 +93,8 @@ export interface RecipeDraft {
   image?: string;
   imageUrl?: string;
   imageAlt?: string;
-  source?: { name?: string; url?: string };
+  /** `kcalPerServing` is the source's own published energy per serving (validation cross-check). */
+  source?: { name?: string; url?: string; kcalPerServing?: number };
   author?: string;
   servings: number;
   yield?: string;
@@ -170,6 +175,7 @@ function cleanIngredient(ing: DraftIngredient): Record<string, unknown> {
   // The schema defaults excludeFromNutrition to false — only emit when true.
   if (ing.excludeFromNutrition) out.excludeFromNutrition = true;
   if (ing.cooking) out.cooking = ing.cooking;
+  if (ing.proxyOk) out.proxyOk = true;
   return out;
 }
 

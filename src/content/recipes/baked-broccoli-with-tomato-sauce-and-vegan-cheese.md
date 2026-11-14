@@ -7,6 +7,7 @@ imageAlt: Baked Broccoli with Tomato Sauce and Vegan Cheese
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10417-csoben-suelt-brokkoli-paradicsomos-szosszal
+  kcalPerServing: 215
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
@@ -117,6 +118,7 @@ nutrition:
     gl: 7
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 14
   nutriScore:

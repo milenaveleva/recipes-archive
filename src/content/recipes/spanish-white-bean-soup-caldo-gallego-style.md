@@ -7,6 +7,7 @@ imageAlt: Spanish White Bean Soup (Caldo Gallego Style)
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10641-spanyolos-bableves
+  kcalPerServing: 285
 author: Nemes Dóra (Mentes Anyu)
 servings: 4
 prepTime: PT5M
@@ -56,7 +57,7 @@ ingredients:
     item: handfuls turnip greens
     note: kale or chard leaves
     grams: 80
-    fdcId: 168421
+    fdcId: 170061
     matchConfidence: high
     cooking: boiled
   - raw: 1 tsp smoked paprika
@@ -77,21 +78,22 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 330
-    energyKj: 1379
-    protein_g: 19
-    fat_g: 1.3
+    energyKcal: 329
+    energyKj: 1376
+    protein_g: 18.7
+    fat_g: 1
     satFat_g: 0.3
-    carbs_g: 63.6
-    fiber_g: 14
+    carbs_g: 64.1
+    fiber_g: 13.9
     sugar_g: 5.1
-    sodium_mg: 991
-    availableCarb_g: 49.5
+    sodium_mg: 988
+    availableCarb_g: 50.3
   glycemic:
-    gi: 49
+    gi: 48
     gl: 24
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 35
   nutriScore:
@@ -107,12 +109,12 @@ nutrition:
   balance:
     score: 8
     band: high
-    nrf: 66.5
+    nrf: 67.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 29.7
+    minimallyProcessedPct: 29.6
     ultraProcessedPct: 0
-    band: highly-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

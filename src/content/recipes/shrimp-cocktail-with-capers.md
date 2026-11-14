@@ -7,6 +7,7 @@ imageAlt: Shrimp Cocktail with Capers
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11576-garnelarak-koktel-kapribogyoval
+  kcalPerServing: 285
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
@@ -93,6 +94,7 @@ nutrition:
     gl: 1
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

@@ -7,6 +7,7 @@ imageAlt: Gingerbread Latte
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10399-mezeskalacsos-latte
+  kcalPerServing: 105
 author: Kifli Kukták
 servings: 2
 prepTime: PT5M
@@ -95,6 +96,7 @@ nutrition:
     gl: 3
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 36
   nutriScore:

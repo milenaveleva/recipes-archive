@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import Fuse from 'fuse.js';
-import { facetsOf, matchesFacets, visibleSlugs, FUSE_OPTIONS, type SearchDoc } from './search';
+import { facetsOf, matchesFacets, visibleSlugs, glLevelOf, FUSE_OPTIONS, type SearchDoc } from './search';
 
 function doc(slug: string, over: Partial<SearchDoc> = {}): SearchDoc {
   return {
@@ -156,5 +156,27 @@ describe('Fuse integration (the client search seam)', () => {
 
   it('feeds visibleSlugs so search ∩ facets works end to end', () => {
     expect(visibleSlugs(docs, textSlugs('overnight'), {})).toEqual(['oats']);
+  });
+});
+
+describe('GL facet (basis-aware)', () => {
+  it('levels GL against the recipe\'s own basis, matching the dial tone', () => {
+    // GL 25: medium for a main course (meal cut-offs), high for a snack (portion cut-offs).
+    expect(glLevelOf(25, 'meal')).toBe('medium');
+    expect(glLevelOf(25, 'portion')).toBe('high');
+    expect(glLevelOf(15, 'meal')).toBe('low');
+    expect(glLevelOf(15, 'portion')).toBe('medium');
+    expect(glLevelOf(null, 'meal')).toBeNull();
+  });
+
+  it('labels the group as relative to the course', () => {
+    const [gl] = facetsOf([doc('a', { glBand: glLevelOf(25, 'meal') }), doc('b', { glBand: glLevelOf(25, 'portion') })]).filter(
+      (g) => g.key === 'gl',
+    );
+    expect(gl.label).toBe('Glycemic load (for its course)');
+    expect(gl.values.map((v) => [v.value, v.count])).toEqual([
+      ['medium', 1],
+      ['high', 1],
+    ]);
   });
 });

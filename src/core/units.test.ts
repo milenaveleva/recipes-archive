@@ -22,6 +22,17 @@ describe('canonicalUnit', () => {
   });
 });
 
+describe('canonicalUnit one-letter spoons', () => {
+  it('keeps the case distinction: T is a tablespoon, t a teaspoon', () => {
+    expect(canonicalUnit('T')).toBe('tablespoon');
+    expect(canonicalUnit('T.')).toBe('tablespoon');
+    expect(canonicalUnit('Tb')).toBe('tablespoon');
+    expect(canonicalUnit('t')).toBe('teaspoon');
+    expect(canonicalUnit('tbl')).toBe('tablespoon');
+    expect(classifyUnit('T')).toBe('volume');
+  });
+});
+
 describe('classifyUnit', () => {
   it('classifies mass, volume and unknown count units', () => {
     expect(classifyUnit('oz')).toBe('mass');

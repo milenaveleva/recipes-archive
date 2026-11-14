@@ -7,6 +7,7 @@ imageAlt: Wild Garlic Pesto Whole-Wheat Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10429-medvehagymas-pestos-teszta
+  kcalPerServing: 1125
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
@@ -159,6 +160,7 @@ nutrition:
     gl: 32
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 82
   nutriScore:

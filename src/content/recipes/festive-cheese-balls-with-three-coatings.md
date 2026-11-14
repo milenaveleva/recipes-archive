@@ -59,6 +59,7 @@ ingredients:
     fdcId: 168165
     matchConfidence: medium
     cooking: raw
+    proxyOk: true
   - raw: 1 pinch ground black pepper
     quantity: 1
     unit: pinch
@@ -85,6 +86,7 @@ nutrition:
     gl: 6
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

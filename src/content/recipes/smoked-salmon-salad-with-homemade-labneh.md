@@ -7,6 +7,7 @@ imageAlt: Smoked Salmon Salad with Homemade Labneh
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10426-fuestoelt-lazac-salata-hazi-labneh
+  kcalPerServing: 325
 author: Pataky Péter
 servings: 4
 prepTime: PT15M
@@ -35,7 +36,7 @@ ingredients:
   - raw: 1 lime
     quantity: 1
     item: lime
-    grams: 65
+    grams: 44
     fdcId: 168156
     matchConfidence: high
     cooking: raw
@@ -85,26 +86,27 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 284
-    energyKj: 1189
+    energyKcal: 283
+    energyKj: 1183
     protein_g: 16.3
     fat_g: 21.8
     satFat_g: 6.2
-    carbs_g: 6.9
+    carbs_g: 6.5
     fiber_g: 1
-    sugar_g: 3.8
+    sugar_g: 3.7
     sodium_mg: 482
-    availableCarb_g: 6
+    availableCarb_g: 5.5
   glycemic:
     gi: 10
     gl: 1
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
@@ -113,12 +115,12 @@ nutrition:
     band: neutral
     method: fii v4
   balance:
-    score: 5
-    band: moderate
-    nrf: 24
+    score: 4
+    band: low
+    nrf: 23.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 79.1
+    minimallyProcessedPct: 79
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

@@ -91,6 +91,7 @@ ingredients:
     fdcId: 170924
     matchConfidence: high
     cooking: boiled
+    proxyOk: true
   - raw: 1 tsp ground turmeric
     group: Main ingredients
     quantity: 1
@@ -154,27 +155,28 @@ ingredients:
     group: For serving
     quantity: 1
     item: lime
-    grams: 65
+    grams: 44
     fdcId: 168156
     matchConfidence: high
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 595
-    energyKj: 2490
+    energyKcal: 594
+    energyKj: 2484
     protein_g: 17.9
     fat_g: 24
     satFat_g: 17.6
-    carbs_g: 84.2
-    fiber_g: 13
-    sugar_g: 12.2
+    carbs_g: 83.8
+    fiber_g: 12.9
+    sugar_g: 12.1
     sodium_mg: 825
-    availableCarb_g: 71.2
+    availableCarb_g: 70.8
   glycemic:
     gi: 51
     gl: 36
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 51
   nutriScore:
@@ -191,10 +193,10 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 28.6
+    nrf: 28.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 53.3
+    minimallyProcessedPct: 53.2
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

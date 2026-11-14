@@ -7,6 +7,7 @@ imageAlt: Refreshing Legume Salad
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12376-frissito-huevelyes-salata
+  kcalPerServing: 320
 author: Kifli Kukták
 servings: 6
 prepTime: PT15M
@@ -151,6 +152,7 @@ nutrition:
     gl: 13
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 25
   nutriScore:

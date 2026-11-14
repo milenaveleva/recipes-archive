@@ -7,6 +7,7 @@ imageAlt: Broccoli Cheddar Cream Soup
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12740-brokkolikremleves-cheddar-sajttal
+  kcalPerServing: 385
 author: Kifli Kukták
 servings: 6
 prepTime: PT15M
@@ -136,6 +137,7 @@ nutrition:
     gl: 5
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

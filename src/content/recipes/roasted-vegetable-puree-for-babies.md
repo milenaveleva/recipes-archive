@@ -7,6 +7,7 @@ imageAlt: Roasted Vegetable Purée for Babies
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10358-suelt-zoeldsegfozelek
+  kcalPerServing: 385
 author: ManóMenü
 servings: 1
 prepTime: PT15M
@@ -96,6 +97,7 @@ nutrition:
     gl: 26
     giBand: medium
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 17
   nutriScore:

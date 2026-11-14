@@ -63,6 +63,7 @@ const UNIT_ALIASES: Record<string, string> = {
   teaspoons: 'teaspoon',
   tbsp: 'tablespoon',
   tbs: 'tablespoon',
+  tbl: 'tablespoon',
   tablespoons: 'tablespoon',
   c: 'cup',
   cups: 'cup',
@@ -97,10 +98,22 @@ const UNIT_ALIASES: Record<string, string> = {
   pounds: 'pound',
 };
 
+/** Case-sensitive aliases, matched before lowercasing. */
+const CASED_ALIASES: Record<string, string> = {
+  T: 'tablespoon',
+  Tb: 'tablespoon',
+  Tbl: 'tablespoon',
+  t: 'teaspoon',
+};
+
 /** Normalise a unit token to its canonical id, or null when absent. */
 export function canonicalUnit(unit?: string | null): string | null {
   if (!unit) return null;
-  const u = unit.trim().toLowerCase().replace(/\.+$/, '');
+  const trimmed = unit.trim().replace(/\.+$/, '');
+  // Case carries meaning only for the one-letter spoon abbreviations: "T" is a tablespoon,
+  // "t" a teaspoon, so they resolve before the case-folding lookup.
+  if (Object.hasOwn(CASED_ALIASES, trimmed)) return CASED_ALIASES[trimmed];
+  const u = trimmed.toLowerCase();
   if (!u) return null;
   return UNIT_ALIASES[u] ?? u;
 }

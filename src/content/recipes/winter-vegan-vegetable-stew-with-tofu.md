@@ -7,6 +7,7 @@ imageAlt: Winter Vegan Vegetable Stew with Tofu
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10403-teli-vegan-zoeldseg-fozelek-tofuval
+  kcalPerServing: 385
 author: Pataky Péter
 servings: 4
 prepTime: PT20M
@@ -92,6 +93,7 @@ nutrition:
     gl: 0
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

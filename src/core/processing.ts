@@ -9,9 +9,14 @@
  *
  * The headline `minimallyProcessedPct` (groups 1+2 — whole foods plus basic
  * culinary ingredients) reads higher = better; `ultraProcessedPct` (group 4) is
- * the health-relevant risk signal shown alongside. Bands are anchored to typical
- * population intake (US mean NOVA 1+2 ≈ 33% of energy, Steele 2022), so ≥70% is
- * well above average ("minimally processed") and <40% is around/below it.
+ * the health-relevant risk signal shown alongside. The band follows the NOVA
+ * definitions (Monteiro 2019), which reserve "ultra-processed" for group 4:
+ *   highly-processed     — ultra-processed (NOVA 4) energy share ≥ UPF_HIGH_PCT
+ *   minimally-processed  — otherwise, NOVA 1+2 energy share ≥ MINIMAL_GOOD (well above
+ *                          the US population mean of ≈ 33 %, Steele 2022)
+ *   moderately-processed — everything else, including a dish whose energy is mostly
+ *                          NOVA 3 (canned legumes, cheese, artisanal bread, cured fish):
+ *                          processed, but with no ultra-processed share to speak of
  *
  * A food's NOVA group comes from the matched generic food, which can be less processed
  * than what the recipe actually calls for ("puff pastry" matched to a flour/fat food,
@@ -142,14 +147,17 @@ export interface ProcessingResult {
   band: ProcessingBand;
 }
 
-/** ≥70% minimally processed reads well above the population average; <40% at/below it. */
-const MINIMAL_GOOD = 70;
-const MINIMAL_MID = 40;
+/** Ultra-processed (NOVA 4) energy share at/above which a dish is 'highly-processed'. A
+ *  presentation cut-off, not a clinical one — UPF risk is dose-response with no
+ *  established threshold (Barbaresko 2024). */
+export const UPF_HIGH_PCT = 30;
+/** NOVA 1+2 energy share at/above which a dish with a low UPF share is 'minimally-processed'. */
+export const MINIMAL_GOOD = 70;
 
-function bandFor(minimallyProcessedPct: number): ProcessingBand {
+export function processingBandFor(minimallyProcessedPct: number, ultraProcessedPct: number): ProcessingBand {
+  if (ultraProcessedPct >= UPF_HIGH_PCT) return 'highly-processed';
   if (minimallyProcessedPct >= MINIMAL_GOOD) return 'minimally-processed';
-  if (minimallyProcessedPct >= MINIMAL_MID) return 'moderately-processed';
-  return 'highly-processed';
+  return 'moderately-processed';
 }
 
 /**
@@ -179,7 +187,7 @@ export function computeProcessing(items: ProcessingItem[]): ProcessingResult | u
     pct,
     minimallyProcessedPct,
     ultraProcessedPct,
-    band: bandFor(minimallyProcessedPct),
+    band: processingBandFor(minimallyProcessedPct, ultraProcessedPct),
   };
 }
 

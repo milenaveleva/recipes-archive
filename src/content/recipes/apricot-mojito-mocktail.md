@@ -7,6 +7,7 @@ imageAlt: Apricot Mojito Mocktail
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10616-sargabarackos-mojito-mocktail
+  kcalPerServing: 85
 author: Kifli Kukták
 servings: 2
 prepTime: PT10M
@@ -75,6 +76,7 @@ nutrition:
     gl: 6
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 87
   nutriScore:

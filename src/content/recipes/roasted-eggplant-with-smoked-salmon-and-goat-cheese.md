@@ -7,6 +7,7 @@ imageAlt: Roasted Eggplant with Smoked Salmon and Goat Cheese
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11593-padlizsan-fuestoelt-lazaccal-es-kecskesajttal
+  kcalPerServing: 320
 author: Kifli Kukták
 servings: 1
 prepTime: PT15M
@@ -142,6 +143,7 @@ nutrition:
     gl: 5
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 51
   nutriScore:

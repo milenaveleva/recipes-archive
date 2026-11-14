@@ -18,6 +18,7 @@ import {
   dataSourcesFor as dataSourcesForShared,
 } from '../../core/recipeScore';
 import { suggestCooking, isCookingMethod, type CookingMethod } from '../../core/cooking';
+import { validateRecipe, type ValidationResult } from '../../core/validate';
 import type { NutriCategory } from '../../core/nutriscore';
 import type { MetricAmount, NutrientVector, ParsedLine, ResolvedIngredient } from '../../core/types';
 import type { DraftIngredient, RecipeDraft } from '../../core/markdown';
@@ -104,6 +105,12 @@ export interface IngredientRow {
   cooking: CookingMethod;
   /** The author chose `cooking` (or it was stored): a match change keeps it instead of re-suggesting. */
   userSetCooking: boolean;
+  /**
+   * The fdcId reviewed as a deliberate stand-in (stored `proxyOk: true`), or null. The
+   * approval belongs to that one match, so the draft re-emits `proxyOk` only while the row
+   * still selects it.
+   */
+  proxyFdcId: number | null;
 }
 
 let rowCounter = 0;
@@ -132,6 +139,7 @@ export function buildRow(raw: string): IngredientRow {
     excludeFromNutrition: false,
     cooking: parsed.isGroupHeader ? 'raw' : suggestCooking(raw, selectedFood),
     userSetCooking: false,
+    proxyFdcId: null,
   };
 }
 
@@ -257,8 +265,37 @@ export function rowsToResolved(rows: IngredientRow[]): ResolvedIngredient[] {
     });
 }
 
-export function computeNutrition(rows: IngredientRow[], servings: number): MacroComputation {
-  return computeMacros(rowsToResolved(rows), clampServings(servings));
+/** Per-serving macros for the review rows; pass `resolved` when it is already computed. */
+export function computeNutrition(
+  rows: IngredientRow[],
+  servings: number,
+  resolved: ResolvedIngredient[] = rowsToResolved(rows),
+): MacroComputation {
+  return computeMacros(resolved, clampServings(servings));
+}
+
+/**
+ * Run the validation gate (core/validate.ts) over the review rows, reusing the macros the
+ * island already computed (`resolved` from rowsToResolved, `macro` from computeNutrition)
+ * and the loaded food lookup, so a keystroke never re-resolves the recipe or rebuilds a
+ * food map. Only the fields the gate reads are taken from the form.
+ */
+export function validateRows(
+  rows: IngredientRow[],
+  fields: Pick<FormState, 'servings' | 'course' | 'sourceKcalPerServing'>,
+  resolved: ResolvedIngredient[],
+  macro: MacroComputation,
+): ValidationResult {
+  return validateRecipe(
+    {
+      servings: clampServings(fields.servings),
+      course: fields.course.trim() || undefined,
+      source: { kcalPerServing: safeKcal(fields.sourceKcalPerServing) },
+      ingredients: draftIngredients(rows),
+    },
+    FOOD_BY_ID,
+    { precomputed: { resolved, macro } },
+  );
 }
 
 /** The stored `raw` text of a row (falls back to the parsed food name). */
@@ -316,7 +353,13 @@ function rowToDraftIngredient(row: IngredientRow): DraftIngredient {
     matchConfidence: selectedConfidence(row),
     excludeFromNutrition: row.excludeFromNutrition,
     cooking: row.cooking,
+    proxyOk: row.proxyFdcId != null && row.proxyFdcId === row.selectedFdcId ? true : undefined,
   };
+}
+
+/** The draft's stored ingredient lines for the review rows (group headers dropped). */
+export function draftIngredients(rows: IngredientRow[]): DraftIngredient[] {
+  return rows.filter((r) => !r.parsed.isGroupHeader).map(rowToDraftIngredient);
 }
 
 /** All wizard form fields outside the ingredient rows. */
@@ -343,6 +386,8 @@ export interface FormState {
   imageUrl: string;
   sourceName: string;
   sourceUrl: string;
+  /** Energy per serving the source itself published (kept for the validation gate's cross-check). */
+  sourceKcalPerServing: number | null;
   instructions: string; // one step per line
 }
 
@@ -364,6 +409,7 @@ export const EMPTY_FORM: FormState = {
   imageUrl: '',
   sourceName: '',
   sourceUrl: '',
+  sourceKcalPerServing: null,
   instructions: '',
 };
 
@@ -403,6 +449,7 @@ export interface StoredIngredient {
   matchConfidence?: MatchConfidence | 'none';
   excludeFromNutrition?: boolean;
   cooking?: CookingMethod;
+  proxyOk?: boolean;
 }
 
 /** The stored recipe frontmatter fields the editor re-seeds the form from. */
@@ -417,7 +464,7 @@ export interface StoredRecipe {
   category?: string;
   lists?: string[];
   imageUrl?: string;
-  source?: { name?: string; url?: string };
+  source?: { name?: string; url?: string; kcalPerServing?: number };
   ingredients?: StoredIngredient[];
   nutrition?: {
     nutriScore?: {
@@ -451,6 +498,7 @@ export function formFromRecipe(recipe: StoredRecipe, steps: string[]): FormState
     imageUrl: recipe.imageUrl ?? '',
     sourceName: recipe.source?.name ?? '',
     sourceUrl: recipe.source?.url ?? '',
+    sourceKcalPerServing: recipe.source?.kcalPerServing ?? null,
     instructions: steps.join('\n'),
   };
 }
@@ -483,6 +531,7 @@ export function rowsFromIngredients(ingredients: StoredIngredient[]): Ingredient
       // A stored method is honoured as-is; an absent one is raw (never re-suggested).
       cooking: isCookingMethod(ing.cooking) ? ing.cooking : 'raw',
       userSetCooking: true,
+      proxyFdcId: ing.proxyOk && ing.fdcId != null ? ing.fdcId : null,
     };
   });
 }
@@ -544,6 +593,18 @@ function withStoredMatch(
   return [{ food, score: 0, confidence }, ...candidates];
 }
 
+/** Positive, finite kcal per serving, else undefined (the schema requires > 0). */
+function safeKcal(n: number | null): number | undefined {
+  return n != null && Number.isFinite(n) && n > 0 ? n : undefined;
+}
+
+/** The draft's `source` block: name, URL and the source's own kcal per serving, when any is set. */
+export function sourceOf(form: FormState, sourceUrl = safeUrl(form.sourceUrl)): RecipeDraft['source'] {
+  const name = form.sourceName.trim() || undefined;
+  const kcalPerServing = safeKcal(form.sourceKcalPerServing);
+  return name || sourceUrl || kcalPerServing != null ? { name, url: sourceUrl, kcalPerServing } : undefined;
+}
+
 /**
  * Assemble a committable draft from the form, rows, and computed macros.
  * `createdAt` is the recipe's birth date; on an edit, pass the original
@@ -569,6 +630,7 @@ export function buildDraft(
         isWater: form.nutriCategory === 'beverage' && form.isWater,
         isCheese: form.nutriCategory === 'general' && form.isCheese,
         redMeat: form.nutriCategory === 'general' && form.redMeat,
+        course: form.course,
       })
     : {};
   // Assemble the Nutri-Score block with the retained scoring inputs (flags) BEFORE the
@@ -590,10 +652,7 @@ export function buildDraft(
     title: form.title.trim(),
     description: form.description.trim() || undefined,
     imageUrl: safeUrl(form.imageUrl, sourceUrl),
-    source:
-      form.sourceName.trim() || sourceUrl
-        ? { name: form.sourceName.trim() || undefined, url: sourceUrl }
-        : undefined,
+    source: sourceOf(form, sourceUrl),
     servings: clampServings(form.servings),
     prepTime: minutesToIso(form.prepMin),
     cookTime: minutesToIso(form.cookMin),
@@ -602,12 +661,23 @@ export function buildDraft(
     course: form.course.trim() || undefined,
     category: form.category.trim() || undefined,
     lists: splitCsv(form.lists),
-    ingredients: rows.filter((r) => !r.parsed.isGroupHeader).map(rowToDraftIngredient),
+    ingredients: draftIngredients(rows),
     instructions: splitLines(form.instructions),
     nutrition: macro.contributingCount
       ? {
           perServing: macro.perServing,
-          glycemic: scores.glycemic,
+          // Same key order as the rescorer's serializer (scripts/rescore-recipes.mjs).
+          glycemic: scores.glycemic
+            ? {
+                gi: scores.glycemic.gi,
+                gl: scores.glycemic.gl,
+                giBand: scores.glycemic.giBand,
+                glBand: scores.glycemic.glBand,
+                glBasis: scores.glycemic.glBasis,
+                gi_source: scores.glycemic.gi_source,
+                measuredGiPct: scores.glycemic.measuredGiPct,
+              }
+            : undefined,
           nutriScore: nutriScoreDraft,
           inflammation: scores.inflammation
             ? {

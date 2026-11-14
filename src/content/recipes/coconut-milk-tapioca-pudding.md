@@ -7,6 +7,7 @@ imageAlt: Coconut Milk Tapioca Pudding
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10447-kokusztejes-tapiokapuding
+  kcalPerServing: 285
 author: Báder Gabka
 servings: 4
 prepTime: PT10M
@@ -68,7 +69,8 @@ nutrition:
     gi: 56
     gl: 22
     giBand: medium
-    glBand: medium
+    glBand: high
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 22
   nutriScore:

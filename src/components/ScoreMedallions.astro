@@ -7,10 +7,12 @@ interface Props {
   nutrition: CollectionEntry<'recipes'>['data']['nutrition'];
   /** 'lg' for the detail page's nutrition rail (ring dials), 'sm' for a compact inline summary. */
   size?: 'lg' | 'sm';
+  /** The recipe's course: resolves the GL basis when the stored block carries none. */
+  course?: string | null;
 }
 
-const { nutrition, size = 'lg' } = Astro.props;
-const dials = buildScoreDials(nutrition);
+const { nutrition, size = 'lg', course } = Astro.props;
+const dials = buildScoreDials(nutrition, course);
 // The lg grid always shows all six medallion slots (an absent score reads as an
 // em-dash ring); the compact strip drops absent scores so it never carries a
 // dangling "GI —" chip.

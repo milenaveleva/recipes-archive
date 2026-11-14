@@ -39,16 +39,20 @@ describe('computeProcessing', () => {
     expect(sum).toBeCloseTo(100, 1);
   });
 
-  it('bands by the minimally-processed share (≥70 minimally, ≥40 moderately, else highly)', () => {
-    const band = (n1: number, n3: number) =>
+  it('bands by NOVA 4 share first (≥30 highly), then NOVA 1+2 share (≥70 minimally), else moderately', () => {
+    const band = (n1: number, n3: number, n4 = 0) =>
       computeProcessing([
         { energyKcal: n1, nova: 1 },
         { energyKcal: n3, nova: 3 },
+        { energyKcal: n4, nova: 4 },
       ])!.band;
     expect(band(70, 30)).toBe('minimally-processed'); // exactly 70%
     expect(band(69, 31)).toBe('moderately-processed');
-    expect(band(40, 60)).toBe('moderately-processed'); // exactly 40%
-    expect(band(39, 61)).toBe('highly-processed');
+    // Mostly NOVA 3 (canned legumes, cheese, bread) with no NOVA 4 is processed, not ultra-processed.
+    expect(band(0, 100)).toBe('moderately-processed');
+    expect(band(10, 61, 29)).toBe('moderately-processed');
+    expect(band(10, 60, 30)).toBe('highly-processed'); // exactly 30% NOVA 4
+    expect(band(70, 0, 30)).toBe('highly-processed'); // a UPF share outranks a high whole-food share
   });
 
   it('excludes unclassified and energy-less items from the denominator', () => {

@@ -110,6 +110,7 @@ ingredients:
     fdcId: 170924
     matchConfidence: high
     cooking: boiled
+    proxyOk: true
   - raw: 1 tsp ground cumin
     group: Spices and bases
     quantity: 1
@@ -152,27 +153,28 @@ ingredients:
     group: For serving
     quantity: 1
     item: lime
-    grams: 65
+    grams: 44
     fdcId: 168156
     matchConfidence: high
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 718
-    energyKj: 3002
-    protein_g: 21.2
+    energyKcal: 716
+    energyKj: 2997
+    protein_g: 21.1
     fat_g: 30.5
     satFat_g: 24.3
-    carbs_g: 97.7
+    carbs_g: 97.3
     fiber_g: 11.1
     sugar_g: 10.1
     sodium_mg: 828
-    availableCarb_g: 86.7
+    availableCarb_g: 86.2
   glycemic:
     gi: 52
     gl: 45
     giBand: low
     glBand: high
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 85
   nutriScore:
@@ -189,10 +191,10 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 21.1
+    nrf: 20.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 49
+    minimallyProcessedPct: 48.9
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

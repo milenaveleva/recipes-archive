@@ -7,6 +7,7 @@ imageAlt: Red Lentil Soup with Carrot
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12004-voeroeslencse-leves-sargarepaval-gyors-es-egeszseges-ebed
+  kcalPerServing: 245
 author: Kifli Kukták
 servings: 3
 prepTime: PT10M
@@ -123,6 +124,7 @@ nutrition:
     gl: 18
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 57
   nutriScore:

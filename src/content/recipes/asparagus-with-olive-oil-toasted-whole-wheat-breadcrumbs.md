@@ -7,6 +7,7 @@ imageAlt: Asparagus with Olive-Oil Toasted Whole-Wheat Breadcrumbs
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11551-sparga-vajas-zsemlemorzsaval
+  kcalPerServing: 640
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
@@ -70,12 +71,13 @@ nutrition:
     sodium_mg: 222
     availableCarb_g: 25.3
   glycemic:
-    gi: 39
-    gl: 10
+    gi: 48
+    gl: 12
     giBand: low
-    glBand: low
+    glBand: medium
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 0
+    measuredGiPct: 65
   nutriScore:
     grade: A
     points: -4

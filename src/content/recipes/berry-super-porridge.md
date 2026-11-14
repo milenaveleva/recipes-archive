@@ -7,6 +7,7 @@ imageAlt: Berry Super Porridge
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10465-bogyos-gyuemoelcsoes-szuperkasa
+  kcalPerServing: 325
 author: Báder Gabka
 servings: 1
 prepTime: PT10M
@@ -91,6 +92,7 @@ nutrition:
     gl: 18
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 75
   nutriScore:

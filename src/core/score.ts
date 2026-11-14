@@ -4,8 +4,8 @@
  * the matched food) it produces the glycemic, Nutri-Score and inflammation
  * block stored in recipe frontmatter and shown by the score medallions.
  *
- * GI/GL is carb-weighted and protein-adjusted (gi.ts); Nutri-Score is the general-foods 2023
- * algorithm computed per 100 g (nutriscore.ts); inflammation is the energy-weighted
+ * GI/GL is carb-weighted and protein-adjusted, with GL banded on the course's basis
+ * (gi.ts, course.ts); Nutri-Score is the general-foods 2023 algorithm computed per 100 g (nutriscore.ts); inflammation is the energy-weighted
  * mean of per-food Food Inflammation Index scores (fii.ts + inflammation.ts) plus a
  * bounded aromatic adjustment (aromatics.ts). All figures are estimates.
  *
@@ -25,6 +25,7 @@
 import { availableCarbOf, energyKcalOf, KJ_PER_KCAL } from './nutrition';
 import { round } from './num';
 import { computeGlycemics, CARB_EPSILON_G, type Glycemics, type GiCarbSource } from './gi';
+import { glBasisForCourse } from './course';
 import { computeNutriScore, type NutriResult, type NutriCategory } from './nutriscore';
 import { computeInflammation, type Inflammation, type InflammationItem } from './inflammation';
 import { foodFII } from './fii';
@@ -95,6 +96,8 @@ export interface ScoreOptions {
   isCheese?: boolean;
   /** General foods: the dish is red meat (protein points capped at 2, 2023 rule). */
   redMeat?: boolean;
+  /** The recipe's course (free text); picks the GL banding basis (course.ts). */
+  course?: string | null;
 }
 
 /**
@@ -214,7 +217,10 @@ export function computeScores(
 
   const result: ScoreResult = {};
 
-  const glycemic = computeGlycemics(carbSources, servings, { addedProtein_g: addedProtein });
+  const glycemic = computeGlycemics(carbSources, servings, {
+    addedProtein_g: addedProtein,
+    glBasis: glBasisForCourse(options.course),
+  });
   if (glycemic) result.glycemic = { ...glycemic, gi_source: GI_SOURCE };
 
   if (basisGrams > 0) {

@@ -35,6 +35,7 @@ ingredients:
     fdcId: 170417
     matchConfidence: high
     cooking: boiled
+    proxyOk: true
   - raw: 150 g celery root
     group: Vegetable goulash base
     quantity: 150
@@ -142,6 +143,7 @@ nutrition:
     gl: 28
     giBand: medium
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 53
   nutriScore:

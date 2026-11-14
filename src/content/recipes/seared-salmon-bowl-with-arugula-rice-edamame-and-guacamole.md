@@ -7,6 +7,7 @@ imageAlt: Seared Salmon Bowl with Arugula, Rice, Edamame and Guacamole
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10480-roston-suelt-lazac-rukkolaval-rizzsel-edamame-babbal-es-guau-guacamole-val
+  kcalPerServing: 343
 author: Kifli Kukták
 servings: 2
 prepTime: PT15M
@@ -43,9 +44,10 @@ ingredients:
   - raw: guacamole
     item: guacamole
     grams: 100
-    fdcId: 171707
+    fdcId: 171705
     matchConfidence: high
     cooking: raw
+    proxyOk: true
   - raw: 2 cups cooked brown rice (≈ 136 g uncooked)
     quantity: 2
     unit: cups
@@ -81,21 +83,22 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 781
-    energyKj: 3268
-    protein_g: 46.6
-    fat_g: 38.3
-    satFat_g: 7.5
-    carbs_g: 63.5
-    fiber_g: 9.7
-    sugar_g: 3.8
-    sodium_mg: 491
-    availableCarb_g: 53.9
+    energyKcal: 801
+    energyKj: 3352
+    protein_g: 46.5
+    fat_g: 40.6
+    satFat_g: 7.6
+    carbs_g: 63.9
+    fiber_g: 10.2
+    sugar_g: 2.9
+    sodium_mg: 494
+    availableCarb_g: 53.7
   glycemic:
     gi: 56
     gl: 30
     giBand: medium
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 92
   nutriScore:
@@ -110,9 +113,9 @@ nutrition:
     method: fii v4
     aromaticAdjustment: -0.03
   balance:
-    score: 6
+    score: 5
     band: moderate
-    nrf: 31.5
+    nrf: 30.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

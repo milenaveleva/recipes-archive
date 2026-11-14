@@ -26,6 +26,7 @@ ingredients:
     quantity: 0.25
     unit: cup
     item: soy sauce
+    grams: 70
     milliliters: 59.147
     fdcId: 81017007
     matchConfidence: medium
@@ -34,6 +35,7 @@ ingredients:
     quantity: 0.25
     unit: cup
     item: rice vinegar
+    grams: 60
     milliliters: 59.147
     fdcId: 81017016
     matchConfidence: high
@@ -65,41 +67,42 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 22
-    energyKj: 94
-    protein_g: 0.7
+    energyKcal: 33
+    energyKj: 136
+    protein_g: 1.4
     fat_g: 0.1
     satFat_g: 0
-    carbs_g: 5.4
+    carbs_g: 6.6
     fiber_g: 0.7
-    sugar_g: 3.9
-    sodium_mg: 3
-    availableCarb_g: 4.6
+    sugar_g: 4.1
+    sodium_mg: 503
+    availableCarb_g: 5.9
   glycemic:
-    gi: 49
+    gi: 42
     gl: 2
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 70
+    measuredGiPct: 55
   nutriScore:
-    grade: B
-    points: 1
+    grade: C
+    points: 10
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.88
   inflammation:
-    score: 0.7
-    band: mildly-pro-inflammatory
+    score: 0.8
+    band: pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.05
   balance:
-    score: 2
+    score: 1
     band: poor
-    nrf: 0.8
+    nrf: -56.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 100
+    minimallyProcessedPct: 79.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

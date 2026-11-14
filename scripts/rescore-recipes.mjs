@@ -69,6 +69,7 @@ async function rescore({ scoreRecipe, storedScoringFields, dataSourcesFor }) {
         isWater: stored.isWater,
         isCheese: stored.isCheese,
         redMeat: stored.redMeat,
+        course: data.course,
       },
       foodById, foodScoring, polyphenols,
     );
@@ -103,6 +104,7 @@ function serializeNutrition(macro, scores, computedAt, sources, nutriInputs = {}
     kv(4, 'gl', scores.glycemic.gl);
     kv(4, 'giBand', scores.glycemic.giBand);
     kv(4, 'glBand', scores.glycemic.glBand);
+    kv(4, 'glBasis', scores.glycemic.glBasis);
     kv(4, 'gi_source', scores.glycemic.gi_source);
     kv(4, 'measuredGiPct', scores.glycemic.measuredGiPct);
   }

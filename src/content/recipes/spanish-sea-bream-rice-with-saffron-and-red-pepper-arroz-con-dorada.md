@@ -22,9 +22,10 @@ ingredients:
     unit: g
     item: sea bream fillet
     grams: 400
-    fdcId: 173678
+    fdcId: 175141
     matchConfidence: high
     cooking: boiled
+    proxyOk: true
   - raw: 300 g brown arborio rice, uncooked
     quantity: 300
     unit: g
@@ -87,7 +88,7 @@ ingredients:
     quantity: 1
     unit: pinch
     item: saffron
-    grams: 0
+    grams: 0.1
     milliliters: 0.3080575
     fdcId: 170934
     matchConfidence: medium
@@ -144,21 +145,22 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 522
-    energyKj: 2182
-    protein_g: 27.4
-    fat_g: 12.6
-    satFat_g: 2
+    energyKcal: 536
+    energyKj: 2241
+    protein_g: 26.9
+    fat_g: 14.5
+    satFat_g: 2.5
     carbs_g: 70.6
     fiber_g: 5.2
     sugar_g: 7.3
-    sodium_mg: 1264
+    sodium_mg: 1246
     availableCarb_g: 65.1
   glycemic:
-    gi: 62
+    gi: 63
     gl: 41
     giBand: medium
     glBand: high
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 84
   nutriScore:
@@ -168,17 +170,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.32
+    aromaticAdjustment: -0.36
   balance:
     score: 6
     band: moderate
-    nrf: 33.3
+    nrf: 31.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 91
+    minimallyProcessedPct: 91.2
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

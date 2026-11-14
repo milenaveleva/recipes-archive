@@ -7,6 +7,7 @@ imageAlt: Egg and Spinach Rice Bowl
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11854-tojasos-spenotos-rizstal
+  kcalPerServing: 385
 author: Kifli Kukták
 servings: 1
 prepTime: PT10M
@@ -115,6 +116,7 @@ nutrition:
     gl: 43
     giBand: medium
     glBand: high
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 92
   nutriScore:

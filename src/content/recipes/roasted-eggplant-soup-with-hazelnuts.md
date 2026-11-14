@@ -7,6 +7,7 @@ imageAlt: Roasted Eggplant Soup with Hazelnuts
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12285-suelt-padlizsanleves-toeroekmogyoroval
+  kcalPerServing: 310
 author: Kifli Kukták
 servings: 4
 prepTime: PT20M
@@ -130,6 +131,7 @@ nutrition:
     gl: 6
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 14
   nutriScore:

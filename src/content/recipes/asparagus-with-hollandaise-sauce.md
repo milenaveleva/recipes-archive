@@ -7,6 +7,7 @@ imageAlt: Asparagus with Hollandaise Sauce
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10316-sparga-hollandi-martassal
+  kcalPerServing: 685
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
@@ -123,12 +124,13 @@ nutrition:
     sodium_mg: 1515
     availableCarb_g: 34.3
   glycemic:
-    gi: 53
-    gl: 18
+    gi: 55
+    gl: 19
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 56
+    measuredGiPct: 64
   nutriScore:
     grade: B
     points: 1

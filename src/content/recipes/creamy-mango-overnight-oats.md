@@ -7,6 +7,7 @@ imageAlt: Creamy Mango Overnight Oats
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11680-mangos-kremes-overnight-oats
+  kcalPerServing: 320
 author: Kifli Kukták
 servings: 2
 prepTime: PT10M
@@ -52,9 +53,9 @@ ingredients:
     quantity: 40
     unit: g
     item: freeze-dried mango
-    grams: 55
-    fdcId: 173941
-    matchConfidence: medium
+    grams: 220
+    fdcId: 169910
+    matchConfidence: high
     cooking: raw
   - raw: 1 tbsp chia seeds
     quantity: 1
@@ -93,36 +94,37 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 294
-    energyKj: 1230
+    energyKj: 1229
     protein_g: 11
-    fat_g: 6.2
-    satFat_g: 2.3
-    carbs_g: 52.5
-    fiber_g: 8
-    sugar_g: 30.1
-    sodium_mg: 67
-    availableCarb_g: 40.9
+    fat_g: 6.5
+    satFat_g: 2.4
+    carbs_g: 51.8
+    fiber_g: 7.8
+    sugar_g: 30.5
+    sodium_mg: 65
+    availableCarb_g: 44
   glycemic:
-    gi: 50
-    gl: 20
+    gi: 51
+    gl: 22
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 93
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 1
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
+    score: -0.1
     band: neutral
     method: fii v4
   balance:
-    score: 6
-    band: moderate
-    nrf: 35.1
+    score: 7
+    band: high
+    nrf: 47.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 96.9

@@ -7,6 +7,7 @@ imageAlt: Asian Salmon with Brown Jasmine Rice
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13020-azsiai-lazac-jazmin-rizzsel
+  kcalPerServing: 585
 author: Kifli Kukták
 servings: 2
 prepTime: PT40M
@@ -115,6 +116,7 @@ nutrition:
     gl: 49
     giBand: medium
     glBand: high
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 94
   nutriScore:

@@ -7,6 +7,7 @@ imageAlt: Roasted Butternut Squash Gnocchi Bake
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11730-suelt-suetotoekoes-gnocchi-kremes-oszi-vacsora
+  kcalPerServing: 485
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
@@ -125,6 +126,7 @@ nutrition:
     gl: 30
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
@@ -146,7 +148,7 @@ nutrition:
   processing:
     minimallyProcessedPct: 39.5
     ultraProcessedPct: 0
-    band: highly-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

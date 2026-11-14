@@ -50,6 +50,7 @@ ingredients:
     fdcId: 168165
     matchConfidence: medium
     cooking: raw
+    proxyOk: true
   - raw: 100 g chopped pistachios
     quantity: 100
     unit: g
@@ -102,6 +103,7 @@ nutrition:
     gl: 7
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 66
   nutriScore:

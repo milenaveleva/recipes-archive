@@ -7,6 +7,7 @@ imageAlt: Beetroot Risotto with Goat Cheese
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10389-ceklarizotto-kecskesajttal
+  kcalPerServing: 785
 author: Pataky Péter
 servings: 4
 prepTime: PT1H
@@ -166,6 +167,7 @@ nutrition:
     gl: 59
     giBand: medium
     glBand: high
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 78
   nutriScore:

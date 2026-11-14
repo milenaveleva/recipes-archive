@@ -7,6 +7,7 @@ imageAlt: Whole-Wheat Penne with Winter Vegetables and Aged Cheeses
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10378-penne-teli-zoeldsegekkel-erlelt-sajtokkal
+  kcalPerServing: 845
 author: Pataky Péter
 servings: 4
 prepTime: PT10M
@@ -157,6 +158,7 @@ nutrition:
     gl: 47
     giBand: low
     glBand: high
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 85
   nutriScore:

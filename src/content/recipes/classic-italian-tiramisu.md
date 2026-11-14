@@ -7,6 +7,7 @@ imageAlt: Classic Italian Tiramisu
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12695-eredeti-olasz-tiramisu
+  kcalPerServing: 480
 author: Kifli Kukták
 servings: 6
 prepTime: PT30M
@@ -31,6 +32,7 @@ ingredients:
     fdcId: 174981
     matchConfidence: medium
     cooking: raw
+    proxyOk: true
   - raw: 2 cups coffee
     quantity: 2
     unit: cups
@@ -78,12 +80,13 @@ nutrition:
     sodium_mg: 444
     availableCarb_g: 46
   glycemic:
-    gi: 51
-    gl: 24
-    giBand: low
-    glBand: medium
+    gi: 57
+    gl: 26
+    giBand: medium
+    glBand: high
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 13
+    measuredGiPct: 89
   nutriScore:
     grade: D
     points: 12

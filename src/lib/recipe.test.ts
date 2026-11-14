@@ -19,6 +19,7 @@ import {
   NUTRI_LOW_DATA_COVERAGE,
 } from './recipe';
 import { INFLAMMATION_BAND_EDGES, inflammationBandOf } from '../core/inflammation';
+import { glBandOf, DEFAULT_GL_BASIS } from '../core/gi';
 
 describe('formatIngredientAmount (display unit ≠ calc basis)', () => {
   it('shows tsp/tbsp as written even when grams/ml are stored for the math', () => {
@@ -160,19 +161,37 @@ describe('score rating normalization (1–10, 1 = healthiest)', () => {
     expect(giRating(null)).toBeNull();
   });
 
+  it('maps per-serving GL on portion bands: ≤10 / 11–19 / ≥20 → 1–3 / 4–6 / 7–10', () => {
+    expect(glRating(0, 'portion')).toBe(1);
+    expect(glRating(5, 'portion')).toBe(2);
+    expect(glRating(10, 'portion')).toBe(3); // top of the low band → still good
+    expect(glRating(11, 'portion')).toBe(4);
+    expect(glRating(15, 'portion')).toBe(5);
+    expect(glRating(19, 'portion')).toBe(6);
+    expect(glRating(20, 'portion')).toBe(7); // into high → bad
+    expect(glRating(30, 'portion')).toBe(10);
+    expect(glRating(45, 'portion')).toBe(10); // clamped
+    expect(glRating(null, 'portion')).toBeNull();
+    for (let g = 0; g <= 40; g++) {
+      expect(ratingTone(glRating(g, 'portion')), `GL ${g}`).toBe(
+        glBandOf(g, 'portion') === 'low' ? 'good' : glBandOf(g, 'portion') === 'medium' ? 'mid' : 'bad',
+      );
+    }
+  });
+
   it('maps per-serving GL on meal bands: <20 / 20–39 / ≥40 → 1–3 / 4–6 / 7–10', () => {
-    expect(glRating(0)).toBe(1);
-    expect(glRating(10)).toBe(2);
-    expect(glRating(19)).toBe(3); // top of the low band → still good
-    expect(glRating(20)).toBe(4);
-    expect(glRating(30)).toBe(5);
-    expect(glRating(39)).toBe(6);
-    expect(glRating(40)).toBe(7); // into high → bad
-    expect(glRating(60)).toBe(10);
-    expect(glRating(90)).toBe(10); // clamped
-    expect(glRating(null)).toBeNull();
+    expect(glRating(0, 'meal')).toBe(1);
+    expect(glRating(10, 'meal')).toBe(2);
+    expect(glRating(19, 'meal')).toBe(3); // top of the low band → still good
+    expect(glRating(20, 'meal')).toBe(4);
+    expect(glRating(30, 'meal')).toBe(5);
+    expect(glRating(39, 'meal')).toBe(6);
+    expect(glRating(40, 'meal')).toBe(7); // into high → bad
+    expect(glRating(60, 'meal')).toBe(10);
+    expect(glRating(90, 'meal')).toBe(10); // clamped
+    expect(glRating(null, 'meal')).toBeNull();
     for (let g = 0; g <= 80; g++) {
-      const tone = ratingTone(glRating(g));
+      const tone = ratingTone(glRating(g, 'meal'));
       expect(tone).toBe(g < 20 ? 'good' : g < 40 ? 'mid' : 'bad');
     }
   });
@@ -228,7 +247,7 @@ describe('score rating normalization (1–10, 1 = healthiest)', () => {
 
 describe('buildScoreDials', () => {
   const nutrition = {
-    glycemic: { gi: 64, gl: 19, giBand: 'medium', glBand: 'medium' },
+    glycemic: { gi: 64, gl: 19, giBand: 'medium', glBand: 'low', glBasis: 'meal' },
     nutriScore: { grade: 'C' },
     balance: { score: 8, band: 'high' },
     inflammation: { score: -0.8, band: 'mildly-anti-inflammatory' },
@@ -275,8 +294,8 @@ describe('buildScoreDials', () => {
   });
 
   it('rates a partial nutrition block (only glycemic load present)', () => {
-    const [, gl] = buildScoreDials({ glycemic: { gl: 32 } });
-    expect(gl.value).toBe('5'); // GL 32 → 5
+    const [, gl] = buildScoreDials({ glycemic: { gl: 32, glBasis: 'meal' } });
+    expect(gl.value).toBe('5'); // GL 32 on meal bands → 5
     expect(gl.present).toBe(true);
     const [giBlank] = buildScoreDials({ glycemic: { gi: 50, giBand: '' } });
     expect(giBlank.value).toBe('3'); // GI 50 → 3
@@ -288,28 +307,56 @@ describe('buildScoreDials', () => {
     expect(inflam.tone).toBe('bad');
   });
 
-  it('shows a highly-processed dish red even with no ultra-processed share', () => {
+  it('shows a NOVA-3-heavy dish amber, not red', () => {
     const [, , , , , proc] = buildScoreDials({
-      processing: { minimallyProcessedPct: 22, ultraProcessedPct: 0, band: 'highly-processed' },
+      processing: { minimallyProcessedPct: 22, ultraProcessedPct: 0, band: 'moderately-processed' },
     });
     expect(proc.key).toBe('processing');
-    expect(proc.tone).toBe('bad');
-    expect(proc.caption).toBe('Highly Processed');
+    expect(proc.tone).toBe('mid');
+    expect(proc.caption).toBe('Moderately Processed');
   });
 
   it('captions GI as a rounded estimate and GL with the serving carbs', () => {
-    const [gi, gl] = buildScoreDials({
-      perServing: { availableCarb_g: 46.4 },
-      glycemic: { gi: 57, gl: 26, measuredGiPct: 80 },
-    });
+    const [gi, gl] = buildScoreDials(
+      {
+        perServing: { availableCarb_g: 46.4 },
+        glycemic: { gi: 57, gl: 26, measuredGiPct: 80 },
+      },
+      'Main Course',
+    );
     expect(gi.caption).toBe('≈ 55, estimated');
     expect(gi.blurb).toContain('80% of the carbohydrate has a measured GI');
-    expect(gl.caption).toBe('26 per serving · 46 g carbs');
+    expect(gl.caption).toBe('26 per serving · meal bands'); // no stored basis → the course's (main → meal)
     expect(gl.blurb).toContain('low under 20, medium 20–39, high 40+');
+    expect(gl.blurb).toContain('46 g of available carbohydrate');
     expect(giEstimateLabel(58)).toBe('≈ 60, estimated');
     expect(giEstimateLabel(52)).toBe('≈ 50, estimated');
     const [, glNoCarbs] = buildScoreDials({ glycemic: { gl: 26 } });
-    expect(glNoCarbs.caption).toBe('26 per serving');
+    expect(glNoCarbs.blurb).not.toContain('available carbohydrate.');
+  });
+
+  it('defaults a missing GL basis to the engine default, or infers it from the course', () => {
+    expect(glRating(20)).toBe(glRating(20, DEFAULT_GL_BASIS));
+    const [, none] = buildScoreDials({ glycemic: { gl: 20 } });
+    expect(none.caption).toBe(`20 per serving · ${DEFAULT_GL_BASIS} bands`);
+    const [, main] = buildScoreDials({ glycemic: { gl: 20 } }, 'Main Course');
+    expect(main.caption).toBe('20 per serving · meal bands');
+    const [, snack] = buildScoreDials({ glycemic: { gl: 20 } }, 'Snack');
+    expect(snack.caption).toBe('20 per serving · portion bands');
+    // A stored basis always wins over the course.
+    const [, stored] = buildScoreDials({ glycemic: { gl: 20, glBasis: 'portion' } }, 'Main Course');
+    expect(stored.caption).toBe('20 per serving · portion bands');
+  });
+
+  it('rates and captions GL on the stored basis', () => {
+    const [, portion] = buildScoreDials({ glycemic: { gl: 20, glBasis: 'portion' } });
+    expect(portion.value).toBe('7'); // GL 20 is a high-GL portion
+    expect(portion.tone).toBe('bad');
+    expect(portion.caption).toBe('20 per serving · portion bands');
+    expect(portion.blurb).toContain('low 10 or less, medium 11–19, high 20+');
+    const [, meal] = buildScoreDials({ glycemic: { gl: 20, glBasis: 'meal' } });
+    expect(meal.value).toBe('4'); // GL 20 is a medium-GL meal
+    expect(meal.caption).toBe('20 per serving · meal bands');
   });
 
   it('flags a low-data Nutri-Score (coverage < 0.9) in caption and tooltip', () => {
@@ -337,37 +384,39 @@ describe('buildScoreDials', () => {
   });
 });
 
-describe('processingRating — highly-processed always poor', () => {
-  it('rates a highly-processed band ≥ 7 even at/above the 40 % whole-food edge', () => {
-    for (const pct of [39.9, 40, 45, 80]) {
-      expect(processingRating(pct, 0, 'highly-processed')!, String(pct)).toBeGreaterThanOrEqual(7);
-      expect(processingRating(pct, null, 'highly-processed')!, String(pct)).toBeGreaterThanOrEqual(7);
+describe('processingRating', () => {
+  it('gives each band one tone: minimally good, moderately amber, highly red', () => {
+    expect(ratingTone(processingRating(95, 0, 'minimally-processed'))).toBe('good');
+    expect(ratingTone(processingRating(70, 10, 'minimally-processed'))).toBe('good');
+    // A dish whose energy is mostly NOVA 3 (canned legumes, cheese) is processed, not ultra-processed.
+    expect(ratingTone(processingRating(10, 0, 'moderately-processed'))).toBe('mid');
+    expect(ratingTone(processingRating(50, UPF_ALARM_PCT - 1, 'moderately-processed'))).toBe('mid');
+    expect(ratingTone(processingRating(22, UPF_ALARM_PCT, 'highly-processed'))).toBe('bad');
+    expect(processingRating(70, UPF_ALARM_PCT, 'highly-processed')).toBe(7);
+    expect(processingRating(0, 100, 'highly-processed')).toBe(10);
+  });
+
+  it('is monotone: never falls as the UPF share rises or the whole-food share falls', () => {
+    const band = (m: number, u: number) =>
+      u >= UPF_ALARM_PCT ? 'highly-processed' : m >= 70 ? 'minimally-processed' : 'moderately-processed';
+    const r = (m: number, u: number) => processingRating(m, u, band(m, u))!;
+    for (let m = 0; m <= 100; m += 5) {
+      for (let u = 0; u + m <= 100; u += 5) {
+        if (u + 5 + m <= 100) expect(r(m, u + 5), `m ${m} u ${u}→${u + 5}`).toBeGreaterThanOrEqual(r(m, u));
+        if (m + 5 + u <= 100) expect(r(m + 5, u), `u ${u} m ${m}→${m + 5}`).toBeLessThanOrEqual(r(m, u));
+      }
     }
   });
-});
 
-describe('processingRating', () => {
-  it('keys the poor band on the ultra-processed share, not merely a low whole-food share', () => {
-    expect(ratingTone(processingRating(95, 0, 'minimally-processed'))).toBe('good');
-    // A highly-processed band is always poor, whatever the ultra-processed share.
-    expect(ratingTone(processingRating(22, 0, 'highly-processed'))).toBe('bad');
-    expect(ratingTone(processingRating(39, UPF_ALARM_PCT - 1, 'highly-processed'))).toBe('bad');
-    expect(ratingTone(processingRating(22, UPF_ALARM_PCT, 'highly-processed'))).toBe('bad');
-    expect(processingRating(0, 100, 'highly-processed')).toBe(10);
-    // Below the alarm, a moderately-processed dish stays caution.
-    expect(ratingTone(processingRating(50, UPF_ALARM_PCT - 1, 'moderately-processed'))).toBe('mid');
-    expect(ratingTone(processingRating(30, UPF_ALARM_PCT + 20, 'moderately-processed'))).toBe('bad');
-  });
-
-  it('alarms a high ultra-processed share regardless of the whole-food band', () => {
-    // Reaching the minimally-processed band on NOVA 1+2 share does not excuse a real UPF share.
+  it('reads red for a UPF share at the alarm even on a stale non-highly band, and for a highly band at any share', () => {
     expect(ratingTone(processingRating(80, UPF_ALARM_PCT, 'minimally-processed'))).toBe('bad');
+    expect(ratingTone(processingRating(30, UPF_ALARM_PCT + 20, 'moderately-processed'))).toBe('bad');
+    for (const pct of [0, 40, 80]) expect(processingRating(pct, null, 'highly-processed')!).toBeGreaterThanOrEqual(7);
   });
 
   it('is null for a missing band or share, and falls back to the band when the UPF share is unknown', () => {
     expect(processingRating(50, 0, null)).toBeNull();
     expect(processingRating(null, 0, 'minimally-processed')).toBeNull();
-    expect(ratingTone(processingRating(10, null, 'highly-processed'))).toBe('bad');
     expect(ratingTone(processingRating(40, null, 'moderately-processed'))).toBe('mid');
     expect(ratingTone(processingRating(90, null, 'minimally-processed'))).toBe('good');
   });

@@ -7,6 +7,7 @@ imageAlt: Watermelon Feta Salad
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10627-goeroegdinnye-salata
+  kcalPerServing: 235
 author: Kifli Kukták
 servings: 2
 prepTime: PT15M
@@ -99,6 +100,7 @@ nutrition:
     gl: 6
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 76
   nutriScore:

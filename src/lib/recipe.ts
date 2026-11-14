@@ -1,6 +1,9 @@
 import type { CollectionEntry } from 'astro:content';
 import { canonicalUnit, classifyUnit } from '../core/units';
 import { INFLAMMATION_BAND_EDGES, inflammationBandOf, type InflammationBand } from '../core/inflammation';
+import { DEFAULT_GL_BASIS, type GlBasis } from '../core/gi';
+import { resolveGlBasis } from '../core/course';
+import { MINIMAL_GOOD, UPF_HIGH_PCT } from '../core/processing';
 
 export type Recipe = CollectionEntry<'recipes'>;
 export type Tone = 'good' | 'mid' | 'bad' | 'unknown';
@@ -296,13 +299,33 @@ export function giRating(gi?: number | null): number | null {
   return clampRating(7 + ((gi - 69) / 31) * 3);
 }
 
-/** Per-serving glycemic load → 1–10 on the MEAL bands (low <20 → 1–3, medium 20–39 →
- *  4–6, high ≥40 → 7–10, reaching 10 at GL 60) — the same cut-offs as `glBandOf` (core/gi.ts). */
-export function glRating(gl?: number | null): number | null {
+/**
+ * Per-serving glycemic load → 1–10, mapped linearly within the bands of the basis it was
+ * scored on (`glBandOf` in core/gi.ts), so the rating agrees with the stored band:
+ *  - 'meal' (full-meal courses): low <20 → 1–3, medium 20–39 → 4–6, high ≥40 → 7–10,
+ *    reaching 10 at GL 60.
+ *  - 'portion' (every other course): low ≤10 → 1–3, medium 11–19 → 4–6, high ≥20 → 7–10,
+ *    reaching 10 at GL 30.
+ * Without a basis it uses the engine's DEFAULT_GL_BASIS (core/gi.ts).
+ */
+export function glRating(gl?: number | null, basis: GlBasis = DEFAULT_GL_BASIS): number | null {
   if (gl == null) return null;
+  if (basis === 'portion') {
+    if (gl <= 10) return clampRating(1 + (gl / 10) * 2);
+    if (gl < 20) return clampRating(4 + ((gl - 10) / 10) * 2);
+    return clampRating(7 + ((gl - 20) / 10) * 3);
+  }
   if (gl < 20) return clampRating(1 + (gl / 20) * 2);
   if (gl < 40) return clampRating(4 + ((gl - 20) / 20) * 2);
   return clampRating(7 + ((gl - 40) / 20) * 3);
+}
+
+/**
+ * The GL basis of a stored glycemic block: its own `glBasis` when valid, else the basis the
+ * recipe's course implies, else DEFAULT_GL_BASIS (core/course.ts `resolveGlBasis`).
+ */
+export function glBasisOf(basis?: string | null, course?: string | null): GlBasis {
+  return resolveGlBasis(basis, course);
 }
 
 const INFLAMMATION_BANDS: readonly InflammationBand[] = [
@@ -361,19 +384,22 @@ export function inflammationLabel(band?: string | null): string {
     .replace('Inflammatory', 'Inflam.');
 }
 
-/** Ultra-processed (NOVA 4) energy share at/above which the processing dial reads as a
- *  genuine ultra-processed concern. A presentation cut-off, not a clinical one — UPF risk
- *  is dose-response with no established threshold (Barbaresko 2024). */
-export const UPF_ALARM_PCT = 30;
+/** Ultra-processed (NOVA 4) energy share at/above which the processing dial reads poor —
+ *  the same cut-off that makes the band 'highly-processed' (`UPF_HIGH_PCT`). */
+export const UPF_ALARM_PCT = UPF_HIGH_PCT;
 
 /**
- * Processing → 1–10 rating (1 = least processed, 10 = most). The 7–10 poor band covers a
- * "highly-processed" dish (under 40 % of its energy from NOVA 1–2 foods) AND any dish whose
- * ultra-processed (NOVA 4) share reaches `UPF_ALARM_PCT` — the health-relevant NOVA signal
- * (Lane 2024) — whatever its whole-food band. Within the poor band the larger of the two
- * excesses positions the rating. Otherwise a minimally-processed dish reads good (1–3) and
- * everything else — moderately processed — reads caution (4–6), positioned by its whole-food
- * share. So a "highly-processed" band word is always shown red.
+ * Processing → 1–10 rating (1 = least processed, 10 = most), monotone in both shares: it
+ * never falls as the ultra-processed (NOVA 4) share rises or as the whole-food (NOVA 1–2)
+ * share falls. Each band owns one tone:
+ *   poor 7–10    — 'highly-processed' (UPF share ≥ `UPF_ALARM_PCT`), positioned by how far
+ *                  the UPF share runs past the cut-off; the only red reading, since NOVA
+ *                  reserves "ultra-processed" for group 4 (Monteiro 2019)
+ *   good 1–3     — 'minimally-processed', positioned by the non-whole-food share
+ *   caution 4–6  — 'moderately-processed' (a processed, NOVA-3-heavy dish such as canned
+ *                  legumes with cheese), positioned by the larger of its whole-food
+ *                  shortfall and its approach to the UPF cut-off
+ * An unknown UPF share counts as 0, so the band alone decides.
  */
 export function processingRating(
   minimallyProcessedPct?: number | null,
@@ -381,20 +407,15 @@ export function processingRating(
   band?: string | null,
 ): number | null {
   if (minimallyProcessedPct == null || !band) return null;
-  const upfAlarm = ultraProcessedPct != null && ultraProcessedPct >= UPF_ALARM_PCT;
-  // Poor (7–10): a highly-processed dish, or a real ultra-processed share.
-  if (band === 'highly-processed' || upfAlarm) {
-    const upfOver = upfAlarm ? (Math.min(ultraProcessedPct!, 100) - UPF_ALARM_PCT) / (100 - UPF_ALARM_PCT) : 0;
-    // Clamped to [0, 1] so a 'highly-processed' band always rates ≥ 7, even when its stored
-    // whole-food share sits at or above the 40 % band edge.
-    const wholeShort =
-      band === 'highly-processed' ? Math.min(1, Math.max(0, (40 - minimallyProcessedPct) / 40)) : 0;
-    return clampRating(7 + Math.max(upfOver, wholeShort) * 3);
+  const upf = Math.min(100, Math.max(0, ultraProcessedPct ?? 0));
+  if (band === 'highly-processed' || upf >= UPF_ALARM_PCT) {
+    return clampRating(7 + (Math.max(0, upf - UPF_ALARM_PCT) / (100 - UPF_ALARM_PCT)) * 3);
   }
-  // Good (1–3): minimally processed with a low/unknown ultra-processed share.
-  if (band === 'minimally-processed') return clampRating(1 + ((100 - minimallyProcessedPct) / 30) * 2);
-  // Caution (4–6): everything else — moderately processed, or NOVA-3 fermented foods (miso, cheese).
-  return clampRating(4 + ((70 - minimallyProcessedPct) / 70) * 2);
+  const nonWhole = Math.min(100, Math.max(0, 100 - minimallyProcessedPct));
+  // The UPF share is part of the non-whole-food share, so this term already rises with it.
+  if (band === 'minimally-processed') return clampRating(1 + Math.min(1, nonWhole / (100 - MINIMAL_GOOD)) * 2);
+  const wholeShort = Math.min(1, Math.max(0, (MINIMAL_GOOD - minimallyProcessedPct) / MINIMAL_GOOD));
+  return clampRating(4 + Math.max(wholeShort, upf / UPF_ALARM_PCT) * 2);
 }
 
 /** Display label for a processing band ('minimally-processed' → 'Minimally Processed'). */
@@ -469,6 +490,7 @@ type NutritionLike =
         gl?: number | null;
         giBand?: string | null;
         glBand?: string | null;
+        glBasis?: string | null;
         measuredGiPct?: number | null;
       } | null;
       nutriScore?: { grade?: string | null; coverage?: number | null } | null;
@@ -502,9 +524,10 @@ export function giEstimateLabel(gi: number): string {
  * rating/tone/fill/caption logic shared by the Astro detail page, the React edit
  * preview, and the authoring panel (so the three renderers never drift). Every dial is
  * the same shape: `value` is the metric's 1–10 rating, `fill` is `rating / 10`, `tone`
- * is `ratingTone(rating)`, and `caption` is a short native-value line.
+ * is `ratingTone(rating)`, and `caption` is a short native-value line. `course` resolves
+ * the GL basis when the stored block carries none (`glBasisOf`).
  */
-export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
+export function buildScoreDials(nutrition: NutritionLike, course?: string | null): ScoreDial[] {
   const gly = nutrition?.glycemic ?? undefined;
   const nutri = nutrition?.nutriScore ?? undefined;
   const inflam = nutrition?.inflammation ?? undefined;
@@ -514,7 +537,8 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
   const carbs = nutrition?.perServing?.availableCarb_g ?? null;
 
   const gi = giRating(gly?.gi);
-  const gl = glRating(gly?.gl);
+  const glBasis = glBasisOf(gly?.glBasis, course);
+  const gl = glRating(gly?.gl, glBasis);
   const nu = nutriRating(grade);
   const ba = balanceRating(bal?.score);
   const inf = inflammationRating(inflam?.score, inflam?.band);
@@ -547,15 +571,13 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       key: 'gl',
       label: 'Glycemic Load',
       blurb:
-        'Glycemic load of one serving: the estimated GI × the serving’s available carbohydrate ÷ 100 — the portion’s total blood-glucose impact, not just its speed. Banded for a whole meal (low under 20, medium 20–39, high 40+), not the single-food cut-offs. Shown as 1 (best) to 10 — lower is better. An estimate.',
-      ...dial(
-        gl,
-        gly?.gl != null
-          ? carbs != null
-            ? `${gly.gl} per serving · ${Math.round(carbs)} g carbs`
-            : `${gly.gl} per serving`
-          : undefined,
-      ),
+        'Glycemic load of one serving: the estimated GI × the serving’s available carbohydrate ÷ 100 — the portion’s total blood-glucose impact, not just its speed.' +
+        (carbs != null ? ` This serving carries ${Math.round(carbs)} g of available carbohydrate.` : '') +
+        (glBasis === 'meal'
+          ? ' Banded for a whole meal (low under 20, medium 20–39, high 40+), since a main course, soup, salad or breakfast carries several foods’ worth of carbohydrate.'
+          : ' Banded as a single portion (low 10 or less, medium 11–19, high 20+), the classic cut-offs for one food, side, snack, dessert or drink.') +
+        ' Shown as 1 (best) to 10 — lower is better. An estimate.',
+      ...dial(gl, gly?.gl != null ? `${gly.gl} per serving · ${glBasis} bands` : undefined),
     },
     {
       key: 'nutri',
@@ -585,7 +607,7 @@ export function buildScoreDials(nutrition: NutritionLike): ScoreDial[] {
       key: 'processing',
       label: 'Processing',
       blurb:
-        'How processed the dish is (NOVA): its whole-food share (groups 1–2) set against the ultra-processed share (group 4). A highly-processed dish, or one with a real ultra-processed share, reads 7–10. Shown as 1 (least processed) to 10 — lower is better. A rough estimate — processing is judged by food type and the ingredient wording.',
+        'How processed the dish is (NOVA), by share of its energy: “minimally processed” when whole foods and basic culinary ingredients (groups 1–2) supply at least 70 %, “highly processed” only when ultra-processed foods (group 4) supply 30 % or more, and “moderately processed” otherwise — including dishes built on processed foods such as canned beans, cheese or bread (group 3). Only a highly-processed dish reads 7–10. Shown as 1 (least processed) to 10 — lower is better. A rough estimate — processing is judged by food type and the ingredient wording.',
       ...dial(pr, proc?.band ? processingLabel(proc.band) : undefined),
     },
   ];

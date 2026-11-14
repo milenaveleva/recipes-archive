@@ -7,6 +7,7 @@ imageAlt: Autumn Fig Jam with Camembert and Pistachios
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11733-oszi-fuegelekvar-camemberttel-es-pisztaciaval
+  kcalPerServing: 385
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
@@ -104,7 +105,8 @@ nutrition:
     gi: 47
     gl: 15
     giBand: low
-    glBand: low
+    glBand: medium
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 92
   nutriScore:
@@ -126,7 +128,7 @@ nutrition:
   processing:
     minimallyProcessedPct: 23.6
     ultraProcessedPct: 0
-    band: highly-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

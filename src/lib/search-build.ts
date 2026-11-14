@@ -5,8 +5,8 @@
  * markdown body. Run only in `.astro` frontmatter, never in the client bundle.
  */
 import type { Recipe } from './recipe';
-import { recipeSlug, extractSteps } from './recipe';
-import type { SearchDoc } from './search';
+import { recipeSlug, extractSteps, glBasisOf } from './recipe';
+import { glLevelOf, type SearchDoc } from './search';
 
 export function buildSearchDoc(entry: Recipe): SearchDoc {
   const { data } = entry;
@@ -23,7 +23,7 @@ export function buildSearchDoc(entry: Recipe): SearchDoc {
     course: data.course ?? null,
     difficulty: data.difficulty ?? null,
     giBand: n?.glycemic?.giBand ?? null,
-    glBand: n?.glycemic?.glBand ?? null,
+    glBand: glLevelOf(n?.glycemic?.gl, glBasisOf(n?.glycemic?.glBasis, data.course)),
     nutriGrade: n?.nutriScore?.grade ?? null,
     inflammationBand: n?.inflammation?.band ?? null,
     balanceBand: n?.balance?.band ?? null,

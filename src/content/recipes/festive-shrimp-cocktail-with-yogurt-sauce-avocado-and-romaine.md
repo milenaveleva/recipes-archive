@@ -7,6 +7,7 @@ imageAlt: Festive Shrimp Cocktail with Yogurt Sauce, Avocado and Romaine
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10250-uennepi-rak-koktel-konyakos-martassal-avokadoval-romai-salataval
+  kcalPerServing: 485
 author: Pataky Péter
 servings: 4
 prepTime: PT20M
@@ -150,6 +151,7 @@ nutrition:
     gl: 2
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

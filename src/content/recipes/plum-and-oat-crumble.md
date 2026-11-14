@@ -7,6 +7,7 @@ imageAlt: Plum and Oat Crumble
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10455-szilvas-zabpelyhes-morzsasueti
+  kcalPerServing: 215
 author: Báder Gabka
 servings: 4
 prepTime: PT15M
@@ -133,7 +134,8 @@ nutrition:
     gi: 60
     gl: 12
     giBand: medium
-    glBand: low
+    glBand: medium
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 43
   nutriScore:

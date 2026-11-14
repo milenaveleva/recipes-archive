@@ -7,6 +7,7 @@ imageAlt: Orange White Bean Ragout with Polenta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10652-narancsos-feherbabragu-polentaval
+  kcalPerServing: 585
 author: Enyingi Vivien
 servings: 2
 prepTime: PT10M
@@ -178,6 +179,7 @@ nutrition:
     gl: 45
     giBand: low
     glBand: high
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

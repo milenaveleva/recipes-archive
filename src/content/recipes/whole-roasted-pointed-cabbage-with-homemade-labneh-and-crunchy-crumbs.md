@@ -7,6 +7,7 @@ imageAlt: Whole Roasted Pointed Cabbage with Homemade Labneh and Crunchy Crumbs
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10406-egeszben-suelt-kaposzta-hazi-labneh-vel-es-ropogos-morzsaval
+  kcalPerServing: 380
 author: Pataky Péter
 servings: 4
 prepTime: PT20M
@@ -91,6 +92,7 @@ ingredients:
     fdcId: 170416
     matchConfidence: high
     cooking: raw
+    proxyOk: true
   - raw: salt, to taste
     item: salt
     note: to taste
@@ -122,8 +124,9 @@ nutrition:
     gl: 3
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 0
+    measuredGiPct: 4
   nutriScore:
     grade: C
     points: 5

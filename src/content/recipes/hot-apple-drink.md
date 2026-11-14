@@ -7,6 +7,7 @@ imageAlt: Hot Apple Drink
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10400-forro-almaital
+  kcalPerServing: 125
 author: Kifli Kukták
 servings: 2
 prepTime: PT10M
@@ -42,7 +43,7 @@ ingredients:
   - raw: ½ lime
     quantity: 0.5
     item: lime
-    grams: 30
+    grams: 22
     fdcId: 168156
     matchConfidence: high
     cooking: boiled
@@ -56,23 +57,24 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 126
-    energyKj: 527
-    protein_g: 0.7
+    energyKcal: 125
+    energyKj: 522
+    protein_g: 0.6
     fat_g: 0.4
     satFat_g: 0.1
-    carbs_g: 33.9
+    carbs_g: 33.6
     fiber_g: 5.2
-    sugar_g: 25.2
+    sugar_g: 25.1
     sodium_mg: 3
-    availableCarb_g: 28.7
+    availableCarb_g: 28.4
   glycemic:
-    gi: 41
+    gi: 42
     gl: 12
     giBand: low
-    glBand: low
+    glBand: medium
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 93
+    measuredGiPct: 94
   nutriScore:
     grade: E
     points: 10
@@ -85,9 +87,9 @@ nutrition:
     method: fii v4
     aromaticAdjustment: -0.11
   balance:
-    score: 2
+    score: 1
     band: poor
-    nrf: -3.6
+    nrf: -4.8
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

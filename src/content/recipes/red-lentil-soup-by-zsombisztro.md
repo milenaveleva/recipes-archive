@@ -7,6 +7,7 @@ imageAlt: Red Lentil Soup by ZsomBisztró
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10649-voeroeslencse-leves-by-zsombisztro
+  kcalPerServing: 260
 author: Panka Zsombor (ZsomBisztró)
 servings: 4
 prepTime: PT10M
@@ -151,6 +152,7 @@ nutrition:
     gl: 21
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 79
   nutriScore:

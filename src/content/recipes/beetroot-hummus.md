@@ -7,6 +7,7 @@ imageAlt: Beetroot Hummus
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10647-ceklas-hummusz
+  kcalPerServing: 285
 author: Lőrincz Eszter
 servings: 2
 prepTime: PT15M
@@ -105,7 +106,8 @@ nutrition:
     gi: 48
     gl: 16
     giBand: low
-    glBand: low
+    glBand: medium
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

@@ -100,6 +100,7 @@ ingredients:
     fdcId: 170924
     matchConfidence: high
     cooking: boiled
+    proxyOk: true
   - raw: 1 tsp ground cumin
     group: Spices and fat
     quantity: 1
@@ -175,6 +176,7 @@ nutrition:
     gl: 37
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 76
   nutriScore:

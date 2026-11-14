@@ -7,6 +7,7 @@ imageAlt: Stir-Fried Pak Choi with Shiitake Mushrooms
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12520-piritott-pak-choi-shiitake-gombaval
+  kcalPerServing: 180
 author: Kifli Kukták
 servings: 4
 prepTime: PT5M
@@ -135,6 +136,7 @@ nutrition:
     gl: 27
     giBand: medium
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 88
   nutriScore:

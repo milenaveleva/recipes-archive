@@ -7,6 +7,7 @@ imageAlt: Asparagus Risotto
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10317-spargas-rizotto
+  kcalPerServing: 585
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
@@ -99,6 +100,7 @@ nutrition:
     gl: 33
     giBand: medium
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 95
   nutriScore:

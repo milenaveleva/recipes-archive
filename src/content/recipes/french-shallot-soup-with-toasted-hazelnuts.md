@@ -112,6 +112,7 @@ nutrition:
     gl: 12
     giBand: medium
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

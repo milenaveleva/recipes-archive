@@ -135,6 +135,7 @@ ingredients:
     fdcId: 168165
     matchConfidence: medium
     cooking: baked
+    proxyOk: true
   - raw: 500 g cranberries
     group: For the cranberry sauce
     quantity: 500
@@ -191,10 +192,10 @@ ingredients:
     unit: tbsp
     item: water
     note: for the flaxseed
-    grams: 10.5
+    grams: 44.4
     milliliters: 44.3604
-    fdcId: 169301
-    matchConfidence: medium
+    fdcId: 174158
+    matchConfidence: high
     excludeFromNutrition: true
     cooking: baked
 nutrition:
@@ -213,7 +214,8 @@ nutrition:
     gi: 52
     gl: 15
     giBand: low
-    glBand: low
+    glBand: medium
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 58
   nutriScore:

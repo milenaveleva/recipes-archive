@@ -7,6 +7,7 @@ imageAlt: Mango Chia Yogurt Breakfast
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11728-mangos-chia-joghurt-egeszseges-reggeli
+  kcalPerServing: 325
 author: Kifli Kukták
 servings: 2
 prepTime: PT10M
@@ -78,6 +79,7 @@ nutrition:
     gl: 17
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 78
   nutriScore:

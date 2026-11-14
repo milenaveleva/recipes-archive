@@ -83,7 +83,7 @@ const showScores = hasDisplayableScore(data.nutrition);
           the recipe page — so hide it from assistive tech here. */}
       {showScores && (
         <div aria-hidden="true">
-          <ScoreMedallions nutrition={data.nutrition} size="sm" />
+          <ScoreMedallions nutrition={data.nutrition} course={data.course} size="sm" />
         </div>
       )}
     </div>

@@ -7,6 +7,7 @@ imageAlt: Green Smoothie with Kiwi and Banana
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12920-zoeld-smoothie-kiwivel-es-banannal
+  kcalPerServing: 315
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
@@ -80,7 +81,8 @@ nutrition:
     gi: 39
     gl: 14
     giBand: low
-    glBand: low
+    glBand: medium
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 35
   nutriScore:
@@ -101,7 +103,7 @@ nutrition:
   processing:
     minimallyProcessedPct: 57
     ultraProcessedPct: 43
-    band: moderately-processed
+    band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

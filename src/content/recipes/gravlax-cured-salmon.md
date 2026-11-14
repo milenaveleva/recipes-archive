@@ -7,6 +7,7 @@ imageAlt: Gravlax (Cured Salmon)
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11579-pacolt-lazac-gravlax-kifli-kuktak
+  kcalPerServing: 210
 author: Kifli Kukták
 servings: 6
 prepTime: PT20M
@@ -92,6 +93,7 @@ nutrition:
     gl: 0
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

@@ -7,6 +7,7 @@ imageAlt: Ginger Carrot Soup with Coconut Milk
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11856-gyoemberes-sargarepa-kremleves-kokusztejjel
+  kcalPerServing: 245
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
@@ -103,6 +104,7 @@ nutrition:
     gl: 4
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 39
   nutriScore:

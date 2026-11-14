@@ -7,6 +7,7 @@ imageAlt: Roasted Chickpea Bowl with Dill Dressing
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13023-suelt-csicseriborso-tal-kapros-oentettel
+  kcalPerServing: 415
 author: Kifli Kukták
 servings: 3
 prepTime: PT20M
@@ -108,6 +109,7 @@ nutrition:
     gl: 34
     giBand: medium
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 67
   nutriScore:

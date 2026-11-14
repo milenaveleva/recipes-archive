@@ -7,6 +7,7 @@ imageAlt: Whole Roasted Trout (Baby-Friendly Version)
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10243-egeszben-suelt-pisztrang-bababarat-verzioban
+  kcalPerServing: 320
 author: ManóMenü
 servings: 4
 prepTime: PT15M
@@ -89,6 +90,7 @@ nutrition:
     gl: 0
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

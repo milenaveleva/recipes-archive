@@ -7,6 +7,7 @@ imageAlt: Coconut Cream Vegetable Curry
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10638-kokuszkremes-zoeldsegcurry
+  kcalPerServing: 485
 author: Nemes Dóra (Mentes Anyu)
 servings: 6
 prepTime: PT10M
@@ -132,6 +133,7 @@ ingredients:
     fdcId: 170106
     matchConfidence: high
     cooking: boiled
+    proxyOk: true
   - raw: 1 tbsp cornstarch
     quantity: 1
     unit: tbsp
@@ -192,6 +194,7 @@ nutrition:
     gl: 12
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 13
   nutriScore:
@@ -213,7 +216,7 @@ nutrition:
   processing:
     minimallyProcessedPct: 27.5
     ultraProcessedPct: 0.3
-    band: highly-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

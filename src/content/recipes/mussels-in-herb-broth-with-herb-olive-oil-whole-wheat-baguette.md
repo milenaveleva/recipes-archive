@@ -7,6 +7,7 @@ imageAlt: Mussels in Herb Broth with Herb Olive Oil Whole-Wheat Baguette
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10347-buzasoeroes-kek-kagylo-fuszeres-bagettel
+  kcalPerServing: 685
 author: Pataky Péter
 servings: 4
 prepTime: PT10M
@@ -144,12 +145,13 @@ nutrition:
     sodium_mg: 1308
     availableCarb_g: 35.5
   glycemic:
-    gi: 35
-    gl: 12
+    gi: 43
+    gl: 15
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 0
+    measuredGiPct: 63
   nutriScore:
     grade: C
     points: 3

@@ -7,6 +7,7 @@ imageAlt: Mixed Fruit Soup
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10506-vegyes-gyuemoelcsleves
+  kcalPerServing: 240
 author: Kifli Kukták
 servings: 5
 prepTime: PT20M
@@ -136,6 +137,7 @@ nutrition:
     gl: 22
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 79
   nutriScore:

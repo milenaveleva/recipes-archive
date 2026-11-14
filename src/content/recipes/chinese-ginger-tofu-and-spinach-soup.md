@@ -144,6 +144,7 @@ nutrition:
     gl: 2
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
@@ -165,7 +166,7 @@ nutrition:
   processing:
     minimallyProcessedPct: 34.2
     ultraProcessedPct: 0
-    band: highly-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

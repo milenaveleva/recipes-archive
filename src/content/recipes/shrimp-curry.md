@@ -7,6 +7,7 @@ imageAlt: Shrimp Curry
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10466-garnelas-curry
+  kcalPerServing: 425
 author: Báder Gabka
 servings: 2
 prepTime: PT10M
@@ -116,6 +117,7 @@ nutrition:
     gl: 30
     giBand: medium
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 72
   nutriScore:

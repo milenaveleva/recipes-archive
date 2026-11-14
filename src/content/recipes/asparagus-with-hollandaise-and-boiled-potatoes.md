@@ -7,6 +7,7 @@ imageAlt: Asparagus with Hollandaise and Boiled Potatoes
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11545-sparga-hollandi-martassal
+  kcalPerServing: 585
 author: Kifli Kukták
 servings: 4
 prepTime: PT25M
@@ -135,6 +136,7 @@ nutrition:
     gl: 16
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 63
   nutriScore:

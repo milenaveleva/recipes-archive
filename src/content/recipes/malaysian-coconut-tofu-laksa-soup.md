@@ -108,7 +108,7 @@ ingredients:
     group: Seasonings
     quantity: 1
     item: lime
-    grams: 65
+    grams: 44
     fdcId: 168156
     matchConfidence: high
     cooking: raw
@@ -148,29 +148,30 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 1142
-    energyKj: 4777
-    protein_g: 47.4
-    fat_g: 71.6
+    energyKcal: 1139
+    energyKj: 4766
+    protein_g: 47.3
+    fat_g: 71.5
     satFat_g: 40
-    carbs_g: 98.3
+    carbs_g: 97.4
     fiber_g: 16.9
-    sugar_g: 6.4
+    sugar_g: 6.2
     sodium_mg: 1975
-    availableCarb_g: 81.3
+    availableCarb_g: 80.5
   glycemic:
-    gi: 44
+    gi: 45
     gl: 36
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 79
+    measuredGiPct: 80
   nutriScore:
     grade: C
-    points: 6
+    points: 5
     category: general
     version: "2023"
-    coverage: 0.66
+    coverage: 0.65
   inflammation:
     score: 0
     band: neutral
@@ -179,10 +180,10 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 19.2
+    nrf: 18.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 44.3
+    minimallyProcessedPct: 44.2
     ultraProcessedPct: 1.7
     band: moderately-processed
     method: NOVA (energy-weighted)

@@ -7,6 +7,7 @@ imageAlt: Smoked Salmon Cream Cheese Domes
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11588-lazachab-elegans-eloetel-fuestoelt-lazacbol
+  kcalPerServing: 785
 author: Kifli Kukták
 servings: 2
 prepTime: PT45M
@@ -89,6 +90,7 @@ nutrition:
     gl: 1
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
@@ -109,7 +111,7 @@ nutrition:
   processing:
     minimallyProcessedPct: 0.1
     ultraProcessedPct: 0
-    band: highly-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

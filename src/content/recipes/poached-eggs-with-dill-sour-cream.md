@@ -57,8 +57,8 @@ ingredients:
     quantity: 4
     item: slices whole-wheat sourdough bread
     grams: 160
-    fdcId: 172688
-    matchConfidence: high
+    fdcId: 174091
+    matchConfidence: medium
     cooking: fried
   - raw: 2 tbsp vinegar (10%)
     group: Seasonings and basics
@@ -103,23 +103,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 655
-    energyKj: 2739
-    protein_g: 26.4
-    fat_g: 42.5
-    satFat_g: 15.1
-    carbs_g: 41.3
-    fiber_g: 5.3
-    sugar_g: 4.3
-    sodium_mg: 855
-    availableCarb_g: 36
+    energyKcal: 644
+    energyKj: 2695
+    protein_g: 23.2
+    fat_g: 40.5
+    satFat_g: 14.5
+    carbs_g: 46.5
+    fiber_g: 3.9
+    sugar_g: 0.8
+    sodium_mg: 791
+    availableCarb_g: 42.6
   glycemic:
-    gi: 48
-    gl: 17
-    giBand: low
-    glBand: low
+    gi: 61
+    gl: 26
+    giBand: medium
+    glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 0
+    measuredGiPct: 86
   nutriScore:
     grade: C
     points: 6
@@ -127,19 +128,19 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.2
-    band: neutral
+    score: 0.4
+    band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.01
   balance:
-    score: 4
+    score: 3
     band: low
-    nrf: 18.2
+    nrf: 13.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 69.2
-    ultraProcessedPct: 30.8
-    band: moderately-processed
+    minimallyProcessedPct: 70.3
+    ultraProcessedPct: 0
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

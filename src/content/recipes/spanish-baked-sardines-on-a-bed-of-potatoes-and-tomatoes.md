@@ -33,8 +33,9 @@ ingredients:
     item: sardines
     grams: 250
     fdcId: 175116
-    matchConfidence: medium
+    matchConfidence: high
     cooking: baked
+    proxyOk: true
   - raw: 300 g tomatoes
     group: Main ingredients
     quantity: 300
@@ -132,6 +133,7 @@ nutrition:
     gl: 13
     giBand: medium
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 81
   nutriScore:

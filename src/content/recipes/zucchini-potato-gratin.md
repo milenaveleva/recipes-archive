@@ -7,6 +7,7 @@ imageAlt: Zucchini Potato Gratin
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12123-rakott-burgonya-cukkinivel-egeszseges-es-koennyu-ebed
+  kcalPerServing: 320
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
@@ -121,6 +122,7 @@ nutrition:
     gl: 9
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

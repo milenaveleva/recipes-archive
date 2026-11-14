@@ -7,6 +7,7 @@ imageAlt: Peanut Butter Ginger Noodles
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10566-mogyoros-gyoemberes-teszta
+  kcalPerServing: 585
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
@@ -17,14 +18,23 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 2½ tsp grated lemon zest and 60 ml lemon juice
+  - raw: 2½ tsp grated lemon zest
     quantity: 2.5
     unit: tsp
-    item: grated lemon zest and 60 ml lemon juice
-    grams: 62
+    item: grated lemon zest
+    grams: 5
     milliliters: 12.322299999999998
+    fdcId: 167749
+    matchConfidence: high
+    cooking: raw
+  - raw: 60 ml lemon juice
+    quantity: 60
+    unit: ml
+    item: lemon juice
+    grams: 61.9
+    milliliters: 60
     fdcId: 167747
-    matchConfidence: medium
+    matchConfidence: high
     cooking: raw
   - raw: 2 tbsp soy sauce
     quantity: 2
@@ -140,21 +150,22 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 514
-    energyKj: 2152
+    energyKcal: 515
+    energyKj: 2154
     protein_g: 21.6
     fat_g: 18.1
     satFat_g: 3.1
-    carbs_g: 76.5
-    fiber_g: 12.9
-    sugar_g: 9.4
+    carbs_g: 76.7
+    fiber_g: 13.1
+    sugar_g: 9.5
     sodium_mg: 769
-    availableCarb_g: 63.2
+    availableCarb_g: 63.3
   glycemic:
     gi: 43
     gl: 27
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 87
   nutriScore:
@@ -171,10 +182,10 @@ nutrition:
   balance:
     score: 8
     band: high
-    nrf: 62.5
+    nrf: 62.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 66.1
+    minimallyProcessedPct: 66.2
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

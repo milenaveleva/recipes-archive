@@ -7,6 +7,7 @@ imageAlt: Crispy Whole-Wheat Panko Asparagus with Lemon Garlic Yogurt Sauce
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11527-ropogos-sparga-panko-morzsaban-citromos-aiolival
+  kcalPerServing: 280
 author: Kifli Kukták
 servings: 2
 prepTime: PT15M
@@ -134,12 +135,13 @@ nutrition:
     sodium_mg: 1061
     availableCarb_g: 23.1
   glycemic:
-    gi: 34
-    gl: 8
+    gi: 40
+    gl: 9
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 0
+    measuredGiPct: 48
   nutriScore:
     grade: B
     points: 2

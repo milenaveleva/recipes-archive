@@ -7,6 +7,7 @@ imageAlt: Green Smoothie with Mango, Pineapple and Kiwi
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12537-zoeld-smoothie-mangoval-ananasszal-es-kivivel-vitaminbomba-reggelire
+  kcalPerServing: 185
 author: Kifli Kukták
 servings: 2
 prepTime: PT15M
@@ -87,7 +88,8 @@ nutrition:
     gi: 56
     gl: 17
     giBand: medium
-    glBand: low
+    glBand: medium
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 67
   nutriScore:

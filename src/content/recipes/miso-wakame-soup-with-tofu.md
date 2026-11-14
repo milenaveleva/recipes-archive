@@ -7,6 +7,7 @@ imageAlt: Miso Wakame Soup with Tofu
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10684-miso-wakame-leves-tofuval
+  kcalPerServing: 235
 author: Kifli Kukták
 servings: 2
 prepTime: PT5M
@@ -103,6 +104,7 @@ nutrition:
     gl: 2
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
@@ -123,7 +125,7 @@ nutrition:
   processing:
     minimallyProcessedPct: 13.2
     ultraProcessedPct: 0
-    band: highly-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

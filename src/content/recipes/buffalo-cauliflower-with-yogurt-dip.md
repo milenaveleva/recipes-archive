@@ -7,6 +7,7 @@ imageAlt: Buffalo Cauliflower with Yogurt Dip
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10608-buffalo-karfiol
+  kcalPerServing: 485
 author: Kifli Kukták
 servings: 2
 prepTime: PT15M
@@ -150,7 +151,8 @@ nutrition:
     gi: 54
     gl: 26
     giBand: low
-    glBand: medium
+    glBand: high
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 15
   nutriScore:

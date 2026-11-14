@@ -7,6 +7,7 @@ imageAlt: Peanut Butter Coconut Curry with Tofu
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10680-mogyorovajas-curry-kokusztejjel-es-tofuval
+  kcalPerServing: 485
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
@@ -69,6 +70,7 @@ ingredients:
     fdcId: 170106
     matchConfidence: high
     cooking: boiled
+    proxyOk: true
   - raw: 2 tbsp peanut butter
     quantity: 2
     unit: tbsp
@@ -146,6 +148,7 @@ nutrition:
     gl: 17
     giBand: medium
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 82
   nutriScore:
@@ -167,7 +170,7 @@ nutrition:
   processing:
     minimallyProcessedPct: 39.7
     ultraProcessedPct: 0.5
-    band: highly-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

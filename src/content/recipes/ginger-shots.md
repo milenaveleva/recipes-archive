@@ -7,6 +7,7 @@ imageAlt: Ginger Shots
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12055-gyoemberes-shotok-termeszetes-immunerosito-vitaminbomba
+  kcalPerServing: 38
 author: Kifli Kukták
 servings: 10
 prepTime: PT15M
@@ -67,6 +68,7 @@ nutrition:
     gl: 6
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 39
   nutriScore:

@@ -7,6 +7,7 @@ imageAlt: Iced Coffee with Madagascan Vanilla Ice Cream
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10520-egyszeru-es-uetos-jegeskave-madagaszkari-vanilia-fagyival
+  kcalPerServing: 320
 author: Kifli Kukták
 servings: 1
 prepTime: PT10M
@@ -67,6 +68,7 @@ ingredients:
     fdcId: 169640
     matchConfidence: medium
     cooking: raw
+    proxyOk: true
   - raw: 5 g freeze-dried fruit
     quantity: 5
     unit: g
@@ -75,6 +77,7 @@ ingredients:
     fdcId: 173941
     matchConfidence: high
     cooking: raw
+    proxyOk: true
   - raw: 3 ice cubes
     quantity: 3
     item: ice cubes
@@ -115,7 +118,8 @@ nutrition:
     gi: 51
     gl: 17
     giBand: low
-    glBand: low
+    glBand: medium
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 57
   nutriScore:
@@ -136,7 +140,7 @@ nutrition:
   processing:
     minimallyProcessedPct: 63.9
     ultraProcessedPct: 36.1
-    band: moderately-processed
+    band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

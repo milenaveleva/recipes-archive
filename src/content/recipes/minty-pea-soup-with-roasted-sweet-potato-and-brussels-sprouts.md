@@ -7,6 +7,7 @@ imageAlt: Minty Pea Soup with Roasted Sweet Potato and Brussels Sprouts
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10448-mentas-zoeldborsokremleves-suelt-zoeldsegekkel
+  kcalPerServing: 315
 author: Báder Gabka
 servings: 4
 prepTime: PT15M
@@ -160,6 +161,7 @@ nutrition:
     gl: 19
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 47
   nutriScore:

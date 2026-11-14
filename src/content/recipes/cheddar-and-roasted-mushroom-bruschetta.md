@@ -7,6 +7,7 @@ imageAlt: Cheddar and Roasted Mushroom Bruschetta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10529-cheddaros-suelt-gombas-bruschetta
+  kcalPerServing: 385
 author: Pataky Péter
 servings: 4
 prepTime: PT10M
@@ -22,8 +23,8 @@ ingredients:
     item: slices whole-wheat sourdough bread
     note: toasted
     grams: 240
-    fdcId: 172688
-    matchConfidence: high
+    fdcId: 174091
+    matchConfidence: medium
     cooking: grilled
   - raw: 500 g small white button mushrooms
     quantity: 500
@@ -111,43 +112,44 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 349
-    energyKj: 1460
-    protein_g: 17.3
-    fat_g: 16.8
-    satFat_g: 6
-    carbs_g: 34.7
-    fiber_g: 6.4
-    sugar_g: 6.2
-    sodium_mg: 641
-    availableCarb_g: 27.8
+    energyKcal: 341
+    energyKj: 1427
+    protein_g: 14.8
+    fat_g: 15.3
+    satFat_g: 5.6
+    carbs_g: 38.6
+    fiber_g: 5.3
+    sugar_g: 3.6
+    sodium_mg: 593
+    availableCarb_g: 32.7
   glycemic:
-    gi: 48
-    gl: 13
-    giBand: low
-    glBand: low
+    gi: 61
+    gl: 20
+    giBand: medium
+    glBand: high
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 0
+    measuredGiPct: 83
   nutriScore:
-    grade: B
-    points: 2
+    grade: C
+    points: 3
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0
+    score: 0.1
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.24
   balance:
-    score: 5
-    band: moderate
-    nrf: 25
+    score: 4
+    band: low
+    nrf: 18.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 27.8
-    ultraProcessedPct: 43.3
-    band: highly-processed
+    minimallyProcessedPct: 28.4
+    ultraProcessedPct: 0
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

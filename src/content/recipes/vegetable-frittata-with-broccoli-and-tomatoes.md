@@ -7,6 +7,7 @@ imageAlt: Vegetable Frittata with Broccoli and Tomatoes
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12128-zoeldseges-frittata-brokkolival-es-paradicsommal
+  kcalPerServing: 315
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
@@ -110,6 +111,7 @@ nutrition:
     gl: 1
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 22
   nutriScore:

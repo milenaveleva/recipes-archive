@@ -7,6 +7,7 @@ imageAlt: Minestrone Soup
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11616-minestrone-leves
+  kcalPerServing: 325
 author: Kifli Kukták
 servings: 4
 prepTime: PT20M
@@ -173,6 +174,7 @@ nutrition:
     gl: 24
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 18
   nutriScore:

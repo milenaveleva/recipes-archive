@@ -4,14 +4,15 @@
  * Pure, framework-agnostic functions over a flat `SearchDoc[]` so they run both
  * at build time (deriving the facet chips) and in the browser (filtering the
  * pre-rendered card grid in place). No Astro/DOM dependencies — the only import
- * is the shared `slugifyTerm`/`inflammationLabel` from recipe.ts (both pure), so
+ * is pure helpers from recipe.ts (`slugifyTerm`, `inflammationLabel`, the GL rating), so
  * facet slugs collapse case/punctuation exactly the way the term pages do.
  *
  * The Astro-coupled builder that turns a recipe collection entry into a
  * `SearchDoc` lives in search-build.ts, kept separate so this module stays out
  * of any accidental build-time-only dependency in the client bundle.
  */
-import { slugifyTerm, inflammationLabel } from './recipe';
+import { slugifyTerm, inflammationLabel, glRating, ratingTone } from './recipe';
+import type { GlBasis } from '../core/gi';
 
 /** One recipe, flattened to just what search + facets need. */
 export interface SearchDoc {
@@ -27,6 +28,7 @@ export interface SearchDoc {
   course: string | null;
   difficulty: string | null;
   giBand: string | null;
+  /** GL level judged on the recipe's own basis (glLevelOf), not the raw stored band. */
   glBand: string | null;
   nutriGrade: string | null;
   inflammationBand: string | null;
@@ -75,6 +77,17 @@ export const FUSE_OPTIONS = {
   minMatchCharLength: MIN_QUERY,
 };
 
+/**
+ * Low / medium / high GL for the facet, from the same basis-aware 1–10 rating and tone the
+ * GL dial shows (good → low, mid → medium, bad → high). A main course is judged on meal
+ * cut-offs and a snack on single-portion ones, so "low" means "low for its course" on
+ * every card: the facet groups recipes the way their dials are coloured.
+ */
+export function glLevelOf(gl: number | null | undefined, basis: GlBasis): 'low' | 'medium' | 'high' | null {
+  const tone = ratingTone(glRating(gl, basis));
+  return tone === 'good' ? 'low' : tone === 'mid' ? 'medium' : tone === 'bad' ? 'high' : null;
+}
+
 const titleCase = (s: string) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 /** "low" | "medium" | "high" → "Low" | … (shared by GI and GL band chips). */
 const bandLabel = titleCase;
@@ -102,7 +115,8 @@ export const FACET_DEFS: FacetDef[] = [
   { key: 'list', label: 'Lists', primary: false, pick: (d) => d.lists },
   { key: 'difficulty', label: 'Difficulty', primary: false, pick: (d) => (d.difficulty ? [d.difficulty] : []), labelOf: titleCase, order: ['easy', 'medium', 'hard'] },
   { key: 'gi', label: 'Glycemic index', primary: false, pick: (d) => (d.giBand ? [d.giBand] : []), labelOf: bandLabel, order: ['low', 'medium', 'high'] },
-  { key: 'gl', label: 'Glycemic load', primary: false, pick: (d) => (d.glBand ? [d.glBand] : []), labelOf: bandLabel, order: ['low', 'medium', 'high'] },
+  // Each recipe's GL level is relative to its course (glLevelOf), so the label says so.
+  { key: 'gl', label: 'Glycemic load (for its course)', primary: false, pick: (d) => (d.glBand ? [d.glBand] : []), labelOf: bandLabel, order: ['low', 'medium', 'high'] },
   { key: 'nutri', label: 'Nutri-Score', primary: false, pick: (d) => (d.nutriGrade ? [d.nutriGrade] : []), order: ['a', 'b', 'c', 'd', 'e'] },
   { key: 'inflammation', label: 'Inflammation', primary: false, pick: (d) => (d.inflammationBand ? [d.inflammationBand] : []), labelOf: inflammationLabel, order: ['anti-inflammatory', 'mildly-anti-inflammatory', 'neutral', 'mildly-pro-inflammatory', 'pro-inflammatory'] },
   { key: 'balance', label: 'Nutrient balance', primary: false, pick: (d) => (d.balanceBand ? [d.balanceBand] : []), labelOf: titleCase, order: ['excellent', 'high', 'moderate', 'low', 'poor'] },

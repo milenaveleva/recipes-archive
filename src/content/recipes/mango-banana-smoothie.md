@@ -7,6 +7,7 @@ imageAlt: Mango Banana Smoothie
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12917-mangos-bananos-smoothie-kremes-es-egeszseges-reggeli
+  kcalPerServing: 185
 author: Kifli Kukták
 servings: 1
 prepTime: PT5M
@@ -73,7 +74,8 @@ nutrition:
     gi: 46
     gl: 12
     giBand: low
-    glBand: low
+    glBand: medium
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 91
   nutriScore:

@@ -7,6 +7,7 @@ imageAlt: Eggplant Rolls with Feta and Avocado
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11745-padlizsantekercsek-fetaval-es-avokadoval
+  kcalPerServing: 315
 author: Kifli Kukták
 servings: 3
 prepTime: PT25M
@@ -107,6 +108,7 @@ nutrition:
     gl: 1
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

@@ -7,6 +7,7 @@ imageAlt: Cauliflower Alfredo Whole-Wheat Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10565-karfiol-alfredo
+  kcalPerServing: 485
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
@@ -123,6 +124,7 @@ nutrition:
     gl: 30
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 87
   nutriScore:

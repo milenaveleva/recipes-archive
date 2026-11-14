@@ -7,6 +7,7 @@ imageAlt: Vegan Coconut Pumpkin Cream Soup with Toasted Pumpkin Seeds
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10404-vegan-kokuszos-suetotoek-kremleves-piritott-toekmaggal
+  kcalPerServing: 210
 author: Pataky Péter
 servings: 4
 prepTime: PT20M
@@ -139,6 +140,7 @@ nutrition:
     gl: 9
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 11
   nutriScore:

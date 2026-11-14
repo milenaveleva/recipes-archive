@@ -75,6 +75,11 @@ const ingredient = z.object({
    * stir-fried / deep-fried. Scores apply the method's nutrient retention and mass yield.
    */
   cooking: z.enum(COOKING_METHODS).optional(),
+  /**
+   * The matched food is a reviewed stand-in for the item (e.g. leeks for ramsons): silences
+   * the validation gate's identity and state checks for this line (src/core/validate.ts).
+   */
+  proxyOk: z.boolean().optional(),
 });
 
 const perServing = z
@@ -104,6 +109,8 @@ const nutrition = z.object({
       /** % of the recipe's available carbohydrate whose GI is a measured table match
        *  (giConfidence high|medium) rather than a category/composition estimate. */
       measuredGiPct: z.number().optional(),
+      /** Which basis the GL band was read on: the whole meal or a single portion. */
+      glBasis: z.enum(['meal', 'portion']).optional(),
     })
     .optional(),
   nutriScore: z
@@ -178,7 +185,12 @@ const recipes = defineCollection({
       imageAlt: z.string().optional(),
 
       source: z
-        .object({ name: z.string().optional(), url: z.string().url().optional() })
+        .object({
+          name: z.string().optional(),
+          url: z.string().url().optional(),
+          /** Energy per serving the source itself published — cross-checked by the validation gate. */
+          kcalPerServing: z.number().positive().optional(),
+        })
         .optional(),
       author: z.string().optional(),
 

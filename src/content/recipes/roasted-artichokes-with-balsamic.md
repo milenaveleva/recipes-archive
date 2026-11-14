@@ -7,6 +7,7 @@ imageAlt: Roasted Artichokes with Balsamic
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11871-suelt-articsoka-balsamicoval
+  kcalPerServing: 215
 author: Kifli Kukták
 servings: 2
 prepTime: PT15M
@@ -115,6 +116,7 @@ nutrition:
     gl: 5
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

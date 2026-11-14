@@ -7,6 +7,7 @@ imageAlt: Fermented Sour Pickles (Kovászos Uborka)
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10323-kovaszos-uborka
+  kcalPerServing: 250
 author: Kifli Kukták
 servings: 1
 prepTime: PT30M
@@ -46,6 +47,7 @@ ingredients:
     grams: 60
     fdcId: 172688
     matchConfidence: high
+    excludeFromNutrition: true
     cooking: raw
   - raw: 1.7 l preserving jar
     quantity: 1.7
@@ -66,21 +68,22 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 306
-    energyKj: 1282
-    protein_g: 16.5
-    fat_g: 4.4
-    satFat_g: 1.4
-    carbs_g: 58.6
-    fiber_g: 12.9
-    sugar_g: 19.7
-    sodium_mg: 14480
-    availableCarb_g: 45.7
+    energyKcal: 155
+    energyKj: 650
+    protein_g: 9.1
+    fat_g: 2.3
+    satFat_g: 1
+    carbs_g: 33
+    fiber_g: 9.3
+    sugar_g: 17.1
+    sodium_mg: 14207
+    availableCarb_g: 23.6
   glycemic:
-    gi: 41
-    gl: 19
+    gi: 26
+    gl: 6
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
@@ -97,12 +100,12 @@ nutrition:
   balance:
     score: 1
     band: poor
-    nrf: -107
+    nrf: -242.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 50.7
-    ultraProcessedPct: 49.3
-    band: moderately-processed
+    minimallyProcessedPct: 100
+    ultraProcessedPct: 0
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

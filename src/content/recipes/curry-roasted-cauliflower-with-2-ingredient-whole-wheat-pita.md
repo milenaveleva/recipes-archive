@@ -7,6 +7,7 @@ imageAlt: Curry-Roasted Cauliflower with 2-Ingredient Whole-Wheat Pita
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10439-2-hozzavalos-pita-es-curry-s-suelt-karfiol
+  kcalPerServing: 285
 author: Wéner-Kovács Fanni - Anyabőrben blog @anyaborbenblog
 servings: 4
 prepTime: PT10M
@@ -85,6 +86,7 @@ nutrition:
     gl: 15
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

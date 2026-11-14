@@ -7,6 +7,7 @@ imageAlt: Homemade Gingerbread Granola
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10248-hazi-granola
+  kcalPerServing: 415
 author: ManóMenü
 servings: 4
 prepTime: PT10M
@@ -68,32 +69,35 @@ ingredients:
     fdcId: 168165
     matchConfidence: high
     cooking: baked
+    proxyOk: true
   - raw: 1 tsp gingerbread spice mix
     quantity: 1
     unit: tsp
     item: gingerbread spice mix
-    grams: 2.6
+    grams: 1.9
     milliliters: 4.92892
-    fdcId: 171320
+    fdcId: 171332
     matchConfidence: high
     cooking: baked
+    proxyOk: true
 nutrition:
   perServing:
     energyKcal: 444
     energyKj: 1858
     protein_g: 9.5
-    fat_g: 23.2
+    fat_g: 23.3
     satFat_g: 4.8
-    carbs_g: 54.2
-    fiber_g: 6.8
+    carbs_g: 54
+    fiber_g: 6.5
     sugar_g: 17.3
     sodium_mg: 6
-    availableCarb_g: 47.4
+    availableCarb_g: 47.5
   glycemic:
     gi: 57
     gl: 27
     giBand: medium
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 73
   nutriScore:
@@ -109,7 +113,7 @@ nutrition:
   balance:
     score: 2
     band: poor
-    nrf: 8.9
+    nrf: 8.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

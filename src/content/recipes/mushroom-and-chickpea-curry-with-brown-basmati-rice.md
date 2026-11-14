@@ -153,27 +153,28 @@ ingredients:
     group: For garnish and serving
     quantity: 1
     item: lime
-    grams: 65
+    grams: 44
     fdcId: 168156
     matchConfidence: high
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 669
-    energyKj: 2799
+    energyKcal: 668
+    energyKj: 2794
     protein_g: 17.2
     fat_g: 31.9
     satFat_g: 24.4
-    carbs_g: 84.9
+    carbs_g: 84.4
     fiber_g: 9.9
-    sugar_g: 9.1
-    sodium_mg: 717
-    availableCarb_g: 74.7
+    sugar_g: 9
+    sodium_mg: 716
+    availableCarb_g: 74.2
   glycemic:
     gi: 56
     gl: 42
     giBand: medium
     glBand: high
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 61
   nutriScore:
@@ -190,10 +191,10 @@ nutrition:
   balance:
     score: 2
     band: poor
-    nrf: 4.6
+    nrf: 4.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 50.3
+    minimallyProcessedPct: 50.2
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

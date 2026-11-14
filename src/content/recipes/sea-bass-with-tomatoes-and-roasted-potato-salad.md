@@ -7,6 +7,7 @@ imageAlt: Sea Bass with Tomatoes and Roasted Potato Salad
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11025-tengeri-durbincs-paradicsommal-es-suelt-burgonyaval
+  kcalPerServing: 450
 author: Kifli Kukták
 servings: 2
 prepTime: PT15M
@@ -143,6 +144,7 @@ nutrition:
     gl: 15
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 5
   nutriScore:

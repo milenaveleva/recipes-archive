@@ -7,6 +7,7 @@ imageAlt: Sweet Potato Cream Soup
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10423-batata-kremleves
+  kcalPerServing: 415
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
@@ -95,6 +96,7 @@ nutrition:
     gl: 38
     giBand: medium
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

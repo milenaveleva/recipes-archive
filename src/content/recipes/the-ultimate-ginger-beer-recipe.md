@@ -27,8 +27,9 @@ ingredients:
     fdcId: 169640
     matchConfidence: high
     cooking: raw
-  - raw: filtered water
+  - raw: filtered water (for the ginger bug)
     item: filtered water
+    note: for the ginger bug
     fdcId: 175103
     matchConfidence: low
     cooking: raw
@@ -48,8 +49,9 @@ ingredients:
     fdcId: 169231
     matchConfidence: medium
     cooking: raw
-  - raw: filtered water
+  - raw: filtered water (for the ginger beer)
     item: filtered water
+    note: for the ginger beer
     fdcId: 175103
     matchConfidence: low
     cooking: raw
@@ -70,6 +72,7 @@ nutrition:
     gl: 41
     giBand: medium
     glBand: high
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 83
   nutriScore:

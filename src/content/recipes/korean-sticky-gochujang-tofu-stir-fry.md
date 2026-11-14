@@ -134,10 +134,10 @@ ingredients:
     unit: ml
     item: water
     note: for the glaze
-    grams: 14.2
+    grams: 60.1
     milliliters: 60
-    fdcId: 169301
-    matchConfidence: medium
+    fdcId: 174158
+    matchConfidence: high
     excludeFromNutrition: true
     cooking: fried
 nutrition:
@@ -157,6 +157,7 @@ nutrition:
     gl: 62
     giBand: medium
     glBand: high
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 81
   nutriScore:

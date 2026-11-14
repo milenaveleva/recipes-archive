@@ -7,6 +7,7 @@ imageAlt: Vitamin Smoothie with Orange, Banana and Carrot
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11977-vitaminos-smoothie-immunerosito-ital
+  kcalPerServing: 215
 author: Kifli Kukták
 servings: 1
 prepTime: PT5M
@@ -71,7 +72,8 @@ nutrition:
     gi: 50
     gl: 22
     giBand: low
-    glBand: medium
+    glBand: high
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 65
   nutriScore:

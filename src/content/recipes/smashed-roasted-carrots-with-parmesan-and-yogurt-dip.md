@@ -7,6 +7,7 @@ imageAlt: Smashed Roasted Carrots with Parmesan and Yogurt Dip
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11528-suelt-zuzott-sargarepa-parmezannal-es-joghurtos-martogatossal
+  kcalPerServing: 210
 author: Kifli Kukták
 servings: 2
 prepTime: PT15M
@@ -98,6 +99,7 @@ nutrition:
     gl: 5
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 73
   nutriScore:

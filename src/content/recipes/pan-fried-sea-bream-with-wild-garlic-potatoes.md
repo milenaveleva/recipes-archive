@@ -7,6 +7,7 @@ imageAlt: Pan-Fried Sea Bream with Wild Garlic Potatoes
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10307-durbincsfile-medvehagymas-burgonyaval
+  kcalPerServing: 485
 author: Pataky Péter
 servings: 4
 prepTime: PT15M
@@ -21,9 +22,10 @@ ingredients:
     quantity: 4
     item: sea bream fillets
     grams: 600
-    fdcId: 175142
-    matchConfidence: medium
+    fdcId: 175141
+    matchConfidence: high
     cooking: fried
+    proxyOk: true
   - raw: 1000 g new potatoes
     quantity: 1000
     unit: g
@@ -108,21 +110,22 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 527
-    energyKj: 2206
-    protein_g: 33.7
-    fat_g: 22.2
-    satFat_g: 3.5
+    energyKcal: 539
+    energyKj: 2257
+    protein_g: 34.5
+    fat_g: 23.3
+    satFat_g: 3.7
     carbs_g: 49
     fiber_g: 6.3
     sugar_g: 3.4
-    sodium_mg: 687
+    sodium_mg: 648
     availableCarb_g: 42.7
   glycemic:
     gi: 67
-    gl: 29
+    gl: 28
     giBand: medium
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 90
   nutriScore:
@@ -139,7 +142,7 @@ nutrition:
   balance:
     score: 7
     band: high
-    nrf: 43
+    nrf: 41.3
     version: NRF9.3
   processing:
     minimallyProcessedPct: 99.8

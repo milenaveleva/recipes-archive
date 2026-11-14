@@ -7,6 +7,7 @@ imageAlt: Bouillabaisse, the Famous Provençal Fish Soup
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10527-bouillabaisse-avagy-a-hires-del-francia-halleves
+  kcalPerServing: 515
 author: Kifli Kukták
 servings: 4
 prepTime: PT20M
@@ -150,6 +151,7 @@ nutrition:
     gl: 6
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 17
   nutriScore:

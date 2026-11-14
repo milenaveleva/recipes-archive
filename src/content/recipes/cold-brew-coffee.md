@@ -7,6 +7,7 @@ imageAlt: Cold Brew Coffee
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10452-cold-brew-kave
+  kcalPerServing: 15
 author: Kifli Kukták
 servings: 5
 prepTime: PT10M
@@ -59,6 +60,7 @@ nutrition:
     gl: 0
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

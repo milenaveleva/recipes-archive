@@ -17,12 +17,21 @@ describe('GI / GL bands', () => {
     expect(giBandOf(70)).toBe('high');
   });
   it('classifies per-serving GL with meal bands: low <20, medium 20–39, high ≥40', () => {
+    expect(glBandOf(0, 'meal')).toBe('low');
+    expect(glBandOf(19, 'meal')).toBe('low');
+    expect(glBandOf(20, 'meal')).toBe('medium');
+    expect(glBandOf(39, 'meal')).toBe('medium');
+    expect(glBandOf(40, 'meal')).toBe('high');
+    expect(glBandOf(75, 'meal')).toBe('high');
+  });
+
+  it('classifies per-serving GL with portion bands by default: low ≤10, medium 11–19, high ≥20', () => {
     expect(glBandOf(0)).toBe('low');
-    expect(glBandOf(19)).toBe('low');
-    expect(glBandOf(20)).toBe('medium');
-    expect(glBandOf(39)).toBe('medium');
-    expect(glBandOf(40)).toBe('high');
-    expect(glBandOf(75)).toBe('high');
+    expect(glBandOf(10, 'portion')).toBe('low');
+    expect(glBandOf(11, 'portion')).toBe('medium');
+    expect(glBandOf(19, 'portion')).toBe('medium');
+    expect(glBandOf(20, 'portion')).toBe('high');
+    expect(glBandOf(45)).toBe('high');
   });
 });
 
@@ -35,12 +44,21 @@ describe('computeGlycemics', () => {
         { availableCarb_g: 20, gi: 32 },
       ],
       2,
+      { glBasis: 'meal' },
     )!;
     // Σ(GI·carb)=2980, carb=50 → GI 59.6→60; total GL 29.8 ÷ 2 = 14.9→15.
     expect(g.gi).toBe(60);
     expect(g.gl).toBe(15);
     expect(g.giBand).toBe('medium');
     expect(g.glBand).toBe('low'); // 15 per serving is a low-GL meal
+    expect(g.glBasis).toBe('meal');
+  });
+
+  it('bands the same GL as a portion when no meal basis is given', () => {
+    const g = computeGlycemics([{ availableCarb_g: 30, gi: 78 }, { availableCarb_g: 20, gi: 32 }], 2)!;
+    expect(g.gl).toBe(15);
+    expect(g.glBasis).toBe('portion');
+    expect(g.glBand).toBe('medium'); // 15 is a medium-GL single portion
   });
 
   it('ignores carbohydrate from foods without a published GI', () => {

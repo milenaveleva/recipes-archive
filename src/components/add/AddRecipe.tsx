@@ -15,6 +15,7 @@ import { fetchAndCommitHeroImage } from '../../core/hero-image';
 import { recordPending, prunePending, isBuildFresh } from '../../core/pending';
 import type { NutriCategory } from '../../core/nutriscore';
 import { COOKING_METHODS, type CookingMethod } from '../../core/cooking';
+import type { ValidationResult } from '../../core/validate';
 import {
   EMPTY_FORM,
   loadFoods,
@@ -22,6 +23,8 @@ import {
   reparseRows,
   buildDraft,
   computeNutrition,
+  rowsToResolved,
+  validateRows,
   formFromExtract,
   formFromRecipe,
   rowsFromIngredients,
@@ -197,9 +200,23 @@ export default function AddRecipe() {
     return () => clearTimeout(t);
   }, [publishState, editSlug]);
 
-  const macro = useMemo(() => computeNutrition(rows, form.servings), [rows, form.servings]);
+  const resolved = useMemo(() => rowsToResolved(rows), [rows]);
+  const macro = useMemo(() => computeNutrition(rows, form.servings, resolved), [rows, form.servings, resolved]);
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
   const draft = useMemo(() => buildDraft(form, rows, macro, today), [form, rows, macro, today]);
+  // Live validation gate (src/core/validate.ts). It reads only the rows and three form
+  // fields, so typing a title or a method step never re-runs it, and it reuses the macros
+  // computed above instead of resolving the recipe again.
+  const validation = useMemo(
+    () =>
+      validateRows(
+        rows,
+        { servings: form.servings, course: form.course, sourceKcalPerServing: form.sourceKcalPerServing },
+        resolved,
+        macro,
+      ),
+    [rows, form.servings, form.course, form.sourceKcalPerServing, resolved, macro],
+  );
 
   function setField<K extends keyof FormState>(key: K, value: FormState[K]) {
     setForm((f) => ({ ...f, [key]: value }));
@@ -568,6 +585,7 @@ export default function AddRecipe() {
             ))}
           </div>
         )}
+        {rows.length > 0 && <ValidationList result={validation} />}
       </Card>
 
       <Card>
@@ -583,7 +601,7 @@ export default function AddRecipe() {
       </Card>
 
       <MacroPanel macro={macro} servings={form.servings} />
-      <ScorePanel nutrition={draft.nutrition} />
+      <ScorePanel nutrition={draft.nutrition} course={draft.course} />
 
       <div className="grid gap-3">
         {authState === 'error' && <Alert tone="bad">{authMsg}</Alert>}
@@ -728,13 +746,13 @@ function MacroPanel({ macro, servings }: { macro: ReturnType<typeof computeNutri
   );
 }
 
-function ScorePanel({ nutrition }: { nutrition: RecipeDraft['nutrition'] }) {
+function ScorePanel({ nutrition, course }: { nutrition: RecipeDraft['nutrition']; course?: string }) {
   if (!hasAnyScore(nutrition)) return null;
   return (
     <Card>
       <h2 className="font-display text-xl text-ink">Scores</h2>
       <div className="mt-3 grid grid-cols-2 sm:grid-cols-5 gap-3">
-        {buildScoreDials(nutrition).map((d) => (
+        {buildScoreDials(nutrition, course).map((d) => (
           <ScoreDial key={d.key} dial={d} />
         ))}
       </div>
@@ -826,6 +844,30 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
       <span className="font-ui text-xs uppercase tracking-wide text-ink-faint">{label}</span>
       {children}
     </label>
+  );
+}
+
+/** Compact list of the validation gate's errors (first) and warnings for the draft. */
+function ValidationList({ result }: { result: ValidationResult }) {
+  const items = [
+    ...result.errors.map((i) => ({ ...i, tone: 'error' as const })),
+    ...result.warnings.map((i) => ({ ...i, tone: 'warning' as const })),
+  ];
+  if (!items.length) return null;
+  return (
+    <div className="mt-4 rounded-lg border border-line bg-paper/60 px-3 py-2">
+      <p className="text-xs font-ui text-ink-soft">
+        Data checks: {result.errors.length} error{result.errors.length === 1 ? '' : 's'}, {result.warnings.length} warning
+        {result.warnings.length === 1 ? '' : 's'}
+      </p>
+      <ul className="mt-1 grid gap-0.5 text-xs">
+        {items.map((i, k) => (
+          <li key={k} className={i.tone === 'error' ? 'text-band-bad' : 'text-ink-faint'}>
+            <span className="font-mono">{i.code}</span> {i.message}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

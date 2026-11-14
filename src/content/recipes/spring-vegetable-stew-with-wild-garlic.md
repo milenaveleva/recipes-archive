@@ -7,6 +7,7 @@ imageAlt: Spring Vegetable Stew with Wild Garlic
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10308-medvehagymas-tavaszi-fozelek
+  kcalPerServing: 345
 author: Pataky Péter
 servings: 4
 prepTime: PT15M
@@ -139,6 +140,7 @@ nutrition:
     gl: 2
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 55
   nutriScore:

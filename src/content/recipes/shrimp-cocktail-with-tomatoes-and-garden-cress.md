@@ -7,6 +7,7 @@ imageAlt: Shrimp Cocktail with Tomatoes and Garden Cress
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11578-garnelarak-koktel-paradicsommal-es-zsazsaval
+  kcalPerServing: 360
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
@@ -100,6 +101,7 @@ nutrition:
     gl: 1
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 26
   nutriScore:

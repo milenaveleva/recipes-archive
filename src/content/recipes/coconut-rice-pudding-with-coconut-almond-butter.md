@@ -58,6 +58,7 @@ ingredients:
     fdcId: 167762
     matchConfidence: high
     cooking: raw
+    proxyOk: true
   - raw: 1 handful coconut chips
     quantity: 1
     item: handful coconut chips
@@ -91,7 +92,8 @@ nutrition:
     gi: 60
     gl: 22
     giBand: medium
-    glBand: medium
+    glBand: high
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 80
   nutriScore:
@@ -112,7 +114,7 @@ nutrition:
   processing:
     minimallyProcessedPct: 36.9
     ultraProcessedPct: 1.4
-    band: highly-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

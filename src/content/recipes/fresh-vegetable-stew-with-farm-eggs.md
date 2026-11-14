@@ -7,6 +7,7 @@ imageAlt: Fresh Vegetable Stew with Farm Eggs
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10486-fozelek-friss-zoeldsegekbol-tanyasi-tojassal
+  kcalPerServing: 485
 author: Pataky Péter
 servings: 4
 prepTime: PT10M
@@ -63,6 +64,7 @@ ingredients:
     fdcId: 170416
     matchConfidence: high
     cooking: raw
+    proxyOk: true
   - raw: salt, to taste
     item: salt
     note: to taste
@@ -94,6 +96,7 @@ nutrition:
     gl: 3
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

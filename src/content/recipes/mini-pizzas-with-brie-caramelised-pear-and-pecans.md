@@ -72,6 +72,7 @@ ingredients:
     fdcId: 168165
     matchConfidence: medium
     cooking: raw
+    proxyOk: true
   - raw: a few sprigs fresh thyme
     item: a few sprigs fresh thyme
     grams: 2
@@ -94,7 +95,8 @@ nutrition:
     gi: 57
     gl: 16
     giBand: medium
-    glBand: low
+    glBand: medium
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 25
   nutriScore:

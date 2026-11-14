@@ -7,6 +7,7 @@ imageAlt: Homemade Oatmeal Porridge with Fruit
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10303-hazi-zabkasa-gyuemoelccsel
+  kcalPerServing: 150
 author: ManóMenü
 servings: 1
 prepTime: PT5M
@@ -42,6 +43,7 @@ ingredients:
     fdcId: 171688
     matchConfidence: high
     cooking: raw
+    proxyOk: true
 nutrition:
   perServing:
     energyKcal: 166
@@ -59,6 +61,7 @@ nutrition:
     gl: 14
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 100
   nutriScore:

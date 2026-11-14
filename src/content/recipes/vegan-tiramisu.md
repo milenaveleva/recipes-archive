@@ -7,6 +7,7 @@ imageAlt: Vegan Tiramisu
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10394-vegan-tiramisu
+  kcalPerServing: 175
 author: Kifli Kukták
 servings: 8
 prepTime: PT30M
@@ -110,9 +111,10 @@ ingredients:
     item: vegan mascarpone-style cream
     note: VeganChef
     grams: 400
-    fdcId: 172475
-    matchConfidence: high
+    fdcId: 170580
+    matchConfidence: medium
     cooking: raw
+    proxyOk: true
   - raw: 40 ml almond milk
     group: For the cream
     quantity: 40
@@ -132,17 +134,6 @@ ingredients:
     milliliters: 1.23223
     fdcId: 173471
     matchConfidence: high
-    cooking: raw
-  - raw: 400 g vegan mascarpone-style cream (VeganChef)
-    group: For the cream
-    quantity: 400
-    unit: g
-    item: vegan mascarpone-style cream
-    note: VeganChef
-    grams: 400
-    fdcId: 172475
-    matchConfidence: high
-    excludeFromNutrition: true
     cooking: raw
   - raw: 120 ml coffee
     group: For layering
@@ -175,41 +166,42 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 371
-    energyKj: 1551
-    protein_g: 21.2
-    fat_g: 24.9
-    satFat_g: 9.6
-    carbs_g: 20.8
+    energyKcal: 464
+    energyKj: 1940
+    protein_g: 14.3
+    fat_g: 37.9
+    satFat_g: 24.4
+    carbs_g: 22.7
     fiber_g: 3.9
     sugar_g: 0.2
-    sodium_mg: 48
-    availableCarb_g: 16.8
+    sodium_mg: 43
+    availableCarb_g: 18.8
   glycemic:
-    gi: 41
-    gl: 7
+    gi: 46
+    gl: 9
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
-    grade: B
-    points: 2
+    grade: D
+    points: 13
     category: general
     version: "2023"
     coverage: 0.43
   inflammation:
-    score: 0
-    band: neutral
+    score: 0.9
+    band: pro-inflammatory
     method: fii v4
   balance:
-    score: 5
-    band: moderate
-    nrf: 30.9
+    score: 2
+    band: poor
+    nrf: -1.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 62.8
-    ultraProcessedPct: 0.8
+    minimallyProcessedPct: 50.2
+    ultraProcessedPct: 0.6
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

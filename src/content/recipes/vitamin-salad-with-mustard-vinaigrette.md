@@ -7,6 +7,7 @@ imageAlt: Vitamin Salad with Mustard Vinaigrette
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10530-vitaminsalata
+  kcalPerServing: 180
 author: Pataky Péter
 servings: 4
 prepTime: PT15M
@@ -119,6 +120,7 @@ nutrition:
     gl: 3
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 76
   nutriScore:

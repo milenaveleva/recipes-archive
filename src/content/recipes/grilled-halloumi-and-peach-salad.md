@@ -7,6 +7,7 @@ imageAlt: Grilled Halloumi and Peach Salad
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12565-grillezett-halloumi-sajtos-es-oszibarackos-salata
+  kcalPerServing: 450
 author: Kifli Kukták
 servings: 2
 prepTime: PT10M
@@ -102,6 +103,7 @@ nutrition:
     gl: 7
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

@@ -7,6 +7,7 @@ imageAlt: Baked Eggplant and Tomato with Parmesan Crumbs
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12126-suelt-padlizsan-paradicsommal-es-parmezanos-morzsaval
+  kcalPerServing: 215
 author: Kifli Kukták
 servings: 3
 prepTime: PT15M
@@ -110,12 +111,13 @@ nutrition:
     sodium_mg: 414
     availableCarb_g: 10.5
   glycemic:
-    gi: 25
+    gi: 28
     gl: 3
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 33
+    measuredGiPct: 61
   nutriScore:
     grade: C
     points: 3

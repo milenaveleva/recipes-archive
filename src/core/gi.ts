@@ -21,9 +21,12 @@
  * significant effect on measured meal GI (Meng 2017), and its per-gram effect is a
  * fraction of protein's (Moghaddam 2006).
  *
- * GL = corrected GI × available carbohydrate per serving / 100, banded with MEAL
- * cut-offs (a whole meal carries far more carbohydrate than the single foods the
- * classic ≤10 / ≥20 GL bands were drawn for). Every figure is an estimate for
+ * GL = corrected GI × available carbohydrate per serving / 100, banded on one of two
+ * bases chosen from the recipe's course (course.ts `glBasisForCourse`): a full meal (main
+ * course, soup, salad, breakfast) uses MEAL cut-offs, since it carries far more
+ * carbohydrate than the single foods the classic bands were drawn for; every other course
+ * (a side, snack, dessert, drink, sauce) is one portion and uses the classic single-food
+ * cut-offs (≤10 low, ≥20 high; Atkinson 2021). Every figure is an estimate for
  * comparison, not a clinical measurement (see README ## References).
  */
 
@@ -43,9 +46,21 @@ export interface GiCarbSource {
 export interface GlycemicMealContext {
   /** Whole-recipe grams of protein from protein-dominant foods not already inside the composite. */
   addedProtein_g?: number;
+  /** GL banding basis; defaults to DEFAULT_GL_BASIS. */
+  glBasis?: GlBasis;
 }
 
 export type Band = 'low' | 'medium' | 'high';
+
+/** Which GL cut-offs a recipe is banded with: whole-meal or single-portion. */
+export type GlBasis = 'meal' | 'portion';
+
+/**
+ * The GL basis used whenever none is known (no course, an unrecognised course, a stored
+ * block without `glBasis`): the classic single-food cut-offs. The engine, the dial
+ * presentation (lib/recipe.ts) and the score-change report all read this one constant.
+ */
+export const DEFAULT_GL_BASIS: GlBasis = 'portion';
 
 export interface Glycemics {
   /** Protein-adjusted carb-weighted composite GI (0–100 scale), rounded. */
@@ -53,8 +68,10 @@ export interface Glycemics {
   /** Per-serving glycemic load from the adjusted GI, rounded. */
   gl: number;
   giBand: Band;
-  /** Meal GL band: low < 20, medium 20–39, high ≥ 40. */
+  /** GL band on `glBasis`'s cut-offs (glBandOf). */
   glBand: Band;
+  /** The cut-offs `glBand` was drawn with: 'meal' for a full meal, else 'portion'. */
+  glBasis: GlBasis;
   /**
    * Share (%) of the recipe's available carbohydrate whose GI comes from a measured
    * table match (giConfidence high|medium), rather than a category median or a
@@ -110,12 +127,16 @@ export function giBandOf(gi: number): Band {
 }
 
 /**
- * Per-serving GL band with whole-MEAL cut-offs: low < 20, medium 20–39, high ≥ 40.
- * A meal carries several foods' worth of carbohydrate, so the single-food bands
- * (≤10 / ≥20) would flag nearly every main course as "high".
+ * Per-serving GL band.
+ *  - 'meal': whole-meal cut-offs, low < 20, medium 20–39, high ≥ 40. A meal carries
+ *    several foods' worth of carbohydrate, so the single-food bands would flag nearly
+ *    every main course as "high".
+ *  - 'portion': the classic single-food cut-offs, low ≤ 10, medium 11–19, high ≥ 20
+ *    (Atkinson 2021).
  */
-export function glBandOf(gl: number): Band {
-  return gl < 20 ? 'low' : gl < 40 ? 'medium' : 'high';
+export function glBandOf(gl: number, basis: GlBasis = DEFAULT_GL_BASIS): Band {
+  if (basis === 'meal') return gl < 20 ? 'low' : gl < 40 ? 'medium' : 'high';
+  return gl <= 10 ? 'low' : gl < 20 ? 'medium' : 'high';
 }
 
 /**
@@ -124,7 +145,7 @@ export function glBandOf(gl: number): Band {
  *
  * @param sources available-carb + GI for each food
  * @param servings divided into total GL; coerced to a positive integer
- * @param meal recipe-level context (added protein) for the mixed-meal correction
+ * @param meal recipe-level context: added protein for the mixed-meal correction, GL basis
  */
 export function computeGlycemics(
   sources: GiCarbSource[],
@@ -157,5 +178,6 @@ export function computeGlycemics(
   const gi = round(adjusted / carb, 0);
   const gl = round(adjusted / 100 / perServings, 0);
   const measuredGiPct = round((measuredCarb / totalCarb) * 100, 0);
-  return { gi, gl, giBand: giBandOf(gi), glBand: glBandOf(gl), measuredGiPct };
+  const glBasis = meal.glBasis ?? DEFAULT_GL_BASIS;
+  return { gi, gl, giBand: giBandOf(gi), glBand: glBandOf(gl, glBasis), glBasis, measuredGiPct };
 }

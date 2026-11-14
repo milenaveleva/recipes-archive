@@ -7,6 +7,7 @@ imageAlt: Chilled Squash and Zucchini Soup with Fried Catfish
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10345-hideg-toekleves-harcsafilevel
+  kcalPerServing: 585
 author: Pataky Péter
 servings: 4
 prepTime: PT20M
@@ -148,6 +149,7 @@ nutrition:
     gl: 11
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

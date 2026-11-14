@@ -7,6 +7,7 @@ imageAlt: Pumpkin Curry with Smoked Tofu
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12625-suetotoekoes-vegetarianus-curry-fuestoelt-tofuval
+  kcalPerServing: 385
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
@@ -145,6 +146,7 @@ nutrition:
     gl: 33
     giBand: medium
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 82
   nutriScore:

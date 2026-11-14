@@ -7,6 +7,7 @@ imageAlt: Whole-Wheat Garganelli with Salmon and Zucchini
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10381-garganelli-lazaccal-es-cukkinivel
+  kcalPerServing: 785
 author: Pataky Péter
 servings: 4
 prepTime: PT2H15M
@@ -157,6 +158,7 @@ nutrition:
     gl: 40
     giBand: low
     glBand: high
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 97
   nutriScore:

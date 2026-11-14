@@ -7,6 +7,7 @@ imageAlt: Crispy Sheet-Pan Gnocchi with Vegetables
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12036-ropogos-tepsis-gnocchi-zoeldsegekkel
+  kcalPerServing: 545
 author: Kifli Kukták
 servings: 2
 prepTime: PT13M
@@ -107,6 +108,7 @@ nutrition:
     gl: 30
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 7
   nutriScore:
@@ -128,7 +130,7 @@ nutrition:
   processing:
     minimallyProcessedPct: 23.5
     ultraProcessedPct: 0
-    band: highly-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

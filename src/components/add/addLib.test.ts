@@ -21,8 +21,10 @@ import {
   selectMatch,
   rowsToScored,
   rowsToResolved,
+  validateRows,
   EMPTY_FORM,
 } from './addLib';
+import { validateRecipe } from '../../core/validate';
 import { toRecipeMarkdown } from '../../core/markdown';
 import type { MetricAmount, ParsedLine } from '../../core/types';
 
@@ -304,6 +306,38 @@ describe('buildDraft dates (edit)', () => {
   });
 });
 
+describe('edit round-trip keeps proxyOk and the source kcal', () => {
+  it('re-emits a stored proxyOk while the reviewed match stays selected', () => {
+    // leeks (169246) as a reviewed stand-in for ramsons
+    const stored = [{ raw: '100 g ramsons', item: 'ramsons', fdcId: 169246, grams: 100, proxyOk: true }];
+    const rows = rowsFromIngredients(stored);
+    expect(rows[0].proxyFdcId).toBe(169246);
+    const draft = buildDraft({ ...EMPTY_FORM, title: 'R' }, rows, computeNutrition(rows, 4), '2026-06-20');
+    expect(draft.ingredients[0].proxyOk).toBe(true);
+    expect(toRecipeMarkdown(draft)).toMatch(/proxyOk: true/);
+    // The approval covers that one match: choosing another food drops it.
+    const moved = [{ ...rows[0], ...selectMatch(rows[0], 169230) }];
+    const redrafted = buildDraft({ ...EMPTY_FORM, title: 'R' }, moved, computeNutrition(moved, 4), '2026-06-20');
+    expect(redrafted.ingredients[0].proxyOk).toBeUndefined();
+    // A line never marked stays unmarked.
+    const [plain] = rowsFromIngredients([{ raw: '100 g leeks', fdcId: 169246, grams: 100 }]);
+    expect(plain.proxyFdcId).toBeNull();
+  });
+
+  it('keeps source.kcalPerServing through formFromRecipe → buildDraft → markdown', () => {
+    const form = formFromRecipe(
+      { title: 'Bowl', source: { name: 'kifli.hu', url: 'https://ex.com/r', kcalPerServing: 485 } },
+      [],
+    );
+    expect(form.sourceKcalPerServing).toBe(485);
+    const draft = buildDraft(form, [], computeNutrition([], 4), '2026-06-20');
+    expect(draft.source).toEqual({ name: 'kifli.hu', url: 'https://ex.com/r', kcalPerServing: 485 });
+    expect(toRecipeMarkdown(draft)).toMatch(/source:\n  name: kifli.hu\n  url: https:\/\/ex.com\/r\n  kcalPerServing: 485\n/);
+    // No source fields at all → no source block.
+    expect(buildDraft({ ...EMPTY_FORM, title: 'X' }, [], computeNutrition([], 4), '2026-06-20').source).toBeUndefined();
+  });
+});
+
 describe('editing round-trip (formFromRecipe / rowsFromIngredients)', () => {
   it('re-seeds the form fields from stored frontmatter', () => {
     const form = formFromRecipe(
@@ -578,5 +612,27 @@ describe('cooking method plumbing', () => {
     expect(rowsToScored([row])[0].grams).toBeCloseTo(200 * 2.73, 5); // Bognár 2002 Table 20 lentils
     expect(rowsToResolved([row])[0].grams).toBeCloseTo(200 * 2.73, 5);
     expect(rowsToScored([{ ...row, cooking: 'raw' }])[0].grams).toBe(200);
+  });
+});
+
+describe('validateRows (the /add live validation gate)', () => {
+  it('matches a full validation of the committed draft while reusing the island\'s macros', () => {
+    const rows = linesToRows('800 g beef mince\n400 g carrots\n200 g onion\n1 T olive oil');
+    const form = { ...EMPTY_FORM, title: 'Stew', servings: 4, course: 'Main Course', sourceKcalPerServing: 150 };
+    const resolved = rowsToResolved(rows);
+    const macro = computeNutrition(rows, form.servings, resolved);
+    const live = validateRows(rows, form, resolved, macro);
+    const draft = buildDraft(form, rows, macro, '2026-06-20');
+    const foodById = new Map((foodsData as FoodRecord[]).filter((f) => f.fdcId != null).map((f) => [f.fdcId as number, f]));
+    expect(live).toEqual(validateRecipe(draft, foodById));
+    expect(live.warnings.map((w) => w.code)).toContain('SOURCE_KCAL'); // the source kcal reaches the gate
+  });
+
+  it('reads the precomputed macro instead of recomputing it', () => {
+    const rows = linesToRows('800 g beef mince\n400 g carrots\n200 g onion');
+    const resolved = rowsToResolved(rows);
+    const fake = { ...computeNutrition(rows, 4, resolved), perServing: { energyKcal: 9000 } } as ReturnType<typeof computeNutrition>;
+    const r = validateRows(rows, { servings: 4, course: 'Main Course', sourceKcalPerServing: null }, resolved, fake);
+    expect(r.errors.map((e) => e.code)).toContain('KCAL_PER_SERVING');
   });
 });

@@ -7,6 +7,7 @@ imageAlt: Classic Bruschetta al Pomodoro
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12251-bruschetta-al-pomodoro-klasszikus-olasz-eloetel
+  kcalPerServing: 485
 author: Kifli Kukták
 servings: 2
 cuisine: Italian
@@ -107,12 +108,13 @@ nutrition:
     sodium_mg: 838
     availableCarb_g: 23
   glycemic:
-    gi: 50
-    gl: 11
-    giBand: low
-    glBand: low
+    gi: 59
+    gl: 13
+    giBand: medium
+    glBand: medium
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 30
+    measuredGiPct: 94
   nutriScore:
     grade: C
     points: 4

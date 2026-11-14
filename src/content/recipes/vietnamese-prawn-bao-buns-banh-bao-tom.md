@@ -182,9 +182,9 @@ ingredients:
     quantity: 1
     unit: tbsp
     item: sriracha
-    grams: 15
+    grams: 19.5
     milliliters: 14.7868
-    fdcId: 171605
+    fdcId: 171186
     matchConfidence: high
     cooking: raw
   - raw: 2 spring onions
@@ -206,21 +206,22 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 491
-    energyKj: 2054
+    energyKcal: 495
+    energyKj: 2070
     protein_g: 33.9
-    fat_g: 11.2
+    fat_g: 11.3
     satFat_g: 1.6
-    carbs_g: 64.7
+    carbs_g: 65.4
     fiber_g: 9.2
-    sugar_g: 7.1
-    sodium_mg: 787
-    availableCarb_g: 55.5
+    sugar_g: 7.8
+    sodium_mg: 889
+    availableCarb_g: 56.2
   glycemic:
     gi: 55
     gl: 31
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 10
   nutriScore:
@@ -237,11 +238,11 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 38.5
+    nrf: 37.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 99
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 98.3
+    ultraProcessedPct: 0.9
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

@@ -7,6 +7,7 @@ imageAlt: Salmon Baked in Parchment with Fresh Vegetables
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10454-suetopapiros-lazac-friss-zoeldsegekkel
+  kcalPerServing: 485
 author: Báder Gabka
 servings: 2
 prepTime: PT10M
@@ -126,6 +127,7 @@ nutrition:
     gl: 8
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 27
   nutriScore:

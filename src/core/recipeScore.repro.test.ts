@@ -30,6 +30,7 @@ const polyphenols = polyphenolData as Record<string, { polyphenol_mg?: number }>
 
 interface Frontmatter {
   servings?: number;
+  course?: string;
   ingredients?: Record<string, unknown>[];
   nutrition?: Record<string, any>;
 }
@@ -62,6 +63,7 @@ describe('recipe nutrition blocks reproduce from the engine', () => {
           isWater: ns.isWater,
           isCheese: ns.isCheese,
           redMeat: ns.redMeat,
+          course: data.course,
         },
         foodById,
         foodScoring,
@@ -78,6 +80,8 @@ describe('recipe nutrition blocks reproduce from the engine', () => {
       if (stored.glycemic) {
         expect(scores.glycemic?.gi).toBe(stored.glycemic.gi);
         expect(scores.glycemic?.gl).toBe(stored.glycemic.gl);
+        expect(scores.glycemic?.glBand, 'glycemic.glBand').toBe(stored.glycemic.glBand);
+        expect(scores.glycemic?.glBasis, 'glycemic.glBasis').toBe(stored.glycemic.glBasis);
         expect(scores.glycemic?.measuredGiPct).toBe(stored.glycemic.measuredGiPct);
       }
       // Nutri-Score
@@ -140,7 +144,7 @@ describe('every carb-bearing recipe has a glycemic block', () => {
     it(`${file.split('/').pop()}`, () => {
       const { macro, scores } = scoreRecipe(
         (data.ingredients ?? []).map(storedScoringFields),
-        { servings: data.servings ?? 4, nutriCategory: ns.category ?? 'general', nnsPresent: ns.nnsPresent, isWater: ns.isWater, isCheese: ns.isCheese, redMeat: ns.redMeat },
+        { servings: data.servings ?? 4, nutriCategory: ns.category ?? 'general', nnsPresent: ns.nnsPresent, isWater: ns.isWater, isCheese: ns.isCheese, redMeat: ns.redMeat, course: data.course },
         foodById, foodScoring, polyphenols,
       );
       if ((macro.perServing.availableCarb_g ?? 0) >= MIN_CARB_G) {

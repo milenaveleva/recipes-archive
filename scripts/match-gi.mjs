@@ -23,7 +23,7 @@
  *   (0)       — no available carbohydrate (oils, water, salt): GI 0 by convention (it
  *               never reaches the composite, which ignores contributions ≤ 0.5 g)
  *
- * Staple starches (pasta, oats, couscous, brown rice) and a few plain foods are first
+ * Staple starches (pasta, oats, couscous, brown rice), common breads and a few plain foods are first
  * matched against an as-eaten STAPLES reference — the mean of the Atkinson Table 1
  * entries for the boiled/cooked food (e.g. "White spaghetti, boiled, mean of 11 foods"),
  * since GI is measured on the food as eaten and a dry and a cooked record of the same
@@ -41,6 +41,7 @@
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { refCategoryFor } from './lib/gi-category.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const WRITE = process.argv.includes('--write');
@@ -56,25 +57,6 @@ const NONSTARCHY_MAX = 10; // g available carb / 100 g below which an unmatched 
 const NONSTARCHY_GI = 15;  // low nominal GI for that non-starchy starch fraction (minor and slowly available; matches the hand-set nominal for garlic/onion/celery)
 const SUGAR_GI = 65;       // GI of the sugar fraction in the composition estimate — sucrose (the dominant dietary sugar, ISO reference behaviour)
 const SUGAR_MIN = 5;       // g sugar / 100 g at/above which a low-carb food's sugar is glycemically significant (a sweet melon) rather than trace (a leafy green whose fibre ≈ total carb)
-
-/** Map a USDA `category` string to the reference table's category, for scoping. The
- * USDA "Cereal Grains and Pasta" category holds both, so pasta and noodle foods are
- * routed by name first (PASTA_RE) and only the rest fall through to CEREAL GRAINS. */
-const PASTA_RE = /\b(pasta|noodles?|spaghetti|macaroni|vermicelli|lasagn[ae]|fettuccine|linguine|penne|udon|soba|somen)\b/i;
-const CAT_MAP = [
-  [/bread/i, 'BREADS'], [/breakfast cereal/i, 'BREAKFAST CEREALS'],
-  [/cereal grain|pasta|rice|grain/i, 'CEREAL GRAINS'],
-  [/fruit/i, 'FRUIT AND FRUIT PRODUCTS'], [/vegetable/i, 'VEGETABLES'],
-  [/legume|bean|lentil|pea/i, 'LEGUMES'], [/nut and seed|nut/i, 'NUTS'],
-  [/dairy|milk|yogurt|cheese/i, 'DAIRY PRODUCTS AND ALTERNATIVES'],
-  [/beverage|drink|juice/i, 'BEVERAGES'], [/sweet|sugar|syrup/i, 'SUGARS AND SYRUPS'],
-  [/snack|cookie|cracker|confection/i, 'SNACK FOODS AND CONFECTIONERY'],
-  [/soup/i, 'SOUPS'], [/baked|bakery/i, 'BAKERY PRODUCTS'],
-];
-const refCategoryFor = (food) => {
-  if (/cereal grain|pasta/i.test(food.category ?? '') && PASTA_RE.test(food.description ?? '')) return 'PASTA AND NOODLES';
-  return CAT_MAP.find(([re]) => re.test(food.category ?? ''))?.[1] ?? null;
-};
 
 const STOP = new Set(['raw', 'cooked', 'boiled', 'prepared', 'with', 'without', 'and', 'or', 'the',
   'of', 'in', 'all', 'commercial', 'varieties', 'includes', 'usda', 'ns', 'as', 'to', 'from', 'made',
@@ -110,8 +92,18 @@ const globalMedian = median(reference.map((r) => r.gi));
 const refToks = reference.map((r) => ({ ...r, t: toks(r.food) }));
 
 // As-eaten staple references: USDA description pattern → the Atkinson Table 1 entries
-// (category + name pattern) for the cooked food; the GI is their mean. Ordered — the
-// first matching staple wins, so the specific forms come before the generic ones.
+// (category + name pattern) for the food as eaten; the GI is their mean. Ordered — the
+// first matching staple wins, so the specific forms come before the generic ones. A
+// staple is 'high' confidence unless it names `conf`: 'medium' marks a close proxy (dried
+// breadcrumbs valued as the white bread they are made from); `label` names a multi-entry
+// mean in the cited source.
+//
+// Breads: the parsed bread section mixes brand-specific and modified-recipe loaves (added
+// fibre, resistant starch, guar, altered proving), so each bread type is the mean of its
+// plain, unmodified entries. A toasted record shares its bread's GI — GI is a property of
+// the bread, and the one toasted-loaf study in the table is not a generic value.
+const WHITE_BREAD = /^(White bread|Wheat bread|Enriched white bread)\b(?!.*\b(gluten|guar|pectin|fibre|fiber|resistant|starch|chickpea|oat bran|molasses|sourdough|vinegar|prove|proving|toasted|candeal|bite-sized|pre-cooked|glucan|enriched with|reducose)\b)/i;
+const WHOLEMEAL_BREAD = /^(Wholemeal (\(whole wheat\) )?(wheat )?flour bread|Wholemeal wheat flour bread)/i;
 const STAPLES = [
   { food: /^pasta\b.*\bgluten-free\b/i, cat: 'PASTA AND NOODLES', ref: /^Gluten-free pasta$/i },
   { food: /^pasta\b.*\b(whole-wheat|whole grain|whole wheat)\b/i, cat: 'PASTA AND NOODLES', ref: /^Wholemeal spaghetti, boiled$/i },
@@ -121,11 +113,25 @@ const STAPLES = [
   { food: /^couscous\b/i, cat: 'CEREAL GRAINS', ref: /^Couscous, rehydrated with hot water/i },
   { food: /^rice, brown\b(?!.*\b(parboiled|instant)\b)/i, cat: 'CEREAL GRAINS', ref: /^Brown rice(?! chips)(?!.*\b(instant|flavou?red|chicken|microwaved|parboiled)\b)/i },
   { food: /^mangos?\b.*\braw\b/i, cat: 'FRUIT AND FRUIT PRODUCTS', ref: /^Mango, raw\b/i },
+  { food: /^bread, pita, whole[- ]wheat\b/i, cat: 'BREADS', ref: /^Pita bread, wholemeal/i },
+  { food: /^bread, pita\b/i, cat: 'BREADS', ref: /^(Pita bread, white|Lebanese bread, white)/i, label: 'white pita / Lebanese bread' },
+  { food: /^bread, naan, plain\b/i, cat: 'BREADS', ref: /^Naan bread/i },
+  { food: /^bread, chapati or roti, whole wheat\b/i, cat: 'BREADS', ref: /^Roti \(unleavened flatbread\), whole wheat flour$/i },
+  { food: /^bread, chapati or roti, plain\b/i, cat: 'REGIONAL OR TRADITIONAL FOODS', ref: /^(Chapati, flatbread|Chapatti)$/i, label: 'chapati' },
+  { food: /^bread, pumpernickel\b/i, cat: 'BREADS', ref: /^Pumpernickel/i },
+  { food: /^bread, rye\b/i, cat: 'BREADS', ref: /^(Rye breads$|Rye, made with)/i, label: 'rye bread' },
+  { food: /^bread, (whole[- ]wheat|french or vienna, whole wheat)\b/i, cat: 'BREADS', ref: WHOLEMEAL_BREAD, label: 'wholemeal wheat bread' },
+  { food: /^bread, (white|white wheat|french or vienna|italian)\b/i, cat: 'BREADS', ref: WHITE_BREAD, label: 'white wheat bread' },
+  { food: /^bread, wheat(?!, sprouted)\b/i, cat: 'BREADS', ref: WHITE_BREAD, conf: 'medium', label: 'white wheat bread' },
+  { food: /^(bread, crumbs|croutons)\b/i, cat: 'BREADS', ref: WHITE_BREAD, conf: 'medium', label: 'white wheat bread' },
+  { food: /^crackers, (rusk toast|melba toast, (plain|wheat))\b/i, cat: 'BREADS', ref: /^Dried wheat bread rusk$/i },
+  { food: /^crackers, (saltines\b(?!, whole wheat)|water biscuits)/i, cat: 'CRACKERS', ref: /^(Cracker|Cream cracker\b.*)$/i, label: 'plain / cream cracker', conf: 'medium' },
+  { food: /^tortillas\b.*\bcorn\b/i, cat: 'BREADS', ref: /\bCorn tortilla, made from white corn/i, label: 'white corn tortilla' },
 ].map((st) => {
   const refs = reference.filter((r) => r.category === st.cat && st.ref.test(r.food));
   if (!refs.length) throw new Error(`STAPLES reference ${st.ref} matched no ${st.cat} entry — regenerate gi-reference.json`);
   const gi = Math.round(refs.reduce((a, r) => a + r.gi, 0) / refs.length);
-  const label = refs.length === 1 ? refs[0].food.slice(0, 60).trim() : `${st.ref.source.replace(/[\^$\\]|\(\?.*$/g, '').trim()}: mean of ${refs.length} entries`;
+  const label = refs.length === 1 ? refs[0].food.slice(0, 60).trim() : `${st.label ?? st.ref.source.replace(/[\^$\\]|\(\?.*$/g, '').trim()}: mean of ${refs.length} entries`;
   return { ...st, gi, label };
 });
 const COOKED_REF = /\b(boiled|cooked|steamed|baked|roasted|porridge)\b/i;
@@ -143,7 +149,7 @@ function assign(food) {
 
   // 0) As-eaten staple reference (see STAPLES).
   const staple = STAPLES.find((st) => st.food.test(food.description ?? ''));
-  if (staple) return { gi: staple.gi, source: `Atkinson 2021 (${staple.label})`, conf: 'high' };
+  if (staple) return { gi: staple.gi, source: `Atkinson 2021 (${staple.label})`, conf: staple.conf ?? 'high' };
 
   // 1) Measured match — only within the same reference category, since cross-category
   //    token matches (e.g. "rice vinegar" ↔ "rice") are the main source of nonsense.

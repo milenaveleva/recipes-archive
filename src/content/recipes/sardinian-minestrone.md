@@ -7,6 +7,7 @@ imageAlt: Sardinian Minestrone
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11747-szardiniai-minestrone-leves
+  kcalPerServing: 425
 author: Kifli Kukták
 servings: 4
 prepTime: PT20M
@@ -180,6 +181,7 @@ nutrition:
     gl: 32
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 43
   nutriScore:

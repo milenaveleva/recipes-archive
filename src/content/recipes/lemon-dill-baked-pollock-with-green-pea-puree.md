@@ -7,6 +7,7 @@ imageAlt: Lemon-Dill Baked Pollock with Green Pea Purée
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10639-citromos-kapros-suelt-feketetokehal-file-zoeldborsopuerevel
+  kcalPerServing: 415
 author: Nemes Dóra (Mentes Anyu)
 servings: 4
 prepTime: PT10M
@@ -51,6 +52,7 @@ ingredients:
     fdcId: 1999630
     matchConfidence: high
     cooking: raw
+    proxyOk: true
   - raw: 4 cloves garlic, finely chopped
     quantity: 4
     unit: cloves
@@ -128,6 +130,7 @@ nutrition:
     gl: 3
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 79
   nutriScore:

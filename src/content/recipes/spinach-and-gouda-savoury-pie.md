@@ -7,6 +7,7 @@ imageAlt: Spinach and Gouda Savoury Pie
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11986-spenotos-goudas-sos-pite-gyors-es-kremes-vacsora
+  kcalPerServing: 315
 author: Kifli Kukták
 servings: 8
 prepTime: PT15M
@@ -107,6 +108,7 @@ nutrition:
     gl: 10
     giBand: low
     glBand: low
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

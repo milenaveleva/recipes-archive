@@ -7,6 +7,7 @@ imageAlt: Vietnamese Whole-Wheat Thin Noodle Salad with Shrimp (Nộm miến tô
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12628-vietnami-uevegteszta-salata-garnelaval-nom-mien-tom
+  kcalPerServing: 385
 author: Kifli Kukták
 servings: 2
 prepTime: PT20M
@@ -179,6 +180,7 @@ nutrition:
     gl: 33
     giBand: low
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 88
   nutriScore:

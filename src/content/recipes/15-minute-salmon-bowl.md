@@ -7,6 +7,7 @@ imageAlt: 15-Minute Salmon Bowl
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10567-15-perces-lazac-bowl
+  kcalPerServing: 485
 author: Kifli Kukták
 servings: 4
 prepTime: PT9M
@@ -190,6 +191,7 @@ nutrition:
     gl: 23
     giBand: medium
     glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 88
   nutriScore:

@@ -7,6 +7,7 @@ imageAlt: Chestnut and Lemon Savoy Cabbage
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10446-gesztenyes-citromos-kelkaposzta
+  kcalPerServing: 145
 author: Báder Gabka
 servings: 2
 prepTime: PT5M
@@ -79,6 +80,7 @@ nutrition:
     gl: 8
     giBand: low
     glBand: low
+    glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:

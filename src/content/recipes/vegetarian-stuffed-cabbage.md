@@ -7,6 +7,7 @@ imageAlt: Vegetarian Stuffed Cabbage
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10382-vegetarianus-toeltoett-kaposzta
+  kcalPerServing: 310
 author: Kifli Kukták
 servings: 4
 prepTime: PT40M
@@ -27,6 +28,7 @@ ingredients:
     fdcId: 169279
     matchConfidence: high
     cooking: boiled
+    proxyOk: true
   - raw: 100 g white button mushrooms
     group: For the filling
     quantity: 100
@@ -45,6 +47,7 @@ ingredients:
     fdcId: 172475
     matchConfidence: high
     cooking: boiled
+    proxyOk: true
   - raw: 3 cloves pickled garlic
     group: For the filling
     quantity: 3
@@ -218,33 +221,35 @@ ingredients:
     group: For serving
     item: whole-wheat sourdough loaf
     grams: 100
-    fdcId: 172688
-    matchConfidence: high
+    fdcId: 174091
+    matchConfidence: medium
     cooking: raw
-  - raw: 1 tsp ground caraway
+  - raw: 1 tsp ground caraway (for the filling)
     quantity: 1
     unit: tsp
     item: ground caraway
+    note: for the filling
     grams: 2.1
     milliliters: 4.92892
     fdcId: 170918
     matchConfidence: medium
     cooking: boiled
-  - raw: 1 tsp ground caraway
+  - raw: 1 tsp ground caraway (for the cabbage base)
     quantity: 1
     unit: tsp
     item: ground caraway
+    note: for the cabbage base
     grams: 2.1
     milliliters: 4.92892
     fdcId: 170918
     matchConfidence: medium
     cooking: boiled
-  - raw: salt, to taste
-    item: salt
-    note: to taste
+  - raw: salt, to taste (for the filling)
+    item: salt, to taste
+    note: for the filling
     grams: 3
     fdcId: 173468
-    matchConfidence: high
+    matchConfidence: medium
     cooking: boiled
   - raw: black pepper, to taste
     item: black pepper
@@ -253,12 +258,12 @@ ingredients:
     fdcId: 170931
     matchConfidence: medium
     cooking: boiled
-  - raw: salt, to taste
-    item: salt
-    note: to taste
+  - raw: salt, to taste (for the cabbage base)
+    item: salt, to taste
+    note: for the cabbage base
     grams: 3
     fdcId: 173468
-    matchConfidence: high
+    matchConfidence: medium
     cooking: boiled
   - raw: freshly ground black pepper, to taste
     item: freshly ground black pepper
@@ -269,26 +274,27 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 594
-    energyKj: 2487
-    protein_g: 31.4
-    fat_g: 30.8
-    satFat_g: 6.3
-    carbs_g: 56.9
-    fiber_g: 17.8
-    sugar_g: 11.2
-    sodium_mg: 3056
-    availableCarb_g: 39
+    energyKcal: 591
+    energyKj: 2473
+    protein_g: 30.4
+    fat_g: 30.2
+    satFat_g: 6.1
+    carbs_g: 58.5
+    fiber_g: 17.4
+    sugar_g: 10.2
+    sodium_mg: 3036
+    availableCarb_g: 41
   glycemic:
-    gi: 47
-    gl: 18
+    gi: 51
+    gl: 21
     giBand: low
-    glBand: low
+    glBand: medium
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 39
+    measuredGiPct: 65
   nutriScore:
-    grade: B
-    points: 2
+    grade: C
+    points: 3
     category: general
     version: "2023"
     coverage: 0.85
@@ -300,11 +306,11 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 40.3
+    nrf: 38.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 52.9
-    ultraProcessedPct: 10.6
+    minimallyProcessedPct: 53.1
+    ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

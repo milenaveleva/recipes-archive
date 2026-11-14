@@ -108,7 +108,7 @@ export function cookIngredient(
   return { grams: c.cookedGrams, nutrients: c.cookedPer100 };
 }
 
-/** Recipe-level scoring context (Nutri-Score category + retained flags). */
+/** Recipe-level scoring context (servings, Nutri-Score category + retained flags, course → GL basis). */
 export interface RecipeScoringOptions extends ScoreOptions {
   servings: number;
 }
