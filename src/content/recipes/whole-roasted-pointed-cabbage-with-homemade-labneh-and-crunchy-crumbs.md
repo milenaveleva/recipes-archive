@@ -38,7 +38,7 @@ ingredients:
     quantity: 400
     unit: ml
     item: sour cream
-    grams: 324.6
+    grams: 388
     milliliters: 400
     fdcId: 171257
     matchConfidence: high
@@ -109,16 +109,16 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 671
-    energyKj: 2809
-    protein_g: 19.2
-    fat_g: 56.1
-    satFat_g: 14
-    carbs_g: 28.5
+    energyKcal: 703
+    energyKj: 2941
+    protein_g: 19.6
+    fat_g: 59.1
+    satFat_g: 15.6
+    carbs_g: 29.2
     fiber_g: 8
-    sugar_g: 16.1
-    sodium_mg: 1791
-    availableCarb_g: 20.4
+    sugar_g: 16.7
+    sodium_mg: 1795
+    availableCarb_g: 21.2
   glycemic:
     gi: 16
     gl: 3
@@ -134,17 +134,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: 0
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.02
   balance:
     score: 3
     band: low
-    nrf: 16.5
+    nrf: 15.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 93.8
+    minimallyProcessedPct: 94
     ultraProcessedPct: 0.8
     band: minimally-processed
     method: NOVA (energy-weighted)

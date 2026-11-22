@@ -23,7 +23,7 @@ ingredients:
     unit: kg
     item: sweet potatoes
     grams: 1000
-    fdcId: 169306
+    fdcId: 168482
     matchConfidence: high
     cooking: boiled
   - raw: 1 onion
@@ -47,7 +47,7 @@ ingredients:
     unit: carton
     item: cooking cream
     grams: 200
-    fdcId: 2346386
+    fdcId: 170857
     matchConfidence: high
     cooking: boiled
   - raw: 200 g aged cheese
@@ -81,19 +81,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 625
-    energyKj: 2617
-    protein_g: 17.2
-    fat_g: 35
-    satFat_g: 19.8
-    carbs_g: 62.7
-    fiber_g: 4.8
-    sugar_g: 2.9
-    sodium_mg: 644
-    availableCarb_g: 57.9
+    energyKcal: 530
+    energyKj: 2217
+    protein_g: 17.3
+    fat_g: 26.4
+    satFat_g: 14.6
+    carbs_g: 57.4
+    fiber_g: 8.1
+    sugar_g: 13.7
+    sodium_mg: 786
+    availableCarb_g: 49.3
   glycemic:
-    gi: 66
-    gl: 38
+    gi: 64
+    gl: 31
     giBand: medium
     glBand: medium
     glBasis: meal
@@ -104,19 +104,19 @@ nutrition:
     points: 5
     category: general
     version: "2023"
-    coverage: 0.31
+    coverage: 1
   inflammation:
     score: 0.6
     band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.31
   balance:
-    score: 5
-    band: moderate
-    nrf: 30.1
+    score: 7
+    band: high
+    nrf: 41.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 67.8
+    minimallyProcessedPct: 62
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

@@ -23,8 +23,8 @@ ingredients:
     unit: g
     item: cooked chestnuts
     grams: 100
-    fdcId: 170190
-    matchConfidence: medium
+    fdcId: 170168
+    matchConfidence: high
     cooking: fried
   - raw: 250 g savoy cabbage
     quantity: 250
@@ -65,19 +65,19 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 279
-    energyKj: 1167
-    protein_g: 4.2
-    fat_g: 14.8
-    satFat_g: 2.1
-    carbs_g: 35.1
-    fiber_g: 6.5
-    sugar_g: 8.5
-    sodium_mg: 424
-    availableCarb_g: 28.6
+    energyKcal: 222
+    energyKj: 929
+    protein_g: 3.6
+    fat_g: 14.4
+    satFat_g: 2
+    carbs_g: 22.5
+    fiber_g: 4
+    sugar_g: 3.2
+    sodium_mg: 437
+    availableCarb_g: 18.6
   glycemic:
-    gi: 29
-    gl: 8
+    gi: 20
+    gl: 4
     giBand: low
     glBand: low
     glBasis: portion
@@ -88,16 +88,16 @@ nutrition:
     points: 2
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.74
   inflammation:
-    score: -0.4
+    score: -0.8
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.03
   balance:
-    score: 6
-    band: moderate
-    nrf: 36
+    score: 7
+    band: high
+    nrf: 46.8
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

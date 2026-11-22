@@ -21,8 +21,8 @@ ingredients:
   - raw: 1 whole trout, cleaned
     quantity: 1
     item: whole trout
-    note: cleaned
-    grams: 500
+    note: cleaned; ≈ 500 g whole, ≈ 300 g edible flesh
+    grams: 300
     fdcId: 175154
     matchConfidence: medium
     cooking: baked
@@ -75,15 +75,15 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 183
-    energyKj: 767
-    protein_g: 25.8
-    fat_g: 7.8
-    satFat_g: 1.4
+    energyKcal: 124
+    energyKj: 518
+    protein_g: 15.5
+    fat_g: 6
+    satFat_g: 1
     carbs_g: 1.2
     fiber_g: 0.2
     sugar_g: 0.3
-    sodium_mg: 233
+    sodium_mg: 218
     availableCarb_g: 1.1
   glycemic:
     gi: 23
@@ -95,19 +95,19 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: A
-    points: -3
+    points: -1
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.99
   inflammation:
-    score: -0.4
+    score: -0.5
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.09
   balance:
-    score: 7
-    band: high
-    nrf: 44.9
+    score: 6
+    band: moderate
+    nrf: 39.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

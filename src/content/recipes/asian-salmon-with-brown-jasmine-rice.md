@@ -30,7 +30,8 @@ ingredients:
     quantity: 40
     unit: g
     item: soy sauce
-    grams: 40
+    note: marinade; ≈ 40 % clings to the fish
+    grams: 16
     fdcId: 174277
     matchConfidence: high
     cooking: baked
@@ -38,7 +39,8 @@ ingredients:
     quantity: 40
     unit: g
     item: sesame oil
-    grams: 40
+    note: marinade; ≈ 40 % clings to the fish
+    grams: 16
     fdcId: 171016
     matchConfidence: high
     cooking: baked
@@ -101,16 +103,16 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 1000
-    energyKj: 4182
-    protein_g: 51
-    fat_g: 51
-    satFat_g: 9.7
-    carbs_g: 82.4
-    fiber_g: 4.4
-    sugar_g: 1.5
-    sodium_mg: 1224
-    availableCarb_g: 78
+    energyKcal: 887
+    energyKj: 3712
+    protein_g: 50
+    fat_g: 38.9
+    satFat_g: 8
+    carbs_g: 81.8
+    fiber_g: 4.3
+    sugar_g: 1.4
+    sodium_mg: 566
+    availableCarb_g: 77.5
   glycemic:
     gi: 63
     gl: 49
@@ -120,8 +122,8 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 94
   nutriScore:
-    grade: B
-    points: 2
+    grade: A
+    points: 0
     category: general
     version: "2023"
     coverage: 1
@@ -133,10 +135,10 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 18.1
+    nrf: 23.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98.9
+    minimallyProcessedPct: 99.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

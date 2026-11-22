@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 240 g whole-wheat udon noodles, dry
+  - raw: 240 g pre-cooked whole-wheat udon noodles (≈ 95 g uncooked)
     quantity: 240
     unit: g
-    item: whole-wheat udon noodles
-    note: dry
-    grams: 240
+    item: pre-cooked whole-wheat udon noodles
+    note: ≈ 95 g uncooked
+    grams: 95
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -47,7 +47,7 @@ ingredients:
     quantity: 100
     unit: ml
     item: vegetable oil
-    grams: 40
+    grams: 91.5
     milliliters: 100
     fdcId: 172370
     matchConfidence: high
@@ -107,39 +107,39 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 683
-    energyKj: 2856
-    protein_g: 22.6
-    fat_g: 24.2
-    satFat_g: 3.7
-    carbs_g: 104.2
-    fiber_g: 14.2
-    sugar_g: 13
-    sodium_mg: 1094
-    availableCarb_g: 89.4
+    energyKcal: 655
+    energyKj: 2741
+    protein_g: 12.5
+    fat_g: 47.8
+    satFat_g: 7.3
+    carbs_g: 51
+    fiber_g: 7.5
+    sugar_g: 11
+    sodium_mg: 1092
+    availableCarb_g: 42.8
   glycemic:
     gi: 49
-    gl: 44
+    gl: 21
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 93
+    measuredGiPct: 86
   nutriScore:
-    grade: B
-    points: 2
+    grade: C
+    points: 6
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.99
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.4
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.32
   balance:
-    score: 3
-    band: low
-    nrf: 16.2
+    score: 2
+    band: poor
+    nrf: 4.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 98.4

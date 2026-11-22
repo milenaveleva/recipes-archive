@@ -22,7 +22,8 @@ ingredients:
     quantity: 500
     unit: g
     item: figs
-    grams: 500
+    note: ≈ 40 % of the jam is served; the rest keeps
+    grams: 200
     fdcId: 173021
     matchConfidence: high
     cooking: boiled
@@ -30,7 +31,7 @@ ingredients:
     quantity: 2
     unit: tbsp
     item: honey
-    grams: 42.4
+    grams: 17
     milliliters: 29.5736
     fdcId: 169640
     matchConfidence: high
@@ -38,7 +39,7 @@ ingredients:
   - raw: juice of 1 lemon
     quantity: 1
     item: juice of lemon
-    grams: 45
+    grams: 18
     fdcId: 167747
     matchConfidence: high
     cooking: boiled
@@ -91,42 +92,42 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 546
-    energyKj: 2283
-    protein_g: 27.3
-    fat_g: 34.2
-    satFat_g: 19.7
-    carbs_g: 36.5
-    fiber_g: 4.7
-    sugar_g: 30.5
-    sodium_mg: 1055
-    availableCarb_g: 31.8
+    energyKcal: 469
+    energyKj: 1963
+    protein_g: 26.7
+    fat_g: 34
+    satFat_g: 19.6
+    carbs_g: 16.4
+    fiber_g: 2.5
+    sugar_g: 12.9
+    sodium_mg: 1054
+    availableCarb_g: 13.9
   glycemic:
-    gi: 47
-    gl: 15
+    gi: 38
+    gl: 5
     giBand: low
-    glBand: medium
+    glBand: low
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 92
+    measuredGiPct: 85
   nutriScore:
-    grade: D
-    points: 15
+    grade: E
+    points: 22
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 1.3
+    score: 1.4
     band: pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.01
   balance:
     score: 2
     band: poor
-    nrf: -2.4
+    nrf: -0.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 23.6
+    minimallyProcessedPct: 11.1
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

@@ -21,7 +21,8 @@ ingredients:
   - raw: 4 artichokes
     quantity: 4
     item: artichokes
-    grams: 600
+    note: ≈ 240 g edible leaf bases and hearts
+    grams: 240
     fdcId: 169205
     matchConfidence: high
     cooking: baked
@@ -101,19 +102,19 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 344
-    energyKj: 1438
-    protein_g: 10.3
-    fat_g: 20.8
-    satFat_g: 3
-    carbs_g: 36.4
-    fiber_g: 17.1
-    sugar_g: 5.4
-    sodium_mg: 365
-    availableCarb_g: 19.3
+    energyKcal: 259
+    energyKj: 1084
+    protein_g: 4.4
+    fat_g: 20.6
+    satFat_g: 2.9
+    carbs_g: 17.5
+    fiber_g: 7.3
+    sugar_g: 3.7
+    sodium_mg: 196
+    availableCarb_g: 10.1
   glycemic:
-    gi: 25
-    gl: 5
+    gi: 34
+    gl: 3
     giBand: low
     glBand: low
     glBasis: portion
@@ -121,19 +122,19 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: A
-    points: -7
+    points: -1
     category: general
     version: "2023"
     coverage: 0.99
   inflammation:
-    score: -1.2
+    score: -1
     band: anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.27
   balance:
-    score: 8
-    band: high
-    nrf: 61.1
+    score: 6
+    band: moderate
+    nrf: 36.1
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
