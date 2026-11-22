@@ -30,12 +30,12 @@ ingredients:
     fdcId: 171304
     matchConfidence: high
     cooking: raw
-  - raw: 120 g sour cream
+  - raw: 120 g plant-based sour cream
     quantity: 120
     unit: g
-    item: sour cream
+    item: plant-based sour cream
     grams: 120
-    fdcId: 171257
+    fdcId: 82019693
     matchConfidence: high
     cooking: raw
   - raw: juice of 1 lime
@@ -109,48 +109,49 @@ ingredients:
     cooking: grilled
 nutrition:
   perServing:
-    energyKcal: 296
-    energyKj: 1239
-    protein_g: 11.1
-    fat_g: 15.4
-    satFat_g: 6.5
-    carbs_g: 34.5
-    fiber_g: 3.5
-    sugar_g: 11.9
-    sodium_mg: 149
-    availableCarb_g: 31.1
+    energyKcal: 250
+    energyKj: 1047
+    protein_g: 11.5
+    fat_g: 10.1
+    satFat_g: 3.6
+    carbs_g: 34
+    fiber_g: 3.7
+    sugar_g: 11.1
+    sodium_mg: 150
+    availableCarb_g: 30.3
   glycemic:
-    gi: 49
+    gi: 50
     gl: 15
     giBand: low
     glBand: medium
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 86
+    measuredGiPct: 88
   nutriScore:
     grade: A
-    points: 0
+    points: -1
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.5
-    band: mildly-pro-inflammatory
+    score: 0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.14
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 15.5
+    nrf: 23.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 83.1
+    minimallyProcessedPct: 74.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -165,7 +166,7 @@ createdAt: "2026-11-14"
 
 1. If using fresh corn, remove the husks and silks, then wash the cobs thoroughly and pat them dry.
 2. Preheat a grill or a pan to medium heat. Grill the corn for about 10-15 minutes, turning regularly, until evenly browned and golden. The lightly charred kernels add extra smoky flavour.
-3. While the corn cooks, mix the Greek yogurt, sour cream, lime juice, finely crushed garlic and a pinch of salt in a bowl until you get a smooth cream.
+3. While the corn cooks, mix the Greek yogurt, plant-based sour cream, lime juice, finely crushed garlic and a pinch of salt in a bowl until you get a smooth cream.
 4. Brush the grilled corn with olive oil (optional), then coat generously with the prepared creamy sauce. Sprinkle with grated cheddar, chilli flakes, chopped coriander and crumbled nachos for extra crunch.
 5. Serve the elotes immediately while hot, so the flavours are at their best.
 

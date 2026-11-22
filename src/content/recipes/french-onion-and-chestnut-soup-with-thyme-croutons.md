@@ -1,6 +1,6 @@
 ---
 title: French Onion and Chestnut Soup with Thyme Croutons
-description: A velvety autumn soup of slowly caramelised onions and sweet chestnuts finished with cream and served with crispy thyme croutons.
+description: A velvety autumn soup of slowly caramelised onions and sweet chestnuts finished with plant-based cream and served with crispy thyme croutons.
 image: ./images/french-onion-and-chestnut-soup-with-thyme-croutons.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14738_1792657309347_french-chestnut-and-onion-cream-soup_ec3ab68e.jpg
 imageAlt: French Onion and Chestnut Soup with Thyme Croutons
@@ -46,14 +46,13 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 150 g whipping cream (30%)
+  - raw: 150 g plant-based cooking cream
     group: Soup base
     quantity: 150
     unit: g
-    item: whipping cream
-    note: 30%
+    item: plant-based cooking cream
     grams: 150
-    fdcId: 170859
+    fdcId: 82011214
     matchConfidence: high
     cooking: boiled
   - raw: 30 g extra virgin olive oil
@@ -115,16 +114,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 513
-    energyKj: 2146
-    protein_g: 7.2
-    fat_g: 26.4
-    satFat_g: 10.6
-    carbs_g: 63
+    energyKcal: 443
+    energyKj: 1854
+    protein_g: 7.3
+    fat_g: 18.4
+    satFat_g: 2.6
+    carbs_g: 62.7
     fiber_g: 7.2
-    sugar_g: 15.9
-    sodium_mg: 683
-    availableCarb_g: 55.8
+    sugar_g: 15.4
+    sodium_mg: 682
+    availableCarb_g: 55.5
   glycemic:
     gi: 44
     gl: 24
@@ -135,28 +134,29 @@ nutrition:
     measuredGiPct: 24
   nutriScore:
     grade: C
-    points: 5
+    points: 3
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.91
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.16
   balance:
-    score: 2
-    band: poor
-    nrf: 6
+    score: 3
+    band: low
+    nrf: 15
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 84.3
-    ultraProcessedPct: 0
-    band: minimally-processed
+    minimallyProcessedPct: 68.8
+    ultraProcessedPct: 13
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -170,7 +170,7 @@ createdAt: "2026-11-14"
 ## Method
 
 1. **Preparation and caramelisation:** Peel the red onions and cut them into thin slices. In a heavy-bottomed saucepan, warm half of the additional olive oil with the olive oil, then add the onion slices and a pinch of salt. Cook and caramelise the onions over medium-low heat, stirring often, for about 20–25 minutes, until deep golden brown and naturally sweet.
-2. **Cooking and puréeing:** Add the cooked, peeled chestnuts to the caramelised onions (set aside a few for serving). Sprinkle in half of the thyme, then pour in the warm vegetable broth. Bring to the boil, then simmer gently, covered, for 15 minutes so the flavours come together perfectly. Take off the heat, add the whipping cream, season with freshly ground black pepper, then blend completely smooth with a hand blender into a velvety texture. Adjust the seasoning with salt if needed.
+2. **Cooking and puréeing:** Add the cooked, peeled chestnuts to the caramelised onions (set aside a few for serving). Sprinkle in half of the thyme, then pour in the warm vegetable broth. Bring to the boil, then simmer gently, covered, for 15 minutes so the flavours come together perfectly. Take off the heat, add the plant-based cooking cream, season with freshly ground black pepper, then blend completely smooth with a hand blender into a velvety texture. Adjust the seasoning with salt if needed.
 3. **Making the croutons and serving:** Cut the baguette into bite-sized cubes. In a frying pan, warm the remaining olive oil, add the remaining thyme and fry the bread cubes in it until golden brown and crisp. Ladle the hot onion and chestnut soup into bowls, sprinkle with the crispy thyme croutons and the reserved chopped chestnut pieces, and serve immediately.
 
 ## Tips

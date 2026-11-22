@@ -1,9 +1,9 @@
 ---
-title: Red Wine Radicchio Whole-Wheat Tagliatelle with Walnuts
-description: A 25-minute autumn pasta of radicchio braised in red wine, tossed with whole-wheat tagliatelle, toasted walnuts and Parmesan.
-image: ./images/red-wine-radicchio-whole-wheat-tagliatelle-with-walnuts.jpg
+title: Braised Radicchio Whole-Wheat Tagliatelle with Walnuts
+description: A 25-minute autumn pasta of radicchio braised in vegetable broth and red wine vinegar, tossed with whole-wheat tagliatelle, toasted walnuts and Parmesan.
+image: ./images/braised-radicchio-whole-wheat-tagliatelle-with-walnuts.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14551_1792048479039_tagliatelle-with-radicchio-red-wine-and-walnuts_4a529794.jpg
-imageAlt: Red Wine Radicchio Whole-Wheat Tagliatelle with Walnuts
+imageAlt: Braised Radicchio Whole-Wheat Tagliatelle with Walnuts
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14551-voeroesboros-radicchios-tagliatelle-dioval
@@ -35,15 +35,16 @@ ingredients:
     fdcId: 168564
     matchConfidence: high
     cooking: fried
-  - raw: 150 ml dry red wine
+  - raw: 150 ml vegetable broth (plus 1½ tbsp red wine vinegar)
     group: Pasta and ragù
     quantity: 150
     unit: ml
-    item: dry red wine
-    grams: 149.1
+    item: vegetable broth
+    note: plus 1½ tbsp red wine vinegar
+    grams: 140.1
     milliliters: 150
-    fdcId: 173190
-    matchConfidence: low
+    fdcId: 171583
+    matchConfidence: high
     cooking: fried
   - raw: 2 cloves garlic
     group: Pasta and ragù
@@ -109,24 +110,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 580
-    energyKj: 2426
+    energyKcal: 550
+    energyKj: 2301
     protein_g: 17.9
-    fat_g: 27.6
+    fat_g: 27.7
     satFat_g: 4.9
-    carbs_g: 65.2
+    carbs_g: 64.6
     fiber_g: 8.8
     sugar_g: 3.2
-    sodium_mg: 780
-    availableCarb_g: 56.4
+    sodium_mg: 882
+    availableCarb_g: 55.8
   glycemic:
-    gi: 47
+    gi: 48
     gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 91
+    measuredGiPct: 92
   nutriScore:
     grade: C
     points: 3
@@ -134,17 +135,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: -0.2
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.14
   balance:
     score: 4
     band: low
-    nrf: 18.5
+    nrf: 18.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 87.4
+    minimallyProcessedPct: 92.1
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -168,13 +169,13 @@ createdAt: "2026-11-14"
 3. **Cooking and braising:** Bring plenty of salted water to the boil in a large pot for the pasta.
 4. In a wide pan heat the olive oil with a small drizzle of the extra virgin olive oil, add the finely crushed garlic and fry for half a minute, taking care it does not brown.
 5. Add the drained radicchio, season lightly with salt and pepper, and wilt over high heat for 3-4 minutes until it collapses and caramelises slightly.
-6. Pour in the dry red wine and boil over medium heat for 4-5 minutes until the alcohol has evaporated and the liquid has reduced by half, forming a beautiful purple-red glaze.
+6. Pour in the vegetable broth and the red wine vinegar and boil over medium heat for 4-5 minutes until the liquid has reduced by half, forming a glossy glaze.
 7. **Assembly and serving:** Meanwhile cook the tagliatelle in the boiling salted water until al dente. Before draining, scoop out 1 ladle (about 80-100 ml) of starchy cooking water.
-8. Tip the drained pasta straight onto the red wine radicchio. Add the remaining extra virgin olive oil and half of the reserved cooking water and, over lively heat, stir and toss continuously for 1-2 minutes until it emulsifies into a silky sauce.
+8. Tip the drained pasta straight onto the braised radicchio. Add the remaining extra virgin olive oil and half of the reserved cooking water and, over lively heat, stir and toss continuously for 1-2 minutes until it emulsifies into a silky sauce.
 9. Take off the heat, stir in two thirds of the freshly grated Parmesan, taste and, if needed, season with another pinch of pepper.
 10. Pile onto plates, sprinkle with the coarsely chopped fragrant toasted walnuts and the remaining grated Parmesan, and serve immediately, piping hot.
 
 ## Tips
 
-- The pasta cooking water is a treasure: its starch forms a perfect, glossy emulsion with the olive oil and wine reduction that coats the long noodles beautifully.
+- The pasta cooking water is a treasure: its starch forms a perfect, glossy emulsion with the olive oil and broth reduction that coats the long noodles beautifully.
 - If you want to tone down the radicchio's slightly bitter taste even more, soak the strips in cold water for 5 minutes after cutting, then drain thoroughly before frying.

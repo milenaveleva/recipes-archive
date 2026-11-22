@@ -93,13 +93,12 @@ ingredients:
     fdcId: 2257046
     matchConfidence: high
     cooking: boiled
-  - raw: 250 g cooking cream (10%)
+  - raw: 250 g plant-based cooking cream
     quantity: 250
     unit: g
-    item: cooking cream
-    note: 10%
+    item: plant-based cooking cream
     grams: 250
-    fdcId: 170858
+    fdcId: 82011214
     matchConfidence: high
     cooking: boiled
   - raw: 1 pinch black pepper
@@ -122,16 +121,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 369
-    energyKj: 1546
-    protein_g: 12
-    fat_g: 27.4
-    satFat_g: 13.4
-    carbs_g: 21.5
+    energyKcal: 312
+    energyKj: 1305
+    protein_g: 12.4
+    fat_g: 20.7
+    satFat_g: 6
+    carbs_g: 21.1
     fiber_g: 3.7
-    sugar_g: 6.2
-    sodium_mg: 670
-    availableCarb_g: 17.8
+    sugar_g: 5.6
+    sodium_mg: 667
+    availableCarb_g: 17.5
   glycemic:
     gi: 30
     gl: 5
@@ -141,29 +140,30 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
-    grade: C
-    points: 5
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 0.79
   inflammation:
-    score: 0.7
-    band: mildly-pro-inflammatory
+    score: 0.1
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.2
   balance:
-    score: 5
-    band: moderate
-    nrf: 26.5
+    score: 7
+    band: high
+    nrf: 46.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 59.7
-    ultraProcessedPct: 11.2
-    band: moderately-processed
+    minimallyProcessedPct: 31.7
+    ultraProcessedPct: 33.8
+    band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -180,5 +180,5 @@ createdAt: "2026-11-14"
 2. **Cooking:** Heat the olive oil in a pot and sauté the onion and garlic until translucent. Sprinkle in the flour and toast briefly (make a light roux).
 3. Gradually pour in the broth and oat milk, add the broccoli stems and cook, stirring occasionally, for about 10 minutes.
 4. Remove the broccoli stems (or leave them in if completely soft), add the broccoli florets and most of the grated cheddar, and keep cooking until the broccoli is tender.
-5. Finally add the spinach and cooking cream, cook for another 5 minutes, then blend everything silky smooth with an immersion blender.
+5. Finally add the spinach and plant-based cooking cream, cook for another 5 minutes, then blend everything silky smooth with an immersion blender.
 6. **Serving:** Season with salt and pepper to taste. Sprinkle with the remaining grated cheddar when serving and offer crunchy croutons alongside.

@@ -1,6 +1,6 @@
 ---
 title: Homemade Whole-Wheat Tagliatelle with Creamy Mushrooms
-description: Fresh homemade whole-wheat egg tagliatelle in a silky cream sauce of wild mushrooms, white wine, thyme and Grana Padano.
+description: Fresh homemade whole-wheat egg tagliatelle in a silky cream sauce of wild mushrooms, lemon, thyme and Grana Padano.
 image: ./images/homemade-whole-wheat-tagliatelle-with-creamy-mushrooms.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14753_1793092681026_homemade-creamy-mushroom-tagliatelle_95579b03.jpg
 imageAlt: Homemade Whole-Wheat Tagliatelle with Creamy Mushrooms
@@ -62,14 +62,15 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 150 ml dry white wine
+  - raw: 150 ml vegetable broth (with a squeeze of lemon juice)
     group: Creamy mushroom sauce
     quantity: 150
     unit: ml
-    item: dry white wine
-    grams: 149.1
+    item: vegetable broth
+    note: with a squeeze of lemon juice
+    grams: 140.1
     milliliters: 150
-    fdcId: 174837
+    fdcId: 171583
     matchConfidence: high
     cooking: fried
   - raw: 3 sprigs thyme
@@ -81,13 +82,13 @@ ingredients:
     fdcId: 173470
     matchConfidence: high
     cooking: fried
-  - raw: 130 g whipping cream
+  - raw: 130 g plant-based cooking cream
     group: Creamy mushroom sauce
     quantity: 130
     unit: g
-    item: whipping cream
+    item: plant-based cooking cream
     grams: 130
-    fdcId: 170859
+    fdcId: 82011214
     matchConfidence: high
     cooking: fried
   - raw: 50 g Grana Padano cheese
@@ -129,48 +130,49 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 961
-    energyKj: 4019
-    protein_g: 37.4
-    fat_g: 48.6
-    satFat_g: 22.8
-    carbs_g: 83.6
+    energyKcal: 782
+    energyKj: 3271
+    protein_g: 37.7
+    fat_g: 34.7
+    satFat_g: 8.9
+    carbs_g: 81.8
     fiber_g: 12.5
-    sugar_g: 6
-    sodium_mg: 1708
-    availableCarb_g: 71
+    sugar_g: 4.8
+    sodium_mg: 1910
+    availableCarb_g: 69.2
   glycemic:
-    gi: 53
-    gl: 38
+    gi: 54
+    gl: 37
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
-    grade: D
-    points: 11
+    grade: C
+    points: 6
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.85
   inflammation:
-    score: 0.2
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.32
   balance:
-    score: 3
-    band: low
-    nrf: 15
+    score: 5
+    band: moderate
+    nrf: 25
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 82.8
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 73.5
+    ultraProcessedPct: 12.8
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -187,8 +189,8 @@ createdAt: "2026-11-14"
 2. Knead the mass by hand into a smooth, elastic dough for about 8–10 minutes. If it feels a little dry, add 1 teaspoon of water. Wrap in cling film and rest in the fridge for at least 30 minutes.
 3. After resting, divide the dough into two parts. On a lightly floured surface, roll it thin with a rolling pin or pasta machine (about 1–1.5 mm thick). Dust lightly with flour, roll it up loosely and cut with a sharp knife into strips 8–10 mm wide. Shake out the ribbons into little nests.
 4. **Creamy mushroom sauce and serving:** In a larger pan, heat the olive oil over medium heat. Add the cleaned mushrooms, cut into wedges or slices, and sauté over high heat for 5–6 minutes until golden brown.
-5. Add the thinly sliced garlic and the thyme leaves picked from the stems to the mushrooms. Sauté for another half minute until fragrant, then pour in the dry white wine. Boil for 2 minutes until the alcohol evaporates.
-6. Reduce the heat, pour in the whipping cream and season with salt and pepper to taste. Simmer on low heat for 3–4 minutes until the sauce thickens slightly.
+5. Add the thinly sliced garlic and the thyme leaves picked from the stems to the mushrooms. Sauté for another half minute until fragrant, then pour in the vegetable broth with a squeeze of lemon juice. Boil for 2 minutes until slightly reduced.
+6. Reduce the heat, pour in the plant-based cooking cream and season with salt and pepper to taste. Simmer on low heat for 3–4 minutes until the sauce thickens slightly.
 7. Meanwhile, bring generously salted water to a boil in a large pot. Drop in the fresh homemade tagliatelle and cook for exactly 1–2 minutes. Drain, reserving a little of the cooking water.
 8. Lift the hot pasta straight into the pan with the mushroom sauce and toss with 40 g grated Grana Padano (if needed, add 2–3 tablespoons of cooking water for a silky emulsion). Serve immediately, sprinkled with the remaining grated cheese and finely chopped fresh parsley.
 

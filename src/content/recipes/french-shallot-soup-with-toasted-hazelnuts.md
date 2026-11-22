@@ -45,15 +45,14 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 150 ml whipping cream (30%)
+  - raw: 150 ml plant-based cooking cream
     group: Ingredients
     quantity: 150
     unit: ml
-    item: whipping cream
-    note: 30%
-    grams: 149.1
+    item: plant-based cooking cream
+    grams: 150
     milliliters: 150
-    fdcId: 2346386
+    fdcId: 82011214
     matchConfidence: high
     cooking: boiled
   - raw: 50 g hazelnuts
@@ -97,18 +96,18 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 388
-    energyKj: 1624
-    protein_g: 6.2
-    fat_g: 30.6
-    satFat_g: 9.6
-    carbs_g: 26.5
+    energyKcal: 321
+    energyKj: 1341
+    protein_g: 6.7
+    fat_g: 22.9
+    satFat_g: 2.6
+    carbs_g: 25.9
     fiber_g: 5.4
-    sugar_g: 12.4
-    sodium_mg: 1132
-    availableCarb_g: 21.2
+    sugar_g: 11.9
+    sodium_mg: 1134
+    availableCarb_g: 20.5
   glycemic:
-    gi: 58
+    gi: 59
     gl: 12
     giBand: medium
     glBand: low
@@ -117,28 +116,29 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 7
+    points: 4
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.89
   inflammation:
-    score: 0.2
-    band: neutral
+    score: -0.5
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.22
   balance:
-    score: 2
-    band: poor
-    nrf: 1.7
+    score: 3
+    band: low
+    nrf: 11.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 97.7
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 79.3
+    ultraProcessedPct: 18
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

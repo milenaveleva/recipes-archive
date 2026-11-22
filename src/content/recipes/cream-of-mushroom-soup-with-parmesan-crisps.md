@@ -1,6 +1,6 @@
 ---
 title: Cream of Mushroom Soup with Parmesan Crisps
-description: A silky, creamy mushroom soup finished with cream and served with crunchy homemade Parmesan crisps.
+description: A silky, creamy mushroom soup finished with plant-based cream and served with crunchy homemade Parmesan crisps.
 image: ./images/cream-of-mushroom-soup-with-parmesan-crisps.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10320_1775302041280_creamy-mushroom-soup-with-parmesan-crisps_3260317f.png
 imageAlt: Cream of Mushroom Soup with Parmesan Crisps
@@ -44,13 +44,13 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: boiled
-  - raw: 200 ml heavy cream
+  - raw: 200 ml plant-based cooking cream
     quantity: 200
     unit: ml
-    item: heavy cream
-    grams: 198.8
+    item: plant-based cooking cream
+    grams: 200
     milliliters: 200
-    fdcId: 2346386
+    fdcId: 82011214
     matchConfidence: high
     cooking: boiled
   - raw: fresh thyme, a little
@@ -101,18 +101,18 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 424
-    energyKj: 1773
-    protein_g: 8.7
-    fat_g: 40.3
-    satFat_g: 15
-    carbs_g: 9.6
+    energyKcal: 334
+    energyKj: 1396
+    protein_g: 9.4
+    fat_g: 30
+    satFat_g: 5.7
+    carbs_g: 8.7
     fiber_g: 1.7
-    sugar_g: 5.1
-    sodium_mg: 1211
-    availableCarb_g: 7.6
+    sugar_g: 4.4
+    sodium_mg: 1213
+    availableCarb_g: 6.7
   glycemic:
-    gi: 14
+    gi: 12
     gl: 1
     giBand: low
     glBand: low
@@ -121,28 +121,29 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 7
+    points: 5
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.87
   inflammation:
-    score: 0.6
-    band: mildly-pro-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.14
   balance:
-    score: 1
+    score: 2
     band: poor
-    nrf: -6.4
+    nrf: 4.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 85
-    ultraProcessedPct: 0
-    band: minimally-processed
+    minimallyProcessedPct: 57.9
+    ultraProcessedPct: 23.1
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

@@ -11,7 +11,8 @@
  * The files are windows-1252 encoded and use decimal commas.
  *
  * Only the foods in CURATED_EN are emitted: they fill specific gaps in the USDA
- * generics (oat drink, whole-wheat pasta, potato gnocchi, nutritional yeast) and are
+ * generics (oat drink, whole-wheat pasta, potato gnocchi, nutritional yeast, plant-based
+ * soy cooking cream and soy yogurt) and are
  * all match-ready (`enCurated: true`), so the matcher merges every one of them.
  * fdcId is namespaced into the 82_000_000 band (82_000_000 + alim_code) to never
  * collide with USDA, custom or MEXT ids; `source: 'FR-CIQUAL'` records provenance,
@@ -26,7 +27,7 @@
 import { writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { loadCiqual } from './lib/ciqual.mjs';
+import { loadCiqual, GLUCIDES, ORGANIC_ACIDS } from './lib/ciqual.mjs';
 
 const OUT = fileURLToPath(new URL('../src/data/france-foods.json', import.meta.url));
 const log = (m) => process.stderr.write(`${m}\n`);
@@ -59,7 +60,27 @@ const CURATED_EN = {
   9871: 'Pasta, whole-wheat, cooked',
   25510: 'Gnocchi, potato, cooked',
   11009: 'Yeast, nutritional (deactivated flakes)',
+  11214: 'Cream, plant-based cooking (soy-based)',
+  19693: 'Yogurt, plant-based, soy, plain (unsweetened)',
 };
+
+/** Energy from the food's own analysed components with the Regulation (EU) 1169/2011
+ *  Annex XIV conversion factors — the same basis as Ciqual's published energy — for the
+ *  few foods Ciqual publishes without one. Needs protein, fat and available carbohydrate;
+ *  an unmeasured fibre, polyol, alcohol or organic-acid value contributes nothing. */
+function euEnergy(v, n) {
+  const glu = v.get(GLUCIDES);
+  if (n.protein_g == null || n.fat_g == null || glu == null) return null;
+  // Ciqual's available carbohydrate (31000) already includes polyols: score the
+  // sugars + starch share at 4 kcal/g and the polyols separately at 2.4 kcal/g.
+  const polyol = n.polyol_g ?? 0;
+  const parts = [
+    [n.protein_g, 4, 17], [Math.max(0, glu - polyol), 4, 17], [n.fat_g, 9, 37], [n.fiber_g ?? 0, 2, 8],
+    [polyol, 2.4, 10], [n.alcohol_g ?? 0, 7, 29], [v.get(ORGANIC_ACIDS) ?? 0, 3, 13],
+  ];
+  const sum = (i) => Math.round(parts.reduce((s, p) => s + p[0] * p[i], 0) * 10) / 10;
+  return { energyKcal: sum(1), energyKj: sum(2) };
+}
 
 function main() {
   const wanted = new Set(Object.keys(CURATED_EN).map(Number));
@@ -70,7 +91,12 @@ function main() {
     const a = ciqual.get(id);
     if (!a) throw new Error(`Ciqual food ${id} not found`);
     const { n } = a;
-    if (n.energyKcal == null && n.energyKj == null) throw new Error(`Ciqual food ${id} has no energy value`);
+    if (n.energyKcal == null && n.energyKj == null) {
+      const e = euEnergy(a.v, n);
+      if (!e) throw new Error(`Ciqual food ${id} has no energy value and too few components to derive one`);
+      Object.assign(n, e);
+      log(`  ${id}: no published energy — derived ${e.energyKcal} kcal from its components (EU 1169/2011 factors)`);
+    }
     foods.push({
       fdcId: 82_000_000 + id,
       source: 'FR-CIQUAL',

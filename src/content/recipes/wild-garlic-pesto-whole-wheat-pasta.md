@@ -100,14 +100,14 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: 300 ml cooking cream
+  - raw: 300 ml plant-based cooking cream
     group: For the pasta
     quantity: 300
     unit: ml
-    item: cooking cream
-    grams: 298.2
+    item: plant-based cooking cream
+    grams: 300
     milliliters: 300
-    fdcId: 2346386
+    fdcId: 82011214
     matchConfidence: high
     cooking: boiled
   - raw: 1 medium red onion
@@ -145,16 +145,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 1188
-    energyKj: 4971
-    protein_g: 36.1
-    fat_g: 85.5
-    satFat_g: 28.8
-    carbs_g: 79.3
+    energyKcal: 1053
+    energyKj: 4405
+    protein_g: 37
+    fat_g: 70
+    satFat_g: 14.8
+    carbs_g: 78
     fiber_g: 10.3
-    sugar_g: 8.5
-    sodium_mg: 1127
-    availableCarb_g: 68.9
+    sugar_g: 7.6
+    sodium_mg: 1130
+    availableCarb_g: 67.6
   glycemic:
     gi: 47
     gl: 32
@@ -162,31 +162,32 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 82
+    measuredGiPct: 83
   nutriScore:
-    grade: D
-    points: 12
+    grade: C
+    points: 5
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.84
   inflammation:
-    score: 0.2
+    score: -0.2
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.22
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 13.3
+    nrf: 21
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 83.4
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 70.3
+    ultraProcessedPct: 11
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

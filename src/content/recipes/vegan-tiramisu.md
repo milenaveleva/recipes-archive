@@ -56,15 +56,15 @@ ingredients:
     fdcId: 174832
     matchConfidence: high
     cooking: baked
-  - raw: 100 g erythritol
+  - raw: 80 g Medjool dates, pitted
     group: For the sponge
-    quantity: 100
+    quantity: 80
     unit: g
-    item: erythritol
-    grams: 100
-    fdcId: 170277
+    item: Medjool dates
+    note: pitted
+    grams: 80
+    fdcId: 168191
     matchConfidence: high
-    excludeFromNutrition: true
     cooking: baked
   - raw: 1 tsp baking powder
     group: For the sponge
@@ -94,15 +94,15 @@ ingredients:
     fdcId: 172475
     matchConfidence: high
     cooking: raw
-  - raw: 60 g erythritol
+  - raw: 50 g Medjool dates, pitted
     group: For the cream
-    quantity: 60
+    quantity: 50
     unit: g
-    item: erythritol
-    grams: 60
-    fdcId: 170277
+    item: Medjool dates
+    note: pitted
+    grams: 50
+    fdcId: 168191
     matchConfidence: high
-    excludeFromNutrition: true
     cooking: raw
   - raw: 400 g vegan mascarpone-style cream (VeganChef)
     group: For the cream
@@ -166,41 +166,41 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 464
-    energyKj: 1940
-    protein_g: 14.3
-    fat_g: 37.9
+    energyKcal: 509
+    energyKj: 2128
+    protein_g: 14.6
+    fat_g: 38
     satFat_g: 24.4
-    carbs_g: 22.7
-    fiber_g: 3.9
-    sugar_g: 0.2
+    carbs_g: 34.9
+    fiber_g: 5
+    sugar_g: 11
     sodium_mg: 43
-    availableCarb_g: 18.8
+    availableCarb_g: 29.9
   glycemic:
-    gi: 46
-    gl: 9
+    gi: 49
+    gl: 15
     giBand: low
-    glBand: low
+    glBand: medium
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 0
+    measuredGiPct: 37
   nutriScore:
     grade: D
-    points: 13
+    points: 14
     category: general
     version: "2023"
-    coverage: 0.43
+    coverage: 0.48
   inflammation:
     score: 0.9
     band: pro-inflammatory
     method: fii v4
   balance:
-    score: 2
+    score: 1
     band: poor
-    nrf: -1.4
+    nrf: -10.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 50.2
+    minimallyProcessedPct: 54.6
     ultraProcessedPct: 0.6
     band: moderately-processed
     method: NOVA (energy-weighted)
@@ -219,6 +219,6 @@ createdAt: "2026-11-14"
 ## Method
 
 1. If you have any food sensitivity or follow a special diet, please check the ingredients of all products before making this recipe.
-2. For the sponge, mix the gluten-free flour, almond flour, salt and baking powder, then add the melted coconut oil, almond milk, coffee and erythritol. Stir the batter together, pour it into a baking dish lined with baking paper (about 18 x 18 cm) and bake in an oven preheated to 180 °C (fan) for 30 minutes until done.
-3. Blitz the tofu in a food processor or blender, adding the erythritol, almond milk and vanilla flavouring as you go.
+2. For the sponge, mix the gluten-free flour, almond flour, salt and baking powder, then add the melted coconut oil, almond milk, coffee and the dates blended to a smooth paste with a splash of the coffee. Stir the batter together, pour it into a baking dish lined with baking paper (about 18 x 18 cm) and bake in an oven preheated to 180 °C (fan) for 30 minutes until done.
+3. Blitz the tofu in a food processor or blender, adding the pitted dates, almond milk and vanilla flavouring as you go, until completely smooth.
 4. Cut the cooled sponge into slices, dip them in the coffee and layer them in glasses with the tofu cream, dusting each layer with cocoa powder; finish the top with cocoa as well. It is worth resting the dessert for a few hours before eating.

@@ -1,9 +1,9 @@
 ---
-title: Creamy Carrot Főzelék with Sour Cream
-description: A creamy, silky Hungarian-style carrot stew with sour cream, topped with toasted pumpkin seeds and fresh parsley.
+title: Creamy Carrot Főzelék with Plant-Based Sour Cream
+description: A creamy, silky Hungarian-style carrot stew with plant-based sour cream, topped with toasted pumpkin seeds and fresh parsley.
 image: ./images/creamy-carrot-fozelek-with-sour-cream.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14527_1791900822792_creamy-hungarian-carrot-pottage-with-toasted-pumpkin-seeds_f5216efe.jpg
-imageAlt: Creamy Carrot Főzelék with Sour Cream
+imageAlt: Creamy Carrot Főzelék with Plant-Based Sour Cream
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14527-tejfoeloes-sargarepafozelek-kremes-oszi-zoeldsegfogas
@@ -53,13 +53,13 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 150 g sour cream
+  - raw: 150 g plant-based sour cream
     group: Main ingredients
     quantity: 150
     unit: g
-    item: sour cream
+    item: plant-based sour cream
     grams: 150
-    fdcId: 171257
+    fdcId: 82019693
     matchConfidence: high
     cooking: boiled
   - raw: 30 g whole-wheat flour
@@ -149,16 +149,16 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 300
-    energyKj: 1257
-    protein_g: 7.2
-    fat_g: 17.4
-    satFat_g: 5.4
-    carbs_g: 32.6
-    fiber_g: 7.6
-    sugar_g: 13.2
-    sodium_mg: 1117
-    availableCarb_g: 25
+    energyKcal: 243
+    energyKj: 1016
+    protein_g: 7.7
+    fat_g: 10.8
+    satFat_g: 1.7
+    carbs_g: 31.9
+    fiber_g: 7.9
+    sugar_g: 12.2
+    sodium_mg: 1119
+    availableCarb_g: 24
   glycemic:
     gi: 38
     gl: 9
@@ -166,31 +166,32 @@ nutrition:
     glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 55
+    measuredGiPct: 57
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0
-    band: neutral
+    score: -0.5
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.24
   balance:
-    score: 8
-    band: high
-    nrf: 72.9
+    score: 9
+    band: excellent
+    nrf: 96.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 97.3
+    minimallyProcessedPct: 89.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -208,8 +209,8 @@ createdAt: "2026-11-14"
 3. **Cooking and thickening:** Heat the olive oil in a medium saucepan, then add the finely chopped onion. Sweat over low heat until translucent, 3-4 minutes, then stir in the chopped garlic for half a minute.
 4. Add the sliced carrots to the pan and fry for 2 minutes in the olive-oil base. Add salt, sprinkle in the ground caraway and black pepper, and add the bay leaves. Pour in the hot vegetable broth so that it just covers the carrots.
 5. Cook covered over medium heat for 12-15 minutes, until the carrots are tender but still slightly crisp. Take out a third of the cooked carrots into a small bowl, purée it smooth with a hand blender, then pour it back into the pot for a silkier texture.
-6. In a small bowl, stir the sour cream with the flour and a few tablespoons of hot cooking liquid until smooth, to temper it. Drizzle the mixture into the stew, stirring constantly, then simmer for 2-3 minutes until nicely thickened. Turn off the heat, fish out the bay leaves and season with the fresh lemon juice.
-7. **Serving:** Ladle the hot, creamy carrot stew into deep plates. Spoon a little extra sour cream on top and sprinkle generously with fresh parsley and the crisply toasted pumpkin seeds.
+6. In a small bowl, stir the plant-based sour cream with the flour and a few tablespoons of hot cooking liquid until smooth, to temper it. Drizzle the mixture into the stew, stirring constantly, then simmer for 2-3 minutes until nicely thickened. Turn off the heat, fish out the bay leaves and season with the fresh lemon juice.
+7. **Serving:** Ladle the hot, creamy carrot stew into deep plates. Spoon a little extra plant-based sour cream on top and sprinkle generously with fresh parsley and the crisply toasted pumpkin seeds.
 
 ## Tips
 

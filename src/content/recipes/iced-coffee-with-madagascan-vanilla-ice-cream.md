@@ -85,14 +85,15 @@ ingredients:
     matchConfidence: medium
     excludeFromNutrition: true
     cooking: raw
-  - raw: 15 ml chocolate sauce
+  - raw: 15 ml no-added-sugar chocolate sauce
     quantity: 15
     unit: ml
-    item: chocolate sauce
-    grams: 12
+    item: no-added-sugar chocolate sauce
+    grams: 15
     milliliters: 15
-    fdcId: 170271
+    fdcId: 167567
     matchConfidence: medium
+    proxyOk: true
     cooking: raw
   - raw: 2 g grated chocolate
     quantity: 2
@@ -104,43 +105,43 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 352
-    energyKj: 1473
-    protein_g: 2.7
-    fat_g: 23.5
-    satFat_g: 11.9
-    carbs_g: 35
-    fiber_g: 1.6
-    sugar_g: 29
-    sodium_mg: 57
-    availableCarb_g: 32.8
+    energyKcal: 357
+    energyKj: 1495
+    protein_g: 4
+    fat_g: 26.9
+    satFat_g: 13.5
+    carbs_g: 33.1
+    fiber_g: 3.4
+    sugar_g: 23.3
+    sodium_mg: 56
+    availableCarb_g: 29
   glycemic:
-    gi: 51
-    gl: 17
+    gi: 48
+    gl: 14
     giBand: low
     glBand: medium
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 57
+    measuredGiPct: 64
   nutriScore:
     grade: E
-    points: 24
+    points: 23
     category: beverage
     version: "2023"
-    coverage: 0.48
+    coverage: 0.49
   inflammation:
-    score: 1.5
+    score: 1.4
     band: pro-inflammatory
     method: fii v4
   balance:
     score: 1
     band: poor
-    nrf: -30.1
+    nrf: -26.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 63.9
-    ultraProcessedPct: 36.1
-    band: highly-processed
+    minimallyProcessedPct: 82.7
+    ultraProcessedPct: 17.3
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
@@ -159,4 +160,4 @@ createdAt: "2026-11-14"
 2. Cool the coffee! If you have time, the fridge will do the job slowly; if you are in a hurry, stir ice cubes into the coffee.
 3. Froth the oat milk! You can use a wide range of tools, and you can swap in other plant-based milks too. Oat drink, for example, froths well.
 4. Build the drink! Pour the cooled coffee into a chilled glass, then stir in the caramel sauce. Spoon on some of the milk foam, then add as much vanilla ice cream as needed to fill the glass.
-5. Add the extras! Chocolate sauce, grated chocolate, maybe freeze-dried fruit, cinnamon or a filled Rolo? Only your imagination limits how you top your perfectly refreshing, delicious and invigorating iced coffee.
+5. Add the extras! No-added-sugar chocolate sauce, grated chocolate, maybe freeze-dried fruit, cinnamon or a filled Rolo? Only your imagination limits how you top your perfectly refreshing, delicious and invigorating iced coffee.

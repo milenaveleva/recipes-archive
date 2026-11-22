@@ -41,13 +41,12 @@ ingredients:
     fdcId: 82025510
     matchConfidence: high
     cooking: baked
-  - raw: 70 g heavy cream (31%)
+  - raw: 70 g plant-based cooking cream
     quantity: 70
     unit: g
-    item: heavy cream
-    note: 31%
+    item: plant-based cooking cream
     grams: 70
-    fdcId: 2346386
+    fdcId: 82011214
     matchConfidence: high
     cooking: baked
   - raw: 150 ml vegetable broth
@@ -111,16 +110,16 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 494
-    energyKj: 2066
-    protein_g: 15.6
-    fat_g: 17.8
-    satFat_g: 7.8
-    carbs_g: 73.1
+    energyKcal: 462
+    energyKj: 1933
+    protein_g: 15.8
+    fat_g: 14.2
+    satFat_g: 4.5
+    carbs_g: 72.8
     fiber_g: 6.9
-    sugar_g: 6.6
-    sodium_mg: 859
-    availableCarb_g: 66.2
+    sugar_g: 6.4
+    sodium_mg: 860
+    availableCarb_g: 65.9
   glycemic:
     gi: 46
     gl: 30
@@ -134,20 +133,20 @@ nutrition:
     points: 2
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.96
   inflammation:
-    score: 0.1
+    score: -0.2
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.25
   balance:
     score: 7
     band: high
-    nrf: 51.5
+    nrf: 58.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 39.5
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 29.5
+    ultraProcessedPct: 5.8
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
@@ -173,5 +172,5 @@ createdAt: "2026-11-14"
 
 ## Tips
 
-- For an even creamier result, use 33% whipping cream.
+- For an even creamier result, add a little more plant-based cooking cream.
 - The leftover roasted squash makes an excellent cream soup for the next day.

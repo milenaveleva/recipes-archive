@@ -49,13 +49,13 @@ ingredients:
     fdcId: 172238
     matchConfidence: high
     cooking: raw
-  - raw: 200 ml sour cream
+  - raw: 200 ml plant-based sour cream
     quantity: 200
     unit: ml
-    item: sour cream
-    grams: 162.3
+    item: plant-based sour cream
+    grams: 206
     milliliters: 200
-    fdcId: 171257
+    fdcId: 82019693
     matchConfidence: high
     cooking: raw
   - raw: 200 ml Greek yogurt
@@ -86,47 +86,48 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 283
-    energyKj: 1183
-    protein_g: 16.3
-    fat_g: 21.8
-    satFat_g: 6.2
-    carbs_g: 6.5
-    fiber_g: 1
-    sugar_g: 3.7
-    sodium_mg: 482
-    availableCarb_g: 5.5
+    energyKcal: 226
+    energyKj: 944
+    protein_g: 17.2
+    fat_g: 14.9
+    satFat_g: 2.2
+    carbs_g: 6.1
+    fiber_g: 1.4
+    sugar_g: 2.7
+    sodium_mg: 487
+    availableCarb_g: 4.7
   glycemic:
     gi: 10
-    gl: 1
+    gl: 0
     giBand: low
     glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
-    grade: B
-    points: 2
+    grade: A
+    points: 0
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.2
-    band: neutral
+    score: -0.4
+    band: mildly-anti-inflammatory
     method: fii v4
   balance:
-    score: 4
-    band: low
-    nrf: 23.4
+    score: 6
+    band: moderate
+    nrf: 37.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 79
+    minimallyProcessedPct: 63.4
     ultraProcessedPct: 0
-    band: minimally-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
@@ -138,7 +139,7 @@ createdAt: "2026-11-14"
 ## Method
 
 1. Labneh is a refreshing cream cheese that is easy to make at home.
-2. The simplest way is to mix Greek yogurt and sour cream, salt lightly, season to taste, then tip it into cheesecloth and hang it over a bowl to drip overnight in the fridge.
+2. The simplest way is to mix Greek yogurt and plant-based sour cream, salt lightly, season to taste, then tip it into cheesecloth and hang it over a bowl to drip overnight in the fridge.
 3. For the salad, put the finished labneh on the bottom, pile the salad leaves on top and season them with a little olive oil, lime juice and a pinch of salt.
 4. Top with the salmon slices and capers and finish with a little dressing.
 

@@ -73,12 +73,12 @@ ingredients:
     fdcId: 171326
     matchConfidence: medium
     cooking: boiled
-  - raw: 200 g whipping cream
+  - raw: 200 g plant-based whipping cream
     quantity: 200
     unit: g
-    item: whipping cream
+    item: plant-based whipping cream
     grams: 200
-    fdcId: 170859
+    fdcId: 82011214
     matchConfidence: high
     cooking: boiled
   - raw: 750 g mixed berries
@@ -122,16 +122,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 335
-    energyKj: 1400
-    protein_g: 3.3
-    fat_g: 15.4
-    satFat_g: 9.4
-    carbs_g: 52
+    energyKcal: 260
+    energyKj: 1088
+    protein_g: 3.5
+    fat_g: 6.8
+    satFat_g: 0.8
+    carbs_g: 51.7
     fiber_g: 7.7
-    sugar_g: 36
-    sodium_mg: 47
-    availableCarb_g: 44.3
+    sugar_g: 35.5
+    sodium_mg: 46
+    availableCarb_g: 44
   glycemic:
     gi: 51
     gl: 22
@@ -139,30 +139,31 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 79
+    measuredGiPct: 80
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: -1
     category: general
     version: "2023"
-    coverage: 0.93
+    coverage: 0.88
   inflammation:
-    score: 0.7
-    band: mildly-pro-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
   balance:
-    score: 2
-    band: poor
-    nrf: 1.1
+    score: 3
+    band: low
+    nrf: 16.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 100
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 76.3
+    ultraProcessedPct: 23.7
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -178,7 +179,7 @@ createdAt: "2026-11-14"
 2. Wash and slice the lemon and orange.
 3. Make a "stock" from the 1.5 litres of water, the honey, the vanilla extract, the orange and lemon slices, and the apple peel.
 4. After 20 minutes, remove the spices, apple peel and fruit from the water, then cook the berries in this water.
-5. Blend the cooked fruit with a little of the stock and stir in the whipping cream.
+5. Blend the cooked fruit with a little of the stock and stir in the plant-based whipping cream.
 6. Strain the remaining stock and cook the apple pieces and sour cherries in it for 10 minutes.
 7. Add the creamy blended mixture to the cooked fruit base and cook for a few more minutes. Sweeten to taste.
 8. Chill before serving.

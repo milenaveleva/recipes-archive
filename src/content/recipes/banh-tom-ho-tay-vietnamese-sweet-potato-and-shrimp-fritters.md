@@ -35,13 +35,13 @@ ingredients:
     fdcId: 169306
     matchConfidence: high
     cooking: fried
-  - raw: 120 g rice flour
+  - raw: 120 g brown rice flour
     group: For the batter and crispy shrimp
     quantity: 120
     unit: g
-    item: rice flour
+    item: brown rice flour
     grams: 120
-    fdcId: 1104867
+    fdcId: 168898
     matchConfidence: high
     cooking: fried
   - raw: 40 g cornstarch
@@ -158,24 +158,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 484
-    energyKj: 2023
-    protein_g: 21.5
-    fat_g: 15
-    satFat_g: 1.7
-    carbs_g: 68.1
-    fiber_g: 4.1
-    sugar_g: 7.9
+    energyKcal: 485
+    energyKj: 2030
+    protein_g: 21.7
+    fat_g: 15.5
+    satFat_g: 1.8
+    carbs_g: 67
+    fiber_g: 5.3
+    sugar_g: 8.1
     sodium_mg: 2044
-    availableCarb_g: 64
+    availableCarb_g: 61.7
   glycemic:
-    gi: 61
+    gi: 64
     gl: 39
     giBand: medium
     glBand: high
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 10
+    measuredGiPct: 45
   nutriScore:
     grade: C
     points: 5
@@ -183,14 +183,14 @@ nutrition:
     version: "2023"
     coverage: 0.72
   inflammation:
-    score: -0.3
+    score: -0.5
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.5
   balance:
     score: 6
     band: moderate
-    nrf: 35.3
+    nrf: 38.4
     version: NRF9.3
   processing:
     minimallyProcessedPct: 98.7
@@ -214,7 +214,7 @@ createdAt: "2026-11-14"
 
 1. **Preparation and mixing the batter:** Peel the sweet potato and cut it into matchstick-thin (julienne) strips with a sharp knife or mandoline. Soak in cold water for 10 minutes to remove excess starch, then dry thoroughly with paper towels.
 2. Wash and peel the shrimp (you can leave the tail on for looks if you like), wipe them completely dry and sprinkle with a pinch of salt.
-3. In a bowl, mix the rice flour, cornstarch, ground turmeric and fine salt. Gradually pour in about 150 ml of cold water and whisk into a smooth, thick pancake-batter consistency. Fold in the dried sweet potato strips so the batter coats every strand.
+3. In a bowl, mix the brown rice flour, cornstarch, ground turmeric and fine salt. Gradually pour in about 150 ml of cold water and whisk into a smooth, thick pancake-batter consistency. Fold in the dried sweet potato strips so the batter coats every strand.
 4. **Making the nước chấm dipping sauce:** In a small bowl, mix 4 tablespoons (about 60 ml) of warm water with the honey until the honey has completely dissolved. Add the fish sauce and the freshly squeezed lime juice. Stir in the finely crushed garlic and the thinly sliced red chilli. Taste: the flavour should be perfectly balanced between sweet, salty, sour and spicy notes.
 5. **Frying until golden brown and serving:** In a deeper pan, heat the sunflower oil to medium-high heat (about 170-175 °C). Put a portion of the battered sweet potato strips on a flat slotted spatula or ladle, shape it into a palm-sized fritter, then lay 1-2 shrimp on top, pressing them lightly into the mixture.
 6. Carefully slide the shaped fritter into the hot oil. Fry for 3-4 minutes per side until the sweet potato is crispy golden and the shrimp is nicely pink. Lift out onto a rack or paper towel to drain.
@@ -222,5 +222,5 @@ createdAt: "2026-11-14"
 
 ## Tips
 
-- The secret to the super-crispy texture is the ratio of rice flour to cornstarch, and drying the sweet potato thoroughly. Turmeric not only gives the fritters a beautiful golden-yellow colour but also a delicate, warm aroma.
+- The secret to the super-crispy texture is the ratio of brown rice flour to cornstarch, and drying the sweet potato thoroughly. Turmeric not only gives the fritters a beautiful golden-yellow colour but also a delicate, warm aroma.
 - When eating, always wrap the crispy fritter in a fresh lettuce leaf with mint and coriander: the fresh greens perfectly offset the sweetness of the fried sweet potato and the spicy sauce.

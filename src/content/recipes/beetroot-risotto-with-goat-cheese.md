@@ -98,13 +98,13 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 200 ml dry white wine
+  - raw: 200 ml vegetable broth
     quantity: 200
     unit: ml
-    item: dry white wine
-    grams: 198.8
+    item: vegetable broth
+    grams: 186.8
     milliliters: 200
-    fdcId: 174837
+    fdcId: 171583
     matchConfidence: high
     cooking: boiled
   - raw: 5 g thyme
@@ -152,27 +152,27 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 974
-    energyKj: 4074
-    protein_g: 22.3
+    energyKcal: 935
+    energyKj: 3913
+    protein_g: 22.4
     fat_g: 50.8
     satFat_g: 15.8
-    carbs_g: 100.8
+    carbs_g: 100
     fiber_g: 7.8
-    sugar_g: 14.7
-    sodium_mg: 2380
-    availableCarb_g: 93
+    sugar_g: 14.5
+    sodium_mg: 2516
+    availableCarb_g: 92.1
   glycemic:
-    gi: 63
+    gi: 64
     gl: 59
     giBand: medium
     glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 78
+    measuredGiPct: 79
   nutriScore:
     grade: C
-    points: 4
+    points: 5
     category: general
     version: "2023"
     coverage: 1
@@ -184,10 +184,10 @@ nutrition:
   balance:
     score: 2
     band: poor
-    nrf: 5.6
+    nrf: 5.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 72.3
+    minimallyProcessedPct: 75.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -211,8 +211,8 @@ createdAt: "2026-11-14"
 3. For the risotto, heat the broth and keep it hot.
 4. Finely chop the onion and sauté it with the crushed garlic in the olive oil.
 5. When it turns glossy and translucent, add the rice and heat it through for 4–5 minutes, stirring so the onion doesn't burn.
-6. Pour in the white wine and stir it in.
-7. The rice absorbs the wine in about 2 minutes, then you can start adding the hot broth.
+6. Pour in the first 200 ml of hot vegetable broth and stir it in.
+7. The rice absorbs it in about 2 minutes, then you can keep adding the rest of the hot broth.
 8. Add it one ladleful at a time, as much as the rice takes up, making sure the grains always stay under the liquid and the risotto keeps simmering gently. Brown arborio needs about 40-45 minutes and more broth than white risotto rice. These two points are very important!
 9. When the rice is almost tender, season with salt, pepper, a few drops of lemon juice and the mascarpone-beetroot puree. Always leave the result a little looser, because it will thicken by the time it reaches the table. Stir in the olive oil and grated Parmesan only at the very end with a wooden spoon or silicone spatula. The ideal texture is when it spreads slightly on the plate by itself once served.
 10. Serve with good soft goat cheese, the roasted beetroot wedges, a few beet leaves and fresh herbs; you can brighten it with a little grated lemon zest or preserved lemon.

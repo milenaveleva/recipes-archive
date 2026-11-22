@@ -1,6 +1,6 @@
 ---
 title: Leftover Vegetable Skillet Egg Frittata
-description: A quick, juicy skillet frittata made from leftover vegetables, sour cream and melty Trappist cheese, ready in 25 minutes.
+description: A quick, juicy skillet frittata made from leftover vegetables, plant-based sour cream and melty Trappist cheese, ready in 25 minutes.
 image: ./images/leftover-vegetable-skillet-egg-frittata.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14580_1792148694300_skillet-leftover-vegetable-frittata_48e3a035.jpg
 imageAlt: Leftover Vegetable Skillet Egg Frittata
@@ -33,12 +33,12 @@ ingredients:
     fdcId: 748967
     matchConfidence: high
     cooking: fried
-  - raw: 150 g sour cream
+  - raw: 150 g plant-based sour cream
     quantity: 150
     unit: g
-    item: sour cream
+    item: plant-based sour cream
     grams: 150
-    fdcId: 171257
+    fdcId: 82019693
     matchConfidence: high
     cooking: fried
   - raw: 150 g Trappist cheese
@@ -109,16 +109,16 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 464
-    energyKj: 1940
-    protein_g: 23.1
-    fat_g: 32.3
-    satFat_g: 13.6
-    carbs_g: 20.6
-    fiber_g: 5.5
-    sugar_g: 6.7
-    sodium_mg: 939
-    availableCarb_g: 15.1
+    energyKcal: 406
+    energyKj: 1700
+    protein_g: 23.6
+    fat_g: 25.7
+    satFat_g: 9.9
+    carbs_g: 19.9
+    fiber_g: 5.8
+    sugar_g: 5.7
+    sodium_mg: 940
+    availableCarb_g: 14.2
   glycemic:
     gi: 13
     gl: 2
@@ -129,28 +129,29 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 6
+    points: 4
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.2
+    score: 0
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.27
   balance:
-    score: 4
-    band: low
-    nrf: 22.6
+    score: 5
+    band: moderate
+    nrf: 29.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 71.2
+    minimallyProcessedPct: 63
     ultraProcessedPct: 0
-    band: minimally-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -165,8 +166,8 @@ createdAt: "2026-11-14"
 
 1. **Preparation and sautéing the vegetables:** Cut the leftover vegetables (cooked soup vegetables, roasted or steamed vegetable leftovers) into bite-sized pieces. Chop the onion finely and crush the garlic. Grate the Trappist cheese on a coarse grater.
 2. In a large pan with a lid, heat the sunflower oil over medium heat. Add the chopped onion and sweat for 2-3 minutes until translucent. Then stir in the crushed garlic and the diced leftover mixed vegetables and fry together for 4-5 minutes so they get a light crust.
-3. **Assembling and cooking the frittata:** In a bowl, beat the eggs with the sour cream, sweet paprika, salt and ground black pepper until you get a nice, uniform cream. Stir in half of the finely chopped fresh parsley.
-4. Pour the seasoned sour cream and egg mixture evenly over the warm, sizzling vegetables in the pan. Reduce the heat to low and cover the pan with the lid. Cook like this for 8-10 minutes until the egg mixture sets on the bottom and sides but the top is still slightly wobbly.
+3. **Assembling and cooking the frittata:** In a bowl, beat the eggs with the plant-based sour cream, sweet paprika, salt and ground black pepper until you get a nice, uniform cream. Stir in half of the finely chopped fresh parsley.
+4. Pour the seasoned plant-based sour cream and egg mixture evenly over the warm, sizzling vegetables in the pan. Reduce the heat to low and cover the pan with the lid. Cook like this for 8-10 minutes until the egg mixture sets on the bottom and sides but the top is still slightly wobbly.
 5. Sprinkle the grated Trappist cheese over the top, put the lid back on and cook for another 3-4 minutes until the cheese has completely melted and turned golden and soft. If you have an ovenproof pan, you can also brown the top under a grill preheated to 200 °C for 3 minutes.
 6. Before serving, sprinkle with the remaining fresh parsley. Let it rest in the pan for 2-3 minutes, then cut into cake-like wedges and serve with fresh crusty bread or pickles.
 

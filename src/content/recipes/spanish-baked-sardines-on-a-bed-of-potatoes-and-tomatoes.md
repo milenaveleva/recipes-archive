@@ -1,6 +1,6 @@
 ---
 title: Spanish Baked Sardines on a Bed of Potatoes and Tomatoes
-description: Sardines baked over thinly sliced potatoes, onion and tomatoes with white wine, garlic and olive oil, finished with lemon and parsley.
+description: Sardines baked over thinly sliced potatoes, onion and tomatoes with vegetable broth, garlic and olive oil, finished with lemon and parsley.
 image: ./images/spanish-baked-sardines-on-a-bed-of-potatoes-and-tomatoes.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14760_1793448419848_spanish-baked-sardines-on-potato-and-tomato-bed_8e06e127.jpg
 imageAlt: Spanish Baked Sardines on a Bed of Potatoes and Tomatoes
@@ -72,14 +72,15 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: baked
-  - raw: 80 ml dry white wine
+  - raw: 80 ml vegetable broth (with a squeeze of lemon juice)
     group: Spices and pantry
     quantity: 80
     unit: ml
-    item: dry white wine
-    grams: 79.5
+    item: vegetable broth
+    note: with a squeeze of lemon juice
+    grams: 74.7
     milliliters: 80
-    fdcId: 174837
+    fdcId: 171583
     matchConfidence: high
     cooking: baked
   - raw: 45 ml lemon juice
@@ -118,24 +119,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 332
-    energyKj: 1390
+    energyKcal: 317
+    energyKj: 1326
     protein_g: 14.6
     fat_g: 17.7
     satFat_g: 2.9
-    carbs_g: 26.7
+    carbs_g: 26.4
     fiber_g: 4.4
-    sugar_g: 6.1
-    sodium_mg: 362
-    availableCarb_g: 22.4
+    sugar_g: 6
+    sodium_mg: 416
+    availableCarb_g: 22.1
   glycemic:
-    gi: 59
+    gi: 60
     gl: 13
     giBand: medium
     glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 81
+    measuredGiPct: 82
   nutriScore:
     grade: A
     points: 0
@@ -150,10 +151,10 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 39.3
+    nrf: 40.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 95.1
+    minimallyProcessedPct: 99.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -173,7 +174,7 @@ createdAt: "2026-11-14"
 ## Method
 
 1. **Preparing and baking the vegetable bed:** Preheat the oven to 200 °C (190 °C with fan). Peel the potatoes and cut them into thin slices about 3 mm thick. Cut the onion into fine half-moons or rings, and crush the garlic cloves or cut them into hair-thin slices.
-2. Drizzle a spacious ceramic baking dish or tray with 2 tablespoons of extra virgin olive oil. Spread the potato slices and onion evenly across the bottom, scatter over half the garlic, then season generously with salt and pepper. Drizzle with the dry white wine and a little more olive oil.
+2. Drizzle a spacious ceramic baking dish or tray with 2 tablespoons of extra virgin olive oil. Spread the potato slices and onion evenly across the bottom, scatter over half the garlic, then season generously with salt and pepper. Drizzle with the vegetable broth with a squeeze of lemon juice and a little more olive oil.
 3. Put it in the preheated oven and bake for 20-25 minutes until the potatoes are half-soft and the edges begin to brown lightly.
 4. **Layering the sardines and finishing the bake:** While the potatoes bake, slice the tomatoes into attractive rounds. Wash the lemon thoroughly, cut half into thin slices and set the other half aside to squeeze at serving.
 5. Take the dish out of the oven. Arrange the tomato slices and lemon slices on the half-baked potato bed. Lay the sardines on top, sprinkle with the remaining garlic, add another pinch of salt and freshly ground black pepper, and finally drizzle with the remaining extra virgin olive oil.
@@ -182,5 +183,5 @@ createdAt: "2026-11-14"
 
 ## Tips
 
-- The secret of the perfect sauce is the combination of quality dry white wine and olive oil: the potatoes absorb the aromas while a silky, dunkable sauce forms at the bottom of the tray.
+- The secret of the perfect sauce is the combination of vegetable broth, lemon and quality olive oil: the potatoes absorb the aromas while a silky, dunkable sauce forms at the bottom of the tray.
 - If you use fresh sardines, drain them thoroughly after cleaning and scaling; if you make it with premium canned sardines, feel free to drizzle their fine olive oil over the vegetables before baking!

@@ -179,14 +179,14 @@ ingredients:
     fdcId: 172370
     matchConfidence: high
     cooking: boiled
-  - raw: 2 tbsp sour cream
+  - raw: 2 tbsp plant-based sour cream
     group: For the thickener
     quantity: 2
     unit: tbsp
-    item: sour cream
-    grams: 24
+    item: plant-based sour cream
+    grams: 30.5
     milliliters: 29.5736
-    fdcId: 171257
+    fdcId: 82019693
     matchConfidence: high
     cooking: boiled
   - raw: 1 tsp cornstarch
@@ -199,12 +199,12 @@ ingredients:
     fdcId: 169698
     matchConfidence: high
     cooking: boiled
-  - raw: sour cream, to taste
+  - raw: plant-based sour cream (to taste)
     group: For serving
-    item: sour cream
+    item: plant-based sour cream
     note: to taste
     grams: 40
-    fdcId: 171257
+    fdcId: 82019693
     matchConfidence: high
     cooking: raw
   - raw: 1 pinch paprika
@@ -274,16 +274,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 591
-    energyKj: 2473
-    protein_g: 30.4
-    fat_g: 30.2
-    satFat_g: 6.1
-    carbs_g: 58.5
-    fiber_g: 17.4
-    sugar_g: 10.2
-    sodium_mg: 3036
-    availableCarb_g: 41
+    energyKcal: 567
+    energyKj: 2373
+    protein_g: 30.7
+    fat_g: 27.4
+    satFat_g: 4.5
+    carbs_g: 58.2
+    fiber_g: 17.5
+    sugar_g: 9.7
+    sodium_mg: 3037
+    availableCarb_g: 40.6
   glycemic:
     gi: 51
     gl: 21
@@ -291,7 +291,7 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 65
+    measuredGiPct: 66
   nutriScore:
     grade: C
     points: 3
@@ -299,23 +299,24 @@ nutrition:
     version: "2023"
     coverage: 0.85
   inflammation:
-    score: -0.8
+    score: -0.9
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.39
   balance:
-    score: 6
-    band: moderate
-    nrf: 38.9
+    score: 7
+    band: high
+    nrf: 41.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 53.1
+    minimallyProcessedPct: 49.8
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -337,5 +338,5 @@ createdAt: "2026-11-14"
 7. Mix the cabbage base with the onion base, add water and simmer over medium heat while you stuff the leaves.
 8. Thinly slice off the thick stem part of the stuffing leaves and place an oblong, meatball-sized portion of filling at the bottom of each. Roll up and tuck in any overhanging parts.
 9. When all are stuffed, lift out half of the cabbage base and arrange the stuffed cabbage rolls on the cabbage left in the pot. Cover with the removed cabbage, add water to almost cover the rolls and cook covered for 1 hour over low heat.
-10. Then lift out the stuffed cabbage and thicken the base with sour cream stirred with the cornstarch and 100 ml water.
-11. To serve, ladle some of the base onto a plate, top with the stuffed cabbage, a little sour cream and a sprinkle of paprika.
+10. Then lift out the stuffed cabbage and thicken the base with plant-based sour cream stirred with the cornstarch and 100 ml water.
+11. To serve, ladle some of the base onto a plate, top with the stuffed cabbage, a little plant-based sour cream and a sprinkle of paprika.

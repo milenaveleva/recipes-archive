@@ -66,13 +66,6 @@ ingredients:
     matchConfidence: none
     excludeFromNutrition: true
     cooking: raw
-  - raw: dry white wine (recommended pairing)
-    group: Drink suggestion
-    item: dry white wine
-    note: recommended pairing
-    matchConfidence: none
-    excludeFromNutrition: true
-    cooking: raw
 nutrition:
   perServing:
     energyKcal: 630

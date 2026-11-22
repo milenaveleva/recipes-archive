@@ -1,6 +1,6 @@
 ---
 title: French Oyster Mushroom Country Soup with Potatoes
-description: A rustic French soup of oyster mushrooms and tender potatoes with white wine and thyme, served with toasted whole-wheat baguette.
+description: A rustic French soup of oyster mushrooms and tender potatoes with lemon and thyme, served with toasted whole-wheat baguette.
 image: ./images/french-oyster-mushroom-country-soup-with-potatoes.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14727_1792634893523_french-rustic-oyster-mushroom-potato-soup_c6420664.jpg
 imageAlt: French Oyster Mushroom Country Soup with Potatoes
@@ -52,15 +52,16 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: 100 ml dry white wine
+  - raw: 100 ml vegetable broth (with a squeeze of lemon juice)
     group: Soup base
     quantity: 100
     unit: ml
-    item: dry white wine
-    grams: 99.4
+    item: vegetable broth
+    note: with a squeeze of lemon juice
+    grams: 93.4
     milliliters: 100
-    fdcId: 174837
-    matchConfidence: medium
+    fdcId: 171583
+    matchConfidence: high
     cooking: boiled
   - raw: 1000 ml vegetable broth
     group: Soup base
@@ -140,18 +141,18 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 431
-    energyKj: 1805
-    protein_g: 12.9
+    energyKcal: 412
+    energyKj: 1725
+    protein_g: 13
     fat_g: 13.8
     satFat_g: 1.9
-    carbs_g: 63.9
+    carbs_g: 63.5
     fiber_g: 8.7
-    sugar_g: 5.6
-    sodium_mg: 1000
-    availableCarb_g: 55.3
+    sugar_g: 5.5
+    sodium_mg: 1067
+    availableCarb_g: 54.8
   glycemic:
-    gi: 64
+    gi: 65
     gl: 36
     giBand: medium
     glBand: medium
@@ -172,10 +173,10 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 26.7
+    nrf: 27.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 57.9
+    minimallyProcessedPct: 60.7
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
@@ -196,7 +197,7 @@ createdAt: "2026-11-14"
 
 1. **Preparation and vegetable base:** Peel the potatoes and cut them into 1.5 cm cubes. Chop the shallots and garlic finely. Clean the oyster mushrooms with a dry paper towel, remove the tough stems and cut or tear the caps into rustic strips.
 2. In a heavy-bottomed pot, heat the olive oil and half of the additional olive oil (11 g). Add the shallots and sweat over medium heat for 3-4 minutes until translucent. Then stir in the garlic and fry for 1 more minute until fragrant.
-3. **Frying the mushrooms and cooking:** Add the oyster mushrooms to the pot and fry over higher heat for 5-6 minutes until lightly browned and their own liquid has cooked off. Pour in the dry white wine and let it bubble for 1-2 minutes until the alcohol evaporates, dissolving the flavourful browned bits stuck to the bottom of the pot.
+3. **Frying the mushrooms and cooking:** Add the oyster mushrooms to the pot and fry over higher heat for 5-6 minutes until lightly browned and their own liquid has cooked off. Pour in the vegetable broth with a squeeze of lemon juice and let it bubble for 1-2 minutes, dissolving the flavourful browned bits stuck to the bottom of the pot.
 4. Stir in the diced potatoes, then pour in the vegetable broth. Add the fresh thyme sprigs, and season with salt and pepper to taste.
 5. Bring the soup to a boil, then reduce the heat and simmer half covered for about 15-18 minutes until the potato cubes are perfectly tender but still hold together nicely.
 6. **Finishing and serving:** At the end of cooking, remove the thyme sprigs from the soup. Add the remaining 11 g of extra virgin olive oil and stir gently so the clear soup base gets a velvety shine. Sprinkle generously with finely chopped fresh parsley.

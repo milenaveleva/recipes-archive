@@ -137,4 +137,4 @@ createdAt: "2026-11-14"
 
 1. Bring the oat milk to a boil and froth it, then add the spices, the grated orange zest and honey to taste.
 2. Stir in the brewed coffee and heat for a few more seconds, then pour into a heatproof glass or mug.
-3. Top with a little whipped cream if you like, and decorate with grated orange zest or cinnamon.
+3. Top with a little plant-based whipped cream if you like, and decorate with grated orange zest or cinnamon.

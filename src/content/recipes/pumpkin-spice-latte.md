@@ -107,4 +107,4 @@ createdAt: "2026-11-14"
 2. Pour the milk into the glass.
 3. Prepare the espresso and pour it in.
 4. Heat the oat milk and pour it into the glass.
-5. Finally, decorate with whipped cream and a pinch of cinnamon.
+5. Finally, decorate with plant-based whipped cream and a pinch of cinnamon.

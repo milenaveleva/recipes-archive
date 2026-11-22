@@ -1,6 +1,6 @@
 ---
 title: Grilled Salmon with Rice and Peas and Creamy Lemon Sauce
-description: Grilled salmon fillets served with olive-oil peas and rice and a velvety cream and lemon sauce. A quick, wholesome meal in 30 minutes.
+description: Grilled salmon fillets served with olive-oil peas and rice and a velvety plant-based cream and lemon sauce. A quick, wholesome meal in 30 minutes.
 image: ./images/grilled-salmon-with-rice-and-peas-and-creamy-lemon-sauce.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10461_1775308804118_grilled-salmon-with-pea-rice-and-creamy-lemon-sauce_8db213a4.png
 imageAlt: Grilled Salmon with Rice and Peas and Creamy Lemon Sauce
@@ -65,13 +65,13 @@ ingredients:
     fdcId: 170419
     matchConfidence: high
     cooking: boiled
-  - raw: 200 ml unsweetened whipping cream
+  - raw: 200 ml plant-based cooking cream
     quantity: 200
     unit: ml
-    item: unsweetened whipping cream
+    item: plant-based cooking cream
     grams: 200
     milliliters: 200
-    fdcId: 170859
+    fdcId: 82011214
     matchConfidence: high
     cooking: boiled
   - raw: 180 g broth or water
@@ -128,16 +128,16 @@ ingredients:
     cooking: grilled
 nutrition:
   perServing:
-    energyKcal: 1129
-    energyKj: 4725
-    protein_g: 55.6
-    fat_g: 79.4
-    satFat_g: 31.7
-    carbs_g: 47.8
+    energyKcal: 943
+    energyKj: 3946
+    protein_g: 56
+    fat_g: 58
+    satFat_g: 10.4
+    carbs_g: 47
     fiber_g: 6.6
-    sugar_g: 8.8
-    sodium_mg: 651
-    availableCarb_g: 41.2
+    sugar_g: 7.5
+    sodium_mg: 649
+    availableCarb_g: 40.3
   glycemic:
     gi: 43
     gl: 17
@@ -145,31 +145,32 @@ nutrition:
     glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 88
+    measuredGiPct: 90
   nutriScore:
-    grade: C
-    points: 4
+    grade: A
+    points: 0
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.83
   inflammation:
-    score: 0
-    band: neutral
+    score: -0.7
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.15
   balance:
-    score: 3
-    band: low
-    nrf: 16.3
+    score: 5
+    band: moderate
+    nrf: 29.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 99.5
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 83.1
+    ultraProcessedPct: 16.3
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

@@ -1,9 +1,9 @@
 ---
-title: Creamy Green Bean Stew with Sour Cream and Roasted Carrots
-description: Classic Hungarian-style green bean főzelék thickened with sour cream, topped with pan-roasted sweet carrots and fresh dill.
+title: Creamy Green Bean Stew with Plant-Based Sour Cream and Roasted Carrots
+description: Classic Hungarian-style green bean főzelék thickened with plant-based sour cream, topped with pan-roasted sweet carrots and fresh dill.
 image: ./images/creamy-green-bean-stew-with-sour-cream-and-roasted-carrots.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14693_1792520165076_hungarian-sour-cream-green-bean-pottage-with-pan-roasted-car_b8c72179.jpg
-imageAlt: Creamy Green Bean Stew with Sour Cream and Roasted Carrots
+imageAlt: Creamy Green Bean Stew with Plant-Based Sour Cream and Roasted Carrots
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14693-tejfoeloes-zoeldbabfozelek-suelt-repas-oszi-fogas
@@ -57,12 +57,12 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 200 g sour cream
+  - raw: 200 g plant-based sour cream
     quantity: 200
     unit: g
-    item: sour cream
+    item: plant-based sour cream
     grams: 200
-    fdcId: 171257
+    fdcId: 82019693
     matchConfidence: high
     cooking: boiled
   - raw: 30 g whole-wheat flour
@@ -145,48 +145,49 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 304
-    energyKj: 1273
-    protein_g: 6.4
-    fat_g: 20
-    satFat_g: 6.4
-    carbs_g: 28.9
-    fiber_g: 7.2
-    sugar_g: 11.4
-    sodium_mg: 1017
-    availableCarb_g: 21.7
+    energyKcal: 228
+    energyKj: 952
+    protein_g: 7
+    fat_g: 11.2
+    satFat_g: 1.4
+    carbs_g: 28
+    fiber_g: 7.6
+    sugar_g: 10
+    sodium_mg: 1019
+    availableCarb_g: 20.4
   glycemic:
-    gi: 32
+    gi: 33
     gl: 7
     giBand: low
     glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 24
+    measuredGiPct: 25
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
-    band: neutral
+    score: -0.6
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.29
   balance:
-    score: 6
-    band: moderate
-    nrf: 40.3
+    score: 8
+    band: high
+    nrf: 62.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98.1
+    minimallyProcessedPct: 87.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -203,10 +204,10 @@ createdAt: "2026-11-14"
 2. In a frying pan, heat 10 ml of sunflower oil and half of the extra virgin olive oil. Add the carrot rounds, sprinkle with a pinch of salt and fry over medium heat for 8-10 minutes until nicely golden, slightly caramelised. Set aside for serving.
 3. **Making the stew:** In a larger pot, heat the remaining 10 ml of oil and the rest of the extra virgin olive oil. Add the finely chopped onion and fry until translucent, about 4-5 minutes. Stir in the crushed garlic, then after half a minute take it off the heat and sprinkle with the sweet paprika.
 4. Add the chopped green beans to the pot, toss thoroughly in the paprika base, then pour in the vegetable broth. Add the bay leaves and season with salt and ground black pepper. Bring to the boil, then cook covered over medium heat for 12-15 minutes until the green beans are just tender but still crunchy.
-5. Meanwhile, make the thickener: stir the sour cream with the flour and a few tablespoons of the warm cooking liquid (tempering) until completely smooth. Slowly drizzle it into the green beans, stirring constantly. Bring back to the boil and cook over low heat for 2-3 minutes until the stew thickens nicely. At the end, season with the apple cider vinegar for a pleasant tang, then turn off the heat.
+5. Meanwhile, make the thickener: stir the plant-based sour cream with the flour and a few tablespoons of the warm cooking liquid (tempering) until completely smooth. Slowly drizzle it into the green beans, stirring constantly. Bring back to the boil and cook over low heat for 2-3 minutes until the stew thickens nicely. At the end, season with the apple cider vinegar for a pleasant tang, then turn off the heat.
 6. **Serving:** Ladle the hot, creamy green bean stew into deep plates. Pile the golden pan-roasted, sweet carrot rounds on top and sprinkle generously with freshly chopped dill. Serve with fresh whole-wheat sourdough bread!
 
 ## Tips
 
 - Don't steam the carrots, fry them until golden: the natural sugars released during frying make a wonderful contrast to the creamy, slightly tangy stew.
-- Tempering: always ladle a little hot cooking liquid into the sour cream and flour mixture before pouring it into the pot, so the sour cream is guaranteed not to curdle.
+- Tempering: always ladle a little hot cooking liquid into the plant-based sour cream and flour mixture before pouring it into the pot, so the plant-based sour cream is guaranteed not to curdle.

@@ -1,6 +1,6 @@
 ---
 title: Mushroom and Barley Stuffed Kohlrabi
-description: Braised kohlrabi stuffed with a mushroom and pearl barley filling, served with garlicky sour cream.
+description: Braised kohlrabi stuffed with a mushroom and pearl barley filling, served with garlicky plant-based sour cream.
 image: ./images/mushroom-and-barley-stuffed-kohlrabi.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14360_1791336280329_stuffed-kohlrabi-with-mushroom-and-barley_14df9793.jpg
 imageAlt: Mushroom and Barley Stuffed Kohlrabi
@@ -101,13 +101,13 @@ ingredients:
     fdcId: 173470
     matchConfidence: high
     cooking: boiled
-  - raw: 150 g sour cream
+  - raw: 150 g plant-based sour cream
     group: For serving
     quantity: 150
     unit: g
-    item: sour cream
+    item: plant-based sour cream
     grams: 150
-    fdcId: 171257
+    fdcId: 82019693
     matchConfidence: high
     cooking: raw
   - raw: 1 bunch fresh parsley
@@ -121,24 +121,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 330
-    energyKj: 1382
-    protein_g: 10.2
-    fat_g: 15
-    satFat_g: 4.7
-    carbs_g: 44.4
-    fiber_g: 13.4
-    sugar_g: 9.7
-    sodium_mg: 929
-    availableCarb_g: 31
+    energyKcal: 273
+    energyKj: 1142
+    protein_g: 10.6
+    fat_g: 8.4
+    satFat_g: 1
+    carbs_g: 43.7
+    fiber_g: 13.7
+    sugar_g: 8.7
+    sodium_mg: 930
+    availableCarb_g: 30
   glycemic:
-    gi: 25
+    gi: 26
     gl: 8
     giBand: low
     glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 60
+    measuredGiPct: 62
   nutriScore:
     grade: B
     points: 1
@@ -146,23 +146,24 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.7
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.3
   balance:
-    score: 7
-    band: high
-    nrf: 59.7
+    score: 9
+    band: excellent
+    nrf: 77.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98.6
+    minimallyProcessedPct: 92.1
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -184,9 +185,9 @@ createdAt: "2026-11-14"
 7. Spoon the warm mushroom and barley filling into the hollowed kohlrabi, pressing down lightly. Put the cut-off lids back on top.
 8. **Braising and serving:** Stand the stuffed kohlrabi side by side in a pot or baking dish in which they fit comfortably. Pour the warm vegetable broth around them (if any filling or kohlrabi pieces are left over, add them to the broth too).
 9. Cover the pot and braise gently over medium heat for about 30-35 minutes until the kohlrabi is completely tender and easily pierced with a fork.
-10. For serving, crush the remaining 1 clove of garlic into the fresh sour cream with a pinch of salt. Place the tender braised stuffed kohlrabi on plates, drizzle with the silky garlicky sour cream and sprinkle with the remaining fresh parsley. Serve warm!
+10. For serving, crush the remaining 1 clove of garlic into the fresh plant-based sour cream with a pinch of salt. Place the tender braised stuffed kohlrabi on plates, drizzle with the silky garlicky plant-based sour cream and sprinkle with the remaining fresh parsley. Serve warm!
 
 ## Tips
 
 - Don't throw away the tender young kohlrabi leaves: finely chopped, they can be mixed straight into the mushroom filling, making the dish even more aromatic and zero-waste.
-- If you want a thicker sauce, after removing the kohlrabi you can quickly simmer a sauce from the braising liquid and 1-2 tablespoons of the garlicky sour cream.
+- If you want a thicker sauce, after removing the kohlrabi you can quickly simmer a sauce from the braising liquid and 1-2 tablespoons of the garlicky plant-based sour cream.

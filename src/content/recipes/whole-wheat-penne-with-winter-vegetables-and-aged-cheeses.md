@@ -58,13 +58,13 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: boiled
-  - raw: 200 ml heavy cream
+  - raw: 200 ml plant-based cooking cream
     quantity: 200
     unit: ml
-    item: heavy cream
-    grams: 198.8
+    item: plant-based cooking cream
+    grams: 200
     milliliters: 200
-    fdcId: 2346386
+    fdcId: 82011214
     matchConfidence: high
     cooking: boiled
   - raw: pea shoots or fresh parsley leaves, a little
@@ -143,16 +143,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 977
-    energyKj: 4087
-    protein_g: 26.2
-    fat_g: 53.3
-    satFat_g: 16.8
-    carbs_g: 109.5
+    energyKcal: 887
+    energyKj: 3711
+    protein_g: 26.8
+    fat_g: 42.9
+    satFat_g: 7.5
+    carbs_g: 108.7
     fiber_g: 14.6
-    sugar_g: 9.3
-    sodium_mg: 789
-    availableCarb_g: 94.9
+    sugar_g: 8.6
+    sodium_mg: 791
+    availableCarb_g: 94.1
   glycemic:
     gi: 50
     gl: 47
@@ -162,29 +162,30 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 85
   nutriScore:
-    grade: C
-    points: 4
+    grade: B
+    points: 2
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.92
   inflammation:
-    score: 0.2
+    score: -0.1
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.02
   balance:
-    score: 4
-    band: low
-    nrf: 22.1
+    score: 5
+    band: moderate
+    nrf: 29.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 94.5
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 85.2
+    ultraProcessedPct: 8.7
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

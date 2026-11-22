@@ -1,6 +1,6 @@
 ---
 title: Sea Bass with Tomatoes and Roasted Potato Salad
-description: Pan-fried sea bass in a white wine, tomato and olive oil sauce, served with a warm potato salad with red onion and parsley.
+description: Pan-fried sea bass in a lemony tomato and olive oil sauce, served with a warm potato salad with red onion and parsley.
 image: ./images/sea-bass-with-tomatoes-and-roasted-potato-salad.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/11025-1775131570084.jpg
 imageAlt: Sea Bass with Tomatoes and Roasted Potato Salad
@@ -73,13 +73,14 @@ ingredients:
     fdcId: 172232
     matchConfidence: high
     cooking: fried
-  - raw: 100 ml dry white wine
+  - raw: 100 ml vegetable broth (with a squeeze of lemon juice)
     quantity: 100
     unit: ml
-    item: dry white wine
-    grams: 99.4
+    item: vegetable broth
+    note: with a squeeze of lemon juice
+    grams: 93.4
     milliliters: 100
-    fdcId: 174837
+    fdcId: 171583
     matchConfidence: high
     cooking: fried
   - raw: 1 tbsp lemon juice
@@ -129,18 +130,18 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 552
-    energyKj: 2308
-    protein_g: 32
-    fat_g: 28.1
+    energyKcal: 513
+    energyKj: 2147
+    protein_g: 32.1
+    fat_g: 28.2
     satFat_g: 4.3
-    carbs_g: 34.8
+    carbs_g: 34
     fiber_g: 4.8
-    sugar_g: 7.2
-    sodium_mg: 721
-    availableCarb_g: 30
+    sugar_g: 7
+    sodium_mg: 857
+    availableCarb_g: 29.1
   glycemic:
-    gi: 52
+    gi: 53
     gl: 15
     giBand: low
     glBand: low
@@ -154,17 +155,17 @@ nutrition:
     version: "2023"
     coverage: 0.93
   inflammation:
-    score: -0.5
+    score: -0.6
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.39
   balance:
     score: 6
     band: moderate
-    nrf: 32.1
+    nrf: 33.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 92.6
+    minimallyProcessedPct: 99.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -186,6 +187,6 @@ createdAt: "2026-11-14"
 1. Cut the potatoes into larger pieces, put in a pot with plenty of salted water and bring to the boil. Cook until tender, then drain.
 2. Pat the fish fillets dry and remove any bones if necessary. Heat a pan and add a little oil. Place the fillets skin side down in the hot oil and fry for about 4 minutes.
 3. Meanwhile finely chop the shallot and garlic, and halve the tomatoes. Add the shallot and garlic to the fish, season with salt and pepper and fry for another minute. Finally add the cherry tomatoes and warm them through quickly for a minute.
-4. Pour in the wine and boil hard for a few minutes until the alcohol has evaporated and a thick sauce forms. By now the fish should be cooked through but still juicy.
+4. Pour in the vegetable broth with a squeeze of lemon juice and boil hard for a few minutes until a thick sauce forms. By now the fish should be cooked through but still juicy.
 5. Finally add the olive oil, chopped basil and lemon juice and stir into a silky sauce.
 6. Toss the cooked potatoes with olive oil, the red onion cut into half-moons and the finely chopped parsley. Salt lightly and toss together. Serve the sea bass with the potato salad.

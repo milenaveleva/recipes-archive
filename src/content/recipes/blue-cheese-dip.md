@@ -33,12 +33,12 @@ ingredients:
     fdcId: 171304
     matchConfidence: high
     cooking: raw
-  - raw: 70 g sour cream
+  - raw: 70 g plant-based sour cream
     quantity: 70
     unit: g
-    item: sour cream
+    item: plant-based sour cream
     grams: 70
-    fdcId: 171257
+    fdcId: 82019693
     matchConfidence: high
     cooking: raw
   - raw: juice of ½ lemon
@@ -72,16 +72,16 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 110
-    energyKj: 460
-    protein_g: 6.1
-    fat_g: 8.7
-    satFat_g: 5.2
-    carbs_g: 2
-    fiber_g: 0
-    sugar_g: 1.3
-    sodium_mg: 295
-    availableCarb_g: 2
+    energyKcal: 92
+    energyKj: 386
+    protein_g: 6.2
+    fat_g: 6.7
+    satFat_g: 4.1
+    carbs_g: 1.8
+    fiber_g: 0.1
+    sugar_g: 1
+    sodium_mg: 296
+    availableCarb_g: 1.7
   glycemic:
     gi: 10
     gl: 0
@@ -92,28 +92,29 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: D
-    points: 17
+    points: 15
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 1.1
+    score: 0.9
     band: pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.01
   balance:
-    score: 1
+    score: 2
     band: poor
-    nrf: -5.8
+    nrf: -1.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 38.5
+    minimallyProcessedPct: 20.9
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
@@ -126,7 +127,7 @@ createdAt: "2026-11-14"
 ## Method
 
 1. In a large bowl, mash the blue cheese with a fork until creamy.
-2. Stir in the lemon juice, sour cream, Greek yogurt and vinegar. You should get a creamy dip.
+2. Stir in the lemon juice, plant-based sour cream, Greek yogurt and vinegar. You should get a creamy dip.
 3. Season with salt and pepper, and that is it, ready!
 
 ## Tips

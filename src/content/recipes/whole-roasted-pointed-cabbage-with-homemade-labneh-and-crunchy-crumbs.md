@@ -34,13 +34,13 @@ ingredients:
     fdcId: 330137
     matchConfidence: high
     cooking: raw
-  - raw: 400 ml sour cream
+  - raw: 400 ml plant-based sour cream
     quantity: 400
     unit: ml
-    item: sour cream
-    grams: 388
+    item: plant-based sour cream
+    grams: 412
     milliliters: 400
-    fdcId: 171257
+    fdcId: 82019693
     matchConfidence: high
     cooking: raw
   - raw: 150 g extra virgin olive oil
@@ -109,18 +109,18 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 703
-    energyKj: 2941
-    protein_g: 19.6
-    fat_g: 59.1
-    satFat_g: 15.6
-    carbs_g: 29.2
-    fiber_g: 8
-    sugar_g: 16.7
-    sodium_mg: 1795
-    availableCarb_g: 21.2
+    energyKcal: 557
+    energyKj: 2330
+    protein_g: 21.1
+    fat_g: 42.3
+    satFat_g: 6
+    carbs_g: 27.6
+    fiber_g: 8.9
+    sugar_g: 14.1
+    sodium_mg: 1800
+    availableCarb_g: 18.8
   glycemic:
-    gi: 16
+    gi: 15
     gl: 3
     giBand: low
     glBand: low
@@ -129,28 +129,29 @@ nutrition:
     measuredGiPct: 4
   nutriScore:
     grade: C
-    points: 5
+    points: 4
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0
-    band: neutral
+    score: -0.6
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.02
   balance:
-    score: 3
-    band: low
-    nrf: 15.2
+    score: 5
+    band: moderate
+    nrf: 26.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 94
-    ultraProcessedPct: 0.8
+    minimallyProcessedPct: 84.2
+    ultraProcessedPct: 1
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -163,7 +164,7 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Labneh is simply strained yogurt, but it is worth trying a mixture of half yogurt and half sour cream. Mix them, salt lightly and pour into a sieve lined with cheesecloth; leave to drain in the fridge until it reaches the thickness of cream cheese. You can flavour it with fresh herbs.
+1. Labneh is simply strained yogurt, but it is worth trying a mixture of half yogurt and half plant-based sour cream. Mix them, salt lightly and pour into a sieve lined with cheesecloth; leave to drain in the fridge until it reaches the thickness of cream cheese. You can flavour it with fresh herbs.
 2. Halve the cabbages lengthwise and sprinkle with salt so it gets between the leaves; if the cabbages are large, cut them into quarters instead.
 3. Brush the cut surface with olive oil, season with pepper and place cut side up in a 140 °C oven for at least 1 hour, until the inside no longer feels hard when pierced with a sharp knife. Then turn the oven up to 200 °C so the cabbage caramelises slightly.
 4. Toast the seeds in the remaining olive oil, then the panko, and serve the roasted cabbage with the homemade labneh, the toasted seeds and soy sauce livened up with a few drops of lemon juice.

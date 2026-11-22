@@ -185,5 +185,5 @@ createdAt: "2026-11-14"
 
 ## Tips
 
-- The starchy pasta water is the secret to the perfect sauce: mixed with ricotta and olive oil, it forms a velvety, restaurant-quality emulsion without adding heavy cream.
+- The starchy pasta water is the secret to the perfect sauce: mixed with ricotta and olive oil, it forms a velvety, restaurant-quality emulsion without adding plant-based cooking cream.
 - When browning the mushrooms, don't keep moving the pan: leave the slices undisturbed on the bottom of the pan for 1-2 minutes so they develop a more intense, caramelised aroma.

@@ -1265,6 +1265,8 @@
   "82009870": {"caffeine_mg":[0,"ZERO:no-caffeine-plant"]},
   "82009871": {"cholesterol_mg":[0,"ZERO:plant-food"],"caffeine_mg":[0,"ZERO:no-caffeine-plant"]},
   "82011009": {"caffeine_mg":[0,"ZERO:no-caffeine-plant"]},
+  "82011214": {"caffeine_mg":[0,"ZERO:no-caffeine-plant"]},
   "82018905": {"caffeine_mg":[0,"ZERO:no-caffeine-plant"]},
+  "82019693": {"caffeine_mg":[0,"ZERO:no-caffeine-plant"]},
   "82025510": {"caffeine_mg":[0,"ZERO:no-caffeine-plant"],"vitD_ug":[0,"ZERO:plant-food"]}
 }

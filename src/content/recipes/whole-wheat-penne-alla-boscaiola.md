@@ -61,15 +61,14 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 200 ml heavy cream (30%)
+  - raw: 200 ml plant-based cooking cream
     group: Pasta and vegetables
     quantity: 200
     unit: ml
-    item: heavy cream
-    note: 30%
-    grams: 198.8
+    item: plant-based cooking cream
+    grams: 200
     milliliters: 200
-    fdcId: 2346386
+    fdcId: 82011214
     matchConfidence: high
     cooking: boiled
   - raw: 20 ml extra virgin olive oil
@@ -128,48 +127,49 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 733
-    energyKj: 3065
-    protein_g: 24.8
-    fat_g: 34.4
-    satFat_g: 14.5
-    carbs_g: 89.8
+    energyKcal: 643
+    energyKj: 2688
+    protein_g: 25.4
+    fat_g: 24.1
+    satFat_g: 5.2
+    carbs_g: 89
     fiber_g: 14.1
-    sugar_g: 9.1
-    sodium_mg: 762
-    availableCarb_g: 75.7
+    sugar_g: 8.4
+    sodium_mg: 764
+    availableCarb_g: 74.8
   glycemic:
-    gi: 47
+    gi: 48
     gl: 36
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 89
+    measuredGiPct: 90
   nutriScore:
-    grade: C
-    points: 4
+    grade: B
+    points: 1
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.89
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.22
   balance:
-    score: 4
-    band: low
-    nrf: 19.4
+    score: 5
+    band: moderate
+    nrf: 28.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 91.5
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 78.3
+    ultraProcessedPct: 12
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

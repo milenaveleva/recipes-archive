@@ -104,6 +104,17 @@ const SYNONYMS = new Map<string, string>([
   ['chilli', 'chili'], // British spelling → USDA "chili"
 ]);
 
+// Whole-phrase query aliases, applied to the query text before tokenizing, for dishes
+// whose name shares no identity word with the food that stands in for them: a
+// plant-based sour cream or crème fraîche is, in the bundled data, plain soy yogurt.
+const QUERY_ALIASES: [RegExp, string][] = [
+  [/\b(?:plant(?:[\s-]*based)?|vegan|dairy[\s-]*free|soy|soya|oat)\s+(?:sour\s+cream|cr[eè]me\s+fra[iî]che)\b/gi, 'plant-based soy yogurt'],
+];
+
+function aliasQuery(q: string): string {
+  return QUERY_ALIASES.reduce((s, [re, to]) => s.replace(re, to), q);
+}
+
 function tokenize(s: string): string[] {
   return s
     .toLowerCase()
@@ -195,7 +206,7 @@ export function searchFoods(
   preferIds?: Set<number>,
   note?: string,
 ): FoodMatch[] {
-  const itemTokens = tokenize(query);
+  const itemTokens = tokenize(aliasQuery(query));
   if (!itemTokens.length) return [];
   // An "or …" clause in the note names an ALTERNATIVE ingredient ("chardonnay",
   // note "or other dry white wine"), not a refinement of this one — drop it from

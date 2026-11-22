@@ -1,6 +1,6 @@
 ---
 title: French Celeriac and Mushroom Velouté
-description: A silky autumn velouté of celeriac and browned mushrooms finished with cream, topped with seared mushroom slices and served with crusty whole-wheat baguette.
+description: A silky autumn velouté of celeriac and browned mushrooms finished with plant-based cream, topped with seared mushroom slices and served with crusty whole-wheat baguette.
 image: ./images/french-celeriac-and-mushroom-veloute.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14546_1792030052465_french-celeriac-mushroom-cream-soup_50ed80d5.jpg
 imageAlt: French Celeriac and Mushroom Velouté
@@ -52,14 +52,15 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: 100 ml dry white wine
+  - raw: 100 ml vegetable broth (with a squeeze of lemon juice)
     group: Soup ingredients
     quantity: 100
     unit: ml
-    item: dry white wine
-    grams: 99.4
+    item: vegetable broth
+    note: with a squeeze of lemon juice
+    grams: 93.4
     milliliters: 100
-    fdcId: 174837
+    fdcId: 171583
     matchConfidence: high
     cooking: boiled
   - raw: 800 ml vegetable broth
@@ -72,15 +73,14 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 150 ml whipping cream (30%)
+  - raw: 150 ml plant-based cooking cream
     group: Soup ingredients
     quantity: 150
     unit: ml
-    item: whipping cream
-    note: 30%
-    grams: 149.1
+    item: plant-based cooking cream
+    grams: 150
     milliliters: 150
-    fdcId: 2346386
+    fdcId: 82011214
     matchConfidence: high
     cooking: boiled
   - raw: 30 g extra virgin olive oil
@@ -146,48 +146,49 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 522
-    energyKj: 2185
-    protein_g: 11.9
-    fat_g: 28.9
-    satFat_g: 9.7
-    carbs_g: 54
+    energyKcal: 436
+    energyKj: 1822
+    protein_g: 12.4
+    fat_g: 21.2
+    satFat_g: 2.8
+    carbs_g: 52.9
     fiber_g: 6.1
-    sugar_g: 7.9
-    sodium_mg: 1496
-    availableCarb_g: 47.8
+    sugar_g: 7.3
+    sodium_mg: 1566
+    availableCarb_g: 46.7
   glycemic:
     gi: 52
-    gl: 25
+    gl: 24
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 59
+    measuredGiPct: 60
   nutriScore:
-    grade: C
-    points: 4
+    grade: B
+    points: 2
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.93
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.25
   balance:
-    score: 2
-    band: poor
-    nrf: 7.8
+    score: 3
+    band: low
+    nrf: 15.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 65.7
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 50
+    ultraProcessedPct: 13.2
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -202,7 +203,7 @@ createdAt: "2026-11-14"
 
 1. **Preparation and sautéing the vegetables:** Peel the celeriac and cut it into 1.5-2 cm cubes. Chop the shallots and garlic finely. Clean the cremini mushrooms: cut half of them (250 g) into thicker slices for serving, and dice the other half for the base of the soup.
 2. In a heavy-bottomed pot, heat 15 g extra virgin olive oil and 1 tablespoon olive oil. Add the chopped shallots and the diced mushrooms. Sauté over medium heat for 5-6 minutes until the onion is soft and the mushrooms take on a little colour. Stir in the garlic and thyme, then sauté for another minute.
-3. **Cooking and making it silky (velouté):** Pour in the dry white wine and boil over high heat for 2 minutes until the alcohol evaporates. Add the diced celeriac, then pour in the vegetable broth. Season with salt and pepper to taste.
+3. **Cooking and making it silky (velouté):** Pour in the vegetable broth with a squeeze of lemon juice and boil over high heat for 2 minutes until slightly reduced. Add the diced celeriac, then pour in the vegetable broth. Season with salt and pepper to taste.
 4. Bring to the boil, then reduce the heat to low and simmer covered for about 20 minutes until the celeriac is completely soft.
 5. Take the soup off the heat and blend with a hand blender until completely creamy, with a silky velouté texture. Stir in the cream, then return it to the heat and bring together for 1-2 minutes. Taste and, if needed, season with a little more salt and pepper.
 6. **Mushroom garnish and serving:** In a frying pan, heat the remaining 15 g extra virgin olive oil and 1 tablespoon olive oil. Over high heat, sear the reserved 250 g sliced mushrooms until golden brown, 4-5 minutes. Season with salt and pepper only at the end of frying and sprinkle with finely chopped fresh parsley.

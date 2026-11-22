@@ -1,6 +1,6 @@
 ---
 title: Catalan Honey Tomato Cod (Bacalao con Miel)
-description: Floured cod fillets simmered in a sweet, garlicky tomato and white wine sauce with honey, Catalan style.
+description: Floured cod fillets simmered in a sweet, garlicky tomato and lemon sauce with honey, Catalan style.
 image: ./images/catalan-honey-tomato-cod-bacalao-con-miel.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14681_1792480086618_catalan-cod-with-honey-and-tomato-sauce_cdaf5ae7.jpg
 imageAlt: Catalan Honey Tomato Cod (Bacalao con Miel)
@@ -57,13 +57,14 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: 100 ml dry white wine
+  - raw: 100 ml vegetable broth (with a squeeze of lemon juice)
     quantity: 100
     unit: ml
-    item: dry white wine
-    grams: 99.4
+    item: vegetable broth
+    note: with a squeeze of lemon juice
+    grams: 93.4
     milliliters: 100
-    fdcId: 174837
+    fdcId: 171583
     matchConfidence: high
     cooking: boiled
   - raw: 3 tbsp whole-wheat flour
@@ -113,27 +114,27 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 369
-    energyKj: 1543
+    energyKcal: 350
+    energyKj: 1462
     protein_g: 30.1
     fat_g: 15.1
     satFat_g: 2.2
-    carbs_g: 25.3
+    carbs_g: 24.9
     fiber_g: 3.5
-    sugar_g: 14.6
-    sodium_mg: 867
-    availableCarb_g: 21.9
+    sugar_g: 14.5
+    sodium_mg: 935
+    availableCarb_g: 21.4
   glycemic:
-    gi: 31
+    gi: 32
     gl: 7
     giBand: low
     glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 40
+    measuredGiPct: 41
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: 0
     category: general
     version: "2023"
     coverage: 1
@@ -145,10 +146,10 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 32.8
+    nrf: 33.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 85.8
+    minimallyProcessedPct: 90.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -172,7 +173,7 @@ createdAt: "2026-11-14"
 3. Cut the onion into fine dice and crush the garlic cloves or slice them very thinly.
 4. **Frying and making the sauce:** In a deep, heavy pan heat 3 tablespoons of extra virgin olive oil over medium-high heat. Add the floured cod and fry 2-3 minutes per side until they get a nice golden-brown crust. Lift the fish onto a plate and set aside.
 5. To the fat left in the pan add another 1 tablespoon of olive oil, then add the chopped onion. Cook over low heat for 5-6 minutes until glassy and sweetly soft. Add the garlic and fry for another minute, taking care it does not brown.
-6. Pour the dry white wine over the onion base and boil for 2 minutes until the alcohol has evaporated. Add the canned chopped tomatoes and the honey, season with salt and pepper to taste, then simmer the sauce covered over low heat for 10-12 minutes until nicely thickened and the caramel sweetness of the honey blends harmoniously with the tomato.
+6. Pour the vegetable broth with a squeeze of lemon juice over the onion base and boil for 2 minutes until slightly reduced. Add the canned chopped tomatoes and the honey, season with salt and pepper to taste, then simmer the sauce covered over low heat for 10-12 minutes until nicely thickened and the caramel sweetness of the honey blends harmoniously with the tomato.
 7. **Assembly and serving:** Return the pre-fried cod fillets to the pan, into the hot honey tomato sauce. Cover and simmer over very low heat for another 4-5 minutes until the fish is cooked through, tender and has absorbed the flavourful sauce.
 8. Before serving, sprinkle the dish with freshly chopped parsley. Serve with a crusty whole-wheat baguette or whole-wheat sourdough bread, perfect for mopping up the silky sauce!
 

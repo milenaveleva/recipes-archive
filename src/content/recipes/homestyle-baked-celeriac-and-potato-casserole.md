@@ -1,6 +1,6 @@
 ---
 title: Homestyle Baked Celeriac and Potato Casserole
-description: A creamy autumn casserole of layered celeriac and potatoes with onion, sour cream, eggs and melted Trappista cheese.
+description: A creamy autumn casserole of layered celeriac and potatoes with onion, plant-based sour cream, eggs and melted Trappista cheese.
 image: ./images/homestyle-baked-celeriac-and-potato-casserole.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14689_1792505099244_hungarian-layered-celeriac-bake_87603f31.jpg
 imageAlt: Homestyle Baked Celeriac and Potato Casserole
@@ -60,13 +60,13 @@ ingredients:
     fdcId: 748967
     matchConfidence: high
     cooking: baked
-  - raw: 350 g sour cream
+  - raw: 350 g plant-based sour cream
     group: For the casserole
     quantity: 350
     unit: g
-    item: sour cream
+    item: plant-based sour cream
     grams: 350
-    fdcId: 171257
+    fdcId: 82019693
     matchConfidence: high
     cooking: baked
   - raw: 200 g Trappista cheese
@@ -149,19 +149,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 699
-    energyKj: 2923
-    protein_g: 25.6
-    fat_g: 46.1
-    satFat_g: 20.9
-    carbs_g: 50.3
-    fiber_g: 6.3
-    sugar_g: 8.3
-    sodium_mg: 1257
-    availableCarb_g: 44
+    energyKcal: 564
+    energyKj: 2362
+    protein_g: 26.8
+    fat_g: 30.8
+    satFat_g: 12.3
+    carbs_g: 48.7
+    fiber_g: 7
+    sugar_g: 6
+    sodium_mg: 1260
+    availableCarb_g: 41.8
   glycemic:
-    gi: 41
-    gl: 18
+    gi: 42
+    gl: 17
     giBand: low
     glBand: low
     glBasis: meal
@@ -169,28 +169,29 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 5
+    points: 3
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.5
-    band: mildly-pro-inflammatory
+    score: 0.1
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.27
   balance:
-    score: 3
-    band: low
-    nrf: 16.6
+    score: 5
+    band: moderate
+    nrf: 26.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 74.4
+    minimallyProcessedPct: 61.4
     ultraProcessedPct: 0
-    band: minimally-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -206,9 +207,9 @@ createdAt: "2026-11-14"
 1. **Preparation and parboiling the vegetables:** Peel the potatoes and celeriac thoroughly. Cut the potatoes and celeriac into even rounds or slices about half a centimetre thick.
 2. In a large saucepan, bring lightly salted water to the boil, then add the celeriac slices and potatoes. Parboil them for about 8-10 minutes until slightly softened but not falling apart. Drain and let them steam off for a moment.
 3. Meanwhile, chop the onion finely and crush the garlic. In a frying pan, heat 20 ml sunflower oil and cook the onion until translucent, adding the crushed garlic and 3 g sweet paprika at the end.
-4. **Making the topping and layering:** In a bowl, mix the 350 g sour cream with the 3 whole eggs, 1 g ground nutmeg, the fine salt and ground black pepper. Stir until completely smooth and creamy.
+4. **Making the topping and layering:** In a bowl, mix the 350 g plant-based sour cream with the 3 whole eggs, 1 g ground nutmeg, the fine salt and ground black pepper. Stir until completely smooth and creamy.
 5. Grease a medium baking tray or ovenproof dish well with half of the olive oil. Lay down the first layer of parboiled potatoes and celeriac, salt lightly, then spread half of the onion mixture over it.
-6. Drizzle with part of the spiced sour cream mixture and sprinkle with a third of the grated Trappista cheese. Repeat the layering with the remaining vegetables and onion, and finish the top with the remaining sour cream mixture, a drizzle of the remaining olive oil and plenty of Trappista cheese.
+6. Drizzle with part of the spiced plant-based sour cream mixture and sprinkle with a third of the grated Trappista cheese. Repeat the layering with the remaining vegetables and onion, and finish the top with the remaining plant-based sour cream mixture, a drizzle of the remaining olive oil and plenty of Trappista cheese.
 7. **Baking and serving:** Place the dish in an oven preheated to 190 °C and bake with top and bottom heat for about 35-40 minutes until the cheese on top is golden and bubbling and the vegetables are tender.
 8. Remove from the oven and let the casserole rest for 10 minutes so the slices can be cut neatly. Sprinkle with the finely chopped fresh parsley before serving.
 

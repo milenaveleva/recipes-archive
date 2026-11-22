@@ -42,12 +42,12 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: 1 carton cooking cream
+  - raw: 1 carton plant-based cooking cream
     quantity: 1
     unit: carton
-    item: cooking cream
+    item: plant-based cooking cream
     grams: 200
-    fdcId: 170857
+    fdcId: 82011214
     matchConfidence: high
     cooking: boiled
   - raw: 200 g aged cheese
@@ -81,16 +81,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 530
-    energyKj: 2217
-    protein_g: 17.3
-    fat_g: 26.4
-    satFat_g: 14.6
-    carbs_g: 57.4
+    energyKcal: 509
+    energyKj: 2131
+    protein_g: 17.5
+    fat_g: 24.2
+    satFat_g: 10.4
+    carbs_g: 56.5
     fiber_g: 8.1
-    sugar_g: 13.7
-    sodium_mg: 786
-    availableCarb_g: 49.3
+    sugar_g: 12.7
+    sodium_mg: 762
+    availableCarb_g: 48.5
   glycemic:
     gi: 64
     gl: 31
@@ -101,28 +101,29 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 5
+    points: 4
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.88
   inflammation:
-    score: 0.6
-    band: mildly-pro-inflammatory
+    score: 0
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.31
   balance:
     score: 7
     band: high
-    nrf: 41.7
+    nrf: 50.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 62
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 45.3
+    ultraProcessedPct: 15.1
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -136,5 +137,5 @@ createdAt: "2026-11-14"
 ## Method
 
 1. Cook the peeled, diced sweet potatoes with a whole onion, 2-3 cloves of garlic, salt to taste, a little ginger and a pinch of nutmeg. Any other spices you like can go in too.
-2. When everything is soft, blend it with the cooking cream.
+2. When everything is soft, blend it with the plant-based cooking cream.
 3. When serving, you can grate cheese into it, and toasted bread cubes are also delicious with it.

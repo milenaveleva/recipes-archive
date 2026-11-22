@@ -1,9 +1,9 @@
 ---
-title: Poached Eggs with Dill Sour Cream
-description: A creamy Hungarian-style breakfast of poached eggs on dill sour cream, drizzled with paprika oil and served with whole-wheat sourdough toast.
+title: Poached Eggs with Dill Plant-Based Sour Cream
+description: A creamy Hungarian-style breakfast of poached eggs on dill plant-based sour cream, drizzled with paprika oil and served with whole-wheat sourdough toast.
 image: ./images/poached-eggs-with-dill-sour-cream.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14731_1792655576189_hungarian-poached-eggs-with-dill-sour-cream_735aac83.jpg
-imageAlt: Poached Eggs with Dill Sour Cream
+imageAlt: Poached Eggs with Dill Plant-Based Sour Cream
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14731-buggyantott-tojas-kapros-tejfoellel-kremes-magyaros-reggeli
@@ -25,14 +25,13 @@ ingredients:
     fdcId: 172186
     matchConfidence: medium
     cooking: boiled
-  - raw: 250 g sour cream (20% fat)
+  - raw: 250 g plant-based sour cream
     group: Main ingredients
     quantity: 250
     unit: g
-    item: sour cream
-    note: 20% fat
+    item: plant-based sour cream
     grams: 250
-    fdcId: 171256
+    fdcId: 82019693
     matchConfidence: high
     cooking: raw
   - raw: 1 handful fresh dill
@@ -103,48 +102,49 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 644
-    energyKj: 2695
-    protein_g: 23.2
-    fat_g: 40.5
-    satFat_g: 14.5
-    carbs_g: 46.5
-    fiber_g: 3.9
-    sugar_g: 0.8
-    sodium_mg: 791
-    availableCarb_g: 42.6
+    energyKcal: 531
+    energyKj: 2223
+    protein_g: 24.2
+    fat_g: 27.9
+    satFat_g: 5.5
+    carbs_g: 44.7
+    fiber_g: 4.9
+    sugar_g: 1.5
+    sodium_mg: 722
+    availableCarb_g: 39.8
   glycemic:
-    gi: 61
-    gl: 26
+    gi: 62
+    gl: 24
     giBand: medium
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 86
+    measuredGiPct: 92
   nutriScore:
-    grade: C
-    points: 6
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.4
-    band: mildly-pro-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.01
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 13.4
+    nrf: 22.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 70.3
+    minimallyProcessedPct: 53.5
     ultraProcessedPct: 0
-    band: minimally-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
@@ -156,11 +156,11 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. **Preparation and sour cream base:** Mix the room-temperature 20% sour cream thoroughly in a bowl with the finely chopped fresh dill, a pinch of fine salt and freshly ground black pepper. Spread the creamy base evenly on the bottom of two deeper breakfast plates.
+1. **Preparation and plant-based sour cream base:** Mix the room-temperature plant-based sour cream thoroughly in a bowl with the finely chopped fresh dill, a pinch of fine salt and freshly ground black pepper. Spread the creamy base evenly on the bottom of two deeper breakfast plates.
 2. In a small frying pan over low heat, warm the olive oil, stir in the sweet paprika, then take off the heat so the paprika doesn't burn and stays pleasantly aromatic.
 3. **Poaching the eggs and serving:** Bring water to the boil in a pot, then reduce to a simmer. Add the 10% vinegar and a pinch of salt. Crack the eggs one by one into a small bowl, create a whirlpool in the simmering water with a spoon and slide the egg into the centre. Cook gently for 3-3.5 minutes until the white sets but the yolk stays runny, then lift out carefully with a slotted spoon and drain.
-4. Place the warm poached eggs (2 per serving) on the chilled or room-temperature dill sour cream. Drizzle with the golden paprika oil and serve immediately with slices of freshly toasted crisp sourdough bread.
+4. Place the warm poached eggs (2 per serving) on the chilled or room-temperature dill plant-based sour cream. Drizzle with the golden paprika oil and serve immediately with slices of freshly toasted crisp sourdough bread.
 
 ## Tips
 
-- Take the sour cream out of the fridge half an hour earlier so it is at room temperature, giving a pleasantly gentle temperature contrast with the warm eggs.
+- Take the plant-based sour cream out of the fridge half an hour earlier so it is at room temperature, giving a pleasantly gentle temperature contrast with the warm eggs.

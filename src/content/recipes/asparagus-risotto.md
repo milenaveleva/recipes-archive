@@ -52,14 +52,14 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: boiled
-  - raw: 80 ml dry white wine
+  - raw: 80 ml vegetable broth
     quantity: 80
     unit: ml
-    item: dry white wine
-    grams: 79.5
+    item: vegetable broth
+    grams: 74.7
     milliliters: 80
-    fdcId: 174837
-    matchConfidence: medium
+    fdcId: 171583
+    matchConfidence: high
     cooking: boiled
   - raw: 80 g finely grated parmesan cheese
     quantity: 80
@@ -85,16 +85,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 736
-    energyKj: 3078
+    energyKcal: 720
+    energyKj: 3014
     protein_g: 12.5
     fat_g: 52.9
     satFat_g: 10.1
-    carbs_g: 50.2
+    carbs_g: 49.8
     fiber_g: 2.4
-    sugar_g: 1.4
-    sodium_mg: 636
-    availableCarb_g: 47.8
+    sugar_g: 1.3
+    sodium_mg: 691
+    availableCarb_g: 47.4
   glycemic:
     gi: 69
     gl: 33
@@ -102,7 +102,7 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 95
+    measuredGiPct: 96
   nutriScore:
     grade: C
     points: 7
@@ -117,10 +117,10 @@ nutrition:
   balance:
     score: 2
     band: poor
-    nrf: 8.5
+    nrf: 8.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 86.5
+    minimallyProcessedPct: 88.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -143,7 +143,7 @@ createdAt: "2026-11-14"
 2. Bring 1.2 litres of water to a boil and set aside.
 3. Cut the tips off the peeled asparagus and set them aside. Trim off and discard the bottom 2 cm of the stalks, then slice the stalks into 0.5 cm rounds.
 4. Heat 3 tablespoons of olive oil and sauté the shallots in it.
-5. Add the brown arborio rice, stirring constantly; if it sticks to the side of the pot, scrape it off with a wooden spoon. Add the white wine and bring to a boil, stirring constantly.
+5. Add the brown arborio rice, stirring constantly; if it sticks to the side of the pot, scrape it off with a wooden spoon. Add the first ladle of vegetable broth and bring to a boil, stirring constantly.
 6. Reduce the heat by half, add the asparagus rounds, a little salt and about 100 ml of water, just enough to cover the rice. Stir constantly until it starts to boil.
 7. When the water has almost boiled away, add a little more, just enough to cover the rice. Bring to a boil again, until the rice is firm inside and soft outside. Brown arborio takes about 40-45 minutes and more liquid than white risotto rice. Stir often.
 8. When the rice is cooked, take the pot off the heat, stir in the Parmesan and the extra virgin olive oil, then add 3 tablespoons more olive oil.

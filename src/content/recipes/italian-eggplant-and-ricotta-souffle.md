@@ -52,14 +52,13 @@ ingredients:
     fdcId: 173431
     matchConfidence: high
     cooking: baked
-  - raw: 100 g whipping cream (30%)
+  - raw: 100 g plant-based cooking cream
     group: For the base
     quantity: 100
     unit: g
-    item: whipping cream
-    note: 30%
+    item: plant-based cooking cream
     grams: 100
-    fdcId: 170859
+    fdcId: 82011214
     matchConfidence: high
     cooking: baked
   - raw: 2 cloves garlic
@@ -140,16 +139,16 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 475
-    energyKj: 1987
-    protein_g: 20.6
-    fat_g: 35.8
-    satFat_g: 16
-    carbs_g: 19.6
+    energyKcal: 428
+    energyKj: 1793
+    protein_g: 20.7
+    fat_g: 30.5
+    satFat_g: 10.7
+    carbs_g: 19.4
     fiber_g: 5.2
-    sugar_g: 6.9
-    sodium_mg: 995
-    availableCarb_g: 14.4
+    sugar_g: 6.6
+    sodium_mg: 994
+    availableCarb_g: 14.2
   glycemic:
     gi: 21
     gl: 3
@@ -160,28 +159,29 @@ nutrition:
     measuredGiPct: 23
   nutriScore:
     grade: C
-    points: 7
+    points: 5
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.92
   inflammation:
-    score: 0.6
-    band: mildly-pro-inflammatory
+    score: 0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.11
   balance:
     score: 3
     band: low
-    nrf: 10.8
+    nrf: 17.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 58
-    ultraProcessedPct: 4.8
+    minimallyProcessedPct: 44.4
+    ultraProcessedPct: 14.3
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -195,7 +195,7 @@ createdAt: "2026-11-14"
 ## Method
 
 1. **Preparing and roasting the eggplant:** Preheat the oven to 200 °C. Wash the eggplants, cut them in half lengthwise and score the flesh crosswise. Brush with extra virgin olive oil and salt lightly. Place cut side down on a baking tray lined with baking paper and bake for 30–35 minutes, until the skin wrinkles and the flesh is completely completely soft. Let the roasted eggplant cool slightly, then scrape out the creamy flesh with a spoon into a sieve. Press out the excess moisture, then mash it in a mixing bowl with a fork or a chopper together with the crushed garlic.
-2. **Assembling and baking the soufflé:** Lower the oven temperature to 180 °C. Grease the moulds (4 soufflé dishes or one small ceramic baking dish) thoroughly with olive oil and sprinkle with breadcrumbs so the soufflé does not stick and can rise nicely. Mix the ricotta, whipping cream, three quarters of the grated Parmesan and the finely chopped fresh basil into the eggplant purée. Season with salt, freshly ground black pepper and a pinch of ground nutmeg. Separate the eggs. Stir the yolks one by one into the ricotta-eggplant mixture. Beat the whites with a pinch of salt to stiff, glossy peaks, then fold them into the cream with a spatula using gentle, loose movements, taking care that the foam does not collapse. Divide the mixture between the prepared moulds, filling them to two thirds of the way up. Sprinkle the tops with the remaining Parmesan. Bake at 180 °C for about 30–35 minutes, until the soufflé has risen nicely and has a golden, crisp crust. Serve immediately, warm, garnished with fresh basil leaves!
+2. **Assembling and baking the soufflé:** Lower the oven temperature to 180 °C. Grease the moulds (4 soufflé dishes or one small ceramic baking dish) thoroughly with olive oil and sprinkle with breadcrumbs so the soufflé does not stick and can rise nicely. Mix the ricotta, plant-based cooking cream, three quarters of the grated Parmesan and the finely chopped fresh basil into the eggplant purée. Season with salt, freshly ground black pepper and a pinch of ground nutmeg. Separate the eggs. Stir the yolks one by one into the ricotta-eggplant mixture. Beat the whites with a pinch of salt to stiff, glossy peaks, then fold them into the cream with a spatula using gentle, loose movements, taking care that the foam does not collapse. Divide the mixture between the prepared moulds, filling them to two thirds of the way up. Sprinkle the tops with the remaining Parmesan. Bake at 180 °C for about 30–35 minutes, until the soufflé has risen nicely and has a golden, crisp crust. Serve immediately, warm, garnished with fresh basil leaves!
 
 ## Tips
 

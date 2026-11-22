@@ -69,14 +69,13 @@ ingredients:
     fdcId: 170845
     matchConfidence: high
     cooking: baked
-  - raw: 100 ml cooking cream (10–12%)
+  - raw: 100 ml plant-based cooking cream
     quantity: 100
     unit: ml
-    item: cooking cream
-    note: 10–12%
-    grams: 101.4
+    item: plant-based cooking cream
+    grams: 100
     milliliters: 100
-    fdcId: 170858
+    fdcId: 82011214
     matchConfidence: high
     cooking: baked
   - raw: 2 eggs (size M)
@@ -107,16 +106,16 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 357
-    energyKj: 1495
-    protein_g: 15.1
-    fat_g: 24.5
-    satFat_g: 11.1
-    carbs_g: 21.3
+    energyKcal: 322
+    energyKj: 1346
+    protein_g: 15.4
+    fat_g: 20.3
+    satFat_g: 6.6
+    carbs_g: 21
     fiber_g: 3.6
-    sugar_g: 2
-    sodium_mg: 251
-    availableCarb_g: 17.7
+    sugar_g: 1.6
+    sodium_mg: 249
+    availableCarb_g: 17.5
   glycemic:
     gi: 51
     gl: 9
@@ -126,29 +125,30 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
-    grade: C
-    points: 4
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 0.64
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.15
   balance:
-    score: 5
+    score: 6
     band: moderate
-    nrf: 30.1
+    nrf: 40.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 73.9
-    ultraProcessedPct: 0
-    band: minimally-processed
+    minimallyProcessedPct: 59
+    ultraProcessedPct: 11.9
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

@@ -1,6 +1,6 @@
 ---
 title: Baked Salmon on Herby Lemon Whole-Wheat Couscous
-description: Salmon fillets baked on a bed of whole-wheat couscous tossed with fresh mint, parsley, basil, lemon and cream, a healthy dinner in 30 minutes.
+description: Salmon fillets baked on a bed of whole-wheat couscous tossed with fresh mint, parsley, basil, lemon and plant-based cream, a healthy dinner in 30 minutes.
 image: ./images/baked-salmon-on-herby-lemon-whole-wheat-couscous.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10683_1775306446582_roasted-salmon-with-herbed-couscous_d9a13fb3.png
 imageAlt: Baked Salmon on Herby Lemon Whole-Wheat Couscous
@@ -67,13 +67,13 @@ ingredients:
     fdcId: 175167
     matchConfidence: high
     cooking: baked
-  - raw: 70 ml cooking cream
+  - raw: 70 ml plant-based cooking cream
     quantity: 70
     unit: ml
-    item: cooking cream
-    grams: 71
+    item: plant-based cooking cream
+    grams: 70
     milliliters: 70
-    fdcId: 170858
+    fdcId: 82011214
     matchConfidence: high
     cooking: baked
   - raw: ¼ tsp salt
@@ -96,16 +96,16 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 565
-    energyKj: 2366
-    protein_g: 38.5
-    fat_g: 29
-    satFat_g: 9.4
-    carbs_g: 39.5
+    energyKcal: 532
+    energyKj: 2227
+    protein_g: 38.7
+    fat_g: 25.1
+    satFat_g: 5.2
+    carbs_g: 39.3
     fiber_g: 5.2
-    sugar_g: 2.5
-    sodium_mg: 360
-    availableCarb_g: 34.3
+    sugar_g: 2.2
+    sodium_mg: 358
+    availableCarb_g: 34.1
   glycemic:
     gi: 39
     gl: 13
@@ -113,31 +113,32 @@ nutrition:
     glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 94
+    measuredGiPct: 95
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: -1
     category: general
     version: "2023"
-    coverage: 0.99
+    coverage: 0.92
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.5
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.07
   balance:
-    score: 5
+    score: 6
     band: moderate
-    nrf: 27.2
+    nrf: 33
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 100
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 93.3
+    ultraProcessedPct: 6.7
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

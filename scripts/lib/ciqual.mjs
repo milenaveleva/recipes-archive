@@ -58,6 +58,7 @@ export const FIELD = {
   60000: 'alcohol_g',
 };
 export const GLUCIDES = 31000; // available carbohydrate (sugars + starch + polyols)
+export const ORGANIC_ACIDS = 65000;
 export const RETINOL = 51200;
 export const BETA_CAROTENE = 51330;
 
@@ -84,12 +85,13 @@ export function buildVector(v) {
 /**
  * Load Ciqual foods with their composition. `wanted` (a Set of alim_codes) limits the
  * composition scan to those foods; omit it to load the whole table (~3,200 foods).
- * Returns { constNames, foods: Map<alim_code, { code, nameFr, nameEn, grp, ssgrp, n }> }.
+ * Returns { constNames, foods: Map<alim_code, { code, nameFr, nameEn, grp, ssgrp, v, n }> },
+ * where `v` is the raw const_code → value map and `n` the NutrientVector built from it.
  */
 export function loadCiqual({ wanted = null, log = () => {} } = {}) {
   log('→ reading Ciqual 2020 constituents + foods…');
   const constNames = new Map(records(readXml('ciqual-2020-const.xml'), 'CONST').map((c) => [Number(c.const_code), c.const_nom_eng]));
-  for (const code of [...Object.keys(FIELD).map(Number), GLUCIDES, RETINOL, BETA_CAROTENE]) {
+  for (const code of [...Object.keys(FIELD).map(Number), GLUCIDES, ORGANIC_ACIDS, RETINOL, BETA_CAROTENE]) {
     if (!constNames.has(code)) throw new Error(`Ciqual constituent ${code} missing from const table`);
   }
   const alim = records(readXml('ciqual-2020-alim.xml'), 'ALIM');
@@ -118,6 +120,7 @@ export function loadCiqual({ wanted = null, log = () => {} } = {}) {
       nameEn: a.alim_nom_eng,
       grp: a.alim_grp_code,
       ssgrp: a.alim_ssgrp_code,
+      v: values.get(code) ?? new Map(),
       n: buildVector(values.get(code) ?? new Map()),
     });
   }

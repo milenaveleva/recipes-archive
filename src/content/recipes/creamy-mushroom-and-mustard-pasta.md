@@ -26,12 +26,12 @@ ingredients:
     fdcId: 1999629
     matchConfidence: high
     cooking: fried
-  - raw: 1 carton plant-based cream
+  - raw: 1 carton plant-based cooking cream
     quantity: 1
     unit: carton
-    item: plant-based cream
+    item: plant-based cooking cream
     grams: 250
-    fdcId: 2346386
+    fdcId: 82011214
     matchConfidence: medium
     cooking: raw
   - raw: 3 tsp mustard
@@ -85,48 +85,49 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 735
-    energyKj: 3074
-    protein_g: 12.6
-    fat_g: 32
-    satFat_g: 14.1
-    carbs_g: 104.4
+    energyKcal: 621
+    energyKj: 2597
+    protein_g: 13.4
+    fat_g: 18.9
+    satFat_g: 2.4
+    carbs_g: 103.3
     fiber_g: 15.1
-    sugar_g: 3.1
-    sodium_mg: 354
-    availableCarb_g: 89.1
+    sugar_g: 2.3
+    sodium_mg: 356
+    availableCarb_g: 88
   glycemic:
-    gi: 56
+    gi: 57
     gl: 50
     giBand: medium
     glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 96
+    measuredGiPct: 97
   nutriScore:
-    grade: C
-    points: 4
+    grade: A
+    points: 0
     category: general
     version: "2023"
     coverage: 0.33
   inflammation:
-    score: 0.4
-    band: mildly-pro-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.02
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 9.7
+    nrf: 20.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 99.7
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 84.1
+    ultraProcessedPct: 15.5
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

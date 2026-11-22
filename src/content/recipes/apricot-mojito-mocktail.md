@@ -115,4 +115,3 @@ createdAt: "2026-11-14"
 1. Pit the apricots, halve them and put them in a blender with a tablespoon of water. Blend until smooth; for a really creamy texture, strain through a fine sieve.
 2. Divide the lime juice, the halved lime, ½ tsp honey each and a few mint leaves between two glasses. Muddle well with a muddler or the end of a wooden spoon to release the flavours.
 3. Spoon 3 tsp of apricot purée into each glass, add a few ice cubes, top up with soda water, add a straw and stir.
-4. For a more grown-up version, you can spike it with a little white rum.

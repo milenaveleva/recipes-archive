@@ -1,6 +1,6 @@
 ---
 title: Creamy Asparagus Risotto
-description: A rich, creamy risotto with green asparagus, shallots, white wine, Parmesan and extra virgin olive oil, topped with seared asparagus tips.
+description: A rich, creamy risotto with green asparagus, shallots, Parmesan and extra virgin olive oil, topped with seared asparagus tips.
 image: ./images/creamy-asparagus-risotto.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_12219_1777204409673_creamy-asparagus-risotto_5b44894d.jpg
 imageAlt: Creamy Asparagus Risotto
@@ -59,14 +59,14 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: boiled
-  - raw: 80 ml dry white wine
+  - raw: 80 ml vegetable broth
     quantity: 80
     unit: ml
-    item: dry white wine
-    grams: 79.5
+    item: vegetable broth
+    grams: 74.7
     milliliters: 80
-    fdcId: 174837
-    matchConfidence: medium
+    fdcId: 171583
+    matchConfidence: high
     cooking: boiled
   - raw: 70 g grated Parmesan cheese
     quantity: 70
@@ -102,16 +102,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 732
-    energyKj: 3064
+    energyKcal: 717
+    energyKj: 3000
     protein_g: 12
     fat_g: 52.3
     satFat_g: 9.7
-    carbs_g: 51.6
+    carbs_g: 51.3
     fiber_g: 3
-    sugar_g: 1.9
-    sodium_mg: 594
-    availableCarb_g: 48.6
+    sugar_g: 1.8
+    sodium_mg: 649
+    availableCarb_g: 48.3
   glycemic:
     gi: 68
     gl: 33
@@ -134,10 +134,10 @@ nutrition:
   balance:
     score: 3
     band: low
-    nrf: 9.9
+    nrf: 9.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 87.9
+    minimallyProcessedPct: 89.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -160,7 +160,7 @@ createdAt: "2026-11-14"
 2. Bring 1.2 litres of water to the boil, then remove from the heat and keep warm.
 3. From the trimmed asparagus, cut off the 4 cm tips and set aside. Cut 2 cm of the woody base off the spears and discard. Cut the remaining stalks into 0.5 cm rounds.
 4. In a saucepan, heat 3 tablespoons of olive oil over medium heat. Add the shallot and cook, stirring occasionally, until translucent.
-5. Add the rice and fry for 2 minutes, stirring frequently. Then pour in all the wine at once and let it evaporate completely, stirring constantly.
+5. Add the rice and fry for 2 minutes, stirring frequently. Then pour in the first 80 ml of vegetable broth at once and let it be absorbed completely, stirring constantly.
 6. Reduce the heat, add the sliced asparagus, season lightly with salt and pour in about 100 ml hot water (just enough to cover the rice). Stir frequently and let the water be almost completely absorbed.
 7. When the water has almost gone, add another portion of water, again just enough to cover. Continue cooking this way until the rice is al dente (soft outside, slightly firm inside). Brown arborio usually takes 40-45 minutes and more water than white risotto rice. Stir very often!
 8. When half of the last portion of water has evaporated and the rice has the right consistency, take it off the heat. Stir in the Parmesan, then the extra virgin olive oil in batches, and finally 3 tablespoons more olive oil.

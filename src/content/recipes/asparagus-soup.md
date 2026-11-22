@@ -1,6 +1,6 @@
 ---
 title: Asparagus Soup
-description: A silky spring soup made with white and green asparagus, cream and olive oil.
+description: A silky spring soup made with white and green asparagus, plant-based cream and olive oil.
 image: ./images/asparagus-soup.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10314_1775301988434_creamy-asparagus-soup-with-white-and-green-spears_9620dbca.png
 imageAlt: Asparagus Soup
@@ -33,14 +33,13 @@ ingredients:
     fdcId: 2710823
     matchConfidence: high
     cooking: boiled
-  - raw: 100 ml heavy cream (at least 31% fat)
+  - raw: 100 ml plant-based cooking cream
     quantity: 100
     unit: ml
-    item: heavy cream
-    note: at least 31% fat
-    grams: 99.4
+    item: plant-based cooking cream
+    grams: 100
     milliliters: 100
-    fdcId: 2346386
+    fdcId: 82011214
     matchConfidence: high
     cooking: boiled
   - raw: 50 g extra virgin olive oil
@@ -60,18 +59,18 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 243
-    energyKj: 1018
-    protein_g: 4.5
-    fat_g: 22.2
-    satFat_g: 6.9
-    carbs_g: 10.1
+    energyKcal: 198
+    energyKj: 830
+    protein_g: 4.8
+    fat_g: 17
+    satFat_g: 2.3
+    carbs_g: 9.7
     fiber_g: 4.2
-    sugar_g: 4.7
-    sodium_mg: 398
-    availableCarb_g: 5.9
+    sugar_g: 4.3
+    sodium_mg: 399
+    availableCarb_g: 5.5
   glycemic:
-    gi: 14
+    gi: 13
     gl: 1
     giBand: low
     glBand: low
@@ -80,27 +79,28 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: A
-    points: -1
+    points: -3
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.9
   inflammation:
-    score: 0
-    band: neutral
+    score: -0.9
+    band: mildly-anti-inflammatory
     method: fii v4
   balance:
-    score: 5
-    band: moderate
-    nrf: 25.9
+    score: 7
+    band: high
+    nrf: 42.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 100
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 80.6
+    ultraProcessedPct: 19.4
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

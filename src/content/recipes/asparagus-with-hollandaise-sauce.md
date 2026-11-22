@@ -75,13 +75,14 @@ ingredients:
     fdcId: 172240
     matchConfidence: high
     cooking: boiled
-  - raw: 60 ml dry white wine
+  - raw: 60 ml vegetable broth (with a squeeze of lemon juice)
     quantity: 60
     unit: ml
-    item: dry white wine
-    grams: 59.6
+    item: vegetable broth
+    note: with a squeeze of lemon juice
+    grams: 56
     milliliters: 60
-    fdcId: 174837
+    fdcId: 171583
     matchConfidence: high
     cooking: boiled
   - raw: 10 ml lime juice
@@ -113,16 +114,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 610
-    energyKj: 2550
+    energyKcal: 598
+    energyKj: 2502
     protein_g: 15.7
     fat_g: 42
     satFat_g: 6.7
-    carbs_g: 47.9
+    carbs_g: 47.6
     fiber_g: 13.6
-    sugar_g: 11
-    sodium_mg: 1515
-    availableCarb_g: 34.3
+    sugar_g: 10.9
+    sodium_mg: 1556
+    availableCarb_g: 34
   glycemic:
     gi: 55
     gl: 19
@@ -130,7 +131,7 @@ nutrition:
     glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 64
+    measuredGiPct: 65
   nutriScore:
     grade: B
     points: 1
@@ -145,11 +146,11 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 38.8
+    nrf: 39.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 94.9
-    ultraProcessedPct: 3.1
+    minimallyProcessedPct: 96.7
+    ultraProcessedPct: 3.2
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
@@ -168,7 +169,7 @@ createdAt: "2026-11-14"
 ## Method
 
 1. Peel the white asparagus and remove the woody ends. The green asparagus doesn't need peeling; just trim the scales off the stalks. Tie the white and green asparagus into separate bundles. Peel the asparagus with a potato or asparagus peeler, starting just below the tip. You don't need a knife to remove the woody part: if you bend the asparagus, it snaps at the woody point. It's worth keeping the trimmings, as they make a great addition to soup. Keep the tips out of the cooking water: the water should not completely cover the asparagus, and only in the last minute of cooking should the tips be submerged so they soften too.
-2. Whisk the egg yolks with a little water and salt in a stainless steel saucepan or glass bowl. Mix the vinegar and white wine in a pot and add freshly ground pepper. Bring 2 tablespoons of it to a boil and add it to the egg yolks, whisking constantly.
+2. Whisk the egg yolks with a little water and salt in a stainless steel saucepan or glass bowl. Mix the vinegar and the vegetable broth with a squeeze of lemon juice in a pot and add freshly ground pepper. Bring 2 tablespoons of it to a boil and add it to the egg yolks, whisking constantly.
 3. Warm the olive oil (a light extra virgin one keeps the flavour mild) in a pan, then set it aside. Bring about 2 cm of water to a boil in a saucepan, then turn the heat to low. Hold the egg yolk bowl over it so the bottom doesn't touch the water, and whisk until sufficiently thickened. Set aside once ready.
 4. Gradually whisk the warm olive oil into the egg yolks, whisking continuously, at first drop by drop and then in a thin stream. Add lemon juice and salt to taste.
 5. In a tall pot, bring 3 litres of water to a boil with salt to taste. Add the asparagus: boil the green for 5 minutes and the white for 10 minutes, until tender. Transfer to a preheated plate and untie the bundles. Pour part of the hollandaise over the asparagus and serve the rest separately in a small bowl. It is best with boiled potatoes or whole-wheat bread.

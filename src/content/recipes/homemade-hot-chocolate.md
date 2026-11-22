@@ -1,6 +1,6 @@
 ---
 title: Homemade Hot Chocolate
-description: Thick, velvety hot chocolate made with cocoa, dark chocolate and oat milk, topped with whipped cream.
+description: Thick, velvety hot chocolate made with cocoa, dark chocolate and oat milk, topped with plant-based whipped cream.
 image: ./images/homemade-hot-chocolate.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10401_1775308593048_creamy-homemade-hot-chocolate_c0c52b9c.png
 imageAlt: Homemade Hot Chocolate
@@ -58,57 +58,58 @@ ingredients:
     fdcId: 170273
     matchConfidence: high
     cooking: boiled
-  - raw: 50 g whipped cream
+  - raw: 50 g plant-based whipped cream
     quantity: 50
     unit: g
-    item: whipped cream
+    item: plant-based whipped cream
     grams: 50
-    fdcId: 170860
+    fdcId: 82011214
     matchConfidence: high
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 637
-    energyKj: 2664
+    energyKcal: 611
+    energyKj: 2557
     protein_g: 10
-    fat_g: 39.9
-    satFat_g: 19.2
-    carbs_g: 66.3
+    fat_g: 38
+    satFat_g: 16.1
+    carbs_g: 63.7
     fiber_g: 11.3
-    sugar_g: 28.8
-    sodium_mg: 126
-    availableCarb_g: 55.1
+    sugar_g: 27.2
+    sodium_mg: 130
+    availableCarb_g: 52.5
   glycemic:
     gi: 49
-    gl: 27
+    gl: 26
     giBand: low
     glBand: high
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 11
+    measuredGiPct: 12
   nutriScore:
     grade: E
-    points: 15
+    points: 14
     category: beverage
     version: "2023"
     coverage: 0.34
   inflammation:
-    score: 1
+    score: 0.8
     band: pro-inflammatory
     method: fii v4
   balance:
     score: 1
     band: poor
-    nrf: -17.1
+    nrf: -9.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 14
-    ultraProcessedPct: 86
+    minimallyProcessedPct: 14.6
+    ultraProcessedPct: 85.4
     band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -125,4 +126,4 @@ createdAt: "2026-11-14"
 3. When it starts to bubble, turn the heat down and add the chopped dark chocolate.
 4. Heat until the chocolate has melted. Add more honey to taste if you like.
 5. When it starts to bubble again, turn off the heat.
-6. Pour the finished hot chocolate into two mugs and serve topped with whipped cream.
+6. Pour the finished hot chocolate into two mugs and serve topped with plant-based whipped cream.

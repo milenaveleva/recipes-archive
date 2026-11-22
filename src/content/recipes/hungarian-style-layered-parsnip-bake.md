@@ -1,6 +1,6 @@
 ---
 title: Hungarian-Style Layered Parsnip Bake
-description: A hearty autumn casserole of parsnips and potatoes layered with paprika onions, sour cream custard and golden Trappist cheese.
+description: A hearty autumn casserole of parsnips and potatoes layered with paprika onions, plant-based sour cream custard and golden Trappist cheese.
 image: ./images/hungarian-style-layered-parsnip-bake.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14770_1794053151920_hungarian-layered-parsnip-bake_d75183d8.jpg
 imageAlt: Hungarian-Style Layered Parsnip Bake
@@ -60,13 +60,13 @@ ingredients:
     fdcId: 171287
     matchConfidence: medium
     cooking: baked
-  - raw: 350 g sour cream
+  - raw: 350 g plant-based sour cream
     group: For the parsnip bake
     quantity: 350
     unit: g
-    item: sour cream
+    item: plant-based sour cream
     grams: 350
-    fdcId: 171257
+    fdcId: 82019693
     matchConfidence: high
     cooking: baked
   - raw: 200 g grated Trappist cheese
@@ -149,48 +149,49 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 760
-    energyKj: 3179
-    protein_g: 25
-    fat_g: 45.9
-    satFat_g: 20.8
-    carbs_g: 67.1
-    fiber_g: 13.5
-    sugar_g: 15
-    sodium_mg: 1084
-    availableCarb_g: 53.5
+    energyKcal: 626
+    energyKj: 2617
+    protein_g: 26.2
+    fat_g: 30.6
+    satFat_g: 12.1
+    carbs_g: 65.5
+    fiber_g: 14.2
+    sugar_g: 12.7
+    sodium_mg: 1086
+    availableCarb_g: 51.3
   glycemic:
-    gi: 55
-    gl: 30
-    giBand: low
+    gi: 56
+    gl: 29
+    giBand: medium
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 85
+    measuredGiPct: 89
   nutriScore:
-    grade: C
-    points: 4
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.27
   balance:
-    score: 5
+    score: 6
     band: moderate
-    nrf: 24.5
+    nrf: 35.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 76.5
+    minimallyProcessedPct: 65.2
     ultraProcessedPct: 0
-    band: minimally-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -206,13 +207,13 @@ createdAt: "2026-11-14"
 1. **Preparation and parboiling the vegetables:** Peel the parsnips and potatoes thoroughly, then cut both into even rounds about half a centimetre thick.
 2. In a large pot, boil lightly salted water and parboil the parsnip and potato rounds in it for 8-10 minutes, until slightly softened but still firm and not falling apart. Drain thoroughly.
 3. Chop the onion finely and crush the garlic. In a frying pan, heat 20 ml sunflower oil, cook the onion until translucent in 3-4 minutes, then pull it off the heat and stir in the crushed garlic, 3 g sweet paprika and 1 g ground caraway.
-4. **Making the custard and layering:** In a bowl, whisk the 350 g sour cream with the 3 whole eggs, the salt and the ground black pepper until lump-free, giving a silky, homogeneous cream.
+4. **Making the custard and layering:** In a bowl, whisk the 350 g plant-based sour cream with the 3 whole eggs, the salt and the ground black pepper until lump-free, giving a silky, homogeneous cream.
 5. Grease a medium baking tray or ovenproof dish thoroughly with half of the olive oil. Lay down the first layer of parboiled potatoes and parsnips, salt lightly, then spread half of the spiced onion over it.
-6. Drizzle over a third of the sour cream and egg mixture, then sprinkle with a third of the grated Trappist cheese. Repeat the layering with the remaining vegetables and onion, and finish the top with the remaining custard, a drizzle of the remaining olive oil and plenty of grated cheese.
+6. Drizzle over a third of the plant-based sour cream and egg mixture, then sprinkle with a third of the grated Trappist cheese. Repeat the layering with the remaining vegetables and onion, and finish the top with the remaining custard, a drizzle of the remaining olive oil and plenty of grated cheese.
 7. **Baking and serving:** Place the dish in an oven preheated to 190 °C and bake on top and bottom heat for 35-40 minutes, until the cheese layer is golden and crisp on top and the vegetables are juicy and tender.
 8. Take it out of the oven and let the parsnip bake rest for at least 10 minutes so the custard sets and the slices serve nicely. Sprinkle with finely chopped fresh parsley before serving.
 
 ## Tips
 
-- The natural sweetness of parsnip caramelises beautifully during baking; the paprika and the acidity of the sour cream strike a perfect balance with it.
+- The natural sweetness of parsnip caramelises beautifully during baking; the paprika and the acidity of the plant-based sour cream strike a perfect balance with it.
 - It goes excellently with a fresh, crunchy pickled sweet pepper or sour pickled cucumber, which makes the homely flavour experience even more complete.

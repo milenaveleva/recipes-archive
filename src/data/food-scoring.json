@@ -2366,6 +2366,8 @@
   "82009870": { "gi": 50, "giSource": "Atkinson 2021 (Wholemeal spaghetti, boiled)", "giConfidence": "high" },
   "82009871": { "gi": 50, "giSource": "Atkinson 2021 (Wholemeal spaghetti, boiled)", "giConfidence": "high" },
   "82011009": { "gi": 53, "giSource": "predicted (sugar + global starch proxy)", "giConfidence": "predicted" },
+  "82011214": { "gi": 15, "giSource": "non-starchy / minor carb source (nominal)", "giConfidence": "low" },
   "82018905": { "gi": 47, "giSource": "predicted (sugar + non-starchy starch proxy)", "giConfidence": "low" },
+  "82019693": { "gi": 15, "giSource": "non-starchy / minor carb source (nominal)", "giConfidence": "low" },
   "82025510": { "gi": 59, "giSource": "predicted (sugar + CEREAL GRAINS starch proxy)", "giConfidence": "predicted" }
 }

@@ -76,13 +76,13 @@ ingredients:
     fdcId: 171304
     matchConfidence: high
     cooking: raw
-  - raw: 1 tbsp sour cream
+  - raw: 1 tbsp plant-based sour cream
     quantity: 1
     unit: tbsp
-    item: sour cream
-    grams: 12
+    item: plant-based sour cream
+    grams: 15.2
     milliliters: 14.7868
-    fdcId: 171257
+    fdcId: 82019693
     matchConfidence: high
     cooking: raw
   - raw: 2 cloves garlic
@@ -124,16 +124,16 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 430
-    energyKj: 1801
-    protein_g: 21.7
-    fat_g: 26.3
-    satFat_g: 7.6
+    energyKcal: 422
+    energyKj: 1765
+    protein_g: 21.8
+    fat_g: 25.2
+    satFat_g: 7
     carbs_g: 30.2
-    fiber_g: 7.1
-    sugar_g: 7.6
-    sodium_mg: 1061
-    availableCarb_g: 23.1
+    fiber_g: 7.2
+    sugar_g: 7.4
+    sodium_mg: 1062
+    availableCarb_g: 23
   glycemic:
     gi: 40
     gl: 9
@@ -141,31 +141,32 @@ nutrition:
     glBand: low
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 48
+    measuredGiPct: 49
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: -0.2
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.21
   balance:
     score: 6
     band: moderate
-    nrf: 35.5
+    nrf: 36.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 67.8
-    ultraProcessedPct: 17.8
+    minimallyProcessedPct: 66.3
+    ultraProcessedPct: 18.1
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -181,5 +182,5 @@ createdAt: "2026-11-14"
 1. Preheat the oven to 200 °C and line a baking tray with baking paper.
 2. Wash the asparagus and snap off the woody ends. Beat the eggs in a bowl. In another bowl, mix the panko, the finely grated Parmesan and the garlic granules.
 3. Dip the asparagus spears first in the egg, then roll them thoroughly in the panko mixture. Place the breaded asparagus on the baking tray in a single layer, leaving a little space between them. Drizzle with a little oil and bake in the preheated oven for about 15 minutes, or until the coating is beautifully golden and crisp.
-4. Meanwhile, make the garlic yogurt sauce. Mix the Greek yogurt with the sour cream, add salt, the crushed garlic, grated lemon zest, lemon juice and finely chopped parsley. Stir well.
+4. Meanwhile, make the garlic yogurt sauce. Mix the Greek yogurt with the plant-based sour cream, add salt, the crushed garlic, grated lemon zest, lemon juice and finely chopped parsley. Stir well.
 5. Serve the hot, crispy asparagus immediately with the lemon garlic yogurt dip.

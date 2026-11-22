@@ -189,7 +189,7 @@ createdAt: "2026-11-14"
 5. Bring to a boil, then cover and cook over low heat for about 15 minutes. Add the potato cubes and cook for another 10-12 minutes until the vegetables are almost completely soft.
 6. **Csipetke and finishing:** While the goulash cooks, make the csipetke: work the flour together with the egg and a pinch of salt into a firm, elastic dough. With floured hands, pinch off tiny, bean-sized pieces.
 7. Drop the finished csipetke into the simmering vegetable goulash and cook for another 3-4 minutes, until the pieces of dough float to the top and are soft.
-8. Take off the heat, sprinkle with the finely chopped fresh parsley leaves and serve hot with crusty bread and sour cream, if you like.
+8. Take off the heat, sprinkle with the finely chopped fresh parsley leaves and serve hot with crusty bread and plant-based sour cream, if you like.
 
 ## Tips
 

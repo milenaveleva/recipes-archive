@@ -42,12 +42,12 @@ ingredients:
     fdcId: 170000
     matchConfidence: high
     cooking: baked
-  - raw: 200 g sour cream
+  - raw: 200 g plant-based sour cream
     quantity: 200
     unit: g
-    item: sour cream
+    item: plant-based sour cream
     grams: 200
-    fdcId: 171257
+    fdcId: 82019693
     matchConfidence: high
     cooking: baked
   - raw: 150 g cream cheese
@@ -93,19 +93,19 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 406
-    energyKj: 1697
-    protein_g: 10.7
-    fat_g: 31
-    satFat_g: 12.8
-    carbs_g: 21.9
-    fiber_g: 1.2
-    sugar_g: 2.8
-    sodium_mg: 302
-    availableCarb_g: 20.7
+    energyKcal: 367
+    energyKj: 1537
+    protein_g: 11
+    fat_g: 26.6
+    satFat_g: 10.3
+    carbs_g: 21.5
+    fiber_g: 1.4
+    sugar_g: 2.1
+    sodium_mg: 303
+    availableCarb_g: 20
   glycemic:
     gi: 46
-    gl: 10
+    gl: 9
     giBand: low
     glBand: low
     glBasis: meal
@@ -113,28 +113,29 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: D
-    points: 14
+    points: 12
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: 0.1
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.12
   balance:
     score: 2
     band: poor
-    nrf: 4.3
+    nrf: 7.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 21.9
-    ultraProcessedPct: 50.9
+    minimallyProcessedPct: 10.7
+    ultraProcessedPct: 56.2
     band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -150,7 +151,7 @@ createdAt: "2026-11-14"
 1. **Preparation:** Grate the Gouda finely. Peel and finely chop the onion. Thaw the frozen spinach and squeeze out the excess water thoroughly.
 2. Preheat the oven to 170 °C. Prepare a pie dish about 25 cm in diameter and line it with baking paper.
 3. **Assembly and baking:** On a lightly floured surface, roll out the puff pastry to about 2-3 mm thick. Place the pastry in the dish so that the sides reach at least 2 cm high and the corners hang over the rim.
-4. Make the filling: in a bowl, mix the sour cream, cream cheese and 2 eggs. Add the grated Gouda, chopped onion, nutmeg and spinach. Press in the garlic and mix thoroughly. Season with salt and pepper to taste.
+4. Make the filling: in a bowl, mix the plant-based sour cream, cream cheese and 2 eggs. Add the grated Gouda, chopped onion, nutmeg and spinach. Press in the garlic and mix thoroughly. Season with salt and pepper to taste.
 5. Pour the mixture into the pastry-lined dish, then fold the overhanging pastry edges back over the filling.
 6. In a small bowl, beat 1 egg with a tablespoon of water and brush it over the pastry edges.
 7. Bake for 48-52 minutes at 170-175 °C, until the pastry is golden brown.

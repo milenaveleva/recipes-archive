@@ -1,6 +1,6 @@
 ---
 title: Savoy Cabbage Rolls Stuffed with Pumpkin and Barley
-description: An autumn main of savoy cabbage leaves filled with pearl barley, pumpkin and mushrooms, baked in a paprika broth and served with sour cream.
+description: An autumn main of savoy cabbage leaves filled with pearl barley, pumpkin and mushrooms, baked in a paprika broth and served with plant-based sour cream.
 image: ./images/savoy-cabbage-rolls-stuffed-with-pumpkin-and-barley.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14452_1791641035771_stuffed-savoy-cabbage-rolls-with-pumpkin-and-barley_22c18f90.jpg
 imageAlt: Savoy Cabbage Rolls Stuffed with Pumpkin and Barley
@@ -118,13 +118,13 @@ ingredients:
     fdcId: 170931
     matchConfidence: medium
     cooking: baked
-  - raw: 150 g sour cream
+  - raw: 150 g plant-based sour cream
     group: For serving
     quantity: 150
     unit: g
-    item: sour cream
+    item: plant-based sour cream
     grams: 150
-    fdcId: 171257
+    fdcId: 82019693
     matchConfidence: high
     cooking: raw
   - raw: 1 bunch fresh parsley
@@ -138,24 +138,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 429
-    energyKj: 1796
-    protein_g: 10.5
-    fat_g: 18.7
-    satFat_g: 5.1
-    carbs_g: 60.7
-    fiber_g: 13.4
-    sugar_g: 8.9
-    sodium_mg: 983
-    availableCarb_g: 47.3
+    energyKcal: 372
+    energyKj: 1556
+    protein_g: 11
+    fat_g: 12.2
+    satFat_g: 1.4
+    carbs_g: 60
+    fiber_g: 13.7
+    sugar_g: 7.8
+    sodium_mg: 984
+    availableCarb_g: 46.3
   glycemic:
-    gi: 31
+    gi: 32
     gl: 15
     giBand: low
     glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 77
+    measuredGiPct: 79
   nutriScore:
     grade: B
     points: 1
@@ -163,23 +163,24 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
-    band: neutral
+    score: -0.5
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.37
   balance:
     score: 7
     band: high
-    nrf: 44
+    nrf: 54.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98.6
+    minimallyProcessedPct: 93.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -200,7 +201,7 @@ createdAt: "2026-11-14"
 6. Spread the blanched cabbage leaves on a cutting board. Divide the pumpkin-mushroom-barley filling evenly among them, fold in the two sides of the leaves, then roll up tightly, just like stuffed cabbage.
 7. **Baking and serving:** Pour 1 tablespoon of sunflower oil into the bottom of an ovenproof dish or tray, stir in 1 teaspoon of paprika, the remaining crushed garlic and the remaining caraway, then pour in the hot vegetable broth. Arrange the cabbage rolls tightly in it.
 8. Cover the dish with aluminium foil and bake in an oven preheated to 180 °C for 35-40 minutes. Remove the foil for the last 10 minutes so the tops of the rolls brown slightly and the paprika sauce thickens.
-9. To serve, place 2 rolls on each plate, drizzle with the rich vegetable sauce, spoon over plenty of cool sour cream and sprinkle with the remaining fresh parsley. Serve with fresh whole-wheat sourdough bread!
+9. To serve, place 2 rolls on each plate, drizzle with the rich vegetable sauce, spoon over plenty of cool plant-based sour cream and sprinkle with the remaining fresh parsley. Serve with fresh whole-wheat sourdough bread!
 
 ## Tips
 

@@ -57,13 +57,13 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: 200 ml heavy cream
+  - raw: 200 ml plant-based cooking cream
     quantity: 200
     unit: ml
-    item: heavy cream
-    grams: 198.8
+    item: plant-based cooking cream
+    grams: 200
     milliliters: 200
-    fdcId: 2346386
+    fdcId: 82011214
     matchConfidence: high
     cooking: boiled
   - raw: 75 g extra virgin olive oil
@@ -137,48 +137,49 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 820
-    energyKj: 3429
-    protein_g: 13.8
-    fat_g: 61.5
-    satFat_g: 16
-    carbs_g: 59.1
+    energyKcal: 729
+    energyKj: 3052
+    protein_g: 14.4
+    fat_g: 51.2
+    satFat_g: 6.7
+    carbs_g: 58.2
     fiber_g: 8.6
-    sugar_g: 12.6
-    sodium_mg: 720
-    availableCarb_g: 50.5
+    sugar_g: 11.9
+    sodium_mg: 722
+    availableCarb_g: 49.6
   glycemic:
-    gi: 57
+    gi: 58
     gl: 29
     giBand: medium
     glBand: high
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 80
+    measuredGiPct: 81
   nutriScore:
-    grade: C
-    points: 3
+    grade: A
+    points: 0
     category: general
     version: "2023"
     coverage: 0.74
   inflammation:
-    score: -0.3
+    score: -0.8
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.39
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 12.6
+    nrf: 22.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 76.7
-    ultraProcessedPct: 0
-    band: minimally-processed
+    minimallyProcessedPct: 63.2
+    ultraProcessedPct: 10.5
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

@@ -35,13 +35,13 @@ ingredients:
     fdcId: 169706
     matchConfidence: high
     cooking: boiled
-  - raw: 200 ml dry white wine
+  - raw: 200 ml vegetable broth
     quantity: 200
     unit: ml
-    item: dry white wine
-    grams: 198.8
+    item: vegetable broth
+    grams: 186.8
     milliliters: 200
-    fdcId: 174837
+    fdcId: 171583
     matchConfidence: high
     cooking: boiled
   - raw: 100 g green peas, blanched and puréed
@@ -153,24 +153,24 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 1046
-    energyKj: 4377
-    protein_g: 36.7
-    fat_g: 54.9
+    energyKcal: 1008
+    energyKj: 4217
+    protein_g: 36.8
+    fat_g: 55
     satFat_g: 10.8
-    carbs_g: 93
+    carbs_g: 92.2
     fiber_g: 6.4
-    sugar_g: 8.1
-    sodium_mg: 2303
-    availableCarb_g: 86.6
+    sugar_g: 7.9
+    sodium_mg: 2439
+    availableCarb_g: 85.7
   glycemic:
-    gi: 61
+    gi: 62
     gl: 53
     giBand: medium
     glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 87
+    measuredGiPct: 88
   nutriScore:
     grade: B
     points: 2
@@ -185,10 +185,10 @@ nutrition:
   balance:
     score: 3
     band: low
-    nrf: 13.8
+    nrf: 13.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88.4
+    minimallyProcessedPct: 91.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -208,7 +208,7 @@ createdAt: "2026-11-14"
 ## Method
 
 1. Cut the salmon fillets into 4 equal pieces and soak in a mixture of 2 litres of water and 120 g salt for 1.5 hours.
-2. Sauté the finely chopped onion and crushed garlic in a little oil, then add the brown arborio rice and toast it, then pour in the white wine.
+2. Sauté the finely chopped onion and crushed garlic in a little oil, then add the brown arborio rice and toast it, then pour in the first 200 ml of hot vegetable broth.
 3. Meanwhile heat the broth and add it to the risotto a ladle at a time while simmering, adding only as much as the rice absorbs. Brown arborio needs about 40-45 minutes and more broth than white risotto rice.
 4. Meanwhile take the salmon out of the brine and gently pan-fry it in a little olive oil, taking care to keep it juicy inside.
 5. When the risotto is almost completely tender, take it off the heat and stir in a drizzle of extra virgin olive oil, grated Parmesan and a little grated lemon zest, season with salt and pepper and add a few drops of lemon juice.

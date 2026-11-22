@@ -1,6 +1,6 @@
 ---
 title: Classic Italian Tiramisu
-description: Authentic tiramisu with mascarpone-egg cream, ladyfingers dipped in coffee, and a dusting of cocoa.
+description: Classic tiramisu with mascarpone-egg cream, homemade whole-wheat sponge fingers dipped in coffee, and a dusting of cocoa.
 image: ./images/classic-italian-tiramisu.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_12695_1777225152784_authentic-italian-tiramisu_c0fb0d6e.jpg
 imageAlt: Classic Italian Tiramisu
@@ -25,14 +25,41 @@ ingredients:
     fdcId: 173418
     matchConfidence: high
     cooking: raw
-  - raw: 40 ladyfingers
-    quantity: 40
-    item: ladyfingers
-    grams: 290
-    fdcId: 174981
-    matchConfidence: medium
-    cooking: raw
-    proxyOk: true
+  - raw: 3 eggs
+    group: For the whole-wheat sponge fingers
+    quantity: 3
+    item: eggs
+    grams: 150
+    fdcId: 171287
+    matchConfidence: high
+    cooking: baked
+  - raw: 60 g honey
+    group: For the whole-wheat sponge fingers
+    quantity: 60
+    unit: g
+    item: honey
+    grams: 60
+    fdcId: 169640
+    matchConfidence: high
+    cooking: baked
+  - raw: 100 g whole-wheat flour
+    group: For the whole-wheat sponge fingers
+    quantity: 100
+    unit: g
+    item: whole-wheat flour
+    grams: 100
+    fdcId: 790085
+    matchConfidence: high
+    cooking: baked
+  - raw: 1 pinch salt
+    group: For the whole-wheat sponge fingers
+    quantity: 1
+    unit: pinch
+    item: salt
+    grams: 0.4
+    fdcId: 173468
+    matchConfidence: high
+    cooking: baked
   - raw: 2 cups coffee
     quantity: 2
     unit: cups
@@ -69,47 +96,48 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 573
-    energyKj: 2398
-    protein_g: 17.3
-    fat_g: 36.2
-    satFat_g: 18.9
-    carbs_g: 46.3
-    fiber_g: 0.3
-    sugar_g: 9.1
-    sodium_mg: 444
-    availableCarb_g: 46
+    energyKcal: 504
+    energyKj: 2110
+    protein_g: 16.5
+    fat_g: 35.6
+    satFat_g: 19.1
+    carbs_g: 31.7
+    fiber_g: 2.1
+    sugar_g: 17.5
+    sodium_mg: 384
+    availableCarb_g: 29.5
   glycemic:
-    gi: 57
-    gl: 26
-    giBand: medium
-    glBand: high
+    gi: 49
+    gl: 14
+    giBand: low
+    glBand: medium
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 89
+    measuredGiPct: 47
   nutriScore:
     grade: D
-    points: 12
+    points: 11
     category: general
     version: "2023"
-    coverage: 0.82
+    coverage: 1
   inflammation:
-    score: 0.8
+    score: 1.1
     band: pro-inflammatory
     method: fii v4
   balance:
     score: 2
     band: poor
-    nrf: -3
+    nrf: -3.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 14.8
-    ultraProcessedPct: 34.3
-    band: highly-processed
+    minimallyProcessedPct: 42.2
+    ultraProcessedPct: 0
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
@@ -120,10 +148,11 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Beat the egg yolks with the honey until pale, then mix in the mascarpone thoroughly.
-2. Beat the egg whites to stiff peaks and gently fold into the mascarpone cream.
-3. Pour the cooled coffee into a bowl and quickly dip the ladyfingers into it. Arrange half of the ladyfingers in the bottom of a glass baking dish, then spread half of the mascarpone cream over them. Repeat the layering with the remaining ladyfingers and cream. The top layer should be cream. Refrigerate for at least 3 hours (ideally 12 hours).
-4. Dust thinly with cocoa powder before serving.
+1. **Whole-wheat sponge fingers:** Heat the oven to 180 °C and line a tray with baking paper. Whisk the 3 eggs with the 60 g honey for about 8 minutes until thick, pale and tripled in volume. Sift in the whole-wheat flour with the pinch of salt and fold in gently. Pipe or spoon 10 cm fingers onto the tray, bake for 10–12 minutes until golden, then cool completely (they dip better when a day old).
+2. Beat the egg yolks with the honey until pale, then mix in the mascarpone thoroughly.
+3. Beat the egg whites to stiff peaks and gently fold into the mascarpone cream.
+4. Pour the cooled coffee into a bowl and quickly dip the sponge fingers into it. Arrange half of the sponge fingers in the bottom of a glass baking dish, then spread half of the mascarpone cream over them. Repeat the layering with the remaining sponge fingers and cream. The top layer should be cream. Refrigerate for at least 3 hours (ideally 12 hours).
+5. Dust thinly with cocoa powder before serving.
 
 ## Tips
 

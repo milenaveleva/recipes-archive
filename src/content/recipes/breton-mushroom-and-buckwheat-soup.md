@@ -1,6 +1,6 @@
 ---
 title: Breton Mushroom and Buckwheat Soup
-description: A rustic French autumn soup of caramelised mushrooms, toasted buckwheat, shallots and white wine in vegetable broth.
+description: A rustic French autumn soup of caramelised mushrooms, toasted buckwheat, shallots and a squeeze of lemon in vegetable broth.
 image: ./images/breton-mushroom-and-buckwheat-soup.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14706_1792566920047_french-breton-buckwheat-mushroom-soup_6e5fe981.jpg
 imageAlt: Breton Mushroom and Buckwheat Soup
@@ -53,15 +53,16 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: 100 ml dry white wine
+  - raw: 100 ml vegetable broth (with a squeeze of lemon juice)
     group: Soup base
     quantity: 100
     unit: ml
-    item: dry white wine
-    grams: 99.4
+    item: vegetable broth
+    note: with a squeeze of lemon juice
+    grams: 93.4
     milliliters: 100
-    fdcId: 174837
-    matchConfidence: medium
+    fdcId: 171583
+    matchConfidence: high
     cooking: boiled
   - raw: 1200 ml vegetable broth
     group: Soup base
@@ -132,18 +133,18 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 320
-    energyKj: 1338
+    energyKcal: 301
+    energyKj: 1258
     protein_g: 9
     fat_g: 13.8
-    satFat_g: 2
-    carbs_g: 41
+    satFat_g: 2.1
+    carbs_g: 40.5
     fiber_g: 6.8
-    sugar_g: 5.6
-    sodium_mg: 1439
-    availableCarb_g: 33.7
+    sugar_g: 5.5
+    sodium_mg: 1507
+    availableCarb_g: 33.3
   glycemic:
-    gi: 53
+    gi: 54
     gl: 18
     giBand: low
     glBand: low
@@ -152,7 +153,7 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 3
+    points: 4
     category: general
     version: "2023"
     coverage: 0.92
@@ -164,10 +165,10 @@ nutrition:
   balance:
     score: 3
     band: low
-    nrf: 14.6
+    nrf: 14.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 89.2
+    minimallyProcessedPct: 95
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -191,7 +192,7 @@ createdAt: "2026-11-14"
 3. **Cooking:** In a dry, heavy-bottomed saucepan over medium heat, toast the buckwheat for 2-3 minutes until it starts to give off a pleasant nutty aroma, then remove it and set aside in a bowl.
 4. In the same pan, put the olive oil and half of the additional olive oil (15 g). Add the chopped shallots and cook until translucent, 3-4 minutes over low-medium heat.
 5. Add the sliced brown mushrooms and the remaining olive oil (15 g) to the shallots. Raise the heat slightly and fry briskly for 6-8 minutes until the mushrooms turn a nice caramelised golden brown. Stir in the finely chopped garlic and fresh thyme and fry for another minute.
-6. Pour the dry white wine over the vegetables, loosen the flavourful browned bits from the bottom of the pan with a wooden spoon, and boil for 2 minutes until the alcohol evaporates.
+6. Pour the vegetable broth with a squeeze of lemon juice over the vegetables, loosen the flavourful browned bits from the bottom of the pan with a wooden spoon, and boil for 2 minutes until slightly reduced.
 7. Add the toasted buckwheat to the mushrooms, pour in the hot vegetable broth, and season with salt and freshly ground black pepper. Bring to the boil, then simmer covered over very low heat for 20-25 minutes until the buckwheat is tender but still holds its pleasant bite.
 8. **Serving:** Turn off the heat, taste the soup and adjust the seasoning with a little more salt or pepper if needed. Ladle into deep bowls, sprinkle generously with fresh chopped parsley, and serve with a crusty French baguette.
 

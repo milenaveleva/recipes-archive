@@ -1,6 +1,6 @@
 ---
 title: Roasted Quince and Potato Traybake
-description: A crispy, spiced autumn side dish or one-pan supper of potatoes, quince, onion and garlic roasted in duck fat with caraway, served with sour cream.
+description: A crispy, spiced autumn side dish or one-pan supper of potatoes, quince, onion and garlic roasted in extra virgin olive oil with caraway, served with plant-based sour cream.
 image: ./images/roasted-quince-and-potato-traybake.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14724_1792623801090_hungarian-roasted-potatoes-with-quince_70e3f176.jpg
 imageAlt: Roasted Quince and Potato Traybake
@@ -102,59 +102,60 @@ ingredients:
     fdcId: 170416
     matchConfidence: high
     cooking: raw
-  - raw: 200 g sour cream
+  - raw: 200 g plant-based sour cream
     group: For serving
     quantity: 200
     unit: g
-    item: sour cream
+    item: plant-based sour cream
     grams: 200
-    fdcId: 171257
+    fdcId: 82019693
     matchConfidence: high
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 514
-    energyKj: 2150
-    protein_g: 8
-    fat_g: 23.7
-    satFat_g: 7
-    carbs_g: 72.3
-    fiber_g: 9.1
-    sugar_g: 14
-    sodium_mg: 633
-    availableCarb_g: 63.2
+    energyKcal: 437
+    energyKj: 1830
+    protein_g: 8.6
+    fat_g: 15
+    satFat_g: 2.1
+    carbs_g: 71.4
+    fiber_g: 9.5
+    sugar_g: 12.7
+    sodium_mg: 635
+    availableCarb_g: 62
   glycemic:
-    gi: 66
-    gl: 42
+    gi: 67
+    gl: 41
     giBand: medium
     glBand: high
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 61
+    measuredGiPct: 62
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
-    band: neutral
+    score: -0.5
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.39
   balance:
-    score: 5
+    score: 6
     band: moderate
-    nrf: 27.3
+    nrf: 36.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 100
+    minimallyProcessedPct: 94.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -169,7 +170,7 @@ createdAt: "2026-11-14"
 
 1. **Preparation:** Preheat the oven to 200 °C (top and bottom heat). Wash the potatoes thoroughly, peel them, then cut them into even, thicker wedges or sticks. Rub the quinces clean of fuzz with a kitchen towel, wash thoroughly, core them and cut into wedges the same size as the potatoes (the skin does not need to be removed, as it softens pleasantly during roasting and stays aromatic). Peel the onions and cut them into thicker wedges, and peel the garlic cloves and leave them whole, or flatten them slightly with the side of a knife.
 2. **Assembly and roasting:** In a large baking tray or bowl, mix the chopped potatoes, quince, onions and garlic cloves. Drizzle with the olive oil, then season with salt and pepper and sprinkle with the whole caraway seeds. Toss thoroughly so the spiced oil coats every piece. Spread everything evenly in a single layer on the tray so it can roast to a nice crisp rather than just steam. Slide into the 200 °C oven for 40–45 minutes. Carefully turn once halfway with a spatula. It is done when the potatoes are golden and crisp outside and the quince is tender and caramelised.
-3. **Serving:** Take out of the oven, immediately sprinkle generously with finely chopped fresh parsley and serve with cold sour cream. It is a substantial autumn supper on its own, but also perfect as a festive side dish with roast meats.
+3. **Serving:** Take out of the oven, immediately sprinkle generously with finely chopped fresh parsley and serve with cold plant-based sour cream. It is a substantial autumn supper on its own, but also perfect as a festive side dish with roast meats.
 
 ## Tips
 

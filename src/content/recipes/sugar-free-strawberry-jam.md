@@ -1,6 +1,6 @@
 ---
-title: Sugar-Free Strawberry Jam
-description: A simple strawberry jam without added sugar, simmered with lemon juice and optionally sweetened with erythritol.
+title: Low-Sugar Strawberry Jam with Honey
+description: A simple strawberry jam without refined sugar, simmered with lemon juice and, if needed, sweetened with a little honey.
 image: ./images/sugar-free-strawberry-jam.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10460_1775303444556_sugar-free-strawberry-jam_422af3a4.png
 imageAlt: Sugar-Free Strawberry Jam
@@ -35,16 +35,15 @@ ingredients:
     fdcId: 167747
     matchConfidence: high
     cooking: boiled
-  - raw: 4 tbsp erythritol (if not sweet enough)
-    quantity: 4
+  - raw: 2 tbsp honey (if not sweet enough)
+    quantity: 2
     unit: tbsp
-    item: erythritol
+    item: honey
     note: if not sweet enough
-    grams: 48
-    milliliters: 59.1472
-    fdcId: 170679
+    grams: 42
+    milliliters: 29.5736
+    fdcId: 169640
     matchConfidence: high
-    excludeFromNutrition: true
     cooking: boiled
   - raw: glass jars
     item: glass jars
@@ -53,38 +52,38 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 163
-    energyKj: 683
-    protein_g: 3.4
+    energyKcal: 227
+    energyKj: 951
+    protein_g: 3.5
     fat_g: 1.5
     satFat_g: 0.1
-    carbs_g: 39.5
-    fiber_g: 10
-    sugar_g: 24.8
-    sodium_mg: 5
-    availableCarb_g: 29.4
+    carbs_g: 56.8
+    fiber_g: 10.1
+    sugar_g: 42.1
+    sodium_mg: 6
+    availableCarb_g: 46.7
   glycemic:
-    gi: 39
-    gl: 12
+    gi: 47
+    gl: 22
     giBand: low
-    glBand: medium
+    glBand: high
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 97
+    measuredGiPct: 98
   nutriScore:
     grade: A
-    points: -4
+    points: -3
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -1.4
-    band: anti-inflammatory
+    score: -0.6
+    band: mildly-anti-inflammatory
     method: fii v4
   balance:
     score: 10
     band: excellent
-    nrf: 130.9
+    nrf: 107.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -107,7 +106,7 @@ createdAt: "2026-11-14"
 
 1. Wash the strawberries, remove the leaves, halve the larger ones and put them into a saucepan.
 2. Slowly bring to a gentle heat and simmer for 20 minutes.
-3. At the end, add the lemon juice and the sweetener if it isn't sweet enough, then pour into perfectly clean, dry, sterilised jars, filling them almost to the brim. Screw on the lids, turn the jars upside down, wrap in a kitchen towel and leave to stand for half a day.
+3. At the end, add the lemon juice and the honey if it isn't sweet enough, then pour into perfectly clean, dry, sterilised jars, filling them almost to the brim. Screw on the lids, turn the jars upside down, wrap in a kitchen towel and leave to stand for half a day.
 
 ## Tips
 

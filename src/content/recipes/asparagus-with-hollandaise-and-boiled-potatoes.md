@@ -63,15 +63,16 @@ ingredients:
     fdcId: 172240
     matchConfidence: high
     cooking: boiled
-  - raw: 4 tbsp dry white wine
+  - raw: 4 tbsp vegetable broth (with a squeeze of lemon juice)
     group: Hollandaise and side
     quantity: 4
     unit: tbsp
-    item: dry white wine
-    grams: 58.8
+    item: vegetable broth
+    note: with a squeeze of lemon juice
+    grams: 55.2
     milliliters: 59.1472
-    fdcId: 174837
-    matchConfidence: medium
+    fdcId: 171583
+    matchConfidence: high
     cooking: boiled
   - raw: 1 tbsp lemon juice
     group: Hollandaise and side
@@ -121,16 +122,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 589
-    energyKj: 2465
+    energyKcal: 578
+    energyKj: 2417
     protein_g: 14.7
     fat_g: 42
     satFat_g: 6.6
-    carbs_g: 43.6
+    carbs_g: 43.4
     fiber_g: 12.9
     sugar_g: 10.7
-    sodium_mg: 25
-    availableCarb_g: 30.7
+    sodium_mg: 66
+    availableCarb_g: 30.5
   glycemic:
     gi: 53
     gl: 16
@@ -152,10 +153,10 @@ nutrition:
   balance:
     score: 7
     band: high
-    nrf: 49.8
+    nrf: 50.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98
+    minimallyProcessedPct: 99.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -178,7 +179,7 @@ createdAt: "2026-11-14"
 3. Serve with boiled potatoes or fresh whole-wheat bread.
 4. **Making the hollandaise sauce:** Warm the olive oil (a light extra virgin one keeps the flavour mild) in a small saucepan, then set aside.
 5. Whisk the egg yolks in a stainless steel or glass bowl with a little water and a pinch of salt.
-6. In another saucepan, pour in the vinegar and wine and add the pepper. Boil until about 2 tablespoons of liquid remain, then add it to the egg yolks, stirring constantly.
+6. In another saucepan, pour in the vinegar and the vegetable broth with a squeeze of lemon juice and add the pepper. Boil until about 2 tablespoons of liquid remain, then add it to the egg yolks, stirring constantly.
 7. Pour 2 cm of water into a pan, bring to a boil, then reduce the heat to the minimum. Set the egg yolk bowl over it so that the bottom does not touch the water. Whisk constantly until the sauce starts to thicken. Take it off the heat.
 8. Gradually pour the warm olive oil into the egg mixture, whisking constantly. At first only drop by drop, then in a thin stream. Finally stir in the lemon juice and season with salt.
 

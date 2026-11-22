@@ -75,14 +75,13 @@ ingredients:
     fdcId: 171284
     matchConfidence: high
     cooking: raw
-  - raw: 1 tbsp heavy cream (min. 31%)
+  - raw: 1 tbsp plant-based cooking cream
     quantity: 1
     unit: tbsp
-    item: heavy cream
-    note: min. 31%
-    grams: 14.7
+    item: plant-based cooking cream
+    grams: 14.8
     milliliters: 14.7868
-    fdcId: 2346386
+    fdcId: 82011214
     matchConfidence: high
     cooking: raw
   - raw: 1 tsp white wine vinegar
@@ -128,16 +127,16 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 636
-    energyKj: 2660
-    protein_g: 20.1
-    fat_g: 51
-    satFat_g: 14
-    carbs_g: 29.2
+    energyKcal: 609
+    energyKj: 2549
+    protein_g: 20.2
+    fat_g: 47.9
+    satFat_g: 11.2
+    carbs_g: 28.9
     fiber_g: 10
-    sugar_g: 13.4
-    sodium_mg: 1286
-    availableCarb_g: 19.2
+    sugar_g: 13.2
+    sodium_mg: 1287
+    availableCarb_g: 19
   glycemic:
     gi: 27
     gl: 5
@@ -145,31 +144,32 @@ nutrition:
     glBand: low
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 51
+    measuredGiPct: 53
   nutriScore:
     grade: C
     points: 3
     category: general
     version: "2023"
-    coverage: 0.98
+    coverage: 0.97
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.09
   balance:
-    score: 2
-    band: poor
-    nrf: 8.7
+    score: 3
+    band: low
+    nrf: 11.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 78.3
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 73.7
+    ultraProcessedPct: 3.7
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

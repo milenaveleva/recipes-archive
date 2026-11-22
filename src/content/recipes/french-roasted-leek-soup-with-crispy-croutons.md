@@ -1,6 +1,6 @@
 ---
 title: French Roasted Leek Soup with Crispy Croutons
-description: A silky French cream soup of caramelised roasted leeks, roasted garlic and white wine, topped with crisp whole-wheat baguette croutons.
+description: A silky French cream soup of caramelised roasted leeks, roasted garlic and a squeeze of lemon, topped with crisp whole-wheat baguette croutons.
 image: ./images/french-roasted-leek-soup-with-crispy-croutons.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14687_1792498122646_french-roasted-leek-veloute-soup_f23ffe55.jpg
 imageAlt: French Roasted Leek Soup with Crispy Croutons
@@ -54,15 +54,16 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: baked
-  - raw: 100 ml dry white wine
+  - raw: 100 ml vegetable broth (with a squeeze of lemon juice)
     group: For the roasted leek base
     quantity: 100
     unit: ml
-    item: dry white wine
-    grams: 99.4
+    item: vegetable broth
+    note: with a squeeze of lemon juice
+    grams: 93.4
     milliliters: 100
-    fdcId: 174837
-    matchConfidence: medium
+    fdcId: 171583
+    matchConfidence: high
     cooking: boiled
   - raw: 800 ml vegetable broth
     group: For the roasted leek base
@@ -74,15 +75,14 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 150 ml whipping cream (30%)
+  - raw: 150 ml plant-based cooking cream
     group: For the roasted leek base
     quantity: 150
     unit: ml
-    item: whipping cream
-    note: 30%
-    grams: 149.1
+    item: plant-based cooking cream
+    grams: 150
     milliliters: 150
-    fdcId: 2346386
+    fdcId: 82011214
     matchConfidence: high
     cooking: boiled
   - raw: 30 g extra virgin olive oil
@@ -134,48 +134,49 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 617
-    energyKj: 2581
-    protein_g: 10.5
-    fat_g: 32.4
-    satFat_g: 10.2
-    carbs_g: 70.3
+    energyKcal: 530
+    energyKj: 2218
+    protein_g: 11
+    fat_g: 24.6
+    satFat_g: 3.2
+    carbs_g: 69.2
     fiber_g: 7
-    sugar_g: 8.9
-    sodium_mg: 1424
-    availableCarb_g: 63.3
+    sugar_g: 8.3
+    sodium_mg: 1493
+    availableCarb_g: 62.2
   glycemic:
-    gi: 68
+    gi: 69
     gl: 43
     giBand: medium
     glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 63
+    measuredGiPct: 64
   nutriScore:
     grade: C
-    points: 5
+    points: 4
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.93
   inflammation:
-    score: 0.1
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.22
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 14.2
+    nrf: 21.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 71
-    ultraProcessedPct: 0
-    band: minimally-processed
+    minimallyProcessedPct: 59
+    ultraProcessedPct: 10.9
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -192,7 +193,7 @@ createdAt: "2026-11-14"
 2. Spread the sliced leeks, the whole unpeeled garlic cloves and the potato cubes on a baking tray lined with baking paper. Drizzle with the extra virgin olive oil, sprinkle with the thyme, salt and freshly ground black pepper, then toss thoroughly.
 3. Roast in the oven for 25-30 minutes until the edges of the leeks caramelise to a beautiful golden brown and the potatoes and garlic are completely soft.
 4. **Cooking and smoothing:** Transfer the roasted vegetables to a deep pot. Squeeze the roasted garlic cloves out of their skins straight into the pot.
-5. Put the pot over medium heat, pour in the dry white wine and boil for 2-3 minutes until the alcohol evaporates and the intense flavours dissolve. Then pour in the warm vegetable broth.
+5. Put the pot over medium heat, pour in the first 100 ml of vegetable broth with a squeeze of lemon juice and boil for 2-3 minutes until the intense flavours dissolve. Then pour in the rest of the warm vegetable broth.
 6. Bring to a boil, then simmer gently for another 8-10 minutes so the flavours meld perfectly.
 7. Take off the heat, add the olive oil and the cream, then blend with a hand blender until completely velvety and smooth. Taste and, if needed, adjust with more salt and pepper.
 8. **Making the croutons and serving:** While the soup rests, cut the baguette into thin slices or bite-sized cubes. Fry in a pan in a few drops of olive oil until crispy and golden brown.

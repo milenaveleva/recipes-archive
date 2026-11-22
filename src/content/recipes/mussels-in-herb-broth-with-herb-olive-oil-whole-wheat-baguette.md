@@ -100,18 +100,6 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: boiled
-  - raw: white wine, optional
-    item: white wine
-    note: optional
-    matchConfidence: none
-    excludeFromNutrition: true
-    cooking: boiled
-  - raw: dry sparkling wine, optional
-    item: dry sparkling wine
-    note: optional
-    matchConfidence: none
-    excludeFromNutrition: true
-    cooking: boiled
   - raw: cider, optional
     item: cider
     note: optional
@@ -199,4 +187,4 @@ createdAt: "2026-11-14"
 
 ## Tips
 
-- It can also be made with white wine, dry sparkling wine or cider instead of the vegetable broth. As a starter, 250 g of mussels per person is enough; as a main course, count on at least 500-600 g per person.
+- As a starter, 250 g of mussels per person is enough; as a main course, count on at least 500-600 g per person.

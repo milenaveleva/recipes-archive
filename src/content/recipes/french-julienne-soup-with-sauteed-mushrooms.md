@@ -59,14 +59,15 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: 100 ml dry white wine
+  - raw: 100 ml vegetable broth (with a squeeze of lemon juice)
     group: Main ingredients
     quantity: 100
     unit: ml
-    item: dry white wine
-    grams: 99.4
+    item: vegetable broth
+    note: with a squeeze of lemon juice
+    grams: 93.4
     milliliters: 100
-    fdcId: 174837
+    fdcId: 171583
     matchConfidence: high
     cooking: boiled
   - raw: 1 l vegetable broth
@@ -140,16 +141,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 186
-    energyKj: 778
+    energyKcal: 167
+    energyKj: 697
     protein_g: 3.9
     fat_g: 9.6
     satFat_g: 1.4
-    carbs_g: 19.8
+    carbs_g: 19.4
     fiber_g: 4.9
-    sugar_g: 6.8
-    sodium_mg: 1332
-    availableCarb_g: 14.9
+    sugar_g: 6.7
+    sodium_mg: 1400
+    availableCarb_g: 14.5
   glycemic:
     gi: 38
     gl: 6
@@ -165,17 +166,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
+    score: 0
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.15
   balance:
     score: 5
     band: moderate
-    nrf: 25.9
+    nrf: 26.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 82.8
+    minimallyProcessedPct: 92.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -197,7 +198,7 @@ createdAt: "2026-11-14"
 1. **Preparation and julienne vegetables:** Wash and clean the vegetables carefully. Cut the carrot and celery into even, thin matchstick strips (julienne, about 4–5 cm long). Halve the white and light green part of the leek lengthwise and also slice into fine thin strips. Finely chop the garlic.
 2. Clean the cremini mushrooms with a paper towel and cut them into neat slices about 3–4 mm thick. Finely chop the fresh parsley.
 3. **Cooking the soup base and searing the mushrooms:** In a medium pot, heat half of the additional olive oil and the extra virgin olive oil. Add the julienned carrot, leek and celery and cook over medium heat for 4–5 minutes until the vegetables soften slightly but are still pleasantly crisp. Add the crushed garlic and thyme and cook for another half minute until fragrant.
-4. Pour in the dry white wine and boil over lively heat for 1–2 minutes to cook off the alcohol. Then pour in the warm vegetable broth and season with fine salt and ground black pepper. From the boil, simmer on low heat for 8–10 minutes so the vegetables become perfectly tender but keep their shape and colour.
+4. Pour in the first 100 ml of vegetable broth with a squeeze of lemon juice and boil over lively heat for 1–2 minutes. Then pour in the rest of the warm vegetable broth and season with fine salt and ground black pepper. From the boil, simmer on low heat for 8–10 minutes so the vegetables become perfectly tender but keep their shape and colour.
 5. While the soup simmers, heat the remaining additional olive oil in a separate pan over high heat. Add the sliced cremini in a single layer (do not overcrowd the pan). Cook for 4–5 minutes without stirring until the underside is deep golden, then toss and sauté another 2–3 minutes seasoned with a pinch of salt and pepper until temptingly caramelised.
 6. **Serving:** Ladle the simmering, fragrant julienne soup into deep plates. Pile plenty of the freshly seared, crispy cremini on top and sprinkle with fresh chopped parsley. Serve hot, with crusty French baguette if you like.
 

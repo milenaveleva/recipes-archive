@@ -173,4 +173,4 @@ createdAt: "2026-11-14"
 
 ## Tips
 
-- When serving, a little lemon juice or a spoonful of sour cream makes the soup even creamier and tangier.
+- When serving, a little lemon juice or a spoonful of plant-based sour cream makes the soup even creamier and tangier.

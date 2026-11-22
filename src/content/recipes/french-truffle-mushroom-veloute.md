@@ -1,6 +1,6 @@
 ---
 title: French Truffle Mushroom Velouté
-description: A velvety autumn cream soup of cremini mushrooms, shallots and white wine, finished with truffle oil and served with toasted whole-wheat baguette.
+description: A velvety autumn cream soup of cremini mushrooms, shallots and a squeeze of lemon, finished with truffle oil and served with toasted whole-wheat baguette.
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14732-francia-szarvasgombas-gombaveloute-barsonyos-oszi-kremleves
@@ -37,14 +37,15 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: 100 ml dry white wine
+  - raw: 100 ml vegetable broth (with a squeeze of lemon juice)
     group: For the soup
     quantity: 100
     unit: ml
-    item: dry white wine
-    grams: 99.4
+    item: vegetable broth
+    note: with a squeeze of lemon juice
+    grams: 93.4
     milliliters: 100
-    fdcId: 174837
+    fdcId: 171583
     matchConfidence: high
     cooking: boiled
   - raw: 800 ml vegetable broth
@@ -57,15 +58,14 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 150 ml heavy cream (30%)
+  - raw: 150 ml plant-based cooking cream
     group: For the soup
     quantity: 150
     unit: ml
-    item: heavy cream
-    note: 30%
-    grams: 149.1
+    item: plant-based cooking cream
+    grams: 150
     milliliters: 150
-    fdcId: 2346386
+    fdcId: 82011214
     matchConfidence: high
     cooking: boiled
   - raw: 30 g extra virgin olive oil
@@ -122,48 +122,49 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 486
-    energyKj: 2034
-    protein_g: 9.5
-    fat_g: 28.6
-    satFat_g: 9.7
-    carbs_g: 47.2
+    energyKcal: 399
+    energyKj: 1671
+    protein_g: 10
+    fat_g: 20.8
+    satFat_g: 2.7
+    carbs_g: 46.1
     fiber_g: 6.7
-    sugar_g: 6.4
-    sodium_mg: 1392
-    availableCarb_g: 40.4
+    sugar_g: 5.8
+    sodium_mg: 1462
+    availableCarb_g: 39.3
   glycemic:
-    gi: 57
+    gi: 59
     gl: 23
     giBand: medium
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 70
+    measuredGiPct: 71
   nutriScore:
     grade: C
-    points: 6
+    points: 5
     category: general
     version: "2023"
-    coverage: 1
+    coverage: 0.92
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.23
   balance:
     score: 2
     band: poor
-    nrf: -0.2
+    nrf: 6.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 63.2
-    ultraProcessedPct: 0
+    minimallyProcessedPct: 45.5
+    ultraProcessedPct: 14.4
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
+    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
@@ -179,7 +180,7 @@ createdAt: "2026-11-14"
 1. **Preparation and frying:** Clean the cremini mushrooms and slice thinly. Set aside a handful of nice slices for garnish later. Chop the shallots and garlic finely.
 2. In a pot heat half of the olive oil, then add the finely chopped shallots and a pinch of salt. Cook until glassy over medium heat, about 3-4 minutes.
 3. Add the crushed garlic, the thyme sprigs and the sliced cremini mushrooms. Fry over higher heat for 6-8 minutes until the mushrooms release liquid, then take on a nice golden-brown colour.
-4. **Cooking and puréeing:** Pour the dry white wine over the mushrooms and boil for 2 minutes until the alcohol has evaporated and the flavours concentrate.
+4. **Cooking and puréeing:** Pour the vegetable broth with a squeeze of lemon juice over the mushrooms and boil for 2 minutes until the flavours concentrate.
 5. Add the hot vegetable broth. Bring to the boil, then reduce the heat and simmer for 15 minutes until the flavours come together. Remove the thyme sprigs now.
 6. Purée the soup with a stick blender or in a blender until completely velvety and silky. Stir in the cream, bring gently to the boil once more, then season with salt and freshly ground black pepper.
 7. **Finishing and serving:** In a small pan fry the reserved mushroom slices in the remaining olive oil until crisp, 2-3 minutes. Meanwhile slice the baguette and toast lightly.

@@ -15,6 +15,17 @@ const FOODS: FoodRecord[] = [
 ];
 
 describe('searchFoods', () => {
+  it('maps a plant-based sour cream / crème fraîche to the plain soy yogurt, not dairy sour cream', () => {
+    const foods: FoodRecord[] = [
+      { fdcId: 10, description: 'Cream, sour, cultured', n: { energyKcal: 198 } },
+      { fdcId: 11, description: 'Yogurt, plant-based, soy, plain (unsweetened)', n: { energyKcal: 45 } },
+    ];
+    for (const q of ['plant-based sour cream', 'plant sour cream', 'vegan crème fraîche', 'dairy-free sour cream']) {
+      expect(searchFoods(q, foods)[0].food.fdcId).toBe(11);
+    }
+    expect(searchFoods('sour cream', foods)[0].food.fdcId).toBe(10);
+  });
+
   it('matches a singular query against a plural USDA description (stemming)', () => {
     const top = searchFoods('finely chopped onion', FOODS)[0];
     expect(top.food.fdcId).toBe(3);
