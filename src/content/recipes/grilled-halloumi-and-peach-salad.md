@@ -41,9 +41,10 @@ ingredients:
     fdcId: 169387
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful mixed seeds
-    quantity: 1
-    item: handful mixed seeds
+  - raw: 25 g mixed seeds
+    quantity: 25
+    unit: g
+    item: mixed seeds
     grams: 25
     fdcId: 170562
     matchConfidence: high

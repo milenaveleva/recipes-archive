@@ -52,9 +52,10 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: fried
-  - raw: 1 handful fresh basil
-    quantity: 1
-    item: handful fresh basil
+  - raw: 10 g fresh basil
+    quantity: 10
+    unit: g
+    item: fresh basil
     grams: 10
     fdcId: 172232
     matchConfidence: high

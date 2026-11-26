@@ -118,10 +118,11 @@ ingredients:
     fdcId: 171326
     matchConfidence: medium
     cooking: baked
-  - raw: 1 handful fresh parsley
+  - raw: 10 g fresh parsley
     group: For garnish
-    quantity: 1
-    item: handful fresh parsley
+    quantity: 10
+    unit: g
+    item: fresh parsley
     grams: 10
     fdcId: 170416
     matchConfidence: high

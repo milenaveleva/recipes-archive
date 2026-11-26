@@ -66,9 +66,10 @@ ingredients:
     fdcId: 170845
     matchConfidence: high
     cooking: baked
-  - raw: fresh thyme, a handful
+  - raw: 5 g fresh thyme
+    quantity: 5
+    unit: g
     item: fresh thyme
-    note: a handful
     grams: 5
     fdcId: 173470
     matchConfidence: high

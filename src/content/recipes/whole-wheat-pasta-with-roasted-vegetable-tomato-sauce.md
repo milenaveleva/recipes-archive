@@ -75,9 +75,10 @@ ingredients:
     fdcId: 171317
     matchConfidence: medium
     cooking: baked
-  - raw: 1 handful fresh basil, for garnish
-    quantity: 1
-    item: handful fresh basil
+  - raw: 10 g fresh basil, for garnish
+    quantity: 10
+    unit: g
+    item: fresh basil
     note: for garnish
     grams: 10
     fdcId: 172232

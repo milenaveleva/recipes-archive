@@ -58,9 +58,10 @@ ingredients:
     fdcId: 170499
     matchConfidence: medium
     cooking: raw
-  - raw: 1 handful fresh coriander
-    quantity: 1
-    item: handful fresh coriander
+  - raw: 15 g fresh coriander
+    quantity: 15
+    unit: g
+    item: fresh coriander
     grams: 15
     fdcId: 169997
     matchConfidence: medium

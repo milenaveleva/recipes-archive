@@ -64,9 +64,10 @@ ingredients:
     fdcId: 171025
     matchConfidence: high
     cooking: baked
-  - raw: 1 handful grated Trappist cheese
-    quantity: 1
-    item: handful grated Trappist cheese
+  - raw: 40 g grated Trappist cheese
+    quantity: 40
+    unit: g
+    item: grated Trappist cheese
     grams: 40
     fdcId: 173419
     matchConfidence: high

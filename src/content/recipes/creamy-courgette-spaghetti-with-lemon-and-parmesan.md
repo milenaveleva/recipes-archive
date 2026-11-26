@@ -46,10 +46,11 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 1 handful fresh parsley
+  - raw: 10 g fresh parsley
     group: Main ingredients
-    quantity: 1
-    item: handful fresh parsley
+    quantity: 10
+    unit: g
+    item: fresh parsley
     grams: 10
     fdcId: 170416
     matchConfidence: high
@@ -110,10 +111,11 @@ ingredients:
     fdcId: 170931
     matchConfidence: medium
     cooking: boiled
-  - raw: 1 handful fresh basil
+  - raw: 10 g fresh basil
     group: For serving
-    quantity: 1
-    item: handful fresh basil
+    quantity: 10
+    unit: g
+    item: fresh basil
     grams: 10
     fdcId: 172232
     matchConfidence: high

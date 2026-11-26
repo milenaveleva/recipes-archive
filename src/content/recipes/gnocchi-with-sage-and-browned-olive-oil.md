@@ -42,9 +42,10 @@ ingredients:
     fdcId: 173431
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful fresh sage
-    quantity: 1
-    item: handful fresh sage
+  - raw: 10 g fresh sage
+    quantity: 10
+    unit: g
+    item: fresh sage
     grams: 10
     fdcId: 170935
     matchConfidence: low

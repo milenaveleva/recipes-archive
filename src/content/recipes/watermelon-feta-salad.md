@@ -42,16 +42,18 @@ ingredients:
     fdcId: 173420
     matchConfidence: high
     cooking: raw
-  - raw: fresh basil, a handful
+  - raw: 10 g fresh basil
+    quantity: 10
+    unit: g
     item: fresh basil
-    note: a handful
     grams: 10
     fdcId: 172232
     matchConfidence: high
     cooking: raw
-  - raw: fresh mint, a handful
+  - raw: 10 g fresh mint
+    quantity: 10
+    unit: g
     item: fresh mint
-    note: a handful
     grams: 10
     fdcId: 173475
     matchConfidence: high

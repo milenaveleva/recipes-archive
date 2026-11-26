@@ -42,8 +42,10 @@ ingredients:
     fdcId: 169640
     matchConfidence: high
     cooking: raw
-  - raw: Handful of ginger (chopped)
-    item: Handful of ginger
+  - raw: 400 g ginger (chopped)
+    quantity: 400
+    unit: g
+    item: ginger
     note: chopped
     grams: 400
     fdcId: 169231

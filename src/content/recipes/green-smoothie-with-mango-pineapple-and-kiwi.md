@@ -17,16 +17,18 @@ course: Drink
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 1 handful kale
-    quantity: 1
-    item: handful kale
+  - raw: 30 g kale
+    quantity: 30
+    unit: g
+    item: kale
     grams: 30
     fdcId: 168421
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful baby spinach
-    quantity: 1
-    item: handful baby spinach
+  - raw: 30 g baby spinach
+    quantity: 30
+    unit: g
+    item: baby spinach
     grams: 30
     fdcId: 1999632
     matchConfidence: high

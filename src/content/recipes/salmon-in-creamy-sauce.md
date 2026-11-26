@@ -58,9 +58,10 @@ ingredients:
     fdcId: 170050
     matchConfidence: medium
     cooking: fried
-  - raw: 1 handful baby spinach
-    quantity: 1
-    item: handful baby spinach
+  - raw: 30 g baby spinach
+    quantity: 30
+    unit: g
+    item: baby spinach
     grams: 30
     fdcId: 168462
     matchConfidence: medium

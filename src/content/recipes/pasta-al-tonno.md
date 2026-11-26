@@ -77,9 +77,10 @@ ingredients:
     fdcId: 173709
     matchConfidence: medium
     cooking: boiled
-  - raw: 3 handfuls fresh basil
-    quantity: 3
-    item: handfuls fresh basil
+  - raw: 30 g fresh basil
+    quantity: 30
+    unit: g
+    item: fresh basil
     grams: 30
     fdcId: 172232
     matchConfidence: high

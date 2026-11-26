@@ -177,7 +177,7 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. **Preparation and frying:** Clean the cremini mushrooms and slice thinly. Set aside a handful of nice slices for garnish later. Chop the shallots and garlic finely.
+1. **Preparation and frying:** Clean the cremini mushrooms and slice thinly. Set aside a few nice slices for garnish later. Chop the shallots and garlic finely.
 2. In a pot heat half of the olive oil, then add the finely chopped shallots and a pinch of salt. Cook until glassy over medium heat, about 3-4 minutes.
 3. Add the crushed garlic, the thyme sprigs and the sliced cremini mushrooms. Fry over higher heat for 6-8 minutes until the mushrooms release liquid, then take on a nice golden-brown colour.
 4. **Cooking and puréeing:** Pour the vegetable broth with a squeeze of lemon juice over the mushrooms and boil for 2 minutes until the flavours concentrate.

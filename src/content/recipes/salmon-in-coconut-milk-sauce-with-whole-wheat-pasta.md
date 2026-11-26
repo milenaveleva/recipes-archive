@@ -71,11 +71,10 @@ ingredients:
     fdcId: 170173
     matchConfidence: high
     cooking: baked
-  - raw: 10 g fresh dill (1 handful)
+  - raw: 10 g fresh dill
     quantity: 10
     unit: g
     item: fresh dill
-    note: 1 handful
     grams: 10
     fdcId: 172233
     matchConfidence: medium

@@ -97,16 +97,18 @@ ingredients:
     fdcId: 169385
     matchConfidence: high
     cooking: boiled
-  - raw: 1 handful fresh parsley
-    quantity: 1
-    item: handful fresh parsley
+  - raw: 10 g fresh parsley
+    quantity: 10
+    unit: g
+    item: fresh parsley
     grams: 10
     fdcId: 170416
     matchConfidence: high
     cooking: boiled
-  - raw: 1 handful fresh basil
-    quantity: 1
-    item: handful fresh basil
+  - raw: 10 g fresh basil
+    quantity: 10
+    unit: g
+    item: fresh basil
     grams: 10
     fdcId: 172232
     matchConfidence: high
@@ -129,9 +131,10 @@ ingredients:
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
-  - raw: 2 handfuls curly kale or savoy cabbage
-    quantity: 2
-    item: handfuls curly kale or savoy cabbage
+  - raw: 80 g curly kale or savoy cabbage
+    quantity: 80
+    unit: g
+    item: curly kale or savoy cabbage
     grams: 80
     fdcId: 168421
     matchConfidence: high

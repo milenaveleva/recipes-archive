@@ -31,9 +31,10 @@ ingredients:
     fdcId: 173944
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful blueberries, raspberries or strawberries
-    quantity: 1
-    item: handful blueberries
+  - raw: 70 g blueberries, raspberries or strawberries
+    quantity: 70
+    unit: g
+    item: blueberries
     note: raspberries or strawberries
     grams: 70
     fdcId: 171711

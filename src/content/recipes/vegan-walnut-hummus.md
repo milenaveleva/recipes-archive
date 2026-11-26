@@ -171,4 +171,4 @@ createdAt: "2026-11-14"
 
 1. Soak the dried chickpeas in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
 2. Put the cooked chickpeas into a blender with the tahini, garlic, a few drops of citrus juice, cumin and a little curry powder, then blend until completely smooth. Taste and add more salt or spices if needed.
-3. Serve with whole-wheat pita or flatbread, a handful of iceberg lettuce and olive oil.
+3. Serve with whole-wheat pita or flatbread, some iceberg lettuce and olive oil.

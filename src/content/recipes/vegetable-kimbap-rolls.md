@@ -47,9 +47,10 @@ ingredients:
     fdcId: 169225
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful fresh spinach
-    quantity: 1
-    item: handful fresh spinach
+  - raw: 30 g fresh spinach
+    quantity: 30
+    unit: g
+    item: fresh spinach
     grams: 30
     fdcId: 168462
     matchConfidence: high

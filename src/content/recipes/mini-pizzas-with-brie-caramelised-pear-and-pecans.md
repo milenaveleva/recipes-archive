@@ -40,9 +40,10 @@ ingredients:
     fdcId: 169118
     matchConfidence: high
     cooking: fried
-  - raw: 1 handful pecans
-    quantity: 1
-    item: handful pecans
+  - raw: 30 g pecans
+    quantity: 30
+    unit: g
+    item: pecans
     grams: 30
     fdcId: 170182
     matchConfidence: high
@@ -74,8 +75,9 @@ ingredients:
     fdcId: 169640
     matchConfidence: high
     cooking: boiled
-  - raw: 1 handful frozen cranberries, thawed
-    quantity: 1
+  - raw: 30 g frozen cranberries, thawed
+    quantity: 30
+    unit: g
     item: frozen cranberries
     note: thawed
     grams: 30

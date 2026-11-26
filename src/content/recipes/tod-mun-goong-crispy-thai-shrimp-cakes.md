@@ -35,10 +35,11 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 1 handful fresh cilantro
+  - raw: 15 g fresh cilantro
     group: For the shrimp cakes
-    quantity: 1
-    item: handful fresh cilantro
+    quantity: 15
+    unit: g
+    item: fresh cilantro
     grams: 15
     fdcId: 169997
     matchConfidence: high

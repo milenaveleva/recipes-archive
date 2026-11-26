@@ -43,9 +43,10 @@ ingredients:
     fdcId: 173435
     matchConfidence: high
     cooking: raw
-  - raw: 2 handfuls arugula
-    quantity: 2
-    item: handfuls arugula
+  - raw: 40 g arugula
+    quantity: 40
+    unit: g
+    item: arugula
     grams: 40
     fdcId: 169387
     matchConfidence: high
@@ -58,9 +59,10 @@ ingredients:
     fdcId: 170184
     matchConfidence: medium
     cooking: raw
-  - raw: 1 handful fresh mint
-    quantity: 1
-    item: handful fresh mint
+  - raw: 10 g fresh mint
+    quantity: 10
+    unit: g
+    item: fresh mint
     grams: 10
     fdcId: 173475
     matchConfidence: high

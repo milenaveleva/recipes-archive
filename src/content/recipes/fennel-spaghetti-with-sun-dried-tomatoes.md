@@ -92,10 +92,11 @@ ingredients:
     fdcId: 170848
     matchConfidence: medium
     cooking: raw
-  - raw: 1 handful fresh parsley
+  - raw: 10 g fresh parsley
     group: For serving
-    quantity: 1
-    item: handful fresh parsley
+    quantity: 10
+    unit: g
+    item: fresh parsley
     grams: 10
     fdcId: 170416
     matchConfidence: high

@@ -85,10 +85,11 @@ ingredients:
     fdcId: 170848
     matchConfidence: medium
     cooking: raw
-  - raw: 1 handful fresh basil
+  - raw: 10 g fresh basil
     group: Main ingredients
-    quantity: 1
-    item: handful fresh basil
+    quantity: 10
+    unit: g
+    item: fresh basil
     grams: 10
     fdcId: 172232
     matchConfidence: high

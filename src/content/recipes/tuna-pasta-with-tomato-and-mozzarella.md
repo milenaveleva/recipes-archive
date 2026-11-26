@@ -99,9 +99,10 @@ ingredients:
     fdcId: 173431
     matchConfidence: high
     cooking: boiled
-  - raw: 1 handful fresh chives
-    quantity: 1
-    item: handful fresh chives
+  - raw: 8 g fresh chives
+    quantity: 8
+    unit: g
+    item: fresh chives
     grams: 8
     fdcId: 169994
     matchConfidence: high

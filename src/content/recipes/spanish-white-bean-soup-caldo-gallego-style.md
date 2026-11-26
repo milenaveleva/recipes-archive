@@ -51,9 +51,10 @@ ingredients:
     fdcId: 170393
     matchConfidence: high
     cooking: boiled
-  - raw: 2 handfuls turnip greens, kale or chard leaves
-    quantity: 2
-    item: handfuls turnip greens
+  - raw: 80 g turnip greens, kale or chard leaves
+    quantity: 80
+    unit: g
+    item: turnip greens
     note: kale or chard leaves
     grams: 80
     fdcId: 170061

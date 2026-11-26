@@ -60,8 +60,10 @@ ingredients:
     fdcId: 170581
     matchConfidence: high
     cooking: raw
-  - raw: "a handful of mixed berries: strawberries, raspberries, blackberries, blueberries, currants"
-    item: "a handful of mixed berries: strawberries"
+  - raw: "75 g mixed berries: strawberries, raspberries, blackberries, blueberries, currants"
+    quantity: 75
+    unit: g
+    item: "mixed berries: strawberries"
     note: raspberries, blackberries, blueberries, currants
     grams: 75
     fdcId: 167762

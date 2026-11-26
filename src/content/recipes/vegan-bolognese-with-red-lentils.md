@@ -110,9 +110,10 @@ ingredients:
     fdcId: 173473
     matchConfidence: high
     cooking: boiled
-  - raw: 1 handful fresh basil
-    quantity: 1
-    item: handful fresh basil
+  - raw: 10 g fresh basil
+    quantity: 10
+    unit: g
+    item: fresh basil
     grams: 10
     fdcId: 172232
     matchConfidence: high

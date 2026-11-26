@@ -80,10 +80,11 @@ ingredients:
     fdcId: 170931
     matchConfidence: medium
     cooking: fried
-  - raw: 1 handful fresh basil
+  - raw: 10 g fresh basil
     group: For serving
-    quantity: 1
-    item: handful fresh basil
+    quantity: 10
+    unit: g
+    item: fresh basil
     grams: 10
     fdcId: 172232
     matchConfidence: high
@@ -157,7 +158,7 @@ createdAt: "2026-11-14"
 2. **Make the sauce:** While the pasta cooks, heat 3 tablespoons of extra virgin olive oil in a large pan over medium heat. Add the 3 finely chopped cloves of fresh garlic and sauté for 1 minute until fragrant (be careful not to burn it).
 3. Add the halved cherry tomatoes to the pan, season with 1 teaspoon of fine salt and a pinch of black pepper. Cook for 5–6 minutes until the tomatoes soften and release their juices. Gently press down half of them with a wooden spoon to create a rich sauce.
 4. **Assemble and serve:** Reduce the heat under the pan to the lowest setting and stir in the 250 g ricotta and 100 ml of the reserved hot pasta water. Stir thoroughly until you have a silky, smooth, creamy sauce.
-5. Toss the drained hot penne into the sauce. Sprinkle with 50 g freshly grated Parmesan and the roughly torn handful of fresh basil. Toss thoroughly, then serve hot garnished with extra Parmesan and basil leaves.
+5. Toss the drained hot penne into the sauce. Sprinkle with 50 g freshly grated Parmesan and the roughly torn fresh basil. Toss thoroughly, then serve hot garnished with extra Parmesan and basil leaves.
 
 ## Tips
 

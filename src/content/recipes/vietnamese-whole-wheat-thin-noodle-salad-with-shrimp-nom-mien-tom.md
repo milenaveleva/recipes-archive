@@ -43,23 +43,26 @@ ingredients:
     fdcId: 169225
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful mung bean sprouts
-    quantity: 1
-    item: handful mung bean sprouts
+  - raw: 50 g mung bean sprouts
+    quantity: 50
+    unit: g
+    item: mung bean sprouts
     grams: 50
     fdcId: 169957
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful fresh cilantro
-    quantity: 1
-    item: handful fresh cilantro
+  - raw: 10 g fresh cilantro
+    quantity: 10
+    unit: g
+    item: fresh cilantro
     grams: 10
     fdcId: 169997
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful spring onions
-    quantity: 1
-    item: handful spring onions
+  - raw: 30 g spring onions
+    quantity: 30
+    unit: g
+    item: spring onions
     grams: 30
     fdcId: 170005
     matchConfidence: high
@@ -145,10 +148,11 @@ ingredients:
     fdcId: 170106
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful unsalted peanuts
+  - raw: 30 g unsalted peanuts
     group: For garnish
-    quantity: 1
-    item: handful unsalted peanuts
+    quantity: 30
+    unit: g
+    item: unsalted peanuts
     grams: 30
     fdcId: 2515376
     matchConfidence: medium

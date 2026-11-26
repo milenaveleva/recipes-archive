@@ -25,16 +25,18 @@ ingredients:
     fdcId: 172688
     matchConfidence: high
     cooking: baked
-  - raw: 1 handful fresh baby spinach
-    quantity: 1
-    item: handful fresh baby spinach
+  - raw: 30 g fresh baby spinach
+    quantity: 30
+    unit: g
+    item: fresh baby spinach
     grams: 30
     fdcId: 1999632
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful fresh chives
-    quantity: 1
-    item: handful fresh chives
+  - raw: 10 g fresh chives
+    quantity: 10
+    unit: g
+    item: fresh chives
     grams: 10
     fdcId: 169994
     matchConfidence: high

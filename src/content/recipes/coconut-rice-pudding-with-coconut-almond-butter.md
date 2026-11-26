@@ -44,9 +44,10 @@ ingredients:
     fdcId: 2262074
     matchConfidence: medium
     cooking: raw
-  - raw: 1 handful fresh blueberries
-    quantity: 1
-    item: handful fresh blueberries
+  - raw: 60 g fresh blueberries
+    quantity: 60
+    unit: g
+    item: fresh blueberries
     grams: 60
     fdcId: 171711
     matchConfidence: high
@@ -59,9 +60,10 @@ ingredients:
     matchConfidence: high
     cooking: raw
     proxyOk: true
-  - raw: 1 handful coconut chips
-    quantity: 1
-    item: handful coconut chips
+  - raw: 15 g coconut chips
+    quantity: 15
+    unit: g
+    item: coconut chips
     grams: 15
     fdcId: 170579
     matchConfidence: medium

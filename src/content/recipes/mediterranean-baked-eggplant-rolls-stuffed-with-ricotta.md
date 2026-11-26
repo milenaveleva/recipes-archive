@@ -99,10 +99,11 @@ ingredients:
     fdcId: 170931
     matchConfidence: medium
     cooking: baked
-  - raw: 1 handful fresh basil
+  - raw: 10 g fresh basil
     group: For serving
-    quantity: 1
-    item: handful fresh basil
+    quantity: 10
+    unit: g
+    item: fresh basil
     grams: 10
     fdcId: 172232
     matchConfidence: high

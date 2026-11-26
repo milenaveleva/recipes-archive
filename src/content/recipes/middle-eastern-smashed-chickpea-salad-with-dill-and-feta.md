@@ -52,18 +52,20 @@ ingredients:
     fdcId: 790577
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful fresh parsley
+  - raw: 15 g fresh parsley
     group: Salad base
-    quantity: 1
-    item: handful fresh parsley
+    quantity: 15
+    unit: g
+    item: fresh parsley
     grams: 15
     fdcId: 170416
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful fresh dill
+  - raw: 10 g fresh dill
     group: Salad base
-    quantity: 1
-    item: handful fresh dill
+    quantity: 10
+    unit: g
+    item: fresh dill
     grams: 10
     fdcId: 172233
     matchConfidence: medium

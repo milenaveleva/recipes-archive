@@ -87,10 +87,11 @@ ingredients:
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
-  - raw: 2 handfuls fresh baby spinach (about 50 g)
+  - raw: 50 g fresh baby spinach
     group: Main ingredients
-    quantity: 2
-    item: handfuls fresh baby spinach
+    quantity: 50
+    unit: g
+    item: fresh baby spinach
     note: about 50 g
     grams: 50
     fdcId: 168462

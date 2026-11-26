@@ -64,9 +64,10 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful fresh herbs
-    quantity: 1
-    item: handful fresh herbs
+  - raw: 15 g fresh herbs
+    quantity: 15
+    unit: g
+    item: fresh herbs
     grams: 15
     fdcId: 170416
     matchConfidence: high

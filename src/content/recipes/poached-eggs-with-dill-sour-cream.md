@@ -34,10 +34,11 @@ ingredients:
     fdcId: 82019693
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful fresh dill
+  - raw: 10 g fresh dill
     group: Main ingredients
-    quantity: 1
-    item: handful fresh dill
+    quantity: 10
+    unit: g
+    item: fresh dill
     grams: 10
     fdcId: 172233
     matchConfidence: medium

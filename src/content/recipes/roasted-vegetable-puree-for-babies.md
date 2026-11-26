@@ -33,9 +33,10 @@ ingredients:
     fdcId: 169306
     matchConfidence: high
     cooking: baked
-  - raw: 1 handful cherry tomatoes
-    quantity: 1
-    item: handful cherry tomatoes
+  - raw: 80 g cherry tomatoes
+    quantity: 80
+    unit: g
+    item: cherry tomatoes
     grams: 80
     fdcId: 321360
     matchConfidence: medium

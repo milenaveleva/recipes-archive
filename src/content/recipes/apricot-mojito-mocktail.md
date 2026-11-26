@@ -40,9 +40,10 @@ ingredients:
     fdcId: 168156
     matchConfidence: medium
     cooking: raw
-  - raw: 1 handful fresh mint
-    quantity: 1
-    item: handful fresh mint
+  - raw: 10 g fresh mint
+    quantity: 10
+    unit: g
+    item: fresh mint
     grams: 10
     fdcId: 173475
     matchConfidence: high

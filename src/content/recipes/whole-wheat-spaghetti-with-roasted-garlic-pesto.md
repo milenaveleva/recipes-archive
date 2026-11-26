@@ -37,18 +37,20 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: baked
-  - raw: 1 handful fresh parsley
+  - raw: 15 g fresh parsley
     group: Main ingredients
-    quantity: 1
-    item: handful fresh parsley
+    quantity: 15
+    unit: g
+    item: fresh parsley
     grams: 15
     fdcId: 170416
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful fresh basil
+  - raw: 10 g fresh basil
     group: Main ingredients
-    quantity: 1
-    item: handful fresh basil
+    quantity: 10
+    unit: g
+    item: fresh basil
     grams: 10
     fdcId: 172232
     matchConfidence: high

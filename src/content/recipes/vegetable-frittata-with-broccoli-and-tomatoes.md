@@ -69,10 +69,11 @@ ingredients:
     fdcId: 2257046
     matchConfidence: high
     cooking: baked
-  - raw: 1 handful chives
+  - raw: 10 g chives
     group: For serving
-    quantity: 1
-    item: handful chives
+    quantity: 10
+    unit: g
+    item: chives
     grams: 10
     fdcId: 169994
     matchConfidence: high

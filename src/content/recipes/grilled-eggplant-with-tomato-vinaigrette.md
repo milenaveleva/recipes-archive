@@ -50,9 +50,10 @@ ingredients:
     fdcId: 172238
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful fresh basil leaves
-    quantity: 1
-    item: handful fresh basil leaves
+  - raw: 10 g fresh basil leaves
+    quantity: 10
+    unit: g
+    item: fresh basil leaves
     grams: 10
     fdcId: 172232
     matchConfidence: high

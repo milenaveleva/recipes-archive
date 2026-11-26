@@ -59,9 +59,10 @@ ingredients:
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
-  - raw: 1 handful fresh parsley
-    quantity: 1
-    item: handful fresh parsley
+  - raw: 15 g fresh parsley
+    quantity: 15
+    unit: g
+    item: fresh parsley
     grams: 15
     fdcId: 170416
     matchConfidence: high

@@ -130,10 +130,11 @@ ingredients:
     fdcId: 170005
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful fresh coriander
+  - raw: 10 g fresh coriander
     group: For serving and garnish
-    quantity: 1
-    item: handful fresh coriander
+    quantity: 10
+    unit: g
+    item: fresh coriander
     grams: 10
     fdcId: 169997
     matchConfidence: medium

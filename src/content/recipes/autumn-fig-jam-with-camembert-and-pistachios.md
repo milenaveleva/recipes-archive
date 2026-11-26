@@ -83,9 +83,10 @@ ingredients:
     fdcId: 172178
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful roasted salted pistachios
-    quantity: 1
-    item: handful roasted salted pistachios
+  - raw: 30 g roasted salted pistachios
+    quantity: 30
+    unit: g
+    item: roasted salted pistachios
     grams: 30
     fdcId: 170184
     matchConfidence: high

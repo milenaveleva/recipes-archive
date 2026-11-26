@@ -140,10 +140,11 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: raw
-  - raw: 1 handful pomegranate seeds
+  - raw: 40 g pomegranate seeds
     group: For serving and garnish
-    quantity: 1
-    item: handful pomegranate seeds
+    quantity: 40
+    unit: g
+    item: pomegranate seeds
     grams: 40
     fdcId: 169134
     matchConfidence: medium
@@ -157,10 +158,11 @@ ingredients:
     fdcId: 170184
     matchConfidence: medium
     cooking: raw
-  - raw: 1 handful fresh parsley
+  - raw: 10 g fresh parsley
     group: For serving and garnish
-    quantity: 1
-    item: handful fresh parsley
+    quantity: 10
+    unit: g
+    item: fresh parsley
     grams: 10
     fdcId: 170416
     matchConfidence: high

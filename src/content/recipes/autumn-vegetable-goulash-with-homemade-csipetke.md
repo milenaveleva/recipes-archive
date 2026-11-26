@@ -119,10 +119,11 @@ ingredients:
     fdcId: 748967
     matchConfidence: high
     cooking: boiled
-  - raw: 1 handful fresh parsley leaves
+  - raw: 10 g fresh parsley leaves
     group: For serving
-    quantity: 1
-    item: handful fresh parsley leaves
+    quantity: 10
+    unit: g
+    item: fresh parsley leaves
     grams: 10
     fdcId: 170416
     matchConfidence: high
