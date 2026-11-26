@@ -7,7 +7,7 @@ imageAlt: Courgette and Pasta Tray-Bake Frittata
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12800-cukkinis-tesztas-frittata
-  kcalPerServing: 485
+  kcalPerServing: 565
 author: Kifli Kukták
 servings: 7
 prepTime: PT15M
@@ -18,13 +18,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat pasta (elbow macaroni), dry
+  - raw: 560 g whole-wheat pasta (elbow macaroni), dry
     group: Main ingredients
-    quantity: 400
+    quantity: 560
     unit: g
     item: whole-wheat pasta (elbow macaroni)
     note: dry
-    grams: 400
+    grams: 560
     fdcId: 169738
     matchConfidence: medium
     cooking: baked
@@ -135,27 +135,27 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 407
-    energyKj: 1704
-    protein_g: 23.7
-    fat_g: 14.2
-    satFat_g: 4.1
-    carbs_g: 49.6
-    fiber_g: 7.3
-    sugar_g: 6.5
+    energyKcal: 488
+    energyKj: 2041
+    protein_g: 26.9
+    fat_g: 14.9
+    satFat_g: 4.2
+    carbs_g: 66.4
+    fiber_g: 9.4
+    sugar_g: 7.2
     sodium_mg: 192
-    availableCarb_g: 42.4
+    availableCarb_g: 57.1
   glycemic:
-    gi: 45
-    gl: 19
+    gi: 47
+    gl: 27
     giBand: low
-    glBand: low
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 90
+    measuredGiPct: 93
   nutriScore:
     grade: A
-    points: 0
+    points: -1
     category: general
     version: "2023"
     coverage: 1
@@ -167,7 +167,7 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 40.6
+    nrf: 38.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

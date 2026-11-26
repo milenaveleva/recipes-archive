@@ -76,14 +76,13 @@ ingredients:
     fdcId: 170416
     matchConfidence: high
     cooking: raw
-  - raw: 4 tbsp bulgur, uncooked
+  - raw: 160 g dry bulgur, uncooked
+    quantity: 160
+    unit: g
     group: For the tabbouleh
-    quantity: 4
-    unit: tbsp
     item: bulgur
     note: uncooked
-    grams: 35
-    milliliters: 59.1472
+    grams: 160
     fdcId: 170688
     matchConfidence: high
     cooking: boiled
@@ -113,42 +112,42 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 720
-    energyKj: 3014
-    protein_g: 25.8
-    fat_g: 59.4
-    satFat_g: 20.5
-    carbs_g: 25
-    fiber_g: 5.4
-    sugar_g: 6.4
-    sodium_mg: 1318
-    availableCarb_g: 19.6
+    energyKcal: 934
+    energyKj: 3908
+    protein_g: 33.5
+    fat_g: 60.2
+    satFat_g: 20.6
+    carbs_g: 72.4
+    fiber_g: 13.2
+    sugar_g: 6.7
+    sodium_mg: 1328
+    availableCarb_g: 59.2
   glycemic:
-    gi: 34
-    gl: 7
+    gi: 52
+    gl: 31
     giBand: low
-    glBand: low
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 10
+    measuredGiPct: 3
   nutriScore:
     grade: C
-    points: 10
+    points: 4
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.4
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.09
   balance:
-    score: 4
-    band: low
-    nrf: 21.2
+    score: 5
+    band: moderate
+    nrf: 25
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 55.9
+    minimallyProcessedPct: 66
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

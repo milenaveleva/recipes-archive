@@ -7,7 +7,7 @@ imageAlt: Vegetarian Stuffed Cabbage
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10382-vegetarianus-toeltoett-kaposzta
-  kcalPerServing: 310
+  kcalPerServing: 527
 author: Kifli Kukták
 servings: 4
 prepTime: PT40M
@@ -83,13 +83,13 @@ ingredients:
     fdcId: 171329
     matchConfidence: medium
     cooking: boiled
-  - raw: 84 g dry brown rice, cooked
-    quantity: 84
+  - raw: 320 g dry brown rice, cooked
+    quantity: 320
     unit: g
     item: brown rice
     note: dry, cooked
     group: For the filling
-    grams: 84
+    grams: 320
     fdcId: 169703
     matchConfidence: medium
     cooking: boiled
@@ -274,42 +274,42 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 567
-    energyKj: 2373
-    protein_g: 30.7
-    fat_g: 27.4
-    satFat_g: 4.5
-    carbs_g: 58.2
-    fiber_g: 17.5
-    sugar_g: 9.7
-    sodium_mg: 3037
-    availableCarb_g: 40.6
+    energyKcal: 784
+    energyKj: 3279
+    protein_g: 35.1
+    fat_g: 29.3
+    satFat_g: 4.9
+    carbs_g: 103.2
+    fiber_g: 19.6
+    sugar_g: 10.1
+    sodium_mg: 3039
+    availableCarb_g: 83.5
   glycemic:
-    gi: 51
-    gl: 21
-    giBand: low
-    glBand: medium
+    gi: 63
+    gl: 52
+    giBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 66
+    measuredGiPct: 83
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.8
+    score: -0.7
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.39
   balance:
-    score: 7
-    band: high
-    nrf: 42.4
+    score: 6
+    band: moderate
+    nrf: 35.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 49.8
+    minimallyProcessedPct: 63.7
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

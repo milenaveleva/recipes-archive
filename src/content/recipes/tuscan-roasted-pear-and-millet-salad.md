@@ -17,13 +17,13 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g millet, uncooked
+  - raw: 160 g millet, uncooked
     group: Millet base
-    quantity: 200
+    quantity: 160
     unit: g
     item: millet
     note: uncooked
-    grams: 200
+    grams: 160
     fdcId: 169702
     matchConfidence: high
     cooking: boiled
@@ -124,19 +124,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 981
-    energyKj: 4105
-    protein_g: 28.1
-    fat_g: 48.4
-    satFat_g: 13.2
-    carbs_g: 113.4
-    fiber_g: 16.8
+    energyKcal: 905
+    energyKj: 3789
+    protein_g: 25.9
+    fat_g: 47.6
+    satFat_g: 13
+    carbs_g: 98.8
+    fiber_g: 15.1
     sugar_g: 27.1
-    sodium_mg: 378
-    availableCarb_g: 92.6
+    sodium_mg: 377
+    availableCarb_g: 79.7
   glycemic:
-    gi: 69
-    gl: 63
+    gi: 67
+    gl: 53
     giBand: medium
     glBand: high
     glBasis: meal
@@ -147,7 +147,7 @@ nutrition:
     points: 3
     category: general
     version: "2023"
-    coverage: 0.57
+    coverage: 0.63
   inflammation:
     score: 0.1
     band: neutral
@@ -159,7 +159,7 @@ nutrition:
     nrf: 15
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 83.9
+    minimallyProcessedPct: 82.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

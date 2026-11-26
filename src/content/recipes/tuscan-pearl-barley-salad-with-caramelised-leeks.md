@@ -17,12 +17,12 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g pearl barley, uncooked
-    quantity: 200
+  - raw: 320 g pearl barley, uncooked
+    quantity: 320
     unit: g
     item: pearl barley
     note: uncooked
-    grams: 200
+    grams: 320
     fdcId: 170284
     matchConfidence: high
     cooking: boiled
@@ -131,27 +131,27 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 523
-    energyKj: 2187
-    protein_g: 14
-    fat_g: 29.2
+    energyKcal: 628
+    energyKj: 2629
+    protein_g: 17
+    fat_g: 29.6
     satFat_g: 5.4
-    carbs_g: 55.3
-    fiber_g: 10.6
-    sugar_g: 5.7
-    sodium_mg: 1177
-    availableCarb_g: 44.7
+    carbs_g: 78.6
+    fiber_g: 15.2
+    sugar_g: 5.9
+    sodium_mg: 1180
+    availableCarb_g: 63.3
   glycemic:
-    gi: 38
-    gl: 17
+    gi: 36
+    gl: 23
     giBand: low
-    glBand: low
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 69
+    measuredGiPct: 78
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
     coverage: 1
@@ -163,10 +163,10 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 18.9
+    nrf: 21.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 89
+    minimallyProcessedPct: 90.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

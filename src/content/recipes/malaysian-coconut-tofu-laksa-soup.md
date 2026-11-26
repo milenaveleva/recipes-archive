@@ -26,13 +26,13 @@ ingredients:
     fdcId: 172475
     matchConfidence: high
     cooking: fried
-  - raw: 200 g whole-wheat thin noodles (in place of rice noodles), dry
+  - raw: 160 g whole-wheat thin noodles (in place of rice noodles), dry
     group: Soup base and noodles
-    quantity: 200
+    quantity: 160
     unit: g
     item: whole-wheat thin noodles (in place of rice noodles)
     note: dry
-    grams: 200
+    grams: 160
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -148,30 +148,30 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 1139
-    energyKj: 4766
-    protein_g: 47.3
-    fat_g: 71.5
+    energyKcal: 1069
+    energyKj: 4471
+    protein_g: 44.5
+    fat_g: 71
     satFat_g: 40
-    carbs_g: 97.4
-    fiber_g: 16.9
-    sugar_g: 6.2
+    carbs_g: 82.7
+    fiber_g: 15.1
+    sugar_g: 5.7
     sodium_mg: 1975
-    availableCarb_g: 80.5
+    availableCarb_g: 67.6
   glycemic:
-    gi: 45
-    gl: 36
+    gi: 43
+    gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 80
+    measuredGiPct: 76
   nutriScore:
     grade: C
-    points: 5
+    points: 6
     category: general
     version: "2023"
-    coverage: 0.81
+    coverage: 0.8
   inflammation:
     score: 0
     band: neutral
@@ -180,11 +180,11 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 19.2
+    nrf: 18.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 44.2
-    ultraProcessedPct: 1.7
+    minimallyProcessedPct: 40.5
+    ultraProcessedPct: 1.8
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

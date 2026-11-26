@@ -7,7 +7,7 @@ imageAlt: Minestrone Soup
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11616-minestrone-leves
-  kcalPerServing: 325
+  kcalPerServing: 563
 author: Kifli Kukták
 servings: 4
 prepTime: PT20M
@@ -120,12 +120,12 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 50 g whole-wheat small soup pasta, dry
-    quantity: 50
+  - raw: 320 g whole-wheat small soup pasta, dry
+    quantity: 320
     unit: g
     item: whole-wheat small soup pasta
     note: dry
-    grams: 50
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -159,42 +159,42 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 460
-    energyKj: 1924
-    protein_g: 19.3
-    fat_g: 15
-    satFat_g: 3.2
-    carbs_g: 67.5
-    fiber_g: 13
-    sugar_g: 13.8
-    sodium_mg: 1571
-    availableCarb_g: 54.5
+    energyKcal: 698
+    energyKj: 2918
+    protein_g: 28.7
+    fat_g: 17
+    satFat_g: 3.5
+    carbs_g: 117
+    fiber_g: 19.2
+    sugar_g: 15.7
+    sodium_mg: 1573
+    availableCarb_g: 97.8
   glycemic:
-    gi: 43
-    gl: 24
+    gi: 46
+    gl: 45
     giBand: low
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 77
+    measuredGiPct: 87
   nutriScore:
-    grade: A
-    points: 0
+    grade: B
+    points: 1
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
+    score: 0
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.22
   balance:
     score: 6
     band: moderate
-    nrf: 39.9
+    nrf: 36.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 83
+    minimallyProcessedPct: 88.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

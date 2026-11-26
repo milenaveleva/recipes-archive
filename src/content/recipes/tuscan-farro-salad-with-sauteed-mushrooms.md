@@ -17,13 +17,13 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g farro (spelt grains), uncooked
+  - raw: 160 g farro (spelt grains), uncooked
     group: Salad base and toppings
-    quantity: 200
+    quantity: 160
     unit: g
     item: farro (spelt grains)
     note: uncooked
-    grams: 200
+    grams: 160
     fdcId: 169745
     matchConfidence: high
     cooking: boiled
@@ -142,27 +142,27 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 935
-    energyKj: 3914
-    protein_g: 33.3
-    fat_g: 54
-    satFat_g: 10.4
-    carbs_g: 91.3
-    fiber_g: 14.7
-    sugar_g: 16
-    sodium_mg: 1644
-    availableCarb_g: 76.6
+    energyKcal: 868
+    energyKj: 3631
+    protein_g: 30.4
+    fat_g: 53.5
+    satFat_g: 10.3
+    carbs_g: 77.3
+    fiber_g: 12.6
+    sugar_g: 14.6
+    sodium_mg: 1642
+    availableCarb_g: 64.7
   glycemic:
-    gi: 55
-    gl: 42
+    gi: 54
+    gl: 35
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 4
+    points: 5
     category: general
     version: "2023"
     coverage: 1
@@ -172,12 +172,12 @@ nutrition:
     method: fii v4
     aromaticAdjustment: -0.34
   balance:
-    score: 4
+    score: 3
     band: low
-    nrf: 19.2
+    nrf: 17.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88.9
+    minimallyProcessedPct: 88
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

@@ -17,13 +17,13 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g whole-wheat orzo pasta, dry
+  - raw: 320 g whole-wheat orzo pasta, dry
     group: Main ingredients
-    quantity: 250
+    quantity: 320
     unit: g
     item: whole-wheat orzo pasta
     note: dry
-    grams: 250
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -124,27 +124,27 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 438
-    energyKj: 1835
-    protein_g: 16.4
-    fat_g: 19.7
-    satFat_g: 4.1
-    carbs_g: 55
-    fiber_g: 8.4
-    sugar_g: 4.4
-    sodium_mg: 261
-    availableCarb_g: 46.6
+    energyKcal: 500
+    energyKj: 2092
+    protein_g: 18.8
+    fat_g: 20.2
+    satFat_g: 4.2
+    carbs_g: 67.8
+    fiber_g: 10
+    sugar_g: 4.9
+    sodium_mg: 262
+    availableCarb_g: 57.8
   glycemic:
-    gi: 46
-    gl: 22
+    gi: 47
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 86
+    measuredGiPct: 89
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: -1
     category: general
     version: "2023"
     coverage: 1
@@ -156,10 +156,10 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 25.5
+    nrf: 25.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88.2
+    minimallyProcessedPct: 89.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -178,7 +178,7 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. **Cooking the orzo:** Bring plenty of water to the boil in a large pot and add a pinch of salt. Add the 250 g orzo and cook for about 10-11 minutes (follow the packet) until al dente. Drain thoroughly, toss with 10 ml extra virgin olive oil so the pasta doesn't stick together, and set aside in a spacious salad bowl.
+1. **Cooking the orzo:** Bring plenty of water to the boil in a large pot and add a pinch of salt. Add the 320 g orzo and cook for about 10-11 minutes (follow the packet) until al dente. Drain thoroughly, toss with 10 ml extra virgin olive oil so the pasta doesn't stick together, and set aside in a spacious salad bowl.
 2. **Searing the mushrooms and seasoning:** Clean the 300 g wild mushrooms, then cut them into rustic bite-sized slices. Chop the 2 cloves of garlic finely. In a dry frying pan toast the 30 g pine nuts until golden, 2-3 minutes, then tip them onto a small plate.
 3. In the same pan heat 20 ml extra virgin olive oil over medium-high heat. Add the wild mushrooms and sear, stirring, for 5-6 minutes until they get a nice golden crust. Add the crushed garlic and the 1 tbsp fresh thyme, season with salt and pepper to taste, and fry for another 1-2 minutes. Sprinkle with 15 ml good balsamic vinegar of Modena, toss, then turn off the heat.
 4. **Assembly and serving:** Mix the juicy seared thyme mushrooms and the remaining 10 ml extra virgin olive oil into the warm orzo. Wash the 100 g radicchio and cut it into thin strips, then gently fold it into the still-warm salad so the leaves soften slightly but keep their pleasant crunch.

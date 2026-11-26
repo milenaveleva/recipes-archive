@@ -26,13 +26,13 @@ ingredients:
     fdcId: 1999629
     matchConfidence: high
     cooking: boiled
-  - raw: 150 g buckwheat groats, uncooked
+  - raw: 320 g buckwheat groats, uncooked
     group: Soup base
-    quantity: 150
+    quantity: 320
     unit: g
     item: buckwheat groats
     note: uncooked
-    grams: 150
+    grams: 320
     fdcId: 170685
     matchConfidence: medium
     cooking: boiled
@@ -133,42 +133,42 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 301
-    energyKj: 1258
-    protein_g: 9
-    fat_g: 13.8
-    satFat_g: 2.1
-    carbs_g: 40.5
-    fiber_g: 6.8
+    energyKcal: 448
+    energyKj: 1873
+    protein_g: 14
+    fat_g: 14.9
+    satFat_g: 2.3
+    carbs_g: 72.4
+    fiber_g: 11.2
     sugar_g: 5.5
-    sodium_mg: 1507
-    availableCarb_g: 33.3
+    sodium_mg: 1511
+    availableCarb_g: 60.8
   glycemic:
-    gi: 54
-    gl: 18
-    giBand: low
-    glBand: low
+    gi: 56
+    gl: 34
+    giBand: medium
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
-    coverage: 0.92
+    coverage: 0.84
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.35
   balance:
-    score: 3
+    score: 4
     band: low
-    nrf: 14.4
+    nrf: 21.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 95
+    minimallyProcessedPct: 96.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

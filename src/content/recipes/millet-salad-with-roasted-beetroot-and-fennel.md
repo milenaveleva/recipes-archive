@@ -7,7 +7,7 @@ imageAlt: Millet Salad with Roasted Beetroot and Fennel
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10476-koelessalata
-  kcalPerServing: 315
+  kcalPerServing: 476
 author: Báder Gabka
 servings: 4
 prepTime: PT15M
@@ -18,12 +18,12 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 150 g millet, uncooked
-    quantity: 150
+  - raw: 320 g millet, uncooked
+    quantity: 320
     unit: g
     item: millet
     note: uncooked
-    grams: 150
+    grams: 320
     fdcId: 169702
     matchConfidence: high
     cooking: boiled
@@ -91,38 +91,38 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 332
-    energyKj: 1391
-    protein_g: 11.1
-    fat_g: 8.1
-    satFat_g: 1.4
-    carbs_g: 56.5
-    fiber_g: 12.1
+    energyKcal: 493
+    energyKj: 2063
+    protein_g: 15.8
+    fat_g: 9.9
+    satFat_g: 1.7
+    carbs_g: 87.4
+    fiber_g: 15.7
     sugar_g: 7.9
-    sodium_mg: 1036
-    availableCarb_g: 44.3
+    sodium_mg: 1038
+    availableCarb_g: 71.7
   glycemic:
-    gi: 61
-    gl: 27
+    gi: 68
+    gl: 49
     giBand: medium
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 87
+    measuredGiPct: 92
   nutriScore:
     grade: B
     points: 1
     category: general
     version: "2023"
-    coverage: 0.59
+    coverage: 0.44
   inflammation:
-    score: -0.2
+    score: -0.1
     band: neutral
     method: fii v4
   balance:
     score: 5
     band: moderate
-    nrf: 30.1
+    nrf: 26.8
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

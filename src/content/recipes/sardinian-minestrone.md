@@ -7,7 +7,7 @@ imageAlt: Sardinian Minestrone
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11747-szardiniai-minestrone-leves
-  kcalPerServing: 425
+  kcalPerServing: 650
 author: Kifli Kukták
 servings: 4
 prepTime: PT20M
@@ -133,13 +133,12 @@ ingredients:
     fdcId: 172232
     matchConfidence: high
     cooking: boiled
-  - raw: ⅔ cup dry whole-wheat tarhonya (or fregula sarda)
-    quantity: 0.667
-    unit: cup
+  - raw: 320 g dry whole-wheat tarhonya, or fregula sarda
+    quantity: 320
+    unit: g
     item: dry whole-wheat tarhonya
     note: or fregula sarda
-    grams: 64
-    milliliters: 157.80419600000002
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -166,42 +165,42 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 685
-    energyKj: 2867
-    protein_g: 24.7
-    fat_g: 27.9
-    satFat_g: 4.6
-    carbs_g: 91.7
-    fiber_g: 23.4
-    sugar_g: 17.7
-    sodium_mg: 803
-    availableCarb_g: 68.3
+    energyKcal: 910
+    energyKj: 3809
+    protein_g: 33.6
+    fat_g: 29.8
+    satFat_g: 4.9
+    carbs_g: 138.6
+    fiber_g: 29.3
+    sugar_g: 19.4
+    sodium_mg: 804
+    availableCarb_g: 109.4
   glycemic:
-    gi: 46
-    gl: 32
+    gi: 48
+    gl: 52
     giBand: low
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 56
+    measuredGiPct: 73
   nutriScore:
     grade: A
-    points: -2
+    points: -1
     category: general
     version: "2023"
-    coverage: 0.91
+    coverage: 0.93
   inflammation:
-    score: -0.4
+    score: -0.3
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.22
   balance:
-    score: 7
-    band: high
-    nrf: 43.9
+    score: 6
+    band: moderate
+    nrf: 40.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 87.8
+    minimallyProcessedPct: 90.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

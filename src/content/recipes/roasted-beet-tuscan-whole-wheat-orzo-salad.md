@@ -17,12 +17,12 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g whole-wheat orzo pasta, dry
-    quantity: 250
+  - raw: 320 g whole-wheat orzo pasta, dry
+    quantity: 320
     unit: g
     item: whole-wheat orzo pasta
     note: dry
-    grams: 250
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -108,27 +108,27 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 506
-    energyKj: 2115
-    protein_g: 17.3
-    fat_g: 24.5
-    satFat_g: 6.9
-    carbs_g: 60
-    fiber_g: 9.2
-    sugar_g: 10
-    sodium_mg: 553
-    availableCarb_g: 50.8
+    energyKcal: 567
+    energyKj: 2373
+    protein_g: 19.7
+    fat_g: 25
+    satFat_g: 7
+    carbs_g: 72.9
+    fiber_g: 10.8
+    sugar_g: 10.5
+    sodium_mg: 554
+    availableCarb_g: 62.1
   glycemic:
     gi: 51
-    gl: 26
+    gl: 31
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 79
+    measuredGiPct: 83
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 1
     category: general
     version: "2023"
     coverage: 1
@@ -140,10 +140,10 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 20.4
+    nrf: 21.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 80.3
+    minimallyProcessedPct: 82.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

@@ -7,7 +7,7 @@ imageAlt: Vegetable Soup with Pasta and Parmesan
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12054-zoeldsegleves-tesztaval-es-parmezannal
-  kcalPerServing: 295
+  kcalPerServing: 471
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
@@ -77,13 +77,13 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 120 g dry whole-wheat pasta (e.g. penne or fusilli)
+  - raw: 320 g dry whole-wheat pasta (e.g. penne or fusilli)
     group: Main ingredients
-    quantity: 120
+    quantity: 320
     unit: g
     item: dry whole-wheat pasta
     note: e.g. penne or fusilli
-    grams: 120
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -140,44 +140,44 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 263
-    energyKj: 1102
-    protein_g: 14
-    fat_g: 10.1
-    satFat_g: 4
-    carbs_g: 32.1
-    fiber_g: 4.3
-    sugar_g: 5.7
-    sodium_mg: 1147
-    availableCarb_g: 27.8
+    energyKcal: 439
+    energyKj: 1838
+    protein_g: 20.9
+    fat_g: 11.6
+    satFat_g: 4.2
+    carbs_g: 68.8
+    fiber_g: 8.9
+    sugar_g: 7.1
+    sodium_mg: 1148
+    availableCarb_g: 59.9
   glycemic:
-    gi: 40
-    gl: 11
+    gi: 46
+    gl: 27
     giBand: low
-    glBand: low
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 69
+    measuredGiPct: 86
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.5
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.29
   balance:
     score: 5
     band: moderate
-    nrf: 25.2
+    nrf: 26.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 64.1
+    minimallyProcessedPct: 78.5
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"
   dataSources:
