@@ -10,19 +10,19 @@ source:
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
-cookTime: PT25M
-totalTime: PT40M
+cookTime: PT50M
+totalTime: PT1H5M
 cuisine: Indian
 course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 500 g canned lentils, drained (≈ 166 g uncooked)
+  - raw: 166 g dried lentils, cooked
     group: Main ingredients
-    quantity: 500
+    quantity: 166
     unit: g
-    item: canned lentils, drained
-    note: ≈ 166 g uncooked
+    item: dried lentils
+    note: cooked
     grams: 166
     fdcId: 172420
     matchConfidence: medium
@@ -194,7 +194,7 @@ nutrition:
     nrf: 20.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 48.9
+    minimallyProcessedPct: 69.3
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
@@ -213,12 +213,12 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. **Preparation:** Peel and deseed the pumpkin and cut it into roughly 2 cm cubes. Finely chop the onion, garlic and fresh ginger. Rinse the canned lentils and drain in a sieve.
+1. **Preparation:** Peel and deseed the pumpkin and cut it into roughly 2 cm cubes. Finely chop the onion, garlic and fresh ginger. Rinse the lentils and simmer in plenty of water for 20–25 minutes until tender, then drain.
 2. Put the brown basmati rice on to cook in about 2-2.25 times its volume of lightly salted water, then after it boils, cook covered over low heat for 30-40 minutes until tender and fluffy, and let it rest covered for 10 minutes.
 3. **Cooking:** In a large saucepan, heat 2 tablespoons of coconut oil over medium heat. Add the chopped onion and fry for 4-5 minutes until translucent and golden. Add the crushed garlic and grated ginger and fry for another minute until fragrant.
 4. Sprinkle the ground cumin and garam masala into the pan and stir for half a minute so the spices release their aroma. Take care that they do not burn.
 5. Pour in the canned chopped tomatoes and the creamy coconut milk, stir thoroughly, then add the diced pumpkin and 1 teaspoon of salt. Bring to the boil, then reduce the heat to low, cover and simmer for 15-20 minutes until the pumpkin cubes are fork-tender.
-6. Add the rinsed canned lentils and the fresh baby spinach to the curry. Cook for another 3-4 minutes until the spinach leaves have just wilted and the curry has thickened nicely. If needed, taste and season with another pinch of salt.
+6. Add the cooked lentils and the fresh baby spinach to the curry. Cook for another 3-4 minutes until the spinach leaves have just wilted and the curry has thickened nicely. If needed, taste and season with another pinch of salt.
 7. **Serving:** Serve the hot, fragrant pumpkin lentil curry alongside freshly steamed brown basmati rice. Sprinkle generously with fresh chopped coriander and drizzle with fresh lime juice for a perfectly balanced, exotic flavour.
 
 ## Tips

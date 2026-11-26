@@ -18,11 +18,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 240 g pre-cooked whole-wheat udon noodles (≈ 95 g uncooked)
-    quantity: 240
+  - raw: 95 g dry whole-wheat udon noodles, cooked
+    quantity: 95
     unit: g
-    item: pre-cooked whole-wheat udon noodles
-    note: ≈ 95 g uncooked
+    item: dry whole-wheat udon noodles
+    note: cooked
     grams: 95
     fdcId: 169738
     matchConfidence: high

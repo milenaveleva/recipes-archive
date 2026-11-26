@@ -10,19 +10,19 @@ source:
 author: Kifli Kukták
 servings: 3
 prepTime: PT10M
-cookTime: PT15M
-totalTime: PT25M
+cookTime: PT1H45M
+totalTime: PT1H55M
 cuisine: Italian
 course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g canned white beans (≈ 135 g uncooked)
+  - raw: 135 g dried white beans, soaked and cooked
     group: Main ingredients
-    quantity: 400
+    quantity: 135
     unit: g
-    item: canned white beans
-    note: ≈ 135 g uncooked
+    item: dried white beans
+    note: soaked and cooked
     grams: 135
     fdcId: 175202
     matchConfidence: medium
@@ -174,9 +174,9 @@ nutrition:
     nrf: 27.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 67.7
+    minimallyProcessedPct: 87.9
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
@@ -193,11 +193,12 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. **Preparation:** Finely chop the onion, carrot and celery (the classic Italian soffritto base). Chop the garlic cloves and rosemary leaves. Rinse and drain the canned white beans, then mash half of them with a fork or in a chopper until creamy for a silky sauce.
-2. **Cooking:** Heat the extra virgin olive oil in a deep pan or pot. Add the chopped vegetables (onion, carrot, celery) and the garlic and cook over medium heat for 4–5 minutes until soft. Add the tomato paste and finely chopped rosemary and cook for 1 minute until fragrant.
-3. Stir in the mashed and whole white beans, then pour in the warm vegetable broth. Season with salt and freshly ground black pepper. Bring to a boil, then add the dry pasta.
-4. Cook over medium heat, stirring often like a risotto, for 12–14 minutes (whole-wheat pasta takes a little longer) until the pasta is al dente and the starch forms a creamy sauce with the bean puree. If it gets too thick, add a little more broth or water.
-5. **Serving:** Remove from the heat, stir in half of the freshly grated Parmesan, drizzle with a little more extra virgin olive oil, then sprinkle with the remaining Parmesan and rosemary and serve immediately, hot.
+1. **Preparation:** Soak the dried white beans in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+2. Finely chop the onion, carrot and celery (the classic Italian soffritto base). Chop the garlic cloves and rosemary leaves. Mash half of the cooked white beans with a fork or in a chopper until creamy for a silky sauce.
+3. **Cooking:** Heat the extra virgin olive oil in a deep pan or pot. Add the chopped vegetables (onion, carrot, celery) and the garlic and cook over medium heat for 4–5 minutes until soft. Add the tomato paste and finely chopped rosemary and cook for 1 minute until fragrant.
+4. Stir in the mashed and whole white beans, then pour in the warm vegetable broth. Season with salt and freshly ground black pepper. Bring to a boil, then add the dry pasta.
+5. Cook over medium heat, stirring often like a risotto, for 12–14 minutes (whole-wheat pasta takes a little longer) until the pasta is al dente and the starch forms a creamy sauce with the bean puree. If it gets too thick, add a little more broth or water.
+6. **Serving:** Remove from the heat, stir in half of the freshly grated Parmesan, drizzle with a little more extra virgin olive oil, then sprinkle with the remaining Parmesan and rosemary and serve immediately, hot.
 
 ## Tips
 

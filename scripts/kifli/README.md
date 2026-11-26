@@ -61,7 +61,7 @@ Per ingredient, `en` is the stored `raw` line and is parsed by the engine. Optio
 - No mayonnaise (→ Greek yogurt), spirits or beer.
 - Refined grains → the whole-grain version of the same type (whole-wheat pasta, flour, bread, couscous; brown rice).
 - Honey is the only sweetener. Yeast and yeast doughs are allowed.
-- Cooked or canned staples (pasta, rice, pulses) are stored as the raw dry-matter equivalent with the cooked amount kept in the line, e.g. `500 g cooked brown rice (≈ 168 g uncooked)` with `forceGrams: 168`.
+- Cooked or canned staples (pasta, rice, pulses) are listed in their raw/dry form at the raw dry-matter weight, with the preparation as the note and the method cooking them from dry, e.g. `168 g dried brown rice, cooked` with `forceGrams: 168`.
 - Spices and salt in tsp/tbsp/pinch, never grams; juices in ml.
 - Water and ice are excluded from nutrition and pinned to `174158`.
 - Every ingredient gets an explicit cooking method, read from the method steps.

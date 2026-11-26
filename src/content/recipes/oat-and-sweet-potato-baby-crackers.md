@@ -10,18 +10,18 @@ source:
 author: ManóMenü
 servings: 15
 prepTime: PT15M
-cookTime: PT20M
-totalTime: PT35M
+cookTime: PT40M
+totalTime: PT55M
 cuisine: International
 course: Snack
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g sweet potato, steamed and mashed (≈ 213 g raw)
-    quantity: 200
+  - raw: 213 g raw sweet potato, steamed and mashed
+    quantity: 213
     unit: g
-    item: sweet potato, steamed and mashed
-    note: ≈ 213 g raw
+    item: raw sweet potato
+    note: steamed and mashed
     grams: 213
     fdcId: 168482
     matchConfidence: medium
@@ -95,6 +95,7 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Mix the ingredients thoroughly.
-2. Roll the dough out on baking paper to 1-2 mm thick, then cut with a pastry wheel or pizza cutter into whatever shape and size you want to offer the baby.
-3. Bake in a 180 °C oven for about 20 minutes. The baking time determines whether you get hard, crunchy crackers or slightly softer ones.
+1. Peel the sweet potato, cut it into chunks and steam for about 20 minutes until soft, then mash it.
+2. Mix the ingredients thoroughly.
+3. Roll the dough out on baking paper to 1-2 mm thick, then cut with a pastry wheel or pizza cutter into whatever shape and size you want to offer the baby.
+4. Bake in a 180 °C oven for about 20 minutes. The baking time determines whether you get hard, crunchy crackers or slightly softer ones.

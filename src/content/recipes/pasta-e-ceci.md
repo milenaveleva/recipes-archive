@@ -10,18 +10,18 @@ source:
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
-cookTime: PT20M
-totalTime: PT30M
+cookTime: PT1H50M
+totalTime: PT2H
 cuisine: Italian
 course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 500 g canned chickpeas (≈ 216 g uncooked)
-    quantity: 500
+  - raw: 216 g dried chickpeas, soaked and cooked
+    quantity: 216
     unit: g
-    item: canned chickpeas
-    note: ≈ 216 g uncooked
+    item: dried chickpeas
+    note: soaked and cooked
     grams: 216
     fdcId: 173756
     matchConfidence: medium
@@ -140,9 +140,9 @@ nutrition:
     nrf: 24.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 62.4
+    minimallyProcessedPct: 90
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"
   dataSources:
@@ -159,12 +159,13 @@ createdAt: "2026-11-22"
 
 ## Method
 
-1. **Building the aromatic base:** Cut the garlic cloves into thin slices. Heat 3 tablespoons of extra virgin olive oil in a deep pot, add the garlic, the fresh rosemary sprigs and the pinch of chili flakes. Fry over medium heat for 1-2 minutes until the garlic turns golden and the rosemary releases its aromatic oils.
-2. Stir in the tomato paste and fry for 1 minute so that it caramelises slightly and gains a deep flavour.
-3. **Simmering and mashing the chickpeas:** Pour the canned chickpeas into the pot together with their own liquid (or rinsed and covered with about 700 ml of hot water). Season with salt and pepper, bring to the boil and let it bubble gently over low heat for 10 minutes.
-4. Remove the cooked rosemary sprigs. Take a ladleful of chickpeas into a deep bowl, mash it creamy with a stick blender or a fork, and pour it back into the pot; this is the secret of the characteristic creamy Roman sauce.
-5. **Cooking the pasta and serving:** Add the dry pasta directly to the bubbling chickpea broth. Cook over low-medium heat, stirring often, for 8-10 minutes until the pasta is "al dente" and has absorbed the rich flavours (if it gets too thick, add 1-2 dl of hot water).
-6. Take off the heat and stir in half of the grated Parmesan and the remaining 1 tablespoon of extra virgin olive oil for a silky shine. Serve immediately in deep bowls, topped with fresh Parmesan, freshly ground black pepper and a fine sprig of fresh rosemary leaves.
+1. Soak the dried chickpeas in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain, keeping the cooking liquid.
+2. **Building the aromatic base:** Cut the garlic cloves into thin slices. Heat 3 tablespoons of extra virgin olive oil in a deep pot, add the garlic, the fresh rosemary sprigs and the pinch of chili flakes. Fry over medium heat for 1-2 minutes until the garlic turns golden and the rosemary releases its aromatic oils.
+3. Stir in the tomato paste and fry for 1 minute so that it caramelises slightly and gains a deep flavour.
+4. **Simmering and mashing the chickpeas:** Add the cooked chickpeas to the pot with about 700 ml of their reserved cooking liquid (top up with hot water if needed). Season with salt and pepper, bring to the boil and let it bubble gently over low heat for 10 minutes.
+5. Remove the cooked rosemary sprigs. Take a ladleful of chickpeas into a deep bowl, mash it creamy with a stick blender or a fork, and pour it back into the pot; this is the secret of the characteristic creamy Roman sauce.
+6. **Cooking the pasta and serving:** Add the dry pasta directly to the bubbling chickpea broth. Cook over low-medium heat, stirring often, for 8-10 minutes until the pasta is "al dente" and has absorbed the rich flavours (if it gets too thick, add 1-2 dl of hot water).
+7. Take off the heat and stir in half of the grated Parmesan and the remaining 1 tablespoon of extra virgin olive oil for a silky shine. Serve immediately in deep bowls, topped with fresh Parmesan, freshly ground black pepper and a fine sprig of fresh rosemary leaves.
 
 ## Tips
 

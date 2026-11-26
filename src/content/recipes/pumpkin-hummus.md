@@ -57,11 +57,11 @@ ingredients:
     fdcId: 170527
     matchConfidence: high
     cooking: raw
-  - raw: 1 can chickpeas + 8 tbsp of their liquid (≈ 82 g uncooked)
-    quantity: 1
-    unit: can
-    item: chickpeas + 8 tbsp of their liquid
-    note: ≈ 82 g uncooked
+  - raw: 82 g dried chickpeas, soaked and cooked (keep 120 ml of the cooking liquid)
+    quantity: 82
+    unit: g
+    item: dried chickpeas
+    note: soaked and cooked (keep 120 ml of the cooking liquid)
     grams: 82
     fdcId: 173756
     matchConfidence: medium
@@ -132,9 +132,9 @@ nutrition:
     nrf: 26.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 63.7
+    minimallyProcessedPct: 95.8
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
@@ -150,6 +150,7 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Simply blend all the ingredients in a high-powered blender into a smooth, airy hummus.
-2. Taste at the end and adjust with more lemon, garlic or salt if needed.
-3. Serve with bread or as a dip with vegetables.
+1. Soak the dried chickpeas in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain, keeping 120 ml of the cooking liquid.
+2. Blend all the ingredients, including the reserved chickpea cooking liquid, in a high-powered blender into a smooth, airy hummus.
+3. Taste at the end and adjust with more lemon, garlic or salt if needed.
+4. Serve with bread or as a dip with vegetables.

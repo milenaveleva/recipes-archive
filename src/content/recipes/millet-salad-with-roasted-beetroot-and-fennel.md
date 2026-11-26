@@ -11,8 +11,8 @@ source:
 author: Báder Gabka
 servings: 4
 prepTime: PT15M
-cookTime: PT20M
-totalTime: PT35M
+cookTime: PT1H50M
+totalTime: PT2H5M
 cuisine: International
 course: Salad
 lists:
@@ -62,11 +62,11 @@ ingredients:
     fdcId: 171707
     matchConfidence: high
     cooking: raw
-  - raw: 1 can chickpeas, drained (≈ 87 g uncooked)
-    quantity: 1
-    unit: can
-    item: chickpeas
-    note: drained (≈ 87 g uncooked)
+  - raw: 87 g dried chickpeas, soaked and cooked
+    quantity: 87
+    unit: g
+    item: dried chickpeas
+    note: soaked and cooked
     grams: 87
     fdcId: 173756
     matchConfidence: high
@@ -125,7 +125,7 @@ nutrition:
     nrf: 30.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 75.3
+    minimallyProcessedPct: 100
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -143,9 +143,10 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Put the millet on to cook in 250-300 ml of water: rinse it thoroughly several times in warm or hot water, then cook it in about twice its volume of lightly salted water for about 15 minutes until tender.
-2. Prepare the vegetables: peel the beetroot, cut it into small cubes and place it on a baking tray lined with baking paper together with the drained chickpeas.
-3. Cut the fennel into small pieces as well and place it next to the beetroot and chickpeas.
-4. Drizzle the vegetables with a little olive oil, season with salt and roast in an oven preheated to 180 °C for 15-18 minutes.
-5. While the vegetables roast, peel the orange and cut it into segments, slice the radishes thinly and dice the avocado.
-6. When everything is ready, mix the roasted and fresh vegetables with the millet.
+1. Soak the dried chickpeas in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+2. Put the millet on to cook in 250-300 ml of water: rinse it thoroughly several times in warm or hot water, then cook it in about twice its volume of lightly salted water for about 15 minutes until tender.
+3. Prepare the vegetables: peel the beetroot, cut it into small cubes and place it on a baking tray lined with baking paper together with the cooked chickpeas.
+4. Cut the fennel into small pieces as well and place it next to the beetroot and chickpeas.
+5. Drizzle the vegetables with a little olive oil, season with salt and roast in an oven preheated to 180 °C for 15-18 minutes.
+6. While the vegetables roast, peel the orange and cut it into segments, slice the radishes thinly and dice the avocado.
+7. When everything is ready, mix the roasted and fresh vegetables with the millet.

@@ -11,8 +11,8 @@ source:
 author: Lőrincz Eszter
 servings: 4
 prepTime: PT15M
-cookTime: PT20M
-totalTime: PT35M
+cookTime: PT1H50M
+totalTime: PT2H5M
 cuisine: Middle Eastern
 course: Main Course
 lists:
@@ -70,11 +70,11 @@ ingredients:
     fdcId: 172232
     matchConfidence: high
     cooking: raw
-  - raw: 300 g canned chickpeas, rinsed and drained (≈ 102 g uncooked)
-    quantity: 300
+  - raw: 102 g dried chickpeas, soaked and cooked
+    quantity: 102
     unit: g
-    item: canned chickpeas, rinsed and drained
-    note: ≈ 102 g uncooked
+    item: dried chickpeas
+    note: soaked and cooked
     grams: 102
     fdcId: 173756
     matchConfidence: medium
@@ -174,7 +174,7 @@ nutrition:
     nrf: 41.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 37
+    minimallyProcessedPct: 59.6
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
@@ -193,8 +193,9 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Heat 1 tbsp olive oil in a large pan, then add the finely chopped onion and diced bell pepper. Cook over medium heat for 5-10 minutes until soft.
-2. Add the crushed garlic, paprika and cumin and fry for a few seconds to release their aroma. Then add the canned tomatoes (lightly crushed with a fork) and cook until the sauce thickens.
-3. Add the rinsed chickpeas, season with salt and pepper and cook for a few more minutes. Make four small wells in the sauce and crack an egg into each.
-4. Cover the pan and cook over low heat for 6-8 minutes, until the whites have set but the yolks are still slightly soft.
-5. To serve, sprinkle with fresh basil or parsley and crumble the feta over the top.
+1. Soak the dried chickpeas in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+2. Heat 1 tbsp olive oil in a large pan, then add the finely chopped onion and diced bell pepper. Cook over medium heat for 5-10 minutes until soft.
+3. Add the crushed garlic, paprika and cumin and fry for a few seconds to release their aroma. Then add the canned tomatoes (lightly crushed with a fork) and cook until the sauce thickens.
+4. Add the cooked chickpeas, season with salt and pepper and cook for a few more minutes. Make four small wells in the sauce and crack an egg into each.
+5. Cover the pan and cook over low heat for 6-8 minutes, until the whites have set but the yolks are still slightly soft.
+6. To serve, sprinkle with fresh basil or parsley and crumble the feta over the top.

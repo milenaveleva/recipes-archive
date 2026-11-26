@@ -10,8 +10,8 @@ source:
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
-cookTime: PT40M
-totalTime: PT55M
+cookTime: PT2H10M
+totalTime: PT2H25M
 cuisine: Mediterranean
 course: Main Course
 lists:
@@ -25,11 +25,11 @@ ingredients:
     fdcId: 169228
     matchConfidence: high
     cooking: baked
-  - raw: 1 can (400 g) chickpeas, drained (≈ 93 g uncooked)
-    quantity: 400
+  - raw: 93 g dried chickpeas, soaked and cooked
+    quantity: 93
     unit: g
-    item: chickpeas, drained
-    note: ≈ 93 g uncooked
+    item: dried chickpeas
+    note: soaked and cooked
     grams: 93
     fdcId: 173756
     matchConfidence: medium
@@ -160,9 +160,9 @@ nutrition:
     nrf: 36.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 60.6
+    minimallyProcessedPct: 89.5
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
@@ -179,9 +179,10 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. **Preparation:** Preheat the oven to 200 °C (180 °C with fan). Wash the eggplants and cut them into cubes of about 2–3 cm. Cut the red onion into thin wedges or rings and finely chop or crush the garlic cloves. Halve the cherry tomatoes, and drain and thoroughly rinse the canned chickpeas under water.
-2. **Assembly and baking:** In a large baking tray or ovenproof dish, mix the diced eggplant, drained chickpeas, red onion, garlic and halved cherry tomatoes. Pour over the can of chopped tomatoes and the 4 tablespoons of extra virgin olive oil. Sprinkle with the dried oregano, ground cumin, 1 teaspoon of salt and 1 teaspoon of freshly ground black pepper, then toss thoroughly so the spices and oil evenly coat the vegetables. Place the tray in the preheated oven and bake for 35–40 minutes, until the eggplant is completely soft and lightly browned at the edges and the tomato sauce has pleasantly thickened. Stir carefully once halfway through.
-3. **Serving:** Take the tray out of the oven, sprinkle with finely chopped fresh parsley and let it rest for a few minutes. Serve warm with fresh whole-wheat sourdough bread, whole-wheat pita or steamed brown basmati rice.
+1. **Preparation:** Soak the dried chickpeas in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+2. Preheat the oven to 200 °C (180 °C with fan). Wash the eggplants and cut them into cubes of about 2–3 cm. Cut the red onion into thin wedges or rings and finely chop or crush the garlic cloves. Halve the cherry tomatoes.
+3. **Assembly and baking:** In a large baking tray or ovenproof dish, mix the diced eggplant, cooked chickpeas, red onion, garlic and halved cherry tomatoes. Pour over the can of chopped tomatoes and the 4 tablespoons of extra virgin olive oil. Sprinkle with the dried oregano, ground cumin, 1 teaspoon of salt and 1 teaspoon of freshly ground black pepper, then toss thoroughly so the spices and oil evenly coat the vegetables. Place the tray in the preheated oven and bake for 35–40 minutes, until the eggplant is completely soft and lightly browned at the edges and the tomato sauce has pleasantly thickened. Stir carefully once halfway through.
+4. **Serving:** Take the tray out of the oven, sprinkle with finely chopped fresh parsley and let it rest for a few minutes. Serve warm with fresh whole-wheat sourdough bread, whole-wheat pita or steamed brown basmati rice.
 
 ## Tips
 

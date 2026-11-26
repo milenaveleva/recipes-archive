@@ -25,11 +25,11 @@ ingredients:
     fdcId: 170400
     matchConfidence: high
     cooking: baked
-  - raw: 480 g canned lentils (≈ 159 g uncooked)
-    quantity: 480
+  - raw: 159 g dried lentils, cooked
+    quantity: 159
     unit: g
-    item: canned lentils
-    note: ≈ 159 g uncooked
+    item: dried lentils
+    note: cooked
     grams: 159
     fdcId: 172420
     matchConfidence: medium
@@ -162,9 +162,9 @@ nutrition:
     nrf: 28.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 55.9
+    minimallyProcessedPct: 81.7
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
@@ -183,9 +183,9 @@ createdAt: "2026-11-14"
 
 1. Preheat the oven to 200 °C (400 °F; 180 °C fan). Peel the celeriac and cut it into even cubes of about 1.5 cm.
 2. Toss the celeriac cubes with 2 tablespoons of olive oil, the ground cumin, half a teaspoon of salt and freshly ground black pepper. Spread on a baking tray lined with baking paper and roast for 25–30 minutes until golden with a caramelised crust and tender.
-3. While the celeriac roasts, toast the sliced almonds in a dry pan over medium heat for 2–3 minutes until fragrant and golden, then set aside to cool.
+3. While the celeriac roasts, rinse the lentils and simmer them in plenty of water for 20–25 minutes until tender, then drain thoroughly. Meanwhile, toast the sliced almonds in a dry pan over medium heat for 2–3 minutes until fragrant and golden, then set aside to cool.
 4. Make the creamy tahini dressing: in a small bowl, mix the tahini, the squeezed lemon juice, the crushed garlic, the remaining olive oil, a pinch of salt and 2–3 tablespoons of cold water until you have a silky, easily pourable cream.
-5. Rinse the canned lentils under cold water in a sieve and drain thoroughly. In a large salad bowl, combine the rinsed lentils, the still-warm roasted celeriac and the finely chopped fresh parsley.
+5. In a large salad bowl, combine the cooked lentils, the still-warm roasted celeriac and the finely chopped fresh parsley.
 6. Drizzle the salad with the creamy tahini dressing, crumble the creamy feta on top, and finish with the ruby-red pomegranate seeds and the crunchy toasted sliced almonds. Serve immediately, warm or at room temperature.
 
 ## Tips

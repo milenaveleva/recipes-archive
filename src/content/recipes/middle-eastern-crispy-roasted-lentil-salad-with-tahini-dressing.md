@@ -10,19 +10,19 @@ source:
 author: Kifli Kukták
 servings: 2
 prepTime: PT15M
-cookTime: PT25M
-totalTime: PT40M
+cookTime: PT50M
+totalTime: PT1H5M
 cuisine: Middle Eastern
 course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g cooked brown lentils (≈ 133 g uncooked)
+  - raw: 133 g dried brown lentils, cooked
     group: Crispy spiced lentils
-    quantity: 400
+    quantity: 133
     unit: g
-    item: cooked brown lentils
-    note: ≈ 133 g uncooked
+    item: dried brown lentils
+    note: cooked
     grams: 133
     fdcId: 172420
     matchConfidence: medium
@@ -212,7 +212,7 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. **Roasting the lentils until crispy:** Preheat the oven to 200 °C (180 °C fan). Rinse the cooked or canned brown lentils thoroughly in a sieve, then spread them on paper towels and blot off as much moisture as possible - this is the secret to truly crispy lentils when roasted.
+1. **Roasting the lentils until crispy:** Rinse the lentils and simmer in plenty of water for 20–25 minutes until just tender, then drain thoroughly. Preheat the oven to 200 °C (180 °C fan). Spread the cooked lentils on paper towels and blot off as much moisture as possible - this is the secret to truly crispy lentils when roasted.
 2. Line a baking tray with parchment paper. Toss the dried lentils with 30 ml of extra virgin olive oil, the smoked paprika, ground cumin, half a teaspoon of salt and the freshly ground black pepper. Spread evenly in a single layer on the tray and roast for 20-25 minutes until golden brown, fragrant and pleasantly crisp. Shake the tray once halfway through. Take out and let cool for a few minutes.
 3. **Preparing the tahini dressing and fresh vegetables:** For the tahini dressing, whisk the tahini in a small bowl with the crushed garlic, the lemon juice, the remaining 30 ml of extra virgin olive oil and half a teaspoon of salt. Add 2-3 tablespoons of cold water and whisk until you have a creamy, pale, softly pourable dressing.
 4. Cut the cucumber into small cubes and the red onion into thin half-moons or fine dice. Wash and drain the fresh spinach and mint, and finely chop the mint leaves. Halve the pomegranate and remove the juicy seeds.

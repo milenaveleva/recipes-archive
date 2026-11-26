@@ -1,9 +1,9 @@
 ---
-title: Fresh Penne Pomodoro with Burrata
-description: Fresh whole-wheat penne in a slow-cooked tomato sauce, topped with creamy burrata, peppery rocket and shaved Parmesan.
+title: Penne Pomodoro with Burrata
+description: Whole-wheat penne in a slow-cooked tomato sauce, topped with creamy burrata, peppery rocket and shaved Parmesan.
 image: ./images/fresh-penne-pomodoro-with-burrata.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_11702_1777022619555_fresh-penne-pomodoro-with-burrata-and-arugula_b4d20cb3.jpg
-imageAlt: Fresh Penne Pomodoro with Burrata
+imageAlt: Penne Pomodoro with Burrata
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11702-friss-penne-pomodoro-burrataval
@@ -102,11 +102,10 @@ ingredients:
     fdcId: 170848
     matchConfidence: medium
     cooking: raw
-  - raw: 100 g fresh whole-wheat penne (≈ 75 g dry)
-    quantity: 100
+  - raw: 75 g dry whole-wheat penne
+    quantity: 75
     unit: g
-    item: fresh whole-wheat penne
-    note: ≈ 75 g dry
+    item: dry whole-wheat penne
     grams: 75
     fdcId: 169738
     matchConfidence: high
@@ -188,7 +187,7 @@ createdAt: "2026-11-22"
 1. Fry the finely chopped onion in a frying pan in a little olive oil with the crushed garlic and freshly ground pepper until golden brown.
 2. Add the chopped tomatoes and the fresh basil, season with salt, and cook slowly over medium heat for about 30 minutes. Blend the finished sauce with a stick blender into a smooth cream.
 3. Add the halved cherry tomatoes and the extra virgin olive oil to the sauce and cook for another 15 minutes, until the tomatoes are soft and the sauce is silky.
-4. Meanwhile, cook the fresh penne in plenty of salted water until "al dente" (firm to the bite). Drain and toss it straight into the tomato sauce. Heat together briefly so the flavours meld.
+4. Meanwhile, cook the penne in plenty of salted water according to the packet until "al dente" (firm to the bite). Drain and toss it straight into the tomato sauce. Heat together briefly so the flavours meld.
 5. To serve, place the burrata on top of the pasta and gently tear it open so the creamy centre runs out. Drizzle with a little olive oil, sprinkle with fresh rocket and garnish with Parmesan shavings.
 
 ## Tips

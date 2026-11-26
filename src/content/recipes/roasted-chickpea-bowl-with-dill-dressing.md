@@ -11,8 +11,8 @@ source:
 author: Kifli Kukták
 servings: 3
 prepTime: PT20M
-cookTime: PT25M
-totalTime: PT45M
+cookTime: PT1H55M
+totalTime: PT2H15M
 cuisine: International
 course: Main Course
 lists:
@@ -27,11 +27,11 @@ ingredients:
     fdcId: 169706
     matchConfidence: high
     cooking: boiled
-  - raw: 240 g canned chickpeas, drained (≈ 82 g uncooked)
-    quantity: 240
+  - raw: 82 g dried chickpeas, soaked and cooked
+    quantity: 82
     unit: g
-    item: canned chickpeas, drained
-    note: ≈ 82 g uncooked
+    item: dried chickpeas
+    note: soaked and cooked
     grams: 82
     fdcId: 173756
     matchConfidence: medium
@@ -129,9 +129,9 @@ nutrition:
     nrf: 39
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 61.7
+    minimallyProcessedPct: 90.1
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
@@ -148,7 +148,8 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Put the brown rice in a small saucepan, add water (to cover by about 1 cm) and cook over medium heat for 30-35 minutes until tender.
-2. Meanwhile preheat the oven to 180 °C and line a baking tray with baking paper. Rinse and drain the chickpeas and spread them on the tray. Season with salt and pepper and bake for 20-25 minutes until crisp.
-3. Make the salad and dressing: put one third of the cucumber in a bowl with the cottage cheese and the finely chopped dill and blend smooth with a hand blender. Season with salt and pepper. Dice the remaining cucumber, slice the onion thinly and quarter the cherry tomatoes. Mix the vegetables with the dressing.
-4. Let the cooked rice cool, then fold it into the salad. When serving, sprinkle with the crunchy roasted chickpeas and garnish with extra dill.
+1. Soak the dried chickpeas in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+2. Put the brown rice in a small saucepan, add water (to cover by about 1 cm) and cook over medium heat for 30-35 minutes until tender.
+3. Meanwhile preheat the oven to 180 °C and line a baking tray with baking paper. Spread the cooked, well-drained chickpeas on the tray. Season with salt and pepper and bake for 20-25 minutes until crisp.
+4. Make the salad and dressing: put one third of the cucumber in a bowl with the cottage cheese and the finely chopped dill and blend smooth with a hand blender. Season with salt and pepper. Dice the remaining cucumber, slice the onion thinly and quarter the cherry tomatoes. Mix the vegetables with the dressing.
+5. Let the cooked rice cool, then fold it into the salad. When serving, sprinkle with the crunchy roasted chickpeas and garnish with extra dill.

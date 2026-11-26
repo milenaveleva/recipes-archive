@@ -11,18 +11,18 @@ source:
 author: Enyingi Vivien
 servings: 2
 prepTime: PT10M
-cookTime: PT20M
-totalTime: PT30M
+cookTime: PT1H50M
+totalTime: PT2H
 cuisine: International
 course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 1 can white beans, drained (≈ 81 g uncooked)
-    quantity: 1
-    unit: can
-    item: white beans, drained
-    note: ≈ 81 g uncooked
+  - raw: 81 g dried white beans, soaked and cooked
+    quantity: 81
+    unit: g
+    item: dried white beans
+    note: soaked and cooked
     grams: 81
     fdcId: 175202
     matchConfidence: high
@@ -199,9 +199,9 @@ nutrition:
     nrf: 51.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 58.1
+    minimallyProcessedPct: 78.1
     ultraProcessedPct: 1.8
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
@@ -219,14 +219,15 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Slice the leek into rings and chop the garlic. Start sautéing them in a little olive oil.
-2. Meanwhile squeeze the juice of an orange and pour it over once the onions have collapsed.
-3. Let the onions caramelise slightly.
-4. Add the finely sliced celery and the rinsed canned beans to the onions.
-5. Pour in enough vegetable broth to just cover. Season and leave to simmer.
-6. Meanwhile make the sauce that will thicken the ragout. Put the tofu, nutritional yeast, salt, garlic powder and nearly 150 ml of unsweetened almond milk into a blender.
-7. Blend until creamy.
-8. When the bean ragout has reduced a little, stir in the tofu cream. Simmer together for a few more minutes.
-9. In the meantime, make the polenta. Put the cornmeal on to cook in salted water, adding enough water to cover it.
-10. Then add more water as you go, depending on how thin you like it. Over medium heat with fairly frequent stirring it is ready very quickly.
-11. Finally serve everything together. Sprinkle with toasted, crushed walnuts and fresh parsley to taste.
+1. Soak the dried white beans in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+2. Slice the leek into rings and chop the garlic. Start sautéing them in a little olive oil.
+3. Meanwhile squeeze the juice of an orange and pour it over once the onions have collapsed.
+4. Let the onions caramelise slightly.
+5. Add the finely sliced celery and the cooked beans to the onions.
+6. Pour in enough vegetable broth to just cover. Season and leave to simmer.
+7. Meanwhile make the sauce that will thicken the ragout. Put the tofu, nutritional yeast, salt, garlic powder and nearly 150 ml of unsweetened almond milk into a blender.
+8. Blend until creamy.
+9. When the bean ragout has reduced a little, stir in the tofu cream. Simmer together for a few more minutes.
+10. In the meantime, make the polenta. Put the cornmeal on to cook in salted water, adding enough water to cover it.
+11. Then add more water as you go, depending on how thin you like it. Over medium heat with fairly frequent stirring it is ready very quickly.
+12. Finally serve everything together. Sprinkle with toasted, crushed walnuts and fresh parsley to taste.

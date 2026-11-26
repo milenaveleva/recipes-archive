@@ -17,11 +17,11 @@ course: Appetizer
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g cooked shrimp (≈ 357 g raw)
-    quantity: 300
+  - raw: 357 g raw shrimp, cooked
+    quantity: 357
     unit: g
-    item: cooked shrimp
-    note: ≈ 357 g raw
+    item: raw shrimp
+    note: cooked
     grams: 357
     fdcId: 175179
     matchConfidence: medium
@@ -130,9 +130,10 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. In a bowl, mix all the ingredients together: the cooked shrimp, capers, Greek yogurt, Dijon mustard, ketchup and lemon juice.
-2. Season with salt to taste and toss thoroughly.
-3. Chill in the fridge before serving so the flavours meld and the cocktail gets nicely cold.
+1. Cook the shrimp in boiling salted water for 2–3 minutes until pink, then drain and cool.
+2. In a bowl, mix all the ingredients together: the cooked shrimp, capers, Greek yogurt, Dijon mustard, ketchup and lemon juice.
+3. Season with salt to taste and toss thoroughly.
+4. Chill in the fridge before serving so the flavours meld and the cocktail gets nicely cold.
 
 ## Tips
 

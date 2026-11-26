@@ -11,8 +11,8 @@ source:
 author: Báder Gabka
 servings: 2
 prepTime: PT20M
-cookTime: PT40M
-totalTime: PT1H
+cookTime: PT2H10M
+totalTime: PT2H30M
 cuisine: Mediterranean
 course: Main Course
 lists:
@@ -49,11 +49,11 @@ ingredients:
     fdcId: 170685
     matchConfidence: medium
     cooking: baked
-  - raw: 1 can white beans, drained (≈ 81 g uncooked)
-    quantity: 1
-    unit: can
-    item: white beans, drained
-    note: ≈ 81 g uncooked
+  - raw: 81 g dried white beans, soaked and cooked
+    quantity: 81
+    unit: g
+    item: dried white beans
+    note: soaked and cooked
     grams: 81
     fdcId: 175202
     matchConfidence: high
@@ -132,7 +132,7 @@ nutrition:
     nrf: 53.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 71.8
+    minimallyProcessedPct: 100
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -151,9 +151,10 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Put the buckwheat on to cook: rinse it thoroughly several times in warm water, then simmer in one and a half to two times its volume of lightly salted water for about 15 minutes until tender.
-2. Prepare the zucchini: cut off the stems and scoop out the seeds with a melon baller or a small spoon. (If using regular zucchini, cut lengthwise and hollow out the seedy part to make little boats.)
-3. Chop the onion and garlic and soften them in a frying pan in a little olive oil. Add the drained beans, the finely chopped sun-dried tomatoes and the fresh basil leaves.
-4. Mix the cooked buckwheat into the bean base and season with salt and pepper to taste.
-5. Fill the zucchini with this buckwheat and bean filling and bake in an oven preheated to 190 °C for about 40 minutes until done.
-6. Serve drizzled with balsamic vinegar.
+1. Soak the dried white beans in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+2. Put the buckwheat on to cook: rinse it thoroughly several times in warm water, then simmer in one and a half to two times its volume of lightly salted water for about 15 minutes until tender.
+3. Prepare the zucchini: cut off the stems and scoop out the seeds with a melon baller or a small spoon. (If using regular zucchini, cut lengthwise and hollow out the seedy part to make little boats.)
+4. Chop the onion and garlic and soften them in a frying pan in a little olive oil. Add the cooked beans, the finely chopped sun-dried tomatoes and the fresh basil leaves.
+5. Mix the cooked buckwheat into the bean base and season with salt and pepper to taste.
+6. Fill the zucchini with this buckwheat and bean filling and bake in an oven preheated to 190 °C for about 40 minutes until done.
+7. Serve drizzled with balsamic vinegar.

@@ -18,11 +18,11 @@ course: Appetizer
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 900 g cooked king prawns (or shrimp) (≈ 1071 g raw)
-    quantity: 900
+  - raw: 1071 g raw king prawns (or shrimp), sautéed
+    quantity: 1071
     unit: g
-    item: cooked king prawns (or shrimp)
-    note: ≈ 1071 g raw
+    item: raw king prawns (or shrimp)
+    note: sautéed
     grams: 1071
     fdcId: 175179
     matchConfidence: medium
@@ -190,7 +190,7 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Lightly sauté the cooked shrimp in a little olive oil and garlic, then add fresh herbs, salt, pepper and a few drops of lemon juice. Set aside.
+1. Sauté the raw shrimp in a little olive oil and garlic for 3–4 minutes until pink and cooked through, then add fresh herbs, salt, pepper and a few drops of lemon juice. Set aside.
 2. For the sauce, mix together the Greek yogurt, ketchup, Tabasco, Worcestershire sauce and Dijon mustard, and season to taste with salt, pepper and citrus juice.
 3. Peel the avocados, cut them into wedges and sprinkle with citrus juice to keep them green.
 4. Wash the lettuce and separate it into leaves.

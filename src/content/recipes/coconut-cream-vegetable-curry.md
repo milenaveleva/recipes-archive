@@ -11,8 +11,8 @@ source:
 author: Nemes Dóra (Mentes Anyu)
 servings: 6
 prepTime: PT10M
-cookTime: PT20M
-totalTime: PT30M
+cookTime: PT1H50M
+totalTime: PT2H
 cuisine: Indian
 course: Main Course
 lists:
@@ -61,11 +61,11 @@ ingredients:
     fdcId: 1999632
     matchConfidence: high
     cooking: boiled
-  - raw: 1 can (about 240 g) lentils or chickpeas, rinsed and drained (≈ 56 g uncooked)
-    quantity: 240
+  - raw: 56 g dried chickpeas, soaked and cooked
+    quantity: 56
     unit: g
-    item: lentils or chickpeas, rinsed and drained
-    note: ≈ 56 g uncooked
+    item: dried chickpeas
+    note: soaked and cooked
     grams: 56
     fdcId: 173756
     matchConfidence: medium
@@ -214,7 +214,7 @@ nutrition:
     nrf: 15.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 27.5
+    minimallyProcessedPct: 36.1
     ultraProcessedPct: 0.3
     band: moderately-processed
     method: NOVA (energy-weighted)
@@ -233,8 +233,9 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. A creamy, filling, genuinely comforting dish, this curry can become a family favourite in no time. The soft-cooked vegetables and legumes make it a hit with kids too, while the creamy, spiced coconut sauce coats everything silkily. Gluten-free, dairy-free, egg-free and vegan. Preparation time: 30 minutes.
-2. Heat the oil in a large pot over medium heat, add the onion and sauté for 2–3 minutes. Add the garlic and ginger and cook for 1 more minute, then sprinkle in the curry powder and toast for 1–2 minutes until fragrant.
-3. Add the sweet potato, broccoli, carrots, bell pepper and lentils or chickpeas. Pour in the coconut milk, add the curry paste and salt, stir well, bring to a boil, then cook over moderate heat for about 10 minutes until the vegetables are tender.
-4. Meanwhile, stir the cornstarch with 2 tablespoons of water until smooth and add it to the curry to thicken. Then stir in the honey, lime juice and spinach and cook until the leaves wilt. Serve hot with cooked brown rice or whole-wheat thin noodles, fresh cilantro, lime and, if you like, hot sauce.
-5. Source: Mentes Anyu expressz szakácskönyve. Photo: Gábor Nemes.
+1. A creamy, filling, genuinely comforting dish, this curry can become a family favourite in no time. The soft-cooked vegetables and legumes make it a hit with kids too, while the creamy, spiced coconut sauce coats everything silkily. Gluten-free, dairy-free, egg-free and vegan. Allow an overnight soak for the chickpeas.
+2. Soak the dried chickpeas in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+3. Heat the oil in a large pot over medium heat, add the onion and sauté for 2–3 minutes. Add the garlic and ginger and cook for 1 more minute, then sprinkle in the curry powder and toast for 1–2 minutes until fragrant.
+4. Add the sweet potato, broccoli, carrots, bell pepper and cooked chickpeas. Pour in the coconut milk, add the curry paste and salt, stir well, bring to a boil, then cook over moderate heat for about 10 minutes until the vegetables are tender.
+5. Meanwhile, stir the cornstarch with 2 tablespoons of water until smooth and add it to the curry to thicken. Then stir in the honey, lime juice and spinach and cook until the leaves wilt. Serve hot with cooked brown rice or whole-wheat thin noodles, fresh cilantro, lime and, if you like, hot sauce.
+6. Source: Mentes Anyu expressz szakácskönyve. Photo: Gábor Nemes.

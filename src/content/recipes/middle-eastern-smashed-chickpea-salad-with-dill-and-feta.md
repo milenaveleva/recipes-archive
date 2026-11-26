@@ -10,19 +10,19 @@ source:
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
-cookTime: PT5M
-totalTime: PT20M
+cookTime: PT1H35M
+totalTime: PT1H50M
 cuisine: Middle Eastern
 course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g canned chickpeas (≈ 93 g uncooked)
+  - raw: 93 g dried chickpeas, soaked and cooked
     group: Salad base
-    quantity: 400
+    quantity: 93
     unit: g
-    item: canned chickpeas
-    note: ≈ 93 g uncooked
+    item: dried chickpeas
+    note: soaked and cooked
     grams: 93
     fdcId: 173756
     matchConfidence: medium
@@ -198,7 +198,7 @@ nutrition:
     nrf: 26.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 42
+    minimallyProcessedPct: 56.8
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
@@ -217,12 +217,13 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. **Preparation and toasting:** Toast the pine nuts in a dry pan over medium heat for 2–3 minutes until golden, then set aside to cool.
-2. Rinse and drain the canned chickpeas thoroughly. Tip them into a large mixing bowl, then roughly smash them with a fork or potato masher, leaving some whole beans in for a rustic texture.
-3. **Making the dressing:** In a small bowl, mix the tahini, freshly squeezed lemon juice, crushed garlic, extra virgin olive oil, ground cumin, salt and ground black pepper. If too thick, add 1–2 tablespoons of cold water until you get a silky, creamy dressing.
-4. **Assembly and serving:** To the smashed chickpeas, add the diced cucumber, the halved cherry tomatoes, the thinly sliced red onion, and the finely chopped fresh dill and parsley.
-5. Pour over the silky tahini dressing and fold gently so the smashed chickpeas soak up all the flavours.
-6. Crumble the creamy feta on top and sprinkle with the toasted pine nuts. Serve immediately with warm, lightly toasted pita.
+1. Soak the dried chickpeas in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+2. **Preparation and toasting:** Toast the pine nuts in a dry pan over medium heat for 2–3 minutes until golden, then set aside to cool.
+3. Tip the cooked chickpeas into a large mixing bowl, then roughly smash them with a fork or potato masher, leaving some whole beans in for a rustic texture.
+4. **Making the dressing:** In a small bowl, mix the tahini, freshly squeezed lemon juice, crushed garlic, extra virgin olive oil, ground cumin, salt and ground black pepper. If too thick, add 1–2 tablespoons of cold water until you get a silky, creamy dressing.
+5. **Assembly and serving:** To the smashed chickpeas, add the diced cucumber, the halved cherry tomatoes, the thinly sliced red onion, and the finely chopped fresh dill and parsley.
+6. Pour over the silky tahini dressing and fold gently so the smashed chickpeas soak up all the flavours.
+7. Crumble the creamy feta on top and sprinkle with the toasted pine nuts. Serve immediately with warm, lightly toasted pita.
 
 ## Tips
 

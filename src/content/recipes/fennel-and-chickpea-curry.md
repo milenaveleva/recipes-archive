@@ -10,19 +10,19 @@ source:
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
-cookTime: PT25M
-totalTime: PT40M
+cookTime: PT1H55M
+totalTime: PT2H10M
 cuisine: Indian
 course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 2 cans chickpeas, drained (≈ 173 g uncooked)
+  - raw: 173 g dried chickpeas, soaked and cooked
     group: For the curry base
-    quantity: 2
-    unit: cans
-    item: chickpeas
-    note: drained (≈ 173 g uncooked)
+    quantity: 173
+    unit: g
+    item: dried chickpeas
+    note: soaked and cooked
     grams: 173
     fdcId: 173756
     matchConfidence: high
@@ -196,7 +196,7 @@ nutrition:
     nrf: 10.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 44.2
+    minimallyProcessedPct: 68
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
@@ -215,12 +215,13 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. **Preparation:** Finely chop the onion and grate the garlic and fresh ginger. Wash the fennel bulbs, set aside the green fronds for serving, and cut the bulbs into thin slices. Drain the chickpeas and rinse them thoroughly with cold water.
-2. Cook the brown basmati rice in about 2-2.25 times its volume of lightly salted water for 30-40 minutes, then leave it to rest covered for 10 minutes.
-3. **Cooking:** Heat the coconut oil in a deep pan or pot. Add the sliced fennel and sauté over medium heat for 6-8 minutes until the edges caramelise lightly and it softens.
-4. Add the chopped onion, grated garlic and ginger to the fennel. Sauté for another 2-3 minutes until fragrant. Sprinkle in the garam masala, ground cumin and turmeric, then toast for half a minute to release the aroma of the spices.
-5. Pour in the chopped tomatoes and coconut milk, add the rinsed chickpeas and the salt. Stir well, bring to a boil, then simmer gently covered over low heat for 15 minutes so the flavours meld and the sauce thickens slightly.
-6. **Serving:** Taste the curry and, if needed, season with a little more salt. Serve in deep plates with the steamed brown basmati rice, sprinkled with fresh coriander and the reserved fennel fronds, with fresh lime wedges on the side.
+1. **Preparation:** Soak the dried chickpeas in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+2. Finely chop the onion and grate the garlic and fresh ginger. Wash the fennel bulbs, set aside the green fronds for serving, and cut the bulbs into thin slices.
+3. Cook the brown basmati rice in about 2-2.25 times its volume of lightly salted water for 30-40 minutes, then leave it to rest covered for 10 minutes.
+4. **Cooking:** Heat the coconut oil in a deep pan or pot. Add the sliced fennel and sauté over medium heat for 6-8 minutes until the edges caramelise lightly and it softens.
+5. Add the chopped onion, grated garlic and ginger to the fennel. Sauté for another 2-3 minutes until fragrant. Sprinkle in the garam masala, ground cumin and turmeric, then toast for half a minute to release the aroma of the spices.
+6. Pour in the chopped tomatoes and coconut milk, add the cooked chickpeas and the salt. Stir well, bring to a boil, then simmer gently covered over low heat for 15 minutes so the flavours meld and the sauce thickens slightly.
+7. **Serving:** Taste the curry and, if needed, season with a little more salt. Serve in deep plates with the steamed brown basmati rice, sprinkled with fresh coriander and the reserved fennel fronds, with fresh lime wedges on the side.
 
 ## Tips
 

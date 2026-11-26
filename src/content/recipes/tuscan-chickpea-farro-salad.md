@@ -10,8 +10,8 @@ source:
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
-cookTime: PT25M
-totalTime: PT40M
+cookTime: PT1H55M
+totalTime: PT2H10M
 cuisine: Italian
 course: Salad
 lists:
@@ -26,11 +26,11 @@ ingredients:
     fdcId: 2710828
     matchConfidence: high
     cooking: boiled
-  - raw: 400 g canned chickpeas, drained (≈ 136 g uncooked)
-    quantity: 400
+  - raw: 136 g dried chickpeas, soaked and cooked
+    quantity: 136
     unit: g
-    item: canned chickpeas, drained
-    note: ≈ 136 g uncooked
+    item: dried chickpeas
+    note: soaked and cooked
     grams: 136
     fdcId: 173756
     matchConfidence: medium
@@ -149,7 +149,7 @@ nutrition:
     nrf: 23.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 71.2
+    minimallyProcessedPct: 91.1
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -168,14 +168,15 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. **Preparation and roasting:** Preheat the oven to 200 °C and line a baking tray with baking paper. Rinse the canned chickpeas, drain thoroughly, then pat off the moisture with a kitchen towel.
-2. Toss the dry chickpeas with 2 tablespoons of extra virgin olive oil and half of the salt and ground black pepper, then spread out on the tray and bake for 20-25 minutes until nicely crisp.
-3. **Making the farro and dressing:** Meanwhile, rinse the farro and cook it in lightly salted boiling water until tender but still pleasantly chewy (al dente), about 20-25 minutes. When done, drain and let it cool to lukewarm.
-4. In a small bowl, mix the remaining extra virgin olive oil with the squeezed juice and finely grated zest of the organic lemon, the crushed fresh garlic, and the remaining salt and pepper.
-5. In a dry pan over low heat, toast the pine nuts for 2-3 minutes until golden, then remove from the heat and let cool.
-6. **Assembly and serving:** In a large salad bowl, toss the lukewarm farro with the drained sun-dried tomatoes cut into strips and the fresh rocket.
-7. Drizzle with the aromatic lemon-garlic olive oil dressing and mix thoroughly so it coats every grain.
-8. Before serving, sprinkle the crispy roasted chickpeas and toasted pine nuts over the salad and crown it with freshly shaved aged pecorino.
+1. **Preparation and roasting:** Soak the dried chickpeas in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+2. Preheat the oven to 200 °C and line a baking tray with baking paper. Drain the cooked chickpeas thoroughly, then pat off the moisture with a kitchen towel.
+3. Toss the dry chickpeas with 2 tablespoons of extra virgin olive oil and half of the salt and ground black pepper, then spread out on the tray and bake for 20-25 minutes until nicely crisp.
+4. **Making the farro and dressing:** Meanwhile, rinse the farro and cook it in lightly salted boiling water until tender but still pleasantly chewy (al dente), about 20-25 minutes. When done, drain and let it cool to lukewarm.
+5. In a small bowl, mix the remaining extra virgin olive oil with the squeezed juice and finely grated zest of the organic lemon, the crushed fresh garlic, and the remaining salt and pepper.
+6. In a dry pan over low heat, toast the pine nuts for 2-3 minutes until golden, then remove from the heat and let cool.
+7. **Assembly and serving:** In a large salad bowl, toss the lukewarm farro with the drained sun-dried tomatoes cut into strips and the fresh rocket.
+8. Drizzle with the aromatic lemon-garlic olive oil dressing and mix thoroughly so it coats every grain.
+9. Before serving, sprinkle the crispy roasted chickpeas and toasted pine nuts over the salad and crown it with freshly shaved aged pecorino.
 
 ## Tips
 

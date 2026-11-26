@@ -12,8 +12,9 @@
  *     folding + synonyms), or hits a known false friend (ice → ice-cream cones,
  *     pumpkin → pumpkin leaves, walnut oil → walnuts, …);
  *   - state: the item says cooked/canned/drained but the food is raw/dry (or the item
- *     says raw/dry/uncooked and the food is cooked), unless the line carries the
- *     "(≈ N g uncooked)" note that records the raw dry-matter conversion;
+ *     says raw/dried/uncooked and the food is cooked). A line listed in its raw/dry form
+ *     with the preparation as the note ("82 g dried chickpeas, soaked and cooked") names
+ *     both states and passes;
  *   - grams per unit: tsp/tbsp/clove/cup/pinch and counted items weighed outside a
  *     plausible range (warning), or beyond 3× that range (error);
  *   - per serving: kcal outside the course's range, sodium above 2,300 mg, one
@@ -302,7 +303,7 @@ export function falseFriend(item: string, description: string): string | null {
 /** Matches the "(≈ N g uncooked)" note that records a cooked staple's raw dry-matter weight. */
 const UNCOOKED_NOTE = /≈\s*[\d.,]+\s*(g|kg)\s+(uncooked|dry|raw)/i;
 const ITEM_COOKED = /\b(cooked|boiled|canned|tinned|drained|leftover|pre-?cooked)\b/;
-const ITEM_RAW = /\b(uncooked|raw|dry)\b/;
+const ITEM_RAW = /\b(uncooked|raw|dry|dried)\b/;
 const FOOD_RAW = /\b(raw|dry|uncooked)\b/;
 const FOOD_COOKED = /\b(cooked|boiled|canned|drained|steamed|roasted|baked|stewed|braised|grilled|broiled|fried|microwaved)\b/;
 /** Foods whose raw form is what "canned"/"drained" names in practice (coconut milk, oil-packed items). */
@@ -324,7 +325,7 @@ export function stateConflict(ing: ValidatableIngredient, description: string): 
   const itemRaw = ITEM_RAW.exec(text);
   if (itemCooked && itemRaw) return null; // "raw or pre-cooked": either state is fine
   if (itemCooked && foodRaw) {
-    return `item says "${itemCooked[1]}" but the food is raw/dry — weigh it as the raw equivalent and add "(≈ N g uncooked)"`;
+    return `item says "${itemCooked[1]}" but the food is raw/dry — list it in its raw/dry form, e.g. "82 g dried chickpeas, soaked and cooked"`;
   }
   if (itemRaw && foodCooked) return `item says "${itemRaw[1]}" but the food is cooked`;
   return null;

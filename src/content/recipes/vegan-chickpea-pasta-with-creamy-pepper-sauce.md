@@ -11,8 +11,8 @@ source:
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
-cookTime: PT15M
-totalTime: PT30M
+cookTime: PT1H45M
+totalTime: PT2H
 cuisine: International
 course: Main Course
 lists:
@@ -75,11 +75,11 @@ ingredients:
     fdcId: 167747
     matchConfidence: high
     cooking: raw
-  - raw: 300 g canned chickpeas, cooked (≈ 129 g uncooked)
-    quantity: 300
+  - raw: 129 g dried chickpeas, soaked and cooked
+    quantity: 129
     unit: g
-    item: canned chickpeas, cooked
-    note: ≈ 129 g uncooked
+    item: dried chickpeas
+    note: soaked and cooked
     grams: 129
     fdcId: 173756
     matchConfidence: medium
@@ -137,7 +137,7 @@ nutrition:
     nrf: 47.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 73.1
+    minimallyProcessedPct: 100
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -157,12 +157,13 @@ createdAt: "2026-11-22"
 
 ## Method
 
-1. Add the chickpea pasta to boiling salted water and cook for about 9 minutes (or as the packet says) until al dente.
-2. Heat the olive oil in a frying pan. Add the finely chopped garlic and the red bell peppers cut into strips. Fry over medium heat for about 5 minutes until the peppers soften and brown slightly. Take off the heat.
-3. Put about 3/4 of the fried pepper strips into a blender. Add the cashews, nutritional yeast flakes, salt, freshly squeezed lemon juice and about 180 ml of water (you can use some of the pasta cooking water for a richer flavour).
-4. Blend everything until it becomes a completely smooth, creamy sauce.
-5. Reheat the pan with the remaining peppers, add the rinsed chickpeas, the cooked pasta and pour in the creamy pepper sauce.
-6. Toss thoroughly so the sauce coats the pasta everywhere. Sprinkle with freshly chopped parsley when serving.
+1. Soak the dried chickpeas in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+2. Add the chickpea pasta to boiling salted water and cook for about 9 minutes (or as the packet says) until al dente.
+3. Heat the olive oil in a frying pan. Add the finely chopped garlic and the red bell peppers cut into strips. Fry over medium heat for about 5 minutes until the peppers soften and brown slightly. Take off the heat.
+4. Put about 3/4 of the fried pepper strips into a blender. Add the cashews, nutritional yeast flakes, salt, freshly squeezed lemon juice and about 180 ml of water (you can use some of the pasta cooking water for a richer flavour).
+5. Blend everything until it becomes a completely smooth, creamy sauce.
+6. Reheat the pan with the remaining peppers, add the cooked chickpeas, the cooked pasta and pour in the creamy pepper sauce.
+7. Toss thoroughly so the sauce coats the pasta everywhere. Sprinkle with freshly chopped parsley when serving.
 
 ## Tips
 

@@ -11,27 +11,27 @@ source:
 author: Kifli Kukták
 servings: 4
 prepTime: PT20M
-cookTime: PT1H
-totalTime: PT1H20M
+cookTime: PT2H30M
+totalTime: PT2H50M
 cuisine: Italian
 course: Soup
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 1 can cannellini beans, drained (≈ 81 g uncooked)
-    quantity: 1
-    unit: can
-    item: cannellini beans, drained
-    note: ≈ 81 g uncooked
+  - raw: 81 g dried cannellini beans, soaked and cooked
+    quantity: 81
+    unit: g
+    item: dried cannellini beans
+    note: soaked and cooked
     grams: 81
     fdcId: 175202
     matchConfidence: medium
     cooking: boiled
-  - raw: 240 g canned chickpeas, drained (≈ 82 g uncooked)
-    quantity: 240
+  - raw: 82 g dried chickpeas, soaked and cooked
+    quantity: 82
     unit: g
-    item: canned chickpeas, drained
-    note: ≈ 82 g uncooked
+    item: dried chickpeas
+    note: soaked and cooked
     grams: 82
     fdcId: 173756
     matchConfidence: medium
@@ -194,9 +194,9 @@ nutrition:
     nrf: 39.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 51.5
+    minimallyProcessedPct: 83
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
@@ -213,10 +213,11 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Start by preparing the vegetables. Peel the carrot and cut it with the celery into medium pieces. Peel and finely chop the onion, and cut the potatoes and fennel into small cubes. Heat a large pot and, when hot, pour in the olive oil.
-2. Add the celery, carrot and onion to the hot oil and fry over high heat for about five minutes until the vegetables start to take on colour. Add the crushed garlic and fry for another minute. Then add the canned chopped tomatoes, the finely chopped basil and parsley, the potatoes and the fennel. Stir in the rinsed beans and chickpeas as well.
-3. Season with salt and pepper, then pour in the vegetable broth. Cover and simmer over low heat for about an hour. If the soup becomes too thick, add a little more water. For the last 10-12 minutes, add the dry whole-wheat small pasta and the chopped kale. Top up the liquid if needed.
-4. Serve with freshly grated Grana Padano and a drizzle of olive oil.
+1. Soak the dried cannellini beans and chickpeas separately in plenty of cold water overnight (8–12 hours). Drain, cover each with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+2. Start by preparing the vegetables. Peel the carrot and cut it with the celery into medium pieces. Peel and finely chop the onion, and cut the potatoes and fennel into small cubes. Heat a large pot and, when hot, pour in the olive oil.
+3. Add the celery, carrot and onion to the hot oil and fry over high heat for about five minutes until the vegetables start to take on colour. Add the crushed garlic and fry for another minute. Then add the canned chopped tomatoes, the finely chopped basil and parsley, the potatoes and the fennel. Stir in the cooked beans and chickpeas as well.
+4. Season with salt and pepper, then pour in the vegetable broth. Cover and simmer over low heat for about an hour. If the soup becomes too thick, add a little more water. For the last 10-12 minutes, add the dry whole-wheat small pasta and the chopped kale. Top up the liquid if needed.
+5. Serve with freshly grated Grana Padano and a drizzle of olive oil.
 
 ## Tips
 

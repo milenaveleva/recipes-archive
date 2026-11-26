@@ -17,38 +17,38 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g cooked green lentils (or canned) (≈ 83 g uncooked)
-    quantity: 250
+  - raw: 83 g dried green lentils, cooked
+    quantity: 83
     unit: g
-    item: cooked green lentils (or canned)
-    note: ≈ 83 g uncooked
+    item: dried green lentils
+    note: cooked
     grams: 83
     fdcId: 172420
     matchConfidence: medium
     cooking: raw
-  - raw: 250 g cooked red kidney beans (or canned) (≈ 94 g uncooked)
-    quantity: 250
+  - raw: 94 g dried red kidney beans, soaked and cooked
+    quantity: 94
     unit: g
-    item: cooked red kidney beans (or canned)
-    note: ≈ 94 g uncooked
+    item: dried red kidney beans
+    note: soaked and cooked
     grams: 94
     fdcId: 173744
     matchConfidence: medium
     cooking: raw
-  - raw: 250 g cooked white beans (or canned) (≈ 104 g uncooked)
-    quantity: 250
+  - raw: 104 g dried white beans, soaked and cooked
+    quantity: 104
     unit: g
-    item: cooked white beans (or canned)
-    note: ≈ 104 g uncooked
+    item: dried white beans
+    note: soaked and cooked
     grams: 104
     fdcId: 175202
     matchConfidence: medium
     cooking: raw
-  - raw: 250 g cooked chickpeas (or canned) (≈ 108 g uncooked)
-    quantity: 250
+  - raw: 108 g dried chickpeas, soaked and cooked
+    quantity: 108
     unit: g
-    item: cooked chickpeas (or canned)
-    note: ≈ 108 g uncooked
+    item: dried chickpeas
+    note: soaked and cooked
     grams: 108
     fdcId: 173756
     matchConfidence: medium
@@ -190,10 +190,11 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Finely chop the red onion and garlic. Dice the tomatoes into pieces about the size of a bean. Thinly slice the spring onions into rings.
-2. In a large bowl combine all the ingredients: the drained legumes (lentils, beans, chickpeas), the chopped vegetables, the lemon juice and the olive oil. Season with cumin, fresh parsley, salt and pepper.
-3. Let the salad mature for at least 30 minutes at room temperature so the flavours come together well.
+1. Soak the dried kidney beans, white beans and chickpeas separately in plenty of cold water overnight (8–12 hours). Drain, cover each with fresh water and bring to the boil; boil the kidney beans hard for at least 10 minutes. Simmer all three for 60–90 minutes until tender, then drain and cool.
+2. Rinse the green lentils and simmer in plenty of water for 20–25 minutes until tender, then drain and cool.
+3. Finely chop the red onion and garlic. Dice the tomatoes into pieces about the size of a bean. Thinly slice the spring onions into rings.
+4. In a large bowl combine all the ingredients: the cooked legumes (lentils, beans, chickpeas), the chopped vegetables, the lemon juice and the olive oil. Season with cumin, fresh parsley, salt and pepper.
+5. Let the salad mature for at least 30 minutes at room temperature so the flavours come together well.
 
 ## Tips
 
-- Canned legumes can be used instead of cooked ones; in that case rinse and drain them thoroughly before use.

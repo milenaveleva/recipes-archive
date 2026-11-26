@@ -193,6 +193,11 @@ describe('state', () => {
     expect(lineIssues(ing)).toEqual({ errors: [], warnings: [] });
   });
 
+  it('accepts a line listed in its dry form with the preparation as the note', () => {
+    const ing = line('168 g dried brown rice, cooked', 6, 168, { item: 'dried brown rice', note: 'cooked', unit: 'g', quantity: 168 });
+    expect(lineIssues(ing)).toEqual({ errors: [], warnings: [] });
+  });
+
   it('ignores a cooking note on a counted line ("8 eggs, boiled")', () => {
     const ing = line('8 eggs, boiled', 37, 400, { item: 'eggs', note: 'boiled for 6 minutes', quantity: 8, unit: null });
     expect(lineIssues(ing).errors).toEqual([]);

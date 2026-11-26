@@ -1,6 +1,6 @@
 ---
 title: Tuscan White Bean Whole-Wheat Penne with Sage and Garlic
-description: Creamy Tuscan whole-wheat pasta with crisp fried sage, garlic and lightly mashed white beans, finished with Parmesan and lemon, in about 20 minutes.
+description: Creamy Tuscan whole-wheat pasta with crisp fried sage, garlic and lightly mashed white beans, finished with Parmesan and lemon.
 image: ./images/tuscan-white-bean-whole-wheat-penne-with-sage-and-garlic.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_14607_1792238756156_tuscan-white-bean-penne-with-sage-and-garlic_f444e540.jpg
 imageAlt: Tuscan White Bean Whole-Wheat Penne with Sage and Garlic
@@ -10,8 +10,8 @@ source:
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
-cookTime: PT10M
-totalTime: PT20M
+cookTime: PT1H40M
+totalTime: PT1H50M
 cuisine: Italian
 course: Main Course
 lists:
@@ -25,11 +25,11 @@ ingredients:
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
-  - raw: 400 g canned white beans, drained (≈ 135 g uncooked)
-    quantity: 400
+  - raw: 135 g dried white beans, soaked and cooked
+    quantity: 135
     unit: g
-    item: canned white beans, drained
-    note: ≈ 135 g uncooked
+    item: dried white beans
+    note: soaked and cooked
     grams: 135
     fdcId: 175202
     matchConfidence: medium
@@ -140,7 +140,7 @@ nutrition:
     nrf: 27.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 72.9
+    minimallyProcessedPct: 90.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -159,12 +159,13 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. **Preparation and cooking the pasta:** Bring plenty of water to the boil in a large pot and add salt (the pasta water should be pleasantly salty, like sea water). When it boils, add the penne and cook until al dente, 1-2 minutes less than the time on the package. Before draining, scoop out 1-1.5 cups of the cooking water for the silky emulsion.
-2. Peel the garlic cloves and slice them into thin slivers. Wash the fresh sage leaves, then gently pat dry. Rinse the canned white beans and drain thoroughly.
-3. **Making the sage and bean sauce:** In a deep, wide pan heat the extra virgin olive oil over medium heat. When it shimmers, add the whole sage leaves and fry for about 1-2 minutes until crisp and they flavour the fat wonderfully. With tongs take out a few nice leaves for serving.
-4. Add the thinly sliced garlic to the fat left in the pan and fry gently for half a minute, taking care it does not burn and turn bitter. Then add the rinsed white beans. With a wooden spoon or fork gently mash about a third of the beans, so they form a creamy, thick base. Season with salt and freshly ground black pepper.
-5. **Assembly and serving:** Pour about 100-150 ml of the reserved hot pasta water into the pan and simmer together with the bean base for 1 minute. Add the cooked penne directly to the pan. Stir vigorously and shake the pan until the starchy cooking water, fat and mashed beans form a silky, creamy coating on the pasta.
-6. Take the pan off the heat. Stir in half of the freshly grated Parmesan and a little fresh organic lemon juice, which gives the rich flavours perfect freshness. Divide the pasta among deep plates, sprinkle with the remaining Parmesan and the reserved crisp sage leaves, and finish with a few drops of extra virgin olive oil.
+1. Soak the dried white beans in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+2. **Preparation and cooking the pasta:** Bring plenty of water to the boil in a large pot and add salt (the pasta water should be pleasantly salty, like sea water). When it boils, add the penne and cook until al dente, 1-2 minutes less than the time on the package. Before draining, scoop out 1-1.5 cups of the cooking water for the silky emulsion.
+3. Peel the garlic cloves and slice them into thin slivers. Wash the fresh sage leaves, then gently pat dry.
+4. **Making the sage and bean sauce:** In a deep, wide pan heat the extra virgin olive oil over medium heat. When it shimmers, add the whole sage leaves and fry for about 1-2 minutes until crisp and they flavour the fat wonderfully. With tongs take out a few nice leaves for serving.
+5. Add the thinly sliced garlic to the fat left in the pan and fry gently for half a minute, taking care it does not burn and turn bitter. Then add the cooked white beans. With a wooden spoon or fork gently mash about a third of the beans, so they form a creamy, thick base. Season with salt and freshly ground black pepper.
+6. **Assembly and serving:** Pour about 100-150 ml of the reserved hot pasta water into the pan and simmer together with the bean base for 1 minute. Add the cooked penne directly to the pan. Stir vigorously and shake the pan until the starchy cooking water, fat and mashed beans form a silky, creamy coating on the pasta.
+7. Take the pan off the heat. Stir in half of the freshly grated Parmesan and a little fresh organic lemon juice, which gives the rich flavours perfect freshness. Divide the pasta among deep plates, sprinkle with the remaining Parmesan and the reserved crisp sage leaves, and finish with a few drops of extra virgin olive oil.
 
 ## Tips
 

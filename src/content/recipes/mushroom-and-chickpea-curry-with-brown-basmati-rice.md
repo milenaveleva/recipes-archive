@@ -10,8 +10,8 @@ source:
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
-cookTime: PT20M
-totalTime: PT35M
+cookTime: PT1H50M
+totalTime: PT2H5M
 cuisine: Indian
 course: Main Course
 lists:
@@ -26,12 +26,12 @@ ingredients:
     fdcId: 1999629
     matchConfidence: high
     cooking: boiled
-  - raw: 400 g canned chickpeas, drained (≈ 136 g uncooked)
+  - raw: 136 g dried chickpeas, soaked and cooked
     group: Main ingredients
-    quantity: 400
+    quantity: 136
     unit: g
-    item: canned chickpeas, drained
-    note: ≈ 136 g uncooked
+    item: dried chickpeas
+    note: soaked and cooked
     grams: 136
     fdcId: 173756
     matchConfidence: medium
@@ -194,7 +194,7 @@ nutrition:
     nrf: 4.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 50.2
+    minimallyProcessedPct: 69.4
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
@@ -213,14 +213,15 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. **Preparation:** Wash the brown button mushrooms and cut them into quarters or thicker wedges. Peel the onion, garlic and ginger. Chop the onion finely and grate the garlic and ginger. Rinse the canned chickpeas in a sieve under cold water and drain well.
-2. Bring the brown basmati rice to the boil in about 2-2.25 times its volume of lightly salted water, then cook covered over low heat for 30-40 minutes until it has absorbed all the water. Take off the heat and leave covered to steam for 10 minutes until serving.
-3. **Cooking:** In a large, deep frying pan, heat 2 tbsp coconut oil. Add the cut mushrooms and fry over high heat for 4-5 minutes until nicely golden brown. Transfer to a plate and set aside.
-4. In the fat left in the pan, fry the finely chopped onion for 4-5 minutes until soft and translucent. Add the grated garlic and ginger and fry for another minute to release the aromatic oils.
-5. Sprinkle in the spices: the curry powder, ground turmeric and ground cumin. Fry for 30-40 seconds, stirring constantly, taking care not to burn them.
-6. Pour in the chopped tomatoes and the creamy coconut milk, then stir in the drained chickpeas and the previously browned mushrooms. Season with 1 tsp fine salt.
-7. Bring the stew to the boil, then reduce the heat and simmer covered for 12-15 minutes until the flavours meld, the mushrooms are silky-soft and the sauce has thickened pleasantly.
-8. **Serving:** Turn off the heat and squeeze the fresh lime juice into the curry. Serve on a bed of hot brown basmati rice, sprinkled generously with chopped fresh coriander.
+1. **Preparation:** Soak the dried chickpeas in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+2. Wash the brown button mushrooms and cut them into quarters or thicker wedges. Peel the onion, garlic and ginger. Chop the onion finely and grate the garlic and ginger.
+3. Bring the brown basmati rice to the boil in about 2-2.25 times its volume of lightly salted water, then cook covered over low heat for 30-40 minutes until it has absorbed all the water. Take off the heat and leave covered to steam for 10 minutes until serving.
+4. **Cooking:** In a large, deep frying pan, heat 2 tbsp coconut oil. Add the cut mushrooms and fry over high heat for 4-5 minutes until nicely golden brown. Transfer to a plate and set aside.
+5. In the fat left in the pan, fry the finely chopped onion for 4-5 minutes until soft and translucent. Add the grated garlic and ginger and fry for another minute to release the aromatic oils.
+6. Sprinkle in the spices: the curry powder, ground turmeric and ground cumin. Fry for 30-40 seconds, stirring constantly, taking care not to burn them.
+7. Pour in the chopped tomatoes and the creamy coconut milk, then stir in the cooked chickpeas and the previously browned mushrooms. Season with 1 tsp fine salt.
+8. Bring the stew to the boil, then reduce the heat and simmer covered for 12-15 minutes until the flavours meld, the mushrooms are silky-soft and the sauce has thickened pleasantly.
+9. **Serving:** Turn off the heat and squeeze the fresh lime juice into the curry. Serve on a bed of hot brown basmati rice, sprinkled generously with chopped fresh coriander.
 
 ## Tips
 

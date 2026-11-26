@@ -1,6 +1,6 @@
 ---
 title: Creamy Mascarpone Spaghetti with Roasted Cherry Tomatoes
-description: Fresh spaghetti in a silky mascarpone sauce with burst cherry tomatoes, Parmesan and basil.
+description: Whole-wheat spaghetti in a silky mascarpone sauce with burst cherry tomatoes, Parmesan and basil.
 image: ./images/creamy-mascarpone-spaghetti-with-roasted-cherry-tomatoes.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_11713_1777023072656_creamy-spaghetti-with-cherry-tomatoes-and-mascarpone_fe7dd3bc.jpg
 imageAlt: Creamy Mascarpone Spaghetti with Roasted Cherry Tomatoes
@@ -14,12 +14,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 330 g fresh whole-wheat spaghetti (≈ 260 g dry)
+  - raw: 260 g dry whole-wheat spaghetti
     group: Main ingredients
-    quantity: 330
+    quantity: 260
     unit: g
-    item: fresh whole-wheat spaghetti
-    note: ≈ 260 g dry
+    item: dry whole-wheat spaghetti
     grams: 260
     fdcId: 82009870
     matchConfidence: medium
@@ -178,7 +177,7 @@ createdAt: "2026-11-22"
 1. Bring water to the boil in a large pot for the pasta. Salt it generously (about 1 tablespoon of salt per 3 litres of water) and keep it boiling while we make the base of the sauce.
 2. Peel the onion and cut it into thin half-moons. Chop the garlic finely.
 3. In a deeper frying pan, heat all the olive oil. Add the onion, salt lightly and sweat over medium heat until golden. At the end add the garlic too and fry for another minute, taking care that it does not burn.
-4. Add the fresh spaghetti to the boiling water and cook it until al dente. Fresh pasta usually needs only 3-5 minutes, but keep tasting it.
+4. Add the spaghetti to the boiling water and cook it until al dente, according to the packet.
 5. Throw the whole cherry tomatoes into the pan. Leave them to cook for a few minutes, stirring occasionally, until the skins burst slightly and the tomatoes collapse but do not fall apart completely. Then take the pan off the heat.
 6. Transfer the cooked pasta straight from the cooking water to the tomato base. Add about 150 ml of the pasta cooking water and the mascarpone. Toss thoroughly with tongs or a wooden spoon until the mascarpone melts and, with the cooking water and the tomato juices, forms a silky, creamy sauce. If it seems too thick, add a little more cooking water.
 7. Serve immediately, sprinkled with freshly grated Parmesan, garnished with fresh basil leaves and seasoned with freshly ground black pepper.

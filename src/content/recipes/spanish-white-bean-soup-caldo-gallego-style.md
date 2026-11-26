@@ -11,8 +11,8 @@ source:
 author: Nemes Dóra (Mentes Anyu)
 servings: 4
 prepTime: PT5M
-cookTime: PT25M
-totalTime: PT30M
+cookTime: PT1H55M
+totalTime: PT2H
 cuisine: Spanish
 course: Soup
 lists:
@@ -27,13 +27,12 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 3 cups canned white beans (cannellini) (≈ 265 g uncooked)
-    quantity: 3
-    unit: cups
-    item: canned white beans (cannellini)
-    note: ≈ 265 g uncooked
+  - raw: 265 g dried white beans (cannellini), soaked and cooked
+    quantity: 265
+    unit: g
+    item: dried white beans (cannellini)
+    note: soaked and cooked
     grams: 265
-    milliliters: 709.764
     fdcId: 175202
     matchConfidence: high
     cooking: boiled
@@ -112,9 +111,9 @@ nutrition:
     nrf: 67.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 29.6
+    minimallyProcessedPct: 96.6
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
@@ -130,10 +129,10 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Caldo gallego is a rustic, hearty soup from rainy, cool Galicia, where legumes and leafy greens are the backbone of the table. The simple but nourishing combination of white beans, potatoes and fresh greens is not only filling but also brings a real Mediterranean mood to the kitchen, even without meat. Gluten-free, dairy-free, egg-free and vegan. Preparation time: 30 minutes.
-2. Wash the greens thoroughly, removing any soil and damaged leaves. Drain them, or use a salad spinner. Wash and peel the potatoes and carrots, cutting the potatoes into cubes and the carrots into half-moons.
-3. Bring the vegetable broth to a boil over medium heat, then add the potatoes and carrots. Simmer gently for about 15-20 minutes until the vegetables are soft.
-4. Add the canned beans together with their liquid. Season with salt and paprika, then add the greens. Cook for about 5 more minutes until the leaves are tender.
-5. Kifli.hu tip: "KITCHIN white cannellini beans in a can are a convenient, time-saving solution for busy parents and home cooks."
+1. Caldo gallego is a rustic, hearty soup from rainy, cool Galicia, where legumes and leafy greens are the backbone of the table. The simple but nourishing combination of white beans, potatoes and fresh greens is not only filling but also brings a real Mediterranean mood to the kitchen, even without meat. Gluten-free, dairy-free, egg-free and vegan. Allow an overnight soak for the beans.
+2. Soak the dried white beans in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain, keeping the cooking liquid.
+3. Wash the greens thoroughly, removing any soil and damaged leaves. Drain them, or use a salad spinner. Wash and peel the potatoes and carrots, cutting the potatoes into cubes and the carrots into half-moons.
+4. Bring the vegetable broth to a boil over medium heat, then add the potatoes and carrots. Simmer gently for about 15-20 minutes until the vegetables are soft.
+5. Add the cooked beans together with a ladleful of their cooking liquid. Season with salt and paprika, then add the greens. Cook for about 5 more minutes until the leaves are tender.
 6. Mentes Anyu tip: "Cannellini beans are a white, creamy-textured bean often used in Mediterranean and Italian cooking. They are long and flat, and are among the larger beans. They can be used in many dishes, such as soups, salads, pasta or side dishes. They are often used in vegetarian and vegan dishes as an excellent source of protein. They go very well as an accompaniment to cold or hot dishes."
 7. Source: Mentes Anyu's Express Cookbook. Photo: Gábor Nemes.

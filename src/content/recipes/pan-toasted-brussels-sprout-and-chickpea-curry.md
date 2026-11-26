@@ -10,8 +10,8 @@ source:
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
-cookTime: PT20M
-totalTime: PT35M
+cookTime: PT1H50M
+totalTime: PT2H5M
 cuisine: Indian
 course: Main Course
 lists:
@@ -26,12 +26,12 @@ ingredients:
     fdcId: 170383
     matchConfidence: high
     cooking: boiled
-  - raw: 400 g canned chickpeas, drained (≈ 136 g uncooked)
+  - raw: 136 g dried chickpeas, soaked and cooked
     group: Main ingredients
-    quantity: 400
+    quantity: 136
     unit: g
-    item: canned chickpeas, drained
-    note: ≈ 136 g uncooked
+    item: dried chickpeas
+    note: soaked and cooked
     grams: 136
     fdcId: 173756
     matchConfidence: medium
@@ -196,9 +196,9 @@ nutrition:
     nrf: 28.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 53.2
+    minimallyProcessedPct: 74.8
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
@@ -215,13 +215,14 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. **Preparation and roasting the sprouts:** Trim the Brussels sprouts, remove the outer leaves, then halve them. Cut the onion into fine cubes and finely grate the garlic and ginger.
-2. In a deep frying pan, heat 1 tablespoon of coconut oil over medium-high heat. Place the halved sprouts in cut side down and fry for 4-5 minutes until nicely golden brown. Transfer to a plate.
-3. **Making the spiced curry sauce:** In the same pan, heat the remaining 1 tablespoon of coconut oil. Add the onion, cook for 3-4 minutes until translucent, then stir in the grated garlic and ginger and fry for another minute.
-4. Add the garam masala, ground turmeric and ground cumin. Stir constantly for 30 seconds until the spices start to smell fragrant.
-5. Pour in the chopped tomatoes and coconut milk, season with salt, then add the rinsed chickpeas and the browned Brussels sprouts. Simmer over low heat, covered, for 12-15 minutes until the sprouts are tender and the sauce has thickened.
-6. **Side and serving:** Meanwhile, rinse the brown basmati rice and cook it covered in about 2-2.25 times its volume of lightly salted water for 30-40 minutes until tender, then let it rest covered for 10 minutes.
-7. Season the curry with fresh lime juice, sprinkle with finely chopped fresh coriander and serve immediately with the steamed brown basmati rice.
+1. Soak the dried chickpeas in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+2. **Preparation and roasting the sprouts:** Trim the Brussels sprouts, remove the outer leaves, then halve them. Cut the onion into fine cubes and finely grate the garlic and ginger.
+3. In a deep frying pan, heat 1 tablespoon of coconut oil over medium-high heat. Place the halved sprouts in cut side down and fry for 4-5 minutes until nicely golden brown. Transfer to a plate.
+4. **Making the spiced curry sauce:** In the same pan, heat the remaining 1 tablespoon of coconut oil. Add the onion, cook for 3-4 minutes until translucent, then stir in the grated garlic and ginger and fry for another minute.
+5. Add the garam masala, ground turmeric and ground cumin. Stir constantly for 30 seconds until the spices start to smell fragrant.
+6. Pour in the chopped tomatoes and coconut milk, season with salt, then add the cooked chickpeas and the browned Brussels sprouts. Simmer over low heat, covered, for 12-15 minutes until the sprouts are tender and the sauce has thickened.
+7. **Side and serving:** Meanwhile, rinse the brown basmati rice and cook it covered in about 2-2.25 times its volume of lightly salted water for 30-40 minutes until tender, then let it rest covered for 10 minutes.
+8. Season the curry with fresh lime juice, sprinkle with finely chopped fresh coriander and serve immediately with the steamed brown basmati rice.
 
 ## Tips
 

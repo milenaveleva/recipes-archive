@@ -17,11 +17,11 @@ course: Appetizer
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g cooked cocktail shrimp (≈ 357 g raw)
-    quantity: 300
+  - raw: 357 g raw cocktail shrimp, cooked
+    quantity: 357
     unit: g
-    item: cooked cocktail shrimp
-    note: ≈ 357 g raw
+    item: raw cocktail shrimp
+    note: cooked
     grams: 357
     fdcId: 175179
     matchConfidence: high
@@ -137,9 +137,10 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Cut the cherry tomatoes into sixths and lightly press them with a spoon in a bowl so they release their juices.
-2. Add the remaining ingredients: the cooked shrimp, Greek yogurt, finely chopped spring onion and garden cress. Season with a pinch of salt and freshly squeezed lemon juice.
-3. Mix everything thoroughly, then garnish with fresh basil leaves. Chill in the fridge before serving so the flavours meld and the cocktail is pleasantly cold.
+1. Cook the shrimp in boiling salted water for 2–3 minutes until pink, then drain and cool.
+2. Cut the cherry tomatoes into sixths and lightly press them with a spoon in a bowl so they release their juices.
+3. Add the remaining ingredients: the cooked shrimp, Greek yogurt, finely chopped spring onion and garden cress. Season with a pinch of salt and freshly squeezed lemon juice.
+4. Mix everything thoroughly, then garnish with fresh basil leaves. Chill in the fridge before serving so the flavours meld and the cocktail is pleasantly cold.
 
 ## Tips
 

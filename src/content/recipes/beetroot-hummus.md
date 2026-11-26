@@ -11,27 +11,27 @@ source:
 author: Lőrincz Eszter
 servings: 2
 prepTime: PT15M
-cookTime: PT10M
-totalTime: PT25M
+cookTime: PT1H40M
+totalTime: PT1H55M
 cuisine: Middle Eastern
 course: Appetizer
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 260 g cooked beetroot (≈ 270 g raw)
-    quantity: 260
+  - raw: 270 g raw beetroot, cooked
+    quantity: 270
     unit: g
-    item: cooked beetroot
-    note: ≈ 270 g raw
+    item: raw beetroot
+    note: cooked
     grams: 270
     fdcId: 169145
     matchConfidence: high
     cooking: raw
-  - raw: 240 g canned chickpeas, drained (≈ 82 g uncooked)
-    quantity: 240
+  - raw: 82 g dried chickpeas, soaked and cooked
+    quantity: 82
     unit: g
-    item: canned chickpeas, drained
-    note: ≈ 82 g uncooked
+    item: dried chickpeas
+    note: soaked and cooked
     grams: 82
     fdcId: 173756
     matchConfidence: medium
@@ -127,9 +127,9 @@ nutrition:
     nrf: 19.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 60.9
+    minimallyProcessedPct: 100
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
@@ -145,7 +145,9 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Put the cooked beetroot, drained chickpeas, tahini, lemon juice, salt and pepper in a food processor (or a high-powered blender). Start blending.
-2. Gradually add the 2 tablespoons of olive oil while blending. When the hummus starts to get creamy but is still a little thick, add the 3-4 ice cubes, which make it even creamier.
-3. Blend until you get a completely smooth, uniform mixture. If it is too thick, add 1-2 tablespoons of water or some liquid from the can of chickpeas.
-4. Sprinkle the top with roughly chopped walnuts.
+1. Soak the dried chickpeas in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain, keeping a little of the cooking liquid.
+2. Meanwhile, boil the unpeeled beetroot in salted water for 40–60 minutes until tender, then cool, peel and chop it.
+3. Put the cooked beetroot, cooked chickpeas, tahini, lemon juice, salt and pepper in a food processor (or a high-powered blender). Start blending.
+4. Gradually add the 2 tablespoons of olive oil while blending. When the hummus starts to get creamy but is still a little thick, add the 3-4 ice cubes, which make it even creamier.
+5. Blend until you get a completely smooth, uniform mixture. If it is too thick, add 1-2 tablespoons of water or some of the reserved chickpea cooking liquid.
+6. Sprinkle the top with roughly chopped walnuts.

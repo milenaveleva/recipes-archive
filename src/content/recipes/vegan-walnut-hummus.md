@@ -11,18 +11,18 @@ source:
 author: Pataky Péter
 servings: 8
 prepTime: PT10M
-cookTime: PT5M
-totalTime: PT15M
+cookTime: PT1H35M
+totalTime: PT1H45M
 cuisine: Middle Eastern
 course: Appetizer
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 500 g cooked chickpeas (≈ 216 g uncooked)
-    quantity: 500
+  - raw: 216 g dried chickpeas, soaked and cooked
+    quantity: 216
     unit: g
-    item: cooked chickpeas
-    note: ≈ 216 g uncooked
+    item: dried chickpeas
+    note: soaked and cooked
     grams: 216
     fdcId: 173756
     matchConfidence: medium
@@ -170,5 +170,6 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Put the cooked or canned chickpeas into a blender with the tahini, garlic, a few drops of citrus juice, cumin and a little curry powder, then blend until completely smooth. Taste and add more salt or spices if needed.
-2. Serve with whole-wheat pita or flatbread, a handful of iceberg lettuce and olive oil.
+1. Soak the dried chickpeas in plenty of cold water overnight (8–12 hours). Drain, cover with fresh water, bring to the boil and simmer for 60–90 minutes until tender, then drain.
+2. Put the cooked chickpeas into a blender with the tahini, garlic, a few drops of citrus juice, cumin and a little curry powder, then blend until completely smooth. Taste and add more salt or spices if needed.
+3. Serve with whole-wheat pita or flatbread, a handful of iceberg lettuce and olive oil.
