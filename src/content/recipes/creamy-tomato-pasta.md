@@ -7,9 +7,9 @@ imageAlt: Creamy Tomato Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11108-kremes-paradicsomos-teszta
-  kcalPerServing: 576
+  kcalPerServing: 673
 author: Kifli Kukták
-servings: 4
+servings: 3
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -18,13 +18,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 320 g whole-wheat penne, dry
+  - raw: 240 g whole-wheat penne, dry
     group: Main ingredients
-    quantity: 320
+    quantity: 240
     unit: g
     item: whole-wheat penne
     note: dry
-    grams: 320
+    grams: 240
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -146,44 +146,44 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 590
-    energyKj: 2469
-    protein_g: 21.7
-    fat_g: 27.6
-    satFat_g: 5.9
-    carbs_g: 69.8
-    fiber_g: 9.3
-    sugar_g: 7.8
-    sodium_mg: 307
-    availableCarb_g: 60.5
+    energyKcal: 693
+    energyKj: 2900
+    protein_g: 25.2
+    fat_g: 36.1
+    satFat_g: 7.8
+    carbs_g: 73.5
+    fiber_g: 10
+    sugar_g: 9.6
+    sodium_mg: 408
+    availableCarb_g: 63.5
   glycemic:
-    gi: 49
-    gl: 29
+    gi: 48
+    gl: 31
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 85
+    measuredGiPct: 81
   nutriScore:
     grade: B
     points: 2
     category: general
     version: "2023"
-    coverage: 0.86
+    coverage: 0.83
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.28
+    aromaticAdjustment: -0.34
   balance:
     score: 5
     band: moderate
-    nrf: 27.4
+    nrf: 27.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 70.2
-    ultraProcessedPct: 13
-    band: minimally-processed
+    minimallyProcessedPct: 66.2
+    ultraProcessedPct: 14.8
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"
   dataSources:

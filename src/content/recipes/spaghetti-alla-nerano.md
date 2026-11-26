@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13273-spagetti-alla-nerano-olasz-klasszikus-cukkinis-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat spaghetti, dry
-    quantity: 400
+  - raw: 320 g whole-wheat spaghetti, dry
+    quantity: 320
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -95,16 +95,16 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 515
-    energyKj: 2157
-    protein_g: 19
-    fat_g: 22.5
-    satFat_g: 5.4
-    carbs_g: 65.6
-    fiber_g: 8.8
-    sugar_g: 6.4
-    sodium_mg: 1695
-    availableCarb_g: 56.9
+    energyKcal: 574
+    energyKj: 2401
+    protein_g: 21
+    fat_g: 27.6
+    satFat_g: 6.7
+    carbs_g: 67.4
+    fiber_g: 9.1
+    sugar_g: 7.4
+    sodium_mg: 2119
+    availableCarb_g: 58.3
   glycemic:
     gi: 47
     gl: 27
@@ -112,25 +112,25 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 90
+    measuredGiPct: 88
   nutriScore:
     grade: C
-    points: 5
+    points: 6
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.23
+    aromaticAdjustment: -0.27
   balance:
     score: 3
     band: low
-    nrf: 15.7
+    nrf: 14.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 87.1
+    minimallyProcessedPct: 85.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

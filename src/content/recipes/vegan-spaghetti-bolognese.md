@@ -7,9 +7,9 @@ imageAlt: Vegan Spaghetti Bolognese
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10665-vegan-bolognai-spagetti
-  kcalPerServing: 383
+  kcalPerServing: 435
 author: Kifli Kukták
-servings: 6
+servings: 4
 prepTime: PT15M
 cookTime: PT1H
 totalTime: PT1H15M
@@ -97,11 +97,11 @@ ingredients:
     fdcId: 172232
     matchConfidence: high
     cooking: raw
-  - raw: 480 g dry whole-wheat spaghetti
-    quantity: 480
+  - raw: 320 g dry whole-wheat spaghetti
+    quantity: 320
     unit: g
     item: dry whole-wheat spaghetti
-    grams: 480
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -133,24 +133,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 419
-    energyKj: 1755
-    protein_g: 17.2
-    fat_g: 8
-    satFat_g: 1.1
-    carbs_g: 77.4
-    fiber_g: 12.5
-    sugar_g: 9
-    sodium_mg: 227
-    availableCarb_g: 64.9
+    energyKcal: 488
+    energyKj: 2044
+    protein_g: 20.2
+    fat_g: 10.8
+    satFat_g: 1.6
+    carbs_g: 86.7
+    fiber_g: 15
+    sugar_g: 12.4
+    sodium_mg: 339
+    availableCarb_g: 71.6
   glycemic:
     gi: 48
-    gl: 31
+    gl: 34
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 90
+    measuredGiPct: 86
   nutriScore:
     grade: A
     points: -2
@@ -158,17 +158,17 @@ nutrition:
     version: "2023"
     coverage: 0.98
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.23
+    aromaticAdjustment: -0.31
   balance:
     score: 7
     band: high
-    nrf: 43
+    nrf: 47
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 95.6
+    minimallyProcessedPct: 94.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

@@ -7,9 +7,9 @@ imageAlt: Spaghetti with Black Mussels and Cherry Tomatoes
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12954-spagetti-fekete-kagyloval-es-koktelparadicsommal
-  kcalPerServing: 367
+  kcalPerServing: 410
 author: Kifli Kukták
-servings: 3
+servings: 2
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -27,12 +27,12 @@ ingredients:
     fdcId: 174216
     matchConfidence: high
     cooking: steamed
-  - raw: 240 g whole-wheat spaghetti, dry
-    quantity: 240
+  - raw: 160 g whole-wheat spaghetti, dry
+    quantity: 160
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 240
+    grams: 160
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -78,24 +78,24 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 404
-    energyKj: 1688
-    protein_g: 15.8
-    fat_g: 12.2
-    satFat_g: 1.7
-    carbs_g: 63.1
-    fiber_g: 8
-    sugar_g: 3.8
-    sodium_mg: 157
-    availableCarb_g: 55.1
+    energyKcal: 465
+    energyKj: 1944
+    protein_g: 18.1
+    fat_g: 17.1
+    satFat_g: 2.4
+    carbs_g: 65.3
+    fiber_g: 8.4
+    sugar_g: 4.6
+    sodium_mg: 234
+    availableCarb_g: 57
   glycemic:
-    gi: 48
-    gl: 26
+    gi: 47
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 93
+    measuredGiPct: 90
   nutriScore:
     grade: A
     points: -1
@@ -103,14 +103,14 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.09
+    aromaticAdjustment: -0.14
   balance:
     score: 6
     band: moderate
-    nrf: 32.8
+    nrf: 34
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

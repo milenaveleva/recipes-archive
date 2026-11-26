@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13239-pasta-e-ceci-autentikus-romai-csicseriborsos-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT1H50M
 totalTime: PT2H
@@ -26,12 +26,12 @@ ingredients:
     fdcId: 173756
     matchConfidence: medium
     cooking: boiled
-  - raw: 400 g whole-wheat pasta, dry
-    quantity: 400
+  - raw: 320 g whole-wheat pasta, dry
+    quantity: 320
     unit: g
     item: whole-wheat pasta
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -105,24 +105,24 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 592
-    energyKj: 2476
-    protein_g: 25.1
-    fat_g: 17.3
-    satFat_g: 3.7
-    carbs_g: 90.6
-    fiber_g: 13.6
-    sugar_g: 8.5
-    sodium_mg: 551
-    availableCarb_g: 77.1
+    energyKcal: 669
+    energyKj: 2801
+    protein_g: 28.6
+    fat_g: 21
+    satFat_g: 4.5
+    carbs_g: 98.6
+    fiber_g: 15.1
+    sugar_g: 10.1
+    sodium_mg: 688
+    availableCarb_g: 83.5
   glycemic:
     gi: 47
-    gl: 36
+    gl: 39
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 95
+    measuredGiPct: 94
   nutriScore:
     grade: B
     points: 1
@@ -133,14 +133,14 @@ nutrition:
     score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.26
+    aromaticAdjustment: -0.28
   balance:
     score: 5
     band: moderate
-    nrf: 24.8
+    nrf: 24.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 90
+    minimallyProcessedPct: 88.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

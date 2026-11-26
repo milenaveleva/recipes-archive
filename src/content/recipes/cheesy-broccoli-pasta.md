@@ -7,20 +7,20 @@ imageAlt: Cheesy Broccoli Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12555-sajtos-teszta-brokkolival-kremes-egylabas-vacsora
-  kcalPerServing: 663
+  kcalPerServing: 759
 author: Kifli Kukták
-servings: 5
+servings: 4
 cuisine: American
 course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dry whole-wheat pasta (e.g. fusilli)
-    quantity: 400
+  - raw: 320 g dry whole-wheat pasta (e.g. fusilli)
+    quantity: 320
     unit: g
     item: dry whole-wheat pasta
     note: e.g. fusilli
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -129,43 +129,43 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 569
-    energyKj: 2379
-    protein_g: 22.5
-    fat_g: 24.8
-    satFat_g: 7.5
-    carbs_g: 70.3
-    fiber_g: 9.5
-    sugar_g: 6.3
-    sodium_mg: 992
-    availableCarb_g: 60.8
+    energyKcal: 640
+    energyKj: 2679
+    protein_g: 25.3
+    fat_g: 30.4
+    satFat_g: 9.3
+    carbs_g: 73.2
+    fiber_g: 10
+    sugar_g: 7.4
+    sodium_mg: 1240
+    availableCarb_g: 63.1
   glycemic:
     gi: 46
-    gl: 28
+    gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 86
+    measuredGiPct: 84
   nutriScore:
     grade: C
     points: 3
     category: general
     version: "2023"
-    coverage: 0.88
+    coverage: 0.87
   inflammation:
     score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.31
+    aromaticAdjustment: -0.37
   balance:
     score: 5
     band: moderate
     nrf: 28.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 59.9
-    ultraProcessedPct: 18
+    minimallyProcessedPct: 55.5
+    ultraProcessedPct: 20
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

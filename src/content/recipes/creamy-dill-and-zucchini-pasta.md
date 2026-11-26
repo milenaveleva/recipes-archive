@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13052-kremes-kapros-cukkinis-teszta
 author: Kifli Kukták
-servings: 4
+servings: 2
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -26,13 +26,13 @@ ingredients:
     fdcId: 168565
     matchConfidence: medium
     cooking: fried
-  - raw: 320 g whole-wheat penne, dry
+  - raw: 160 g whole-wheat penne, dry
     group: Main ingredients
-    quantity: 320
+    quantity: 160
     unit: g
     item: whole-wheat penne
     note: dry
-    grams: 320
+    grams: 160
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -105,44 +105,44 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 493
-    energyKj: 2064
-    protein_g: 20.2
-    fat_g: 20
-    satFat_g: 4
-    carbs_g: 64.3
-    fiber_g: 8.6
-    sugar_g: 3.1
-    sodium_mg: 761
-    availableCarb_g: 55.7
+    energyKcal: 705
+    energyKj: 2950
+    protein_g: 29.3
+    fat_g: 37.7
+    satFat_g: 7.7
+    carbs_g: 69.8
+    fiber_g: 9.9
+    sugar_g: 4
+    sodium_mg: 1519
+    availableCarb_g: 60
   glycemic:
-    gi: 48
+    gi: 46
     gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 92
+    measuredGiPct: 86
   nutriScore:
-    grade: B
-    points: 2
+    grade: C
+    points: 3
     category: general
     version: "2023"
-    coverage: 0.79
+    coverage: 0.71
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.14
+    aromaticAdjustment: -0.21
   balance:
     score: 6
     band: moderate
-    nrf: 33.8
+    nrf: 35.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 74.5
-    ultraProcessedPct: 15.6
-    band: minimally-processed
+    minimallyProcessedPct: 64.3
+    ultraProcessedPct: 21.8
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"
   dataSources:

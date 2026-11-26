@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13552-suetotoekoes-rigatoni-piritott-zsalyaval-gyors-oszi-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,11 +17,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dry whole-wheat rigatoni
-    quantity: 400
+  - raw: 320 g dry whole-wheat rigatoni
+    quantity: 320
     unit: g
     item: dry whole-wheat rigatoni
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -95,19 +95,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 491
-    energyKj: 2056
-    protein_g: 17.1
-    fat_g: 17.3
-    satFat_g: 4.1
-    carbs_g: 74.3
-    fiber_g: 10.1
-    sugar_g: 5
-    sodium_mg: 685
-    availableCarb_g: 64.1
+    energyKcal: 544
+    energyKj: 2276
+    protein_g: 18.6
+    fat_g: 21
+    satFat_g: 5
+    carbs_g: 78.1
+    fiber_g: 10.8
+    sugar_g: 5.7
+    sodium_mg: 856
+    availableCarb_g: 67.3
   glycemic:
     gi: 50
-    gl: 32
+    gl: 34
     giBand: low
     glBand: medium
     glBasis: meal
@@ -123,14 +123,14 @@ nutrition:
     score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.13
+    aromaticAdjustment: -0.16
   balance:
     score: 7
     band: high
-    nrf: 42
+    nrf: 43.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 89.9
+    minimallyProcessedPct: 88.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

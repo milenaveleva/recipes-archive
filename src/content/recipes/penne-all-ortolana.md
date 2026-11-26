@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13914-penne-all-ortolana-25-perces-olasz-zoeldseges-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dry whole-wheat penne
+  - raw: 320 g dry whole-wheat penne
     group: Vegetables and pasta
-    quantity: 400
+    quantity: 320
     unit: g
     item: dry whole-wheat penne
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -110,16 +110,16 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 450
-    energyKj: 1885
-    protein_g: 17.1
-    fat_g: 16.1
-    satFat_g: 3.6
-    carbs_g: 65.9
-    fiber_g: 8.7
-    sugar_g: 5.7
-    sodium_mg: 656
-    availableCarb_g: 57.2
+    energyKcal: 493
+    energyKj: 2061
+    protein_g: 18.7
+    fat_g: 19.5
+    satFat_g: 4.4
+    carbs_g: 67.7
+    fiber_g: 9.1
+    sugar_g: 6.5
+    sodium_mg: 820
+    availableCarb_g: 58.6
   glycemic:
     gi: 47
     gl: 27
@@ -127,7 +127,7 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 90
+    measuredGiPct: 88
   nutriScore:
     grade: B
     points: 2
@@ -135,17 +135,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.17
+    aromaticAdjustment: -0.21
   balance:
     score: 6
     band: moderate
-    nrf: 33.7
+    nrf: 34.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 90.8
+    minimallyProcessedPct: 89.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

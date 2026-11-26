@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14717-citromos-fokhagymas-zelleres-spagetti-ropogos-pangrattatoval
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dried whole-wheat spaghetti
+  - raw: 320 g dried whole-wheat spaghetti
     group: Main ingredients
-    quantity: 400
+    quantity: 320
     unit: g
     item: dried whole-wheat spaghetti
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -127,27 +127,27 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 540
-    energyKj: 2261
-    protein_g: 18.6
-    fat_g: 21.3
-    satFat_g: 4.4
-    carbs_g: 75.1
-    fiber_g: 10.2
-    sugar_g: 4.6
-    sodium_mg: 798
-    availableCarb_g: 64.9
+    energyKcal: 605
+    energyKj: 2532
+    protein_g: 20.4
+    fat_g: 26.1
+    satFat_g: 5.4
+    carbs_g: 79.2
+    fiber_g: 10.9
+    sugar_g: 5.2
+    sodium_mg: 997
+    availableCarb_g: 68.3
   glycemic:
     gi: 48
-    gl: 31
+    gl: 33
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 87
+    measuredGiPct: 85
   nutriScore:
-    grade: B
-    points: 2
+    grade: C
+    points: 3
     category: general
     version: "2023"
     coverage: 1
@@ -157,13 +157,13 @@ nutrition:
     method: fii v4
     aromaticAdjustment: -0.27
   balance:
-    score: 5
-    band: moderate
-    nrf: 24.2
+    score: 4
+    band: low
+    nrf: 23.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 85.5
-    ultraProcessedPct: 6.8
+    minimallyProcessedPct: 83.8
+    ultraProcessedPct: 7.6
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

@@ -7,7 +7,7 @@ imageAlt: Baked Salmon on Herby Lemon Couscous
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10683-suelt-lazac-fuszeres-kuszkusszal
-  kcalPerServing: 541
+  kcalPerServing: 548
 author: Kifli Kukták
 servings: 3
 prepTime: PT13M

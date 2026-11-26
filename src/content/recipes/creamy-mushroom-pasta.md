@@ -7,20 +7,20 @@ imageAlt: Creamy Mushroom Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11773-kremes-gombas-teszta-gyors-vacsora
-  kcalPerServing: 430
+  kcalPerServing: 505
 author: Kifli Kukták
-servings: 3
+servings: 2
 cuisine: Italian
 course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 240 g whole-wheat linguine, dry
-    quantity: 240
+  - raw: 160 g whole-wheat linguine, dry
+    quantity: 160
     unit: g
     item: whole-wheat linguine
     note: dry
-    grams: 240
+    grams: 160
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -101,43 +101,43 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 454
-    energyKj: 1899
-    protein_g: 18.4
-    fat_g: 14.5
-    satFat_g: 1.7
-    carbs_g: 70.3
-    fiber_g: 10.7
-    sugar_g: 5.6
-    sodium_mg: 311
-    availableCarb_g: 59.6
+    energyKcal: 540
+    energyKj: 2260
+    protein_g: 22.1
+    fat_g: 20.6
+    satFat_g: 2.3
+    carbs_g: 76
+    fiber_g: 12.3
+    sugar_g: 7.4
+    sodium_mg: 466
+    availableCarb_g: 63.7
   glycemic:
     gi: 48
-    gl: 29
+    gl: 30
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 86
+    measuredGiPct: 81
   nutriScore:
-    grade: A
-    points: 0
+    grade: B
+    points: 1
     category: general
     version: "2023"
-    coverage: 0.96
+    coverage: 0.95
   inflammation:
-    score: 0
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.05
+    aromaticAdjustment: -0.08
   balance:
     score: 6
     band: moderate
-    nrf: 33.5
+    nrf: 34.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 93.5
-    ultraProcessedPct: 5.6
+    minimallyProcessedPct: 91.8
+    ultraProcessedPct: 7.1
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

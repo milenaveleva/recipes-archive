@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13133-karamellizalt-hagymas-tejszines-teszta-izletes-es-kremes-vacsora
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT15M
 cookTime: PT25M
 totalTime: PT40M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat pasta, dry
+  - raw: 320 g whole-wheat pasta, dry
     group: Main ingredients
-    quantity: 400
+    quantity: 320
     unit: g
     item: whole-wheat pasta
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -115,43 +115,43 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 555
-    energyKj: 2323
-    protein_g: 19.9
-    fat_g: 23.8
-    satFat_g: 5
-    carbs_g: 70.8
-    fiber_g: 9.3
-    sugar_g: 7.3
-    sodium_mg: 598
-    availableCarb_g: 61.5
+    energyKcal: 623
+    energyKj: 2609
+    protein_g: 22
+    fat_g: 29.2
+    satFat_g: 6.1
+    carbs_g: 73.9
+    fiber_g: 9.8
+    sugar_g: 8.6
+    sodium_mg: 747
+    availableCarb_g: 64.1
   glycemic:
-    gi: 45
+    gi: 44
     gl: 28
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 84
+    measuredGiPct: 80
   nutriScore:
     grade: B
-    points: 1
+    points: 2
     category: general
     version: "2023"
-    coverage: 0.87
+    coverage: 0.85
   inflammation:
     score: -0.3
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.37
+    aromaticAdjustment: -0.42
   balance:
     score: 4
     band: low
-    nrf: 22.7
+    nrf: 22
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 74.8
-    ultraProcessedPct: 13.9
+    minimallyProcessedPct: 72
+    ultraProcessedPct: 15.4
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

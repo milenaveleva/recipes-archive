@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14607-toszkan-feherbabos-penne-zsalyaval-es-fokhagymaval-kremes-olasz-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT1H40M
 totalTime: PT1H50M
@@ -17,11 +17,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dried whole-wheat penne
-    quantity: 400
+  - raw: 320 g dried whole-wheat penne
+    quantity: 320
     unit: g
     item: dried whole-wheat penne
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -105,19 +105,19 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 515
-    energyKj: 2155
-    protein_g: 22.2
-    fat_g: 15.8
-    satFat_g: 3.9
-    carbs_g: 76.8
-    fiber_g: 11.8
-    sugar_g: 2.9
-    sodium_mg: 685
-    availableCarb_g: 64.9
+    energyKcal: 573
+    energyKj: 2399
+    protein_g: 25
+    fat_g: 19.2
+    satFat_g: 4.8
+    carbs_g: 81.3
+    fiber_g: 13
+    sugar_g: 3.1
+    sodium_mg: 855
+    availableCarb_g: 68.3
   glycemic:
     gi: 46
-    gl: 30
+    gl: 31
     giBand: low
     glBand: medium
     glBasis: meal
@@ -125,7 +125,7 @@ nutrition:
     measuredGiPct: 98
   nutriScore:
     grade: B
-    points: 1
+    points: 2
     category: general
     version: "2023"
     coverage: 1
@@ -133,14 +133,14 @@ nutrition:
     score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.17
+    aromaticAdjustment: -0.21
   balance:
     score: 5
     band: moderate
-    nrf: 27.1
+    nrf: 26.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 90.3
+    minimallyProcessedPct: 89.1
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

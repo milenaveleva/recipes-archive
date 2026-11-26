@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14634-koertes-gorgonzolas-tagliatelle-piritott-dioval
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,11 +17,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dried whole-wheat tagliatelle
-    quantity: 400
+  - raw: 320 g dried whole-wheat tagliatelle
+    quantity: 320
     unit: g
     item: dried whole-wheat tagliatelle
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -97,16 +97,16 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 645
-    energyKj: 2701
-    protein_g: 24.8
-    fat_g: 32
-    satFat_g: 11.1
-    carbs_g: 72.2
-    fiber_g: 10.4
-    sugar_g: 9.4
-    sodium_mg: 988
-    availableCarb_g: 60.3
+    energyKcal: 736
+    energyKj: 3081
+    protein_g: 28.2
+    fat_g: 39.4
+    satFat_g: 13.8
+    carbs_g: 75.5
+    fiber_g: 11.1
+    sugar_g: 11.2
+    sodium_mg: 1234
+    availableCarb_g: 62.5
   glycemic:
     gi: 47
     gl: 29
@@ -117,7 +117,7 @@ nutrition:
     measuredGiPct: 96
   nutriScore:
     grade: C
-    points: 4
+    points: 6
     category: general
     version: "2023"
     coverage: 1
@@ -125,14 +125,14 @@ nutrition:
     score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.05
+    aromaticAdjustment: -0.07
   balance:
     score: 3
     band: low
-    nrf: 11.7
+    nrf: 10
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 73
+    minimallyProcessedPct: 70.4
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

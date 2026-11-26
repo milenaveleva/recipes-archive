@@ -7,9 +7,9 @@ imageAlt: Lemon Tagliatelle
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12179-citromos-tagliatelle-frissito-olasz-teszta-20-perc-alatt
-  kcalPerServing: 468
+  kcalPerServing: 515
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT5M
 cookTime: PT15M
 totalTime: PT20M
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat tagliatelle, dry
-    quantity: 400
+  - raw: 320 g whole-wheat tagliatelle, dry
+    quantity: 320
     unit: g
     item: whole-wheat tagliatelle
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -109,16 +109,16 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 485
-    energyKj: 2028
-    protein_g: 22.3
-    fat_g: 18.7
-    satFat_g: 6.7
-    carbs_g: 62
-    fiber_g: 7.6
-    sugar_g: 3
-    sodium_mg: 519
-    availableCarb_g: 54.4
+    energyKcal: 535
+    energyKj: 2240
+    protein_g: 25.1
+    fat_g: 22.8
+    satFat_g: 8.2
+    carbs_g: 62.9
+    fiber_g: 7.7
+    sugar_g: 3.2
+    sodium_mg: 648
+    availableCarb_g: 55.2
   glycemic:
     gi: 49
     gl: 27
@@ -126,7 +126,7 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 95
+    measuredGiPct: 93
   nutriScore:
     grade: C
     points: 3
@@ -141,10 +141,10 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 23.3
+    nrf: 22.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 74.9
+    minimallyProcessedPct: 71.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

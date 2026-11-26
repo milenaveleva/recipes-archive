@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14502-kremes-zoeldborsos-ricottas-penne-mentas-olasz-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dry whole-wheat penne
+  - raw: 320 g dry whole-wheat penne
     group: Main ingredients
-    quantity: 400
+    quantity: 320
     unit: g
     item: dry whole-wheat penne
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -109,27 +109,27 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 521
-    energyKj: 2180
-    protein_g: 22
-    fat_g: 18.6
-    satFat_g: 6.5
-    carbs_g: 72.1
-    fiber_g: 10.3
-    sugar_g: 5.7
-    sodium_mg: 767
-    availableCarb_g: 61.8
+    energyKcal: 581
+    energyKj: 2430
+    protein_g: 24.7
+    fat_g: 22.6
+    satFat_g: 8
+    carbs_g: 75.5
+    fiber_g: 11.1
+    sugar_g: 6.5
+    sodium_mg: 958
+    availableCarb_g: 64.4
   glycemic:
-    gi: 46
-    gl: 28
+    gi: 45
+    gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 92
+    measuredGiPct: 90
   nutriScore:
-    grade: B
-    points: 1
+    grade: C
+    points: 4
     category: general
     version: "2023"
     coverage: 0.99
@@ -137,14 +137,14 @@ nutrition:
     score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.09
+    aromaticAdjustment: -0.11
   balance:
     score: 4
     band: low
-    nrf: 23.5
+    nrf: 22.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 77.6
+    minimallyProcessedPct: 74.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

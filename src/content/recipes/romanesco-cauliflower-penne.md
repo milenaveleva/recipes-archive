@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14788-pagoda-karfiolos-penne-20-perces-olasz-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -24,11 +24,11 @@ ingredients:
     fdcId: 169986
     matchConfidence: medium
     cooking: boiled
-  - raw: 400 g dry whole-wheat penne
-    quantity: 400
+  - raw: 320 g dry whole-wheat penne
+    quantity: 320
     unit: g
     item: dry whole-wheat penne
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -111,24 +111,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 515
-    energyKj: 2156
-    protein_g: 17.8
-    fat_g: 23.3
-    satFat_g: 4.4
-    carbs_g: 66
-    fiber_g: 9.7
-    sugar_g: 4.6
-    sodium_mg: 675
-    availableCarb_g: 56.3
+    energyKcal: 574
+    energyKj: 2400
+    protein_g: 19.5
+    fat_g: 28.5
+    satFat_g: 5.4
+    carbs_g: 67.8
+    fiber_g: 10.2
+    sugar_g: 5.2
+    sodium_mg: 843
+    availableCarb_g: 57.6
   glycemic:
-    gi: 48
+    gi: 47
     gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 91
+    measuredGiPct: 89
   nutriScore:
     grade: B
     points: 2
@@ -136,17 +136,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.17
+    aromaticAdjustment: -0.21
   balance:
     score: 5
     band: moderate
-    nrf: 28.6
+    nrf: 28.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 91.9
+    minimallyProcessedPct: 91
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

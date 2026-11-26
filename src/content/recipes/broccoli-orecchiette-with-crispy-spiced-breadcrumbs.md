@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13220-brokkolis-orecchiette-ropogos-fuszeres-morzsaval
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat orecchiette, dry
+  - raw: 320 g whole-wheat orecchiette, dry
     group: Pasta and sauce
-    quantity: 400
+    quantity: 320
     unit: g
     item: whole-wheat orecchiette
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -113,27 +113,27 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 499
-    energyKj: 2089
-    protein_g: 20.2
-    fat_g: 17.5
-    satFat_g: 4.2
-    carbs_g: 72.4
-    fiber_g: 11
-    sugar_g: 4.6
-    sodium_mg: 767
-    availableCarb_g: 61.4
+    energyKcal: 554
+    energyKj: 2316
+    protein_g: 22.5
+    fat_g: 21.2
+    satFat_g: 5.1
+    carbs_g: 75.8
+    fiber_g: 11.9
+    sugar_g: 5.3
+    sodium_mg: 958
+    availableCarb_g: 63.9
   glycemic:
     gi: 49
-    gl: 30
+    gl: 31
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 91
+    measuredGiPct: 89
   nutriScore:
     grade: B
-    points: 1
+    points: 2
     category: general
     version: "2023"
     coverage: 1
@@ -143,13 +143,13 @@ nutrition:
     method: fii v4
     aromaticAdjustment: -0.21
   balance:
-    score: 6
-    band: moderate
-    nrf: 40.8
+    score: 7
+    band: high
+    nrf: 42.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 84
-    ultraProcessedPct: 6.1
+    minimallyProcessedPct: 81.9
+    ultraProcessedPct: 6.8
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

@@ -7,9 +7,9 @@ imageAlt: Whole-Wheat Garganelli with Salmon and Zucchini
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10381-garganelli-lazaccal-es-cukkinivel
-  kcalPerServing: 512
+  kcalPerServing: 627
 author: Pataky Péter
-servings: 6
+servings: 4
 prepTime: PT2H15M
 cookTime: PT15M
 totalTime: PT2H30M
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 480 g whole-wheat garganelli or penne pasta, dry
-    quantity: 480
+  - raw: 320 g whole-wheat garganelli or penne pasta, dry
+    quantity: 320
     unit: g
     item: whole-wheat garganelli or penne pasta
     note: dry
-    grams: 480
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -143,42 +143,42 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 576
-    energyKj: 2409
-    protein_g: 28.9
-    fat_g: 26.2
-    satFat_g: 5.6
-    carbs_g: 60.9
-    fiber_g: 7.8
-    sugar_g: 2.5
-    sodium_mg: 425
-    availableCarb_g: 53.1
+    energyKcal: 723
+    energyKj: 3024
+    protein_g: 37.8
+    fat_g: 38.2
+    satFat_g: 8.2
+    carbs_g: 62
+    fiber_g: 8
+    sugar_g: 2.7
+    sodium_mg: 636
+    availableCarb_g: 54
   glycemic:
-    gi: 48
-    gl: 25
+    gi: 45
+    gl: 24
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 97
+    measuredGiPct: 95
   nutriScore:
     grade: B
-    points: 1
+    points: 2
     category: general
     version: "2023"
-    coverage: 0.9
+    coverage: 0.88
   inflammation:
     score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.05
+    aromaticAdjustment: -0.07
   balance:
     score: 5
     band: moderate
-    nrf: 26
+    nrf: 25.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 93.9
+    minimallyProcessedPct: 92.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

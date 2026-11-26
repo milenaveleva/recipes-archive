@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13544-kelbimbos-tagliatelle-citromos-parmezanos-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat tagliatelle, dry
+  - raw: 320 g whole-wheat tagliatelle, dry
     group: Main ingredients
-    quantity: 400
+    quantity: 320
     unit: g
     item: whole-wheat tagliatelle
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -115,24 +115,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 473
-    energyKj: 1978
-    protein_g: 17.6
-    fat_g: 17.7
-    satFat_g: 3.6
-    carbs_g: 67.8
-    fiber_g: 10.5
-    sugar_g: 4.3
-    sodium_mg: 615
-    availableCarb_g: 57.3
+    energyKcal: 520
+    energyKj: 2178
+    protein_g: 19.2
+    fat_g: 21.6
+    satFat_g: 4.4
+    carbs_g: 70
+    fiber_g: 11.3
+    sugar_g: 4.8
+    sodium_mg: 768
+    availableCarb_g: 58.8
   glycemic:
-    gi: 47
+    gi: 46
     gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 90
+    measuredGiPct: 87
   nutriScore:
     grade: B
     points: 1
@@ -140,17 +140,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.17
+    aromaticAdjustment: -0.21
   balance:
     score: 6
     band: moderate
-    nrf: 38.7
+    nrf: 40
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 91.7
+    minimallyProcessedPct: 90.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

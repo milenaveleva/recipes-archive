@@ -7,9 +7,9 @@ imageAlt: Creamy Courgette Spaghetti with Lemon and Parmesan
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12072-kremes-cukkinis-spagetti-citrommal-es-parmezannal
-  kcalPerServing: 560
+  kcalPerServing: 491
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT20M
 cookTime: PT5M
 totalTime: PT25M
@@ -18,13 +18,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 240 g whole-wheat spaghetti, dry
+  - raw: 320 g whole-wheat spaghetti, dry
     group: Main ingredients
-    quantity: 240
+    quantity: 320
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 240
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -130,43 +130,43 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 539
-    energyKj: 2254
-    protein_g: 18.2
-    fat_g: 23.3
-    satFat_g: 3.3
-    carbs_g: 70.8
-    fiber_g: 9.6
-    sugar_g: 9
-    sodium_mg: 154
-    availableCarb_g: 61.2
+    energyKcal: 474
+    energyKj: 1985
+    protein_g: 16.4
+    fat_g: 18
+    satFat_g: 2.5
+    carbs_g: 67.8
+    fiber_g: 9.1
+    sugar_g: 7.3
+    sodium_mg: 116
+    availableCarb_g: 58.7
   glycemic:
-    gi: 46
-    gl: 28
+    gi: 47
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 84
+    measuredGiPct: 88
   nutriScore:
     grade: A
     points: 0
     category: general
     version: "2023"
-    coverage: 0.85
+    coverage: 0.87
   inflammation:
-    score: -0.5
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.34
+    aromaticAdjustment: -0.3
   balance:
     score: 6
     band: moderate
-    nrf: 34.8
+    nrf: 33.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 76.1
-    ultraProcessedPct: 19
+    minimallyProcessedPct: 79.7
+    ultraProcessedPct: 16.2
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

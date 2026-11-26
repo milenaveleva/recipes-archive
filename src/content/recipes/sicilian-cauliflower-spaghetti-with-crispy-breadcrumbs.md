@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13416-sziciliai-karfiolos-spagetti-ropogos-morzsaval
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat spaghetti, dry
+  - raw: 320 g whole-wheat spaghetti, dry
     group: Pasta and ragù
-    quantity: 400
+    quantity: 320
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -130,43 +130,43 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 487
-    energyKj: 2039
-    protein_g: 19.3
-    fat_g: 16.5
-    satFat_g: 3.3
-    carbs_g: 72.4
-    fiber_g: 10.7
-    sugar_g: 5.7
-    sodium_mg: 228
-    availableCarb_g: 61.7
+    energyKcal: 539
+    energyKj: 2254
+    protein_g: 21.3
+    fat_g: 20
+    satFat_g: 4.1
+    carbs_g: 75.8
+    fiber_g: 11.5
+    sugar_g: 6.6
+    sodium_mg: 284
+    availableCarb_g: 64.3
   glycemic:
     gi: 48
-    gl: 30
+    gl: 31
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 89
+    measuredGiPct: 87
   nutriScore:
     grade: A
-    points: -1
+    points: 0
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.25
+    aromaticAdjustment: -0.31
   balance:
     score: 6
     band: moderate
-    nrf: 37.1
+    nrf: 38.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 86.8
-    ultraProcessedPct: 5.2
+    minimallyProcessedPct: 85.1
+    ultraProcessedPct: 5.8
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

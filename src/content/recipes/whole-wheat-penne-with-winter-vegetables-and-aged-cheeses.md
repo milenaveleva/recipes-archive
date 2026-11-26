@@ -7,9 +7,9 @@ imageAlt: Whole-Wheat Penne with Winter Vegetables and Aged Cheeses
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10378-penne-teli-zoeldsegekkel-erlelt-sajtokkal
-  kcalPerServing: 552
+  kcalPerServing: 687
 author: Pataky Péter
-servings: 6
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 480 g whole-wheat penne (or rigatoni or garganelli), dry
-    quantity: 480
+  - raw: 320 g whole-wheat penne (or rigatoni or garganelli), dry
+    quantity: 320
     unit: g
     item: whole-wheat penne (or rigatoni or garganelli)
     note: dry
-    grams: 480
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -143,43 +143,43 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 579
-    energyKj: 2425
-    protein_g: 17.4
-    fat_g: 28.5
-    satFat_g: 5
-    carbs_g: 70
-    fiber_g: 9.4
-    sugar_g: 5.6
-    sodium_mg: 527
-    availableCarb_g: 60.6
+    energyKcal: 728
+    energyKj: 3048
+    protein_g: 20.6
+    fat_g: 41.6
+    satFat_g: 7.3
+    carbs_g: 75.6
+    fiber_g: 10.4
+    sugar_g: 7.4
+    sodium_mg: 789
+    availableCarb_g: 65.2
   glycemic:
     gi: 50
-    gl: 30
+    gl: 33
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 85
+    measuredGiPct: 79
   nutriScore:
-    grade: B
-    points: 2
+    grade: C
+    points: 3
     category: general
     version: "2023"
-    coverage: 0.92
+    coverage: 0.9
   inflammation:
-    score: -0.1
+    score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.01
+    aromaticAdjustment: -0.02
   balance:
     score: 5
     band: moderate
     nrf: 29.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 84.9
-    ultraProcessedPct: 8.8
+    minimallyProcessedPct: 82
+    ultraProcessedPct: 10.6
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

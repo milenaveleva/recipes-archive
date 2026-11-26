@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13523-porehagymas-tagliatelle-kremes-olasz-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat tagliatelle, dry
-    quantity: 400
+  - raw: 320 g whole-wheat tagliatelle, dry
+    quantity: 320
     unit: g
     item: whole-wheat tagliatelle
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -104,24 +104,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 475
-    energyKj: 1986
-    protein_g: 16.8
-    fat_g: 17.3
-    satFat_g: 4.1
-    carbs_g: 68.8
-    fiber_g: 8.6
-    sugar_g: 4.8
-    sodium_mg: 306
-    availableCarb_g: 60.2
+    energyKcal: 523
+    energyKj: 2188
+    protein_g: 18.3
+    fat_g: 21.1
+    satFat_g: 5
+    carbs_g: 71.3
+    fiber_g: 8.9
+    sugar_g: 5.4
+    sodium_mg: 383
+    availableCarb_g: 62.4
   glycemic:
-    gi: 52
-    gl: 32
+    gi: 53
+    gl: 33
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 85
+    measuredGiPct: 82
   nutriScore:
     grade: B
     points: 1
@@ -132,14 +132,14 @@ nutrition:
     score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.17
+    aromaticAdjustment: -0.21
   balance:
     score: 5
     band: moderate
-    nrf: 26.7
+    nrf: 26.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 89.3
+    minimallyProcessedPct: 87.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

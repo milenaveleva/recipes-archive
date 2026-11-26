@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13259-olasz-articsokas-teszta-citromos-parmezanos-penne
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat penne, dry
+  - raw: 320 g whole-wheat penne, dry
     group: Main ingredients
-    quantity: 400
+    quantity: 320
     unit: g
     item: whole-wheat penne
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -112,16 +112,16 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 462
-    energyKj: 1934
-    protein_g: 17.4
-    fat_g: 16.4
-    satFat_g: 3.7
-    carbs_g: 67.9
-    fiber_g: 10.9
-    sugar_g: 3.1
-    sodium_mg: 655
-    availableCarb_g: 56.9
+    energyKcal: 507
+    energyKj: 2123
+    protein_g: 19
+    fat_g: 19.9
+    satFat_g: 4.5
+    carbs_g: 70.2
+    fiber_g: 11.8
+    sugar_g: 3.3
+    sodium_mg: 818
+    availableCarb_g: 58.3
   glycemic:
     gi: 47
     gl: 27
@@ -129,10 +129,10 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 90
+    measuredGiPct: 88
   nutriScore:
     grade: B
-    points: 1
+    points: 2
     category: general
     version: "2023"
     coverage: 1
@@ -140,14 +140,14 @@ nutrition:
     score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.17
+    aromaticAdjustment: -0.21
   balance:
     score: 5
     band: moderate
-    nrf: 25.2
+    nrf: 24.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 89.8
+    minimallyProcessedPct: 88.4
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

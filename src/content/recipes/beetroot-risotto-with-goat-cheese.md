@@ -7,9 +7,9 @@ imageAlt: Beetroot Risotto with Goat Cheese
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10389-ceklarizotto-kecskesajttal
-  kcalPerServing: 628
+  kcalPerServing: 713
 author: Pataky Péter
-servings: 5
+servings: 4
 prepTime: PT1H
 cookTime: PT30M
 totalTime: PT1H30M
@@ -80,12 +80,12 @@ ingredients:
     fdcId: 173431
     matchConfidence: high
     cooking: boiled
-  - raw: 400 g brown arborio rice, uncooked
-    quantity: 400
+  - raw: 320 g brown arborio rice, uncooked
+    quantity: 320
     unit: g
     item: brown arborio rice
     note: uncooked
-    grams: 400
+    grams: 320
     fdcId: 169706
     matchConfidence: high
     cooking: boiled
@@ -152,24 +152,24 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 748
-    energyKj: 3131
-    protein_g: 17.9
-    fat_g: 40.7
-    satFat_g: 12.6
-    carbs_g: 80
-    fiber_g: 6.3
-    sugar_g: 11.6
-    sodium_mg: 2012
-    availableCarb_g: 73.7
+    energyKcal: 863
+    energyKj: 3610
+    protein_g: 20.9
+    fat_g: 50.3
+    satFat_g: 15.7
+    carbs_g: 84.7
+    fiber_g: 7.2
+    sugar_g: 14.4
+    sodium_mg: 2515
+    availableCarb_g: 77.6
   glycemic:
-    gi: 64
-    gl: 47
+    gi: 63
+    gl: 49
     giBand: medium
     glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 79
+    measuredGiPct: 75
   nutriScore:
     grade: C
     points: 5
@@ -180,14 +180,14 @@ nutrition:
     score: 0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.36
+    aromaticAdjustment: -0.42
   balance:
     score: 2
     band: poor
-    nrf: 5.1
+    nrf: 3.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 75.3
+    minimallyProcessedPct: 73.2
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

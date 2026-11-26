@@ -7,9 +7,9 @@ imageAlt: Creamy Mushroom and Mustard Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10450-gombas-mustaros-tejszines-teszta
-  kcalPerServing: 377
+  kcalPerServing: 404
 author: Báder Gabka
-servings: 6
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -43,12 +43,12 @@ ingredients:
     fdcId: 172234
     matchConfidence: high
     cooking: raw
-  - raw: 1 package gluten-free pasta, dry
-    quantity: 1
-    unit: package
+  - raw: 320 g gluten-free pasta, dry
+    quantity: 320
+    unit: g
     item: gluten-free pasta
     note: dry
-    grams: 500
+    grams: 320
     fdcId: 168899
     matchConfidence: high
     cooking: boiled
@@ -85,43 +85,43 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 414
-    energyKj: 1731
-    protein_g: 8.9
-    fat_g: 12.6
-    satFat_g: 1.6
-    carbs_g: 68.9
-    fiber_g: 10
-    sugar_g: 1.5
-    sodium_mg: 238
-    availableCarb_g: 58.7
+    energyKcal: 460
+    energyKj: 1925
+    protein_g: 10
+    fat_g: 18
+    satFat_g: 2.2
+    carbs_g: 67.6
+    fiber_g: 10.1
+    sugar_g: 2.3
+    sodium_mg: 356
+    availableCarb_g: 57.3
   glycemic:
-    gi: 57
-    gl: 33
+    gi: 56
+    gl: 32
     giBand: medium
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 97
+    measuredGiPct: 96
   nutriScore:
     grade: A
     points: 0
     category: general
     version: "2023"
-    coverage: 0.33
+    coverage: 0.43
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.01
+    aromaticAdjustment: -0.02
   balance:
     score: 4
     band: low
-    nrf: 20.5
+    nrf: 20.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 84.1
-    ultraProcessedPct: 15.5
+    minimallyProcessedPct: 78.6
+    ultraProcessedPct: 20.9
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

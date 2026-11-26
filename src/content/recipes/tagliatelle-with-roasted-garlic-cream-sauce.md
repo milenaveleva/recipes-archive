@@ -7,9 +7,9 @@ imageAlt: Tagliatelle with Roasted Garlic Cream Sauce
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12958-teszta-suelt-fokhagymas-kremmartassal
-  kcalPerServing: 740
+  kcalPerServing: 626
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT10M
 cookTime: PT50M
 totalTime: PT1H
@@ -48,13 +48,13 @@ ingredients:
     fdcId: 171247
     matchConfidence: medium
     cooking: boiled
-  - raw: 240 g whole-wheat tagliatelle, dry
+  - raw: 320 g whole-wheat tagliatelle, dry
     group: Main ingredients
-    quantity: 240
+    quantity: 320
     unit: g
     item: whole-wheat tagliatelle
     note: dry
-    grams: 240
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -121,43 +121,43 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 636
-    energyKj: 2663
-    protein_g: 18.2
-    fat_g: 31
-    satFat_g: 5.3
-    carbs_g: 77.8
-    fiber_g: 8.8
-    sugar_g: 6.2
-    sodium_mg: 471
-    availableCarb_g: 69
+    energyKcal: 548
+    energyKj: 2292
+    protein_g: 16.5
+    fat_g: 23.9
+    satFat_g: 4.1
+    carbs_g: 73.1
+    fiber_g: 8.5
+    sugar_g: 5.2
+    sodium_mg: 354
+    availableCarb_g: 64.6
   glycemic:
-    gi: 52
-    gl: 36
+    gi: 51
+    gl: 33
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 78
+    measuredGiPct: 82
   nutriScore:
     grade: B
     points: 2
     category: general
     version: "2023"
-    coverage: 0.79
+    coverage: 0.83
   inflammation:
     score: -0.4
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.35
+    aromaticAdjustment: -0.32
   balance:
     score: 4
     band: low
-    nrf: 22.2
+    nrf: 23.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 79.5
-    ultraProcessedPct: 13.9
+    minimallyProcessedPct: 82.1
+    ultraProcessedPct: 12.1
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

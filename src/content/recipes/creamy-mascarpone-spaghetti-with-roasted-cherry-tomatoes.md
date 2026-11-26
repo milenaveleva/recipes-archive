@@ -8,18 +8,18 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11713-kremes-mascarpones-spagetti-suelt-koktelparadicsommal
 author: Kifli Kukták
-servings: 3
+servings: 4
 cuisine: Italian
 course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 240 g dry whole-wheat spaghetti
+  - raw: 320 g dry whole-wheat spaghetti
     group: Main ingredients
-    quantity: 240
+    quantity: 320
     unit: g
     item: dry whole-wheat spaghetti
-    grams: 240
+    grams: 320
     fdcId: 82009870
     matchConfidence: medium
     cooking: boiled
@@ -119,24 +119,24 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 769
-    energyKj: 3216
-    protein_g: 20.7
-    fat_g: 44.8
-    satFat_g: 18.1
-    carbs_g: 75.4
-    fiber_g: 7
-    sugar_g: 10.3
-    sodium_mg: 442
-    availableCarb_g: 68.4
+    energyKcal: 647
+    energyKj: 2708
+    protein_g: 17.9
+    fat_g: 34
+    satFat_g: 13.6
+    carbs_g: 71.3
+    fiber_g: 6.5
+    sugar_g: 8.1
+    sodium_mg: 332
+    availableCarb_g: 64.8
   glycemic:
-    gi: 43
-    gl: 30
+    gi: 45
+    gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 79
+    measuredGiPct: 83
   nutriScore:
     grade: C
     points: 3
@@ -144,17 +144,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.3
+    score: 0.4
     band: mildly-pro-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.34
+    aromaticAdjustment: -0.28
   balance:
     score: 3
     band: low
-    nrf: 15.4
+    nrf: 16
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 62.8
+    minimallyProcessedPct: 66.9
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

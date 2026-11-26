@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14679-meleg-toszkan-orzosalata-buggyantott-tojassal
 author: Kifli Kukták
-servings: 3
+servings: 2
 prepTime: PT15M
 cookTime: PT15M
 totalTime: PT30M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 240 g whole-wheat orzo pasta, dry
-    quantity: 240
+  - raw: 160 g whole-wheat orzo pasta, dry
+    quantity: 160
     unit: g
     item: whole-wheat orzo pasta
     note: dry
-    grams: 240
+    grams: 160
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -110,41 +110,42 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 608
-    energyKj: 2544
-    protein_g: 26
-    fat_g: 26.3
-    satFat_g: 5.6
-    carbs_g: 76.5
-    fiber_g: 11.8
-    sugar_g: 13.2
-    sodium_mg: 442
-    availableCarb_g: 64.7
+    energyKcal: 771
+    energyKj: 3227
+    protein_g: 33.4
+    fat_g: 38.2
+    satFat_g: 8.2
+    carbs_g: 85.4
+    fiber_g: 14
+    sugar_g: 18.8
+    sodium_mg: 661
+    availableCarb_g: 71.3
   glycemic:
     gi: 50
-    gl: 33
+    gl: 36
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 82
+    measuredGiPct: 76
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
+    score: 0
     band: neutral
     method: fii v4
+    aromaticAdjustment: -0.01
   balance:
-    score: 6
-    band: moderate
-    nrf: 39.5
+    score: 7
+    band: high
+    nrf: 41.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 90.9
+    minimallyProcessedPct: 89.2
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -155,6 +156,7 @@ nutrition:
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
+    - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-14"

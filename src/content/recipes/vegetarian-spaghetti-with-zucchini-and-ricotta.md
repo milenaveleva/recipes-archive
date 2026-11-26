@@ -7,9 +7,9 @@ imageAlt: Vegetarian Spaghetti with Zucchini and Ricotta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12944-vegetarianus-spagetti-cukkinivel-es-ricottaval
-  kcalPerServing: 434
+  kcalPerServing: 510
 author: Kifli Kukták
-servings: 3
+servings: 2
 prepTime: PT15M
 cookTime: PT15M
 totalTime: PT30M
@@ -18,11 +18,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 240 g dry whole-wheat spaghetti
-    quantity: 240
+  - raw: 160 g dry whole-wheat spaghetti
+    quantity: 160
     unit: g
     item: dry whole-wheat spaghetti
-    grams: 240
+    grams: 160
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -106,43 +106,43 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 508
-    energyKj: 2127
-    protein_g: 21
-    fat_g: 16.2
-    satFat_g: 4
-    carbs_g: 77.8
-    fiber_g: 11.6
-    sugar_g: 4.4
-    sodium_mg: 194
-    availableCarb_g: 66.1
+    energyKcal: 622
+    energyKj: 2601
+    protein_g: 26
+    fat_g: 23.1
+    satFat_g: 5.8
+    carbs_g: 87.3
+    fiber_g: 13.8
+    sugar_g: 5.6
+    sodium_mg: 290
+    availableCarb_g: 73.5
   glycemic:
-    gi: 49
-    gl: 32
+    gi: 48
+    gl: 35
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 89
+    measuredGiPct: 85
   nutriScore:
     grade: A
     points: -1
     category: general
     version: "2023"
-    coverage: 0.76
+    coverage: 0.71
   inflammation:
-    score: 0
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.09
+    aromaticAdjustment: -0.14
   balance:
     score: 7
     band: high
-    nrf: 48.1
+    nrf: 52.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 80.2
-    ultraProcessedPct: 9.9
+    minimallyProcessedPct: 75.8
+    ultraProcessedPct: 12.2
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

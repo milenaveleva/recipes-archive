@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14483-pugliai-rukkolas-orecchiette-koktelparadicsommal-es-pecorinoval-20-perces-olasz-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT5M
 cookTime: PT15M
 totalTime: PT20M
@@ -17,11 +17,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dry whole-wheat orecchiette pasta
-    quantity: 400
+  - raw: 320 g dry whole-wheat orecchiette pasta
+    quantity: 320
     unit: g
     item: dry whole-wheat orecchiette pasta
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -84,16 +84,16 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 417
-    energyKj: 1745
-    protein_g: 16.2
-    fat_g: 13.4
-    satFat_g: 3.5
-    carbs_g: 63.9
-    fiber_g: 8.9
-    sugar_g: 5.4
-    sodium_mg: 573
-    availableCarb_g: 55
+    energyKcal: 451
+    energyKj: 1887
+    protein_g: 17.5
+    fat_g: 16.1
+    satFat_g: 4.3
+    carbs_g: 65.2
+    fiber_g: 9.3
+    sugar_g: 6.2
+    sodium_mg: 715
+    availableCarb_g: 55.9
   glycemic:
     gi: 49
     gl: 27
@@ -101,7 +101,7 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 97
+    measuredGiPct: 96
   nutriScore:
     grade: B
     points: 2
@@ -112,14 +112,14 @@ nutrition:
     score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.16
+    aromaticAdjustment: -0.21
   balance:
     score: 5
     band: moderate
-    nrf: 29.8
+    nrf: 29.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88.9
+    minimallyProcessedPct: 87.1
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13373-karamellizalt-edeskoemenyes-spagetti-gyors-olasz-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dry whole-wheat spaghetti
+  - raw: 320 g dry whole-wheat spaghetti
     group: Main ingredients
-    quantity: 400
+    quantity: 320
     unit: g
     item: dry whole-wheat spaghetti
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -122,42 +122,42 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 533
-    energyKj: 2231
-    protein_g: 17.2
-    fat_g: 24.5
-    satFat_g: 4.8
-    carbs_g: 68.4
-    fiber_g: 10.8
-    sugar_g: 6.6
-    sodium_mg: 700
-    availableCarb_g: 57.6
+    energyKcal: 596
+    energyKj: 2494
+    protein_g: 18.7
+    fat_g: 30
+    satFat_g: 5.9
+    carbs_g: 70.8
+    fiber_g: 11.6
+    sugar_g: 7.7
+    sodium_mg: 875
+    availableCarb_g: 59.2
   glycemic:
-    gi: 47
+    gi: 46
     gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 89
+    measuredGiPct: 87
   nutriScore:
     grade: B
-    points: 1
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.17
+    aromaticAdjustment: -0.21
   balance:
     score: 4
     band: low
-    nrf: 23.5
+    nrf: 22.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 91.3
+    minimallyProcessedPct: 90.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

@@ -7,9 +7,9 @@ imageAlt: Frittata di Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12164-frittata-di-pasta-olasz-tesztalepeny-maradekbol
-  kcalPerServing: 960
+  kcalPerServing: 480
 author: Kifli Kukták
-servings: 2
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -96,19 +96,19 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 838
-    energyKj: 3507
-    protein_g: 45
-    fat_g: 49.2
-    satFat_g: 19.9
-    carbs_g: 54.6
-    fiber_g: 4.3
-    sugar_g: 3.7
-    sodium_mg: 1367
-    availableCarb_g: 50.3
+    energyKcal: 419
+    energyKj: 1753
+    protein_g: 22.5
+    fat_g: 24.6
+    satFat_g: 9.9
+    carbs_g: 27.3
+    fiber_g: 2.2
+    sugar_g: 1.9
+    sodium_mg: 683
+    availableCarb_g: 25.1
   glycemic:
     gi: 37
-    gl: 19
+    gl: 9
     giBand: low
     glBand: low
     glBasis: meal
@@ -124,7 +124,7 @@ nutrition:
     score: 0.5
     band: mildly-pro-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.16
+    aromaticAdjustment: -0.11
   balance:
     score: 3
     band: low

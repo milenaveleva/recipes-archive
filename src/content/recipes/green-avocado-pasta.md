@@ -7,19 +7,19 @@ imageAlt: Green Avocado Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12857-zoeld-avokados-teszta
-  kcalPerServing: 509
+  kcalPerServing: 585
 author: Kifli Kukták
-servings: 4
+servings: 3
 cuisine: Italian
 course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 320 g dry whole-wheat penne
-    quantity: 320
+  - raw: 240 g dry whole-wheat penne
+    quantity: 240
     unit: g
     item: dry whole-wheat penne
-    grams: 320
+    grams: 240
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -109,42 +109,42 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 441
-    energyKj: 1843
-    protein_g: 19.9
-    fat_g: 11.9
-    satFat_g: 3.7
-    carbs_g: 69.6
-    fiber_g: 11.4
-    sugar_g: 6.1
-    sodium_mg: 332
-    availableCarb_g: 58.2
+    energyKcal: 494
+    energyKj: 2065
+    protein_g: 22.9
+    fat_g: 15.1
+    satFat_g: 4.9
+    carbs_g: 73.3
+    fiber_g: 12.8
+    sugar_g: 7.4
+    sodium_mg: 442
+    availableCarb_g: 60.5
   glycemic:
     gi: 49
-    gl: 29
+    gl: 30
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 97
+    measuredGiPct: 96
   nutriScore:
     grade: A
     points: 0
     category: general
     version: "2023"
-    coverage: 0.86
+    coverage: 0.83
   inflammation:
     score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
   balance:
-    score: 6
-    band: moderate
-    nrf: 39.4
+    score: 7
+    band: high
+    nrf: 41.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 80.2
-    ultraProcessedPct: 5.6
+    minimallyProcessedPct: 76.5
+    ultraProcessedPct: 6.7
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

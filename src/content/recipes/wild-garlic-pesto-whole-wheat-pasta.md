@@ -7,9 +7,9 @@ imageAlt: Wild Garlic Pesto Whole-Wheat Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10429-medvehagymas-pestos-teszta
-  kcalPerServing: 935
+  kcalPerServing: 1099
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -73,12 +73,12 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: boiled
-  - raw: 400 g dried whole-wheat pasta
+  - raw: 320 g dried whole-wheat pasta
     group: For the pasta
-    quantity: 400
+    quantity: 320
     unit: g
     item: dried whole-wheat pasta
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -145,44 +145,44 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 878
-    energyKj: 3672
-    protein_g: 31
-    fat_g: 56.3
-    satFat_g: 11.9
-    carbs_g: 69.7
-    fiber_g: 9.2
-    sugar_g: 6.3
-    sodium_mg: 904
-    availableCarb_g: 60.5
+    energyKcal: 1027
+    energyKj: 4295
+    protein_g: 35.9
+    fat_g: 69.8
+    satFat_g: 14.7
+    carbs_g: 72.5
+    fiber_g: 9.7
+    sugar_g: 7.4
+    sodium_mg: 1130
+    availableCarb_g: 62.8
   glycemic:
-    gi: 47
+    gi: 46
     gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 85
+    measuredGiPct: 82
   nutriScore:
     grade: C
-    points: 3
+    points: 5
     category: general
     version: "2023"
-    coverage: 0.85
+    coverage: 0.83
   inflammation:
     score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.18
+    aromaticAdjustment: -0.22
   balance:
     score: 4
     band: low
-    nrf: 21.3
+    nrf: 20.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 71.5
-    ultraProcessedPct: 10.5
-    band: minimally-processed
+    minimallyProcessedPct: 69.6
+    ultraProcessedPct: 11.2
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

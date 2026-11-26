@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13422-pasta-alla-trapanese-15-perces-sziciliai-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat pasta (busiate or fusilli), dry
+  - raw: 320 g whole-wheat pasta (busiate or fusilli), dry
     group: Sauce and pasta
-    quantity: 400
+    quantity: 320
     unit: g
     item: whole-wheat pasta (busiate or fusilli)
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -104,24 +104,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 513
-    energyKj: 2146
-    protein_g: 18.7
-    fat_g: 22.4
-    satFat_g: 4.1
-    carbs_g: 66.3
-    fiber_g: 10.1
-    sugar_g: 5.5
-    sodium_mg: 566
-    availableCarb_g: 56.2
+    energyKcal: 571
+    energyKj: 2388
+    protein_g: 20.6
+    fat_g: 27.4
+    satFat_g: 5
+    carbs_g: 68.2
+    fiber_g: 10.8
+    sugar_g: 6.3
+    sodium_mg: 707
+    availableCarb_g: 57.4
   glycemic:
-    gi: 48
+    gi: 47
     gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 91
+    measuredGiPct: 90
   nutriScore:
     grade: B
     points: 2
@@ -129,17 +129,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.16
+    aromaticAdjustment: -0.2
   balance:
-    score: 5
+    score: 6
     band: moderate
-    nrf: 30.8
+    nrf: 31
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 91.9
+    minimallyProcessedPct: 90.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

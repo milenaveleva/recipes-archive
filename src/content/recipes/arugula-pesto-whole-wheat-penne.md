@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14567-rukkolapestos-penne-15-perces-friss-olasz-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT5M
 cookTime: PT10M
 totalTime: PT15M
@@ -17,11 +17,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dry whole-wheat penne
-    quantity: 400
+  - raw: 320 g dry whole-wheat penne
+    quantity: 320
     unit: g
     item: dry whole-wheat penne
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -101,42 +101,42 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 552
-    energyKj: 2311
-    protein_g: 19.2
-    fat_g: 28
-    satFat_g: 5.8
-    carbs_g: 62.9
-    fiber_g: 8.7
-    sugar_g: 3.4
-    sodium_mg: 655
-    availableCarb_g: 54.2
+    energyKcal: 620
+    energyKj: 2595
+    protein_g: 21.3
+    fat_g: 34.5
+    satFat_g: 7.1
+    carbs_g: 63.9
+    fiber_g: 9
+    sugar_g: 3.8
+    sodium_mg: 818
+    availableCarb_g: 54.9
   glycemic:
-    gi: 49
+    gi: 48
     gl: 26
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 95
+    measuredGiPct: 93
   nutriScore:
     grade: C
-    points: 3
+    points: 5
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.11
+    aromaticAdjustment: -0.13
   balance:
     score: 4
     band: low
-    nrf: 20.7
+    nrf: 19.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88.3
+    minimallyProcessedPct: 87
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

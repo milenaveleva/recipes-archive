@@ -7,7 +7,7 @@ imageAlt: Caprese Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11641-caprese-teszta-gyors-es-egeszseges-olasz-vacsora
-  kcalPerServing: 552
+  kcalPerServing: 553
 author: Kifli Kukták
 servings: 4
 prepTime: PT5M

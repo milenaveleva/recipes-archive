@@ -7,9 +7,9 @@ imageAlt: Whole-Wheat Pasta Puttanesca
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10615-puttanesca-teszta
-  kcalPerServing: 354
+  kcalPerServing: 427
 author: Kifli Kukták
-servings: 4
+servings: 2
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -18,11 +18,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 320 g dry whole-wheat spaghetti
-    quantity: 320
+  - raw: 160 g dry whole-wheat spaghetti
+    quantity: 160
     unit: g
     item: dry whole-wheat spaghetti
-    grams: 320
+    grams: 160
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -91,42 +91,42 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 387
-    energyKj: 1618
-    protein_g: 13.4
-    fat_g: 10.6
-    satFat_g: 1.6
-    carbs_g: 66
-    fiber_g: 9.3
-    sugar_g: 5.7
-    sodium_mg: 273
-    availableCarb_g: 56.7
+    energyKcal: 492
+    energyKj: 2058
+    protein_g: 15.7
+    fat_g: 18.9
+    satFat_g: 2.8
+    carbs_g: 73.3
+    fiber_g: 11.2
+    sugar_g: 9.2
+    sodium_mg: 544
+    availableCarb_g: 62.1
   glycemic:
-    gi: 47
-    gl: 27
+    gi: 45
+    gl: 28
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 91
+    measuredGiPct: 83
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: 0
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.1
+    aromaticAdjustment: -0.21
   balance:
     score: 6
     band: moderate
-    nrf: 35.5
+    nrf: 39.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 89.7
+    minimallyProcessedPct: 83.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

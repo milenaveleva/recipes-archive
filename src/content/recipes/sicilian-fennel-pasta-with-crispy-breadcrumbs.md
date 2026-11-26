@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13365-sziciliai-edeskoemenyes-teszta-ropogos-fuszeres-morzsaval
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT15M
 cookTime: PT15M
 totalTime: PT30M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat spaghetti, dry
+  - raw: 320 g whole-wheat spaghetti, dry
     group: Pasta and fennel sauce
-    quantity: 400
+    quantity: 320
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -142,43 +142,43 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 470
-    energyKj: 1966
-    protein_g: 15
-    fat_g: 13.9
-    satFat_g: 1.8
-    carbs_g: 78.9
-    fiber_g: 11.5
-    sugar_g: 11.3
-    sodium_mg: 621
-    availableCarb_g: 67.3
+    energyKcal: 517
+    energyKj: 2163
+    protein_g: 16
+    fat_g: 16.8
+    satFat_g: 2.2
+    carbs_g: 83.9
+    fiber_g: 12.6
+    sugar_g: 13.5
+    sodium_mg: 776
+    availableCarb_g: 71.3
   glycemic:
     gi: 48
-    gl: 33
+    gl: 34
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 88
+    measuredGiPct: 86
   nutriScore:
     grade: B
-    points: 1
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.3
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.31
+    aromaticAdjustment: -0.37
   balance:
     score: 5
     band: moderate
-    nrf: 25.7
+    nrf: 25.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 94.4
-    ultraProcessedPct: 5.4
+    minimallyProcessedPct: 93.7
+    ultraProcessedPct: 6.1
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

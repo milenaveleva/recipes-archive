@@ -7,7 +7,7 @@ imageAlt: Whole-Wheat Pasta with Creamy Courgette Sauce
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11850-cukkiniszoszos-teszta
-  kcalPerServing: 447
+  kcalPerServing: 448
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M

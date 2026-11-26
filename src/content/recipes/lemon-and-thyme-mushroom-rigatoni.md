@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13079-citromos-kakukkfueves-gombas-rigatoni-gyors-nyari-vacsora
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat rigatoni, dry
-    quantity: 400
+  - raw: 320 g whole-wheat rigatoni, dry
+    quantity: 320
     unit: g
     item: whole-wheat rigatoni
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -103,16 +103,16 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 462
-    energyKj: 1935
-    protein_g: 17.2
-    fat_g: 18.2
-    satFat_g: 3.9
-    carbs_g: 63.7
-    fiber_g: 8.1
-    sugar_g: 3.5
-    sodium_mg: 226
-    availableCarb_g: 55.6
+    energyKcal: 508
+    energyKj: 2124
+    protein_g: 18.8
+    fat_g: 22.2
+    satFat_g: 4.8
+    carbs_g: 65
+    fiber_g: 8.3
+    sugar_g: 3.8
+    sodium_mg: 282
+    availableCarb_g: 56.6
   glycemic:
     gi: 48
     gl: 27
@@ -120,25 +120,25 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 93
+    measuredGiPct: 91
   nutriScore:
-    grade: A
-    points: 0
+    grade: B
+    points: 1
     category: general
     version: "2023"
     coverage: 0.99
   inflammation:
-    score: 0
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.24
+    aromaticAdjustment: -0.29
   balance:
     score: 5
     band: moderate
-    nrf: 25.5
+    nrf: 25
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 89.8
+    minimallyProcessedPct: 88.4
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

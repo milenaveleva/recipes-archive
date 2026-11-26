@@ -7,9 +7,9 @@ imageAlt: Pasta with Cashew Sauce and Broccoli
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12855-teszta-kesudiomartassal-es-brokkolival
-  kcalPerServing: 400
+  kcalPerServing: 460
 author: Kifli Kukták
-servings: 3
+servings: 2
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 240 g whole-wheat pasta, dry
-    quantity: 240
+  - raw: 160 g whole-wheat pasta, dry
+    quantity: 160
     unit: g
     item: whole-wheat pasta
     note: dry
-    grams: 240
+    grams: 160
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -106,24 +106,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 436
-    energyKj: 1823
-    protein_g: 21.2
-    fat_g: 10.2
-    satFat_g: 1.8
-    carbs_g: 73.8
-    fiber_g: 12.1
-    sugar_g: 6.3
-    sodium_mg: 242
-    availableCarb_g: 61.8
+    energyKcal: 513
+    energyKj: 2146
+    protein_g: 26.2
+    fat_g: 14.1
+    satFat_g: 2.5
+    carbs_g: 81.4
+    fiber_g: 14.4
+    sugar_g: 8.3
+    sodium_mg: 362
+    availableCarb_g: 67
   glycemic:
-    gi: 45
-    gl: 28
+    gi: 43
+    gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 89
+    measuredGiPct: 85
   nutriScore:
     grade: A
     points: -2
@@ -131,17 +131,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.01
+    aromaticAdjustment: -0.02
   balance:
-    score: 7
+    score: 8
     band: high
-    nrf: 58.4
+    nrf: 66.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 94
+    minimallyProcessedPct: 92.4
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

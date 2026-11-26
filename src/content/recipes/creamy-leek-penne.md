@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13664-kremes-porehagymas-penne-olasz-serpenyos-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat penne, dry
+  - raw: 320 g whole-wheat penne, dry
     group: Main ingredients
-    quantity: 400
+    quantity: 320
     unit: g
     item: whole-wheat penne
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -115,43 +115,43 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 521
-    energyKj: 2181
-    protein_g: 17.7
-    fat_g: 21.7
-    satFat_g: 4.5
-    carbs_g: 69.9
-    fiber_g: 8.5
-    sugar_g: 5.4
-    sodium_mg: 700
-    availableCarb_g: 61.4
+    energyKcal: 581
+    energyKj: 2431
+    protein_g: 19.4
+    fat_g: 26.5
+    satFat_g: 5.6
+    carbs_g: 72.7
+    fiber_g: 8.8
+    sugar_g: 6.3
+    sodium_mg: 874
+    availableCarb_g: 63.9
   glycemic:
     gi: 52
-    gl: 32
+    gl: 33
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 84
+    measuredGiPct: 80
   nutriScore:
-    grade: B
-    points: 2
+    grade: C
+    points: 4
     category: general
     version: "2023"
-    coverage: 0.91
+    coverage: 0.9
   inflammation:
-    score: -0.1
+    score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.17
+    aromaticAdjustment: -0.21
   balance:
     score: 4
     band: low
-    nrf: 23.3
+    nrf: 22.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 81.6
-    ultraProcessedPct: 8.9
+    minimallyProcessedPct: 79.4
+    ultraProcessedPct: 9.9
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

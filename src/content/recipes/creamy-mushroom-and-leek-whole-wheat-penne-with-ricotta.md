@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14618-gombas-porehagymas-penne-ricottaval-kremes-olasz-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT5M
 cookTime: PT15M
 totalTime: PT20M
@@ -17,11 +17,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dry whole-wheat penne
-    quantity: 400
+  - raw: 320 g dry whole-wheat penne
+    quantity: 320
     unit: g
     item: dry whole-wheat penne
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -121,24 +121,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 501
-    energyKj: 2095
-    protein_g: 20.1
-    fat_g: 18.5
-    satFat_g: 5.9
-    carbs_g: 70
-    fiber_g: 8.4
-    sugar_g: 4.7
-    sodium_mg: 700
-    availableCarb_g: 61.5
+    energyKcal: 555
+    energyKj: 2324
+    protein_g: 22.3
+    fat_g: 22.6
+    satFat_g: 7.3
+    carbs_g: 72.8
+    fiber_g: 8.7
+    sugar_g: 5.4
+    sodium_mg: 874
+    availableCarb_g: 64.1
   glycemic:
     gi: 48
-    gl: 30
+    gl: 31
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 84
+    measuredGiPct: 80
   nutriScore:
     grade: B
     points: 2
@@ -149,14 +149,14 @@ nutrition:
     score: 0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.17
+    aromaticAdjustment: -0.21
   balance:
     score: 4
     band: low
-    nrf: 21.8
+    nrf: 20.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 79.7
+    minimallyProcessedPct: 77.2
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13605-kremes-suetotoekoes-spagetti-ropogos-zsalyaval
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat spaghetti, dry
-    quantity: 400
+  - raw: 320 g whole-wheat spaghetti, dry
+    quantity: 320
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -106,19 +106,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 520
-    energyKj: 2176
-    protein_g: 17.6
-    fat_g: 20.3
-    satFat_g: 4.3
-    carbs_g: 74.1
-    fiber_g: 10.7
-    sugar_g: 4.8
-    sodium_mg: 1574
-    availableCarb_g: 63.4
+    energyKcal: 580
+    energyKj: 2425
+    protein_g: 19.2
+    fat_g: 24.8
+    satFat_g: 5.3
+    carbs_g: 78
+    fiber_g: 11.6
+    sugar_g: 5.5
+    sodium_mg: 1967
+    availableCarb_g: 66.4
   glycemic:
     gi: 50
-    gl: 32
+    gl: 33
     giBand: low
     glBand: medium
     glBasis: meal
@@ -126,7 +126,7 @@ nutrition:
     measuredGiPct: 96
   nutriScore:
     grade: C
-    points: 5
+    points: 6
     category: general
     version: "2023"
     coverage: 0.94
@@ -134,15 +134,15 @@ nutrition:
     score: -0.3
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.23
+    aromaticAdjustment: -0.27
   balance:
     score: 6
     band: moderate
-    nrf: 32.9
+    nrf: 33.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 85
-    ultraProcessedPct: 5.9
+    minimallyProcessedPct: 83.2
+    ultraProcessedPct: 6.6
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

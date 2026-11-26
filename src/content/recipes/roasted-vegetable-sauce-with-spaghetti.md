@@ -7,9 +7,9 @@ imageAlt: Roasted Vegetable Sauce with Spaghetti
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10601-suelt-zoeldsegszosz
-  kcalPerServing: 468
+  kcalPerServing: 515
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT40M
 totalTime: PT50M
@@ -89,13 +89,13 @@ ingredients:
     fdcId: 170851
     matchConfidence: medium
     cooking: raw
-  - raw: 400 g whole-wheat spaghetti, dry
+  - raw: 320 g whole-wheat spaghetti, dry
     group: Main ingredients
-    quantity: 400
+    quantity: 320
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -130,27 +130,27 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 439
-    energyKj: 1835
-    protein_g: 17.8
-    fat_g: 10
-    satFat_g: 3.3
-    carbs_g: 76.8
-    fiber_g: 10.7
-    sugar_g: 10.3
-    sodium_mg: 545
-    availableCarb_g: 66.1
+    energyKcal: 478
+    energyKj: 1999
+    protein_g: 19.4
+    fat_g: 12
+    satFat_g: 4.1
+    carbs_g: 81.3
+    fiber_g: 11.5
+    sugar_g: 12.3
+    sodium_mg: 680
+    availableCarb_g: 69.8
   glycemic:
     gi: 47
-    gl: 31
+    gl: 33
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 78
+    measuredGiPct: 74
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: 0
     category: general
     version: "2023"
     coverage: 1
@@ -158,14 +158,14 @@ nutrition:
     score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.34
+    aromaticAdjustment: -0.37
   balance:
     score: 7
     band: high
-    nrf: 50.5
+    nrf: 53.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 86
+    minimallyProcessedPct: 84
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

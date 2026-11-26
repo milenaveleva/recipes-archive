@@ -7,7 +7,7 @@ imageAlt: Prawns in Tamarind Sauce
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10696-garnela-tamarind-szosszal
-  kcalPerServing: 385
+  kcalPerServing: 458
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M

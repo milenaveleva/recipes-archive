@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14469-csucsos-kaposztas-rigatoni-ropogos-fokhagymas-morzsaval
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -26,12 +26,12 @@ ingredients:
     fdcId: 169336
     matchConfidence: high
     cooking: fried
-  - raw: 400 g dry whole-wheat rigatoni
+  - raw: 320 g dry whole-wheat rigatoni
     group: Pasta and cabbage
-    quantity: 400
+    quantity: 320
     unit: g
     item: dry whole-wheat rigatoni
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -123,43 +123,43 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 528
-    energyKj: 2211
-    protein_g: 18.8
-    fat_g: 21.5
-    satFat_g: 4.7
-    carbs_g: 71.6
-    fiber_g: 10.7
-    sugar_g: 6.4
-    sodium_mg: 755
-    availableCarb_g: 60.9
+    energyKcal: 590
+    energyKj: 2469
+    protein_g: 20.7
+    fat_g: 26.3
+    satFat_g: 5.7
+    carbs_g: 74.8
+    fiber_g: 11.5
+    sugar_g: 7.4
+    sodium_mg: 943
+    availableCarb_g: 63.3
   glycemic:
     gi: 49
-    gl: 30
+    gl: 31
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 92
+    measuredGiPct: 90
   nutriScore:
-    grade: B
-    points: 1
+    grade: C
+    points: 3
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.23
+    aromaticAdjustment: -0.27
   balance:
     score: 5
     band: moderate
     nrf: 28.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 84.8
-    ultraProcessedPct: 5.8
+    minimallyProcessedPct: 83
+    ultraProcessedPct: 6.5
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

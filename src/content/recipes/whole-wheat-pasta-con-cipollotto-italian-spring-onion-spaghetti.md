@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14455-pasta-con-cipollotto-olasz-ujhagymas-spagetti
 author: Kifli Kukták
-servings: 3
+servings: 2
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -17,11 +17,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 240 g dry whole-wheat spaghetti
-    quantity: 240
+  - raw: 160 g dry whole-wheat spaghetti
+    quantity: 160
     unit: g
     item: dry whole-wheat spaghetti
-    grams: 240
+    grams: 160
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -105,27 +105,27 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 533
-    energyKj: 2228
-    protein_g: 17.6
-    fat_g: 25.3
-    satFat_g: 5.3
-    carbs_g: 65.3
-    fiber_g: 9.4
-    sugar_g: 4
-    sodium_mg: 292
-    availableCarb_g: 55.9
+    energyKcal: 658
+    energyKj: 2753
+    protein_g: 20.8
+    fat_g: 36.7
+    satFat_g: 7.8
+    carbs_g: 68.6
+    fiber_g: 10.4
+    sugar_g: 4.9
+    sodium_mg: 437
+    availableCarb_g: 58.2
   glycemic:
-    gi: 48
+    gi: 47
     gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 92
+    measuredGiPct: 89
   nutriScore:
-    grade: B
-    points: 1
+    grade: C
+    points: 3
     category: general
     version: "2023"
     coverage: 1
@@ -133,14 +133,14 @@ nutrition:
     score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.19
+    aromaticAdjustment: -0.21
   balance:
     score: 5
     band: moderate
-    nrf: 25.6
+    nrf: 24.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 89.6
+    minimallyProcessedPct: 87.4
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

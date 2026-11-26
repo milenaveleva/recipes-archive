@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13331-kremes-ricottas-paradicsomos-teszta-20-perces-olasz-vacsora
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT5M
 cookTime: PT15M
 totalTime: PT20M
@@ -17,11 +17,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dry whole-wheat penne
-    quantity: 400
+  - raw: 320 g dry whole-wheat penne
+    quantity: 320
     unit: g
     item: dry whole-wheat penne
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -98,16 +98,16 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 495
-    energyKj: 2073
-    protein_g: 19.6
-    fat_g: 18.8
-    satFat_g: 6.5
-    carbs_g: 68
-    fiber_g: 9.1
-    sugar_g: 6.3
-    sodium_mg: 706
-    availableCarb_g: 58.8
+    energyKcal: 549
+    energyKj: 2296
+    protein_g: 21.7
+    fat_g: 22.9
+    satFat_g: 8
+    carbs_g: 70.3
+    fiber_g: 9.6
+    sugar_g: 7.3
+    sodium_mg: 882
+    availableCarb_g: 60.7
   glycemic:
     gi: 47
     gl: 28
@@ -115,10 +115,10 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 92
+    measuredGiPct: 90
   nutriScore:
-    grade: B
-    points: 2
+    grade: C
+    points: 3
     category: general
     version: "2023"
     coverage: 1
@@ -126,14 +126,14 @@ nutrition:
     score: 0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.17
+    aromaticAdjustment: -0.21
   balance:
     score: 5
     band: moderate
-    nrf: 25.7
+    nrf: 25.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 76.5
+    minimallyProcessedPct: 73.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -152,7 +152,7 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. **Prepare and cook the pasta:** Bring plenty of lightly salted water to a boil in a large pot. When it is boiling vigorously, add the 400 g dry penne and cook al dente according to the package time (whole-wheat penne usually 1-2 minutes longer than white, about 10–12 minutes). Before draining, scoop out and set aside about 150–200 ml of the starchy pasta water.
+1. **Prepare and cook the pasta:** Bring plenty of lightly salted water to a boil in a large pot. When it is boiling vigorously, add the 320 g dry penne and cook al dente according to the package time (whole-wheat penne usually 1-2 minutes longer than white, about 10–12 minutes). Before draining, scoop out and set aside about 150–200 ml of the starchy pasta water.
 2. **Make the sauce:** While the pasta cooks, heat 3 tablespoons of extra virgin olive oil in a large pan over medium heat. Add the 3 finely chopped cloves of fresh garlic and sauté for 1 minute until fragrant (be careful not to burn it).
 3. Add the halved cherry tomatoes to the pan, season with 1 teaspoon of fine salt and a pinch of black pepper. Cook for 5–6 minutes until the tomatoes soften and release their juices. Gently press down half of them with a wooden spoon to create a rich sauce.
 4. **Assemble and serve:** Reduce the heat under the pan to the lowest setting and stir in the 250 g ricotta and 100 ml of the reserved hot pasta water. Stir thoroughly until you have a silky, smooth, creamy sauce.

@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13207-pasta-alla-norma-olasz-padlizsanos-penne-ricottaval
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat penne, dry
-    quantity: 400
+  - raw: 320 g whole-wheat penne, dry
+    quantity: 320
     unit: g
     item: whole-wheat penne
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -103,27 +103,27 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 509
-    energyKj: 2129
-    protein_g: 17.4
-    fat_g: 17.1
-    satFat_g: 3.9
-    carbs_g: 80.5
-    fiber_g: 14.1
-    sugar_g: 13.6
-    sodium_mg: 809
-    availableCarb_g: 66.4
+    energyKcal: 566
+    energyKj: 2367
+    protein_g: 19
+    fat_g: 20.7
+    satFat_g: 4.8
+    carbs_g: 85.9
+    fiber_g: 15.8
+    sugar_g: 16.4
+    sodium_mg: 1011
+    availableCarb_g: 70.2
   glycemic:
-    gi: 43
-    gl: 28
+    gi: 41
+    gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 77
+    measuredGiPct: 73
   nutriScore:
-    grade: A
-    points: 0
+    grade: B
+    points: 1
     category: general
     version: "2023"
     coverage: 1
@@ -131,14 +131,14 @@ nutrition:
     score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.17
+    aromaticAdjustment: -0.21
   balance:
     score: 5
     band: moderate
-    nrf: 29.8
+    nrf: 29.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 81.1
+    minimallyProcessedPct: 78.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

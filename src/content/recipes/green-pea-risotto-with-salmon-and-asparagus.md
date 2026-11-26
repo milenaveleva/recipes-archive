@@ -7,9 +7,9 @@ imageAlt: Green Pea Risotto with Salmon and Asparagus
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10339-zoeldborso-rizotto-lazaccal-spargaval
-  kcalPerServing: 384
+  kcalPerServing: 408
 author: Pataky Péter
-servings: 5
+servings: 4
 prepTime: PT20M
 cookTime: PT25M
 totalTime: PT45M
@@ -26,12 +26,12 @@ ingredients:
     fdcId: 175167
     matchConfidence: high
     cooking: fried
-  - raw: 400 g brown arborio rice, uncooked
-    quantity: 400
+  - raw: 320 g brown arborio rice, uncooked
+    quantity: 320
     unit: g
     item: brown arborio rice
     note: uncooked
-    grams: 400
+    grams: 320
     fdcId: 169706
     matchConfidence: high
     cooking: boiled
@@ -153,27 +153,27 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 806
-    energyKj: 3373
-    protein_g: 29.5
-    fat_g: 44
-    satFat_g: 8.6
-    carbs_g: 73.7
-    fiber_g: 5.1
-    sugar_g: 6.3
-    sodium_mg: 1951
-    availableCarb_g: 68.6
+    energyKcal: 935
+    energyKj: 3914
+    protein_g: 35.3
+    fat_g: 54.4
+    satFat_g: 10.7
+    carbs_g: 76.9
+    fiber_g: 5.7
+    sugar_g: 7.8
+    sodium_mg: 2438
+    availableCarb_g: 71.2
   glycemic:
-    gi: 62
+    gi: 59
     gl: 42
     giBand: medium
     glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 88
+    measuredGiPct: 86
   nutriScore:
-    grade: B
-    points: 2
+    grade: C
+    points: 3
     category: general
     version: "2023"
     coverage: 1
@@ -181,14 +181,14 @@ nutrition:
     score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.12
+    aromaticAdjustment: -0.15
   balance:
     score: 3
     band: low
-    nrf: 13.6
+    nrf: 13
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 91.7
+    minimallyProcessedPct: 91.1
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

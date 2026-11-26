@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13961-olasz-zoeldbabos-penne-fokhagymas-koktelparadicsommal-20-perces-serpenyos-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat penne, dry
+  - raw: 320 g whole-wheat penne, dry
     group: Pasta and vegetables
-    quantity: 400
+    quantity: 320
     unit: g
     item: whole-wheat penne
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -114,16 +114,16 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 442
-    energyKj: 1848
-    protein_g: 17.3
-    fat_g: 14.7
-    satFat_g: 3.4
-    carbs_g: 66.2
-    fiber_g: 9.5
-    sugar_g: 5.4
-    sodium_mg: 627
-    availableCarb_g: 56.8
+    energyKcal: 482
+    energyKj: 2016
+    protein_g: 18.8
+    fat_g: 17.8
+    satFat_g: 4.2
+    carbs_g: 68.1
+    fiber_g: 10
+    sugar_g: 6.3
+    sodium_mg: 783
+    availableCarb_g: 58.1
   glycemic:
     gi: 47
     gl: 27
@@ -131,10 +131,10 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 91
+    measuredGiPct: 88
   nutriScore:
     grade: B
-    points: 1
+    points: 2
     category: general
     version: "2023"
     coverage: 1
@@ -142,14 +142,14 @@ nutrition:
     score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.17
+    aromaticAdjustment: -0.21
   balance:
     score: 5
     band: moderate
     nrf: 28.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 89.4
+    minimallyProcessedPct: 87.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

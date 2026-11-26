@@ -7,9 +7,9 @@ imageAlt: Whole-Wheat Spaghetti with Roasted Garlic Pesto
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12783-teljes-kiorlesu-spagetti-suelt-fokhagymas-pestoval
-  kcalPerServing: 577
+  kcalPerServing: 503
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT10M
 cookTime: PT45M
 totalTime: PT55M
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 240 g dry whole-wheat spaghetti
+  - raw: 320 g dry whole-wheat spaghetti
     group: Main ingredients
-    quantity: 240
+    quantity: 320
     unit: g
     item: dry whole-wheat spaghetti
-    grams: 240
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -102,42 +102,42 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 598
-    energyKj: 2503
-    protein_g: 17.3
-    fat_g: 33.1
-    satFat_g: 6.4
-    carbs_g: 64
-    fiber_g: 7.9
-    sugar_g: 2.5
-    sodium_mg: 287
-    availableCarb_g: 56.1
+    energyKcal: 519
+    energyKj: 2171
+    protein_g: 15.7
+    fat_g: 25.4
+    satFat_g: 4.9
+    carbs_g: 62.7
+    fiber_g: 7.7
+    sugar_g: 2.4
+    sodium_mg: 216
+    availableCarb_g: 55
   glycemic:
     gi: 51
-    gl: 29
+    gl: 28
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 92
+    measuredGiPct: 94
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 1
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.2
+    score: -0.1
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.21
   balance:
     score: 4
     band: low
-    nrf: 20.7
+    nrf: 21.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 90.7
+    minimallyProcessedPct: 92
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14432-penne-all-arrabbiata-zsenge-karalabeval-pikans-olasz-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,11 +17,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dry whole-wheat penne
-    quantity: 400
+  - raw: 320 g dry whole-wheat penne
+    quantity: 320
     unit: g
     item: dry whole-wheat penne
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -102,42 +102,42 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 441
-    energyKj: 1845
-    protein_g: 17.4
-    fat_g: 13.6
-    satFat_g: 3.3
-    carbs_g: 69.4
-    fiber_g: 11
-    sugar_g: 7.2
-    sodium_mg: 808
-    availableCarb_g: 58.4
+    energyKcal: 481
+    energyKj: 2011
+    protein_g: 19
+    fat_g: 16.4
+    satFat_g: 4
+    carbs_g: 72.1
+    fiber_g: 12
+    sugar_g: 8.5
+    sodium_mg: 1010
+    availableCarb_g: 60.2
   glycemic:
-    gi: 47
-    gl: 27
+    gi: 46
+    gl: 28
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 88
+    measuredGiPct: 86
   nutriScore:
-    grade: A
-    points: 0
+    grade: B
+    points: 1
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.19
+    aromaticAdjustment: -0.24
   balance:
     score: 6
     band: moderate
-    nrf: 35.3
+    nrf: 36.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 84.8
+    minimallyProcessedPct: 82.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

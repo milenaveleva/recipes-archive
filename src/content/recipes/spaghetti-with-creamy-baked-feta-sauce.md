@@ -7,9 +7,9 @@ imageAlt: Spaghetti with Creamy Baked Feta Sauce
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12797-spagetti-kremes-suelt-feta-sajtos-szosszal
-  kcalPerServing: 704
+  kcalPerServing: 598
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT10M
 cookTime: PT35M
 totalTime: PT45M
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 240 g whole-wheat spaghetti, dry
-    quantity: 240
+  - raw: 320 g whole-wheat spaghetti, dry
+    quantity: 320
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 240
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -110,24 +110,24 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 631
-    energyKj: 2640
-    protein_g: 23.1
-    fat_g: 30.6
-    satFat_g: 11.2
-    carbs_g: 73.2
-    fiber_g: 10.5
-    sugar_g: 8.5
-    sodium_mg: 944
-    availableCarb_g: 62.7
+    energyKcal: 544
+    energyKj: 2275
+    protein_g: 20.1
+    fat_g: 23.5
+    satFat_g: 8.5
+    carbs_g: 69.6
+    fiber_g: 9.7
+    sugar_g: 6.9
+    sodium_mg: 709
+    availableCarb_g: 59.8
   glycemic:
-    gi: 44
+    gi: 45
     gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 82
+    measuredGiPct: 86
   nutriScore:
     grade: C
     points: 3
@@ -138,14 +138,14 @@ nutrition:
     score: 0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.13
+    aromaticAdjustment: -0.1
   balance:
-    score: 4
-    band: low
-    nrf: 23.9
+    score: 5
+    band: moderate
+    nrf: 24.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 70.3
+    minimallyProcessedPct: 74.2
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

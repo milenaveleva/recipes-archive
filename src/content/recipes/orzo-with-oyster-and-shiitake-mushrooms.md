@@ -7,7 +7,7 @@ imageAlt: Orzo with Oyster and Shiitake Mushrooms
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13000-orzo-laskagombaval-es-shiitake-gombaval
-  kcalPerServing: 597
+  kcalPerServing: 598
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M

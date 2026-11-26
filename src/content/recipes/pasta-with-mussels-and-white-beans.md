@@ -7,9 +7,9 @@ imageAlt: Pasta with Mussels and White Beans
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12988-teszta-kagyloval-es-feherbabbal
-  kcalPerServing: 427
+  kcalPerServing: 464
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT50M
 totalTime: PT1H
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat pasta (preferably cavatelli or fusilli), dry
-    quantity: 400
+  - raw: 320 g whole-wheat pasta (preferably cavatelli or fusilli), dry
+    quantity: 320
     unit: g
     item: whole-wheat pasta (preferably cavatelli or fusilli)
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -102,24 +102,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 455
-    energyKj: 1903
-    protein_g: 19.9
-    fat_g: 11.4
-    satFat_g: 1.7
-    carbs_g: 73.8
-    fiber_g: 11
-    sugar_g: 3.4
-    sodium_mg: 569
-    availableCarb_g: 62.9
+    energyKcal: 498
+    energyKj: 2084
+    protein_g: 22.1
+    fat_g: 13.7
+    satFat_g: 2
+    carbs_g: 77.6
+    fiber_g: 11.8
+    sugar_g: 3.7
+    sodium_mg: 711
+    availableCarb_g: 65.7
   glycemic:
     gi: 46
-    gl: 29
+    gl: 30
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 96
+    measuredGiPct: 95
   nutriScore:
     grade: A
     points: 0
@@ -130,11 +130,11 @@ nutrition:
     score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.11
+    aromaticAdjustment: -0.14
   balance:
     score: 6
     band: moderate
-    nrf: 33.2
+    nrf: 33.8
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14761-karamellizalt-salottahagymas-spagetti-pasta-allo-scalogno
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dry whole-wheat spaghetti
+  - raw: 320 g dry whole-wheat spaghetti
     group: Main ingredients
-    quantity: 400
+    quantity: 320
     unit: g
     item: dry whole-wheat spaghetti
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -123,24 +123,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 506
-    energyKj: 2116
-    protein_g: 18.4
-    fat_g: 17.6
-    satFat_g: 4.1
-    carbs_g: 75.4
-    fiber_g: 10.6
-    sugar_g: 9.5
-    sodium_mg: 614
-    availableCarb_g: 64.8
+    energyKcal: 562
+    energyKj: 2350
+    protein_g: 20.2
+    fat_g: 21.4
+    satFat_g: 5
+    carbs_g: 79.6
+    fiber_g: 11.5
+    sugar_g: 11.4
+    sodium_mg: 767
+    availableCarb_g: 68.2
   glycemic:
-    gi: 53
-    gl: 35
+    gi: 54
+    gl: 37
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 79
+    measuredGiPct: 75
   nutriScore:
     grade: B
     points: 2
@@ -151,14 +151,14 @@ nutrition:
     score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.41
+    aromaticAdjustment: -0.42
   balance:
     score: 5
     band: moderate
-    nrf: 24.8
+    nrf: 24.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 87.7
+    minimallyProcessedPct: 86.2
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13533-spagetti-fokhagymas-piritott-spenottal-es-fenyomaggal-15-perces-olasz-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT5M
 cookTime: PT10M
 totalTime: PT15M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dry whole-wheat spaghetti
+  - raw: 320 g dry whole-wheat spaghetti
     group: Main ingredients
-    quantity: 400
+    quantity: 320
     unit: g
     item: dry whole-wheat spaghetti
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -113,16 +113,16 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 478
-    energyKj: 1998
-    protein_g: 17.4
-    fat_g: 20.4
-    satFat_g: 3.9
-    carbs_g: 63
-    fiber_g: 8.8
-    sugar_g: 2.8
-    sodium_mg: 686
-    availableCarb_g: 54.2
+    energyKcal: 527
+    energyKj: 2203
+    protein_g: 18.9
+    fat_g: 24.9
+    satFat_g: 4.8
+    carbs_g: 64.1
+    fiber_g: 9.1
+    sugar_g: 3
+    sodium_mg: 857
+    availableCarb_g: 55
   glycemic:
     gi: 49
     gl: 27
@@ -130,25 +130,25 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 95
+    measuredGiPct: 93
   nutriScore:
-    grade: B
-    points: 2
+    grade: C
+    points: 4
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: -0.2
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.21
   balance:
     score: 6
     band: moderate
-    nrf: 33.4
+    nrf: 34
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 91.3
+    minimallyProcessedPct: 90.1
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

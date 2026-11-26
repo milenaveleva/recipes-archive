@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14696-penne-alla-boscaiola-kremes-gombas-es-zoeldborsos-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dried whole-wheat penne
+  - raw: 320 g dried whole-wheat penne
     group: Pasta and vegetables
-    quantity: 400
+    quantity: 320
     unit: g
     item: dried whole-wheat penne
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -127,43 +127,43 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 514
-    energyKj: 2151
-    protein_g: 20.3
-    fat_g: 19.3
-    satFat_g: 4.2
-    carbs_g: 71.2
-    fiber_g: 11.3
-    sugar_g: 6.7
-    sodium_mg: 612
-    availableCarb_g: 59.9
+    energyKcal: 572
+    energyKj: 2394
+    protein_g: 22.6
+    fat_g: 23.5
+    satFat_g: 5.1
+    carbs_g: 74.3
+    fiber_g: 12.3
+    sugar_g: 7.9
+    sodium_mg: 764
+    availableCarb_g: 62
   glycemic:
-    gi: 48
-    gl: 28
+    gi: 47
+    gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 90
+    measuredGiPct: 88
   nutriScore:
     grade: B
     points: 1
     category: general
     version: "2023"
-    coverage: 0.89
+    coverage: 0.87
   inflammation:
-    score: -0.1
+    score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.17
+    aromaticAdjustment: -0.22
   balance:
     score: 5
     band: moderate
-    nrf: 28.7
+    nrf: 28.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 78.3
-    ultraProcessedPct: 12
+    minimallyProcessedPct: 75.7
+    ultraProcessedPct: 13.4
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13109-pisztacias-pestos-tagliatelle-burrataval-olasz-nyari-kedvenc
 author: Kifli Kukták
-servings: 4
+servings: 2
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 320 g dry whole-wheat tagliatelle
+  - raw: 160 g dry whole-wheat tagliatelle
     group: Main ingredients
-    quantity: 320
+    quantity: 160
     unit: g
     item: dry whole-wheat tagliatelle
-    grams: 320
+    grams: 160
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -104,27 +104,27 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 652
-    energyKj: 2728
-    protein_g: 27.5
-    fat_g: 33.9
-    satFat_g: 10.1
-    carbs_g: 66.2
-    fiber_g: 9.7
-    sugar_g: 3.8
-    sodium_mg: 841
-    availableCarb_g: 56.5
+    energyKcal: 1022
+    energyKj: 4277
+    protein_g: 44
+    fat_g: 65.4
+    satFat_g: 19.8
+    carbs_g: 73.6
+    fiber_g: 12.1
+    sugar_g: 5.5
+    sodium_mg: 1679
+    availableCarb_g: 61.6
   glycemic:
-    gi: 48
+    gi: 44
     gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 91
+    measuredGiPct: 84
   nutriScore:
-    grade: C
-    points: 4
+    grade: D
+    points: 12
     category: general
     version: "2023"
     coverage: 1
@@ -132,16 +132,16 @@ nutrition:
     score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.13
+    aromaticAdjustment: -0.2
   balance:
     score: 3
     band: low
-    nrf: 17.5
+    nrf: 14.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 76.4
+    minimallyProcessedPct: 69.9
     ultraProcessedPct: 0
-    band: minimally-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"
   dataSources:

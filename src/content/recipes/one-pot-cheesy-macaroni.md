@@ -7,9 +7,9 @@ imageAlt: One-Pot Cheesy Macaroni
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12554-egylabas-sajtos-makaroni
-  kcalPerServing: 639
+  kcalPerServing: 729
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT5M
 cookTime: PT15M
 totalTime: PT20M
@@ -36,12 +36,12 @@ ingredients:
     fdcId: 2257046
     matchConfidence: high
     cooking: boiled
-  - raw: 400 g whole-wheat elbow macaroni, dry
-    quantity: 400
+  - raw: 320 g whole-wheat elbow macaroni, dry
+    quantity: 320
     unit: g
     item: whole-wheat elbow macaroni
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -74,43 +74,43 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 625
-    energyKj: 2616
-    protein_g: 26.6
-    fat_g: 28.1
-    satFat_g: 11.7
-    carbs_g: 71.8
-    fiber_g: 7.6
-    sugar_g: 7.3
-    sodium_mg: 954
-    availableCarb_g: 64.2
+    energyKcal: 711
+    energyKj: 2976
+    protein_g: 30.5
+    fat_g: 34.5
+    satFat_g: 14.5
+    carbs_g: 75.1
+    fiber_g: 7.7
+    sugar_g: 8.6
+    sodium_mg: 1193
+    availableCarb_g: 67.4
   glycemic:
     gi: 52
-    gl: 33
+    gl: 35
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 97
+    measuredGiPct: 96
   nutriScore:
     grade: C
     points: 3
     category: general
     version: "2023"
-    coverage: 0.57
+    coverage: 0.53
   inflammation:
     score: 0.8
     band: pro-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.06
+    aromaticAdjustment: -0.07
   balance:
-    score: 3
-    band: low
-    nrf: 10.2
+    score: 2
+    band: poor
+    nrf: 7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 45.4
-    ultraProcessedPct: 15.9
+    minimallyProcessedPct: 40
+    ultraProcessedPct: 17.5
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

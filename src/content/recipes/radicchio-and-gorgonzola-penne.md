@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13453-radicchios-gorgonzolas-penne-kremes-olasz-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat penne, dry
+  - raw: 320 g whole-wheat penne, dry
     group: Pasta and sauce
-    quantity: 400
+    quantity: 320
     unit: g
     item: whole-wheat penne
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -114,44 +114,44 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 574
-    energyKj: 2403
-    protein_g: 23.2
-    fat_g: 27.9
-    satFat_g: 8.9
-    carbs_g: 63.8
-    fiber_g: 8.4
-    sugar_g: 3.2
-    sodium_mg: 930
-    availableCarb_g: 55.4
+    energyKcal: 648
+    energyKj: 2710
+    protein_g: 26.3
+    fat_g: 34.3
+    satFat_g: 11
+    carbs_g: 65.1
+    fiber_g: 8.7
+    sugar_g: 3.4
+    sodium_mg: 1161
+    availableCarb_g: 56.4
   glycemic:
-    gi: 48
+    gi: 47
     gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 93
+    measuredGiPct: 91
   nutriScore:
     grade: C
-    points: 5
+    points: 6
     category: general
     version: "2023"
-    coverage: 0.94
+    coverage: 0.93
   inflammation:
     score: 0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.11
+    aromaticAdjustment: -0.14
   balance:
     score: 3
     band: low
-    nrf: 16.8
+    nrf: 15.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 70.7
-    ultraProcessedPct: 5.4
-    band: minimally-processed
+    minimallyProcessedPct: 67.6
+    ultraProcessedPct: 5.9
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"
   dataSources:

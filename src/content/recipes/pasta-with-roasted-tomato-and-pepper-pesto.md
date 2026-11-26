@@ -7,9 +7,9 @@ imageAlt: Pasta with Roasted Tomato and Pepper Pesto
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11916-teszta-suelt-paradicsomos-es-paprikas-pestoval-egeszseges-es-gyors-vacsora
-  kcalPerServing: 507
+  kcalPerServing: 451
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT15M
 cookTime: PT45M
 totalTime: PT1H
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 240 g whole-wheat pasta, dry
-    quantity: 240
+  - raw: 320 g whole-wheat pasta, dry
+    quantity: 320
     unit: g
     item: whole-wheat pasta
     note: dry
-    grams: 240
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -113,24 +113,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 493
-    energyKj: 2061
-    protein_g: 14.4
-    fat_g: 18
-    satFat_g: 1.6
-    carbs_g: 76.5
-    fiber_g: 12.2
-    sugar_g: 10.5
-    sodium_mg: 69
-    availableCarb_g: 64.3
+    energyKcal: 440
+    energyKj: 1841
+    protein_g: 13.5
+    fat_g: 14.1
+    satFat_g: 1.3
+    carbs_g: 72
+    fiber_g: 11
+    sugar_g: 8.4
+    sodium_mg: 52
+    availableCarb_g: 61
   glycemic:
-    gi: 46
-    gl: 29
+    gi: 47
+    gl: 28
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 80
+    measuredGiPct: 84
   nutriScore:
     grade: A
     points: -1
@@ -138,14 +138,14 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.6
+    score: -0.5
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.41
+    aromaticAdjustment: -0.39
   balance:
     score: 7
     band: high
-    nrf: 60.6
+    nrf: 55.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13434-pasta-alla-checca-friss-romai-paradicsomos-teszta
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT15M
 cookTime: PT10M
 totalTime: PT25M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dry whole-wheat penne
+  - raw: 320 g dry whole-wheat penne
     group: Ingredients
-    quantity: 400
+    quantity: 320
     unit: g
     item: dry whole-wheat penne
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -102,27 +102,27 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 589
-    energyKj: 2464
-    protein_g: 27.1
-    fat_g: 27.1
-    satFat_g: 10.5
-    carbs_g: 64.9
-    fiber_g: 8.1
-    sugar_g: 4.8
-    sodium_mg: 900
-    availableCarb_g: 56.7
+    energyKcal: 666
+    energyKj: 2786
+    protein_g: 31.1
+    fat_g: 33.2
+    satFat_g: 13.1
+    carbs_g: 66.4
+    fiber_g: 8.3
+    sugar_g: 5.4
+    sodium_mg: 1125
+    availableCarb_g: 58.1
   glycemic:
-    gi: 47
-    gl: 27
+    gi: 46
+    gl: 26
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 91
+    measuredGiPct: 88
   nutriScore:
     grade: C
-    points: 3
+    points: 4
     category: general
     version: "2023"
     coverage: 1
@@ -130,14 +130,14 @@ nutrition:
     score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.11
+    aromaticAdjustment: -0.14
   balance:
     score: 4
     band: low
-    nrf: 21.5
+    nrf: 20.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 67.6
+    minimallyProcessedPct: 64.1
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

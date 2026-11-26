@@ -7,9 +7,9 @@ imageAlt: Spaghetti with Sun-Dried Tomatoes and Rocket
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12631-spagetti-aszalt-paradicsommal-es-rukkolaval
-  kcalPerServing: 496
+  kcalPerServing: 550
 author: Kifli Kukták
-servings: 5
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g whole-wheat spaghetti, dry
-    quantity: 400
+  - raw: 320 g whole-wheat spaghetti, dry
+    quantity: 320
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 400
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -106,42 +106,42 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 596
-    energyKj: 2496
-    protein_g: 22.1
-    fat_g: 28.6
-    satFat_g: 5.8
-    carbs_g: 70.9
-    fiber_g: 10.1
-    sugar_g: 4.4
-    sodium_mg: 343
-    availableCarb_g: 60.8
+    energyKcal: 675
+    energyKj: 2825
+    protein_g: 24.9
+    fat_g: 35.1
+    satFat_g: 7.1
+    carbs_g: 74
+    fiber_g: 10.8
+    sugar_g: 4.9
+    sodium_mg: 428
+    availableCarb_g: 63.2
   glycemic:
-    gi: 51
-    gl: 31
+    gi: 52
+    gl: 33
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 84
+    measuredGiPct: 81
   nutriScore:
     grade: B
     points: 1
     category: general
     version: "2023"
-    coverage: 0.94
+    coverage: 0.93
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.27
+    aromaticAdjustment: -0.28
   balance:
     score: 6
     band: moderate
-    nrf: 31.4
+    nrf: 31.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 86.9
+    minimallyProcessedPct: 85.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

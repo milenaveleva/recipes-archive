@@ -7,9 +7,9 @@ imageAlt: Sweet Potato Mac 'n' Cheese with Cheddar
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12655-mac-n-cheese-edesburgonyaval-es-cheddarral
-  kcalPerServing: 554
+  kcalPerServing: 485
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT15M
 cookTime: PT25M
 totalTime: PT40M
@@ -18,13 +18,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 240 g whole-wheat elbow macaroni, dry
+  - raw: 320 g whole-wheat elbow macaroni, dry
     group: Main ingredients
-    quantity: 240
+    quantity: 320
     unit: g
     item: whole-wheat elbow macaroni
     note: dry
-    grams: 240
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -93,43 +93,43 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 635
-    energyKj: 2657
-    protein_g: 22
-    fat_g: 21.1
-    satFat_g: 6.5
-    carbs_g: 94.5
-    fiber_g: 12.4
-    sugar_g: 10.4
-    sodium_mg: 332
-    availableCarb_g: 82.1
+    energyKcal: 547
+    energyKj: 2287
+    protein_g: 19.3
+    fat_g: 16.4
+    satFat_g: 5
+    carbs_g: 85.6
+    fiber_g: 11.1
+    sugar_g: 8.3
+    sodium_mg: 250
+    availableCarb_g: 74.4
   glycemic:
     gi: 48
-    gl: 39
+    gl: 36
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 97
+    measuredGiPct: 98
   nutriScore:
     grade: B
     points: 1
     category: general
     version: "2023"
-    coverage: 0.87
+    coverage: 0.88
   inflammation:
     score: 0.1
     band: neutral
     method: fii v4
   balance:
-    score: 7
-    band: high
-    nrf: 41.9
+    score: 6
+    band: moderate
+    nrf: 40.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 66.9
-    ultraProcessedPct: 16.1
-    band: moderately-processed
+    minimallyProcessedPct: 71.2
+    ultraProcessedPct: 14.1
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"
   dataSources:
