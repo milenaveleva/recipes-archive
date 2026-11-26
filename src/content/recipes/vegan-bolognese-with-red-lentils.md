@@ -27,11 +27,11 @@ ingredients:
     matchConfidence: medium
     cooking: fried
     proxyOk: true
-  - raw: 40 g red lentils, uncooked
+  - raw: 40 g red lentils, dry
     quantity: 40
     unit: g
     item: red lentils
-    note: uncooked
+    note: dry
     grams: 40
     fdcId: 174284
     matchConfidence: high
@@ -53,7 +53,8 @@ ingredients:
     cooking: fried
   - raw: 2 stalks celery
     quantity: 2
-    item: stalks celery
+    unit: stalks
+    item: celery
     grams: 80
     fdcId: 169988
     matchConfidence: high

@@ -16,6 +16,7 @@ import { recordPending, prunePending, isBuildFresh } from '../../core/pending';
 import type { NutriCategory } from '../../core/nutriscore';
 import { COOKING_METHODS, type CookingMethod } from '../../core/cooking';
 import type { ValidationResult } from '../../core/validate';
+import allowlistData from '../../data/validation-allowlist.json';
 import {
   EMPTY_FORM,
   loadFoods,
@@ -25,6 +26,8 @@ import {
   computeNutrition,
   rowsToResolved,
   validateRows,
+  validateMethod,
+  normalizeRows,
   formFromExtract,
   formFromRecipe,
   rowsFromIngredients,
@@ -51,6 +54,9 @@ import { GITHUB_MARK_PATH } from '../../lib/icons';
 import { withBase } from '../../lib/url';
 import { buildScoreDials, hasAnyScore } from '../../lib/recipe';
 import ScoreDial from './ScoreDial';
+
+/** (recipe slug, issue code) pairs whose gate errors are allowed (src/data/validation-allowlist.json). */
+const ALLOWED = new Set((allowlistData as { slug: string; code: string }[]).map((a) => `${a.slug}|${a.code}`));
 
 const PROXY = (import.meta.env.PUBLIC_IMPORT_PROXY as string | undefined)?.trim();
 
@@ -94,6 +100,8 @@ export default function AddRecipe() {
   const [form, setForm] = useState<FormState>(EMPTY_FORM);
   const [ingredientsText, setIngredientsText] = useState('');
   const [rows, setRows] = useState<IngredientRow[]>([]);
+  // What the house rules auto-fixed on the last import / parse (houseRules.ts normalizeRecipe).
+  const [autoFixes, setAutoFixes] = useState<string[]>([]);
 
   // Edit mode: ?edit=<slug> loads an existing recipe to overwrite in place.
   const [editSlug, setEditSlug] = useState<string | null>(null);
@@ -219,6 +227,24 @@ export default function AddRecipe() {
       ),
     [rows, form.title, form.servings, form.course, form.sourceKcalPerServing, resolved, macro],
   );
+  // House rules on the method and tips text (meat suggestions), merged into the gate's list.
+  const methodValidation = useMemo(
+    () => validateMethod(`${form.instructions}\n${editBodyAfter}`),
+    [form.instructions, editBodyAfter],
+  );
+  // Errors listed in src/data/validation-allowlist.json for this recipe's slug are allowed,
+  // as in scripts/validate-recipes.mjs; a new recipe's slug is its future file name.
+  const allowSlug = useMemo(
+    () => editSlug ?? recipeFilename(draft).replace(/^.*\//, '').replace(/\.md$/, ''),
+    [editSlug, draft],
+  );
+  const allValidation = useMemo(
+    () => ({
+      errors: [...validation.errors, ...methodValidation.errors].filter((e) => !ALLOWED.has(`${allowSlug}|${e.code}`)),
+      warnings: validation.warnings,
+    }),
+    [validation, methodValidation, allowSlug],
+  );
 
   function setField<K extends keyof FormState>(key: K, value: FormState[K]) {
     setForm((f) => ({ ...f, [key]: value }));
@@ -260,10 +286,19 @@ export default function AddRecipe() {
     return fresh;
   }
 
+  /** Apply the house-rule auto-fixes to freshly parsed rows and the method. */
+  function applyHouseRules(parsed: IngredientRow[], f: FormState) {
+    const fixed = normalizeRows(parsed, f);
+    setRows(fixed.rows);
+    setAutoFixes(fixed.changes);
+    if (fixed.changes.length) setIngredientsText(fixed.rows.map((r) => r.raw).join('\n'));
+    if (fixed.instructions !== f.instructions) setForm((cur) => ({ ...cur, instructions: fixed.instructions }));
+  }
+
   function parseIngredients() {
     if (!foodsLoaded) return; // matching needs the food DB
     // Re-parse, keeping match/weight/exclude edits for unchanged lines.
-    setRows((prev) => reparseRows(ingredientsText, prev));
+    applyHouseRules(reparseRows(ingredientsText, rows), form);
   }
 
   async function handleImport() {
@@ -277,9 +312,10 @@ export default function AddRecipe() {
       const extracted = extractRecipe(html, { sourceUrl: importUrl });
       if (!extracted) throw new Error('No recipe metadata found on that page.');
       const ingredientsText = extracted.ingredients.join('\n');
-      setForm(formFromExtract(extracted));
+      const imported = formFromExtract(extracted);
+      setForm(imported);
       setIngredientsText(ingredientsText);
-      setRows(linesToRows(ingredientsText));
+      applyHouseRules(linesToRows(ingredientsText), imported);
       setImportState('idle');
     } catch (err) {
       setImportState('error');
@@ -401,8 +437,13 @@ export default function AddRecipe() {
   // In edit mode, wait for the recipe to load (editPath) so a failed load can't
   // commit the form to the wrong file.
   const editReady = editSlug == null || editPath != null;
+  // A gate error (including a house-rule error) blocks the commit until it is fixed.
   const canPublish =
-    draft.title.trim().length > 0 && hasIngredient && publishState !== 'saving' && editReady;
+    draft.title.trim().length > 0 &&
+    hasIngredient &&
+    allValidation.errors.length === 0 &&
+    publishState !== 'saving' &&
+    editReady;
 
   return (
     <div className="font-body text-ink grid gap-6">
@@ -587,7 +628,8 @@ export default function AddRecipe() {
             ))}
           </div>
         )}
-        {rows.length > 0 && <ValidationList result={validation} />}
+        {autoFixes.length > 0 && <AutoFixList changes={autoFixes} />}
+        {rows.length > 0 && <ValidationList result={allValidation} />}
       </Card>
 
       <Card>
@@ -632,6 +674,11 @@ export default function AddRecipe() {
             </button>
           )}
         </div>
+        {allValidation.errors.length > 0 && (
+          <p className="text-right text-xs text-band-bad">
+            Fix the {allValidation.errors.length} data-check error{allValidation.errors.length === 1 ? '' : 's'} above to {editSlug ? 'save' : 'publish'}.
+          </p>
+        )}
         {!session && (
           <p className="text-right text-xs text-ink-faint">
             {PROXY
@@ -880,6 +927,22 @@ function ValidationList({ result }: { result: ValidationResult }) {
           <li key={k} className={i.tone === 'error' ? 'text-band-bad' : 'text-ink-faint'}>
             <span className="font-mono">{i.code}</span> {i.message}
           </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/** What the house rules changed on the last import / parse, for the author to review. */
+function AutoFixList({ changes }: { changes: string[] }) {
+  return (
+    <div className="mt-4 rounded-lg border border-line bg-paper/60 px-3 py-2">
+      <p className="text-xs font-ui text-ink-soft">
+        Auto-fixed to the house rules: {changes.length} change{changes.length === 1 ? '' : 's'}
+      </p>
+      <ul className="mt-1 grid gap-0.5 text-xs text-ink-faint">
+        {changes.map((c, k) => (
+          <li key={k}>{c}</li>
         ))}
       </ul>
     </div>

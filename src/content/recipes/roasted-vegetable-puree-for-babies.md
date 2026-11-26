@@ -137,7 +137,7 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Recommended from 9 months of age. When you make chicken or vegetable soup, freeze the broth in small portions so you can use it instead of water to thin cream soups, sauces and vegetable stews, which makes them much tastier. A baby food storage tray works great for this!
+1. Recommended from 9 months of age. When you make vegetable soup, freeze the broth in small portions so you can use it instead of water to thin cream soups, sauces and vegetable stews, which makes them much tastier. A baby food storage tray works great for this!
 2. Peel and chop the vegetables, toss them with the oil and roast in a 170 °C oven until soft. It is worth making a larger batch to make use of the oven space.
 3. When done, blend the vegetables together with the juice released by the tomatoes and the soup broth.
 4. If you have a food allergy or follow a special diet, please check the ingredients before preparing the recipe!

@@ -125,11 +125,11 @@ ingredients:
     fdcId: 170150
     matchConfidence: high
     cooking: raw
-  - raw: 160 g brown rice, uncooked
+  - raw: 160 g brown rice, dry
     quantity: 160
     unit: g
     item: brown rice
-    note: uncooked
+    note: dry
     grams: 160
     fdcId: 169703
     matchConfidence: high

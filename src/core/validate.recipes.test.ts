@@ -25,9 +25,10 @@ const allow = new Set((allowlistData as { slug: string; code: string }[]).map((a
 
 const files = Object.keys(RECIPE_FILES).sort();
 
+/** The frontmatter plus the markdown body (the house rules read the method and tips). */
 function frontmatter(text: string): (ValidatableRecipe & { slug?: string }) | null {
-  const m = /^---\n([\s\S]*?)\n---/.exec(text);
-  return m ? parseYaml(m[1]) : null;
+  const m = /^---\n([\s\S]*?)\n---\n?([\s\S]*)$/.exec(text);
+  return m ? { ...parseYaml(m[1]), body: m[2] } : null;
 }
 
 describe('recipe ingredient data passes the validation gate', () => {

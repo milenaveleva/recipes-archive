@@ -136,7 +136,7 @@ nutrition:
     measuredGiPct: 81
   nutriScore:
     grade: C
-    points: 8
+    points: 7
     category: general
     version: "2023"
     coverage: 0.82

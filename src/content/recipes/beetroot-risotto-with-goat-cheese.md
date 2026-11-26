@@ -22,6 +22,7 @@ ingredients:
     quantity: 500
     unit: g
     item: beetroot
+    note: raw
     grams: 500
     fdcId: 169145
     matchConfidence: high
@@ -80,11 +81,11 @@ ingredients:
     fdcId: 173431
     matchConfidence: high
     cooking: boiled
-  - raw: 320 g brown arborio rice, uncooked
+  - raw: 320 g brown arborio rice, dry
     quantity: 320
     unit: g
     item: brown arborio rice
-    note: uncooked
+    note: dry
     grams: 320
     fdcId: 169706
     matchConfidence: high

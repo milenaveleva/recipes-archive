@@ -57,6 +57,7 @@ const FOODS: FoodRecord[] = [
   { fdcId: 40, description: 'Mangos, raw', category: 'Fruits and Fruit Juices', n: { energyKcal: 60, carbs_g: 15, fiber_g: 1.6 } },
   { fdcId: 42, description: 'Oil, olive, salad or cooking', n: { energyKcal: 884, fat_g: 100 } },
   { fdcId: 41, description: 'Potatoes, flesh and skin, raw', category: 'Vegetables and Vegetable Products', n: { energyKcal: 77, carbs_g: 17.5, fiber_g: 2.1 } },
+  { fdcId: 43, description: 'Rice, brown, long-grain, raw', category: 'Cereal Grains and Pasta', n: { energyKcal: 367, carbs_g: 76, fiber_g: 3.6 } },
 ];
 const foodById = new Map(FOODS.map((f) => [f.fdcId!, f]));
 
@@ -184,17 +185,24 @@ describe('identity + false friends', () => {
 });
 
 describe('state', () => {
-  it('flags cooked rice stored against raw rice by cooked weight', () => {
-    expect(lineIssues(line('500 g cooked rice', 6, 500, { unit: 'g', quantity: 500 })).errors).toEqual(['STATE_MISMATCH']);
+  it('flags boiled potatoes stored against raw potatoes by cooked weight', () => {
+    expect(lineIssues(line('500 g boiled potatoes', 41, 500, { unit: 'g', quantity: 500 })).errors).toEqual(['STATE_MISMATCH']);
   });
 
-  it('accepts the "(≈ N g uncooked)" raw-equivalent note', () => {
-    const ing = line('500 g cooked rice (≈ 168 g uncooked)', 6, 168, { item: 'cooked rice', note: '≈ 168 g uncooked', unit: 'g', quantity: 500 });
-    expect(lineIssues(ing)).toEqual({ errors: [], warnings: [] });
+  it('reports a cooked staple as NOT_DRY_STAPLE, not also STATE_MISMATCH', () => {
+    const errors = lineIssues(line('500 g cooked brown rice', 43, 500, { unit: 'g', quantity: 500 })).errors;
+    expect(errors).toContain('NOT_DRY_STAPLE');
+    expect(errors).not.toContain('STATE_MISMATCH');
+  });
+
+  it('treats the "(≈ N g uncooked)" note as house-rule wording, not a state conflict', () => {
+    const ing = line('500 g cooked brown rice (≈ 168 g uncooked)', 43, 168, { item: 'cooked brown rice', note: '≈ 168 g uncooked', unit: 'g', quantity: 500 });
+    expect(lineIssues(ing).errors).toContain('FORBIDDEN_WORDING');
+    expect(lineIssues(ing).errors).not.toContain('STATE_MISMATCH');
   });
 
   it('accepts a line listed in its dry form with the preparation as the note', () => {
-    const ing = line('168 g dried brown rice, cooked', 6, 168, { item: 'dried brown rice', note: 'cooked', unit: 'g', quantity: 168 });
+    const ing = line('80 g brown rice, dry, cooked', 43, 80, { item: 'brown rice', note: 'dry, cooked', unit: 'g', quantity: 80 });
     expect(lineIssues(ing)).toEqual({ errors: [], warnings: [] });
   });
 
@@ -204,7 +212,7 @@ describe('state', () => {
   });
 
   it('proxyOk silences the state check', () => {
-    expect(lineIssues(line('500 g cooked rice', 6, 500, { proxyOk: true })).errors).toEqual([]);
+    expect(lineIssues(line('500 g boiled potatoes', 41, 500, { proxyOk: true })).errors).toEqual([]);
   });
 });
 
@@ -216,7 +224,7 @@ describe('grams per unit', () => {
   });
 
   it('checks spoons, with lighter ranges for leafy herbs', () => {
-    expect(lineIssues(line('1 tsp sugar', 12, 30, { item: 'sugar', quantity: 1, unit: 'tsp' })).errors).toEqual(['GRAMS_PER_UNIT']);
+    expect(lineIssues(line('1 tsp honey', 38, 30, { item: 'honey', quantity: 1, unit: 'tsp' })).errors).toEqual(['GRAMS_PER_UNIT']);
     expect(lineIssues(line('1 tbsp fresh dill', 34, 0.6, { item: 'fresh dill', quantity: 1, unit: 'tbsp' }))).toEqual({ errors: [], warnings: [] });
   });
 

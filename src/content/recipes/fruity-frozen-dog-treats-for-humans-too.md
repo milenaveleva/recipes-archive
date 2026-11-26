@@ -40,10 +40,10 @@ ingredients:
     fdcId: 171711
     matchConfidence: medium
     cooking: raw
-  - raw: plain yogurt, optional (instead of water)
+  - raw: plain yogurt, optional
     group: If you want to make it differently
-    item: plain yogurt, optional
-    note: instead of water
+    item: plain yogurt
+    note: optional
     grams: 50
     fdcId: 171284
     matchConfidence: high

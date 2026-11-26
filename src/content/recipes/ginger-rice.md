@@ -13,11 +13,11 @@ totalTime: PT50M
 cuisine: Japanese
 course: Side Dish
 ingredients:
-  - raw: 1½ cups Japanese short-grain brown rice (uncooked)
+  - raw: 1½ cups Japanese short-grain brown rice (dry)
     quantity: 1.5
     unit: cups
     item: Japanese short-grain brown rice
-    note: uncooked
+    note: dry
     grams: 285
     milliliters: 354.882
     fdcId: 169706

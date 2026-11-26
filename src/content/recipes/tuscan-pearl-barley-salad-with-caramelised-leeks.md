@@ -17,11 +17,11 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g pearl barley, uncooked
+  - raw: 200 g pearl barley, dry
     quantity: 200
     unit: g
     item: pearl barley
-    note: uncooked
+    note: dry
     grams: 200
     fdcId: 170284
     matchConfidence: high

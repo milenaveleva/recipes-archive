@@ -13,12 +13,12 @@ totalTime: PT1H10M
 cuisine: American
 course: Side Dish
 ingredients:
-  - raw: 3 beetroots
+  - raw: 3 beetroots, raw
     quantity: 3
     item: beetroots
-    note: roasted
+    note: raw
     grams: 250
-    fdcId: 169146
+    fdcId: 169145
     matchConfidence: high
     cooking: baked
   - raw: 3/4 cup walnuts and pecans
@@ -84,7 +84,9 @@ ingredients:
     cooking: raw
   - raw: 6 leaves fresh mint
     quantity: 6
-    item: leaves fresh mint
+    unit: leaves
+    item: mint
+    note: fresh
     grams: 0.9
     fdcId: 173475
     matchConfidence: high
@@ -106,24 +108,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 319
-    energyKj: 1334
+    energyKcal: 318
+    energyKj: 1331
     protein_g: 3.6
-    fat_g: 27
+    fat_g: 26.9
     satFat_g: 7
-    carbs_g: 20.1
-    fiber_g: 5
-    sugar_g: 11
-    sodium_mg: 246
-    availableCarb_g: 14
+    carbs_g: 19.8
+    fiber_g: 5.6
+    sugar_g: 10.2
+    sodium_mg: 247
+    availableCarb_g: 13.3
   glycemic:
-    gi: 47
+    gi: 46
     gl: 6
     giBand: low
     glBand: low
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 68
+    measuredGiPct: 34
   nutriScore:
     grade: C
     points: 5
@@ -131,22 +133,23 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
+    score: 0
     band: neutral
     method: fii v4
   balance:
     score: 2
     band: poor
-    nrf: 4.2
+    nrf: 5.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 81.6
+    minimallyProcessedPct: 81.5
     ultraProcessedPct: 18.2
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-06-28"
   dataSources:
     - USDA FoodData Central
+    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols

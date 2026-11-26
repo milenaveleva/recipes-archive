@@ -10,9 +10,16 @@
  * (src/components/add/addLib.ts: parse → USDA match → grams → cooking → macros → scores)
  * and src/core/markdown.ts, so an imported file is byte-for-byte what /add would author.
  *
+ * Before compiling, each translation runs through the house rules' auto-fixes
+ * (src/core/houseRules.ts `normalizeRecipe`: dairy/alcohol/sugar/refined-grain swaps, cooked
+ * staples to dry weight, handfuls to grams, olive oil in spoons, eggs as a count, the 80 g
+ * main-course grain portion, drink water and brewed records); the list of fixes is printed
+ * per recipe. A recipe that still breaks a house rule afterwards is refused, never written.
+ * Near-duplicates of a recipe on the site (houseRules.ts `findDuplicateRecipes`) are warned.
+ *
  *   --check (default)  print per recipe our kcal/serving vs kifli's and each ingredient's
  *                      status (ok / NOMATCH / NOGRAMS / EXCL), matched food and grams,
- *                      plus the validation gate's findings. Writes nothing.
+ *                      the auto-fixes and the validation gate's findings. Writes nothing.
  *   --write            write the markdown to src/content/recipes/<slug>.md and copy the
  *                      hero image to src/content/recipes/images/<slug>.jpg. Without --ids
  *                      only ids not yet imported are written. A target file is replaced
@@ -91,7 +98,13 @@ function compileEngine() {
     return resolve.call(this, request, ...rest);
   };
   const req = createRequire(import.meta.url);
-  return { outDir, addLib: req(addLibJs), markdown: req(markdownJs), units: req(path.join(outDir, 'core/units.js')) };
+  return {
+    outDir,
+    addLib: req(addLibJs),
+    markdown: req(markdownJs),
+    units: req(path.join(outDir, 'core/units.js')),
+    house: req(path.join(outDir, 'core/houseRules.js')),
+  };
 }
 
 /* ---- existing recipes (for slug collisions and already-imported ids) ---- */
@@ -99,6 +112,7 @@ function compileEngine() {
 function scanRecipes() {
   const bySlug = new Map(); // slug → kifli id of its source (null when not a kifli import)
   const byKifliId = new Map(); // kifli id → { slug, createdAt }
+  const corpus = []; // { slug, kifliId, ingredients } for the near-duplicate check
   for (const file of readdirSync(RECIPES).filter((f) => f.endsWith('.md'))) {
     const slug = file.slice(0, -3);
     const fm = /^---\n([\s\S]*?)\n---/.exec(readFileSync(path.join(RECIPES, file), 'utf8'));
@@ -111,8 +125,9 @@ function scanRecipes() {
     const id = data?.source?.name === 'kifli.hu' ? kifliId(data?.source?.url) : null;
     bySlug.set(slug, id);
     if (id != null) byKifliId.set(id, { slug, createdAt: data?.createdAt });
+    corpus.push({ slug, kifliId: id, ingredients: data?.ingredients ?? [] });
   }
-  return { bySlug, byKifliId };
+  return { bySlug, byKifliId, corpus };
 }
 
 function baseSlug(slugifyRecipe, title) {
@@ -131,6 +146,56 @@ function chooseSlug(id, title, existing, claimed, slugifyRecipe) {
   if (free(suffixed)) return { slug: suffixed, replaces: false };
   return { slug: null, reason: `both ${base}.md and ${suffixed}.md are taken by other recipes` };
 }
+
+/* ---- house-rule auto-fixes ---- */
+
+/**
+ * Run the translation through houseRules.normalizeRecipe and map the fixed lines back onto
+ * en ingredient entries: an untouched line keeps its entry (and its `food` / `grams` hints);
+ * a changed one becomes a new entry with the pinned food (`fdcId`) and weight (`forceGrams`).
+ */
+function normalizeEn(en, house, foodById) {
+  const lines = en.ingredients.map((ing, src) => ({
+    src, // origin entry, carried through the fixes
+    raw: ing.en,
+    fdcId: ing.fdcId ?? null,
+    grams: ing.forceGrams ?? ing.grams ?? null,
+    exclude: !!ing.exclude,
+    cooking: ing.cooking ?? null,
+    proxyOk: !!ing.proxyOk,
+    group: ing.group,
+  }));
+  const { value, changes } = house.normalizeRecipe(
+    { title: en.title, course: en.course, servings: Number(en.servings), ingredients: lines, steps: en.steps ?? [], tips: en.tips ?? [] },
+    foodById,
+  );
+  const same = (a, b) =>
+    a.raw === b.raw && (a.fdcId ?? null) === (b.fdcId ?? null) && (a.grams ?? null) === (b.grams ?? null) && !!a.exclude === !!b.exclude;
+  const used = new Set();
+  const ingredients = value.ingredients.map((line) => {
+    const i = lines.findIndex((l, k) => !used.has(k) && same(l, line));
+    if (i >= 0) {
+      used.add(i);
+      return en.ingredients[i];
+    }
+    // A reworded line keeps its search hint; a swapped ingredient (a forbidden original) does not.
+    const orig = line.src != null ? en.ingredients[line.src] : null;
+    const entry = { ...(orig?.hu ? { hu: orig.hu } : {}), en: line.raw, group: line.group };
+    if (orig?.food && line.fdcId == null && !house.forbiddenReason(orig.en, foodById.get(orig.fdcId))) entry.food = orig.food;
+    if (line.fdcId != null) entry.fdcId = line.fdcId;
+    if (line.grams != null) entry.forceGrams = line.grams;
+    if (line.cooking) entry.cooking = line.cooking;
+    if (line.exclude) entry.exclude = true;
+    if (line.proxyOk) entry.proxyOk = true;
+    return entry;
+  });
+  return { en: { ...en, ingredients, steps: value.steps ?? en.steps, tips: value.tips ?? en.tips }, changes };
+}
+
+/** Gate codes the house rules own: an import still carrying one of these errors is refused. */
+const HOUSE_CODES = new Set([
+  'FORBIDDEN_INGREDIENT', 'FORBIDDEN_WORDING', 'MEAT_SUGGESTION', 'NOT_DRY_STAPLE', 'PORTION_80', 'DRINK_WATER',
+]);
 
 /* ---- one recipe ---- */
 
@@ -168,9 +233,10 @@ function sourceKcal(raw, servings) {
   return Math.round((raw.kcal * n) / servings);
 }
 
-function buildRecipe(id, engine, existing, claimed, today) {
-  const { addLib, markdown, units } = engine;
-  const en = readJson(path.join(DATA, 'en', `${id}.json`));
+function buildRecipe(id, engine, existing, claimed, today, foodById) {
+  const { addLib, markdown, units, house } = engine;
+  const fixed = normalizeEn(readJson(path.join(DATA, 'en', `${id}.json`)), house, foodById);
+  const en = fixed.en;
   const raw = readJson(path.join(DATA, 'raw', `${id}.json`));
   if (!en.title) throw new Error('en JSON has no title');
   const servings = addLib.clampServings(Number(en.servings));
@@ -199,6 +265,9 @@ function buildRecipe(id, engine, existing, claimed, today) {
   const resolved = addLib.rowsToResolved(rows);
   const macro = addLib.computeNutrition(rows, servings, resolved);
   const validation = addLib.validateRows(rows, form, resolved, macro);
+  const method = addLib.validateMethod([...(en.steps ?? []), ...(en.tips ?? [])].join('\n'));
+  validation.errors.push(...method.errors);
+  const houseErrors = validation.errors.filter((e) => HOUSE_CODES.has(e.code));
   const createdAt = pick.createdAt ?? today;
   const draft = addLib.buildDraft(form, rows, macro, createdAt, pick.replaces ? { computedAt: today, updatedAt: today } : {});
 
@@ -219,7 +288,13 @@ function buildRecipe(id, engine, existing, claimed, today) {
   const tips = (en.tips ?? []).map((t) => t.trim()).filter(Boolean);
   if (tips.length) draft.bodyAfter = `## Tips\n\n${tips.map((t) => `- ${t}`).join('\n')}`;
 
-  return { id, en, raw, rows, macro, validation, draft, pick, imgSrc, hasImage, form };
+  const excluded = readJson(path.join(ROOT, 'scripts/kifli/excluded-ids.json')).ids;
+  const duplicates = house
+    .findDuplicateRecipes([{ slug: pick.slug ?? `kifli-${id}`, kifliId: id, ingredients: draft.ingredients }], existing.corpus.filter((c) => c.kifliId !== id), excluded)
+    .map((d) => d.issue);
+  validation.warnings.push(...duplicates.map(({ severity, ...issue }) => issue));
+
+  return { id, en, raw, rows, macro, validation, houseErrors, fixes: fixed.changes, draft, pick, imgSrc, hasImage, form };
 }
 
 /* ---- reporting ---- */
@@ -238,6 +313,7 @@ function report(r, foodDesc) {
       `  ${status.padEnd(7)} ${String(row.grams ?? '-').padStart(6)} g  ${row.cooking.padEnd(9)} ${r.en.ingredients[i].en}  →  ${food}`,
     );
   });
+  for (const f of r.fixes) log(`  fixed   ${f}`);
   for (const e of r.validation.errors) log(`  ERROR   ${e.code}: ${e.message}`);
   for (const w of r.validation.warnings) log(`  warn    ${w.code}: ${w.message}`);
 }
@@ -281,16 +357,27 @@ async function main() {
     for (const [n, id] of targets.entries()) {
       let r;
       try {
-        r = buildRecipe(id, engine, existing, claimed, today);
+        r = buildRecipe(id, engine, existing, claimed, today, foodById);
       } catch (err) {
         log(`\n■ ${id} FAILED: ${err.message}`);
         summary.failed.push(id);
         continue;
       }
       summary.built++;
-      if (r.pick.slug) claimed.add(r.pick.slug);
+      // Only a recipe that would be written claims its slug, so a refused one never pushes a later one to a suffix.
       if (!write) {
         report(r, foodDesc);
+        if (r.houseErrors.length) {
+          log(`  WOULD BE REFUSED: breaks the house rules after auto-fix`);
+          summary.refused.push(id);
+        } else if (r.pick.slug) claimed.add(r.pick.slug);
+        continue;
+      }
+      for (const f of r.fixes) log(`[${n + 1}/${targets.length}] ${id} fixed: ${f}`);
+      if (r.houseErrors.length) {
+        log(`[${n + 1}/${targets.length}] ${id} REFUSED: breaks the house rules after auto-fix`);
+        for (const e of r.houseErrors) log(`    ${e.code}: ${e.message}`);
+        summary.refused.push(id);
         continue;
       }
       if (!r.pick.slug) {
@@ -305,13 +392,14 @@ async function main() {
         summary.refused.push(id);
         continue;
       }
+      claimed.add(r.pick.slug);
       writeFileSync(mdPath, engine.markdown.toRecipeMarkdown(r.draft));
       if (r.hasImage) copyFileSync(r.imgSrc, imgPath);
       summary.written++;
       log(`[${n + 1}/${targets.length}] ${id} wrote ${path.relative(ROOT, mdPath)}${r.hasImage ? ' + image' : ''}`);
     }
     log(
-      `\ndone: ${summary.built} built${write ? `, ${summary.written} written, ${summary.refused.length} refused` : ''}, ${summary.failed.length} failed`,
+      `\ndone: ${summary.built} built${write ? `, ${summary.written} written` : ''}, ${summary.refused.length} ${write ? 'refused' : 'would be refused'}, ${summary.failed.length} failed`,
     );
     process.stdout.write(JSON.stringify(summary) + '\n');
     if (summary.failed.length || summary.refused.length) process.exitCode = 1;

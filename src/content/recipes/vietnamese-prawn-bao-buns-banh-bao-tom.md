@@ -79,7 +79,8 @@ ingredients:
   - raw: 2 stalks lemongrass
     group: Lemongrass-chilli stir-fried prawns
     quantity: 2
-    item: stalks lemongrass
+    unit: stalks
+    item: lemongrass
     grams: 20
     fdcId: 168573
     matchConfidence: high

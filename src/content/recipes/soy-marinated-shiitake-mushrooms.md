@@ -124,4 +124,4 @@ createdAt: "2026-07-03"
 
 1. Add all ingredients to medium saucepan and stir to combine. Reduce heat to low. Simmer for 25-30 minutes, stirring occasionally.
 2. Pour mushrooms into glass pint jar. Place lid loosely on top and let cool at room temperature for 30 minutes. Refrigerate until ready to use. Mushrooms will last up to 2 weeks in the fridge.
-3. Try serving them alongside miso halibut, Asian cod, pheasant adobo, or grouse satay with peanut sauce for a flavorful, Asian-inspired meal. Or add them to poke bowls or venison bulgogi tacos.You can also use them as a savory addition to fried rice, ramen, or grain bowls, or serve them alongside a protein like grilled venison steak or chicken for an easy, balanced dinner.
+3. Try serving them alongside miso halibut, Asian cod or tofu satay with peanut sauce for a flavorful, Asian-inspired meal, or add them to poke bowls. You can also use them as a savory addition to fried rice, ramen, or grain bowls, or serve them alongside a protein like grilled salmon or tofu for an easy, balanced dinner.

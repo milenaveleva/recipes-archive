@@ -26,12 +26,12 @@ ingredients:
     fdcId: 1999629
     matchConfidence: high
     cooking: boiled
-  - raw: 150 g buckwheat groats, uncooked
+  - raw: 150 g buckwheat groats, dry
     group: Soup base
     quantity: 150
     unit: g
     item: buckwheat groats
-    note: uncooked
+    note: dry
     grams: 150
     fdcId: 170685
     matchConfidence: medium

@@ -109,12 +109,12 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: fried
-  - raw: 320 g brown rice, uncooked
+  - raw: 320 g brown rice, dry
     group: For the side
     quantity: 320
     unit: g
     item: brown rice
-    note: uncooked
+    note: dry
     grams: 320
     fdcId: 169703
     matchConfidence: high

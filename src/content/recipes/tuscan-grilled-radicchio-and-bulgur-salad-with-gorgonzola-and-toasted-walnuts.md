@@ -17,12 +17,12 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g bulgur, uncooked
+  - raw: 250 g bulgur, dry
     group: Main ingredients
     quantity: 250
     unit: g
     item: bulgur
-    note: uncooked
+    note: dry
     grams: 250
     fdcId: 170688
     matchConfidence: medium

@@ -168,4 +168,4 @@ createdAt: "2026-11-14"
 - The vinaigrette is perfect for any salad.
 - You can also use Dijon or wholegrain mustard.
 - Put any vegetables in the salad: cucumber, beetroot, endive and so on.
-- The salad can also be made with leftover roast meat or a soft-boiled egg.
+- The salad can also be made with a soft-boiled egg.

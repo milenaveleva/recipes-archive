@@ -17,15 +17,15 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g farro (spelt grains), uncooked
+  - raw: 250 g farro, dry
     group: Salad base and toppings
     quantity: 250
     unit: g
-    item: farro (spelt grains)
-    note: uncooked
+    item: farro
+    note: dry
     grams: 250
-    fdcId: 81017015
-    matchConfidence: medium
+    fdcId: 2710828
+    matchConfidence: high
     cooking: boiled
   - raw: 500 g parsnips
     group: Salad base and toppings
@@ -115,49 +115,48 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 389
-    energyKj: 1628
-    protein_g: 9.9
-    fat_g: 26.2
+    energyKcal: 588
+    energyKj: 2462
+    protein_g: 17.7
+    fat_g: 28.2
     satFat_g: 5.9
-    carbs_g: 29.1
-    fiber_g: 7
+    carbs_g: 72.6
+    fiber_g: 11.5
     sugar_g: 8
-    sodium_mg: 901
-    availableCarb_g: 22.1
+    sodium_mg: 898
+    availableCarb_g: 61.1
   glycemic:
-    gi: 46
-    gl: 10
-    giBand: low
-    glBand: low
+    gi: 59
+    gl: 36
+    giBand: medium
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 74
+    measuredGiPct: 93
   nutriScore:
     grade: C
-    points: 6
+    points: 3
     category: general
     version: "2023"
-    coverage: 0.74
+    coverage: 0.48
   inflammation:
     score: -0.2
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.22
   balance:
-    score: 4
+    score: 3
     band: low
-    nrf: 19.9
+    nrf: 17.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 80.1
+    minimallyProcessedPct: 86.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
-    - MEXT Standard Tables of Food Composition in Japan 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

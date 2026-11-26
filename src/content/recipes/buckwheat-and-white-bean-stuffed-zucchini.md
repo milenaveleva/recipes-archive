@@ -40,11 +40,11 @@ ingredients:
     fdcId: 790577
     matchConfidence: high
     cooking: baked
-  - raw: 160 g buckwheat groats, uncooked
+  - raw: 160 g buckwheat groats, dry
     quantity: 160
     unit: g
     item: buckwheat groats
-    note: uncooked
+    note: dry
     grams: 160
     fdcId: 170685
     matchConfidence: medium

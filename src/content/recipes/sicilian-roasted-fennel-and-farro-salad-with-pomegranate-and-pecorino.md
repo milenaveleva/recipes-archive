@@ -17,15 +17,15 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g farro (spelt grains), uncooked
+  - raw: 250 g farro, dry
     group: Salad base
     quantity: 250
     unit: g
-    item: farro (spelt grains)
-    note: uncooked
+    item: farro
+    note: dry
     grams: 250
-    fdcId: 81017015
-    matchConfidence: medium
+    fdcId: 2710828
+    matchConfidence: high
     cooking: boiled
   - raw: 2 fennel bulbs
     group: Salad base
@@ -111,48 +111,47 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 312
-    energyKj: 1304
-    protein_g: 10.1
-    fat_g: 21.8
+    energyKcal: 511
+    energyKj: 2138
+    protein_g: 17.9
+    fat_g: 23.8
     satFat_g: 5
-    carbs_g: 20.6
-    fiber_g: 6.6
+    carbs_g: 64.2
+    fiber_g: 11.2
     sugar_g: 9.8
-    sodium_mg: 351
-    availableCarb_g: 14
+    sodium_mg: 348
+    availableCarb_g: 53
   glycemic:
-    gi: 29
-    gl: 4
-    giBand: low
-    glBand: low
+    gi: 56
+    gl: 30
+    giBand: medium
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 0
+    measuredGiPct: 76
   nutriScore:
     grade: B
     points: 1
     category: general
     version: "2023"
-    coverage: 0.77
+    coverage: 0.52
   inflammation:
-    score: -0.1
+    score: 0
     band: neutral
     method: fii v4
   balance:
-    score: 6
+    score: 5
     band: moderate
-    nrf: 35.6
+    nrf: 27.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 81.4
+    minimallyProcessedPct: 88.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
-    - MEXT Standard Tables of Food Composition in Japan 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

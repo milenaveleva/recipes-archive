@@ -18,11 +18,11 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g quinoa, uncooked
+  - raw: 200 g quinoa, dry
     quantity: 200
     unit: g
     item: quinoa
-    note: uncooked
+    note: dry
     grams: 200
     fdcId: 168874
     matchConfidence: high

@@ -26,12 +26,12 @@ ingredients:
     fdcId: 170187
     matchConfidence: high
     cooking: baked
-  - raw: 125 g lentils, uncooked
+  - raw: 125 g lentils, dry
     group: For the lentil bites
     quantity: 125
     unit: g
     item: lentils
-    note: uncooked
+    note: dry
     grams: 125
     fdcId: 172420
     matchConfidence: high

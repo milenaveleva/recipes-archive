@@ -17,11 +17,11 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g farro, uncooked
+  - raw: 250 g farro, dry
     quantity: 250
     unit: g
     item: farro
-    note: uncooked
+    note: dry
     grams: 250
     fdcId: 2710828
     matchConfidence: high

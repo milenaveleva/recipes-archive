@@ -17,11 +17,11 @@ course: Snack
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g short-grain brown rice, uncooked
+  - raw: 200 g short-grain brown rice, dry
     quantity: 200
     unit: g
     item: short-grain brown rice
-    note: uncooked
+    note: dry
     grams: 200
     fdcId: 169706
     matchConfidence: high

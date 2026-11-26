@@ -121,4 +121,4 @@ createdAt: "2026-11-14"
 
 1. Cut the savoy cabbage into thin strips and fry in a pan drizzled with olive oil for a few minutes.
 2. Add the lemon juice and zest, salt and pepper to taste.
-3. Stir in the cooked chestnuts and serve as a side with meat or fish.
+3. Stir in the cooked chestnuts and serve as a side with fish.

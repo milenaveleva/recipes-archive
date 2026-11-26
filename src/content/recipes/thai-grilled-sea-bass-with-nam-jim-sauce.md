@@ -29,7 +29,8 @@ ingredients:
   - raw: 2 stalks lemongrass
     group: Main ingredients and marinade
     quantity: 2
-    item: stalks lemongrass
+    unit: stalks
+    item: lemongrass
     grams: 20
     fdcId: 168573
     matchConfidence: high
@@ -99,12 +100,12 @@ ingredients:
     fdcId: 173468
     matchConfidence: medium
     cooking: grilled
-  - raw: 160 g brown jasmine rice, uncooked
+  - raw: 160 g brown jasmine rice, dry
     group: Side
     quantity: 160
     unit: g
     item: brown jasmine rice
-    note: uncooked
+    note: dry
     grams: 160
     fdcId: 169703
     matchConfidence: high

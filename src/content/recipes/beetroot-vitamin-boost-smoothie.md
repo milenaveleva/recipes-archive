@@ -20,6 +20,7 @@ ingredients:
   - raw: 1 beetroot
     quantity: 1
     item: beetroot
+    note: raw
     grams: 150
     fdcId: 169145
     matchConfidence: high

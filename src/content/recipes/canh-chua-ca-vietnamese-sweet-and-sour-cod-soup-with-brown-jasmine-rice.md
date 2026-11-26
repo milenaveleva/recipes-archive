@@ -57,11 +57,11 @@ ingredients:
     fdcId: 167763
     matchConfidence: high
     cooking: boiled
-  - raw: 150 g brown jasmine rice, uncooked
+  - raw: 150 g brown jasmine rice, dry
     quantity: 150
     unit: g
     item: brown jasmine rice
-    note: uncooked
+    note: dry
     grams: 150
     fdcId: 169703
     matchConfidence: high

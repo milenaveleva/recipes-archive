@@ -30,7 +30,7 @@ ingredients:
     quantity: 40
     unit: g
     item: soy sauce
-    note: marinade; ≈ 40 % clings to the fish
+    note: marinade; about 40 % clings to the fish
     grams: 16
     fdcId: 174277
     matchConfidence: high
@@ -39,7 +39,7 @@ ingredients:
     quantity: 40
     unit: g
     item: sesame oil
-    note: marinade; ≈ 40 % clings to the fish
+    note: marinade; about 40 % clings to the fish
     grams: 16
     fdcId: 171016
     matchConfidence: high
@@ -83,11 +83,11 @@ ingredients:
     fdcId: 170106
     matchConfidence: high
     cooking: baked
-  - raw: 160 g brown jasmine rice, uncooked
+  - raw: 160 g brown jasmine rice, dry
     quantity: 160
     unit: g
     item: brown jasmine rice
-    note: uncooked
+    note: dry
     grams: 160
     fdcId: 169703
     matchConfidence: high

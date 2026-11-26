@@ -18,11 +18,11 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 150 g millet, uncooked
+  - raw: 150 g millet, dry
     quantity: 150
     unit: g
     item: millet
-    note: uncooked
+    note: dry
     grams: 150
     fdcId: 169702
     matchConfidence: high
@@ -30,6 +30,7 @@ ingredients:
   - raw: 1 beetroot
     quantity: 1
     item: beetroot
+    note: raw
     grams: 150
     fdcId: 169145
     matchConfidence: high

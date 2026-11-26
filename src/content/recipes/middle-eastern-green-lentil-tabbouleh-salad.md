@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g green lentils, uncooked
+  - raw: 250 g green lentils, dry
     group: For the salad base
     quantity: 250
     unit: g
     item: green lentils
-    note: uncooked
+    note: dry
     grams: 250
     fdcId: 2644283
     matchConfidence: high

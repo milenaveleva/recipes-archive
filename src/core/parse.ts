@@ -131,12 +131,18 @@ function stripLeadingParenMeasurement(
   return { rest, quantity: parseNum(meas[1]), unit: meas[2], unitId };
 }
 
+/** Count units the parser library doesn't know: "6 leaves mint", "2 stalks lemongrass". */
+const COUNT_UOMS = {
+  leaf: { short: 'leaf', plural: 'leaves', alternates: ['leaves', 'leaf'] },
+  stalk: { short: 'stalk', plural: 'stalks', alternates: ['stalks', 'stalk'] },
+};
+
 /** Parse a single raw ingredient line into structured fields. */
 export function parseIngredientLine(raw: string): ParsedLine {
   // Default (no normalizeUOM): `unitOfMeasure` keeps the as-written token for
   // provenance ("cups"), while `unitOfMeasureID` is still the canonical id
   // used for conversion ("cup").
-  const [parsed] = parseIngredient(raw);
+  const [parsed] = parseIngredient(raw, { additionalUOMs: COUNT_UOMS });
   if (!parsed) {
     return {
       raw,

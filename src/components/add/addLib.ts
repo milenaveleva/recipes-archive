@@ -19,6 +19,7 @@ import {
 } from '../../core/recipeScore';
 import { suggestCooking, isCookingMethod, type CookingMethod } from '../../core/cooking';
 import { validateRecipe, type ValidationResult } from '../../core/validate';
+import { normalizeRecipe, methodIssues, type NormalizableLine } from '../../core/houseRules';
 import type { NutriCategory } from '../../core/nutriscore';
 import type { MetricAmount, NutrientVector, ParsedLine, ResolvedIngredient } from '../../core/types';
 import type { DraftIngredient, RecipeDraft } from '../../core/markdown';
@@ -319,6 +320,69 @@ export function validateRows(
     FOOD_BY_ID,
     { precomputed: { resolved, macro } },
   );
+}
+
+/**
+ * Auto-fix freshly parsed rows and the method to the house rules (core/houseRules.ts
+ * `normalizeRecipe`): forbidden ingredients swapped, cooked staples to their dry weight,
+ * handfuls to grams, olive oil in spoons, eggs as a count, state words to the note, a main
+ * course's grain at 80 g per serving (servings unchanged) and a drink's water counted. A row
+ * the rules leave alone is returned as the same object (its review edits intact); a changed
+ * row is rebuilt from its new line with the pinned food and weight. `changes` lists what was
+ * changed, for the author to review.
+ */
+export function normalizeRows(
+  rows: IngredientRow[],
+  form: Pick<FormState, 'title' | 'course' | 'servings' | 'instructions'>,
+): { rows: IngredientRow[]; instructions: string; changes: string[] } {
+  // A count row's weight is the engine's portion guess, so only a mass/volume weight is passed on.
+  const measured = (r: IngredientRow) => {
+    const dim = classifyUnit(r.parsed.unitId ?? r.parsed.unit);
+    return dim === 'mass' || dim === 'volume';
+  };
+  const lines: NormalizableLine[] = rows.map((r) => ({
+    raw: r.raw,
+    fdcId: r.selectedFdcId,
+    grams: measured(r) ? r.grams : null,
+    exclude: r.excludeFromNutrition,
+    cooking: r.userSetCooking ? r.cooking : null,
+    proxyOk: r.proxyFdcId != null && r.proxyFdcId === r.selectedFdcId,
+  }));
+  const steps = splitLines(form.instructions);
+  const { value, changes } = normalizeRecipe(
+    { title: form.title, course: form.course, servings: clampServings(form.servings), ingredients: lines, steps },
+    FOOD_BY_ID,
+  );
+  const same = (a: NormalizableLine, b: NormalizableLine) =>
+    a.raw === b.raw && (a.fdcId ?? null) === (b.fdcId ?? null) && (a.grams ?? null) === (b.grams ?? null) && !!a.exclude === !!b.exclude;
+  const used = new Set<number>();
+  const out = value.ingredients.map((line) => {
+    const i = lines.findIndex((l, k) => !used.has(k) && same(l, line));
+    if (i >= 0) {
+      used.add(i);
+      return rows[i];
+    }
+    const row = buildRow(line.raw);
+    if (line.fdcId != null) Object.assign(row, selectMatch(row, line.fdcId));
+    if (line.grams != null) row.grams = line.grams;
+    row.excludeFromNutrition = !!line.exclude;
+    if (line.cooking && isCookingMethod(line.cooking)) {
+      row.cooking = line.cooking;
+      row.userSetCooking = true;
+    }
+    if (line.proxyOk) row.proxyFdcId = row.selectedFdcId;
+    return row;
+  });
+  // The method is written back only when a step changed, so its own line structure survives.
+  const stepsChanged = (value.steps ?? []).length !== steps.length || (value.steps ?? []).some((st, i) => st !== steps[i]);
+  return { rows: out, instructions: stepsChanged ? (value.steps ?? []).join('\n') : form.instructions, changes };
+}
+
+/** House-rule findings on the method/tips text (meat suggestions), kept apart from the
+ *  row gate so typing a method step never re-runs the ingredient checks. */
+export function validateMethod(text: string): ValidationResult {
+  const errors = methodIssues(text).map(({ severity: _s, ...issue }) => issue);
+  return { errors, warnings: [] };
 }
 
 /** The stored `raw` text of a row (falls back to the parsed food name). */

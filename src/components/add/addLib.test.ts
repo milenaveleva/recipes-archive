@@ -22,6 +22,8 @@ import {
   rowsToScored,
   rowsToResolved,
   validateRows,
+  validateMethod,
+  normalizeRows,
   EMPTY_FORM,
 } from './addLib';
 import { validateRecipe } from '../../core/validate';
@@ -634,5 +636,88 @@ describe('validateRows (the /add live validation gate)', () => {
     const fake = { ...computeNutrition(rows, 4, resolved), perServing: { energyKcal: 9000 } } as ReturnType<typeof computeNutrition>;
     const r = validateRows(rows, { title: '', servings: 4, course: 'Main Course', sourceKcalPerServing: null }, resolved, fake);
     expect(r.errors.map((e) => e.code)).toContain('KCAL_PER_SERVING');
+  });
+});
+
+describe('normalizeRows (house-rule auto-fixes on /add import, paste and manual entry)', () => {
+  const form = (extra: Partial<typeof EMPTY_FORM> = {}) => ({ ...EMPTY_FORM, title: 'Stew', servings: 4, course: 'Main Course', ...extra });
+  const gate = (rows: ReturnType<typeof linesToRows>, f: typeof EMPTY_FORM) => {
+    const resolved = rowsToResolved(rows);
+    return validateRows(rows, f, resolved, computeNutrition(rows, f.servings, resolved));
+  };
+  const houseErrors = (rows: ReturnType<typeof linesToRows>, f: typeof EMPTY_FORM) =>
+    gate(rows, f).errors.filter((e) => /FORBIDDEN|NOT_DRY|PORTION|DRINK/.test(e.code)).map((e) => e.code);
+
+  it('swaps forbidden ingredients, rewrites wording and pins the house foods; the gate is then clean', () => {
+    const f = form({ instructions: 'Melt the butter.\nAdd the wine and simmer.' });
+    const rows = linesToRows('40 g butter\n250 ml whole milk\n100 ml dry white wine\n1 handful parsley\n400 g whole-wheat penne, dry\n240 g canned chickpeas (≈ 82 g uncooked)');
+    expect(houseErrors(rows, f).length).toBeGreaterThan(0);
+    const fixed = normalizeRows(rows, f);
+    expect(fixed.rows.map((r) => r.raw)).toEqual([
+      '2 tbsp extra virgin olive oil',
+      '250 ml oat milk, unsweetened',
+      '100 ml vegetable broth',
+      '1 tbsp lemon juice',
+      '10 g parsley',
+      '320 g whole-wheat penne, dry',
+      '82 g chickpeas, dry, soaked and cooked',
+    ]);
+    expect(fixed.rows[0].selectedFdcId).toBe(171413);
+    expect(fixed.rows[0].grams).toBe(27);
+    expect(fixed.rows[1].selectedFdcId).toBe(82018905);
+    expect(fixed.rows[6]).toMatchObject({ selectedFdcId: 173756, grams: 82, cooking: 'boiled' });
+    expect(fixed.instructions.split('\n')).toEqual([
+      expect.stringMatching(/^Soak the chickpeas/),
+      'Heat the olive oil.',
+      'Add the broth and simmer.',
+    ]);
+    expect(fixed.changes.length).toBeGreaterThanOrEqual(7);
+    expect(houseErrors(fixed.rows, { ...f, instructions: fixed.instructions })).toEqual([]);
+  });
+
+  it('keeps an untouched row as the same object (review edits survive) and is idempotent', () => {
+    const rows = linesToRows('320 g whole-wheat penne, dry\n2 cloves garlic');
+    rows[1] = { ...rows[1], grams: 9, userSetCooking: true, cooking: 'fried' };
+    const fixed = normalizeRows(rows, form());
+    expect(fixed.changes).toEqual([]);
+    expect(fixed.rows[0]).toBe(rows[0]);
+    expect(fixed.rows[1]).toBe(rows[1]);
+    const once = normalizeRows(linesToRows('800 g eggs\n30 g olive oil'), form());
+    expect(once.rows.map((r) => r.raw)).toEqual(['16 eggs', '2 tbsp olive oil']);
+    expect(normalizeRows(once.rows, form({ instructions: once.instructions })).changes).toEqual([]);
+  });
+
+  it('counts the water in a drink and brews the tea', () => {
+    const f = form({ title: 'Iced tea', course: 'Drink', servings: 2, instructions: 'Steep, then strain over the ice.' });
+    const rows = linesToRows('500 ml water\n4 tea bags\n200 g ice');
+    rows[0] = { ...rows[0], excludeFromNutrition: true };
+    const fixed = normalizeRows(rows, f);
+    expect(fixed.rows.map((r) => [r.raw, r.selectedFdcId, r.excludeFromNutrition])).toEqual([
+      ['500 ml black tea, brewed from 4 tea bags', 173227, false],
+      ['200 g ice', 174158, false],
+    ]);
+    expect(houseErrors(fixed.rows, f)).toEqual([]);
+  });
+
+  it('never changes the servings', () => {
+    const f = form({ servings: 3 });
+    const fixed = normalizeRows(linesToRows('400 g whole-wheat spaghetti, dry'), f);
+    expect(fixed.rows[0].raw).toBe('240 g whole-wheat spaghetti, dry');
+  });
+});
+
+describe('validateMethod (house rules on the method and tips)', () => {
+  it('flags a meat suggestion and passes fish', () => {
+    expect(validateMethod('Top with crisp pancetta.').errors.map((e) => e.code)).toEqual(['MEAT_SUGGESTION']);
+    expect(validateMethod('Serve with grilled salmon.').errors).toEqual([]);
+  });
+});
+
+describe('normalizeRows keeps the method text when no step changed', () => {
+  it('returns the instructions untouched (blank lines included)', () => {
+    const f = { ...EMPTY_FORM, title: 'Salad', course: 'Salad', servings: 2, instructions: 'Chop.\n\nToss.' };
+    const fixed = normalizeRows(linesToRows('1 handful parsley'), f);
+    expect(fixed.changes.length).toBeGreaterThan(0);
+    expect(fixed.instructions).toBe('Chop.\n\nToss.');
   });
 });

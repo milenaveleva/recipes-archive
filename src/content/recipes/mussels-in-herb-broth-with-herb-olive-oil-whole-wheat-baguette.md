@@ -100,12 +100,6 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: boiled
-  - raw: cider, optional
-    item: cider
-    note: optional
-    matchConfidence: none
-    excludeFromNutrition: true
-    cooking: boiled
   - raw: salt, to taste
     item: salt
     note: to taste

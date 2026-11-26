@@ -76,12 +76,12 @@ ingredients:
     fdcId: 170416
     matchConfidence: high
     cooking: raw
-  - raw: 4 tbsp bulgur, uncooked
+  - raw: 4 tbsp bulgur, dry
     group: For the tabbouleh
     quantity: 4
     unit: tbsp
     item: bulgur
-    note: uncooked
+    note: dry
     grams: 35
     milliliters: 59.1472
     fdcId: 170688

@@ -27,11 +27,11 @@ ingredients:
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
-  - raw: 100 g dry white beans, uncooked
+  - raw: 100 g dry white beans, dry
     quantity: 100
     unit: g
     item: white beans
-    note: dry, uncooked
+    note: dry, dry
     grams: 100
     fdcId: 175202
     matchConfidence: medium

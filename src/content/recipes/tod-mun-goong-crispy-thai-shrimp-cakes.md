@@ -100,12 +100,12 @@ ingredients:
     fdcId: 171025
     matchConfidence: high
     cooking: fried
-  - raw: 160 g brown jasmine rice, uncooked
+  - raw: 160 g brown jasmine rice, dry
     group: For serving and sides
     quantity: 160
     unit: g
     item: brown jasmine rice
-    note: uncooked
+    note: dry
     grams: 160
     fdcId: 169703
     matchConfidence: high

@@ -40,11 +40,11 @@ ingredients:
     fdcId: 167747
     matchConfidence: high
     cooking: grilled
-  - raw: 160 g brown basmati rice, uncooked
+  - raw: 160 g brown basmati rice, dry
     quantity: 160
     unit: g
     item: brown basmati rice
-    note: uncooked
+    note: dry
     grams: 160
     fdcId: 169703
     matchConfidence: high

@@ -21,7 +21,7 @@ ingredients:
   - raw: 1 whole trout, cleaned
     quantity: 1
     item: whole trout
-    note: cleaned; ≈ 500 g whole, ≈ 300 g edible flesh
+    note: cleaned; about 500 g whole, about 300 g edible flesh
     grams: 300
     fdcId: 175154
     matchConfidence: medium
@@ -44,8 +44,9 @@ ingredients:
     cooking: baked
   - raw: 1 small sprig fresh rosemary
     quantity: 1
-    unit: small
-    item: sprig fresh rosemary
+    unit: sprig
+    item: rosemary
+    note: fresh, small
     grams: 2
     fdcId: 173473
     matchConfidence: high

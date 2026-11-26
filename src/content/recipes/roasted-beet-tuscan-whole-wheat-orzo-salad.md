@@ -30,6 +30,7 @@ ingredients:
     quantity: 400
     unit: g
     item: beetroot
+    note: raw
     grams: 400
     fdcId: 169145
     matchConfidence: high

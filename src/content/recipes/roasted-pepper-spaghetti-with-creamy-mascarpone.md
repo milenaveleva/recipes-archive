@@ -52,9 +52,10 @@ ingredients:
     unit: g
     item: mascarpone
     grams: 60
-    fdcId: 173431
+    fdcId: 173418
     matchConfidence: medium
     cooking: boiled
+    proxyOk: true
   - raw: 1 bunch fresh thyme
     group: For the sauce
     quantity: 1
@@ -123,16 +124,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 624
-    energyKj: 2610
-    protein_g: 33.9
-    fat_g: 16.1
-    satFat_g: 8.2
-    carbs_g: 94.8
+    energyKcal: 604
+    energyKj: 2528
+    protein_g: 24.4
+    fat_g: 18.2
+    satFat_g: 9
+    carbs_g: 95.4
     fiber_g: 16.2
-    sugar_g: 13.1
-    sodium_mg: 1979
-    availableCarb_g: 78.6
+    sugar_g: 14
+    sodium_mg: 1563
+    availableCarb_g: 79.3
   glycemic:
     gi: 50
     gl: 39
@@ -140,7 +141,7 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 76
+    measuredGiPct: 75
   nutriScore:
     grade: B
     points: 2
@@ -155,10 +156,10 @@ nutrition:
   balance:
     score: 9
     band: excellent
-    nrf: 80
+    nrf: 77
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 62.7
+    minimallyProcessedPct: 64.7
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

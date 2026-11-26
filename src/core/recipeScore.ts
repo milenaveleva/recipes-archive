@@ -60,17 +60,21 @@ export function nutrientsFor(
 
 /** USDA categories whose foods count toward the Nutri-Score fruit/veg/legume share. */
 const FVL_CATEGORIES = ['Vegetables', 'Fruits', 'Legumes'];
-// Excluded from the FVL share per Nutri-Score 2023: starchy staples, nuts & oils,
-// juices, and obviously-processed forms. Coarse by nature; FVL is confirmed per
-// ingredient in the authoring review.
+// Excluded from the FVL share per Nutri-Score 2023: starchy staples, nuts & oils, nectars
+// and sweetened juice drinks, and obviously-processed forms. A 100 % fruit or vegetable
+// juice counts in full (Nutri-Score 2023 beverage update, maximal points for 100 % fruit
+// juices). Coarse by nature; FVL is confirmed per ingredient in the authoring review.
 const NON_FVL =
-  /\b(potato|potatoes|cassava|yam|yams|plantain|plantains|taro|juice|nectar|oil|nut|nuts|peanut|peanuts|fried|breaded|chip|chips|crisp|crisps|snack|candied|sauce|ketchup|jam|jelly)\b/i;
+  /\b(potato|potatoes|cassava|yam|yams|plantain|plantains|taro|nectar|oil|nut|nuts|peanut|peanuts|fried|breaded|chip|chips|crisp|crisps|snack|candied|sauce|ketchup|jam|jelly)\b/i;
+/** A juice that is not 100 % juice: a juice drink, cocktail or beverage, or a sugar-sweetened
+ *  juice (a vitamin- or calcium-fortified 100 % juice still counts). */
+const NOT_PURE_JUICE = /\bjuice\b.*\b(drink|cocktail|beverage|sweetened|added sugar|sugar added|with sugar)\b|\b(drink|cocktail|beverage)\b.*\bjuice\b/i;
 
 /** Nutri-Score FVL flag from a food's USDA category; curated `fvl` overrides this. */
 export function fvlFromCategory(food: FoodRecord | undefined): boolean {
   if (!food?.category) return false;
   if (!FVL_CATEGORIES.some((c) => food.category!.includes(c))) return false;
-  return !NON_FVL.test(food.description);
+  return !NON_FVL.test(food.description) && !NOT_PURE_JUICE.test(food.description);
 }
 
 /** The subset of a stored ingredient the assembly reads. */

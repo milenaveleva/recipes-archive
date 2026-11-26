@@ -17,12 +17,12 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g mung beans, uncooked
+  - raw: 300 g mung beans, dry
     group: Salad base
     quantity: 300
     unit: g
     item: mung beans
-    note: uncooked
+    note: dry
     grams: 300
     fdcId: 174256
     matchConfidence: medium

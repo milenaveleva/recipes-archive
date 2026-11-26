@@ -17,12 +17,12 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g buckwheat groats, uncooked
+  - raw: 250 g buckwheat groats, dry
     group: Salad base
     quantity: 250
     unit: g
     item: buckwheat groats
-    note: uncooked
+    note: dry
     grams: 250
     fdcId: 170685
     matchConfidence: medium
@@ -32,6 +32,7 @@ ingredients:
     quantity: 400
     unit: g
     item: beetroot
+    note: raw
     grams: 400
     fdcId: 169145
     matchConfidence: high

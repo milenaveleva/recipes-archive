@@ -71,9 +71,10 @@ ingredients:
     unit: g
     item: vegan cheese
     grams: 125
-    fdcId: 170845
+    fdcId: 9000003
     matchConfidence: high
     cooking: baked
+    proxyOk: true
   - raw: oregano, optional
     item: oregano
     note: optional
@@ -103,44 +104,44 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 258
-    energyKj: 1080
-    protein_g: 12.1
-    fat_g: 14.8
-    satFat_g: 5.3
-    carbs_g: 22.1
-    fiber_g: 5.6
-    sugar_g: 12.2
-    sodium_mg: 1058
-    availableCarb_g: 16.4
+    energyKcal: 237
+    energyKj: 992
+    protein_g: 5.3
+    fat_g: 14.5
+    satFat_g: 6.9
+    carbs_g: 25.1
+    fiber_g: 5.8
+    sugar_g: 12.3
+    sodium_mg: 1124
+    availableCarb_g: 19.3
   glycemic:
-    gi: 40
-    gl: 7
+    gi: 42
+    gl: 8
     giBand: low
     glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 14
+    measuredGiPct: 12
   nutriScore:
     grade: C
-    points: 4
+    points: 7
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
-    band: neutral
+    score: 0.3
+    band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.02
   balance:
-    score: 8
+    score: 7
     band: high
-    nrf: 68.2
+    nrf: 55.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 46
-    ultraProcessedPct: 17.8
-    band: moderately-processed
+    minimallyProcessedPct: 50
+    ultraProcessedPct: 50
+    band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

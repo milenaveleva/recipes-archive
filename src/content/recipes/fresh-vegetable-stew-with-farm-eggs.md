@@ -144,4 +144,4 @@ createdAt: "2026-11-14"
 
 ## Tips
 
-- Any vegetable can be used for the stew. It is an excellent side dish for any light meat, fish, or even grilled cheese.
+- Any vegetable can be used for the stew. It is an excellent side dish for fish or even grilled cheese.

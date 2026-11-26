@@ -17,12 +17,12 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g brown lentils, uncooked
+  - raw: 250 g brown lentils, dry
     group: Salad base
     quantity: 250
     unit: g
     item: brown lentils
-    note: uncooked
+    note: dry
     grams: 250
     fdcId: 2644283
     matchConfidence: high

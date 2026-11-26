@@ -1,5 +1,5 @@
 {
-  "description": "kifli recipe ids the import must never (re)build: near-duplicates of a recipe already on the site (kifli publishes some dishes twice). Value = the slug of the copy that is kept.",
+  "description": "kifli recipe ids the import must never (re)build: near-duplicates of a recipe already on the site (value = the slug of the copy that is kept) and recipes removed by the owner (value = \"removed: <reason>\").",
   "ids": {
     "12251": "bruschetta-al-pomodoro",
     "11551": "asparagus-with-golden-olive-oil-crumbs",
@@ -13,6 +13,11 @@
     "13641": "pumpkin-whole-wheat-rigatoni-with-crispy-sage",
     "13083": "lemon-and-thyme-mushroom-rigatoni",
     "10316": "asparagus-with-hollandaise-and-boiled-potatoes",
-    "13226": "broccoli-orecchiette-with-crispy-spiced-breadcrumbs"
+    "13226": "broccoli-orecchiette-with-crispy-spiced-breadcrumbs",
+    "11733": "removed: Nutri-Score E (autumn-fig-jam-with-camembert-and-pistachios)",
+    "11785": "removed: Nutri-Score E (festive-cheese-balls-with-three-coatings)",
+    "14711": "removed: Nutri-Score E (gorgonzola-farinata)",
+    "10401": "removed: Nutri-Score E (homemade-hot-chocolate)",
+    "10520": "removed: Nutri-Score E (iced-coffee-with-madagascan-vanilla-ice-cream)"
   }
 }

@@ -132,12 +132,12 @@ ingredients:
     fdcId: 173468
     matchConfidence: medium
     cooking: boiled
-  - raw: 320 g brown basmati rice, uncooked
+  - raw: 320 g brown basmati rice, dry
     group: Side
     quantity: 320
     unit: g
     item: brown basmati rice
-    note: uncooked
+    note: dry
     grams: 320
     fdcId: 169703
     matchConfidence: high

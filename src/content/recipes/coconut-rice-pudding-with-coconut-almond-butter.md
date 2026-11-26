@@ -17,11 +17,11 @@ course: Dessert
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 150 g short-grain brown rice, uncooked
+  - raw: 150 g short-grain brown rice, dry
     quantity: 150
     unit: g
     item: short-grain brown rice
-    note: uncooked
+    note: dry
     grams: 150
     fdcId: 169706
     matchConfidence: high

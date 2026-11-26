@@ -22,7 +22,10 @@
  *     disagreement with the source's own published kcal per serving;
  *   - exclusions: water / ice / soda-water lines must be excluded or matched to plain
  *     water; a counted line without a food or a weight is an error;
- *   - duplicate identical lines.
+ *   - duplicate identical lines;
+ *   - house rules (houseRules.ts `checkHouseRules`): forbidden ingredients and wording, meat
+ *     suggested in the method, staples not stored dry, the 80 g main-course grain portion,
+ *     drink water / brewed records, olive oil in spoons and eggs as a count.
  *
  * A reviewed proxy match (a stand-in food chosen on purpose, e.g. leeks for ramsons)
  * carries `proxyOk: true`, which silences the identity and state checks for that line.
@@ -34,6 +37,9 @@ import { normalizeCourse, type CourseKey } from './course';
 import { canonicalUnit } from './units';
 import type { MacroComputation } from './nutrition';
 import type { ResolvedIngredient } from './types';
+import { checkHouseRules, isPlainWater, isWaterLike } from './houseRules';
+
+export { isPlainWater, isWaterLike };
 
 export type IssueCode =
   | 'UNKNOWN_FOOD'
@@ -50,7 +56,16 @@ export type IssueCode =
   | 'DOMINANT_ENERGY'
   | 'DOMINANT_CARB'
   | 'SOURCE_KCAL'
-  | 'DUPLICATE_LINE';
+  | 'DUPLICATE_LINE'
+  | 'FORBIDDEN_INGREDIENT'
+  | 'FORBIDDEN_WORDING'
+  | 'MEAT_SUGGESTION'
+  | 'NOT_DRY_STAPLE'
+  | 'PORTION_80'
+  | 'DRINK_WATER'
+  | 'DUPLICATE_RECIPE'
+  | 'OLIVE_OIL_UNIT'
+  | 'EGG_COUNT';
 
 export interface Issue {
   code: IssueCode;
@@ -88,6 +103,8 @@ export interface ValidatableRecipe {
   course?: string;
   source?: { name?: string; url?: string; kcalPerServing?: number } | null;
   ingredients?: ValidatableIngredient[];
+  /** The markdown body (method + tips), read by the house rules' meat-suggestion check. */
+  body?: string;
 }
 
 export interface ValidateOptions {
@@ -237,19 +254,6 @@ export function sharesIdentity(item: Set<string>, food: Set<string>): boolean {
 /* ---------------------------------------------------------- false friends --- */
 
 const has = (re: RegExp, s: string) => re.test(s);
-
-/** Plain drinking water (bottled / tap) — the only food a water line may match. */
-export function isPlainWater(description: string): boolean {
-  return /^(water, (bottled|tap|municipal|well)|beverages, water\b)/i.test(description);
-}
-
-/** Water / ice / soda-water lines (no other food word). */
-export function isWaterLike(item: string): boolean {
-  const words = normalize(item).replace(/\([^)]*\)/g, ' ').split(/[^a-z]+/).filter(Boolean);
-  if (!words.some((w) => /^(water|ice|soda)$/.test(w))) return false;
-  const ok = /^(water|ice|soda|cube|cubes|sparkling|mineral|carbonated|still|tap|filtered|crushed|cold|hot|warm|lukewarm|boiling|chilled|iced|a|some|little|of|for|the|to|plus|extra|more|about|serving|serve|or|and|very|room|temperature|few|handful|cup|cups)$/;
-  return words.every((w) => ok.test(w));
-}
 
 /** Plant parts that make a food a different ingredient from the plant's main food. */
 const PART_RE = /\b(leaves|leaf|seeds?|kernels?|flowers?|blossoms?|greens|shoots?|stems?|tops|sprouts?|peel|vine)\b/;
@@ -563,6 +567,11 @@ export function validateRecipe(
   const ings = recipe.ingredients ?? [];
   const label = (ing: ValidatableIngredient) => `"${ing.raw}"`;
 
+  // House rules first; a staple flagged NOT_DRY_STAPLE is not reported again as STATE_MISMATCH.
+  const house = checkHouseRules(recipe, foodById);
+  for (const { severity, ...issue } of house) push(severity, issue);
+  const notDry = new Set(house.filter((i) => i.code === 'NOT_DRY_STAPLE').map((i) => i.ingredientIndex));
+
   ings.forEach((ing, idx) => {
     const item = ing.item || ing.raw;
     const excluded = !!ing.excludeFromNutrition;
@@ -603,7 +612,7 @@ export function validateRecipe(
       }
       if (!excluded) {
         const st = stateConflict(ing, food.description);
-        if (st) push('error', { code: 'STATE_MISMATCH', ingredientIndex: idx, message: `${label(ing)} → "${food.description}": ${st}` });
+        if (st && !notDry.has(idx)) push('error', { code: 'STATE_MISMATCH', ingredientIndex: idx, message: `${label(ing)} → "${food.description}": ${st}` });
       }
     }
 

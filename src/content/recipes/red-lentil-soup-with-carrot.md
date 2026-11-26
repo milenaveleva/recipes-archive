@@ -66,11 +66,11 @@ ingredients:
     fdcId: 170917
     matchConfidence: medium
     cooking: boiled
-  - raw: 100 g red lentils, uncooked
+  - raw: 100 g red lentils, dry
     quantity: 100
     unit: g
     item: red lentils
-    note: uncooked
+    note: dry
     grams: 100
     fdcId: 172420
     matchConfidence: high

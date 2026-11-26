@@ -22,7 +22,7 @@ ingredients:
     quantity: 270
     unit: g
     item: beetroot
-    note: raw, cooked
+    note: raw
     grams: 270
     fdcId: 169145
     matchConfidence: high

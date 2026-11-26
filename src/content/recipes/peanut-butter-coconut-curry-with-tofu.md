@@ -115,11 +115,11 @@ ingredients:
     fdcId: 168156
     matchConfidence: high
     cooking: boiled
-  - raw: 320 g brown basmati or jasmine rice, uncooked
+  - raw: 320 g brown basmati or jasmine rice, dry
     quantity: 320
     unit: g
     item: brown basmati or jasmine rice
-    note: uncooked
+    note: dry
     grams: 320
     fdcId: 169703
     matchConfidence: high

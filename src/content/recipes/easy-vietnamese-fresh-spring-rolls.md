@@ -20,7 +20,7 @@ ingredients:
   - raw: 6 rice paper sheets, uncooked
     quantity: 6
     item: rice paper sheets
-    note: uncooked
+    note: dry
     grams: 36
     fdcId: 169742
     matchConfidence: high

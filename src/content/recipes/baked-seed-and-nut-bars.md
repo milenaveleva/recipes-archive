@@ -25,11 +25,11 @@ ingredients:
     fdcId: 170556
     matchConfidence: high
     cooking: baked
-  - raw: 120 g quinoa, uncooked
+  - raw: 120 g quinoa, dry
     quantity: 120
     unit: g
     item: quinoa
-    note: uncooked
+    note: dry
     grams: 120
     fdcId: 168874
     matchConfidence: high

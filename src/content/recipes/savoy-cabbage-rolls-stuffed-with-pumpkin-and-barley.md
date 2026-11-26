@@ -24,11 +24,11 @@ ingredients:
     fdcId: 170388
     matchConfidence: high
     cooking: baked
-  - raw: 320 g pearl barley, uncooked
+  - raw: 320 g pearl barley, dry
     quantity: 320
     unit: g
     item: pearl barley
-    note: uncooked
+    note: dry
     grams: 320
     fdcId: 170284
     matchConfidence: medium

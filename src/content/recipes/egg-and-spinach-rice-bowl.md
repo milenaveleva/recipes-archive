@@ -65,11 +65,11 @@ ingredients:
     fdcId: 748967
     matchConfidence: high
     cooking: fried
-  - raw: 80 g long-grain brown rice (uncooked weight)
+  - raw: 80 g long-grain brown rice (dry)
     quantity: 80
     unit: g
     item: long-grain brown rice
-    note: uncooked weight
+    note: dry
     grams: 80
     fdcId: 169703
     matchConfidence: high

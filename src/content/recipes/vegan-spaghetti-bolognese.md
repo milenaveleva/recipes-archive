@@ -49,11 +49,11 @@ ingredients:
     fdcId: 170108
     matchConfidence: high
     cooking: fried
-  - raw: 50 g red lentils, uncooked
+  - raw: 50 g red lentils, dry
     quantity: 50
     unit: g
     item: red lentils
-    note: uncooked
+    note: dry
     grams: 50
     fdcId: 174284
     matchConfidence: high

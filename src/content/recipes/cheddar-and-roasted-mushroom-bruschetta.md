@@ -178,6 +178,6 @@ createdAt: "2026-11-14"
 
 ## Tips
 
-- Can also be made with mixed mushrooms. You can mix a little leftover roast meat into the mushrooms.
+- Can also be made with mixed mushrooms.
 - Sprinkle with any fresh herb.
 - Any other full-flavoured cheese works instead of cheddar.

@@ -28,7 +28,7 @@ ingredients:
     fdcId: 175205
     matchConfidence: medium
     cooking: boiled
-  - raw: ½ cup dried borlotti beans
+  - raw: ½ cup borlotti beans, dry
     quantity: 0.5
     unit: cup
     item: borlotti beans
@@ -38,7 +38,7 @@ ingredients:
     fdcId: 175189
     matchConfidence: high
     cooking: boiled
-  - raw: ⅓ cup dried chickpeas
+  - raw: ⅓ cup chickpeas, dry
     quantity: 0.333
     unit: cup
     item: chickpeas

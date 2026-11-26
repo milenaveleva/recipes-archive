@@ -101,11 +101,11 @@ ingredients:
     fdcId: 170150
     matchConfidence: high
     cooking: raw
-  - raw: 320 g brown jasmine rice, uncooked
+  - raw: 320 g brown jasmine rice, dry
     quantity: 320
     unit: g
     item: brown jasmine rice
-    note: uncooked
+    note: dry
     grams: 320
     fdcId: 169703
     matchConfidence: high

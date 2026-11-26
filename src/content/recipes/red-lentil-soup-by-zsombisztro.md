@@ -63,11 +63,11 @@ ingredients:
     fdcId: 170026
     matchConfidence: high
     cooking: boiled
-  - raw: 200 g red lentils (rinsed), uncooked
+  - raw: 200 g red lentils (rinsed), dry
     quantity: 200
     unit: g
     item: red lentils (rinsed)
-    note: uncooked
+    note: dry
     grams: 200
     fdcId: 174284
     matchConfidence: high
@@ -85,7 +85,7 @@ ingredients:
     quantity: 1
     unit: tsp
     item: or fresh parsley
-    note: dry, or mint
+    note: dried or fresh, or mint
     grams: 1.3
     milliliters: 4.92892
     fdcId: 170416

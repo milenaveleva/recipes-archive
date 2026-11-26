@@ -332,3 +332,10 @@ describe('leading parenthetical measurements', () => {
     expect(r.item).toBe('(240 ml)');
   });
 });
+
+describe('count units the parser library does not know', () => {
+  it('parses leaves and stalks as units', () => {
+    expect(parseIngredientLine('6 leaves fresh mint')).toMatchObject({ quantity: 6, unit: 'leaves', item: 'fresh mint' });
+    expect(parseIngredientLine('2 stalks lemongrass')).toMatchObject({ quantity: 2, unit: 'stalks', item: 'lemongrass' });
+  });
+});

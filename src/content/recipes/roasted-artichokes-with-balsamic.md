@@ -21,7 +21,7 @@ ingredients:
   - raw: 4 artichokes
     quantity: 4
     item: artichokes
-    note: ≈ 240 g edible leaf bases and hearts
+    note: about 240 g edible leaf bases and hearts
     grams: 240
     fdcId: 169205
     matchConfidence: high

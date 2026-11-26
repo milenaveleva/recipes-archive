@@ -18,11 +18,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 240 g brown rice, uncooked
+  - raw: 240 g brown rice, dry
     quantity: 240
     unit: g
     item: brown rice
-    note: uncooked
+    note: dry
     grams: 240
     fdcId: 169706
     matchConfidence: high

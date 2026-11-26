@@ -203,6 +203,8 @@ export function formatIngredientAmount(ing: IngredientAmountSource): string | nu
       : formatQuantity(ing.quantity!);
 
   const canon = canonicalUnit(ing.unit);
+  // Herb leaves and sprigs are counted ("6 leaves", "2 sprigs"), never a fraction of a gram.
+  if (ing.quantity != null && /^(leaf|leaves|sprigs?)$/i.test(ing.unit ?? '')) return `${qtyText()} ${ing.unit}`;
   if ((canon === 'teaspoon' || canon === 'tablespoon') && ing.quantity != null) {
     return `${qtyText()} ${canon === 'tablespoon' ? 'tbsp' : 'tsp'}`;
   }

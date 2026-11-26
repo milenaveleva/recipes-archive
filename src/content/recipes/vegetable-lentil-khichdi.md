@@ -17,22 +17,22 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 320 g brown basmati rice, uncooked
+  - raw: 320 g brown basmati rice, dry
     group: Main ingredients
     quantity: 320
     unit: g
     item: brown basmati rice
-    note: uncooked
+    note: dry
     grams: 320
     fdcId: 169703
     matchConfidence: high
     cooking: boiled
-  - raw: 150 g red lentils, uncooked
+  - raw: 150 g red lentils, dry
     group: Main ingredients
     quantity: 150
     unit: g
     item: red lentils
-    note: uncooked
+    note: dry
     grams: 150
     fdcId: 174284
     matchConfidence: high
