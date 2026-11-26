@@ -26,12 +26,12 @@ ingredients:
     fdcId: 172475
     matchConfidence: high
     cooking: fried
-  - raw: 300 g cooked brown rice, chilled (≈ 101 g uncooked)
-    group: For the tofu fried rice
-    quantity: 300
+  - raw: 101 g dry brown rice, cooked and chilled
+    quantity: 101
     unit: g
-    item: cooked brown rice, chilled
-    note: ≈ 101 g uncooked
+    item: brown rice
+    note: dry, cooked and chilled
+    group: For the tofu fried rice
     grams: 101
     fdcId: 169703
     matchConfidence: high

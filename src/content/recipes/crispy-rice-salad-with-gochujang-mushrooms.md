@@ -12,11 +12,11 @@ totalTime: PT50M
 cuisine: Asian-Inspired
 course: Main Course
 ingredients:
-  - raw: 1 cup cooked brown rice (≈ 68 g uncooked)
-    quantity: 1
-    unit: cup
+  - raw: 68 g dry brown rice, cooked
+    quantity: 68
+    unit: g
     item: brown rice
-    note: cooked (≈ 68 g uncooked)
+    note: dry, cooked
     grams: 68
     fdcId: 169703
     matchConfidence: high

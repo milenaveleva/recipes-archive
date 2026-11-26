@@ -83,12 +83,12 @@ ingredients:
     fdcId: 171329
     matchConfidence: medium
     cooking: boiled
-  - raw: 250 g pre-cooked brown rice (≈ 84 g uncooked)
-    group: For the filling
-    quantity: 250
+  - raw: 84 g dry brown rice, cooked
+    quantity: 84
     unit: g
-    item: pre-cooked brown rice
-    note: ≈ 84 g uncooked
+    item: brown rice
+    note: dry, cooked
+    group: For the filling
     grams: 84
     fdcId: 169703
     matchConfidence: medium

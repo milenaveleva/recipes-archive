@@ -78,10 +78,12 @@ ingredients:
     fdcId: 170580
     matchConfidence: high
     cooking: boiled
-  - raw: cooked brown rice (≈ 101 g uncooked)
+  - raw: 101 g dry brown rice, cooked
+    quantity: 101
+    unit: g
+    item: brown rice
+    note: dry, cooked
     group: For serving
-    item: cooked brown rice
-    note: ≈ 101 g uncooked
     grams: 101
     fdcId: 169703
     matchConfidence: high

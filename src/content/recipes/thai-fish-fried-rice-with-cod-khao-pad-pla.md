@@ -26,12 +26,12 @@ ingredients:
     fdcId: 171955
     matchConfidence: high
     cooking: fried
-  - raw: 300 g cooked brown jasmine rice (cold) (≈ 101 g uncooked)
-    group: Main ingredients
-    quantity: 300
+  - raw: 101 g dry brown jasmine rice, cooked and chilled
+    quantity: 101
     unit: g
-    item: cooked brown jasmine rice (cold)
-    note: ≈ 101 g uncooked
+    item: brown jasmine rice
+    note: dry, cooked and chilled
+    group: Main ingredients
     grams: 101
     fdcId: 169703
     matchConfidence: high

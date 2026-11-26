@@ -17,11 +17,11 @@ course: Snack
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 225 g cooked quinoa (≈ 74 g uncooked)
-    quantity: 225
+  - raw: 74 g dry quinoa, cooked
+    quantity: 74
     unit: g
-    item: cooked quinoa
-    note: ≈ 74 g uncooked
+    item: quinoa
+    note: dry, cooked
     grams: 74
     fdcId: 168874
     matchConfidence: high

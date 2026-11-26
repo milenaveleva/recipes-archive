@@ -68,12 +68,12 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: fried
-  - raw: 500 g cooked brown rice (≈ 168 g uncooked)
-    group: For assembling the bowl
-    quantity: 500
+  - raw: 168 g dry brown rice, cooked
+    quantity: 168
     unit: g
-    item: cooked brown rice
-    note: ≈ 168 g uncooked
+    item: brown rice
+    note: dry, cooked
+    group: For assembling the bowl
     grams: 168
     fdcId: 169703
     matchConfidence: high

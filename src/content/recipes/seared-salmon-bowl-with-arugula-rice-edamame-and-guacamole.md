@@ -48,13 +48,12 @@ ingredients:
     matchConfidence: high
     cooking: raw
     proxyOk: true
-  - raw: 2 cups cooked brown rice (≈ 136 g uncooked)
-    quantity: 2
-    unit: cups
-    item: cooked brown rice
-    note: ≈ 136 g uncooked
+  - raw: 136 g dry brown rice, cooked
+    quantity: 136
+    unit: g
+    item: brown rice
+    note: dry, cooked
     grams: 136
-    milliliters: 473.176
     fdcId: 169703
     matchConfidence: high
     cooking: boiled

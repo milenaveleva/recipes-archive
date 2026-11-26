@@ -56,15 +56,24 @@ ingredients:
     fdcId: 169640
     matchConfidence: high
     cooking: fried
-  - raw: 2 tbsp cranberry preserve or sauce
-    quantity: 2
+  - raw: 50 g frozen cranberries (for a quick cranberry sauce)
+    quantity: 50
+    unit: g
+    item: frozen cranberries
+    note: for a quick cranberry sauce
+    grams: 50
+    fdcId: 171722
+    matchConfidence: high
+    cooking: boiled
+  - raw: 1 tbsp honey (for the cranberry sauce)
+    quantity: 1
     unit: tbsp
-    item: cranberry preserve or sauce
-    grams: 40
-    milliliters: 29.5736
-    fdcId: 169641
-    matchConfidence: medium
-    cooking: raw
+    item: honey
+    note: for the cranberry sauce
+    grams: 21
+    fdcId: 169640
+    matchConfidence: high
+    cooking: boiled
   - raw: 1 handful frozen cranberries, thawed
     quantity: 1
     item: frozen cranberries
@@ -81,16 +90,16 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 219
-    energyKj: 918
+    energyKcal: 217
+    energyKj: 909
     protein_g: 8.1
     fat_g: 7.2
     satFat_g: 3.2
-    carbs_g: 31.7
-    fiber_g: 4.2
+    carbs_g: 31.3
+    fiber_g: 4.4
     sugar_g: 9.1
-    sodium_mg: 107
-    availableCarb_g: 26.8
+    sodium_mg: 106
+    availableCarb_g: 26.3
   glycemic:
     gi: 64
     gl: 17
@@ -98,7 +107,7 @@ nutrition:
     glBand: medium
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 91
+    measuredGiPct: 99
   nutriScore:
     grade: C
     points: 5
@@ -106,17 +115,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.6
+    score: 0.5
     band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.01
   balance:
     score: 3
     band: low
-    nrf: 12
+    nrf: 12.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 70.4
+    minimallyProcessedPct: 74.4
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -135,6 +144,7 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Cut small rounds from the pizza dough with a glass or cutter. Place the discs on a baking tray lined with baking paper and pre-bake in an oven preheated to 200 °C for about 10 minutes until golden brown.
-2. Slice the pears. Heat the honey in a pan, then fry the pear slices in it for 1-2 minutes per side. Add the pecans as well and let them caramelise nicely.
-3. Place a slice of Brie, a slice of caramelised pear and a pecan on each pre-baked dough disc. Return to the oven for another 5-7 minutes until the cheese melts. Serve garnished with cranberry preserve, frozen cranberries (thawed and patted dry) and fresh thyme.
+1. For the quick cranberry sauce, simmer the frozen cranberries with the honey and 1 tablespoon of water over medium heat for 5-8 minutes, stirring, until the berries burst and the sauce thickens. Leave to cool.
+2. Cut small rounds from the pizza dough with a glass or cutter. Place the discs on a baking tray lined with baking paper and pre-bake in an oven preheated to 200 °C for about 10 minutes until golden brown.
+3. Slice the pears. Heat the honey in a pan, then fry the pear slices in it for 1-2 minutes per side. Add the pecans as well and let them caramelise nicely.
+4. Place a slice of Brie, a slice of caramelised pear and a pecan on each pre-baked dough disc. Return to the oven for another 5-7 minutes until the cheese melts. Serve garnished with the cranberry sauce, the thawed cranberries and fresh thyme.
