@@ -28,7 +28,8 @@ ingredients:
   - raw: 400 ml unsweetened oat milk
     quantity: 400
     unit: ml
-    item: unsweetened oat milk
+    item: oat milk
+    note: unsweetened
     grams: 412
     milliliters: 400
     fdcId: 2257046

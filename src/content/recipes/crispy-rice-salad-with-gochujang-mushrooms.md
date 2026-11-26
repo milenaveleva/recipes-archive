@@ -151,7 +151,8 @@ ingredients:
   - raw: 1/4 cup unsweetened oat milk
     quantity: 0.25
     unit: cup
-    item: unsweetened oat milk
+    item: oat milk
+    note: unsweetened
     grams: 60
     milliliters: 59.147
     fdcId: 82018905

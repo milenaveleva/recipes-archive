@@ -32,7 +32,8 @@ ingredients:
     group: Main ingredients
     quantity: 80
     unit: ml
-    item: unsweetened oat milk
+    item: oat milk
+    note: unsweetened
     grams: 82
     milliliters: 80
     fdcId: 82018905

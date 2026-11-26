@@ -48,7 +48,8 @@ ingredients:
     group: For the base
     quantity: 150
     unit: ml
-    item: unsweetened almond milk
+    item: almond milk
+    note: unsweetened
     grams: 166.1
     milliliters: 150
     fdcId: 174832
@@ -67,7 +68,8 @@ ingredients:
     group: For the base
     quantity: 50
     unit: g
-    item: unsweetened cocoa powder
+    item: cocoa powder
+    note: unsweetened
     grams: 50
     fdcId: 169593
     matchConfidence: medium
@@ -103,7 +105,8 @@ ingredients:
     group: For the raspberry layer
     quantity: 80
     unit: g
-    item: unsweetened almond milk
+    item: almond milk
+    note: unsweetened
     grams: 80
     fdcId: 174832
     matchConfidence: high

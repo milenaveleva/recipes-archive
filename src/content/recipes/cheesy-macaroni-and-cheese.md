@@ -71,7 +71,8 @@ ingredients:
     group: Main ingredients
     quantity: 500
     unit: ml
-    item: unsweetened oat milk
+    item: oat milk
+    note: unsweetened
     grams: 515
     milliliters: 500
     fdcId: 82018905

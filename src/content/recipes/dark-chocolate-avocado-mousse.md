@@ -37,7 +37,8 @@ ingredients:
   - raw: 175 ml room-temperature unsweetened oat milk
     quantity: 175
     unit: ml
-    item: room-temperature unsweetened oat milk
+    item: oat milk
+    note: unsweetened, room temperature
     grams: 180
     milliliters: 175
     fdcId: 82018905
@@ -53,7 +54,8 @@ ingredients:
   - raw: 125 g unsweetened applesauce
     quantity: 125
     unit: g
-    item: unsweetened applesauce
+    item: applesauce
+    note: unsweetened
     grams: 125
     fdcId: 2346414
     matchConfidence: high

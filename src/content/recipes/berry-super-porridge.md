@@ -46,8 +46,8 @@ ingredients:
   - raw: 100 ml unsweetened oat milk (or water), enough for a creamy texture
     quantity: 100
     unit: ml
-    item: unsweetened oat milk (or water)
-    note: enough for a creamy texture
+    item: oat milk (or water)
+    note: unsweetened, enough for a creamy texture
     grams: 103
     milliliters: 100
     fdcId: 82018905

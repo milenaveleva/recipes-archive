@@ -29,8 +29,8 @@ ingredients:
     group: What else you may need
     quantity: 30
     unit: ml
-    item: unsweetened oat milk
-    note: to taste
+    item: oat milk
+    note: unsweetened, to taste
     grams: 30
     milliliters: 30
     fdcId: 2257046

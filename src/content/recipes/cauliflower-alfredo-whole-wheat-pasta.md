@@ -54,7 +54,8 @@ ingredients:
   - raw: 125 ml unsweetened almond milk
     quantity: 125
     unit: ml
-    item: unsweetened almond milk
+    item: almond milk
+    note: unsweetened
     grams: 138.4
     milliliters: 125
     fdcId: 174832

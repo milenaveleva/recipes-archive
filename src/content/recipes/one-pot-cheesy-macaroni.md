@@ -30,7 +30,8 @@ ingredients:
   - raw: 1 l unsweetened oat milk
     quantity: 1
     unit: l
-    item: unsweetened oat milk
+    item: oat milk
+    note: unsweetened
     grams: 1030
     milliliters: 1000
     fdcId: 2257046

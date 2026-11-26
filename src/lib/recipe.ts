@@ -254,8 +254,8 @@ export function oliveOilSpoons(ing: IngredientAmountSource): string | null {
   return `${formatQuantity(Math.round(tbsp * 2) / 2)} tbsp`;
 }
 
-/** State words that open a staple's name ("dried chickpeas") but belong in its note. */
-const STATE_PREFIX = /^(dry|dried|raw|uncooked)\s+(.+)$/i;
+/** State words that open a staple's name ("dried chickpeas", "unsweetened oat milk") but belong in its note. */
+const STATE_PREFIX = /^(dry|dried|raw|uncooked|unsweetened)\s+(.+)$/i;
 /** Names where the state word is part of the product itself (dried oregano, raw honey). */
 const STATE_IN_NAME = /^(dried|dry|raw)\s+(oregano|thyme|basil|parsley|dill|mint|sage|rosemary|tarragon|marjoram|herbs?|wakame|seaweed|yeast|honey|almonds|fruit|apricots?|figs?|dates|cranberries|mushrooms?|porcini|tomatoes|chil(?:l)?i(?:es)?)\b/i;
 
@@ -269,7 +269,8 @@ export function displayItemNote(item: string, note?: string | null): { item: str
   const m = STATE_PREFIX.exec(item.trim());
   if (!m || STATE_IN_NAME.test(item.trim())) return { item, note: note ?? null };
   // "dried" and "uncooked" read as the one word the lists use: "dry" (raw stays raw).
-  const state = /^raw$/i.test(m[1]) ? 'raw' : 'dry';
+  const word = m[1].toLowerCase();
+  const state = word === 'raw' || word === 'unsweetened' ? word : 'dry';
   const rest = note && !new RegExp(`^(${state}|dried|uncooked)\\b`, 'i').test(note) ? `${state}, ${note}` : (note || state).replace(/^(dried|uncooked)\b/i, 'dry');
   return { item: m[2], note: rest };
 }

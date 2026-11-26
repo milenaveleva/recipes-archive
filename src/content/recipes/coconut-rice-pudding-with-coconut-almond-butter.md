@@ -69,8 +69,8 @@ ingredients:
   - raw: 60 ml unsweetened oat milk, as needed
     quantity: 60
     unit: ml
-    item: unsweetened oat milk
-    note: as needed
+    item: oat milk
+    note: unsweetened, as needed
     grams: 60
     milliliters: 60
     fdcId: 82018905
