@@ -17,11 +17,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 160 g whole-wheat thin noodles (in place of rice noodles), dry
+  - raw: 160 g whole-wheat thin noodles, dry
     group: Noodles and vegetables
     quantity: 160
     unit: g
-    item: whole-wheat thin noodles (in place of rice noodles)
+    item: whole-wheat thin noodles
     note: dry
     grams: 160
     fdcId: 169738

@@ -20,8 +20,8 @@ ingredients:
   - raw: 357 g raw shrimp, cooked
     quantity: 357
     unit: g
-    item: raw shrimp
-    note: cooked
+    item: shrimp
+    note: raw, cooked
     grams: 357
     fdcId: 175179
     matchConfidence: medium

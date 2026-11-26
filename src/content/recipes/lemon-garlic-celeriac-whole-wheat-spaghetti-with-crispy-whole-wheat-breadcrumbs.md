@@ -17,11 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 320 g dried whole-wheat spaghetti
+  - raw: 320 g dry whole-wheat spaghetti
     group: Main ingredients
     quantity: 320
     unit: g
-    item: dried whole-wheat spaghetti
+    item: whole-wheat spaghetti
+    note: dry
     grams: 320
     fdcId: 169738
     matchConfidence: high
@@ -53,12 +54,11 @@ ingredients:
     fdcId: 167747
     matchConfidence: high
     cooking: fried
-  - raw: 60 ml extra virgin olive oil
-    quantity: 60
-    unit: ml
+  - raw: 4 tbsp extra virgin olive oil
+    quantity: 4
+    unit: tbsp
     item: extra virgin olive oil
     grams: 54.8
-    milliliters: 60
     fdcId: 171413
     matchConfidence: high
     cooking: fried

@@ -84,8 +84,8 @@ ingredients:
   - raw: 1 tsp dried or fresh parsley (or mint)
     quantity: 1
     unit: tsp
-    item: dried or fresh parsley
-    note: or mint
+    item: or fresh parsley
+    note: dry, or mint
     grams: 1.3
     milliliters: 4.92892
     fdcId: 170416

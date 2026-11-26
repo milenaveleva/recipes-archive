@@ -20,7 +20,8 @@ ingredients:
   - raw: 160 g dry whole-wheat spaghetti
     quantity: 160
     unit: g
-    item: dry whole-wheat spaghetti
+    item: whole-wheat spaghetti
+    note: dry
     grams: 160
     fdcId: 169738
     matchConfidence: high
@@ -41,9 +42,9 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 30 g extra virgin olive oil
-    quantity: 30
-    unit: g
+  - raw: 2 tbsp extra virgin olive oil
+    quantity: 2
+    unit: tbsp
     item: extra virgin olive oil
     grams: 30
     fdcId: 171413
@@ -63,13 +64,12 @@ ingredients:
     fdcId: 167749
     matchConfidence: medium
     cooking: raw
-  - raw: 30 ml extra virgin olive oil
+  - raw: 2 tbsp extra virgin olive oil
     group: Pantry staples
-    quantity: 30
-    unit: ml
+    quantity: 2
+    unit: tbsp
     item: extra virgin olive oil
     grams: 27.4
-    milliliters: 30
     fdcId: 171413
     matchConfidence: high
     cooking: fried

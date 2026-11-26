@@ -20,8 +20,8 @@ ingredients:
   - raw: 213 g raw sweet potato, steamed and mashed
     quantity: 213
     unit: g
-    item: raw sweet potato
-    note: steamed and mashed
+    item: sweet potato
+    note: raw, steamed and mashed
     grams: 213
     fdcId: 168482
     matchConfidence: medium

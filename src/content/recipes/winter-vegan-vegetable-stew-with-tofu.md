@@ -49,12 +49,11 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 50 ml olive oil
-    quantity: 50
-    unit: ml
+  - raw: 3½ tbsp olive oil
+    quantity: 3.5
+    unit: tbsp
     item: olive oil
     grams: 45.6
-    milliliters: 50
     fdcId: 171413
     matchConfidence: high
     cooking: raw

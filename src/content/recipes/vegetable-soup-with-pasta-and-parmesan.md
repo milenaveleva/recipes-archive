@@ -81,8 +81,8 @@ ingredients:
     group: Main ingredients
     quantity: 120
     unit: g
-    item: dry whole-wheat pasta
-    note: e.g. penne or fusilli
+    item: whole-wheat pasta
+    note: dry, e.g. penne or fusilli
     grams: 120
     fdcId: 169738
     matchConfidence: high

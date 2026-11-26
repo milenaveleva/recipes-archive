@@ -49,11 +49,11 @@ ingredients:
     fdcId: 170685
     matchConfidence: medium
     cooking: baked
-  - raw: 81 g dried white beans, soaked and cooked
+  - raw: 81 g dry white beans, soaked and cooked
     quantity: 81
     unit: g
-    item: dried white beans
-    note: soaked and cooked
+    item: white beans
+    note: dry, soaked and cooked
     grams: 81
     fdcId: 175202
     matchConfidence: high

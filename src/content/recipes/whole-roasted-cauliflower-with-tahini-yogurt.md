@@ -26,19 +26,19 @@ ingredients:
     fdcId: 169986
     matchConfidence: high
     cooking: baked
-  - raw: 30 g extra virgin olive oil
+  - raw: 2 tbsp extra virgin olive oil
     group: For the spiced roasted cauliflower
-    quantity: 30
-    unit: g
+    quantity: 2
+    unit: tbsp
     item: extra virgin olive oil
     grams: 30
     fdcId: 171413
     matchConfidence: high
     cooking: baked
-  - raw: 40 g extra virgin olive oil
+  - raw: 3 tbsp extra virgin olive oil
     group: For the spiced roasted cauliflower
-    quantity: 40
-    unit: g
+    quantity: 3
+    unit: tbsp
     item: extra virgin olive oil
     grams: 40
     fdcId: 171413

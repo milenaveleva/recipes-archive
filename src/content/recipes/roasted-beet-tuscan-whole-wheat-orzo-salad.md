@@ -42,12 +42,11 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: baked
-  - raw: 40 ml extra virgin olive oil
-    quantity: 40
-    unit: ml
+  - raw: 2½ tbsp extra virgin olive oil
+    quantity: 2.5
+    unit: tbsp
     item: extra virgin olive oil
     grams: 36.5
-    milliliters: 40
     fdcId: 171413
     matchConfidence: high
     cooking: baked

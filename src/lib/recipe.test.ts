@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
+  oliveOilSpoons,
+  displayItemNote,
   formatQuantity,
   buildScoreDials,
   hasAnyScore,
@@ -66,10 +68,13 @@ describe('formatIngredientAmount (display unit ≠ calc basis)', () => {
     expect(
       formatIngredientAmount({ quantity: 0.25, unit: 'cup', item: 'dairy-free milk', milliliters: 59.147, grams: 34.3 }),
     ).toBe('60 ml');
-    // Oils are liquids too (display ml), not grams.
+    // Oils are liquids too (display ml), not grams — except olive oil, always in spoons.
+    expect(
+      formatIngredientAmount({ quantity: 0.25, unit: 'cup', item: 'sunflower oil', milliliters: 59, grams: 54 }),
+    ).toBe('60 ml');
     expect(
       formatIngredientAmount({ quantity: 0.25, unit: 'cup', item: 'olive oil', milliliters: 59, grams: 54 }),
-    ).toBe('60 ml');
+    ).toBe('4 tbsp');
     // Head-noun match: a modifier like "water"/"cream" doesn't make a solid a liquid.
     expect(formatIngredientAmount({ quantity: 1, unit: 'cup', item: 'water chestnuts', milliliters: 237, grams: 250 })).toBe('250 g');
     expect(formatIngredientAmount({ quantity: 1, unit: 'cup', item: 'cream cheese', milliliters: 237, grams: 250 })).toBe('250 g');
@@ -459,5 +464,22 @@ describe('formatQuantity (cook-readable fractions)', () => {
     expect(formatQuantity(1 / 3)).toBe('⅓');
     expect(formatQuantity(2)).toBe('2');
     expect(formatQuantity(1.4)).toBe('1.4');
+  });
+});
+
+describe('olive oil and state-word display', () => {
+  it('shows olive oil in tablespoons from its weight or volume', () => {
+    expect(oliveOilSpoons({ item: 'extra virgin olive oil', quantity: 60, unit: 'ml', milliliters: 60 })).toBe('4 tbsp');
+    expect(oliveOilSpoons({ item: 'olive oil', quantity: 150, unit: 'g', grams: 150 })).toBe('11 tbsp');
+    expect(oliveOilSpoons({ item: 'olive oil', quantity: 1.5, unit: 'tbsp', grams: 20 })).toBe('1½ tbsp');
+    expect(oliveOilSpoons({ item: 'olive oil', grams: 4 })).toBe('1 tsp');
+    expect(oliveOilSpoons({ item: 'sunflower oil', grams: 30 })).toBeNull();
+  });
+
+  it('moves a leading state word of a staple into the note, but not of a product name', () => {
+    expect(displayItemNote('dried chickpeas', 'soaked and cooked')).toEqual({ item: 'chickpeas', note: 'dry, soaked and cooked' });
+    expect(displayItemNote('dry whole-wheat penne')).toEqual({ item: 'whole-wheat penne', note: 'dry' });
+    expect(displayItemNote('dried oregano')).toEqual({ item: 'dried oregano', note: null });
+    expect(displayItemNote('raw honey')).toEqual({ item: 'raw honey', note: null });
   });
 });

@@ -41,9 +41,9 @@ ingredients:
     fdcId: 167747
     matchConfidence: high
     cooking: baked
-  - raw: 15 g extra virgin olive oil
-    quantity: 15
-    unit: g
+  - raw: 1 tbsp extra virgin olive oil
+    quantity: 1
+    unit: tbsp
     item: extra virgin olive oil
     grams: 15
     fdcId: 171413

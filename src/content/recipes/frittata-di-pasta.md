@@ -21,7 +21,7 @@ ingredients:
   - raw: 110 g dry whole-wheat pasta (spaghetti, penne or any short pasta), cooked and cooled
     quantity: 110
     unit: g
-    item: dry whole-wheat pasta
+    item: whole-wheat pasta
     note: dry, cooked and cooled
     group: Main ingredients
     grams: 110

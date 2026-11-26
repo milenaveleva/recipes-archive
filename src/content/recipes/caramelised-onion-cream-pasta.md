@@ -74,13 +74,12 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: fried
-  - raw: 30 ml extra virgin olive oil
+  - raw: 2 tbsp extra virgin olive oil
     group: Staples
-    quantity: 30
-    unit: ml
+    quantity: 2
+    unit: tbsp
     item: extra virgin olive oil
     grams: 27.4
-    milliliters: 30
     fdcId: 171413
     matchConfidence: high
     cooking: fried
@@ -182,4 +181,3 @@ createdAt: "2026-11-22"
 
 - Do not rush the caramelising of the onions over high heat, because they will burn instead of browning. Slow, patient cooking brings out their natural sugars and sweet flavour.
 - Also try it with penne, rigatoni or tagliatelle, as their surface holds the thick, creamy sauce very well.
-- The first oil line replaces the butter in the source (75 % of its weight).

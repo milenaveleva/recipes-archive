@@ -30,8 +30,8 @@ ingredients:
   - raw: 100 g dry white beans, uncooked
     quantity: 100
     unit: g
-    item: dry white beans
-    note: uncooked
+    item: white beans
+    note: dry, uncooked
     grams: 100
     fdcId: 175202
     matchConfidence: medium

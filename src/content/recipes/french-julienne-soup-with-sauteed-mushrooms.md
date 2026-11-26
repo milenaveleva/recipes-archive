@@ -99,13 +99,12 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: boiled
-  - raw: 15 ml extra virgin olive oil
+  - raw: 1 tbsp extra virgin olive oil
     group: Spices and pantry
-    quantity: 15
-    unit: ml
+    quantity: 1
+    unit: tbsp
     item: extra virgin olive oil
     grams: 13.7
-    milliliters: 15
     fdcId: 171413
     matchConfidence: high
     cooking: boiled

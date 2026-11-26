@@ -60,12 +60,11 @@ ingredients:
     fdcId: 170026
     matchConfidence: high
     cooking: boiled
-  - raw: 110 ml olive oil
-    quantity: 110
-    unit: ml
+  - raw: 7½ tbsp olive oil
+    quantity: 7.5
+    unit: tbsp
     item: olive oil
     grams: 100.4
-    milliliters: 110
     fdcId: 171413
     matchConfidence: high
     cooking: boiled

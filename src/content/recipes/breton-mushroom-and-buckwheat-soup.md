@@ -74,22 +74,21 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 30 g extra virgin olive oil
+  - raw: 2 tbsp extra virgin olive oil
     group: For frying and seasoning
-    quantity: 30
-    unit: g
+    quantity: 2
+    unit: tbsp
     item: extra virgin olive oil
     grams: 30
     fdcId: 171413
     matchConfidence: high
     cooking: boiled
-  - raw: 20 ml extra virgin olive oil
+  - raw: 1½ tbsp extra virgin olive oil
     group: For frying and seasoning
-    quantity: 20
-    unit: ml
+    quantity: 1.5
+    unit: tbsp
     item: extra virgin olive oil
     grams: 18.3
-    milliliters: 20
     fdcId: 171413
     matchConfidence: high
     cooking: boiled

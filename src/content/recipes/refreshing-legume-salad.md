@@ -17,38 +17,38 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 83 g dried green lentils, cooked
+  - raw: 83 g dry green lentils, cooked
     quantity: 83
     unit: g
-    item: dried green lentils
-    note: cooked
+    item: green lentils
+    note: dry, cooked
     grams: 83
     fdcId: 172420
     matchConfidence: medium
     cooking: raw
-  - raw: 94 g dried red kidney beans, soaked and cooked
+  - raw: 94 g dry red kidney beans, soaked and cooked
     quantity: 94
     unit: g
-    item: dried red kidney beans
-    note: soaked and cooked
+    item: red kidney beans
+    note: dry, soaked and cooked
     grams: 94
     fdcId: 173744
     matchConfidence: medium
     cooking: raw
-  - raw: 104 g dried white beans, soaked and cooked
+  - raw: 104 g dry white beans, soaked and cooked
     quantity: 104
     unit: g
-    item: dried white beans
-    note: soaked and cooked
+    item: white beans
+    note: dry, soaked and cooked
     grams: 104
     fdcId: 175202
     matchConfidence: medium
     cooking: raw
-  - raw: 108 g dried chickpeas, soaked and cooked
+  - raw: 108 g dry chickpeas, soaked and cooked
     quantity: 108
     unit: g
-    item: dried chickpeas
-    note: soaked and cooked
+    item: chickpeas
+    note: dry, soaked and cooked
     grams: 108
     fdcId: 173756
     matchConfidence: medium

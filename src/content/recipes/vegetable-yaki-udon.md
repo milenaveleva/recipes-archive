@@ -21,8 +21,8 @@ ingredients:
   - raw: 160 g dry whole-wheat udon noodles, cooked
     quantity: 160
     unit: g
-    item: dry whole-wheat udon noodles
-    note: cooked
+    item: whole-wheat udon noodles
+    note: dry, cooked
     grams: 160
     fdcId: 169738
     matchConfidence: high

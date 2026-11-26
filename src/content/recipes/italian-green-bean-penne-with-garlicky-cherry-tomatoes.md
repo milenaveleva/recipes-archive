@@ -54,13 +54,12 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 50 ml extra virgin olive oil
+  - raw: 3½ tbsp extra virgin olive oil
     group: For cooking and seasoning
-    quantity: 50
-    unit: ml
+    quantity: 3.5
+    unit: tbsp
     item: extra virgin olive oil
     grams: 45.6
-    milliliters: 50
     fdcId: 171413
     matchConfidence: high
     cooking: fried

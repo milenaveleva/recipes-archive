@@ -20,8 +20,8 @@ ingredients:
   - raw: 357 g raw cocktail shrimp, cooked
     quantity: 357
     unit: g
-    item: raw cocktail shrimp
-    note: cooked
+    item: cocktail shrimp
+    note: raw, cooked
     grams: 357
     fdcId: 175179
     matchConfidence: high

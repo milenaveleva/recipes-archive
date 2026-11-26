@@ -59,9 +59,9 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: 150 g extra virgin olive oil
-    quantity: 150
-    unit: g
+  - raw: 11 tbsp extra virgin olive oil
+    quantity: 11
+    unit: tbsp
     item: extra virgin olive oil
     grams: 150
     fdcId: 171413

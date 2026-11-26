@@ -20,7 +20,8 @@ ingredients:
   - raw: 320 g dry whole-wheat rigatoni
     quantity: 320
     unit: g
-    item: dry whole-wheat rigatoni
+    item: whole-wheat rigatoni
+    note: dry
     grams: 320
     fdcId: 169738
     matchConfidence: high
@@ -41,20 +42,11 @@ ingredients:
     fdcId: 170935
     matchConfidence: medium
     cooking: fried
-  - raw: 30 g extra virgin olive oil
-    quantity: 30
-    unit: g
-    item: extra virgin olive oil
-    grams: 30
-    fdcId: 171413
-    matchConfidence: high
-    cooking: fried
-  - raw: 2 tbsp extra virgin olive oil
-    quantity: 2
+  - raw: 4 tbsp extra virgin olive oil
+    quantity: 4
     unit: tbsp
     item: extra virgin olive oil
-    grams: 27
-    milliliters: 29.5736
+    grams: 57
     fdcId: 171413
     matchConfidence: high
     cooking: fried

@@ -42,10 +42,10 @@ ingredients:
     fdcId: 172233
     matchConfidence: medium
     cooking: raw
-  - raw: 30 g extra virgin olive oil
+  - raw: 2 tbsp extra virgin olive oil
     group: Main ingredients
-    quantity: 30
-    unit: g
+    quantity: 2
+    unit: tbsp
     item: extra virgin olive oil
     grams: 30
     fdcId: 171413

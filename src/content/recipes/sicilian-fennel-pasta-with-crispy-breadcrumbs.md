@@ -100,13 +100,12 @@ ingredients:
     matchConfidence: medium
     cooking: fried
     proxyOk: true
-  - raw: 40 ml extra virgin olive oil
+  - raw: 2½ tbsp extra virgin olive oil
     group: Basics
-    quantity: 40
-    unit: ml
+    quantity: 2.5
+    unit: tbsp
     item: extra virgin olive oil
     grams: 36.5
-    milliliters: 40
     fdcId: 171413
     matchConfidence: high
     cooking: fried

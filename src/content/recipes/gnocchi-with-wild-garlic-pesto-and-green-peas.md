@@ -66,13 +66,12 @@ ingredients:
     fdcId: 2515375
     matchConfidence: medium
     cooking: raw
-  - raw: 175 ml extra virgin olive oil
+  - raw: 11½ tbsp extra virgin olive oil
     group: Main ingredients
-    quantity: 175
-    unit: ml
+    quantity: 11.5
+    unit: tbsp
     item: extra virgin olive oil
     grams: 23
-    milliliters: 175
     fdcId: 171413
     matchConfidence: high
     cooking: raw

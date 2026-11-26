@@ -18,10 +18,10 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 150 g whole-wheat thin noodles (in place of glass noodles), dry
+  - raw: 150 g whole-wheat thin noodles, dry
     quantity: 150
     unit: g
-    item: whole-wheat thin noodles (in place of glass noodles)
+    item: whole-wheat thin noodles
     note: dry
     grams: 150
     fdcId: 169738

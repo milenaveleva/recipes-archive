@@ -17,10 +17,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 320 g dried whole-wheat tagliatelle
+  - raw: 320 g dry whole-wheat tagliatelle
     quantity: 320
     unit: g
-    item: dried whole-wheat tagliatelle
+    item: whole-wheat tagliatelle
+    note: dry
     grams: 320
     fdcId: 169738
     matchConfidence: high
@@ -41,21 +42,12 @@ ingredients:
     fdcId: 172175
     matchConfidence: high
     cooking: fried
-  - raw: 1½ tbsp extra virgin olive oil
-    quantity: 1.5
+  - raw: 3 tbsp extra virgin olive oil
+    quantity: 3
     unit: tbsp
     item: extra virgin olive oil
-    grams: 22
+    grams: 40.3
     milliliters: 22.1802
-    fdcId: 171413
-    matchConfidence: high
-    cooking: fried
-  - raw: 20 ml extra virgin olive oil
-    quantity: 20
-    unit: ml
-    item: extra virgin olive oil
-    grams: 18.3
-    milliliters: 20
     fdcId: 171413
     matchConfidence: high
     cooking: fried

@@ -1,6 +1,6 @@
 ---
 title: Vegan Pörkölt
-description: A hearty Hungarian-style paprika stew made with smoked tofu and potatoes instead of meat.
+description: A hearty Hungarian-style paprika stew made with smoked tofu and potatoes.
 image: ./images/vegan-porkolt.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10397_1775302807861_vegan-potato-and-smoked-tofu-stew_d37c483a.png
 imageAlt: Vegan Pörkölt
@@ -70,7 +70,8 @@ ingredients:
   - raw: 1 tsp dried marjoram
     quantity: 1
     unit: tsp
-    item: dried marjoram
+    item: marjoram
+    note: dry
     grams: 0.6
     milliliters: 4.92892
     fdcId: 170928

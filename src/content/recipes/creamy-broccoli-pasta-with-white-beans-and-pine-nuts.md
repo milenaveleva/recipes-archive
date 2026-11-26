@@ -46,12 +46,12 @@ ingredients:
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
-  - raw: 83 g dried white beans, soaked and cooked
+  - raw: 83 g dry white beans, soaked and cooked
     group: Main ingredients
     quantity: 83
     unit: g
-    item: dried white beans
-    note: soaked and cooked
+    item: white beans
+    note: dry, soaked and cooked
     grams: 83
     fdcId: 175202
     matchConfidence: medium

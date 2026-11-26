@@ -34,7 +34,9 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: olive oil
+  - raw: 2 tbsp olive oil
+    quantity: 2
+    unit: tbsp
     item: olive oil
     grams: 28
     fdcId: 171413

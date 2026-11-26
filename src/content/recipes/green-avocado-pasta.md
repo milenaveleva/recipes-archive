@@ -18,7 +18,8 @@ ingredients:
   - raw: 240 g dry whole-wheat penne
     quantity: 240
     unit: g
-    item: dry whole-wheat penne
+    item: whole-wheat penne
+    note: dry
     grams: 240
     fdcId: 169738
     matchConfidence: medium

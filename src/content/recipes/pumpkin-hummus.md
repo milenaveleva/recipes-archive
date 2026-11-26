@@ -41,9 +41,9 @@ ingredients:
     fdcId: 169410
     matchConfidence: medium
     cooking: raw
-  - raw: 35 g olive oil
-    quantity: 35
-    unit: g
+  - raw: 2½ tbsp olive oil
+    quantity: 2.5
+    unit: tbsp
     item: olive oil
     grams: 35
     fdcId: 171413
@@ -57,11 +57,11 @@ ingredients:
     fdcId: 170527
     matchConfidence: high
     cooking: raw
-  - raw: 82 g dried chickpeas, soaked and cooked (keep 120 ml of the cooking liquid)
+  - raw: 82 g dry chickpeas, soaked and cooked (keep 120 ml of the cooking liquid)
     quantity: 82
     unit: g
-    item: dried chickpeas
-    note: soaked and cooked (keep 120 ml of the cooking liquid)
+    item: chickpeas
+    note: dry, soaked and cooked (keep 120 ml of the cooking liquid)
     grams: 82
     fdcId: 173756
     matchConfidence: medium

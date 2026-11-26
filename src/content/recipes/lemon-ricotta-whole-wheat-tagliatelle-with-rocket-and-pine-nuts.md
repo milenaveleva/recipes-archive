@@ -20,7 +20,8 @@ ingredients:
   - raw: 160 g dry whole-wheat tagliatelle
     quantity: 160
     unit: g
-    item: dry whole-wheat tagliatelle
+    item: whole-wheat tagliatelle
+    note: dry
     grams: 160
     fdcId: 169738
     matchConfidence: high
@@ -64,12 +65,11 @@ ingredients:
     fdcId: 173431
     matchConfidence: high
     cooking: raw
-  - raw: 30 ml extra virgin olive oil
-    quantity: 30
-    unit: ml
+  - raw: 2 tbsp extra virgin olive oil
+    quantity: 2
+    unit: tbsp
     item: extra virgin olive oil
     grams: 27.4
-    milliliters: 30
     fdcId: 171413
     matchConfidence: high
     cooking: raw

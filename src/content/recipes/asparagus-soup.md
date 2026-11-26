@@ -42,9 +42,9 @@ ingredients:
     fdcId: 82011214
     matchConfidence: high
     cooking: boiled
-  - raw: 50 g extra virgin olive oil
-    quantity: 50
-    unit: g
+  - raw: 4 tbsp extra virgin olive oil
+    quantity: 4
+    unit: tbsp
     item: extra virgin olive oil
     grams: 52
     fdcId: 171413

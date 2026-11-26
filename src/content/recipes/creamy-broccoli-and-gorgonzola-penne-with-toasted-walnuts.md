@@ -64,12 +64,11 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 1½ tbsp extra virgin olive oil (in place of the butter)
+  - raw: 1½ tbsp extra virgin olive oil
     group: Creamy gorgonzola sauce
     quantity: 1.5
     unit: tbsp
     item: extra virgin olive oil
-    note: in place of the butter
     grams: 19
     milliliters: 22.1802
     fdcId: 171413

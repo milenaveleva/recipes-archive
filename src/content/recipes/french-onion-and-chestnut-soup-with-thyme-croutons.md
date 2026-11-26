@@ -55,22 +55,21 @@ ingredients:
     fdcId: 82011214
     matchConfidence: high
     cooking: boiled
-  - raw: 30 g extra virgin olive oil
+  - raw: 2 tbsp extra virgin olive oil
     group: Seasonings and basics
-    quantity: 30
-    unit: g
+    quantity: 2
+    unit: tbsp
     item: extra virgin olive oil
     grams: 30
     fdcId: 171413
     matchConfidence: high
     cooking: boiled
-  - raw: 15 ml olive oil
+  - raw: 1 tbsp olive oil
     group: Seasonings and basics
-    quantity: 15
-    unit: ml
+    quantity: 1
+    unit: tbsp
     item: olive oil
     grams: 13.7
-    milliliters: 15
     fdcId: 171413
     matchConfidence: high
     cooking: boiled

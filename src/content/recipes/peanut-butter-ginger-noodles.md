@@ -80,10 +80,11 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: raw
-  - raw: 320 g dried whole-wheat pasta
+  - raw: 320 g dry whole-wheat pasta
     quantity: 320
     unit: g
-    item: dried whole-wheat pasta
+    item: whole-wheat pasta
+    note: dry
     grams: 320
     fdcId: 169738
     matchConfidence: high

@@ -36,9 +36,9 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 75 g extra virgin olive oil
-    quantity: 75
-    unit: g
+  - raw: 5½ tbsp extra virgin olive oil
+    quantity: 5.5
+    unit: tbsp
     item: extra virgin olive oil
     grams: 75
     fdcId: 171413

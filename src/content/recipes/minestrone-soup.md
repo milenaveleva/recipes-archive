@@ -18,20 +18,20 @@ course: Soup
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 81 g dried cannellini beans, soaked and cooked
+  - raw: 81 g dry cannellini beans, soaked and cooked
     quantity: 81
     unit: g
-    item: dried cannellini beans
-    note: soaked and cooked
+    item: cannellini beans
+    note: dry, soaked and cooked
     grams: 81
     fdcId: 175202
     matchConfidence: medium
     cooking: boiled
-  - raw: 82 g dried chickpeas, soaked and cooked
+  - raw: 82 g dry chickpeas, soaked and cooked
     quantity: 82
     unit: g
-    item: dried chickpeas
-    note: soaked and cooked
+    item: chickpeas
+    note: dry, soaked and cooked
     grams: 82
     fdcId: 173756
     matchConfidence: medium

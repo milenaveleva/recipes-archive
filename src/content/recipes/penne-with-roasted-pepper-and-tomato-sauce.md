@@ -22,7 +22,8 @@ ingredients:
     group: Main ingredients
     quantity: 320
     unit: g
-    item: dry whole-wheat penne
+    item: whole-wheat penne
+    note: dry
     grams: 320
     fdcId: 169738
     matchConfidence: medium

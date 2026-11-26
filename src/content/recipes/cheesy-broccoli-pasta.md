@@ -18,8 +18,8 @@ ingredients:
   - raw: 320 g dry whole-wheat pasta (e.g. fusilli)
     quantity: 320
     unit: g
-    item: dry whole-wheat pasta
-    note: e.g. fusilli
+    item: whole-wheat pasta
+    note: dry, e.g. fusilli
     grams: 320
     fdcId: 169738
     matchConfidence: high

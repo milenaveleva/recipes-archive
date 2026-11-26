@@ -21,7 +21,8 @@ ingredients:
     group: Main ingredients
     quantity: 320
     unit: g
-    item: dry whole-wheat spaghetti
+    item: whole-wheat spaghetti
+    note: dry
     grams: 320
     fdcId: 169738
     matchConfidence: medium
@@ -63,13 +64,12 @@ ingredients:
     fdcId: 170591
     matchConfidence: high
     cooking: fried
-  - raw: 60 ml extra virgin olive oil
+  - raw: 4 tbsp extra virgin olive oil
     group: Ingredients and spices
-    quantity: 60
-    unit: ml
+    quantity: 4
+    unit: tbsp
     item: extra virgin olive oil
     grams: 54.8
-    milliliters: 60
     fdcId: 171413
     matchConfidence: high
     cooking: fried

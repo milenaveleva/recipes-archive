@@ -72,12 +72,11 @@ ingredients:
     fdcId: 167747
     matchConfidence: high
     cooking: raw
-  - raw: 2 tbsp extra virgin olive oil (in place of the butter)
+  - raw: 2 tbsp extra virgin olive oil
     group: Main ingredients
     quantity: 2
     unit: tbsp
     item: extra virgin olive oil
-    note: in place of the butter
     grams: 30
     milliliters: 29.5736
     fdcId: 171413

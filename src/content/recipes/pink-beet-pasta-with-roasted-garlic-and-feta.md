@@ -53,7 +53,8 @@ ingredients:
   - raw: 160 g dry whole-wheat pasta
     quantity: 160
     unit: g
-    item: dry whole-wheat pasta
+    item: whole-wheat pasta
+    note: dry
     grams: 160
     fdcId: 169738
     matchConfidence: high

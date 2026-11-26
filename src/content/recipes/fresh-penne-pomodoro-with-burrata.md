@@ -105,7 +105,8 @@ ingredients:
   - raw: 80 g dry whole-wheat penne
     quantity: 80
     unit: g
-    item: dry whole-wheat penne
+    item: whole-wheat penne
+    note: dry
     grams: 80
     fdcId: 169738
     matchConfidence: high

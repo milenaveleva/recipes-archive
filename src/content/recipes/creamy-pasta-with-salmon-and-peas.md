@@ -37,17 +37,17 @@ ingredients:
   - raw: 160 g dry whole-wheat pasta
     quantity: 160
     unit: g
-    item: dry whole-wheat pasta
+    item: whole-wheat pasta
+    note: dry
     grams: 160
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
-  - raw: 10 ml extra virgin olive oil
-    quantity: 10
-    unit: ml
+  - raw: ½ tbsp extra virgin olive oil
+    quantity: 0.5
+    unit: tbsp
     item: extra virgin olive oil
     grams: 9.1
-    milliliters: 10
     fdcId: 171413
     matchConfidence: high
     cooking: fried

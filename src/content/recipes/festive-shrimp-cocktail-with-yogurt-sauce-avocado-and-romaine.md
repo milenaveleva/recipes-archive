@@ -21,8 +21,8 @@ ingredients:
   - raw: 1071 g raw king prawns (or shrimp), sautéed
     quantity: 1071
     unit: g
-    item: raw king prawns (or shrimp)
-    note: sautéed
+    item: king prawns (or shrimp)
+    note: raw, sautéed
     grams: 1071
     fdcId: 175179
     matchConfidence: medium

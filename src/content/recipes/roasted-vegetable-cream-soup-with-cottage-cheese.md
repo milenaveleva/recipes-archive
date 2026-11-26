@@ -64,12 +64,11 @@ ingredients:
     fdcId: 173470
     matchConfidence: high
     cooking: baked
-  - raw: 15 ml olive oil
-    quantity: 15
-    unit: ml
+  - raw: 1 tbsp olive oil
+    quantity: 1
+    unit: tbsp
     item: olive oil
     grams: 13.7
-    milliliters: 15
     fdcId: 171413
     matchConfidence: high
     cooking: baked

@@ -21,7 +21,8 @@ ingredients:
   - raw: 80 g dry whole-wheat spaghetti
     quantity: 80
     unit: g
-    item: dry whole-wheat spaghetti
+    item: whole-wheat spaghetti
+    note: dry
     grams: 80
     fdcId: 169738
     matchConfidence: medium
@@ -43,21 +44,19 @@ ingredients:
     fdcId: 175179
     matchConfidence: high
     cooking: fried
-  - raw: 23 g extra virgin olive oil (in place of cold butter)
-    quantity: 23
-    unit: g
+  - raw: 1½ tbsp extra virgin olive oil
+    quantity: 1.5
+    unit: tbsp
     item: extra virgin olive oil
-    note: in place of cold butter
     grams: 23
     fdcId: 171413
     matchConfidence: medium
     cooking: boiled
-  - raw: 45 ml extra virgin olive oil
-    quantity: 45
-    unit: ml
+  - raw: 3 tbsp extra virgin olive oil
+    quantity: 3
+    unit: tbsp
     item: extra virgin olive oil
     grams: 41.1
-    milliliters: 45
     fdcId: 171413
     matchConfidence: high
     cooking: fried

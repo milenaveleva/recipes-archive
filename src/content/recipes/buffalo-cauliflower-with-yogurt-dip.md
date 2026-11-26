@@ -86,9 +86,9 @@ ingredients:
     fdcId: 170416
     matchConfidence: high
     cooking: raw
-  - raw: 30 g extra virgin olive oil
-    quantity: 30
-    unit: g
+  - raw: 2 tbsp extra virgin olive oil
+    quantity: 2
+    unit: tbsp
     item: extra virgin olive oil
     grams: 30
     fdcId: 171413

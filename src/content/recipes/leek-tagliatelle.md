@@ -41,24 +41,14 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 2 tbsp extra virgin olive oil (in place of the butter)
-    quantity: 2
+  - raw: 4 tbsp extra virgin olive oil
+    quantity: 4
     unit: tbsp
     item: extra virgin olive oil
-    note: in place of the butter
-    grams: 30
+    grams: 57.4
     milliliters: 29.5736
     fdcId: 171413
     matchConfidence: medium
-    cooking: fried
-  - raw: 30 ml extra virgin olive oil
-    quantity: 30
-    unit: ml
-    item: extra virgin olive oil
-    grams: 27.4
-    milliliters: 30
-    fdcId: 171413
-    matchConfidence: high
     cooking: fried
   - raw: 100 ml vegetable broth with a squeeze of lemon
     quantity: 100

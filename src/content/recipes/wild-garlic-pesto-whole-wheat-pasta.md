@@ -63,21 +63,21 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: 100 ml olive oil
+  - raw: 6½ tbsp olive oil
     group: For the pesto
-    quantity: 100
-    unit: ml
+    quantity: 6.5
+    unit: tbsp
     item: olive oil
     grams: 91.3
-    milliliters: 100
     fdcId: 171413
     matchConfidence: high
     cooking: boiled
-  - raw: 320 g dried whole-wheat pasta
+  - raw: 320 g dry whole-wheat pasta
     group: For the pasta
     quantity: 320
     unit: g
-    item: dried whole-wheat pasta
+    item: whole-wheat pasta
+    note: dry
     grams: 320
     fdcId: 169738
     matchConfidence: high

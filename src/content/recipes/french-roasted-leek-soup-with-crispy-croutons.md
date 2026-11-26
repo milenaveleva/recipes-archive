@@ -44,13 +44,12 @@ ingredients:
     fdcId: 170026
     matchConfidence: high
     cooking: baked
-  - raw: 45 ml extra virgin olive oil
+  - raw: 3 tbsp extra virgin olive oil
     group: For the roasted leek base
-    quantity: 45
-    unit: ml
+    quantity: 3
+    unit: tbsp
     item: extra virgin olive oil
     grams: 41.1
-    milliliters: 45
     fdcId: 171413
     matchConfidence: high
     cooking: baked
@@ -85,10 +84,10 @@ ingredients:
     fdcId: 82011214
     matchConfidence: high
     cooking: boiled
-  - raw: 30 g extra virgin olive oil
+  - raw: 2 tbsp extra virgin olive oil
     group: For cooking and seasoning
-    quantity: 30
-    unit: g
+    quantity: 2
+    unit: tbsp
     item: extra virgin olive oil
     grams: 30
     fdcId: 171413

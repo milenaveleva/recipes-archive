@@ -27,11 +27,11 @@ ingredients:
     fdcId: 169706
     matchConfidence: high
     cooking: boiled
-  - raw: 82 g dried chickpeas, soaked and cooked
+  - raw: 82 g dry chickpeas, soaked and cooked
     quantity: 82
     unit: g
-    item: dried chickpeas
-    note: soaked and cooked
+    item: chickpeas
+    note: dry, soaked and cooked
     grams: 82
     fdcId: 173756
     matchConfidence: medium

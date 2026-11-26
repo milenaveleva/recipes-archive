@@ -26,11 +26,11 @@ ingredients:
     fdcId: 175179
     matchConfidence: medium
     cooking: fried
-  - raw: 160 g whole-wheat thin noodles (in place of glass noodles), dry
+  - raw: 160 g whole-wheat thin noodles, dry
     group: Main ingredients
     quantity: 160
     unit: g
-    item: whole-wheat thin noodles (in place of glass noodles)
+    item: whole-wheat thin noodles
     note: dry
     grams: 160
     fdcId: 169738

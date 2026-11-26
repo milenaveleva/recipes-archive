@@ -63,13 +63,12 @@ ingredients:
     matchConfidence: high
     cooking: raw
     proxyOk: true
-  - raw: 30 ml extra virgin olive oil
+  - raw: 2 tbsp extra virgin olive oil
     group: Spices and serving
-    quantity: 30
-    unit: ml
+    quantity: 2
+    unit: tbsp
     item: extra virgin olive oil
     grams: 27.4
-    milliliters: 30
     fdcId: 171413
     matchConfidence: high
     cooking: fried

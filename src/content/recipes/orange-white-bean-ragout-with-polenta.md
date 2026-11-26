@@ -18,11 +18,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 81 g dried white beans, soaked and cooked
+  - raw: 81 g dry white beans, soaked and cooked
     quantity: 81
     unit: g
-    item: dried white beans
-    note: soaked and cooked
+    item: white beans
+    note: dry, soaked and cooked
     grams: 81
     fdcId: 175202
     matchConfidence: high
@@ -99,12 +99,11 @@ ingredients:
     fdcId: 171325
     matchConfidence: medium
     cooking: boiled
-  - raw: 2 ml olive oil
-    quantity: 2
-    unit: ml
+  - raw: ½ tsp olive oil
+    quantity: 0.5
+    unit: tsp
     item: olive oil
     grams: 1.8
-    milliliters: 2
     fdcId: 171413
     matchConfidence: high
     cooking: boiled

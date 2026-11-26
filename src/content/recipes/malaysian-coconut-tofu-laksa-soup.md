@@ -26,11 +26,11 @@ ingredients:
     fdcId: 172475
     matchConfidence: high
     cooking: fried
-  - raw: 200 g whole-wheat thin noodles (in place of rice noodles), dry
+  - raw: 200 g whole-wheat thin noodles, dry
     group: Soup base and noodles
     quantity: 200
     unit: g
-    item: whole-wheat thin noodles (in place of rice noodles)
+    item: whole-wheat thin noodles
     note: dry
     grams: 200
     fdcId: 169738

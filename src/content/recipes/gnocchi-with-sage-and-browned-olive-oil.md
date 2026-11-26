@@ -26,11 +26,10 @@ ingredients:
     fdcId: 82025510
     matchConfidence: high
     cooking: boiled
-  - raw: 38 g extra virgin olive oil (in place of butter)
-    quantity: 38
-    unit: g
+  - raw: 3 tbsp extra virgin olive oil
+    quantity: 3
+    unit: tbsp
     item: extra virgin olive oil
-    note: in place of butter
     grams: 38
     fdcId: 171413
     matchConfidence: medium
@@ -141,4 +140,4 @@ createdAt: "2026-11-22"
 
 ## Tips
 
-- Do not leave the sage in the hot oil unattended, as it burns easily. Once the sage is crisp and the oil smells fragrant, it is done! Olive oil replaces the butter of the classic version.
+- Do not leave the sage in the hot oil unattended, as it burns easily. Once the sage is crisp and the oil smells fragrant, it is done!

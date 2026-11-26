@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { formatIngredientAmount, showRawFallback } from '../lib/recipe';
+import { formatIngredientAmount, showRawFallback, displayItemNote } from '../lib/recipe';
 
 type Ingredient = CollectionEntry<'recipes'>['data']['ingredients'][number];
 
@@ -29,14 +29,15 @@ for (const ing of ingredients) {
         <ul class="flex flex-col">
           {group.items.map((ing) => {
             const amt = formatIngredientAmount(ing);
+            const shown = displayItemNote(ing.item, ing.note);
             return (
               <li class="flex items-baseline gap-3 border-b border-line/70 py-2.5 last:border-0">
                 <span class="min-w-[4.5rem] shrink-0 font-ui text-sm font-semibold tabular-nums text-spice">
                   {amt ?? ''}
                 </span>
                 <span class="font-body text-ink">
-                  {ing.item}
-                  {ing.note && <span class="text-ink-faint"> · {ing.note}</span>}
+                  {shown.item}
+                  {shown.note && <span class="text-ink-faint"> · {shown.note}</span>}
                   {showRawFallback(ing, amt) && (
                     <span class="text-ink-faint"> {ing.raw}</span>
                   )}

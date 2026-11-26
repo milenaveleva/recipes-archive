@@ -17,12 +17,12 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 133 g dried brown lentils, cooked
+  - raw: 133 g dry brown lentils, cooked
     group: Crispy spiced lentils
     quantity: 133
     unit: g
-    item: dried brown lentils
-    note: cooked
+    item: brown lentils
+    note: dry, cooked
     grams: 133
     fdcId: 172420
     matchConfidence: medium
@@ -47,13 +47,12 @@ ingredients:
     fdcId: 170923
     matchConfidence: medium
     cooking: baked
-  - raw: 60 ml extra virgin olive oil
+  - raw: 4 tbsp extra virgin olive oil
     group: Crispy spiced lentils
-    quantity: 60
-    unit: ml
+    quantity: 4
+    unit: tbsp
     item: extra virgin olive oil
     grams: 54.8
-    milliliters: 60
     fdcId: 171413
     matchConfidence: high
     cooking: baked

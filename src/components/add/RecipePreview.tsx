@@ -8,7 +8,7 @@
  */
 import { Fragment, useEffect } from 'react';
 import type { RecipeDraft, DraftIngredient } from '../../core/markdown';
-import { round, slugifyTerm, buildScoreDials, hasAnyScore, buildRecipeMeta, formatIngredientAmount, showRawFallback } from '../../lib/recipe';
+import { round, slugifyTerm, buildScoreDials, hasAnyScore, buildRecipeMeta, formatIngredientAmount, showRawFallback, displayItemNote } from '../../lib/recipe';
 import { META_ICONS } from '../../lib/icons';
 import { withBase } from '../../lib/url';
 import ScoreDial from './ScoreDial';
@@ -40,6 +40,7 @@ function Ingredients({ ingredients }: { ingredients: DraftIngredient[] }) {
           <ul className="flex flex-col">
             {group.items.map((ing, i) => {
               const amt = formatIngredientAmount(ing);
+              const shown = displayItemNote(ing.item, ing.note);
               return (
                 <li
                   key={i}
@@ -49,8 +50,8 @@ function Ingredients({ ingredients }: { ingredients: DraftIngredient[] }) {
                     {amt ?? ''}
                   </span>
                   <span className="font-body text-ink">
-                    {ing.item}
-                    {ing.note && <span className="text-ink-faint"> · {ing.note}</span>}
+                    {shown.item}
+                    {shown.note && <span className="text-ink-faint"> · {shown.note}</span>}
                     {showRawFallback(ing, amt) && <span className="text-ink-faint"> {ing.raw}</span>}
                   </span>
                 </li>

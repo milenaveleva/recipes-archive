@@ -17,19 +17,20 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 320 g dried whole-wheat penne
+  - raw: 320 g dry whole-wheat penne
     quantity: 320
     unit: g
-    item: dried whole-wheat penne
+    item: whole-wheat penne
+    note: dry
     grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
-  - raw: 135 g dried white beans, soaked and cooked
+  - raw: 135 g dry white beans, soaked and cooked
     quantity: 135
     unit: g
-    item: dried white beans
-    note: soaked and cooked
+    item: white beans
+    note: dry, soaked and cooked
     grams: 135
     fdcId: 175202
     matchConfidence: medium
@@ -67,12 +68,11 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: fried
-  - raw: 30 ml extra virgin olive oil
-    quantity: 30
-    unit: ml
+  - raw: 2 tbsp extra virgin olive oil
+    quantity: 2
+    unit: tbsp
     item: extra virgin olive oil
     grams: 27.4
-    milliliters: 30
     fdcId: 171413
     matchConfidence: high
     cooking: fried

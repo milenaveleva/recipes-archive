@@ -96,13 +96,12 @@ ingredients:
     fdcId: 173475
     matchConfidence: high
     cooking: raw
-  - raw: 45 ml extra virgin olive oil
+  - raw: 3 tbsp extra virgin olive oil
     group: Lemon-cumin dressing
-    quantity: 45
-    unit: ml
+    quantity: 3
+    unit: tbsp
     item: extra virgin olive oil
     grams: 41.1
-    milliliters: 45
     fdcId: 171413
     matchConfidence: high
     cooking: raw

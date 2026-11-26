@@ -25,21 +25,20 @@ ingredients:
     fdcId: 170400
     matchConfidence: high
     cooking: baked
-  - raw: 159 g dried lentils, cooked
+  - raw: 159 g dry lentils, cooked
     quantity: 159
     unit: g
-    item: dried lentils
-    note: cooked
+    item: lentils
+    note: dry, cooked
     grams: 159
     fdcId: 172420
     matchConfidence: medium
     cooking: raw
-  - raw: 40 ml extra virgin olive oil
-    quantity: 40
-    unit: ml
+  - raw: 2½ tbsp extra virgin olive oil
+    quantity: 2.5
+    unit: tbsp
     item: extra virgin olive oil
     grams: 36.5
-    milliliters: 40
     fdcId: 171413
     matchConfidence: high
     cooking: baked

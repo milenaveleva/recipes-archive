@@ -21,7 +21,8 @@ ingredients:
   - raw: ½ cup dried fava beans
     quantity: 0.5
     unit: cup
-    item: dried fava beans
+    item: fava beans
+    note: dry
     grams: 75.2
     milliliters: 118.294
     fdcId: 175205
@@ -30,7 +31,8 @@ ingredients:
   - raw: ½ cup dried borlotti beans
     quantity: 0.5
     unit: cup
-    item: dried borlotti beans
+    item: borlotti beans
+    note: dry
     grams: 97.5
     milliliters: 118.294
     fdcId: 175189
@@ -39,7 +41,8 @@ ingredients:
   - raw: ⅓ cup dried chickpeas
     quantity: 0.333
     unit: cup
-    item: dried chickpeas
+    item: chickpeas
+    note: dry
     grams: 66.6
     milliliters: 78.783804
     fdcId: 173756
@@ -136,8 +139,8 @@ ingredients:
   - raw: ⅔ cup dry whole-wheat tarhonya (or fregula sarda)
     quantity: 0.667
     unit: cup
-    item: dry whole-wheat tarhonya
-    note: or fregula sarda
+    item: whole-wheat tarhonya
+    note: dry, or fregula sarda
     grams: 64
     milliliters: 157.80419600000002
     fdcId: 169738

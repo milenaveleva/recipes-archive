@@ -36,10 +36,10 @@ ingredients:
     fdcId: 2710823
     matchConfidence: high
     cooking: boiled
-  - raw: 150 g extra virgin olive oil
+  - raw: 11 tbsp extra virgin olive oil
     group: Hollandaise and side
-    quantity: 150
-    unit: g
+    quantity: 11
+    unit: tbsp
     item: extra virgin olive oil
     grams: 150
     fdcId: 171413

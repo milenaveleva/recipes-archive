@@ -27,11 +27,11 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 265 g dried white beans (cannellini), soaked and cooked
+  - raw: 265 g dry white beans (cannellini), soaked and cooked
     quantity: 265
     unit: g
-    item: dried white beans (cannellini)
-    note: soaked and cooked
+    item: white beans (cannellini)
+    note: dry, soaked and cooked
     grams: 265
     fdcId: 175202
     matchConfidence: high

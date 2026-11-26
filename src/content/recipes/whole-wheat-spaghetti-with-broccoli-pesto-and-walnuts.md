@@ -61,12 +61,11 @@ ingredients:
     fdcId: 170187
     matchConfidence: medium
     cooking: raw
-  - raw: 50 ml extra virgin olive oil
-    quantity: 50
-    unit: ml
+  - raw: 3½ tbsp extra virgin olive oil
+    quantity: 3.5
+    unit: tbsp
     item: extra virgin olive oil
     grams: 45.6
-    milliliters: 50
     fdcId: 171413
     matchConfidence: high
     cooking: raw

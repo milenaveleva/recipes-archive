@@ -80,13 +80,12 @@ ingredients:
     fdcId: 172233
     matchConfidence: medium
     cooking: raw
-  - raw: 15 ml olive oil (1 tbsp)
-    quantity: 15
-    unit: ml
+  - raw: 1 tbsp olive oil, 1 tbsp
+    quantity: 1
+    unit: tbsp
     item: olive oil
     note: 1 tbsp
     grams: 13.7
-    milliliters: 15
     fdcId: 171413
     matchConfidence: high
     cooking: baked

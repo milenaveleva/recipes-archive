@@ -193,6 +193,8 @@ export function formatQuantity(q: number): string {
  * math regardless of what's shown. Returns null when no amount should be shown.
  */
 export function formatIngredientAmount(ing: IngredientAmountSource): string | null {
+  const olive = oliveOilSpoons(ing);
+  if (olive) return olive;
   const qtyText = () =>
     ing.quantity2 != null
       ? `${formatQuantity(ing.quantity!)}–${formatQuantity(ing.quantity2)}`
@@ -229,6 +231,47 @@ export function formatIngredientAmount(ing: IngredientAmountSource): string | nu
   }
   if (ing.grams != null && ing.grams > 0) return formatGrams(ing.grams);
   return ing.unit ? `${qtyText()} ${ing.unit}` : qtyText();
+}
+
+/** Grams of olive oil in one tablespoon (15 ml × 0.91 g/ml). */
+const OLIVE_OIL_G_PER_TBSP = 13.5;
+
+/**
+ * Olive oil is always measured by the spoon: its weight or volume shows as tablespoons
+ * rounded to the half spoon (under half a tablespoon, as teaspoons), never grams or ml.
+ * Null when the line is not olive oil or has no amount.
+ */
+export function oliveOilSpoons(ing: IngredientAmountSource): string | null {
+  if (!/\bolive oil\b/i.test(ing.item ?? '')) return null;
+  const canon = canonicalUnit(ing.unit);
+  let tbsp: number | null = null;
+  if (canon === 'tablespoon' && ing.quantity != null) tbsp = ing.quantity;
+  else if (canon === 'teaspoon' && ing.quantity != null) tbsp = ing.quantity / 3;
+  else if (ing.milliliters != null && ing.milliliters > 0) tbsp = ing.milliliters / 15;
+  else if (ing.grams != null && ing.grams > 0) tbsp = ing.grams / OLIVE_OIL_G_PER_TBSP;
+  if (tbsp == null || !(tbsp > 0)) return null;
+  if (tbsp < 0.5) return `${formatQuantity(Math.max(0.5, Math.round(tbsp * 3 * 2) / 2))} tsp`;
+  return `${formatQuantity(Math.round(tbsp * 2) / 2)} tbsp`;
+}
+
+/** State words that open a staple's name ("dried chickpeas") but belong in its note. */
+const STATE_PREFIX = /^(dry|dried|raw|uncooked)\s+(.+)$/i;
+/** Names where the state word is part of the product itself (dried oregano, raw honey). */
+const STATE_IN_NAME = /^(dried|dry|raw)\s+(oregano|thyme|basil|parsley|dill|mint|sage|rosemary|tarragon|marjoram|herbs?|wakame|seaweed|yeast|honey|almonds|fruit|apricots?|figs?|dates|cranberries|mushrooms?|porcini|tomatoes|chil(?:l)?i(?:es)?)\b/i;
+
+/**
+ * The name and note an ingredient line shows: a leading state word on a staple
+ * ("dried chickpeas", "dry penne") moves into the faded note ("chickpeas · dry, soaked
+ * and cooked"), so every line reads the same way; product names that carry the word
+ * (dried oregano, raw honey) keep it.
+ */
+export function displayItemNote(item: string, note?: string | null): { item: string; note: string | null } {
+  const m = STATE_PREFIX.exec(item.trim());
+  if (!m || STATE_IN_NAME.test(item.trim())) return { item, note: note ?? null };
+  // "dried" and "uncooked" read as the one word the lists use: "dry" (raw stays raw).
+  const state = /^raw$/i.test(m[1]) ? 'raw' : 'dry';
+  const rest = note && !new RegExp(`^(${state}|dried|uncooked)\\b`, 'i').test(note) ? `${state}, ${note}` : (note || state).replace(/^(dried|uncooked)\b/i, 'dry');
+  return { item: m[2], note: rest };
 }
 
 /** Whether to show the original line beside an ingredient that has no displayed amount:

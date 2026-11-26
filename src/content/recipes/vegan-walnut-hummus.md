@@ -18,11 +18,11 @@ course: Appetizer
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 216 g dried chickpeas, soaked and cooked
+  - raw: 216 g dry chickpeas, soaked and cooked
     quantity: 216
     unit: g
-    item: dried chickpeas
-    note: soaked and cooked
+    item: chickpeas
+    note: dry, soaked and cooked
     grams: 216
     fdcId: 173756
     matchConfidence: medium
@@ -70,12 +70,11 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: raw
-  - raw: 100 ml olive oil
-    quantity: 100
-    unit: ml
+  - raw: 6½ tbsp olive oil
+    quantity: 6.5
+    unit: tbsp
     item: olive oil
     grams: 91.3
-    milliliters: 100
     fdcId: 171413
     matchConfidence: high
     cooking: raw

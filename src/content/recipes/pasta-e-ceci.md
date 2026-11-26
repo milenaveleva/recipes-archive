@@ -17,11 +17,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 216 g dried chickpeas, soaked and cooked
+  - raw: 216 g dry chickpeas, soaked and cooked
     quantity: 216
     unit: g
-    item: dried chickpeas
-    note: soaked and cooked
+    item: chickpeas
+    note: dry, soaked and cooked
     grams: 216
     fdcId: 173756
     matchConfidence: medium
@@ -59,12 +59,11 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 50 ml extra virgin olive oil
-    quantity: 50
-    unit: ml
+  - raw: 3½ tbsp extra virgin olive oil
+    quantity: 3.5
+    unit: tbsp
     item: extra virgin olive oil
     grams: 45.6
-    milliliters: 50
     fdcId: 171413
     matchConfidence: high
     cooking: fried

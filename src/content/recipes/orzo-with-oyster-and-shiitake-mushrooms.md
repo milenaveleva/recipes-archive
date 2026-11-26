@@ -21,7 +21,8 @@ ingredients:
   - raw: 320 g dry whole-wheat orzo
     quantity: 320
     unit: g
-    item: dry whole-wheat orzo
+    item: whole-wheat orzo
+    note: dry
     grams: 320
     fdcId: 169738
     matchConfidence: medium
@@ -58,11 +59,10 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 30 g extra virgin olive oil (in place of butter)
-    quantity: 30
-    unit: g
+  - raw: 2 tbsp extra virgin olive oil
+    quantity: 2
+    unit: tbsp
     item: extra virgin olive oil
-    note: in place of butter
     grams: 30
     fdcId: 171413
     matchConfidence: medium

@@ -71,13 +71,12 @@ ingredients:
     fdcId: 173475
     matchConfidence: high
     cooking: raw
-  - raw: 50 ml extra virgin olive oil
+  - raw: 3½ tbsp extra virgin olive oil
     group: For the lemon-olive oil dressing
-    quantity: 50
-    unit: ml
+    quantity: 3.5
+    unit: tbsp
     item: extra virgin olive oil
     grams: 45.6
-    milliliters: 50
     fdcId: 171413
     matchConfidence: high
     cooking: raw

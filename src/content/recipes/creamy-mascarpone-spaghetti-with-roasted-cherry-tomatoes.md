@@ -18,7 +18,8 @@ ingredients:
     group: Main ingredients
     quantity: 320
     unit: g
-    item: dry whole-wheat spaghetti
+    item: whole-wheat spaghetti
+    note: dry
     grams: 320
     fdcId: 82009870
     matchConfidence: medium

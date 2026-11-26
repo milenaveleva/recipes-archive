@@ -62,21 +62,20 @@ ingredients:
     fdcId: 171707
     matchConfidence: high
     cooking: raw
-  - raw: 87 g dried chickpeas, soaked and cooked
+  - raw: 87 g dry chickpeas, soaked and cooked
     quantity: 87
     unit: g
-    item: dried chickpeas
-    note: soaked and cooked
+    item: chickpeas
+    note: dry, soaked and cooked
     grams: 87
     fdcId: 173756
     matchConfidence: high
     cooking: boiled
-  - raw: 5 ml olive oil
-    quantity: 5
-    unit: ml
+  - raw: 1 tsp olive oil
+    quantity: 1
+    unit: tsp
     item: olive oil
     grams: 4.6
-    milliliters: 5
     fdcId: 171413
     matchConfidence: high
     cooking: baked

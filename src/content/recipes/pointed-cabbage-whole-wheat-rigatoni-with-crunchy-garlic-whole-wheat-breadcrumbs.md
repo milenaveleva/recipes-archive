@@ -30,7 +30,8 @@ ingredients:
     group: Pasta and cabbage
     quantity: 320
     unit: g
-    item: dry whole-wheat rigatoni
+    item: whole-wheat rigatoni
+    note: dry
     grams: 320
     fdcId: 169738
     matchConfidence: high

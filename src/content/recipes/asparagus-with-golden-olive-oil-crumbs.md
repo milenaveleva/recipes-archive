@@ -34,9 +34,9 @@ ingredients:
     fdcId: 172689
     matchConfidence: high
     cooking: fried
-  - raw: 190 g extra virgin olive oil
-    quantity: 190
-    unit: g
+  - raw: 14 tbsp extra virgin olive oil
+    quantity: 14
+    unit: tbsp
     item: extra virgin olive oil
     grams: 190
     fdcId: 171413

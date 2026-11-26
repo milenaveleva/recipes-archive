@@ -20,7 +20,8 @@ ingredients:
   - raw: 320 g dry whole-wheat penne
     quantity: 320
     unit: g
-    item: dry whole-wheat penne
+    item: whole-wheat penne
+    note: dry
     grams: 320
     fdcId: 169738
     matchConfidence: high
@@ -72,12 +73,11 @@ ingredients:
     fdcId: 167747
     matchConfidence: high
     cooking: raw
-  - raw: 80 ml extra virgin olive oil
-    quantity: 80
-    unit: ml
+  - raw: 5½ tbsp extra virgin olive oil
+    quantity: 5.5
+    unit: tbsp
     item: extra virgin olive oil
     grams: 73
-    milliliters: 80
     fdcId: 171413
     matchConfidence: high
     cooking: raw

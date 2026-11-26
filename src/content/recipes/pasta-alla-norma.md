@@ -65,12 +65,11 @@ ingredients:
     fdcId: 172232
     matchConfidence: high
     cooking: raw
-  - raw: 60 ml extra virgin olive oil
-    quantity: 60
-    unit: ml
+  - raw: 4 tbsp extra virgin olive oil
+    quantity: 4
+    unit: tbsp
     item: extra virgin olive oil
     grams: 54.8
-    milliliters: 60
     fdcId: 171413
     matchConfidence: high
     cooking: fried

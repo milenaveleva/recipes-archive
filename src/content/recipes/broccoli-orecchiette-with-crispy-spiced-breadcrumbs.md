@@ -36,13 +36,12 @@ ingredients:
     fdcId: 170379
     matchConfidence: high
     cooking: boiled
-  - raw: 60 ml extra virgin olive oil
+  - raw: 4 tbsp extra virgin olive oil
     group: Pasta and sauce
-    quantity: 60
-    unit: ml
+    quantity: 4
+    unit: tbsp
     item: extra virgin olive oil
     grams: 54.8
-    milliliters: 60
     fdcId: 171413
     matchConfidence: high
     cooking: fried

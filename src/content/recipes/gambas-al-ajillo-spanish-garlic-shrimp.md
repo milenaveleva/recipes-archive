@@ -44,12 +44,11 @@ ingredients:
     fdcId: 170106
     matchConfidence: high
     cooking: fried
-  - raw: 125 ml extra virgin olive oil
-    quantity: 125
-    unit: ml
+  - raw: 8½ tbsp extra virgin olive oil
+    quantity: 8.5
+    unit: tbsp
     item: extra virgin olive oil
     grams: 114.1
-    milliliters: 125
     fdcId: 171413
     matchConfidence: high
     cooking: fried

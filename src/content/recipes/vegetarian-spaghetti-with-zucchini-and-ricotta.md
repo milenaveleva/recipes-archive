@@ -21,7 +21,8 @@ ingredients:
   - raw: 160 g dry whole-wheat spaghetti
     quantity: 160
     unit: g
-    item: dry whole-wheat spaghetti
+    item: whole-wheat spaghetti
+    note: dry
     grams: 160
     fdcId: 169738
     matchConfidence: medium
