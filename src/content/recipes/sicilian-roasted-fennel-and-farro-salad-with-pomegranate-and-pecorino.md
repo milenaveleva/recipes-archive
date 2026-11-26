@@ -174,5 +174,5 @@ createdAt: "2026-11-14"
 
 ## Tips
 
-- To make it more substantial, you can add some roasted chickpeas or grilled chicken breast.
+- To make it more substantial, you can add some roasted chickpeas.
 - The easiest way to remove pomegranate seeds without splattering the kitchen with red juice is under water in a bowl.

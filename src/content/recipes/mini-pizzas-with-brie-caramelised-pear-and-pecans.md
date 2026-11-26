@@ -65,14 +65,14 @@ ingredients:
     fdcId: 169641
     matchConfidence: medium
     cooking: raw
-  - raw: 1 handful dried cranberries
+  - raw: 1 handful frozen cranberries, thawed
     quantity: 1
-    item: handful dried cranberries
+    item: frozen cranberries
+    note: thawed
     grams: 30
-    fdcId: 168165
-    matchConfidence: medium
+    fdcId: 171722
+    matchConfidence: high
     cooking: raw
-    proxyOk: true
   - raw: a few sprigs fresh thyme
     item: a few sprigs fresh thyme
     grams: 2
@@ -81,27 +81,27 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 226
-    energyKj: 944
+    energyKcal: 219
+    energyKj: 918
     protein_g: 8.1
     fat_g: 7.2
     satFat_g: 3.2
-    carbs_g: 33.4
-    fiber_g: 4.3
-    sugar_g: 10.6
-    sodium_mg: 108
-    availableCarb_g: 28.4
+    carbs_g: 31.7
+    fiber_g: 4.2
+    sugar_g: 9.1
+    sodium_mg: 107
+    availableCarb_g: 26.8
   glycemic:
-    gi: 57
-    gl: 16
+    gi: 64
+    gl: 17
     giBand: medium
     glBand: medium
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 32
+    measuredGiPct: 91
   nutriScore:
     grade: C
-    points: 4
+    points: 5
     category: general
     version: "2023"
     coverage: 1
@@ -113,10 +113,10 @@ nutrition:
   balance:
     score: 3
     band: low
-    nrf: 10.5
+    nrf: 12
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 71.2
+    minimallyProcessedPct: 70.4
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -137,4 +137,4 @@ createdAt: "2026-11-14"
 
 1. Cut small rounds from the pizza dough with a glass or cutter. Place the discs on a baking tray lined with baking paper and pre-bake in an oven preheated to 200 °C for about 10 minutes until golden brown.
 2. Slice the pears. Heat the honey in a pan, then fry the pear slices in it for 1-2 minutes per side. Add the pecans as well and let them caramelise nicely.
-3. Place a slice of Brie, a slice of caramelised pear and a pecan on each pre-baked dough disc. Return to the oven for another 5-7 minutes until the cheese melts. Serve garnished with cranberry preserve, dried cranberries and fresh thyme.
+3. Place a slice of Brie, a slice of caramelised pear and a pecan on each pre-baked dough disc. Return to the oven for another 5-7 minutes until the cheese melts. Serve garnished with cranberry preserve, frozen cranberries (thawed and patted dry) and fresh thyme.

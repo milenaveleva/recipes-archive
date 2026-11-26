@@ -132,7 +132,7 @@ nutrition:
     energyKj: 2783
     protein_g: 46.8
     fat_g: 11.8
-    satFat_g: 1.5
+    satFat_g: 1.6
     carbs_g: 95.3
     fiber_g: 8.1
     sugar_g: 29.9
@@ -151,7 +151,7 @@ nutrition:
     points: 3
     category: general
     version: "2023"
-    coverage: 0.82
+    coverage: 1
   inflammation:
     score: -0.1
     band: neutral
@@ -160,7 +160,7 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 35.4
+    nrf: 35.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 98.6

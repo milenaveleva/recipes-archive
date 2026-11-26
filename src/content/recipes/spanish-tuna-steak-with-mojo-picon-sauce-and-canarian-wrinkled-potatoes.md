@@ -201,4 +201,4 @@ createdAt: "2026-11-14"
 ## Tips
 
 - The real secret of tuna steak is quick, hot searing: do not overcook it, keep it silky and pink inside, because overcooked tuna dries out easily.
-- Mojo picón sauce keeps well in the fridge, sealed, for 4–5 days; it is a fantastic dip not only for fish, but also for roast chicken or vegetables.
+- Mojo picón sauce keeps well in the fridge, sealed, for 4–5 days; it is a fantastic dip not only for fish, but also for roasted vegetables or potatoes.

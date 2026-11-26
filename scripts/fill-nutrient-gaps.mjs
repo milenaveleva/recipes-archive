@@ -16,7 +16,8 @@
  *                official table: another USDA FDC record with the identical description
  *                (the twin dedupeByDescription collapsed), or a reviewed exact match in
  *                scripts/nutrient-gap-crosswalk.json (USDA SR Legacy / Foundation,
- *                ANSES Ciqual 2020, MEXT 2023, DTU Frida 6.1 analytical values only):
+ *                ANSES Ciqual 2020, MEXT 2023, and the analytical values only of DTU
+ *                Frida 6.1, UK CoFID 2021, FSANZ AFCD Release 3 and the Swiss FCDB):
  *                'BORROWED:<SOURCE>:<code>'.
  *
  * Nothing is estimated from a similar food: a field with no such value stays missing,
@@ -33,10 +34,12 @@
  *   node scripts/fill-nutrient-gaps.mjs --dry-run    # report only
  *   node scripts/fill-nutrient-gaps.mjs --suggest    # print same-state candidate matches (TSV, stdout)
  *                                                    # for recipe-used foods' remaining gaps, to review
- *                                                    # into the crosswalk by hand
+ *                                                    # into the crosswalk by hand; add --recheck to
+ *                                                    # include foods reviewed as { source: null }
  *   add --gaps to print every recipe-used food's remaining gaps (TSV, stdout)
  *
- * Inputs: the git-ignored Ciqual 2020 XML and Frida 6.1 workbook in scripts/data-raw/, and the USDA FDC bulk
+ * Inputs: the git-ignored Ciqual 2020 XML and the Frida 6.1, CoFID 2021, AFCD R3 and Swiss FCDB workbooks in
+ * scripts/data-raw/ (readers in scripts/lib/), and the USDA FDC bulk
  * JSON (downloaded once into scripts/data-raw/fdc/ by scripts/lib/fdc.mjs).
  */
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
@@ -44,6 +47,9 @@ import { fileURLToPath } from 'node:url';
 import { loadCiqual } from './lib/ciqual.mjs';
 import { loadFdc, fdcVector } from './lib/fdc.mjs';
 import { loadFrida } from './lib/frida.mjs';
+import { loadCofid } from './lib/cofid.mjs';
+import { loadAfcd } from './lib/afcd.mjs';
+import { loadSwiss } from './lib/swiss.mjs';
 
 const P = (rel) => fileURLToPath(new URL(rel, import.meta.url));
 const FOODS_PATH = P('../src/data/usda-foods.json');
@@ -55,6 +61,7 @@ const log = (m) => process.stderr.write(`${m}\n`);
 const DRY = process.argv.includes('--dry-run');
 const SUGGEST = process.argv.includes('--suggest');
 const GAPS = process.argv.includes('--gaps');
+const RECHECK = process.argv.includes('--recheck');
 
 /** The standard per-100g panel. */
 export const PANEL = [
@@ -224,6 +231,9 @@ function main() {
   const fdc = loadFdc({ log });
   const { foods: ciqual } = loadCiqual({ log });
   const frida = loadFrida({ log });
+  const cofid = loadCofid({ log });
+  const afcd = loadAfcd({ log });
+  const swiss = loadSwiss({ log });
   const japan = new Map(JSON.parse(readFileSync(JAPAN_PATH, 'utf8')).map((j) => [j.foodCode, j]));
   const byId = new Map(foods.map((f) => [f.fdcId, f]));
 
@@ -235,6 +245,12 @@ function main() {
     if (source === 'FR-CIQUAL') return ciqual.get(Number(code))?.n;
     if (source === 'JP-MEXT') return japan.get(String(code))?.n;
     if (source === 'DK-FRIDA') return frida.get(Number(code))?.n;
+    // The new tables keep their rejected (non-analytical) foods with an empty vector; a
+    // crosswalk entry pointing at one must fail loudly, not borrow nothing.
+    const analytical = (r) => (r && Object.keys(r.n ?? {}).length ? r.n : undefined);
+    if (source === 'UK-COFID') return analytical(cofid.get(String(code)));
+    if (source === 'AU-AFCD') return analytical(afcd.get(String(code)));
+    if (source === 'CH-SWISS') return analytical(swiss.get(String(code)));
     if (source === 'USDA-SR' || source === 'USDA-FOUNDATION') {
       const r = fdc.get(Number(code));
       if (r) return fdcVector(r).n;
@@ -303,16 +319,23 @@ function main() {
     const pool = [
       ...[...ciqual.values()].map((c) => ({ src: 'FR-CIQUAL', code: c.code, name: c.nameEn, n: c.n })),
       ...[...frida.values()].map((c) => ({ src: 'DK-FRIDA', code: c.code, name: c.nameEn, n: c.n })),
+      ...[...cofid.values()].map((c) => ({ src: 'UK-COFID', code: c.code, name: c.nameEn, n: c.n })),
+      ...[...afcd.values()].map((c) => ({ src: 'AU-AFCD', code: c.code, name: c.nameEn, n: c.n })),
+      ...[...swiss.values()].map((c) => ({ src: 'CH-SWISS', code: c.code, name: c.nameEn, n: c.n })),
       ...[...fdc.values()].map((r) => ({ src: r.dataType, code: r.fdcId, name: r.description, n: fdcVector(r).n })),
     ].map((x) => ({ ...x, t: tokens(x.name), state: stateOf(x.name) }));
     const out = ['fdcId\tUSDA description\tmissing\tscore\tsource\tcode\tcandidate name\tfills'];
     for (const [id, miss] of remaining) {
       const f = byId.get(id);
-      if (f.source || crosswalk[String(id)]) continue;
+      const reviewed = [].concat(crosswalk[String(id)] ?? []);
+      if (reviewed.some((e) => e.source) || (reviewed.length && !RECHECK)) continue;
       const ft = tokens(f.description), st = stateOf(f.description);
       const lead = singular((f.description.toLowerCase().split(/[,(]/)[0].trim().split(/\s+/).pop()) ?? '');
       const cands = pool
         .filter((x) => x.code !== id && x.state === st && x.t.has(lead) && miss.some((k) => has(x.n, k)))
+        // never offer a national-table food its own source record
+        // (a national-table food's fdcId is its namespace prefix + the table's own code)
+        .filter((x) => !(f.source && x.src === f.source && String(f.fdcId).endsWith(String(x.code))))
         .map((x) => ({ x, s: jaccard(ft, x.t) }))
         .sort((a, b) => b.s - a.s)
         .slice(0, 4);

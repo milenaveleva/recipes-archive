@@ -28,6 +28,8 @@ export interface DraftIngredient {
   cooking?: CookingMethod;
   /** A reviewed stand-in match: silences the validation gate's identity/state checks. */
   proxyOk?: boolean;
+  /** The flour is eaten as boiled pasta dough (GI from the food's `giDough`). */
+  starchForm?: 'dough';
 }
 
 export interface DraftNutrition {
@@ -176,6 +178,7 @@ function cleanIngredient(ing: DraftIngredient): Record<string, unknown> {
   if (ing.excludeFromNutrition) out.excludeFromNutrition = true;
   if (ing.cooking) out.cooking = ing.cooking;
   if (ing.proxyOk) out.proxyOk = true;
+  if (ing.starchForm) out.starchForm = ing.starchForm;
   return out;
 }
 

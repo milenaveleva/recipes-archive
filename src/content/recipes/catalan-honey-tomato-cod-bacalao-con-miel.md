@@ -125,13 +125,13 @@ nutrition:
     sodium_mg: 935
     availableCarb_g: 21.4
   glycemic:
-    gi: 32
+    gi: 33
     gl: 7
     giBand: low
     glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 41
+    measuredGiPct: 58
   nutriScore:
     grade: A
     points: 0

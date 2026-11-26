@@ -18,7 +18,7 @@ const PANEL = [
   'vitD_ug', 'vitE_mg', 'vitK_ug', 'thiamin_mg', 'riboflavin_mg', 'niacin_mg', 'vitB6_mg',
   'folate_ug', 'vitB12_ug', 'pantothenicAcid_mg', 'choline_mg',
 ];
-const PROVENANCE = /^(ANALYSED:USDA-FDC:\d+#[\d.+]+|CALCULATED:(kcal×4\.184|kJ÷4\.184)|ZERO:[a-z-]+|BORROWED:(USDA-SR|USDA-FOUNDATION|FR-CIQUAL|JP-MEXT|DK-FRIDA):\w+)$/;
+const PROVENANCE = /^(ANALYSED:USDA-FDC:\d+#[\d.+]+|CALCULATED:(kcal×4\.184|kJ÷4\.184)|ZERO:[a-z-]+|BORROWED:(USDA-SR|USDA-FOUNDATION|FR-CIQUAL|JP-MEXT|DK-FRIDA|UK-COFID|AU-AFCD|CH-SWISS):[\w-]+)$/;
 
 describe('usda-foods.json nutrient data', () => {
   it('stores every nutrient as a finite, non-negative number', () => {

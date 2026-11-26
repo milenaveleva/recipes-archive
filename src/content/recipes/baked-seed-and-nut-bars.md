@@ -1,6 +1,6 @@
 ---
 title: Baked Seed and Nut Bars
-description: Chewy-crunchy tray-baked bars of almonds, pumpkin seeds, quinoa, pistachios and dried cranberries bound with honey, a wholesome homemade snack.
+description: Chewy-crunchy tray-baked bars of almonds, pumpkin seeds, quinoa, pistachios and cranberries bound with honey, a wholesome homemade snack.
 image: ./images/baked-seed-and-nut-bars.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10572_1775304523106_honey-nut-and-seed-bars-with-quinoa-and-cranberries_88b1b91d.png
 imageAlt: Baked Seed and Nut Bars
@@ -42,15 +42,15 @@ ingredients:
     fdcId: 170568
     matchConfidence: high
     cooking: baked
-  - raw: 100 g dried cranberries
+  - raw: 100 g frozen cranberries, thawed and patted dry
     quantity: 100
     unit: g
-    item: dried cranberries
+    item: frozen cranberries
+    note: thawed and patted dry
     grams: 100
-    fdcId: 168165
-    matchConfidence: medium
+    fdcId: 171722
+    matchConfidence: high
     cooking: raw
-    proxyOk: true
   - raw: 100 g chopped pistachios
     quantity: 100
     unit: g
@@ -88,42 +88,42 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 165
-    energyKj: 692
-    protein_g: 5.1
-    fat_g: 10.3
+    energyKcal: 157
+    energyKj: 657
+    protein_g: 5
+    fat_g: 10.2
     satFat_g: 1.3
-    carbs_g: 16
+    carbs_g: 13.8
     fiber_g: 2.3
-    sugar_g: 10.1
+    sugar_g: 8.1
     sodium_mg: 9
-    availableCarb_g: 13.7
+    availableCarb_g: 11.5
   glycemic:
-    gi: 52
-    gl: 7
+    gi: 51
+    gl: 6
     giBand: low
     glBand: low
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 87
+    measuredGiPct: 85
   nutriScore:
     grade: C
-    points: 10
+    points: 9
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.5
+    score: -0.6
     band: mildly-anti-inflammatory
     method: fii v4
   balance:
     score: 5
     band: moderate
-    nrf: 25.9
+    nrf: 29.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 95.2
-    ultraProcessedPct: 4.8
+    minimallyProcessedPct: 94.9
+    ultraProcessedPct: 5.1
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
@@ -141,6 +141,6 @@ createdAt: "2026-11-14"
 ## Method
 
 1. Line a 24 x 33 cm baking tray with baking paper, spray with a little cooking spray and set aside.
-2. Preheat the oven to 160 °C. Spread the almonds, pumpkin seeds and quinoa on a flat baking tray and toast until lightly browned, about 15 minutes. Then transfer to a large mixing bowl. Add the dried cranberries and pistachios.
+2. Preheat the oven to 160 °C. Spread the almonds, pumpkin seeds and quinoa on a flat baking tray and toast until lightly browned, about 15 minutes. Then transfer to a large mixing bowl. Add the frozen cranberries (thawed and patted dry) and pistachios.
 3. In a medium saucepan, start warming the honey and salt, whisking as you go. Let it boil for about 3 minutes. Immediately pour the syrup into the mixing bowl and stir quickly so the nuts and seeds are evenly coated.
 4. Press the mixture into the prepared tin. Let it cool completely (about 20 minutes), then cut into 30 squares.

@@ -110,6 +110,7 @@ ingredients:
     fdcId: 790085
     matchConfidence: high
     cooking: boiled
+    starchForm: dough
   - raw: 1 egg
     group: Homemade csipetke
     quantity: 1
@@ -139,13 +140,13 @@ nutrition:
     sodium_mg: 710
     availableCarb_g: 50.9
   glycemic:
-    gi: 56
-    gl: 28
-    giBand: medium
+    gi: 53
+    gl: 27
+    giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 53
+    measuredGiPct: 83
   nutriScore:
     grade: A
     points: 0

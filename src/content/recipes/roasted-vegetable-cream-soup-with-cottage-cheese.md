@@ -172,7 +172,7 @@ nutrition:
   balance:
     score: 10
     band: excellent
-    nrf: 102.7
+    nrf: 103
     version: NRF9.3
   processing:
     minimallyProcessedPct: 83

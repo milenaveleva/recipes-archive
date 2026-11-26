@@ -119,15 +119,15 @@ nutrition:
     points: 3
     category: general
     version: "2023"
-    coverage: 0.63
+    coverage: 0.8
   inflammation:
     score: 0.4
     band: mildly-pro-inflammatory
     method: fii v4
   balance:
-    score: 6
-    band: moderate
-    nrf: 37.1
+    score: 7
+    band: high
+    nrf: 41.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 64.9
@@ -156,4 +156,4 @@ createdAt: "2026-11-14"
 
 ## Tips
 
-- To make it even more filling, add diced boiled potatoes or fried bacon.
+- To make it even more filling, add diced boiled potatoes.

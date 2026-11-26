@@ -13,7 +13,7 @@ import { computeScores, type ScoredIngredient, type ScoreResult, type ScoreOptio
 import {
   nutrientsFor as nutrientsForShared,
   fvlFromCategory,
-  isMeasuredGi,
+  giFor,
   cookIngredient,
   dataSourcesFor as dataSourcesForShared,
 } from '../../core/recipeScore';
@@ -64,6 +64,8 @@ interface FoodScoring {
   gi?: number;
   giSource?: string;
   giConfidence?: string;
+  /** GI when the food is eaten as shaped, boiled dough (see core/recipeScore.giFor). */
+  giDough?: { gi: number; giSource?: string; giConfidence?: string };
   fvl?: boolean;
 }
 const FOOD_SCORING = foodScoringData as Record<string, FoodScoring>;
@@ -86,6 +88,11 @@ const CURATED_IDS = new Set(Object.keys(FOOD_SCORING).map(Number));
 
 function scoringFor(fdcId: number | null): FoodScoring | undefined {
   return fdcId != null ? FOOD_SCORING[String(fdcId)] : undefined;
+}
+
+/** Whether the food carries a boiled-dough GI, so the review row offers the "boiled dough" toggle. */
+export function hasDoughGi(fdcId: number | null): boolean {
+  return scoringFor(fdcId)?.giDough != null;
 }
 
 /** One reviewable ingredient line in the wizard. */
@@ -113,6 +120,8 @@ export interface IngredientRow {
   proxyFdcId: number | null;
   /** The fdcId the author picked by hand in the review row (a reviewed match), or null. */
   userPickedFdcId: number | null;
+  /** 'dough': the flour is rolled into homemade pasta or noodles and boiled. */
+  starchForm: 'dough' | null;
 }
 
 let rowCounter = 0;
@@ -143,6 +152,7 @@ export function buildRow(raw: string): IngredientRow {
     userSetCooking: false,
     proxyFdcId: null,
     userPickedFdcId: null,
+    starchForm: null,
   };
 }
 
@@ -245,6 +255,9 @@ export function selectMatch(row: IngredientRow, fdcId: number | null): Partial<I
     grams: initialGrams(estimateMetric(row.parsed), row.parsed, food),
   };
   if (!row.userSetCooking && !row.parsed.isGroupHeader) patch.cooking = suggestCooking(row.raw, food);
+  // The pasta-dough flag belongs to a food with a dough GI; a re-match to one without
+  // hides the toggle, so the hidden flag must not survive into the draft.
+  if (!hasDoughGi(fdcId)) patch.starchForm = null;
   return patch;
 }
 
@@ -329,8 +342,8 @@ export function rowsToScored(rows: IngredientRow[]): ScoredIngredient[] {
         excludeFromNutrition: r.excludeFromNutrition,
         fdcId: r.selectedFdcId,
         nutrients: cooked.nutrients,
-        gi: s?.gi ?? null,
-        giMeasured: isMeasuredGi(s),
+        gi: giFor(s, r.starchForm).gi,
+        giMeasured: giFor(s, r.starchForm).measured,
         fvl: s?.fvl ?? fvlFromCategory(food),
         nova: food?.nova ?? null,
         // Same text the draft stores as `raw` (rowToDraftIngredient), so a rescore of
@@ -364,6 +377,7 @@ function rowToDraftIngredient(row: IngredientRow): DraftIngredient {
     excludeFromNutrition: row.excludeFromNutrition,
     cooking: row.cooking,
     proxyOk: row.proxyFdcId != null && row.proxyFdcId === row.selectedFdcId ? true : undefined,
+    starchForm: row.starchForm ?? undefined,
   };
 }
 
@@ -460,6 +474,7 @@ export interface StoredIngredient {
   excludeFromNutrition?: boolean;
   cooking?: CookingMethod;
   proxyOk?: boolean;
+  starchForm?: string;
 }
 
 /** The stored recipe frontmatter fields the editor re-seeds the form from. */
@@ -543,6 +558,7 @@ export function rowsFromIngredients(ingredients: StoredIngredient[]): Ingredient
       userSetCooking: true,
       proxyFdcId: ing.proxyOk && ing.fdcId != null ? ing.fdcId : null,
       userPickedFdcId: null,
+      starchForm: ing.starchForm === 'dough' ? 'dough' : null,
     };
   });
 }

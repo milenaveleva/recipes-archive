@@ -27,7 +27,20 @@ export interface FoodScoring {
   gi?: number;
   /** Provenance tier of `gi`: high|medium = measured table match; low|predicted|none = estimated. */
   giConfidence?: string;
+  /** GI when the food is eaten as boiled pasta dough (a flour rolled into homemade pasta or noodles). */
+  giDough?: { gi: number; giSource?: string; giConfidence?: string };
   fvl?: boolean;
+}
+
+/**
+ * The GI a food takes in one ingredient line: its `giDough` value when the line marks the
+ * starch as boiled dough and the food carries one, else its default as-eaten GI. GI is a
+ * property of the food as eaten, and a flour baked into bread digests unlike one rolled
+ * into fresh pasta.
+ */
+export function giFor(scoring: FoodScoring | undefined, starchForm?: string | null): { gi: number | null; measured: boolean } {
+  const v = starchForm === 'dough' && scoring?.giDough ? scoring.giDough : scoring;
+  return { gi: v?.gi ?? null, measured: isMeasuredGi(v) };
 }
 
 /** Whether a food's GI is a measured table match (giConfidence high|medium). */
@@ -71,6 +84,8 @@ export interface StoredScoringIngredient {
   item?: string | null;
   /** How the ingredient is cooked; missing = raw. */
   cooking?: CookingMethod | null;
+  /** 'dough': the starch is eaten as shaped, boiled dough (selects the food's `giDough`). */
+  starchForm?: string | null;
 }
 
 /** Pick the scoring fields from a stored frontmatter ingredient — shared by the
@@ -83,6 +98,7 @@ export function storedScoringFields(ing: Record<string, unknown>): StoredScoring
     raw: ing.raw as string | null | undefined,
     item: ing.item as string | null | undefined,
     cooking: isCookingMethod(ing.cooking) ? ing.cooking : undefined,
+    starchForm: ing.starchForm === 'dough' ? 'dough' : undefined,
   };
 }
 
@@ -123,14 +139,15 @@ export function toScored(
   const food = ing.fdcId != null ? foodById.get(ing.fdcId) : undefined;
   const s = ing.fdcId != null ? foodScoring[String(ing.fdcId)] : undefined;
   const cooked = cookIngredient(ing.grams ?? null, nutrientsFor(food, polyphenols), food, ing.cooking, ing.excludeFromNutrition);
+  const g = giFor(s, ing.starchForm);
   return {
     grams: cooked.grams,
     rawGrams: ing.grams ?? null,
     excludeFromNutrition: ing.excludeFromNutrition,
     fdcId: ing.fdcId ?? null,
     nutrients: cooked.nutrients,
-    gi: s?.gi ?? null,
-    giMeasured: isMeasuredGi(s),
+    gi: g.gi,
+    giMeasured: g.measured,
     fvl: s?.fvl ?? fvlFromCategory(food),
     nova: food?.nova ?? null,
     raw: ing.raw || ing.item || null,

@@ -181,4 +181,4 @@ createdAt: "2026-11-14"
 ## Tips
 
 - The slightly bitter character of radicchio is brought into perfect balance by caramelising it in the grill pan and by the sweetness of the silky honey-balsamic dressing.
-- For an even richer dish, you can top the salad with crispy fried prosciutto or dried cranberries.
+- For an even richer dish, you can top the salad with crispy roasted chickpeas.

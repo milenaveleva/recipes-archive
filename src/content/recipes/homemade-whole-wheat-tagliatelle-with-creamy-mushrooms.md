@@ -26,6 +26,7 @@ ingredients:
     fdcId: 790085
     matchConfidence: high
     cooking: boiled
+    starchForm: dough
   - raw: 2 eggs
     group: Homemade pasta
     quantity: 2
@@ -141,13 +142,13 @@ nutrition:
     sodium_mg: 1910
     availableCarb_g: 69.2
   glycemic:
-    gi: 54
-    gl: 37
+    gi: 47
+    gl: 32
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 0
+    measuredGiPct: 88
   nutriScore:
     grade: C
     points: 6

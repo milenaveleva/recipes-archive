@@ -86,7 +86,7 @@ nutrition:
     energyKj: 1364
     protein_g: 4.6
     fat_g: 14.6
-    satFat_g: 2.2
+    satFat_g: 2.3
     carbs_g: 46.8
     fiber_g: 6.4
     sugar_g: 7.6
@@ -114,7 +114,7 @@ nutrition:
   balance:
     score: 8
     band: high
-    nrf: 72.9
+    nrf: 73.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 98.6

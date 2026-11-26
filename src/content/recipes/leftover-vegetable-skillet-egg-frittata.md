@@ -174,4 +174,4 @@ createdAt: "2026-11-14"
 ## Tips
 
 - Any leftover vegetables work perfectly: carrot, root vegetables, broccoli, green beans or even zucchini add a fantastic flavour.
-- If you have a little leftover roast chicken, ham or sausage in the fridge, feel free to toss it into the pan along with the vegetables.
+- If you have a few leftover cooked vegetables or beans in the fridge, feel free to toss them into the pan along with the vegetables.

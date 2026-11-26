@@ -125,17 +125,16 @@ ingredients:
     fdcId: 2261421
     matchConfidence: high
     cooking: baked
-  - raw: 80 g dried cranberries, chopped
+  - raw: 80 g frozen cranberries, thawed and chopped
     group: For the lentil bites
     quantity: 80
     unit: g
-    item: dried cranberries
-    note: chopped
+    item: frozen cranberries
+    note: thawed and chopped
     grams: 80
-    fdcId: 168165
-    matchConfidence: medium
+    fdcId: 171722
+    matchConfidence: high
     cooking: baked
-    proxyOk: true
   - raw: 500 g cranberries
     group: For the cranberry sauce
     quantity: 500
@@ -200,27 +199,27 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 280
-    energyKj: 1171
-    protein_g: 8.4
-    fat_g: 14
+    energyKcal: 265
+    energyKj: 1110
+    protein_g: 8.3
+    fat_g: 13.9
     satFat_g: 1.3
-    carbs_g: 35.4
+    carbs_g: 31.6
     fiber_g: 6.5
-    sugar_g: 15.6
-    sodium_mg: 110
-    availableCarb_g: 28.6
+    sugar_g: 12.1
+    sodium_mg: 109
+    availableCarb_g: 24.8
   glycemic:
-    gi: 51
-    gl: 14
+    gi: 50
+    gl: 12
     giBand: low
     glBand: medium
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 73
+    measuredGiPct: 69
   nutriScore:
     grade: A
-    points: -2
+    points: -1
     category: general
     version: "2023"
     coverage: 0.94
@@ -232,7 +231,7 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 24.1
+    nrf: 27.8
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

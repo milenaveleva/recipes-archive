@@ -154,6 +154,20 @@ function sameFood(food, ft, r) {
 // the bread, and the one toasted-loaf study in the table is not a generic value.
 const WHITE_BREAD = /^(White bread|Wheat bread|Enriched white bread)\b(?!.*\b(gluten|guar|pectin|fibre|fiber|resistant|starch|chickpea|oat bran|molasses|sourdough|vinegar|prove|proving|toasted|candeal|bite-sized|pre-cooked|glucan|enriched with|reducose)\b)/i;
 const WHOLEMEAL_BREAD = /^(Wholemeal (\(whole wheat\) )?(wheat )?flour bread|Wholemeal wheat flour bread)/i;
+/** Mean GI + citation label of the Table 1 entries a staple reference names. */
+function staplesRef(st) {
+  const refs = reference.filter((r) => r.category === st.cat && st.ref.test(r.food));
+  if (!refs.length) throw new Error(`STAPLES reference ${st.ref} matched no ${st.cat} entry — regenerate gi-reference.json`);
+  const gi = Math.round(refs.reduce((a, r) => a + r.gi, 0) / refs.length);
+  const label = refs.length === 1 ? refs[0].food.slice(0, 60).trim() : `${st.label ?? st.ref.source.replace(/[\^$\\]|\(\?.*$/g, '').trim()}: mean of ${refs.length} entries`;
+  return { gi, label, conf: st.conf };
+}
+// Boiled wheat pasta (egg-free, so a recipe's own eggs are not counted twice through the
+// mixed-meal protein correction): the as-eaten reference for a flour rolled or pinched into
+// pasta or noodles and boiled. Soft dumpling doughs (gnocchi) are fully gelatinised and keep
+// the bread value.
+const WHOLEMEAL_PASTA_DOUGH = { cat: 'PASTA AND NOODLES', ref: /^Wholemeal spaghetti, boiled$/i, conf: 'medium', label: 'wholemeal spaghetti, boiled' };
+const WHITE_PASTA_DOUGH = { cat: 'PASTA AND NOODLES', ref: /^White spaghetti, boiled$/i, conf: 'medium', label: 'white spaghetti, boiled' };
 const STAPLES = [
   { food: /^pasta\b.*\bgluten-free\b/i, cat: 'PASTA AND NOODLES', ref: /^Gluten-free pasta$/i },
   { food: /^pasta\b.*\b(whole-wheat|whole grain|whole wheat)\b/i, cat: 'PASTA AND NOODLES', ref: /^Wholemeal spaghetti, boiled$/i },
@@ -194,12 +208,17 @@ const STAPLES = [
   { food: /^chocolate, dark, 70-85%/i, cat: 'SNACK FOODS AND CONFECTIONERY', ref: /^Chocolate, dark, 74% Cocoa\b/i, conf: 'medium' },
   // A whole orange "with peel" is eaten (and was measured) as its flesh.
   { food: /^oranges, raw, with peel\b/i, cat: 'FRUIT AND FRUIT PRODUCTS', ref: /\bOranges, navel$/i, conf: 'medium' },
+  // Flour is never eaten as flour: its as-eaten GI is that of what it becomes. Baked,
+  // fried, steamed, stirred into a sauce or made into soft dumplings (gnocchi), its starch is
+  // gelatinised like bread's, so the default is the matching bread; rolled or pinched into
+  // pasta or noodles and boiled (ingredient `starchForm: dough`), it takes the boiled pasta
+  // of the same grain (`giDough`).
+  { food: /^(flour, (whole wheat|spelt, whole grain)|wheat flour, whole-grain)\b/i, cat: 'BREADS', ref: WHOLEMEAL_BREAD, conf: 'medium', label: 'wholemeal wheat bread', dough: WHOLEMEAL_PASTA_DOUGH },
+  { food: /^(flour, (wheat, all-purpose|00|semolina)|wheat flour, white|wheat flours, bread)\b/i, cat: 'BREADS', ref: WHITE_BREAD, conf: 'medium', label: 'white wheat bread', dough: WHITE_PASTA_DOUGH },
 ].map((st) => {
-  const refs = reference.filter((r) => r.category === st.cat && st.ref.test(r.food));
-  if (!refs.length) throw new Error(`STAPLES reference ${st.ref} matched no ${st.cat} entry — regenerate gi-reference.json`);
-  const gi = Math.round(refs.reduce((a, r) => a + r.gi, 0) / refs.length);
-  const label = refs.length === 1 ? refs[0].food.slice(0, 60).trim() : `${st.label ?? st.ref.source.replace(/[\^$\\]|\(\?.*$/g, '').trim()}: mean of ${refs.length} entries`;
-  return { ...st, gi, label };
+  const ref = staplesRef(st);
+  const dough = st.dough ? staplesRef(st.dough) : null;
+  return { ...st, ...ref, dough };
 });
 const COOKED_REF = /\b(boiled|cooked|steamed|baked|roasted|porridge)\b/i;
 
@@ -216,7 +235,12 @@ function assign(food) {
 
   // 0) As-eaten staple reference (see STAPLES).
   const staple = STAPLES.find((st) => st.food.test(food.description ?? ''));
-  if (staple) return { gi: staple.gi, source: `Atkinson 2021 (${staple.label})`, conf: staple.conf ?? 'high' };
+  if (staple) {
+    const dough = staple.dough
+      ? { gi: staple.dough.gi, giSource: `Atkinson 2021 (${staple.dough.label})`, giConfidence: staple.dough.conf ?? 'high' }
+      : undefined;
+    return { gi: staple.gi, source: `Atkinson 2021 (${staple.label})`, conf: staple.conf ?? 'high', dough };
+  }
 
   // 1) Measured match — only within the same reference category, since cross-category
   //    token matches (e.g. "rice vinegar" ↔ "rice") are the main source of nonsense.
@@ -277,12 +301,18 @@ let preserved = 0;
 const report = [];
 for (const food of foods) {
   const key = String(food.fdcId);
+  // A flour's dough GI follows its staple rule even when its base GI is a preserved match.
+  const doughStaple = STAPLES.find((st) => st.dough && st.food.test(food.description ?? ''));
+  if (doughStaple && scoring[key]?.gi != null) {
+    scoring[key] = { ...scoring[key], giDough: { gi: doughStaple.dough.gi, giSource: `Atkinson 2021 (${doughStaple.dough.label})`, giConfidence: doughStaple.dough.conf ?? 'high' } };
+  }
   const existing = scoring[key];
   // --rematch-predicted clears the estimated tiers only; a curated or measured match stays.
   const estimated = existing?.giConfidence === 'predicted' || existing?.giConfidence === 'low';
   if (existing?.gi != null && !(REMATCH && estimated)) { preserved++; continue; } // never overwrite a curated or prior value
   const a = assign(food);
-  scoring[key] = { ...(existing ?? {}), gi: a.gi, giSource: a.source, giConfidence: a.conf };
+  const { giDough: _staleDough, ...kept } = existing ?? {};
+  scoring[key] = { ...kept, gi: a.gi, giSource: a.source, giConfidence: a.conf, ...(a.dough ? { giDough: a.dough } : {}) };
   counts[a.conf]++;
   if (used.has(food.fdcId)) report.push(`  [${a.conf}] ${(food.description ?? '').slice(0, 42).padEnd(42)} → GI ${a.gi}  (${a.source})`);
 }

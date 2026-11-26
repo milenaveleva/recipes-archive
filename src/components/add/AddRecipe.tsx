@@ -31,6 +31,7 @@ import {
   splitMethodBody,
   selectedConfidence,
   selectMatch,
+  hasDoughGi,
   type FormState,
   type IngredientRow,
   type StoredRecipe,
@@ -705,6 +706,19 @@ function IngredientRowEditor({
           />
           exclude
         </label>
+        {hasDoughGi(row.selectedFdcId) && (
+          <label
+            className="flex items-center gap-1.5 text-xs text-ink-soft whitespace-nowrap"
+            title="Rolled into homemade pasta or noodles and boiled: GI from boiled pasta instead of bread (gnocchi stay unticked)"
+          >
+            <input
+              type="checkbox"
+              checked={row.starchForm === 'dough'}
+              onChange={(e) => onPatch({ starchForm: e.target.checked ? 'dough' : null })}
+            />
+            pasta dough
+          </label>
+        )}
       </div>
     </div>
   );

@@ -80,6 +80,13 @@ const ingredient = z.object({
    * the validation gate's identity and state checks for this line (src/core/validate.ts).
    */
   proxyOk: z.boolean().optional(),
+  /**
+   * The flour is rolled or pinched into pasta or noodles and boiled (homemade tagliatelle,
+   * csipetke), not baked, stirred into a sauce or made into soft dumplings like gnocchi: its
+   * GI is then the food's `giDough` value (boiled pasta) rather than its default as-eaten
+   * value, the bread it would become (src/data/food-scoring.json).
+   */
+  starchForm: z.enum(['dough']).optional(),
 });
 
 const perServing = z

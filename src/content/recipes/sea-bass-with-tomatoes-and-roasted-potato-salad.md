@@ -149,11 +149,11 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 79
   nutriScore:
-    grade: A
-    points: 0
+    grade: B
+    points: 1
     category: general
     version: "2023"
-    coverage: 0.93
+    coverage: 1
   inflammation:
     score: -0.6
     band: mildly-anti-inflammatory
@@ -162,7 +162,7 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 33.1
+    nrf: 33.4
     version: NRF9.3
   processing:
     minimallyProcessedPct: 99.5
