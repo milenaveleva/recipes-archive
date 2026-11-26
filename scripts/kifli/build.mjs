@@ -30,27 +30,15 @@
  *
  * Progress and the check report go to stderr; stdout gets one summary JSON line.
  */
-import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync, rmSync, copyFileSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
-import { randomBytes } from 'node:crypto';
-import { createRequire } from 'node:module';
-import Module from 'node:module';
+import { existsSync, writeFileSync, readdirSync, rmSync, copyFileSync } from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { parse as parseYaml } from 'yaml';
+import {
+  ROOT, RECIPES, IMAGES, log, readJson, kifliId, compileEngine, primeFoods, scanRecipes, chooseSlug, compileRecipe, report,
+} from '../lib/recipe-import.mjs';
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DATA = path.join(ROOT, 'scripts/data-raw/kifli');
-const RECIPES = path.join(ROOT, 'src/content/recipes');
-const IMAGES = path.join(RECIPES, 'images');
 const LIST = 'Kifli favourites';
 
-const log = (...a) => process.stderr.write(a.join(' ') + '\n');
-const readJson = (p) => JSON.parse(readFileSync(p, 'utf8'));
-const kifliId = (url) => {
-  const m = /kifli\.hu\/sef\/(\d+)/.exec(url ?? '');
-  return m ? Number(m[1]) : null;
-};
 
 function parseArgs(argv) {
   const write = argv.includes('--write');
@@ -65,166 +53,7 @@ function parseArgs(argv) {
   return { write, ids };
 }
 
-/* ---- compile the authoring engine (addLib + markdown) to CommonJS ---- */
-
-function compileEngine() {
-  const outDir = path.join(ROOT, 'node_modules/.cache', `kifli-build-${randomBytes(4).toString('hex')}`);
-  mkdirSync(outDir, { recursive: true });
-  log('→ compiling authoring engine (addLib.ts + core/markdown.ts) to CommonJS…');
-  try {
-    execFileSync(
-      path.join(ROOT, 'node_modules/.bin/tsc'),
-      ['src/components/add/addLib.ts', 'src/core/markdown.ts', '--outDir', outDir, '--module', 'commonjs',
-       '--target', 'es2022', '--moduleResolution', 'node', '--resolveJsonModule', '--esModuleInterop',
-       '--skipLibCheck'],
-      { cwd: ROOT, stdio: ['ignore', 'pipe', 'pipe'] },
-    );
-  } catch (err) {
-    // tsc still emits on type errors. The Vite-only `?url` import never resolves under
-    // tsc; report anything else but carry on as long as the output exists.
-    const lines = String(err.stdout ?? '').split('\n').filter((l) => l.includes('error TS') && !l.includes('?url'));
-    for (const l of lines) log(`  tsc: ${l}`);
-  }
-  const addLibJs = path.join(outDir, 'components/add/addLib.js');
-  const markdownJs = path.join(outDir, 'core/markdown.js');
-  if (!existsSync(addLibJs) || !existsSync(markdownJs)) throw new Error('engine compile produced no output');
-
-  // Resolve every `?url` asset import to an empty stub (the dataset is primed directly).
-  const stub = path.join(outDir, 'url-stub.js');
-  writeFileSync(stub, 'module.exports = { __esModule: true, default: "" };\n');
-  const resolve = Module._resolveFilename;
-  Module._resolveFilename = function (request, ...rest) {
-    if (typeof request === 'string' && request.endsWith('?url')) return stub;
-    return resolve.call(this, request, ...rest);
-  };
-  const req = createRequire(import.meta.url);
-  return {
-    outDir,
-    addLib: req(addLibJs),
-    markdown: req(markdownJs),
-    units: req(path.join(outDir, 'core/units.js')),
-    house: req(path.join(outDir, 'core/houseRules.js')),
-  };
-}
-
-/* ---- existing recipes (for slug collisions and already-imported ids) ---- */
-
-function scanRecipes() {
-  const bySlug = new Map(); // slug → kifli id of its source (null when not a kifli import)
-  const byKifliId = new Map(); // kifli id → { slug, createdAt }
-  const corpus = []; // { slug, kifliId, ingredients } for the near-duplicate check
-  for (const file of readdirSync(RECIPES).filter((f) => f.endsWith('.md'))) {
-    const slug = file.slice(0, -3);
-    const fm = /^---\n([\s\S]*?)\n---/.exec(readFileSync(path.join(RECIPES, file), 'utf8'));
-    let data = null;
-    try {
-      data = fm ? parseYaml(fm[1]) : null;
-    } catch {
-      data = null;
-    }
-    const id = data?.source?.name === 'kifli.hu' ? kifliId(data?.source?.url) : null;
-    bySlug.set(slug, id);
-    if (id != null) byKifliId.set(id, { slug, createdAt: data?.createdAt });
-    corpus.push({ slug, kifliId: id, ingredients: data?.ingredients ?? [] });
-  }
-  return { bySlug, byKifliId, corpus };
-}
-
-function baseSlug(slugifyRecipe, title) {
-  const ascii = title.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ß/g, 'ss');
-  return slugifyRecipe(ascii);
-}
-
-/** Pick the file slug: the recipe's existing import, else the title slug, else title-<id>. */
-function chooseSlug(id, title, existing, claimed, slugifyRecipe) {
-  const prior = existing.byKifliId.get(id);
-  if (prior) return { slug: prior.slug, replaces: true, createdAt: prior.createdAt };
-  const free = (s) => !existing.bySlug.has(s) && !claimed.has(s);
-  const base = baseSlug(slugifyRecipe, title);
-  if (free(base)) return { slug: base, replaces: false };
-  const suffixed = `${base}-${id}`;
-  if (free(suffixed)) return { slug: suffixed, replaces: false };
-  return { slug: null, reason: `both ${base}.md and ${suffixed}.md are taken by other recipes` };
-}
-
-/* ---- house-rule auto-fixes ---- */
-
-/**
- * Run the translation through houseRules.normalizeRecipe and map the fixed lines back onto
- * en ingredient entries: an untouched line keeps its entry (and its `food` / `grams` hints);
- * a changed one becomes a new entry with the pinned food (`fdcId`) and weight (`forceGrams`).
- */
-function normalizeEn(en, house, foodById) {
-  const lines = en.ingredients.map((ing, src) => ({
-    src, // origin entry, carried through the fixes
-    raw: ing.en,
-    fdcId: ing.fdcId ?? null,
-    grams: ing.forceGrams ?? ing.grams ?? null,
-    exclude: !!ing.exclude,
-    cooking: ing.cooking ?? null,
-    proxyOk: !!ing.proxyOk,
-    group: ing.group,
-  }));
-  const { value, changes } = house.normalizeRecipe(
-    { title: en.title, course: en.course, servings: Number(en.servings), ingredients: lines, steps: en.steps ?? [], tips: en.tips ?? [] },
-    foodById,
-  );
-  const same = (a, b) =>
-    a.raw === b.raw && (a.fdcId ?? null) === (b.fdcId ?? null) && (a.grams ?? null) === (b.grams ?? null) && !!a.exclude === !!b.exclude;
-  const used = new Set();
-  const ingredients = value.ingredients.map((line) => {
-    const i = lines.findIndex((l, k) => !used.has(k) && same(l, line));
-    if (i >= 0) {
-      used.add(i);
-      return en.ingredients[i];
-    }
-    // A reworded line keeps its search hint; a swapped ingredient (a forbidden original) does not.
-    const orig = line.src != null ? en.ingredients[line.src] : null;
-    const entry = { ...(orig?.hu ? { hu: orig.hu } : {}), en: line.raw, group: line.group };
-    if (orig?.food && line.fdcId == null && !house.forbiddenReason(orig.en, foodById.get(orig.fdcId))) entry.food = orig.food;
-    if (line.fdcId != null) entry.fdcId = line.fdcId;
-    if (line.grams != null) entry.forceGrams = line.grams;
-    if (line.cooking) entry.cooking = line.cooking;
-    if (line.exclude) entry.exclude = true;
-    if (line.proxyOk) entry.proxyOk = true;
-    return entry;
-  });
-  return { en: { ...en, ingredients, steps: value.steps ?? en.steps, tips: value.tips ?? en.tips }, changes };
-}
-
-/** Gate codes the house rules own: an import still carrying one of these errors is refused. */
-const HOUSE_CODES = new Set([
-  'FORBIDDEN_INGREDIENT', 'FORBIDDEN_WORDING', 'MEAT_SUGGESTION', 'NOT_DRY_STAPLE', 'PORTION_80', 'DRINK_WATER',
-]);
-
-/* ---- one recipe ---- */
-
-function buildRows(en, addLib, units) {
-  const { buildRow, selectMatch } = addLib;
-  return en.ingredients.map((ing, i) => {
-    if (!ing.en) throw new Error(`ingredient ${i + 1} has no "en" line`);
-    const row = buildRow(ing.en);
-    const scoreOf = (r) => r.candidates.find((c) => c.food.fdcId === r.selectedFdcId)?.score ?? -Infinity;
-    if (ing.food) {
-      const best = buildRow(ing.food).candidates[0];
-      if (best && best.confidence !== 'low' && best.score >= scoreOf(row) && best.food.fdcId != null) {
-        if (!row.candidates.some((c) => c.food.fdcId === best.food.fdcId)) row.candidates = [best, ...row.candidates];
-        Object.assign(row, selectMatch(row, best.food.fdcId));
-      }
-    }
-    if (ing.fdcId != null) Object.assign(row, selectMatch(row, ing.fdcId));
-    const dim = units.classifyUnit(row.parsed.unitId ?? row.parsed.unit);
-    if (ing.grams != null && (row.grams == null || (dim !== 'mass' && dim !== 'volume'))) row.grams = ing.grams;
-    if (ing.forceGrams != null) row.grams = ing.forceGrams;
-    if (ing.cooking) {
-      row.cooking = ing.cooking;
-      row.userSetCooking = true;
-    }
-    if (ing.exclude) row.excludeFromNutrition = true;
-    if (ing.proxyOk) row.proxyFdcId = row.selectedFdcId;
-    return row;
-  });
-}
+const sourceIdOf = (data) => (data?.source?.name === 'kifli.hu' ? kifliId(data?.source?.url) : null);
 
 function sourceKcal(raw, servings) {
   const s = raw.servings?.[0] ?? '';
@@ -234,49 +63,21 @@ function sourceKcal(raw, servings) {
 }
 
 function buildRecipe(id, engine, existing, claimed, today, foodById) {
-  const { addLib, markdown, units, house } = engine;
-  const fixed = normalizeEn(readJson(path.join(DATA, 'en', `${id}.json`)), house, foodById);
-  const en = fixed.en;
+  const { addLib, markdown, house } = engine;
+  const en = readJson(path.join(DATA, 'en', `${id}.json`));
   const raw = readJson(path.join(DATA, 'raw', `${id}.json`));
-  if (!en.title) throw new Error('en JSON has no title');
-  const servings = addLib.clampServings(Number(en.servings));
-  const rows = buildRows(en, addLib, units);
-
+  const pick = chooseSlug(id, id, en.title ?? '', existing, claimed, markdown.slugifyRecipe);
   const form = {
-    ...addLib.EMPTY_FORM,
-    title: en.title,
-    description: en.description ?? '',
-    cuisine: en.cuisine ?? '',
-    course: en.course ?? '',
-    servings,
     prepMin: raw.prep ?? null,
     cookMin: raw.cook ?? null,
-    nutriCategory: en.nutriCategory ?? 'general',
-    redMeat: Boolean(en.redMeat),
     lists: LIST,
     imageUrl: raw.image ?? '',
     sourceName: 'kifli.hu',
     sourceUrl: raw.link,
-    sourceKcalPerServing: sourceKcal(raw, servings),
-    instructions: (en.steps ?? []).join('\n'),
+    sourceKcalPerServing: sourceKcal(raw, addLib.clampServings(Number(en.servings))),
   };
-
-  const pick = chooseSlug(id, en.title, existing, claimed, markdown.slugifyRecipe);
-  const resolved = addLib.rowsToResolved(rows);
-  const macro = addLib.computeNutrition(rows, servings, resolved);
-  const validation = addLib.validateRows(rows, form, resolved, macro);
-  const method = addLib.validateMethod([...(en.steps ?? []), ...(en.tips ?? [])].join('\n'));
-  validation.errors.push(...method.errors);
-  const houseErrors = validation.errors.filter((e) => HOUSE_CODES.has(e.code));
-  const createdAt = pick.createdAt ?? today;
-  const draft = addLib.buildDraft(form, rows, macro, createdAt, pick.replaces ? { computedAt: today, updatedAt: today } : {});
-
-  // Groups ride along on the stored lines (draftIngredients drops group headers only).
-  const lineRows = rows.filter((r) => !r.parsed.isGroupHeader);
-  lineRows.forEach((r, i) => {
-    const group = en.ingredients[rows.indexOf(r)].group;
-    if (group) draft.ingredients[i].group = group;
-  });
+  const r = compileRecipe(en, form, engine, foodById, { createdAt: pick.createdAt ?? today, replaces: !!pick.replaces, today });
+  const { draft } = r;
   draft.author = raw.author ?? undefined;
   const imgSrc = path.join(DATA, 'img', `${id}.jpg`);
   const hasImage = existsSync(imgSrc);
@@ -285,37 +86,14 @@ function buildRecipe(id, engine, existing, claimed, today, foodById) {
     draft.image = `./images/${pick.slug}.jpg`;
     draft.imageAlt = draft.title;
   }
-  const tips = (en.tips ?? []).map((t) => t.trim()).filter(Boolean);
-  if (tips.length) draft.bodyAfter = `## Tips\n\n${tips.map((t) => `- ${t}`).join('\n')}`;
 
   const excluded = readJson(path.join(ROOT, 'scripts/kifli/excluded-ids.json')).ids;
   const duplicates = house
     .findDuplicateRecipes([{ slug: pick.slug ?? `kifli-${id}`, kifliId: id, ingredients: draft.ingredients }], existing.corpus.filter((c) => c.kifliId !== id), excluded)
     .map((d) => d.issue);
-  validation.warnings.push(...duplicates.map(({ severity, ...issue }) => issue));
+  r.validation.warnings.push(...duplicates.map(({ severity, ...issue }) => issue));
 
-  return { id, en, raw, rows, macro, validation, houseErrors, fixes: fixed.changes, draft, pick, imgSrc, hasImage, form };
-}
-
-/* ---- reporting ---- */
-
-function report(r, foodDesc) {
-  const ours = r.macro.perServing.energyKcal;
-  const theirs = r.form.sourceKcalPerServing;
-  const diff = ours != null && theirs ? ` (${ours >= theirs ? '+' : ''}${Math.round(((ours - theirs) / theirs) * 100)} %)` : '';
-  log(`\n■ ${r.id}  ${r.en.title}  →  ${r.pick.slug ? `${r.pick.slug}.md${r.pick.replaces ? ' (replaces own import)' : ''}` : `REFUSED: ${r.pick.reason}`}`);
-  log(`  kcal/serving: ours ${ours ?? '-'} vs kifli ${theirs ?? '-'}${diff}  ·  ${r.form.servings} servings  ·  image ${r.hasImage ? 'yes' : 'no'}`);
-  r.rows.forEach((row, i) => {
-    if (row.parsed.isGroupHeader) return;
-    const status = row.excludeFromNutrition ? 'EXCL' : row.selectedFdcId == null ? 'NOMATCH' : row.grams == null ? 'NOGRAMS' : 'ok';
-    const food = row.selectedFdcId != null ? `${foodDesc(row.selectedFdcId)} [${row.selectedFdcId}]` : '—';
-    log(
-      `  ${status.padEnd(7)} ${String(row.grams ?? '-').padStart(6)} g  ${row.cooking.padEnd(9)} ${r.en.ingredients[i].en}  →  ${food}`,
-    );
-  });
-  for (const f of r.fixes) log(`  fixed   ${f}`);
-  for (const e of r.validation.errors) log(`  ERROR   ${e.code}: ${e.message}`);
-  for (const w of r.validation.warnings) log(`  warn    ${w.code}: ${w.message}`);
+  return { ...r, id, raw, pick, imgSrc, hasImage };
 }
 
 /* ---- main ---- */
@@ -331,22 +109,19 @@ async function main() {
   if (missing.length) throw new Error(`no en/raw JSON for: ${missing.join(', ')}`);
   if (!ids.length) throw new Error(`nothing to build: ${path.relative(ROOT, enDir)}/ has no <id>.json`);
 
-  const engine = compileEngine();
+  const engine = compileEngine('kifli');
   try {
-    log('→ loading food data (usda-foods.json)…');
-    const foods = readJson(path.join(ROOT, 'src/data/usda-foods.json'));
-    engine.addLib.primeFoods(foods);
-    const foodById = new Map(foods.map((f) => [f.fdcId, f]));
+    const foodById = primeFoods(engine);
     const foodDesc = (fdcId) => foodById.get(fdcId)?.description ?? '?';
 
-    const existing = scanRecipes();
+    const existing = scanRecipes(sourceIdOf);
     const today = new Date().toLocaleDateString('en-CA'); // YYYY-MM-DD, local
     // Near-duplicates of a recipe already kept on the site are never rebuilt (excluded-ids.json).
     const excluded = new Set(Object.keys(readJson(path.join(ROOT, 'scripts/kifli/excluded-ids.json')).ids).map(Number));
-    const targets = write && !only ? ids.filter((id) => !existing.byKifliId.has(id) && !excluded.has(id)) : ids;
+    const targets = write && !only ? ids.filter((id) => !existing.byId.has(id) && !excluded.has(id)) : ids;
     if (write && !only) {
-      const imported = ids.filter((id) => existing.byKifliId.has(id)).length;
-      const dup = ids.filter((id) => !existing.byKifliId.has(id) && excluded.has(id)).length;
+      const imported = ids.filter((id) => existing.byId.has(id)).length;
+      const dup = ids.filter((id) => !existing.byId.has(id) && excluded.has(id)).length;
       if (imported) log(`→ ${imported} id(s) already imported — skipped (pass --ids to rebuild them)`);
       if (dup) log(`→ ${dup} id(s) listed in excluded-ids.json (near-duplicates) — skipped`);
     }
@@ -366,7 +141,7 @@ async function main() {
       summary.built++;
       // Only a recipe that would be written claims its slug, so a refused one never pushes a later one to a suffix.
       if (!write) {
-        report(r, foodDesc);
+        report(r, foodDesc, 'kifli');
         if (r.houseErrors.length) {
           log(`  WOULD BE REFUSED: breaks the house rules after auto-fix`);
           summary.refused.push(id);
