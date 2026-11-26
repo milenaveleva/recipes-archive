@@ -7,7 +7,7 @@ imageAlt: Vietnamese Whole-Wheat Thin Noodle Salad with Shrimp (Nộm miến tô
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12628-vietnami-uevegteszta-salata-garnelaval-nom-mien-tom
-  kcalPerServing: 403
+  kcalPerServing: 385
 author: Kifli Kukták
 servings: 2
 prepTime: PT20M
@@ -18,12 +18,12 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 160 g whole-wheat thin noodles (in place of glass noodles), dry
-    quantity: 160
+  - raw: 150 g whole-wheat thin noodles (in place of glass noodles), dry
+    quantity: 150
     unit: g
     item: whole-wheat thin noodles (in place of glass noodles)
     note: dry
-    grams: 160
+    grams: 150
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -165,19 +165,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 649
-    energyKj: 2714
-    protein_g: 34.4
-    fat_g: 24
+    energyKcal: 631
+    energyKj: 2640
+    protein_g: 33.8
+    fat_g: 23.9
     satFat_g: 3.5
-    carbs_g: 82.6
-    fiber_g: 11.5
-    sugar_g: 16.3
+    carbs_g: 79
+    fiber_g: 11.1
+    sugar_g: 16.2
     sodium_mg: 2151
-    availableCarb_g: 71.1
+    availableCarb_g: 67.9
   glycemic:
     gi: 48
-    gl: 34
+    gl: 33
     giBand: low
     glBand: medium
     glBasis: meal
@@ -197,10 +197,10 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 22.2
+    nrf: 22
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 97.6
+    minimallyProcessedPct: 97.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

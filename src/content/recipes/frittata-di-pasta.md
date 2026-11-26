@@ -7,7 +7,7 @@ imageAlt: Frittata di Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12164-frittata-di-pasta-olasz-tesztalepeny-maradekbol
-  kcalPerServing: 665
+  kcalPerServing: 480
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
@@ -18,13 +18,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 320 g dry whole-wheat pasta (spaghetti, penne or any short pasta), cooked and cooled
-    quantity: 320
+  - raw: 110 g dry whole-wheat pasta (spaghetti, penne or any short pasta), cooked and cooled
+    quantity: 110
     unit: g
     item: dry whole-wheat pasta
     note: dry, cooked and cooled
     group: Main ingredients
-    grams: 320
+    grams: 110
     fdcId: 82009870
     matchConfidence: high
     cooking: fried
@@ -96,44 +96,44 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 604
-    energyKj: 2529
-    protein_g: 28.7
-    fat_g: 25.8
-    satFat_g: 10.1
-    carbs_g: 66
-    fiber_g: 5.4
-    sugar_g: 2.8
-    sodium_mg: 685
-    availableCarb_g: 60.6
+    energyKcal: 419
+    energyKj: 1753
+    protein_g: 22.5
+    fat_g: 24.6
+    satFat_g: 9.9
+    carbs_g: 27.3
+    fiber_g: 2.2
+    sugar_g: 1.9
+    sodium_mg: 683
+    availableCarb_g: 25.1
   glycemic:
-    gi: 46
-    gl: 28
+    gi: 37
+    gl: 9
     giBand: low
-    glBand: medium
+    glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 89
+    measuredGiPct: 74
   nutriScore:
-    grade: C
-    points: 4
+    grade: D
+    points: 11
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.4
+    score: 0.5
     band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.11
   balance:
     score: 3
     band: low
-    nrf: 15.9
+    nrf: 13.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 70.3
+    minimallyProcessedPct: 57.1
     ultraProcessedPct: 0
-    band: minimally-processed
+    band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"
   dataSources:

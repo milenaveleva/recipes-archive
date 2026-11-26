@@ -17,13 +17,13 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 320 g bulgur, uncooked
+  - raw: 250 g bulgur, uncooked
     group: Main ingredients
-    quantity: 320
+    quantity: 250
     unit: g
     item: bulgur
     note: uncooked
-    grams: 320
+    grams: 250
     fdcId: 170688
     matchConfidence: medium
     cooking: boiled
@@ -120,27 +120,27 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 594
-    energyKj: 2484
-    protein_g: 19.8
-    fat_g: 28.8
+    energyKcal: 534
+    energyKj: 2234
+    protein_g: 17.6
+    fat_g: 28.6
     satFat_g: 8
-    carbs_g: 71.2
-    fiber_g: 11.9
+    carbs_g: 57.9
+    fiber_g: 9.7
     sugar_g: 5.5
-    sodium_mg: 861
-    availableCarb_g: 59.4
+    sodium_mg: 858
+    availableCarb_g: 48.3
   glycemic:
     gi: 56
-    gl: 34
+    gl: 27
     giBand: medium
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 5
+    measuredGiPct: 6
   nutriScore:
     grade: C
-    points: 3
+    points: 4
     category: general
     version: "2023"
     coverage: 1
@@ -150,12 +150,12 @@ nutrition:
     method: fii v4
     aromaticAdjustment: -0.17
   balance:
-    score: 4
+    score: 3
     band: low
-    nrf: 19.8
+    nrf: 17.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 82.2
+    minimallyProcessedPct: 80.2
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

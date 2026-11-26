@@ -13,12 +13,13 @@ totalTime: PT50M
 cuisine: Japanese
 course: Side Dish
 ingredients:
-  - raw: 320 g dry Japanese short-grain brown rice, uncooked
-    quantity: 320
-    unit: g
+  - raw: 1½ cups Japanese short-grain brown rice (uncooked)
+    quantity: 1.5
+    unit: cups
     item: Japanese short-grain brown rice
     note: uncooked
-    grams: 320
+    grams: 285
+    milliliters: 354.882
     fdcId: 169706
     matchConfidence: high
     cooking: boiled
@@ -85,30 +86,30 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 342
-    energyKj: 1431
-    protein_g: 8.3
-    fat_g: 4.8
+    energyKcal: 310
+    energyKj: 1299
+    protein_g: 7.6
+    fat_g: 4.5
     satFat_g: 0.7
-    carbs_g: 64.8
-    fiber_g: 3
+    carbs_g: 58.1
+    fiber_g: 2.7
     sugar_g: 2
     sodium_mg: 408
-    availableCarb_g: 61.9
+    availableCarb_g: 55.5
   glycemic:
     gi: 69
-    gl: 43
+    gl: 38
     giBand: medium
     glBand: high
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 94
+    measuredGiPct: 93
   nutriScore:
     grade: B
     points: 1
     category: general
     version: "2023"
-    coverage: 0.99
+    coverage: 0.98
   inflammation:
     score: 0
     band: neutral
@@ -117,10 +118,10 @@ nutrition:
   balance:
     score: 3
     band: low
-    nrf: 16.1
+    nrf: 15.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 87.6
+    minimallyProcessedPct: 86.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -142,11 +143,11 @@ updatedAt: "2026-06-28"
 ## Method
 
 1. Gather all the ingredients.
-2. Rinse 320 g uncooked Japanese short-grain brown rice and drain well. For detailed instructions on rinsing and cooking Japanese rice, read my How to Make Rice post.
+2. Rinse 1½ cups uncooked Japanese short-grain brown rice and drain well. For detailed instructions on rinsing and cooking Japanese rice, read my How to Make Rice post.
 3. Boil some water in a small saucepan and pour the boiling water onto 1 piece aburaage (deep-fried tofu pouch) set in a strainer in the sink. This step will rinse off the manufacturer’s oil and improve the flavor.
 4. Cut the aburaage in half lengthwise, then slice crosswise into thin strips.
 5. Peel 2 inches ginger and cut it into julienned pieces.
-6. In a 2-cup measuring cup, mix all the ingredients for the seasonings: 1 Tbsp soy sauce, 1 Tbsp sake, 1 Tbsp mirin, and ¼ tsp Diamond Crystal kosher salt. Then, add 2 cups water to the seasonings so that the liquid totals about 2 cups or 480 ml (brown rice needs more liquid than white rice).
+6. In a 2-cup measuring cup, mix all the ingredients for the seasonings: 1 Tbsp soy sauce, 1 Tbsp sake, 1 Tbsp mirin, and ¼ tsp Diamond Crystal kosher salt. Then, add 1¾ cups water to the seasonings so that the liquid totals about 2 cups or 480 ml (brown rice needs more liquid than white rice).
 7. Place the well-drained rice into the rice cooker. No rice cooker? You can also make rice in a pot over the stove, Instant Pot, or donabe. Pour the measured liquid into the rice cooker and mix well. Then, scatter the ginger and aburaage on top of the rice. Do not mix. The rice will not cook evenly if mixed with other ingredients.
 8. Soak the rice for 20–30 minutes. Then, start cooking. Select the Brown Rice option if you have it. When the rice cooker turns off, let the rice steam for another 10 minutes before opening the lid. Fluff the rice with a rice paddle and serve.
 9. You can keep the leftovers in an airtight container and store it n the freezer for up to a month.

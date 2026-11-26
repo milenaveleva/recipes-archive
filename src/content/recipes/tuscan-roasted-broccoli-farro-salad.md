@@ -17,12 +17,12 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 160 g farro, uncooked
-    quantity: 160
+  - raw: 200 g farro, uncooked
+    quantity: 200
     unit: g
     item: farro
     note: uncooked
-    grams: 160
+    grams: 200
     fdcId: 2710828
     matchConfidence: high
     cooking: boiled
@@ -113,42 +113,42 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 924
-    energyKj: 3866
-    protein_g: 36.2
-    fat_g: 49
+    energyKcal: 993
+    energyKj: 4154
+    protein_g: 38.7
+    fat_g: 49.6
     satFat_g: 9.3
-    carbs_g: 101.6
-    fiber_g: 18.6
+    carbs_g: 116
+    fiber_g: 20
     sugar_g: 20.8
     sodium_mg: 1731
-    availableCarb_g: 83
+    availableCarb_g: 96
   glycemic:
-    gi: 56
-    gl: 47
+    gi: 57
+    gl: 55
     giBand: medium
     glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 62
+    measuredGiPct: 68
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
-    coverage: 0.6
+    coverage: 0.55
   inflammation:
-    score: -0.4
+    score: -0.3
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.21
   balance:
     score: 7
     band: high
-    nrf: 46.3
+    nrf: 43.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88.8
+    minimallyProcessedPct: 89.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

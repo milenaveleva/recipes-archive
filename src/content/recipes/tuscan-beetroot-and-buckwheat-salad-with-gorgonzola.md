@@ -17,13 +17,13 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 320 g buckwheat groats, uncooked
+  - raw: 250 g buckwheat groats, uncooked
     group: Salad base
-    quantity: 320
+    quantity: 250
     unit: g
     item: buckwheat groats
     note: uncooked
-    grams: 320
+    grams: 250
     fdcId: 170685
     matchConfidence: medium
     cooking: boiled
@@ -114,30 +114,30 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 664
-    energyKj: 2776
-    protein_g: 21.9
-    fat_g: 33.3
-    satFat_g: 9.9
-    carbs_g: 77.6
-    fiber_g: 12.5
+    energyKcal: 603
+    energyKj: 2523
+    protein_g: 19.8
+    fat_g: 32.8
+    satFat_g: 9.8
+    carbs_g: 64.4
+    fiber_g: 10.7
     sugar_g: 11.6
-    sodium_mg: 1010
-    availableCarb_g: 65
+    sodium_mg: 1009
+    availableCarb_g: 53.7
   glycemic:
     gi: 58
-    gl: 38
+    gl: 31
     giBand: medium
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 5
+    measuredGiPct: 6
   nutriScore:
     grade: C
-    points: 8
+    points: 10
     category: general
     version: "2023"
-    coverage: 0.69
+    coverage: 0.74
   inflammation:
     score: 0
     band: neutral
@@ -146,10 +146,10 @@ nutrition:
   balance:
     score: 3
     band: low
-    nrf: 16.6
+    nrf: 14.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 80
+    minimallyProcessedPct: 78
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

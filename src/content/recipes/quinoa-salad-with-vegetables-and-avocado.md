@@ -7,7 +7,7 @@ imageAlt: Quinoa Salad with Vegetables and Avocado
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11595-zoeldseges-quinoa-salata-avokadoval
-  kcalPerServing: 530
+  kcalPerServing: 420
 author: Kifli Kukták
 servings: 4
 prepTime: PT30M
@@ -18,12 +18,12 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 320 g quinoa, uncooked
-    quantity: 320
+  - raw: 200 g quinoa, uncooked
+    quantity: 200
     unit: g
     item: quinoa
     note: uncooked
-    grams: 320
+    grams: 200
     fdcId: 168874
     matchConfidence: high
     cooking: boiled
@@ -119,24 +119,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 564
-    energyKj: 2359
-    protein_g: 15
-    fat_g: 26.9
-    satFat_g: 4.1
-    carbs_g: 69.9
-    fiber_g: 13.7
-    sugar_g: 13.1
-    sodium_mg: 57
-    availableCarb_g: 56.2
+    energyKcal: 453
+    energyKj: 1897
+    protein_g: 10.7
+    fat_g: 25.1
+    satFat_g: 3.9
+    carbs_g: 50.7
+    fiber_g: 11.6
+    sugar_g: 12.2
+    sodium_mg: 55
+    availableCarb_g: 39
   glycemic:
-    gi: 50
-    gl: 28
+    gi: 48
+    gl: 19
     giBand: low
-    glBand: medium
+    glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 89
+    measuredGiPct: 85
   nutriScore:
     grade: A
     points: -1
@@ -151,7 +151,7 @@ nutrition:
   balance:
     score: 7
     band: high
-    nrf: 47.9
+    nrf: 49.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

@@ -7,7 +7,7 @@ imageAlt: Fresh Pasta Salad with Avocado and Corn
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11846-friss-tesztasalata-avokadoval-es-kukoricaval-koennyu-es-egeszseges
-  kcalPerServing: 407
+  kcalPerServing: 345
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
@@ -18,12 +18,12 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 320 g whole-wheat pasta, dry
-    quantity: 320
+  - raw: 250 g whole-wheat pasta, dry
+    quantity: 250
     unit: g
     item: whole-wheat pasta
     note: dry
-    grams: 320
+    grams: 250
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -111,27 +111,27 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 452
-    energyKj: 1891
-    protein_g: 13.2
-    fat_g: 16.7
-    satFat_g: 2.6
-    carbs_g: 69.6
-    fiber_g: 10.7
-    sugar_g: 6.4
-    sodium_mg: 88
-    availableCarb_g: 58.9
+    energyKcal: 390
+    energyKj: 1633
+    protein_g: 10.8
+    fat_g: 16.2
+    satFat_g: 2.5
+    carbs_g: 56.8
+    fiber_g: 9
+    sugar_g: 5.9
+    sodium_mg: 87
+    availableCarb_g: 47.7
   glycemic:
     gi: 47
-    gl: 28
+    gl: 22
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 92
+    measuredGiPct: 90
   nutriScore:
     grade: A
-    points: 0
+    points: -1
     category: general
     version: "2023"
     coverage: 1
@@ -146,7 +146,7 @@ nutrition:
     nrf: 29.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 96.5
+    minimallyProcessedPct: 95.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
