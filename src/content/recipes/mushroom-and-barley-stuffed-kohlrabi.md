@@ -32,12 +32,12 @@ ingredients:
     fdcId: 169251
     matchConfidence: high
     cooking: boiled
-  - raw: 120 g pearl barley, uncooked
-    quantity: 120
+  - raw: 320 g pearl barley, uncooked
+    quantity: 320
     unit: g
     item: pearl barley
     note: uncooked
-    grams: 120
+    grams: 320
     fdcId: 170284
     matchConfidence: high
     cooking: boiled
@@ -121,42 +121,42 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 273
-    energyKj: 1142
-    protein_g: 10.6
-    fat_g: 8.4
-    satFat_g: 1
-    carbs_g: 43.7
-    fiber_g: 13.7
-    sugar_g: 8.7
-    sodium_mg: 930
-    availableCarb_g: 30
+    energyKcal: 449
+    energyKj: 1878
+    protein_g: 15.6
+    fat_g: 9
+    satFat_g: 1.1
+    carbs_g: 82.5
+    fiber_g: 21.5
+    sugar_g: 9.1
+    sodium_mg: 935
+    availableCarb_g: 61.1
   glycemic:
-    gi: 26
-    gl: 8
+    gi: 28
+    gl: 17
     giBand: low
     glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 62
+    measuredGiPct: 82
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: -2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.6
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.3
   balance:
-    score: 9
-    band: excellent
-    nrf: 77.9
+    score: 7
+    band: high
+    nrf: 59.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 92.1
+    minimallyProcessedPct: 95.2
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

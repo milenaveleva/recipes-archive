@@ -40,12 +40,12 @@ ingredients:
     fdcId: 167747
     matchConfidence: high
     cooking: grilled
-  - raw: 80 g brown basmati rice, uncooked
-    quantity: 80
+  - raw: 160 g brown basmati rice, uncooked
+    quantity: 160
     unit: g
     item: brown basmati rice
     note: uncooked
-    grams: 80
+    grams: 160
     fdcId: 169703
     matchConfidence: high
     cooking: boiled
@@ -128,43 +128,43 @@ ingredients:
     cooking: grilled
 nutrition:
   perServing:
-    energyKcal: 943
-    energyKj: 3946
-    protein_g: 56
-    fat_g: 58
-    satFat_g: 10.4
-    carbs_g: 47
-    fiber_g: 6.6
-    sugar_g: 7.5
-    sodium_mg: 649
-    availableCarb_g: 40.3
+    energyKcal: 1090
+    energyKj: 4561
+    protein_g: 59.1
+    fat_g: 59.3
+    satFat_g: 10.6
+    carbs_g: 77.4
+    fiber_g: 8
+    sugar_g: 7.7
+    sodium_mg: 651
+    availableCarb_g: 69.4
   glycemic:
-    gi: 43
-    gl: 17
+    gi: 55
+    gl: 38
     giBand: low
-    glBand: low
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 90
+    measuredGiPct: 94
   nutriScore:
-    grade: A
-    points: 0
+    grade: B
+    points: 1
     category: general
     version: "2023"
-    coverage: 0.83
+    coverage: 0.85
   inflammation:
-    score: -0.8
+    score: -0.7
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.15
   balance:
     score: 5
     band: moderate
-    nrf: 29.6
+    nrf: 28.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 83.1
-    ultraProcessedPct: 16.3
+    minimallyProcessedPct: 85.3
+    ultraProcessedPct: 14.1
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

@@ -14,12 +14,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 260 g dry whole-wheat spaghetti
+  - raw: 240 g dry whole-wheat spaghetti
     group: Main ingredients
-    quantity: 260
+    quantity: 240
     unit: g
     item: dry whole-wheat spaghetti
-    grams: 260
+    grams: 240
     fdcId: 82009870
     matchConfidence: medium
     cooking: boiled
@@ -119,27 +119,27 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 792
-    energyKj: 3315
-    protein_g: 21.5
-    fat_g: 44.9
+    energyKcal: 769
+    energyKj: 3216
+    protein_g: 20.7
+    fat_g: 44.8
     satFat_g: 18.1
-    carbs_g: 80.3
-    fiber_g: 7.4
-    sugar_g: 10.4
+    carbs_g: 75.4
+    fiber_g: 7
+    sugar_g: 10.3
     sodium_mg: 442
-    availableCarb_g: 72.9
+    availableCarb_g: 68.4
   glycemic:
-    gi: 44
-    gl: 32
+    gi: 43
+    gl: 30
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 80
+    measuredGiPct: 79
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
     coverage: 1
@@ -151,10 +151,10 @@ nutrition:
   balance:
     score: 3
     band: low
-    nrf: 15.5
+    nrf: 15.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 63.9
+    minimallyProcessedPct: 62.8
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

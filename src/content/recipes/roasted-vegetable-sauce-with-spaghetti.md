@@ -7,9 +7,9 @@ imageAlt: Roasted Vegetable Sauce with Spaghetti
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10601-suelt-zoeldsegszosz
-  kcalPerServing: 585
+  kcalPerServing: 468
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT40M
 totalTime: PT50M
@@ -130,19 +130,19 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 548
-    energyKj: 2294
-    protein_g: 22.2
-    fat_g: 12.5
-    satFat_g: 4.2
-    carbs_g: 96
-    fiber_g: 13.4
-    sugar_g: 12.9
-    sodium_mg: 681
-    availableCarb_g: 82.6
+    energyKcal: 439
+    energyKj: 1835
+    protein_g: 17.8
+    fat_g: 10
+    satFat_g: 3.3
+    carbs_g: 76.8
+    fiber_g: 10.7
+    sugar_g: 10.3
+    sodium_mg: 545
+    availableCarb_g: 66.1
   glycemic:
     gi: 47
-    gl: 39
+    gl: 31
     giBand: low
     glBand: medium
     glBasis: meal
@@ -158,7 +158,7 @@ nutrition:
     score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.37
+    aromaticAdjustment: -0.34
   balance:
     score: 7
     band: high

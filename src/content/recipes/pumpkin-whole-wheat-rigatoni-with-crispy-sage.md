@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13552-suetotoekoes-rigatoni-piritott-zsalyaval-gyors-oszi-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -95,21 +95,21 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 614
-    energyKj: 2570
-    protein_g: 21.3
-    fat_g: 21.6
-    satFat_g: 5.1
-    carbs_g: 92.8
-    fiber_g: 12.7
-    sugar_g: 6.2
-    sodium_mg: 856
-    availableCarb_g: 80.2
+    energyKcal: 491
+    energyKj: 2056
+    protein_g: 17.1
+    fat_g: 17.3
+    satFat_g: 4.1
+    carbs_g: 74.3
+    fiber_g: 10.1
+    sugar_g: 5
+    sodium_mg: 685
+    availableCarb_g: 64.1
   glycemic:
     gi: 50
-    gl: 40
+    gl: 32
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 98
@@ -123,7 +123,7 @@ nutrition:
     score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.16
+    aromaticAdjustment: -0.13
   balance:
     score: 7
     band: high

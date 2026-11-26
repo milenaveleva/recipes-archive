@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13961-olasz-zoeldbabos-penne-fokhagymas-koktelparadicsommal-20-perces-serpenyos-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -114,19 +114,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 552
-    energyKj: 2310
-    protein_g: 21.6
-    fat_g: 18.4
-    satFat_g: 4.3
-    carbs_g: 82.8
-    fiber_g: 11.8
-    sugar_g: 6.8
-    sodium_mg: 784
-    availableCarb_g: 71
+    energyKcal: 442
+    energyKj: 1848
+    protein_g: 17.3
+    fat_g: 14.7
+    satFat_g: 3.4
+    carbs_g: 66.2
+    fiber_g: 9.5
+    sugar_g: 5.4
+    sodium_mg: 627
+    availableCarb_g: 56.8
   glycemic:
     gi: 47
-    gl: 34
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -142,7 +142,7 @@ nutrition:
     score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.21
+    aromaticAdjustment: -0.17
   balance:
     score: 5
     band: moderate

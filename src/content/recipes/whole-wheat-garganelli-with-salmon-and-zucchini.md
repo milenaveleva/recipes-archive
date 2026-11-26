@@ -7,9 +7,9 @@ imageAlt: Whole-Wheat Garganelli with Salmon and Zucchini
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10381-garganelli-lazaccal-es-cukkinivel
-  kcalPerServing: 628
+  kcalPerServing: 512
 author: Pataky Péter
-servings: 5
+servings: 6
 prepTime: PT2H15M
 cookTime: PT15M
 totalTime: PT2H30M
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 500 g whole-wheat garganelli or penne pasta, dry
-    quantity: 500
+  - raw: 480 g whole-wheat garganelli or penne pasta, dry
+    quantity: 480
     unit: g
     item: whole-wheat garganelli or penne pasta
     note: dry
-    grams: 500
+    grams: 480
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -143,19 +143,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 705
-    energyKj: 2950
-    protein_g: 35.2
-    fat_g: 31.6
-    satFat_g: 6.7
-    carbs_g: 76
-    fiber_g: 9.7
-    sugar_g: 3.2
-    sodium_mg: 510
-    availableCarb_g: 66.3
+    energyKcal: 576
+    energyKj: 2409
+    protein_g: 28.9
+    fat_g: 26.2
+    satFat_g: 5.6
+    carbs_g: 60.9
+    fiber_g: 7.8
+    sugar_g: 2.5
+    sodium_mg: 425
+    availableCarb_g: 53.1
   glycemic:
     gi: 48
-    gl: 32
+    gl: 25
     giBand: low
     glBand: medium
     glBasis: meal
@@ -166,7 +166,7 @@ nutrition:
     points: 1
     category: general
     version: "2023"
-    coverage: 0.91
+    coverage: 0.9
   inflammation:
     score: -0.2
     band: neutral
@@ -178,7 +178,7 @@ nutrition:
     nrf: 26
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 94
+    minimallyProcessedPct: 93.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

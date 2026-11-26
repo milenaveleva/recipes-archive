@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14634-koertes-gorgonzolas-tagliatelle-piritott-dioval
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -97,19 +97,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 807
-    energyKj: 3376
-    protein_g: 31
-    fat_g: 40
-    satFat_g: 13.9
-    carbs_g: 90.2
-    fiber_g: 13
-    sugar_g: 11.8
-    sodium_mg: 1234
-    availableCarb_g: 75.3
+    energyKcal: 645
+    energyKj: 2701
+    protein_g: 24.8
+    fat_g: 32
+    satFat_g: 11.1
+    carbs_g: 72.2
+    fiber_g: 10.4
+    sugar_g: 9.4
+    sodium_mg: 988
+    availableCarb_g: 60.3
   glycemic:
     gi: 47
-    gl: 36
+    gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
@@ -125,7 +125,7 @@ nutrition:
     score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.07
+    aromaticAdjustment: -0.05
   balance:
     score: 3
     band: low

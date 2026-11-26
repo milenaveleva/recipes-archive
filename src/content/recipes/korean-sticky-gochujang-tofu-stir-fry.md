@@ -34,13 +34,13 @@ ingredients:
     fdcId: 170005
     matchConfidence: high
     cooking: fried
-  - raw: 200 g brown rice, uncooked
+  - raw: 160 g brown rice, uncooked
     group: Main ingredients
-    quantity: 200
+    quantity: 160
     unit: g
     item: brown rice
     note: uncooked
-    grams: 200
+    grams: 160
     fdcId: 169703
     matchConfidence: high
     cooking: boiled
@@ -142,43 +142,43 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 976
-    energyKj: 4082
-    protein_g: 45.2
-    fat_g: 44.1
-    satFat_g: 5.9
-    carbs_g: 107.5
-    fiber_g: 10.2
-    sugar_g: 10.9
-    sodium_mg: 1472
-    availableCarb_g: 97.3
+    energyKcal: 902
+    energyKj: 3775
+    protein_g: 43.7
+    fat_g: 43.5
+    satFat_g: 5.8
+    carbs_g: 92.2
+    fiber_g: 9.4
+    sugar_g: 10.8
+    sodium_mg: 1471
+    availableCarb_g: 82.8
   glycemic:
-    gi: 64
-    gl: 62
+    gi: 62
+    gl: 52
     giBand: medium
     glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 81
+    measuredGiPct: 78
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
-    coverage: 0.97
+    coverage: 0.96
   inflammation:
-    score: -0.7
+    score: -0.8
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.43
   balance:
     score: 6
     band: moderate
-    nrf: 32.7
+    nrf: 33.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 67.6
-    ultraProcessedPct: 1.9
+    minimallyProcessedPct: 65
+    ultraProcessedPct: 2.1
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

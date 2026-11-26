@@ -7,9 +7,9 @@ imageAlt: Creamy Pasta with Salmon and Peas
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10591-kremes-teszta-lazaccal-es-borsoval
-  kcalPerServing: 745
+  kcalPerServing: 544
 author: Kifli Kukták
-servings: 2
+servings: 3
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -34,11 +34,11 @@ ingredients:
     fdcId: 170000
     matchConfidence: high
     cooking: fried
-  - raw: 200 g dry whole-wheat pasta
-    quantity: 200
+  - raw: 240 g dry whole-wheat pasta
+    quantity: 240
     unit: g
     item: dry whole-wheat pasta
-    grams: 200
+    grams: 240
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -104,43 +104,43 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 954
-    energyKj: 3992
-    protein_g: 49.4
-    fat_g: 44.3
-    satFat_g: 11.3
-    carbs_g: 94.9
-    fiber_g: 15.8
-    sugar_g: 12.3
-    sodium_mg: 376
-    availableCarb_g: 79.1
+    energyKcal: 683
+    energyKj: 2858
+    protein_g: 34.8
+    fat_g: 29.9
+    satFat_g: 7.6
+    carbs_g: 73.1
+    fiber_g: 11.8
+    sugar_g: 8.5
+    sodium_mg: 251
+    availableCarb_g: 61.3
   glycemic:
-    gi: 44
-    gl: 35
+    gi: 45
+    gl: 28
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 92
+    measuredGiPct: 94
   nutriScore:
     grade: A
-    points: 0
+    points: -1
     category: general
     version: "2023"
-    coverage: 0.87
+    coverage: 0.88
   inflammation:
-    score: -0.5
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.22
+    aromaticAdjustment: -0.14
   balance:
     score: 5
     band: moderate
-    nrf: 30.5
+    nrf: 30.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 78.7
-    ultraProcessedPct: 12.1
+    minimallyProcessedPct: 80.2
+    ultraProcessedPct: 11.3
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

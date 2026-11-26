@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13365-sziciliai-edeskoemenyes-teszta-ropogos-fuszeres-morzsaval
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT15M
 cookTime: PT15M
 totalTime: PT30M
@@ -142,21 +142,21 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 587
-    energyKj: 2457
-    protein_g: 18.8
-    fat_g: 17.4
-    satFat_g: 2.3
-    carbs_g: 98.6
-    fiber_g: 14.4
-    sugar_g: 14.1
-    sodium_mg: 777
-    availableCarb_g: 84.2
+    energyKcal: 470
+    energyKj: 1966
+    protein_g: 15
+    fat_g: 13.9
+    satFat_g: 1.8
+    carbs_g: 78.9
+    fiber_g: 11.5
+    sugar_g: 11.3
+    sodium_mg: 621
+    availableCarb_g: 67.3
   glycemic:
     gi: 48
-    gl: 41
+    gl: 33
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 88
@@ -167,10 +167,10 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.4
+    score: -0.3
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.37
+    aromaticAdjustment: -0.31
   balance:
     score: 5
     band: moderate

@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13914-penne-all-ortolana-25-perces-olasz-zoeldseges-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -110,19 +110,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 563
-    energyKj: 2356
-    protein_g: 21.4
-    fat_g: 20.1
-    satFat_g: 4.5
-    carbs_g: 82.4
-    fiber_g: 10.9
-    sugar_g: 7.1
-    sodium_mg: 820
-    availableCarb_g: 71.4
+    energyKcal: 450
+    energyKj: 1885
+    protein_g: 17.1
+    fat_g: 16.1
+    satFat_g: 3.6
+    carbs_g: 65.9
+    fiber_g: 8.7
+    sugar_g: 5.7
+    sodium_mg: 656
+    availableCarb_g: 57.2
   glycemic:
     gi: 47
-    gl: 34
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -138,7 +138,7 @@ nutrition:
     score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.21
+    aromaticAdjustment: -0.17
   balance:
     score: 6
     band: moderate

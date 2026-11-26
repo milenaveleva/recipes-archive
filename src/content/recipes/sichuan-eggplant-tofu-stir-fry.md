@@ -125,38 +125,38 @@ ingredients:
     fdcId: 170150
     matchConfidence: high
     cooking: raw
-  - raw: 200 g brown rice, uncooked
-    quantity: 200
+  - raw: 160 g brown rice, uncooked
+    quantity: 160
     unit: g
     item: brown rice
     note: uncooked
-    grams: 200
+    grams: 160
     fdcId: 169703
     matchConfidence: high
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 994
-    energyKj: 4157
-    protein_g: 46.9
-    fat_g: 43.7
-    satFat_g: 5.9
-    carbs_g: 112.3
-    fiber_g: 14.3
-    sugar_g: 13.5
-    sodium_mg: 1557
-    availableCarb_g: 98
+    energyKcal: 920
+    energyKj: 3850
+    protein_g: 45.4
+    fat_g: 43.1
+    satFat_g: 5.7
+    carbs_g: 97.1
+    fiber_g: 13.6
+    sugar_g: 13.3
+    sodium_mg: 1556
+    availableCarb_g: 83.5
   glycemic:
-    gi: 62
-    gl: 60
+    gi: 60
+    gl: 50
     giBand: medium
     glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 80
+    measuredGiPct: 76
   nutriScore:
-    grade: A
-    points: 0
+    grade: B
+    points: 1
     category: general
     version: "2023"
     coverage: 0.99
@@ -168,10 +168,10 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 34.7
+    nrf: 36
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 69.6
+    minimallyProcessedPct: 67.1
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13220-brokkolis-orecchiette-ropogos-fuszeres-morzsaval
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -113,19 +113,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 624
-    energyKj: 2611
-    protein_g: 25.3
-    fat_g: 21.8
-    satFat_g: 5.2
-    carbs_g: 90.5
-    fiber_g: 13.7
-    sugar_g: 5.8
-    sodium_mg: 958
-    availableCarb_g: 76.7
+    energyKcal: 499
+    energyKj: 2089
+    protein_g: 20.2
+    fat_g: 17.5
+    satFat_g: 4.2
+    carbs_g: 72.4
+    fiber_g: 11
+    sugar_g: 4.6
+    sodium_mg: 767
+    availableCarb_g: 61.4
   glycemic:
     gi: 49
-    gl: 38
+    gl: 30
     giBand: low
     glBand: medium
     glBasis: meal

@@ -7,9 +7,9 @@ imageAlt: Pasta with Roasted Tomato and Pepper Pesto
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11916-teszta-suelt-paradicsomos-es-paprikas-pestoval-egeszseges-es-gyors-vacsora
-  kcalPerServing: 690
+  kcalPerServing: 507
 author: Kifli Kukták
-servings: 2
+servings: 3
 prepTime: PT15M
 cookTime: PT45M
 totalTime: PT1H
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g whole-wheat pasta, dry
-    quantity: 200
+  - raw: 240 g whole-wheat pasta, dry
+    quantity: 240
     unit: g
     item: whole-wheat pasta
     note: dry
-    grams: 200
+    grams: 240
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -113,24 +113,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 669
-    energyKj: 2798
-    protein_g: 18.8
-    fat_g: 26.4
-    satFat_g: 2.3
-    carbs_g: 100
-    fiber_g: 16.5
-    sugar_g: 15.2
-    sodium_mg: 103
-    availableCarb_g: 83.6
+    energyKcal: 493
+    energyKj: 2061
+    protein_g: 14.4
+    fat_g: 18
+    satFat_g: 1.6
+    carbs_g: 76.5
+    fiber_g: 12.2
+    sugar_g: 10.5
+    sodium_mg: 69
+    availableCarb_g: 64.3
   glycemic:
-    gi: 45
-    gl: 38
+    gi: 46
+    gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 77
+    measuredGiPct: 80
   nutriScore:
     grade: A
     points: -1
@@ -143,9 +143,9 @@ nutrition:
     method: fii v4
     aromaticAdjustment: -0.41
   balance:
-    score: 8
+    score: 7
     band: high
-    nrf: 63.9
+    nrf: 60.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13239-pasta-e-ceci-autentikus-romai-csicseriborsos-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT1H50M
 totalTime: PT2H
@@ -105,21 +105,21 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 740
-    energyKj: 3095
-    protein_g: 31.4
-    fat_g: 21.6
-    satFat_g: 4.6
-    carbs_g: 113.3
-    fiber_g: 17
-    sugar_g: 10.6
-    sodium_mg: 689
-    availableCarb_g: 96.3
+    energyKcal: 592
+    energyKj: 2476
+    protein_g: 25.1
+    fat_g: 17.3
+    satFat_g: 3.7
+    carbs_g: 90.6
+    fiber_g: 13.6
+    sugar_g: 8.5
+    sodium_mg: 551
+    availableCarb_g: 77.1
   glycemic:
     gi: 47
-    gl: 45
+    gl: 36
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 95
@@ -133,7 +133,7 @@ nutrition:
     score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.28
+    aromaticAdjustment: -0.26
   balance:
     score: 5
     band: moderate

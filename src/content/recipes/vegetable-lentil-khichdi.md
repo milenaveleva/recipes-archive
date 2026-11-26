@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g brown basmati rice, uncooked
+  - raw: 320 g brown basmati rice, uncooked
     group: Main ingredients
-    quantity: 200
+    quantity: 320
     unit: g
     item: brown basmati rice
     note: uncooked
-    grams: 200
+    grams: 320
     fdcId: 169703
     matchConfidence: high
     cooking: boiled
@@ -180,24 +180,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 445
-    energyKj: 1863
-    protein_g: 16.7
-    fat_g: 8.6
-    satFat_g: 1.4
-    carbs_g: 77.9
-    fiber_g: 10.9
-    sugar_g: 6.5
-    sodium_mg: 652
-    availableCarb_g: 67.1
+    energyKcal: 555
+    energyKj: 2323
+    protein_g: 19
+    fat_g: 9.6
+    satFat_g: 1.5
+    carbs_g: 100.8
+    fiber_g: 12
+    sugar_g: 6.7
+    sodium_mg: 653
+    availableCarb_g: 88.8
   glycemic:
-    gi: 53
-    gl: 36
-    giBand: low
-    glBand: medium
+    gi: 57
+    gl: 51
+    giBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 91
+    measuredGiPct: 93
   nutriScore:
     grade: A
     points: 0
@@ -205,14 +205,14 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.5
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.5
   balance:
-    score: 7
-    band: high
-    nrf: 44.4
+    score: 6
+    band: moderate
+    nrf: 39.3
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

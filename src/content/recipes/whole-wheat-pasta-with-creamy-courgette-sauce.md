@@ -7,9 +7,9 @@ imageAlt: Whole-Wheat Pasta with Creamy Courgette Sauce
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11850-cukkiniszoszos-teszta
-  kcalPerServing: 573
+  kcalPerServing: 447
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT15M
 cookTime: PT20M
 totalTime: PT35M
@@ -18,13 +18,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g whole-wheat pasta, dry
+  - raw: 320 g whole-wheat pasta, dry
     group: Main ingredients
-    quantity: 300
+    quantity: 320
     unit: g
     item: whole-wheat pasta
     note: dry
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -126,19 +126,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 615
-    energyKj: 2573
-    protein_g: 21.7
-    fat_g: 25
-    satFat_g: 4.9
-    carbs_g: 83.2
-    fiber_g: 10.8
-    sugar_g: 7.8
-    sodium_mg: 223
-    availableCarb_g: 72.3
+    energyKcal: 479
+    energyKj: 2004
+    protein_g: 16.9
+    fat_g: 18.9
+    satFat_g: 3.7
+    carbs_g: 66.1
+    fiber_g: 8.6
+    sugar_g: 6
+    sodium_mg: 167
+    availableCarb_g: 57.5
   glycemic:
     gi: 47
-    gl: 34
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -151,18 +151,18 @@ nutrition:
     version: "2023"
     coverage: 0.93
   inflammation:
-    score: -0.3
-    band: mildly-anti-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
-    aromaticAdjustment: -0.35
+    aromaticAdjustment: -0.31
   balance:
     score: 5
     band: moderate
     nrf: 27.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 83.2
-    ultraProcessedPct: 8.3
+    minimallyProcessedPct: 83.8
+    ultraProcessedPct: 8
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

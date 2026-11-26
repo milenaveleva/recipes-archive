@@ -7,7 +7,7 @@ imageAlt: Shrimp Curry
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10466-garnelas-curry
-  kcalPerServing: 425
+  kcalPerServing: 533
 author: Báder Gabka
 servings: 2
 prepTime: PT10M
@@ -78,13 +78,13 @@ ingredients:
     fdcId: 170580
     matchConfidence: high
     cooking: boiled
-  - raw: 101 g dry brown rice, cooked
-    quantity: 101
+  - raw: 160 g dry brown rice, cooked
+    quantity: 160
     unit: g
     item: brown rice
     note: dry, cooked
     group: For serving
-    grams: 101
+    grams: 160
     fdcId: 169703
     matchConfidence: high
     cooking: boiled
@@ -104,43 +104,43 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 785
-    energyKj: 3286
-    protein_g: 29.5
-    fat_g: 51.1
-    satFat_g: 33.3
-    carbs_g: 59.5
-    fiber_g: 8.4
-    sugar_g: 5.2
-    sodium_mg: 132
-    availableCarb_g: 51.1
+    energyKcal: 894
+    energyKj: 3739
+    protein_g: 31.7
+    fat_g: 52.1
+    satFat_g: 33.4
+    carbs_g: 82
+    fiber_g: 9.5
+    sugar_g: 5.4
+    sodium_mg: 134
+    availableCarb_g: 72.5
   glycemic:
-    gi: 59
-    gl: 30
+    gi: 64
+    gl: 46
     giBand: medium
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 72
+    measuredGiPct: 80
   nutriScore:
     grade: C
-    points: 7
+    points: 6
     category: general
     version: "2023"
-    coverage: 0.76
+    coverage: 0.8
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: 0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.5
   balance:
     score: 2
     band: poor
-    nrf: 4.6
+    nrf: 6.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 56.1
-    ultraProcessedPct: 1.9
+    minimallyProcessedPct: 61.4
+    ultraProcessedPct: 1.6
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

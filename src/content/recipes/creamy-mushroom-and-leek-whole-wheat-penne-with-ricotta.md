@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14618-gombas-porehagymas-penne-ricottaval-kremes-olasz-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT5M
 cookTime: PT15M
 totalTime: PT20M
@@ -121,19 +121,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 626
-    energyKj: 2618
-    protein_g: 25.1
-    fat_g: 23.2
-    satFat_g: 7.4
-    carbs_g: 87.5
-    fiber_g: 10.5
-    sugar_g: 5.9
-    sodium_mg: 875
-    availableCarb_g: 76.9
+    energyKcal: 501
+    energyKj: 2095
+    protein_g: 20.1
+    fat_g: 18.5
+    satFat_g: 5.9
+    carbs_g: 70
+    fiber_g: 8.4
+    sugar_g: 4.7
+    sodium_mg: 700
+    availableCarb_g: 61.5
   glycemic:
     gi: 48
-    gl: 37
+    gl: 30
     giBand: low
     glBand: medium
     glBasis: meal
@@ -149,7 +149,7 @@ nutrition:
     score: 0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.21
+    aromaticAdjustment: -0.17
   balance:
     score: 4
     band: low

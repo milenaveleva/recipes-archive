@@ -7,7 +7,7 @@ imageAlt: Buckwheat and White Bean Stuffed Zucchini
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10464-hajdinas-babos-toeltoett-cukkini
-  kcalPerServing: 385
+  kcalPerServing: 489
 author: Báder Gabka
 servings: 2
 prepTime: PT20M
@@ -40,12 +40,12 @@ ingredients:
     fdcId: 790577
     matchConfidence: high
     cooking: baked
-  - raw: 100 g buckwheat groats, uncooked
-    quantity: 100
+  - raw: 160 g buckwheat groats, uncooked
+    quantity: 160
     unit: g
     item: buckwheat groats
     note: uncooked
-    grams: 100
+    grams: 160
     fdcId: 170685
     matchConfidence: medium
     cooking: baked
@@ -97,30 +97,30 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 479
-    energyKj: 2003
-    protein_g: 21
-    fat_g: 9.6
-    satFat_g: 1.7
-    carbs_g: 85.5
-    fiber_g: 16.5
+    energyKcal: 583
+    energyKj: 2438
+    protein_g: 24.5
+    fat_g: 10.4
+    satFat_g: 1.9
+    carbs_g: 108
+    fiber_g: 19.6
     sugar_g: 16.3
-    sodium_mg: 609
-    availableCarb_g: 69
+    sodium_mg: 612
+    availableCarb_g: 88.4
   glycemic:
-    gi: 47
-    gl: 32
+    gi: 50
+    gl: 44
     giBand: low
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 27
+    measuredGiPct: 21
   nutriScore:
     grade: A
     points: -5
     category: general
     version: "2023"
-    coverage: 0.9
+    coverage: 0.85
   inflammation:
     score: -0.5
     band: mildly-anti-inflammatory
@@ -129,7 +129,7 @@ nutrition:
   balance:
     score: 7
     band: high
-    nrf: 53.6
+    nrf: 50.4
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

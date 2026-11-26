@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14620-mien-xao-tom-vietnami-piritott-uevegteszta-garnelaval
 author: Kifli Kukták
-servings: 2
+servings: 3
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -26,13 +26,13 @@ ingredients:
     fdcId: 175179
     matchConfidence: medium
     cooking: fried
-  - raw: 200 g whole-wheat thin noodles (in place of glass noodles), dry
+  - raw: 240 g whole-wheat thin noodles (in place of glass noodles), dry
     group: Main ingredients
-    quantity: 200
+    quantity: 240
     unit: g
     item: whole-wheat thin noodles (in place of glass noodles)
     note: dry
-    grams: 200
+    grams: 240
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -141,27 +141,27 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 694
-    energyKj: 2903
-    protein_g: 49.2
-    fat_g: 20.1
-    satFat_g: 2.4
-    carbs_g: 87.3
-    fiber_g: 12.7
-    sugar_g: 7.1
-    sodium_mg: 2422
-    availableCarb_g: 74.3
+    energyKcal: 509
+    energyKj: 2132
+    protein_g: 34.7
+    fat_g: 13.8
+    satFat_g: 1.6
+    carbs_g: 68
+    fiber_g: 9.7
+    sugar_g: 5.1
+    sodium_mg: 1615
+    availableCarb_g: 58.1
   glycemic:
-    gi: 46
-    gl: 34
+    gi: 47
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 89
+    measuredGiPct: 91
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
@@ -173,11 +173,11 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 30.5
+    nrf: 30.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 96.8
-    ultraProcessedPct: 1.3
+    minimallyProcessedPct: 97.1
+    ultraProcessedPct: 1.2
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

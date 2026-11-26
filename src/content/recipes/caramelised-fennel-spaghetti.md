@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13373-karamellizalt-edeskoemenyes-spagetti-gyors-olasz-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -122,19 +122,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 667
-    energyKj: 2789
-    protein_g: 21.5
-    fat_g: 30.6
-    satFat_g: 6
-    carbs_g: 85.5
-    fiber_g: 13.4
-    sugar_g: 8.2
-    sodium_mg: 875
-    availableCarb_g: 72.1
+    energyKcal: 533
+    energyKj: 2231
+    protein_g: 17.2
+    fat_g: 24.5
+    satFat_g: 4.8
+    carbs_g: 68.4
+    fiber_g: 10.8
+    sugar_g: 6.6
+    sodium_mg: 700
+    availableCarb_g: 57.6
   glycemic:
     gi: 47
-    gl: 34
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -147,10 +147,10 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.2
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.21
+    aromaticAdjustment: -0.17
   balance:
     score: 4
     band: low

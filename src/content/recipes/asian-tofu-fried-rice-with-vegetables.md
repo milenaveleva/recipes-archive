@@ -26,13 +26,13 @@ ingredients:
     fdcId: 172475
     matchConfidence: high
     cooking: fried
-  - raw: 101 g dry brown rice, cooked and chilled
-    quantity: 101
+  - raw: 160 g dry brown rice, cooked and chilled
+    quantity: 160
     unit: g
     item: brown rice
     note: dry, cooked and chilled
     group: For the tofu fried rice
-    grams: 101
+    grams: 160
     fdcId: 169703
     matchConfidence: high
     cooking: fried
@@ -128,44 +128,44 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 812
-    energyKj: 3396
-    protein_g: 46.7
-    fat_g: 45.9
-    satFat_g: 7
-    carbs_g: 60.4
-    fiber_g: 11.1
-    sugar_g: 5.8
-    sodium_mg: 1129
-    availableCarb_g: 49.4
+    energyKcal: 920
+    energyKj: 3849
+    protein_g: 49
+    fat_g: 46.8
+    satFat_g: 7.2
+    carbs_g: 82.9
+    fiber_g: 12.1
+    sugar_g: 6
+    sodium_mg: 1131
+    availableCarb_g: 70.8
   glycemic:
-    gi: 52
-    gl: 26
-    giBand: low
-    glBand: medium
+    gi: 59
+    gl: 42
+    giBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 87
+    measuredGiPct: 91
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: 0
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.9
+    score: -0.8
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.43
   balance:
     score: 7
     band: high
-    nrf: 45.8
+    nrf: 42.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 66.9
+    minimallyProcessedPct: 70.8
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

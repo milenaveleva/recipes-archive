@@ -7,7 +7,7 @@ imageAlt: Asian Salmon with Brown Jasmine Rice
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13020-azsiai-lazac-jazmin-rizzsel
-  kcalPerServing: 585
+  kcalPerServing: 512
 author: Kifli Kukták
 servings: 2
 prepTime: PT40M
@@ -83,12 +83,12 @@ ingredients:
     fdcId: 170106
     matchConfidence: high
     cooking: baked
-  - raw: 200 g brown jasmine rice, uncooked
-    quantity: 200
+  - raw: 160 g brown jasmine rice, uncooked
+    quantity: 160
     unit: g
     item: brown jasmine rice
     note: uncooked
-    grams: 200
+    grams: 160
     fdcId: 169703
     matchConfidence: high
     cooking: boiled
@@ -103,24 +103,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 887
-    energyKj: 3712
-    protein_g: 50
-    fat_g: 38.9
-    satFat_g: 8
-    carbs_g: 81.8
-    fiber_g: 4.3
-    sugar_g: 1.4
-    sodium_mg: 566
-    availableCarb_g: 77.5
+    energyKcal: 814
+    energyKj: 3404
+    protein_g: 48.5
+    fat_g: 38.3
+    satFat_g: 7.8
+    carbs_g: 66.6
+    fiber_g: 3.6
+    sugar_g: 1.3
+    sodium_mg: 565
+    availableCarb_g: 62.9
   glycemic:
-    gi: 63
-    gl: 49
+    gi: 61
+    gl: 38
     giBand: medium
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 94
+    measuredGiPct: 93
   nutriScore:
     grade: A
     points: 0
@@ -128,14 +128,14 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.8
+    score: -0.9
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.43
   balance:
-    score: 4
-    band: low
-    nrf: 23.7
+    score: 5
+    band: moderate
+    nrf: 24.1
     version: NRF9.3
   processing:
     minimallyProcessedPct: 99.5

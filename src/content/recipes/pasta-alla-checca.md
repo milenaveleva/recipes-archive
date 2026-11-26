@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13434-pasta-alla-checca-friss-romai-paradicsomos-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT15M
 cookTime: PT10M
 totalTime: PT25M
@@ -102,19 +102,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 736
-    energyKj: 3080
-    protein_g: 33.9
-    fat_g: 33.8
-    satFat_g: 13.2
-    carbs_g: 81.1
-    fiber_g: 10.2
-    sugar_g: 6
-    sodium_mg: 1125
-    availableCarb_g: 70.9
+    energyKcal: 589
+    energyKj: 2464
+    protein_g: 27.1
+    fat_g: 27.1
+    satFat_g: 10.5
+    carbs_g: 64.9
+    fiber_g: 8.1
+    sugar_g: 4.8
+    sodium_mg: 900
+    availableCarb_g: 56.7
   glycemic:
     gi: 47
-    gl: 33
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -130,7 +130,7 @@ nutrition:
     score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.14
+    aromaticAdjustment: -0.11
   balance:
     score: 4
     band: low

@@ -24,12 +24,12 @@ ingredients:
     fdcId: 170388
     matchConfidence: high
     cooking: baked
-  - raw: 200 g pearl barley, uncooked
-    quantity: 200
+  - raw: 320 g pearl barley, uncooked
+    quantity: 320
     unit: g
     item: pearl barley
     note: uncooked
-    grams: 200
+    grams: 320
     fdcId: 170284
     matchConfidence: medium
     cooking: baked
@@ -138,24 +138,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 372
-    energyKj: 1556
-    protein_g: 11
-    fat_g: 12.2
-    satFat_g: 1.4
-    carbs_g: 60
-    fiber_g: 13.7
-    sugar_g: 7.8
-    sodium_mg: 984
-    availableCarb_g: 46.3
+    energyKcal: 477
+    energyKj: 1997
+    protein_g: 14
+    fat_g: 12.5
+    satFat_g: 1.5
+    carbs_g: 83.3
+    fiber_g: 18.4
+    sugar_g: 8.1
+    sodium_mg: 986
+    availableCarb_g: 64.9
   glycemic:
-    gi: 32
-    gl: 15
+    gi: 31
+    gl: 20
     giBand: low
-    glBand: low
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 79
+    measuredGiPct: 85
   nutriScore:
     grade: B
     points: 1
@@ -163,17 +163,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.5
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.37
   balance:
     score: 7
     band: high
-    nrf: 54.9
+    nrf: 49.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 93.9
+    minimallyProcessedPct: 95.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

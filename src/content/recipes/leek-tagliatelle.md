@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13523-porehagymas-tagliatelle-kremes-olasz-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -104,19 +104,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 593
-    energyKj: 2483
-    protein_g: 21
-    fat_g: 21.7
-    satFat_g: 5.1
-    carbs_g: 85.9
-    fiber_g: 10.7
-    sugar_g: 6
-    sodium_mg: 383
-    availableCarb_g: 75.2
+    energyKcal: 475
+    energyKj: 1986
+    protein_g: 16.8
+    fat_g: 17.3
+    satFat_g: 4.1
+    carbs_g: 68.8
+    fiber_g: 8.6
+    sugar_g: 4.8
+    sodium_mg: 306
+    availableCarb_g: 60.2
   glycemic:
     gi: 52
-    gl: 39
+    gl: 32
     giBand: low
     glBand: medium
     glBasis: meal
@@ -132,7 +132,7 @@ nutrition:
     score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.21
+    aromaticAdjustment: -0.17
   balance:
     score: 5
     band: moderate

@@ -7,9 +7,9 @@ imageAlt: Creamy Courgette Spaghetti with Lemon and Parmesan
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12072-kremes-cukkinis-spagetti-citrommal-es-parmezannal
-  kcalPerServing: 770
+  kcalPerServing: 560
 author: Kifli Kukták
-servings: 2
+servings: 3
 prepTime: PT20M
 cookTime: PT5M
 totalTime: PT25M
@@ -18,13 +18,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g whole-wheat spaghetti, dry
+  - raw: 240 g whole-wheat spaghetti, dry
     group: Main ingredients
-    quantity: 200
+    quantity: 240
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 200
+    grams: 240
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -130,43 +130,43 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 738
-    energyKj: 3087
-    protein_g: 24.5
-    fat_g: 34.3
-    satFat_g: 4.8
-    carbs_g: 91.5
-    fiber_g: 12.6
-    sugar_g: 13
-    sodium_mg: 230
-    availableCarb_g: 78.9
+    energyKcal: 539
+    energyKj: 2254
+    protein_g: 18.2
+    fat_g: 23.3
+    satFat_g: 3.3
+    carbs_g: 70.8
+    fiber_g: 9.6
+    sugar_g: 9
+    sodium_mg: 154
+    availableCarb_g: 61.2
   glycemic:
-    gi: 45
-    gl: 35
+    gi: 46
+    gl: 28
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 82
+    measuredGiPct: 84
   nutriScore:
     grade: A
     points: 0
     category: general
     version: "2023"
-    coverage: 0.84
+    coverage: 0.85
   inflammation:
-    score: -0.6
+    score: -0.5
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.36
+    aromaticAdjustment: -0.34
   balance:
     score: 6
     band: moderate
-    nrf: 35.4
+    nrf: 34.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 73.8
-    ultraProcessedPct: 20.8
+    minimallyProcessedPct: 76.1
+    ultraProcessedPct: 19
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

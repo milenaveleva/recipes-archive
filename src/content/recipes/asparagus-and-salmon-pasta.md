@@ -7,9 +7,9 @@ imageAlt: Asparagus and Salmon Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11678-spargas-lazacos-teszta
-  kcalPerServing: 425
+  kcalPerServing: 336
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -43,12 +43,12 @@ ingredients:
     fdcId: 82011214
     matchConfidence: medium
     cooking: raw
-  - raw: 300 g whole-wheat spaghetti, dry
-    quantity: 300
+  - raw: 320 g whole-wheat spaghetti, dry
+    quantity: 320
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -80,24 +80,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 680
-    energyKj: 2847
-    protein_g: 38
-    fat_g: 26.3
-    satFat_g: 4.6
-    carbs_g: 78.7
-    fiber_g: 10.7
-    sugar_g: 5.6
-    sodium_mg: 132
-    availableCarb_g: 68.1
+    energyKcal: 528
+    energyKj: 2209
+    protein_g: 29.2
+    fat_g: 19.8
+    satFat_g: 3.5
+    carbs_g: 62.7
+    fiber_g: 8.5
+    sugar_g: 4.3
+    sodium_mg: 99
+    availableCarb_g: 54.3
   glycemic:
     gi: 47
-    gl: 32
+    gl: 26
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 94
+    measuredGiPct: 95
   nutriScore:
     grade: A
     points: -2
@@ -111,11 +111,11 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 34.2
+    nrf: 34
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 84.9
-    ultraProcessedPct: 15.1
+    minimallyProcessedPct: 85.4
+    ultraProcessedPct: 14.6
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

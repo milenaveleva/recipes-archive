@@ -7,7 +7,7 @@ imageAlt: 15-Minute Salmon Bowl
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10567-15-perces-lazac-bowl
-  kcalPerServing: 485
+  kcalPerServing: 624
 author: Kifli Kukták
 servings: 4
 prepTime: PT9M
@@ -68,13 +68,13 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: fried
-  - raw: 168 g dry brown rice, cooked
-    quantity: 168
+  - raw: 320 g dry brown rice, cooked
+    quantity: 320
     unit: g
     item: brown rice
     note: dry, cooked
     group: For assembling the bowl
-    grams: 168
+    grams: 320
     fdcId: 169703
     matchConfidence: high
     cooking: boiled
@@ -176,42 +176,42 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 431
-    energyKj: 1802
-    protein_g: 22.3
-    fat_g: 17.6
-    satFat_g: 3.5
-    carbs_g: 47.8
-    fiber_g: 7.1
-    sugar_g: 8.1
-    sodium_mg: 1235
-    availableCarb_g: 40.7
+    energyKcal: 570
+    energyKj: 2386
+    protein_g: 25.2
+    fat_g: 18.8
+    satFat_g: 3.7
+    carbs_g: 76.8
+    fiber_g: 8.5
+    sugar_g: 8.4
+    sodium_mg: 1237
+    availableCarb_g: 68.3
   glycemic:
-    gi: 58
-    gl: 23
+    gi: 65
+    gl: 44
     giBand: medium
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 88
+    measuredGiPct: 93
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.6
+    score: -0.5
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.2
   balance:
     score: 5
     band: moderate
-    nrf: 28.3
+    nrf: 25.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98
+    minimallyProcessedPct: 98.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

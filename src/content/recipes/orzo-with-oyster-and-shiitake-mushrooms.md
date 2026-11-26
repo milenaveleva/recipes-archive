@@ -7,9 +7,9 @@ imageAlt: Orzo with Oyster and Shiitake Mushrooms
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13000-orzo-laskagombaval-es-shiitake-gombaval
-  kcalPerServing: 773
+  kcalPerServing: 597
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT15M
 cookTime: PT15M
 totalTime: PT30M
@@ -18,11 +18,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g dry whole-wheat orzo
-    quantity: 300
+  - raw: 320 g dry whole-wheat orzo
+    quantity: 320
     unit: g
     item: dry whole-wheat orzo
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -112,24 +112,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 837
-    energyKj: 3500
-    protein_g: 45.5
-    fat_g: 31.9
-    satFat_g: 13.6
-    carbs_g: 102.1
-    fiber_g: 14.6
-    sugar_g: 11.5
-    sodium_mg: 1895
-    availableCarb_g: 87.6
+    energyKcal: 645
+    energyKj: 2699
+    protein_g: 34.8
+    fat_g: 24.1
+    satFat_g: 10.2
+    carbs_g: 80.3
+    fiber_g: 11.4
+    sugar_g: 8.8
+    sodium_mg: 1421
+    availableCarb_g: 68.9
   glycemic:
     gi: 50
-    gl: 43
+    gl: 34
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 73
+    measuredGiPct: 75
   nutriScore:
     grade: C
     points: 3
@@ -140,14 +140,14 @@ nutrition:
     score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.41
+    aromaticAdjustment: -0.39
   balance:
     score: 4
     band: low
-    nrf: 21.3
+    nrf: 21.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 65.8
+    minimallyProcessedPct: 66.7
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

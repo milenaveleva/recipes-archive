@@ -12,12 +12,12 @@ totalTime: PT50M
 cuisine: Asian-Inspired
 course: Main Course
 ingredients:
-  - raw: 68 g dry brown rice, cooked
-    quantity: 68
+  - raw: 160 g dry brown rice, cooked
+    quantity: 160
     unit: g
     item: brown rice
     note: dry, cooked
-    grams: 68
+    grams: 160
     fdcId: 169703
     matchConfidence: high
     cooking: boiled
@@ -213,24 +213,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 715
-    energyKj: 2993
-    protein_g: 29.3
-    fat_g: 34.5
-    satFat_g: 5
-    carbs_g: 85.4
-    fiber_g: 21.2
-    sugar_g: 25
-    sodium_mg: 923
-    availableCarb_g: 64.3
+    energyKcal: 884
+    energyKj: 3700
+    protein_g: 32.7
+    fat_g: 36
+    satFat_g: 5.3
+    carbs_g: 120.5
+    fiber_g: 22.8
+    sugar_g: 25.3
+    sodium_mg: 926
+    availableCarb_g: 97.7
   glycemic:
-    gi: 48
-    gl: 30
-    giBand: low
-    glBand: medium
+    gi: 56
+    gl: 54
+    giBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 61
+    measuredGiPct: 75
   nutriScore:
     grade: A
     points: 0
@@ -238,18 +238,18 @@ nutrition:
     version: "2023"
     coverage: 0.96
   inflammation:
-    score: -0.6
+    score: -0.5
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.24
   balance:
     score: 5
     band: moderate
-    nrf: 30.5
+    nrf: 28.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 85.1
-    ultraProcessedPct: 1.8
+    minimallyProcessedPct: 88
+    ultraProcessedPct: 1.4
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-06-30"

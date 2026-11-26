@@ -7,9 +7,9 @@ imageAlt: Tagliatelle with Roasted Garlic Cream Sauce
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12958-teszta-suelt-fokhagymas-kremmartassal
-  kcalPerServing: 1040
+  kcalPerServing: 740
 author: Kifli Kukták
-servings: 2
+servings: 3
 prepTime: PT10M
 cookTime: PT50M
 totalTime: PT1H
@@ -48,13 +48,13 @@ ingredients:
     fdcId: 171247
     matchConfidence: medium
     cooking: boiled
-  - raw: 200 g whole-wheat tagliatelle, dry
+  - raw: 240 g whole-wheat tagliatelle, dry
     group: Main ingredients
-    quantity: 200
+    quantity: 240
     unit: g
     item: whole-wheat tagliatelle
     note: dry
-    grams: 200
+    grams: 240
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -121,43 +121,43 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 884
-    energyKj: 3700
-    protein_g: 24.6
-    fat_g: 45.9
-    satFat_g: 7.9
-    carbs_g: 102.1
-    fiber_g: 11.4
-    sugar_g: 8.7
-    sodium_mg: 706
-    availableCarb_g: 90.6
+    energyKcal: 636
+    energyKj: 2663
+    protein_g: 18.2
+    fat_g: 31
+    satFat_g: 5.3
+    carbs_g: 77.8
+    fiber_g: 8.8
+    sugar_g: 6.2
+    sodium_mg: 471
+    availableCarb_g: 69
   glycemic:
     gi: 52
-    gl: 47
+    gl: 36
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 75
+    measuredGiPct: 78
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
-    coverage: 0.77
+    coverage: 0.79
   inflammation:
-    score: -0.5
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.39
+    aromaticAdjustment: -0.35
   balance:
     score: 4
     band: low
-    nrf: 21.7
+    nrf: 22.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 77.9
-    ultraProcessedPct: 15
+    minimallyProcessedPct: 79.5
+    ultraProcessedPct: 13.9
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

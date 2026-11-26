@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14679-meleg-toszkan-orzosalata-buggyantott-tojassal
 author: Kifli Kukták
-servings: 2
+servings: 3
 prepTime: PT15M
 cookTime: PT15M
 totalTime: PT30M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g whole-wheat orzo pasta, dry
-    quantity: 200
+  - raw: 240 g whole-wheat orzo pasta, dry
+    quantity: 240
     unit: g
     item: whole-wheat orzo pasta
     note: dry
-    grams: 200
+    grams: 240
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -110,24 +110,24 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 842
-    energyKj: 3521
-    protein_g: 36.1
-    fat_g: 38.8
-    satFat_g: 8.3
-    carbs_g: 100.1
-    fiber_g: 15.9
-    sugar_g: 19.3
-    sodium_mg: 662
-    availableCarb_g: 84.2
+    energyKcal: 608
+    energyKj: 2544
+    protein_g: 26
+    fat_g: 26.3
+    satFat_g: 5.6
+    carbs_g: 76.5
+    fiber_g: 11.8
+    sugar_g: 13.2
+    sodium_mg: 442
+    availableCarb_g: 64.7
   glycemic:
     gi: 50
-    gl: 42
+    gl: 33
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 79
+    measuredGiPct: 82
   nutriScore:
     grade: B
     points: 2
@@ -138,14 +138,13 @@ nutrition:
     score: 0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.01
   balance:
     score: 6
     band: moderate
-    nrf: 40.4
+    nrf: 39.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 90.1
+    minimallyProcessedPct: 90.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -156,7 +155,6 @@ nutrition:
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
-    - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-14"

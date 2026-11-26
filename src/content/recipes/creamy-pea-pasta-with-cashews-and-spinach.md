@@ -7,9 +7,9 @@ imageAlt: Creamy Pea Pasta with Cashews and Spinach
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12117-kremes-zoeldborsos-teszta-kesudioval-es-spenottal
-  kcalPerServing: 647
+  kcalPerServing: 503
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT10M
 cookTime: PT20M
 totalTime: PT30M
@@ -18,11 +18,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g dry whole-wheat pasta
-    quantity: 300
+  - raw: 320 g dry whole-wheat pasta
+    quantity: 320
     unit: g
     item: dry whole-wheat pasta
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -105,19 +105,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 621
-    energyKj: 2600
-    protein_g: 22.1
-    fat_g: 22
-    satFat_g: 2.5
-    carbs_g: 92.5
-    fiber_g: 13.4
-    sugar_g: 8.4
-    sodium_mg: 113
-    availableCarb_g: 79.1
+    energyKcal: 484
+    energyKj: 2024
+    protein_g: 17.2
+    fat_g: 16.6
+    satFat_g: 1.9
+    carbs_g: 73
+    fiber_g: 10.5
+    sugar_g: 6.4
+    sodium_mg: 85
+    availableCarb_g: 62.5
   glycemic:
     gi: 49
-    gl: 39
+    gl: 31
     giBand: low
     glBand: medium
     glBasis: meal
@@ -128,7 +128,7 @@ nutrition:
     points: -2
     category: general
     version: "2023"
-    coverage: 0.8
+    coverage: 0.81
   inflammation:
     score: -0.2
     band: neutral
@@ -137,11 +137,11 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 33.2
+    nrf: 33
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 93.3
-    ultraProcessedPct: 6.7
+    minimallyProcessedPct: 93.6
+    ultraProcessedPct: 6.4
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14483-pugliai-rukkolas-orecchiette-koktelparadicsommal-es-pecorinoval-20-perces-olasz-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT5M
 cookTime: PT15M
 totalTime: PT20M
@@ -84,19 +84,19 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 521
-    energyKj: 2181
-    protein_g: 20.3
-    fat_g: 16.7
-    satFat_g: 4.3
-    carbs_g: 79.9
-    fiber_g: 11.1
-    sugar_g: 6.7
-    sodium_mg: 716
-    availableCarb_g: 68.7
+    energyKcal: 417
+    energyKj: 1745
+    protein_g: 16.2
+    fat_g: 13.4
+    satFat_g: 3.5
+    carbs_g: 63.9
+    fiber_g: 8.9
+    sugar_g: 5.4
+    sodium_mg: 573
+    availableCarb_g: 55
   glycemic:
     gi: 49
-    gl: 34
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -112,7 +112,7 @@ nutrition:
     score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.21
+    aromaticAdjustment: -0.16
   balance:
     score: 5
     band: moderate

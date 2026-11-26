@@ -7,9 +7,9 @@ imageAlt: Lemon Tagliatelle
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12179-citromos-tagliatelle-frissito-olasz-teszta-20-perc-alatt
-  kcalPerServing: 585
+  kcalPerServing: 468
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT5M
 cookTime: PT15M
 totalTime: PT20M
@@ -109,19 +109,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 606
-    energyKj: 2535
-    protein_g: 27.9
-    fat_g: 23.4
-    satFat_g: 8.3
-    carbs_g: 77.6
-    fiber_g: 9.5
-    sugar_g: 3.7
-    sodium_mg: 648
-    availableCarb_g: 68.1
+    energyKcal: 485
+    energyKj: 2028
+    protein_g: 22.3
+    fat_g: 18.7
+    satFat_g: 6.7
+    carbs_g: 62
+    fiber_g: 7.6
+    sugar_g: 3
+    sodium_mg: 519
+    availableCarb_g: 54.4
   glycemic:
     gi: 49
-    gl: 33
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal

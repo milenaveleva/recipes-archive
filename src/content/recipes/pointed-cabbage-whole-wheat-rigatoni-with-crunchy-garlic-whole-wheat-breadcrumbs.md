@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14469-csucsos-kaposztas-rigatoni-ropogos-fokhagymas-morzsaval
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -123,19 +123,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 661
-    energyKj: 2764
-    protein_g: 23.5
-    fat_g: 26.9
-    satFat_g: 5.8
-    carbs_g: 89.5
-    fiber_g: 13.4
-    sugar_g: 8
-    sodium_mg: 944
-    availableCarb_g: 76.1
+    energyKcal: 528
+    energyKj: 2211
+    protein_g: 18.8
+    fat_g: 21.5
+    satFat_g: 4.7
+    carbs_g: 71.6
+    fiber_g: 10.7
+    sugar_g: 6.4
+    sodium_mg: 755
+    availableCarb_g: 60.9
   glycemic:
     gi: 49
-    gl: 38
+    gl: 30
     giBand: low
     glBand: medium
     glBasis: meal
@@ -151,7 +151,7 @@ nutrition:
     score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.27
+    aromaticAdjustment: -0.23
   balance:
     score: 5
     band: moderate

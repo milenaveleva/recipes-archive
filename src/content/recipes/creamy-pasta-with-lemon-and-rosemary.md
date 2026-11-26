@@ -7,9 +7,9 @@ imageAlt: Creamy Pasta with Lemon and Rosemary
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10590-kremes-teszta-citrommal-es-rozmaringgal
-  kcalPerServing: 657
+  kcalPerServing: 485
 author: Kifli Kukták
-servings: 2
+servings: 3
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -49,12 +49,12 @@ ingredients:
     fdcId: 173431
     matchConfidence: medium
     cooking: raw
-  - raw: 200 g whole-wheat pasta, dry
-    quantity: 200
+  - raw: 240 g whole-wheat pasta, dry
+    quantity: 240
     unit: g
     item: whole-wheat pasta
     note: dry
-    grams: 200
+    grams: 240
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -78,24 +78,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 576
-    energyKj: 2410
-    protein_g: 26.3
-    fat_g: 17.9
-    satFat_g: 9.8
-    carbs_g: 84
-    fiber_g: 9.9
-    sugar_g: 3.3
-    sodium_mg: 463
-    availableCarb_g: 74
+    energyKcal: 431
+    energyKj: 1803
+    protein_g: 19.4
+    fat_g: 12.3
+    satFat_g: 6.6
+    carbs_g: 65.8
+    fiber_g: 7.8
+    sugar_g: 2.5
+    sodium_mg: 309
+    availableCarb_g: 57.9
   glycemic:
     gi: 46
-    gl: 34
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 87
+    measuredGiPct: 89
   nutriScore:
     grade: B
     points: 2
@@ -106,14 +106,14 @@ nutrition:
     score: 0.6
     band: mildly-pro-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.07
+    aromaticAdjustment: -0.05
   balance:
     score: 4
     band: low
-    nrf: 22.6
+    nrf: 23.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 62
+    minimallyProcessedPct: 66.2
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

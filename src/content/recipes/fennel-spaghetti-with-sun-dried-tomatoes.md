@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13468-edeskoemenyes-spagetti-20-perces-olasz-teszta
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g whole-wheat spaghetti, dry
+  - raw: 320 g whole-wheat spaghetti, dry
     group: Main ingredients
-    quantity: 300
+    quantity: 320
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -102,24 +102,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 608
-    energyKj: 2545
-    protein_g: 22.9
-    fat_g: 20.6
-    satFat_g: 4.4
-    carbs_g: 92.6
-    fiber_g: 14.4
-    sugar_g: 13.6
-    sodium_mg: 1017
-    availableCarb_g: 78.2
+    energyKcal: 474
+    energyKj: 1982
+    protein_g: 17.9
+    fat_g: 15.6
+    satFat_g: 3.3
+    carbs_g: 73.1
+    fiber_g: 11.3
+    sugar_g: 10.4
+    sodium_mg: 763
+    availableCarb_g: 61.8
   glycemic:
     gi: 50
-    gl: 39
+    gl: 31
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 82
+    measuredGiPct: 83
   nutriScore:
     grade: C
     points: 3
@@ -137,7 +137,7 @@ nutrition:
     nrf: 28.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 91.4
+    minimallyProcessedPct: 91.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

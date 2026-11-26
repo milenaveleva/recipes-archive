@@ -7,9 +7,9 @@ imageAlt: Green Pea Risotto with Salmon and Asparagus
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10339-zoeldborso-rizotto-lazaccal-spargaval
-  kcalPerServing: 480
+  kcalPerServing: 384
 author: Pataky Péter
-servings: 4
+servings: 5
 prepTime: PT20M
 cookTime: PT25M
 totalTime: PT45M
@@ -153,19 +153,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 1008
-    energyKj: 4217
-    protein_g: 36.8
-    fat_g: 55
-    satFat_g: 10.8
-    carbs_g: 92.2
-    fiber_g: 6.4
-    sugar_g: 7.9
-    sodium_mg: 2439
-    availableCarb_g: 85.7
+    energyKcal: 806
+    energyKj: 3373
+    protein_g: 29.5
+    fat_g: 44
+    satFat_g: 8.6
+    carbs_g: 73.7
+    fiber_g: 5.1
+    sugar_g: 6.3
+    sodium_mg: 1951
+    availableCarb_g: 68.6
   glycemic:
     gi: 62
-    gl: 53
+    gl: 42
     giBand: medium
     glBand: high
     glBasis: meal
@@ -181,7 +181,7 @@ nutrition:
     score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.15
+    aromaticAdjustment: -0.12
   balance:
     score: 3
     band: low

@@ -7,9 +7,9 @@ imageAlt: Beetroot Risotto with Goat Cheese
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10389-ceklarizotto-kecskesajttal
-  kcalPerServing: 785
+  kcalPerServing: 628
 author: Pataky Péter
-servings: 4
+servings: 5
 prepTime: PT1H
 cookTime: PT30M
 totalTime: PT1H30M
@@ -152,19 +152,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 935
-    energyKj: 3913
-    protein_g: 22.4
-    fat_g: 50.8
-    satFat_g: 15.8
-    carbs_g: 100
-    fiber_g: 7.8
-    sugar_g: 14.5
-    sodium_mg: 2516
-    availableCarb_g: 92.1
+    energyKcal: 748
+    energyKj: 3131
+    protein_g: 17.9
+    fat_g: 40.7
+    satFat_g: 12.6
+    carbs_g: 80
+    fiber_g: 6.3
+    sugar_g: 11.6
+    sodium_mg: 2012
+    availableCarb_g: 73.7
   glycemic:
     gi: 64
-    gl: 59
+    gl: 47
     giBand: medium
     glBand: high
     glBasis: meal
@@ -180,7 +180,7 @@ nutrition:
     score: 0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.42
+    aromaticAdjustment: -0.36
   balance:
     score: 2
     band: poor

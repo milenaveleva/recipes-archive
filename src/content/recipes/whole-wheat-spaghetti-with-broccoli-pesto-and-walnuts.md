@@ -7,9 +7,9 @@ imageAlt: Whole-Wheat Spaghetti with Broccoli Pesto and Walnuts
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12059-teljes-kiorlesu-spagetti-brokkolis-pestoval-es-dioval
-  kcalPerServing: 909
+  kcalPerServing: 699
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT15M
 cookTime: PT15M
 totalTime: PT30M
@@ -27,12 +27,12 @@ ingredients:
     fdcId: 170379
     matchConfidence: high
     cooking: boiled
-  - raw: 300 g whole-wheat spaghetti, dry
-    quantity: 300
+  - raw: 320 g whole-wheat spaghetti, dry
+    quantity: 320
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -112,24 +112,24 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 721
-    energyKj: 3016
-    protein_g: 25.6
-    fat_g: 34.2
-    satFat_g: 6.3
-    carbs_g: 89
-    fiber_g: 14.2
-    sugar_g: 5.8
-    sodium_mg: 406
-    availableCarb_g: 74.8
+    energyKcal: 558
+    energyKj: 2335
+    protein_g: 19.9
+    fat_g: 25.8
+    satFat_g: 4.7
+    carbs_g: 70.4
+    fiber_g: 11.1
+    sugar_g: 4.5
+    sodium_mg: 305
+    availableCarb_g: 59.3
   glycemic:
-    gi: 46
-    gl: 35
+    gi: 47
+    gl: 28
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 86
+    measuredGiPct: 87
   nutriScore:
     grade: B
     points: 1
@@ -140,14 +140,14 @@ nutrition:
     score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.19
+    aromaticAdjustment: -0.14
   balance:
     score: 7
     band: high
-    nrf: 42.6
+    nrf: 42.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 90.3
+    minimallyProcessedPct: 90.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

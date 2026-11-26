@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12757-lazac-kokusztejes-martasban-egeszseges-es-egzotikus-vacsora
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT10M
 cookTime: PT20M
 totalTime: PT30M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g whole wheat pasta, dry
-    quantity: 300
+  - raw: 320 g whole wheat pasta, dry
+    quantity: 320
     unit: g
     item: whole wheat pasta
     note: dry
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -110,42 +110,42 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 1520
-    energyKj: 6361
-    protein_g: 76.6
-    fat_g: 100.4
-    satFat_g: 59.7
-    carbs_g: 90.6
-    fiber_g: 12
-    sugar_g: 5.6
-    sodium_mg: 769
-    availableCarb_g: 78.6
+    energyKcal: 1158
+    energyKj: 4844
+    protein_g: 58.2
+    fat_g: 75.5
+    satFat_g: 44.8
+    carbs_g: 71.6
+    fiber_g: 9.5
+    sugar_g: 4.4
+    sodium_mg: 577
+    availableCarb_g: 62.2
   glycemic:
     gi: 41
-    gl: 32
+    gl: 26
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 82
+    measuredGiPct: 83
   nutriScore:
     grade: C
-    points: 7
+    points: 6
     category: general
     version: "2023"
     coverage: 0.69
   inflammation:
-    score: -0.1
+    score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.42
+    aromaticAdjustment: -0.39
   balance:
     score: 3
     band: low
-    nrf: 15.2
+    nrf: 15.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 65.4
+    minimallyProcessedPct: 66
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

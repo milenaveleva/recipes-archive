@@ -7,7 +7,7 @@ imageAlt: Penne Pomodoro with Burrata
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11702-friss-penne-pomodoro-burrataval
-  kcalPerServing: 680
+  kcalPerServing: 698
 author: Kifli Kukták
 servings: 1
 prepTime: PT10M
@@ -102,11 +102,11 @@ ingredients:
     fdcId: 170848
     matchConfidence: medium
     cooking: raw
-  - raw: 75 g dry whole-wheat penne
-    quantity: 75
+  - raw: 80 g dry whole-wheat penne
+    quantity: 80
     unit: g
     item: dry whole-wheat penne
-    grams: 75
+    grams: 80
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -130,27 +130,27 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 1147
-    energyKj: 4798
-    protein_g: 40.8
-    fat_g: 79
+    energyKcal: 1164
+    energyKj: 4872
+    protein_g: 41.4
+    fat_g: 79.1
     satFat_g: 22.9
-    carbs_g: 77.3
-    fiber_g: 11
-    sugar_g: 11.4
-    sodium_mg: 966
-    availableCarb_g: 66.3
+    carbs_g: 81
+    fiber_g: 11.5
+    sugar_g: 11.6
+    sodium_mg: 967
+    availableCarb_g: 69.5
   glycemic:
-    gi: 41
-    gl: 27
+    gi: 42
+    gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 73
+    measuredGiPct: 75
   nutriScore:
     grade: C
-    points: 3
+    points: 4
     category: general
     version: "2023"
     coverage: 1
@@ -162,10 +162,10 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 20.6
+    nrf: 20.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 67.7
+    minimallyProcessedPct: 68.2
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

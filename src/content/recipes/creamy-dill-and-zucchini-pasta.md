@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13052-kremes-kapros-cukkinis-teszta
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -26,13 +26,13 @@ ingredients:
     fdcId: 168565
     matchConfidence: medium
     cooking: fried
-  - raw: 300 g whole-wheat penne, dry
+  - raw: 320 g whole-wheat penne, dry
     group: Main ingredients
-    quantity: 300
+    quantity: 320
     unit: g
     item: whole-wheat penne
     note: dry
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -105,19 +105,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 634
-    energyKj: 2654
-    protein_g: 26.1
-    fat_g: 26.5
-    satFat_g: 5.4
-    carbs_g: 80.8
-    fiber_g: 10.9
-    sugar_g: 3.9
-    sodium_mg: 1014
-    availableCarb_g: 69.9
+    energyKcal: 493
+    energyKj: 2064
+    protein_g: 20.2
+    fat_g: 20
+    satFat_g: 4
+    carbs_g: 64.3
+    fiber_g: 8.6
+    sugar_g: 3.1
+    sodium_mg: 761
+    availableCarb_g: 55.7
   glycemic:
     gi: 48
-    gl: 33
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -128,20 +128,20 @@ nutrition:
     points: 2
     category: general
     version: "2023"
-    coverage: 0.78
+    coverage: 0.79
   inflammation:
     score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.19
+    aromaticAdjustment: -0.14
   balance:
     score: 6
     band: moderate
-    nrf: 34
+    nrf: 33.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 73.5
-    ultraProcessedPct: 16.2
+    minimallyProcessedPct: 74.5
+    ultraProcessedPct: 15.6
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

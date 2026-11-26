@@ -7,9 +7,9 @@ imageAlt: Vegetable Yaki Udon
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12764-zoeldseges-yaki-udon-gyors-azsiai-vacsora
-  kcalPerServing: 840
+  kcalPerServing: 420
 author: Kifli Kukták
-servings: 1
+servings: 2
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 95 g dry whole-wheat udon noodles, cooked
-    quantity: 95
+  - raw: 160 g dry whole-wheat udon noodles, cooked
+    quantity: 160
     unit: g
     item: dry whole-wheat udon noodles
     note: cooked
-    grams: 95
+    grams: 160
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -107,42 +107,42 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 1310
-    energyKj: 5482
-    protein_g: 25
-    fat_g: 95.6
-    satFat_g: 14.6
-    carbs_g: 102
-    fiber_g: 15
-    sugar_g: 22
-    sodium_mg: 2184
-    availableCarb_g: 85.7
+    energyKcal: 769
+    energyKj: 3220
+    protein_g: 17
+    fat_g: 48.7
+    satFat_g: 7.4
+    carbs_g: 74.8
+    fiber_g: 10.5
+    sugar_g: 11.9
+    sodium_mg: 1093
+    availableCarb_g: 63.7
   glycemic:
     gi: 49
-    gl: 41
+    gl: 31
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 86
+    measuredGiPct: 90
   nutriScore:
     grade: C
-    points: 6
+    points: 5
     category: general
     version: "2023"
     coverage: 0.99
   inflammation:
-    score: -0.6
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.43
+    aromaticAdjustment: -0.32
   balance:
     score: 2
     band: poor
-    nrf: 4.7
+    nrf: 8.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98.4
+    minimallyProcessedPct: 98.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

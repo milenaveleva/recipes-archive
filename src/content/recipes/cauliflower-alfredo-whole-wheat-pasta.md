@@ -7,9 +7,9 @@ imageAlt: Cauliflower Alfredo Whole-Wheat Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10565-karfiol-alfredo
-  kcalPerServing: 529
+  kcalPerServing: 423
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT20M
 totalTime: PT30M
@@ -109,19 +109,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 480
-    energyKj: 2010
-    protein_g: 18.9
-    fat_g: 10.6
-    satFat_g: 1.6
-    carbs_g: 86
-    fiber_g: 13.3
-    sugar_g: 6.7
-    sodium_mg: 363
-    availableCarb_g: 72.7
+    energyKcal: 384
+    energyKj: 1608
+    protein_g: 15.1
+    fat_g: 8.5
+    satFat_g: 1.3
+    carbs_g: 68.8
+    fiber_g: 10.6
+    sugar_g: 5.3
+    sodium_mg: 290
+    availableCarb_g: 58.1
   glycemic:
     gi: 47
-    gl: 34
+    gl: 28
     giBand: low
     glBand: medium
     glBasis: meal
@@ -137,7 +137,7 @@ nutrition:
     score: -0.3
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.33
+    aromaticAdjustment: -0.3
   balance:
     score: 7
     band: high

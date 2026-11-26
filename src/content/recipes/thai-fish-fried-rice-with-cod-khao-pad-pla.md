@@ -26,13 +26,13 @@ ingredients:
     fdcId: 171955
     matchConfidence: high
     cooking: fried
-  - raw: 101 g dry brown jasmine rice, cooked and chilled
-    quantity: 101
+  - raw: 160 g dry brown jasmine rice, cooked and chilled
+    quantity: 160
     unit: g
     item: brown jasmine rice
     note: dry, cooked and chilled
     group: Main ingredients
-    grams: 101
+    grams: 160
     fdcId: 169703
     matchConfidence: high
     cooking: fried
@@ -137,24 +137,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 597
-    energyKj: 2499
-    protein_g: 48.8
-    fat_g: 21.8
-    satFat_g: 3.6
-    carbs_g: 51.3
-    fiber_g: 4.1
-    sugar_g: 6.5
-    sodium_mg: 2067
-    availableCarb_g: 47.2
+    energyKcal: 706
+    energyKj: 2952
+    protein_g: 51
+    fat_g: 22.8
+    satFat_g: 3.8
+    carbs_g: 73.8
+    fiber_g: 5.1
+    sugar_g: 6.7
+    sodium_mg: 2069
+    availableCarb_g: 68.6
   glycemic:
-    gi: 51
-    gl: 24
-    giBand: low
-    glBand: medium
+    gi: 58
+    gl: 40
+    giBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 84
+    measuredGiPct: 89
   nutriScore:
     grade: B
     points: 2
@@ -162,17 +162,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.3
-    band: mildly-anti-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.21
   balance:
-    score: 6
+    score: 5
     band: moderate
-    nrf: 31.1
+    nrf: 29.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98.2
+    minimallyProcessedPct: 98.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

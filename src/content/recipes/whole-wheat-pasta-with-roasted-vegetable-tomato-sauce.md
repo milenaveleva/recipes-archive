@@ -7,9 +7,9 @@ imageAlt: Whole-Wheat Pasta with Roasted Vegetable Tomato Sauce
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12089-teljes-kiorlesu-teszta-suelt-zoeldseges-paradicsomszosszal
-  kcalPerServing: 619
+  kcalPerServing: 482
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT15M
 cookTime: PT40M
 totalTime: PT55M
@@ -92,12 +92,12 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: baked
-  - raw: 300 g whole-wheat pasta, dry
-    quantity: 300
+  - raw: 320 g whole-wheat pasta, dry
+    quantity: 320
     unit: g
     item: whole-wheat pasta
     note: dry
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -130,24 +130,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 671
-    energyKj: 2806
-    protein_g: 20.5
-    fat_g: 24.8
-    satFat_g: 3.3
-    carbs_g: 101.8
-    fiber_g: 16.8
-    sugar_g: 18.5
-    sodium_mg: 129
-    availableCarb_g: 85
+    energyKcal: 521
+    energyKj: 2178
+    protein_g: 16
+    fat_g: 18.8
+    satFat_g: 2.5
+    carbs_g: 80.1
+    fiber_g: 13.1
+    sugar_g: 14
+    sodium_mg: 97
+    availableCarb_g: 67
   glycemic:
-    gi: 44
-    gl: 38
+    gi: 45
+    gl: 30
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 81
+    measuredGiPct: 82
   nutriScore:
     grade: A
     points: -1
@@ -158,15 +158,15 @@ nutrition:
     score: -0.6
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.34
+    aromaticAdjustment: -0.3
   balance:
     score: 8
     band: high
-    nrf: 67.9
+    nrf: 66.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88.5
-    ultraProcessedPct: 11.5
+    minimallyProcessedPct: 88.9
+    ultraProcessedPct: 11.1
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

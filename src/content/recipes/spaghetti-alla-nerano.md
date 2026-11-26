@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13273-spagetti-alla-nerano-olasz-klasszikus-cukkinis-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -95,19 +95,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 644
-    energyKj: 2696
-    protein_g: 23.8
-    fat_g: 28.2
-    satFat_g: 6.8
-    carbs_g: 82
-    fiber_g: 10.9
-    sugar_g: 8
-    sodium_mg: 2119
-    availableCarb_g: 71.1
+    energyKcal: 515
+    energyKj: 2157
+    protein_g: 19
+    fat_g: 22.5
+    satFat_g: 5.4
+    carbs_g: 65.6
+    fiber_g: 8.8
+    sugar_g: 6.4
+    sodium_mg: 1695
+    availableCarb_g: 56.9
   glycemic:
     gi: 47
-    gl: 34
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -120,10 +120,10 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.27
+    aromaticAdjustment: -0.23
   balance:
     score: 3
     band: low

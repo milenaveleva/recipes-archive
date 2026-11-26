@@ -7,9 +7,9 @@ imageAlt: Roasted Pepper Spaghetti with Creamy Mascarpone
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12871-suelt-paprikas-spagetti-kremes-mascarponeval
-  kcalPerServing: 300
+  kcalPerServing: 243
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT15M
 cookTime: PT30M
 totalTime: PT45M
@@ -18,13 +18,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g whole-wheat spaghetti, dry
+  - raw: 320 g whole-wheat spaghetti, dry
     group: For the sauce
-    quantity: 300
+    quantity: 320
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -121,24 +121,24 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 580
-    energyKj: 2427
-    protein_g: 29.1
-    fat_g: 12.1
-    satFat_g: 5.7
-    carbs_g: 97.5
-    fiber_g: 15.1
-    sugar_g: 10
-    sodium_mg: 1320
-    availableCarb_g: 82.4
+    energyKcal: 453
+    energyKj: 1894
+    protein_g: 22.5
+    fat_g: 9.2
+    satFat_g: 4.3
+    carbs_g: 76.8
+    fiber_g: 11.8
+    sugar_g: 7.7
+    sodium_mg: 991
+    availableCarb_g: 65
   glycemic:
     gi: 50
-    gl: 41
+    gl: 32
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 85
+    measuredGiPct: 86
   nutriScore:
     grade: B
     points: 2
@@ -153,10 +153,10 @@ nutrition:
   balance:
     score: 8
     band: high
-    nrf: 65.6
+    nrf: 64.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 73.3
+    minimallyProcessedPct: 74.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

@@ -7,7 +7,7 @@ imageAlt: Spaghetti with Pecorino and Shrimp
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12396-spagetti-pecorinoval-es-garnelaval
-  kcalPerServing: 655
+  kcalPerServing: 585
 author: Kifli Kukták
 servings: 1
 prepTime: PT10M
@@ -18,11 +18,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 100 g dry whole-wheat spaghetti
-    quantity: 100
+  - raw: 80 g dry whole-wheat spaghetti
+    quantity: 80
     unit: g
     item: dry whole-wheat spaghetti
-    grams: 100
+    grams: 80
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -91,24 +91,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 1167
-    energyKj: 4882
-    protein_g: 47.1
-    fat_g: 78.4
-    satFat_g: 16.3
-    carbs_g: 76.9
-    fiber_g: 10
-    sugar_g: 3.1
-    sodium_mg: 1472
-    availableCarb_g: 66.9
+    energyKcal: 1096
+    energyKj: 4588
+    protein_g: 44.4
+    fat_g: 77.8
+    satFat_g: 16.2
+    carbs_g: 62.2
+    fiber_g: 8.2
+    sugar_g: 2.6
+    sodium_mg: 1471
+    availableCarb_g: 54
   glycemic:
-    gi: 46
-    gl: 31
+    gi: 44
+    gl: 24
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 96
+    measuredGiPct: 95
   nutriScore:
     grade: C
     points: 6
@@ -123,10 +123,10 @@ nutrition:
   balance:
     score: 3
     band: low
-    nrf: 14.2
+    nrf: 13.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 86.7
+    minimallyProcessedPct: 85.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

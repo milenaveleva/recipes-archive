@@ -8,17 +8,17 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11840-paradicsomos-mozzarellas-tonhalas-teszta
 author: Kifli Kukták
-servings: 2
+servings: 3
 cuisine: Italian
 course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g dry whole-wheat penne
-    quantity: 200
+  - raw: 240 g dry whole-wheat penne
+    quantity: 240
     unit: g
     item: dry whole-wheat penne
-    grams: 200
+    grams: 240
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -133,42 +133,42 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 769
-    energyKj: 3217
-    protein_g: 57.5
-    fat_g: 22.4
-    satFat_g: 8.6
-    carbs_g: 93.4
-    fiber_g: 13.7
-    sugar_g: 13.1
-    sodium_mg: 1098
-    availableCarb_g: 79.7
+    energyKcal: 559
+    energyKj: 2341
+    protein_g: 40.2
+    fat_g: 15.3
+    satFat_g: 5.8
+    carbs_g: 72.1
+    fiber_g: 10.3
+    sugar_g: 9.1
+    sodium_mg: 732
+    availableCarb_g: 61.7
   glycemic:
-    gi: 42
-    gl: 33
+    gi: 43
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 83
+    measuredGiPct: 85
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: 0
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
+    score: 0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.41
+    aromaticAdjustment: -0.34
   balance:
     score: 6
     band: moderate
-    nrf: 37.3
+    nrf: 36.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 59.1
+    minimallyProcessedPct: 62.5
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

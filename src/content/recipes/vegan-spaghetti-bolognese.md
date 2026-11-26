@@ -7,9 +7,9 @@ imageAlt: Vegan Spaghetti Bolognese
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10665-vegan-bolognai-spagetti
-  kcalPerServing: 474
+  kcalPerServing: 383
 author: Kifli Kukták
-servings: 5
+servings: 6
 prepTime: PT15M
 cookTime: PT1H
 totalTime: PT1H15M
@@ -97,11 +97,11 @@ ingredients:
     fdcId: 172232
     matchConfidence: high
     cooking: raw
-  - raw: 500 g dry whole-wheat spaghetti
-    quantity: 500
+  - raw: 480 g dry whole-wheat spaghetti
+    quantity: 480
     unit: g
     item: dry whole-wheat spaghetti
-    grams: 500
+    grams: 480
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -133,19 +133,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 517
-    energyKj: 2165
-    protein_g: 21.2
-    fat_g: 9.7
-    satFat_g: 1.4
-    carbs_g: 95.8
-    fiber_g: 15.3
-    sugar_g: 10.9
-    sodium_mg: 272
-    availableCarb_g: 80.4
+    energyKcal: 419
+    energyKj: 1755
+    protein_g: 17.2
+    fat_g: 8
+    satFat_g: 1.1
+    carbs_g: 77.4
+    fiber_g: 12.5
+    sugar_g: 9
+    sodium_mg: 227
+    availableCarb_g: 64.9
   glycemic:
     gi: 48
-    gl: 39
+    gl: 31
     giBand: low
     glBand: medium
     glBasis: meal
@@ -161,14 +161,14 @@ nutrition:
     score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.26
+    aromaticAdjustment: -0.23
   balance:
     score: 7
     band: high
-    nrf: 42.6
+    nrf: 43
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 95.7
+    minimallyProcessedPct: 95.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

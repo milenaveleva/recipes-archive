@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14788-pagoda-karfiolos-penne-20-perces-olasz-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -111,19 +111,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 644
-    energyKj: 2695
-    protein_g: 22.3
-    fat_g: 29.1
-    satFat_g: 5.5
-    carbs_g: 82.5
-    fiber_g: 12.1
-    sugar_g: 5.7
-    sodium_mg: 844
-    availableCarb_g: 70.4
+    energyKcal: 515
+    energyKj: 2156
+    protein_g: 17.8
+    fat_g: 23.3
+    satFat_g: 4.4
+    carbs_g: 66
+    fiber_g: 9.7
+    sugar_g: 4.6
+    sodium_mg: 675
+    availableCarb_g: 56.3
   glycemic:
     gi: 48
-    gl: 34
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -136,10 +136,10 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.2
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.21
+    aromaticAdjustment: -0.17
   balance:
     score: 5
     band: moderate

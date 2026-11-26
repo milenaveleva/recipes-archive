@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10583-feltuningolt-kezmuves-mac-cheese
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT15M
 cookTime: PT25M
 totalTime: PT40M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g whole-wheat macaroni (or any similar whole-wheat pasta), dry
+  - raw: 320 g whole-wheat macaroni (or any similar whole-wheat pasta), dry
     group: Main ingredients
-    quantity: 300
+    quantity: 320
     unit: g
     item: whole-wheat macaroni (or any similar whole-wheat pasta)
     note: dry
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -135,21 +135,21 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 914
-    energyKj: 3826
-    protein_g: 43.6
-    fat_g: 41.7
-    satFat_g: 16.8
-    carbs_g: 95.8
-    fiber_g: 10.4
-    sugar_g: 12.4
-    sodium_mg: 1116
-    availableCarb_g: 85.4
+    energyKcal: 703
+    energyKj: 2943
+    protein_g: 33.4
+    fat_g: 31.4
+    satFat_g: 12.6
+    carbs_g: 75.5
+    fiber_g: 8.3
+    sugar_g: 9.5
+    sodium_mg: 837
+    availableCarb_g: 67.2
   glycemic:
     gi: 52
-    gl: 45
+    gl: 35
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 98
@@ -158,7 +158,7 @@ nutrition:
     points: 2
     category: general
     version: "2023"
-    coverage: 0.64
+    coverage: 0.65
   inflammation:
     score: 0.6
     band: mildly-pro-inflammatory
@@ -167,11 +167,11 @@ nutrition:
   balance:
     score: 3
     band: low
-    nrf: 17.6
+    nrf: 17.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 47.6
-    ultraProcessedPct: 15.4
+    minimallyProcessedPct: 48.9
+    ultraProcessedPct: 15.1
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

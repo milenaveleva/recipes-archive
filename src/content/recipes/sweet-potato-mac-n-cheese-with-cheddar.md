@@ -7,9 +7,9 @@ imageAlt: Sweet Potato Mac 'n' Cheese with Cheddar
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12655-mac-n-cheese-edesburgonyaval-es-cheddarral
-  kcalPerServing: 760
+  kcalPerServing: 554
 author: Kifli Kukták
-servings: 2
+servings: 3
 prepTime: PT15M
 cookTime: PT25M
 totalTime: PT40M
@@ -18,13 +18,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g whole-wheat elbow macaroni, dry
+  - raw: 240 g whole-wheat elbow macaroni, dry
     group: Main ingredients
-    quantity: 200
+    quantity: 240
     unit: g
     item: whole-wheat elbow macaroni
     note: dry
-    grams: 200
+    grams: 240
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -93,21 +93,21 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 882
-    energyKj: 3691
-    protein_g: 30.2
-    fat_g: 31.1
-    satFat_g: 9.7
-    carbs_g: 127.1
-    fiber_g: 16.7
-    sugar_g: 15
-    sodium_mg: 497
-    availableCarb_g: 110.3
+    energyKcal: 635
+    energyKj: 2657
+    protein_g: 22
+    fat_g: 21.1
+    satFat_g: 6.5
+    carbs_g: 94.5
+    fiber_g: 12.4
+    sugar_g: 10.4
+    sodium_mg: 332
+    availableCarb_g: 82.1
   glycemic:
-    gi: 47
-    gl: 52
+    gi: 48
+    gl: 39
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 97
@@ -116,20 +116,19 @@ nutrition:
     points: 1
     category: general
     version: "2023"
-    coverage: 0.85
+    coverage: 0.87
   inflammation:
     score: 0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.01
   balance:
     score: 7
     band: high
-    nrf: 42.9
+    nrf: 41.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 64.3
-    ultraProcessedPct: 17.4
+    minimallyProcessedPct: 66.9
+    ultraProcessedPct: 16.1
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"
@@ -140,7 +139,6 @@ nutrition:
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
-    - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-22"

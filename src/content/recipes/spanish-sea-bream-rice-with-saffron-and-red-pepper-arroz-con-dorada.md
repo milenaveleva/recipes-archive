@@ -26,12 +26,12 @@ ingredients:
     matchConfidence: high
     cooking: boiled
     proxyOk: true
-  - raw: 300 g brown arborio rice, uncooked
-    quantity: 300
+  - raw: 320 g brown arborio rice, uncooked
+    quantity: 320
     unit: g
     item: brown arborio rice
     note: uncooked
-    grams: 300
+    grams: 320
     fdcId: 169706
     matchConfidence: high
     cooking: boiled
@@ -147,19 +147,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 516
-    energyKj: 2160
-    protein_g: 26.9
-    fat_g: 14.5
+    energyKcal: 534
+    energyKj: 2236
+    protein_g: 27.3
+    fat_g: 14.6
     satFat_g: 2.5
-    carbs_g: 70.2
-    fiber_g: 5.2
+    carbs_g: 74
+    fiber_g: 5.4
     sugar_g: 7.2
     sodium_mg: 1314
-    availableCarb_g: 64.7
+    availableCarb_g: 68.3
   glycemic:
     gi: 63
-    gl: 41
+    gl: 43
     giBand: medium
     glBand: high
     glBasis: meal
@@ -179,10 +179,10 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 31.7
+    nrf: 31.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 94.6
+    minimallyProcessedPct: 94.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

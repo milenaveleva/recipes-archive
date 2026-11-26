@@ -7,9 +7,9 @@ imageAlt: Pasta with Mussels and White Beans
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12988-teszta-kagyloval-es-feherbabbal
-  kcalPerServing: 534
+  kcalPerServing: 427
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT50M
 totalTime: PT1H
@@ -102,19 +102,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 569
-    energyKj: 2379
-    protein_g: 24.8
-    fat_g: 14.2
-    satFat_g: 2.1
-    carbs_g: 92.3
-    fiber_g: 13.7
-    sugar_g: 4.2
-    sodium_mg: 712
-    availableCarb_g: 78.6
+    energyKcal: 455
+    energyKj: 1903
+    protein_g: 19.9
+    fat_g: 11.4
+    satFat_g: 1.7
+    carbs_g: 73.8
+    fiber_g: 11
+    sugar_g: 3.4
+    sodium_mg: 569
+    availableCarb_g: 62.9
   glycemic:
     gi: 46
-    gl: 36
+    gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
@@ -130,7 +130,7 @@ nutrition:
     score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.14
+    aromaticAdjustment: -0.11
   balance:
     score: 6
     band: moderate

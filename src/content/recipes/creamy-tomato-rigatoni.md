@@ -7,9 +7,9 @@ imageAlt: Creamy Tomato Rigatoni
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12666-rigatoni-alla-vodka-kremes-olasz-teszta-ropogos-pancettaval
-  kcalPerServing: 432
+  kcalPerServing: 348
 author: Kifli Kukták
-servings: 5
+servings: 6
 prepTime: PT10M
 cookTime: PT25M
 totalTime: PT35M
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 500 g whole-wheat rigatoni, dry
-    quantity: 500
+  - raw: 480 g whole-wheat rigatoni, dry
+    quantity: 480
     unit: g
     item: whole-wheat rigatoni
     note: dry
-    grams: 500
+    grams: 480
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -113,19 +113,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 614
-    energyKj: 2567
-    protein_g: 26.2
-    fat_g: 20.4
-    satFat_g: 5.4
-    carbs_g: 89.8
-    fiber_g: 12.7
-    sugar_g: 11.7
-    sodium_mg: 687
-    availableCarb_g: 77
+    energyKcal: 500
+    energyKj: 2090
+    protein_g: 21.4
+    fat_g: 16.9
+    satFat_g: 4.5
+    carbs_g: 72.4
+    fiber_g: 10.3
+    sugar_g: 9.7
+    sodium_mg: 572
+    availableCarb_g: 62
   glycemic:
     gi: 45
-    gl: 34
+    gl: 28
     giBand: low
     glBand: medium
     glBasis: meal
@@ -141,15 +141,15 @@ nutrition:
     score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.25
+    aromaticAdjustment: -0.21
   balance:
     score: 6
     band: moderate
     nrf: 32.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 65.6
-    ultraProcessedPct: 12.5
+    minimallyProcessedPct: 64.8
+    ultraProcessedPct: 12.8
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

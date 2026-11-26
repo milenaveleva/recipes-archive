@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13331-kremes-ricottas-paradicsomos-teszta-20-perces-olasz-vacsora
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT5M
 cookTime: PT15M
 totalTime: PT20M
@@ -98,19 +98,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 619
-    energyKj: 2591
-    protein_g: 24.5
-    fat_g: 23.5
-    satFat_g: 8.1
-    carbs_g: 85
-    fiber_g: 11.4
-    sugar_g: 7.9
-    sodium_mg: 883
-    availableCarb_g: 73.5
+    energyKcal: 495
+    energyKj: 2073
+    protein_g: 19.6
+    fat_g: 18.8
+    satFat_g: 6.5
+    carbs_g: 68
+    fiber_g: 9.1
+    sugar_g: 6.3
+    sodium_mg: 706
+    availableCarb_g: 58.8
   glycemic:
     gi: 47
-    gl: 35
+    gl: 28
     giBand: low
     glBand: medium
     glBasis: meal
@@ -126,7 +126,7 @@ nutrition:
     score: 0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.21
+    aromaticAdjustment: -0.17
   balance:
     score: 5
     band: moderate

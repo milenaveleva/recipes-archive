@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14761-karamellizalt-salottahagymas-spagetti-pasta-allo-scalogno
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -123,21 +123,21 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 632
-    energyKj: 2645
-    protein_g: 23
-    fat_g: 22
-    satFat_g: 5.1
-    carbs_g: 94.3
-    fiber_g: 13.3
-    sugar_g: 11.9
-    sodium_mg: 768
-    availableCarb_g: 81
+    energyKcal: 506
+    energyKj: 2116
+    protein_g: 18.4
+    fat_g: 17.6
+    satFat_g: 4.1
+    carbs_g: 75.4
+    fiber_g: 10.6
+    sugar_g: 9.5
+    sodium_mg: 614
+    availableCarb_g: 64.8
   glycemic:
     gi: 53
-    gl: 43
+    gl: 35
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 79
@@ -151,7 +151,7 @@ nutrition:
     score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.42
+    aromaticAdjustment: -0.41
   balance:
     score: 5
     band: moderate

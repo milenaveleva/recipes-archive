@@ -7,7 +7,7 @@ imageAlt: Peanut Butter Coconut Curry with Tofu
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10680-mogyorovajas-curry-kokusztejjel-es-tofuval
-  kcalPerServing: 485
+  kcalPerServing: 668
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
@@ -115,12 +115,12 @@ ingredients:
     fdcId: 168156
     matchConfidence: high
     cooking: boiled
-  - raw: 120 g brown basmati or jasmine rice, uncooked
-    quantity: 120
+  - raw: 320 g brown basmati or jasmine rice, uncooked
+    quantity: 320
     unit: g
     item: brown basmati or jasmine rice
     note: uncooked
-    grams: 120
+    grams: 320
     fdcId: 169703
     matchConfidence: high
     cooking: boiled
@@ -133,30 +133,30 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 398
-    energyKj: 1665
-    protein_g: 15.2
-    fat_g: 25.6
-    satFat_g: 13.3
-    carbs_g: 32.1
-    fiber_g: 3.8
-    sugar_g: 2.3
-    sodium_mg: 317
-    availableCarb_g: 28.2
+    energyKcal: 581
+    energyKj: 2432
+    protein_g: 19
+    fat_g: 27.2
+    satFat_g: 13.6
+    carbs_g: 70.2
+    fiber_g: 5.6
+    sugar_g: 2.6
+    sodium_mg: 319
+    availableCarb_g: 64.5
   glycemic:
-    gi: 60
-    gl: 17
+    gi: 66
+    gl: 43
     giBand: medium
-    glBand: low
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 82
+    measuredGiPct: 92
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
-    coverage: 0.78
+    coverage: 0.85
   inflammation:
     score: 0
     band: neutral
@@ -165,11 +165,11 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 23.3
+    nrf: 21.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 39.7
-    ultraProcessedPct: 0.5
+    minimallyProcessedPct: 58.8
+    ultraProcessedPct: 0.3
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

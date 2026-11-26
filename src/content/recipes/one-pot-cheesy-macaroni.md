@@ -7,9 +7,9 @@ imageAlt: One-Pot Cheesy Macaroni
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12554-egylabas-sajtos-makaroni
-  kcalPerServing: 799
+  kcalPerServing: 639
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT5M
 cookTime: PT15M
 totalTime: PT20M
@@ -74,21 +74,21 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 782
-    energyKj: 3271
-    protein_g: 33.3
-    fat_g: 35.1
-    satFat_g: 14.6
-    carbs_g: 89.7
-    fiber_g: 9.5
-    sugar_g: 9.1
-    sodium_mg: 1193
-    availableCarb_g: 80.2
+    energyKcal: 625
+    energyKj: 2616
+    protein_g: 26.6
+    fat_g: 28.1
+    satFat_g: 11.7
+    carbs_g: 71.8
+    fiber_g: 7.6
+    sugar_g: 7.3
+    sodium_mg: 954
+    availableCarb_g: 64.2
   glycemic:
     gi: 52
-    gl: 42
+    gl: 33
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 97
@@ -102,7 +102,7 @@ nutrition:
     score: 0.8
     band: pro-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.07
+    aromaticAdjustment: -0.06
   balance:
     score: 3
     band: low

@@ -7,7 +7,7 @@ imageAlt: Pumpkin Curry with Smoked Tofu
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12625-suetotoekoes-vegetarianus-curry-fuestoelt-tofuval
-  kcalPerServing: 385
+  kcalPerServing: 495
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
@@ -110,13 +110,13 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: fried
-  - raw: 200 g brown rice, uncooked
+  - raw: 320 g brown rice, uncooked
     group: For the side
-    quantity: 200
+    quantity: 320
     unit: g
     item: brown rice
     note: uncooked
-    grams: 200
+    grams: 320
     fdcId: 169703
     matchConfidence: high
     cooking: boiled
@@ -131,43 +131,43 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 476
-    energyKj: 1992
-    protein_g: 20.6
-    fat_g: 20.2
-    satFat_g: 9.1
-    carbs_g: 59.7
-    fiber_g: 6.4
-    sugar_g: 7.5
-    sodium_mg: 593
-    availableCarb_g: 53.3
+    energyKcal: 586
+    energyKj: 2453
+    protein_g: 22.9
+    fat_g: 21.2
+    satFat_g: 9.2
+    carbs_g: 82.5
+    fiber_g: 7.5
+    sugar_g: 7.7
+    sodium_mg: 595
+    availableCarb_g: 75.1
   glycemic:
-    gi: 63
-    gl: 33
+    gi: 65
+    gl: 49
     giBand: medium
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 82
+    measuredGiPct: 88
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
-    coverage: 0.91
+    coverage: 0.93
   inflammation:
     score: -0.3
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.36
   balance:
-    score: 7
-    band: high
-    nrf: 45.4
+    score: 6
+    band: moderate
+    nrf: 40.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 58.6
-    ultraProcessedPct: 0.9
+    minimallyProcessedPct: 66.4
+    ultraProcessedPct: 0.7
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

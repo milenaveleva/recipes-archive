@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14567-rukkolapestos-penne-15-perces-friss-olasz-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT5M
 cookTime: PT10M
 totalTime: PT15M
@@ -101,19 +101,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 691
-    energyKj: 2889
-    protein_g: 24
-    fat_g: 35.1
-    satFat_g: 7.2
-    carbs_g: 78.6
-    fiber_g: 10.8
-    sugar_g: 4.3
-    sodium_mg: 819
-    availableCarb_g: 67.8
+    energyKcal: 552
+    energyKj: 2311
+    protein_g: 19.2
+    fat_g: 28
+    satFat_g: 5.8
+    carbs_g: 62.9
+    fiber_g: 8.7
+    sugar_g: 3.4
+    sodium_mg: 655
+    availableCarb_g: 54.2
   glycemic:
     gi: 49
-    gl: 33
+    gl: 26
     giBand: low
     glBand: medium
     glBasis: meal
@@ -129,7 +129,7 @@ nutrition:
     score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.13
+    aromaticAdjustment: -0.11
   balance:
     score: 4
     band: low

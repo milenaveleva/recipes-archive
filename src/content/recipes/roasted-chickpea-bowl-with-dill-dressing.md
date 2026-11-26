@@ -7,7 +7,7 @@ imageAlt: Roasted Chickpea Bowl with Dill Dressing
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13023-suelt-csicseriborso-tal-kapros-oentettel
-  kcalPerServing: 415
+  kcalPerServing: 524
 author: Kifli Kukták
 servings: 3
 prepTime: PT20M
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 150 g brown rice, uncooked
-    quantity: 150
+  - raw: 240 g brown rice, uncooked
+    quantity: 240
     unit: g
     item: brown rice
     note: uncooked
-    grams: 150
+    grams: 240
     fdcId: 169706
     matchConfidence: high
     cooking: boiled
@@ -94,24 +94,24 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 364
-    energyKj: 1523
-    protein_g: 17.1
-    fat_g: 4.1
-    satFat_g: 0.9
-    carbs_g: 65.9
-    fiber_g: 7.9
-    sugar_g: 10.9
-    sodium_mg: 273
-    availableCarb_g: 58.1
+    energyKcal: 473
+    energyKj: 1978
+    protein_g: 19.3
+    fat_g: 4.9
+    satFat_g: 1.1
+    carbs_g: 88.8
+    fiber_g: 8.9
+    sugar_g: 11.1
+    sodium_mg: 274
+    availableCarb_g: 79.9
   glycemic:
-    gi: 58
-    gl: 33
+    gi: 61
+    gl: 49
     giBand: medium
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 91
+    measuredGiPct: 93
   nutriScore:
     grade: A
     points: -1
@@ -126,10 +126,10 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 39
+    nrf: 34.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 90.1
+    minimallyProcessedPct: 92.4
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

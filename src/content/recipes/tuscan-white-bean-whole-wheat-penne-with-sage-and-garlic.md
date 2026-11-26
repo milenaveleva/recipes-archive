@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14607-toszkan-feherbabos-penne-zsalyaval-es-fokhagymaval-kremes-olasz-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT1H40M
 totalTime: PT1H50M
@@ -105,19 +105,19 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 644
-    energyKj: 2694
-    protein_g: 27.8
-    fat_g: 19.8
-    satFat_g: 4.9
-    carbs_g: 96
-    fiber_g: 14.8
-    sugar_g: 3.7
-    sodium_mg: 856
-    availableCarb_g: 81.2
+    energyKcal: 515
+    energyKj: 2155
+    protein_g: 22.2
+    fat_g: 15.8
+    satFat_g: 3.9
+    carbs_g: 76.8
+    fiber_g: 11.8
+    sugar_g: 2.9
+    sodium_mg: 685
+    availableCarb_g: 64.9
   glycemic:
     gi: 46
-    gl: 38
+    gl: 30
     giBand: low
     glBand: medium
     glBasis: meal
@@ -133,7 +133,7 @@ nutrition:
     score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.21
+    aromaticAdjustment: -0.17
   balance:
     score: 5
     band: moderate

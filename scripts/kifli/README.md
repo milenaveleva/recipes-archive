@@ -59,7 +59,7 @@ Per ingredient, `en` is the stored `raw` line and is parsed by the engine. Optio
 - Sour cream (`tejföl`) → plant-based sour cream pinned to `82019693`; crème fraîche → plant-based crème fraîche pinned to `82011214`. Amounts stay the same.
 - No wine of any kind, including sherry, port, marsala and vermouth (→ the same volume of vegetable broth plus a squeeze of lemon juice, or a splash of wine vinegar for red-wine dishes, about 1 tbsp per 100 ml; risotto → broth). Dishes named after wine are retitled. Mirin, sake, rice vinegar and wine vinegar stay.
 - No mayonnaise (→ Greek yogurt), spirits or beer.
-- Refined grains → the whole-grain version of the same type (whole-wheat pasta, flour, bread, couscous; brown rice).
+- Refined grains → the whole-grain version of the same type (whole-wheat pasta, flour, bread; brown rice). Couscous stays plain: whole-wheat couscous is rarely sold and no national table measures it.
 - Honey is the only sweetener. Yeast and yeast doughs are allowed.
 - Cooked or canned staples (pasta, rice, pulses) are listed in their raw/dry form at the raw dry-matter weight, with the preparation as the note and the method cooking them from dry, e.g. `168 g dried brown rice, cooked` with `forceGrams: 168`.
 - Spices and salt in tsp/tbsp/pinch, never grams; juices in ml.

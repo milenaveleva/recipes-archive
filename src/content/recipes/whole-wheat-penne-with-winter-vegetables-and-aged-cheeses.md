@@ -7,9 +7,9 @@ imageAlt: Whole-Wheat Penne with Winter Vegetables and Aged Cheeses
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10378-penne-teli-zoeldsegekkel-erlelt-sajtokkal
-  kcalPerServing: 676
+  kcalPerServing: 552
 author: Pataky Péter
-servings: 5
+servings: 6
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 500 g whole-wheat penne (or rigatoni or garganelli), dry
-    quantity: 500
+  - raw: 480 g whole-wheat penne (or rigatoni or garganelli), dry
+    quantity: 480
     unit: g
     item: whole-wheat penne (or rigatoni or garganelli)
     note: dry
-    grams: 500
+    grams: 480
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -143,19 +143,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 709
-    energyKj: 2968
-    protein_g: 21.5
-    fat_g: 34.4
-    satFat_g: 6
-    carbs_g: 86.9
-    fiber_g: 11.7
-    sugar_g: 6.9
-    sodium_mg: 633
-    availableCarb_g: 75.3
+    energyKcal: 579
+    energyKj: 2425
+    protein_g: 17.4
+    fat_g: 28.5
+    satFat_g: 5
+    carbs_g: 70
+    fiber_g: 9.4
+    sugar_g: 5.6
+    sodium_mg: 527
+    availableCarb_g: 60.6
   glycemic:
     gi: 50
-    gl: 38
+    gl: 30
     giBand: low
     glBand: medium
     glBasis: meal
@@ -178,8 +178,8 @@ nutrition:
     nrf: 29.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 85.2
-    ultraProcessedPct: 8.7
+    minimallyProcessedPct: 84.9
+    ultraProcessedPct: 8.8
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

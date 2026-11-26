@@ -131,13 +131,13 @@ ingredients:
     fdcId: 173468
     matchConfidence: medium
     cooking: boiled
-  - raw: 200 g brown basmati rice, uncooked
+  - raw: 320 g brown basmati rice, uncooked
     group: Side
-    quantity: 200
+    quantity: 320
     unit: g
     item: brown basmati rice
     note: uncooked
-    grams: 200
+    grams: 320
     fdcId: 169703
     matchConfidence: high
     cooking: boiled
@@ -161,30 +161,30 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 688
-    energyKj: 2878
-    protein_g: 18.3
-    fat_g: 32.1
-    satFat_g: 24.4
-    carbs_g: 89
-    fiber_g: 13.5
-    sugar_g: 15.3
-    sodium_mg: 858
-    availableCarb_g: 75.5
+    energyKcal: 798
+    energyKj: 3338
+    protein_g: 20.6
+    fat_g: 33.1
+    satFat_g: 24.6
+    carbs_g: 111.8
+    fiber_g: 14.6
+    sugar_g: 15.5
+    sodium_mg: 859
+    availableCarb_g: 97.3
   glycemic:
-    gi: 51
-    gl: 38
+    gi: 55
+    gl: 53
     giBand: low
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 77
+    measuredGiPct: 82
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
-    coverage: 0.84
+    coverage: 0.86
   inflammation:
     score: 0.1
     band: neutral
@@ -193,12 +193,12 @@ nutrition:
   balance:
     score: 3
     band: low
-    nrf: 10.9
+    nrf: 12.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 68
+    minimallyProcessedPct: 72.4
     ultraProcessedPct: 0
-    band: moderately-processed
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

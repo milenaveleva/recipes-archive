@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13416-sziciliai-karfiolos-spagetti-ropogos-morzsaval
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -130,19 +130,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 609
-    energyKj: 2549
-    protein_g: 24.1
-    fat_g: 20.6
-    satFat_g: 4.2
-    carbs_g: 90.5
-    fiber_g: 13.4
-    sugar_g: 7.2
-    sodium_mg: 285
-    availableCarb_g: 77.1
+    energyKcal: 487
+    energyKj: 2039
+    protein_g: 19.3
+    fat_g: 16.5
+    satFat_g: 3.3
+    carbs_g: 72.4
+    fiber_g: 10.7
+    sugar_g: 5.7
+    sodium_mg: 228
+    availableCarb_g: 61.7
   glycemic:
     gi: 48
-    gl: 37
+    gl: 30
     giBand: low
     glBand: medium
     glBasis: meal
@@ -155,10 +155,10 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.2
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.31
+    aromaticAdjustment: -0.25
   balance:
     score: 6
     band: moderate

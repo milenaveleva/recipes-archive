@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13312-pasta-e-piselli-olasz-kremes-zoeldborsos-teszta
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT5M
 cookTime: PT15M
 totalTime: PT20M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g whole-wheat pasta, dry
+  - raw: 320 g whole-wheat pasta, dry
     group: Main ingredients
-    quantity: 300
+    quantity: 320
     unit: g
     item: whole-wheat pasta
     note: dry
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -103,19 +103,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 593
-    energyKj: 2480
-    protein_g: 25.2
-    fat_g: 17
-    satFat_g: 4.6
-    carbs_g: 91.6
-    fiber_g: 15.4
-    sugar_g: 9.6
-    sodium_mg: 300
-    availableCarb_g: 76.2
+    energyKcal: 462
+    energyKj: 1933
+    protein_g: 19.6
+    fat_g: 12.9
+    satFat_g: 3.5
+    carbs_g: 72.4
+    fiber_g: 12
+    sugar_g: 7.4
+    sodium_mg: 225
+    availableCarb_g: 60.4
   glycemic:
     gi: 49
-    gl: 37
+    gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
@@ -128,17 +128,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.24
+    aromaticAdjustment: -0.18
   balance:
     score: 6
     band: moderate
-    nrf: 33.3
+    nrf: 33.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 89.1
+    minimallyProcessedPct: 89.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

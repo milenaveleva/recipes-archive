@@ -7,9 +7,9 @@ imageAlt: Spaghetti with Sun-Dried Tomatoes and Rocket
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12631-spagetti-aszalt-paradicsommal-es-rukkolaval
-  kcalPerServing: 620
+  kcalPerServing: 496
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -106,19 +106,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 746
-    energyKj: 3120
-    protein_g: 27.6
-    fat_g: 35.7
-    satFat_g: 7.2
-    carbs_g: 88.7
-    fiber_g: 12.6
-    sugar_g: 5.5
-    sodium_mg: 428
-    availableCarb_g: 76
+    energyKcal: 596
+    energyKj: 2496
+    protein_g: 22.1
+    fat_g: 28.6
+    satFat_g: 5.8
+    carbs_g: 70.9
+    fiber_g: 10.1
+    sugar_g: 4.4
+    sodium_mg: 343
+    availableCarb_g: 60.8
   glycemic:
     gi: 51
-    gl: 39
+    gl: 31
     giBand: low
     glBand: medium
     glBasis: meal
@@ -134,7 +134,7 @@ nutrition:
     score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.28
+    aromaticAdjustment: -0.27
   balance:
     score: 6
     band: moderate

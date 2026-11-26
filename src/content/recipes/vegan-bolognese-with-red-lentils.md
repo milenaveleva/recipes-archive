@@ -7,9 +7,9 @@ imageAlt: Vegan Bolognese with Red Lentils
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11619-vegan-bolognai-martas-voeroeslencsevel
-  kcalPerServing: 529
+  kcalPerServing: 423
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT20M
 cookTime: PT1H
 totalTime: PT1H20M
@@ -146,19 +146,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 625
-    energyKj: 2615
-    protein_g: 27
-    fat_g: 15.7
-    satFat_g: 2.2
-    carbs_g: 105.9
-    fiber_g: 16.3
-    sugar_g: 14.8
-    sodium_mg: 347
-    availableCarb_g: 89.6
+    energyKcal: 500
+    energyKj: 2092
+    protein_g: 21.6
+    fat_g: 12.5
+    satFat_g: 1.8
+    carbs_g: 84.7
+    fiber_g: 13
+    sugar_g: 11.9
+    sodium_mg: 278
+    availableCarb_g: 71.6
   glycemic:
     gi: 43
-    gl: 38
+    gl: 31
     giBand: low
     glBand: medium
     glBasis: meal
@@ -171,10 +171,10 @@ nutrition:
     version: "2023"
     coverage: 0.93
   inflammation:
-    score: -0.4
+    score: -0.3
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.32
+    aromaticAdjustment: -0.25
   balance:
     score: 7
     band: high

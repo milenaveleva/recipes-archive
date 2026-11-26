@@ -7,7 +7,7 @@ imageAlt: Seared Salmon Bowl with Arugula, Rice, Edamame and Guacamole
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10480-roston-suelt-lazac-rukkolaval-rizzsel-edamame-babbal-es-guau-guacamole-val
-  kcalPerServing: 343
+  kcalPerServing: 387
 author: Kifli Kukták
 servings: 2
 prepTime: PT15M
@@ -48,12 +48,12 @@ ingredients:
     matchConfidence: high
     cooking: raw
     proxyOk: true
-  - raw: 136 g dry brown rice, cooked
-    quantity: 136
+  - raw: 160 g dry brown rice, cooked
+    quantity: 160
     unit: g
     item: brown rice
     note: dry, cooked
-    grams: 136
+    grams: 160
     fdcId: 169703
     matchConfidence: high
     cooking: boiled
@@ -82,24 +82,24 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 801
-    energyKj: 3352
-    protein_g: 46.5
-    fat_g: 40.6
-    satFat_g: 7.6
-    carbs_g: 63.9
-    fiber_g: 10.2
-    sugar_g: 2.9
+    energyKcal: 845
+    energyKj: 3536
+    protein_g: 47.4
+    fat_g: 41
+    satFat_g: 7.7
+    carbs_g: 73
+    fiber_g: 10.6
+    sugar_g: 3
     sodium_mg: 494
-    availableCarb_g: 53.7
+    availableCarb_g: 62.4
   glycemic:
-    gi: 56
-    gl: 30
+    gi: 58
+    gl: 36
     giBand: medium
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 92
+    measuredGiPct: 93
   nutriScore:
     grade: A
     points: 0
@@ -107,14 +107,14 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.6
+    score: -0.5
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.03
   balance:
     score: 5
     band: moderate
-    nrf: 30.7
+    nrf: 30.1
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14502-kremes-zoeldborsos-ricottas-penne-mentas-olasz-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -109,19 +109,19 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 651
-    energyKj: 2725
-    protein_g: 27.5
-    fat_g: 23.2
-    satFat_g: 8.1
-    carbs_g: 90.2
-    fiber_g: 12.9
-    sugar_g: 7.1
-    sodium_mg: 959
-    availableCarb_g: 77.3
+    energyKcal: 521
+    energyKj: 2180
+    protein_g: 22
+    fat_g: 18.6
+    satFat_g: 6.5
+    carbs_g: 72.1
+    fiber_g: 10.3
+    sugar_g: 5.7
+    sodium_mg: 767
+    availableCarb_g: 61.8
   glycemic:
     gi: 46
-    gl: 35
+    gl: 28
     giBand: low
     glBand: medium
     glBasis: meal
@@ -137,7 +137,7 @@ nutrition:
     score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.11
+    aromaticAdjustment: -0.09
   balance:
     score: 4
     band: low

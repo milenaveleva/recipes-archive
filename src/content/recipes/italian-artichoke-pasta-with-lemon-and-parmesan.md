@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13259-olasz-articsokas-teszta-citromos-parmezanos-penne
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -112,19 +112,19 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 578
-    energyKj: 2418
-    protein_g: 21.7
-    fat_g: 20.5
-    satFat_g: 4.6
-    carbs_g: 84.8
-    fiber_g: 13.7
-    sugar_g: 3.8
-    sodium_mg: 819
-    availableCarb_g: 71.2
+    energyKcal: 462
+    energyKj: 1934
+    protein_g: 17.4
+    fat_g: 16.4
+    satFat_g: 3.7
+    carbs_g: 67.9
+    fiber_g: 10.9
+    sugar_g: 3.1
+    sodium_mg: 655
+    availableCarb_g: 56.9
   glycemic:
     gi: 47
-    gl: 34
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -140,7 +140,7 @@ nutrition:
     score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.21
+    aromaticAdjustment: -0.17
   balance:
     score: 5
     band: moderate

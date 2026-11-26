@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13079-citromos-kakukkfueves-gombas-rigatoni-gyors-nyari-vacsora
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -103,19 +103,19 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 578
-    energyKj: 2418
-    protein_g: 21.5
-    fat_g: 22.7
-    satFat_g: 4.9
-    carbs_g: 79.6
-    fiber_g: 10.2
-    sugar_g: 4.4
-    sodium_mg: 283
-    availableCarb_g: 69.5
+    energyKcal: 462
+    energyKj: 1935
+    protein_g: 17.2
+    fat_g: 18.2
+    satFat_g: 3.9
+    carbs_g: 63.7
+    fiber_g: 8.1
+    sugar_g: 3.5
+    sodium_mg: 226
+    availableCarb_g: 55.6
   glycemic:
     gi: 48
-    gl: 34
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -128,10 +128,10 @@ nutrition:
     version: "2023"
     coverage: 0.99
   inflammation:
-    score: -0.1
+    score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.29
+    aromaticAdjustment: -0.24
   balance:
     score: 5
     band: moderate

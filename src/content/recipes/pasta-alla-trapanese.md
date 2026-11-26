@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13422-pasta-alla-trapanese-15-perces-sziciliai-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -104,19 +104,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 641
-    energyKj: 2682
-    protein_g: 23.4
-    fat_g: 28
-    satFat_g: 5.1
-    carbs_g: 82.9
-    fiber_g: 12.6
-    sugar_g: 6.8
-    sodium_mg: 708
-    availableCarb_g: 70.3
+    energyKcal: 513
+    energyKj: 2146
+    protein_g: 18.7
+    fat_g: 22.4
+    satFat_g: 4.1
+    carbs_g: 66.3
+    fiber_g: 10.1
+    sugar_g: 5.5
+    sodium_mg: 566
+    availableCarb_g: 56.2
   glycemic:
     gi: 48
-    gl: 33
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -129,10 +129,10 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.3
-    band: mildly-anti-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
-    aromaticAdjustment: -0.2
+    aromaticAdjustment: -0.16
   balance:
     score: 5
     band: moderate

@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13133-karamellizalt-hagymas-tejszines-teszta-izletes-es-kremes-vacsora
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT15M
 cookTime: PT25M
 totalTime: PT40M
@@ -115,19 +115,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 694
-    energyKj: 2903
-    protein_g: 24.8
-    fat_g: 29.8
-    satFat_g: 6.2
-    carbs_g: 88.5
-    fiber_g: 11.6
-    sugar_g: 9.1
-    sodium_mg: 748
-    availableCarb_g: 76.9
+    energyKcal: 555
+    energyKj: 2323
+    protein_g: 19.9
+    fat_g: 23.8
+    satFat_g: 5
+    carbs_g: 70.8
+    fiber_g: 9.3
+    sugar_g: 7.3
+    sodium_mg: 598
+    availableCarb_g: 61.5
   glycemic:
     gi: 45
-    gl: 35
+    gl: 28
     giBand: low
     glBand: medium
     glBasis: meal
@@ -143,7 +143,7 @@ nutrition:
     score: -0.3
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.42
+    aromaticAdjustment: -0.37
   balance:
     score: 4
     band: low

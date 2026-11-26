@@ -7,9 +7,9 @@ imageAlt: Pink Beet Pasta with Roasted Garlic and Feta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11691-barbie-teszta-suelt-ceklaval
-  kcalPerServing: 585
+  kcalPerServing: 437
 author: Kifli Kukták
-servings: 2
+servings: 3
 prepTime: PT15M
 cookTime: PT1H
 totalTime: PT1H15M
@@ -50,11 +50,11 @@ ingredients:
     fdcId: 173420
     matchConfidence: high
     cooking: raw
-  - raw: 200 g dry whole-wheat pasta
-    quantity: 200
+  - raw: 240 g dry whole-wheat pasta
+    quantity: 240
     unit: g
     item: dry whole-wheat pasta
-    grams: 200
+    grams: 240
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -85,27 +85,27 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 731
-    energyKj: 3059
-    protein_g: 26.7
-    fat_g: 30.8
-    satFat_g: 10.1
-    carbs_g: 95.5
-    fiber_g: 12.4
-    sugar_g: 13
-    sodium_mg: 925
-    availableCarb_g: 83.1
+    energyKcal: 534
+    energyKj: 2236
+    protein_g: 19.7
+    fat_g: 20.9
+    satFat_g: 6.8
+    carbs_g: 73.5
+    fiber_g: 9.5
+    sugar_g: 9
+    sodium_mg: 617
+    availableCarb_g: 64
   glycemic:
     gi: 52
-    gl: 43
+    gl: 33
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 89
+    measuredGiPct: 91
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
@@ -117,10 +117,10 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 20.1
+    nrf: 20.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 76.4
+    minimallyProcessedPct: 78.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

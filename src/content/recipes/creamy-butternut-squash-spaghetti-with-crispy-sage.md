@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13605-kremes-suetotoekoes-spagetti-ropogos-zsalyaval
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -106,21 +106,21 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 650
-    energyKj: 2720
-    protein_g: 22
-    fat_g: 25.3
-    satFat_g: 5.3
-    carbs_g: 92.7
-    fiber_g: 13.4
-    sugar_g: 6
-    sodium_mg: 1967
-    availableCarb_g: 79.2
+    energyKcal: 520
+    energyKj: 2176
+    protein_g: 17.6
+    fat_g: 20.3
+    satFat_g: 4.3
+    carbs_g: 74.1
+    fiber_g: 10.7
+    sugar_g: 4.8
+    sodium_mg: 1574
+    availableCarb_g: 63.4
   glycemic:
     gi: 50
-    gl: 40
+    gl: 32
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 96
@@ -134,7 +134,7 @@ nutrition:
     score: -0.3
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.27
+    aromaticAdjustment: -0.23
   balance:
     score: 6
     band: moderate

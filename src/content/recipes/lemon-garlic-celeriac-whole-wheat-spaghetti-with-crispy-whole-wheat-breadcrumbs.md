@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14717-citromos-fokhagymas-zelleres-spagetti-ropogos-pangrattatoval
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -127,19 +127,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 676
-    energyKj: 2826
-    protein_g: 23.2
-    fat_g: 26.7
-    satFat_g: 5.5
-    carbs_g: 93.9
-    fiber_g: 12.8
-    sugar_g: 5.8
-    sodium_mg: 998
-    availableCarb_g: 81.1
+    energyKcal: 540
+    energyKj: 2261
+    protein_g: 18.6
+    fat_g: 21.3
+    satFat_g: 4.4
+    carbs_g: 75.1
+    fiber_g: 10.2
+    sugar_g: 4.6
+    sodium_mg: 798
+    availableCarb_g: 64.9
   glycemic:
     gi: 48
-    gl: 39
+    gl: 31
     giBand: low
     glBand: medium
     glBasis: meal

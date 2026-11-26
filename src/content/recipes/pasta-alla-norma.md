@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13207-pasta-alla-norma-olasz-padlizsanos-penne-ricottaval
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -103,19 +103,19 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 636
-    energyKj: 2661
-    protein_g: 21.8
-    fat_g: 21.3
-    satFat_g: 4.9
-    carbs_g: 100.6
-    fiber_g: 17.6
-    sugar_g: 17
-    sodium_mg: 1012
-    availableCarb_g: 83
+    energyKcal: 509
+    energyKj: 2129
+    protein_g: 17.4
+    fat_g: 17.1
+    satFat_g: 3.9
+    carbs_g: 80.5
+    fiber_g: 14.1
+    sugar_g: 13.6
+    sodium_mg: 809
+    availableCarb_g: 66.4
   glycemic:
     gi: 43
-    gl: 35
+    gl: 28
     giBand: low
     glBand: medium
     glBasis: meal
@@ -131,7 +131,7 @@ nutrition:
     score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.21
+    aromaticAdjustment: -0.17
   balance:
     score: 5
     band: moderate

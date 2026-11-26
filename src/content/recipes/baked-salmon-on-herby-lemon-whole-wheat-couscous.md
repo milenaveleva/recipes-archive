@@ -1,13 +1,13 @@
 ---
-title: Baked Salmon on Herby Lemon Whole-Wheat Couscous
-description: Salmon fillets baked on a bed of whole-wheat couscous tossed with fresh mint, parsley, basil, lemon and plant-based cream, a healthy dinner in 30 minutes.
+title: Baked Salmon on Herby Lemon Couscous
+description: Salmon fillets baked on a bed of couscous tossed with fresh mint, parsley, basil, lemon and plant-based cream, a healthy dinner in 30 minutes.
 image: ./images/baked-salmon-on-herby-lemon-whole-wheat-couscous.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10683_1775306446582_roasted-salmon-with-herbed-couscous_d9a13fb3.png
-imageAlt: Baked Salmon on Herby Lemon Whole-Wheat Couscous
+imageAlt: Baked Salmon on Herby Lemon Couscous
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10683-suelt-lazac-fuszeres-kuszkusszal
-  kcalPerServing: 435
+  kcalPerServing: 541
 author: Kifli Kukták
 servings: 3
 prepTime: PT13M
@@ -18,13 +18,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 150 g whole-wheat couscous, dry
-    quantity: 150
+  - raw: 240 g couscous, dry
+    quantity: 240
     unit: g
-    item: whole-wheat couscous
+    item: couscous
     note: dry
-    grams: 150
-    fdcId: 169738
+    grams: 240
+    fdcId: 169699
     matchConfidence: high
     cooking: baked
   - raw: 10 g fresh mint
@@ -96,43 +96,43 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 532
-    energyKj: 2227
-    protein_g: 38.7
-    fat_g: 25.1
-    satFat_g: 5.2
-    carbs_g: 39.3
-    fiber_g: 5.2
-    sugar_g: 2.2
-    sodium_mg: 358
-    availableCarb_g: 34.1
+    energyKcal: 657
+    energyKj: 2749
+    protein_g: 42
+    fat_g: 24.2
+    satFat_g: 5.1
+    carbs_g: 64.5
+    fiber_g: 4.6
+    sugar_g: 0.8
+    sodium_mg: 364
+    availableCarb_g: 59.9
   glycemic:
-    gi: 39
-    gl: 13
+    gi: 51
+    gl: 31
     giBand: low
-    glBand: low
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 95
+    measuredGiPct: 97
   nutriScore:
     grade: A
-    points: -1
+    points: 0
     category: general
     version: "2023"
-    coverage: 0.92
+    coverage: 0.42
   inflammation:
-    score: -0.6
+    score: -0.3
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.07
   balance:
-    score: 6
+    score: 5
     band: moderate
-    nrf: 33
+    nrf: 26.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 93.3
-    ultraProcessedPct: 6.7
+    minimallyProcessedPct: 94.5
+    ultraProcessedPct: 5.5
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

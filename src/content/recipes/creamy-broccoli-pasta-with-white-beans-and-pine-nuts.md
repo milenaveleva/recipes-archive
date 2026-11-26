@@ -7,9 +7,9 @@ imageAlt: Creamy Broccoli Pasta with White Beans and Pine Nuts
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11658-kremes-brokkolis-teszta-feherbabbal-es-fenyomaggal
-  kcalPerServing: 832
+  kcalPerServing: 642
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT15M
 cookTime: PT1H55M
 totalTime: PT2H10M
@@ -36,13 +36,13 @@ ingredients:
     fdcId: 170379
     matchConfidence: high
     cooking: boiled
-  - raw: 300 g whole-wheat pasta (e.g. shells or fusilli), dry
+  - raw: 320 g whole-wheat pasta (e.g. shells or fusilli), dry
     group: Main ingredients
-    quantity: 300
+    quantity: 320
     unit: g
     item: whole-wheat pasta (e.g. shells or fusilli)
     note: dry
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -142,39 +142,39 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 857
-    energyKj: 3585
-    protein_g: 34.8
-    fat_g: 34.8
-    satFat_g: 4.3
-    carbs_g: 115.6
-    fiber_g: 22.2
-    sugar_g: 8.9
-    sodium_mg: 311
-    availableCarb_g: 93.4
+    energyKcal: 660
+    energyKj: 2763
+    protein_g: 26.8
+    fat_g: 26.2
+    satFat_g: 3.2
+    carbs_g: 90.4
+    fiber_g: 17.1
+    sugar_g: 6.8
+    sodium_mg: 233
+    availableCarb_g: 73.3
   glycemic:
     gi: 44
-    gl: 41
+    gl: 32
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 82
+    measuredGiPct: 83
   nutriScore:
     grade: A
-    points: -3
+    points: -2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.4
+    score: -0.3
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.25
+    aromaticAdjustment: -0.19
   balance:
     score: 7
     band: high
-    nrf: 46.7
+    nrf: 46.2
     version: NRF9.3
   processing:
     minimallyProcessedPct: 99.6

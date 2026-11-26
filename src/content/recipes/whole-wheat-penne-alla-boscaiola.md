@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14696-penne-alla-boscaiola-kremes-gombas-es-zoeldborsos-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -127,19 +127,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 643
-    energyKj: 2688
-    protein_g: 25.4
-    fat_g: 24.1
-    satFat_g: 5.2
-    carbs_g: 89
-    fiber_g: 14.1
-    sugar_g: 8.4
-    sodium_mg: 764
-    availableCarb_g: 74.8
+    energyKcal: 514
+    energyKj: 2151
+    protein_g: 20.3
+    fat_g: 19.3
+    satFat_g: 4.2
+    carbs_g: 71.2
+    fiber_g: 11.3
+    sugar_g: 6.7
+    sodium_mg: 612
+    availableCarb_g: 59.9
   glycemic:
     gi: 48
-    gl: 36
+    gl: 28
     giBand: low
     glBand: medium
     glBasis: meal
@@ -152,10 +152,10 @@ nutrition:
     version: "2023"
     coverage: 0.89
   inflammation:
-    score: -0.2
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.22
+    aromaticAdjustment: -0.17
   balance:
     score: 5
     band: moderate

@@ -7,9 +7,9 @@ imageAlt: Peanut Butter Ginger Noodles
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10566-mogyoros-gyoemberes-teszta
-  kcalPerServing: 780
+  kcalPerServing: 603
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -80,11 +80,11 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: raw
-  - raw: 300 g dried whole-wheat pasta
-    quantity: 300
+  - raw: 320 g dried whole-wheat pasta
+    quantity: 320
     unit: g
     item: dried whole-wheat pasta
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -150,24 +150,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 686
-    energyKj: 2872
-    protein_g: 28.8
-    fat_g: 24.1
-    satFat_g: 4.1
-    carbs_g: 102.3
-    fiber_g: 17.4
-    sugar_g: 12.6
-    sodium_mg: 1026
-    availableCarb_g: 84.3
+    energyKcal: 532
+    energyKj: 2228
+    protein_g: 22.3
+    fat_g: 18.2
+    satFat_g: 3.1
+    carbs_g: 80.4
+    fiber_g: 13.5
+    sugar_g: 9.6
+    sodium_mg: 769
+    availableCarb_g: 66.5
   glycemic:
     gi: 43
-    gl: 36
+    gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 87
+    measuredGiPct: 88
   nutriScore:
     grade: A
     points: 0
@@ -175,17 +175,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.5
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.24
+    aromaticAdjustment: -0.18
   balance:
     score: 8
     band: high
-    nrf: 62.9
+    nrf: 61.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 66.2
+    minimallyProcessedPct: 67.3
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

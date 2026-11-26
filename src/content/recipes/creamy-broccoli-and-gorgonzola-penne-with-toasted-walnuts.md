@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14536-kremes-brokkolis-gorgonzolas-penne-piritott-dioval
 author: Kifli Kukták
-servings: 2
+servings: 3
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g whole-wheat penne, dry
+  - raw: 240 g whole-wheat penne, dry
     group: Pasta and vegetables
-    quantity: 200
+    quantity: 240
     unit: g
     item: whole-wheat penne
     note: dry
-    grams: 200
+    grams: 240
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -125,43 +125,43 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 1017
-    energyKj: 4255
-    protein_g: 42.5
-    fat_g: 58.6
-    satFat_g: 18.3
-    carbs_g: 91.4
-    fiber_g: 14.8
-    sugar_g: 7.5
-    sodium_mg: 1985
-    availableCarb_g: 76.7
+    energyKcal: 725
+    energyKj: 3033
+    protein_g: 30.2
+    fat_g: 39.4
+    satFat_g: 12.3
+    carbs_g: 70.7
+    fiber_g: 11.1
+    sugar_g: 5.4
+    sodium_mg: 1324
+    availableCarb_g: 59.7
   glycemic:
-    gi: 45
-    gl: 34
+    gi: 46
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 84
+    measuredGiPct: 86
   nutriScore:
     grade: C
-    points: 6
+    points: 5
     category: general
     version: "2023"
-    coverage: 0.88
+    coverage: 0.89
   inflammation:
-    score: -0.2
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.27
+    aromaticAdjustment: -0.23
   balance:
     score: 5
     band: moderate
-    nrf: 27.8
+    nrf: 27.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 61.7
-    ultraProcessedPct: 11.3
+    minimallyProcessedPct: 64.2
+    ultraProcessedPct: 10.6
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

@@ -7,9 +7,9 @@ imageAlt: Caprese Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11641-caprese-teszta-gyors-es-egeszseges-olasz-vacsora
-  kcalPerServing: 713
+  kcalPerServing: 552
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT5M
 cookTime: PT25M
 totalTime: PT30M
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g whole-wheat spaghetti, dry
-    quantity: 300
+  - raw: 320 g whole-wheat spaghetti, dry
+    quantity: 320
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -87,19 +87,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 784
-    energyKj: 3281
-    protein_g: 33.6
-    fat_g: 39.5
-    satFat_g: 14.5
-    carbs_g: 80.6
-    fiber_g: 10
-    sugar_g: 4.9
-    sodium_mg: 470
-    availableCarb_g: 70.7
+    energyKcal: 606
+    energyKj: 2534
+    protein_g: 25.9
+    fat_g: 29.8
+    satFat_g: 10.9
+    carbs_g: 64.1
+    fiber_g: 7.9
+    sugar_g: 3.8
+    sodium_mg: 353
+    availableCarb_g: 56.2
   glycemic:
     gi: 48
-    gl: 34
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -119,10 +119,10 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 21.3
+    nrf: 21.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 68.2
+    minimallyProcessedPct: 69.1
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

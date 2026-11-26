@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13453-radicchios-gorgonzolas-penne-kremes-olasz-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -114,19 +114,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 718
-    energyKj: 3004
-    protein_g: 29.1
-    fat_g: 34.9
-    satFat_g: 11.1
-    carbs_g: 79.7
-    fiber_g: 10.5
-    sugar_g: 4
-    sodium_mg: 1162
-    availableCarb_g: 69.2
+    energyKcal: 574
+    energyKj: 2403
+    protein_g: 23.2
+    fat_g: 27.9
+    satFat_g: 8.9
+    carbs_g: 63.8
+    fiber_g: 8.4
+    sugar_g: 3.2
+    sodium_mg: 930
+    availableCarb_g: 55.4
   glycemic:
     gi: 48
-    gl: 33
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -142,7 +142,7 @@ nutrition:
     score: 0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.14
+    aromaticAdjustment: -0.11
   balance:
     score: 3
     band: low

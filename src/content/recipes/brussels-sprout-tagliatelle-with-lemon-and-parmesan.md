@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13544-kelbimbos-tagliatelle-citromos-parmezanos-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
@@ -115,19 +115,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 591
-    energyKj: 2472
-    protein_g: 22
-    fat_g: 22.2
-    satFat_g: 4.5
-    carbs_g: 84.7
-    fiber_g: 13.1
-    sugar_g: 5.3
-    sodium_mg: 768
-    availableCarb_g: 71.6
+    energyKcal: 473
+    energyKj: 1978
+    protein_g: 17.6
+    fat_g: 17.7
+    satFat_g: 3.6
+    carbs_g: 67.8
+    fiber_g: 10.5
+    sugar_g: 4.3
+    sodium_mg: 615
+    availableCarb_g: 57.3
   glycemic:
     gi: 47
-    gl: 34
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -140,10 +140,10 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.2
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.21
+    aromaticAdjustment: -0.17
   balance:
     score: 6
     band: moderate

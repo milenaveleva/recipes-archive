@@ -7,9 +7,9 @@ imageAlt: Creamy Tomato Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11108-kremes-paradicsomos-teszta
-  kcalPerServing: 744
+  kcalPerServing: 576
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -18,13 +18,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g whole-wheat penne, dry
+  - raw: 320 g whole-wheat penne, dry
     group: Main ingredients
-    quantity: 300
+    quantity: 320
     unit: g
     item: whole-wheat penne
     note: dry
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -146,44 +146,44 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 763
-    energyKj: 3194
-    protein_g: 28
-    fat_g: 36.7
-    satFat_g: 7.9
-    carbs_g: 88.2
-    fiber_g: 11.8
-    sugar_g: 10.2
-    sodium_mg: 409
-    availableCarb_g: 76.4
+    energyKcal: 590
+    energyKj: 2469
+    protein_g: 21.7
+    fat_g: 27.6
+    satFat_g: 5.9
+    carbs_g: 69.8
+    fiber_g: 9.3
+    sugar_g: 7.8
+    sodium_mg: 307
+    availableCarb_g: 60.5
   glycemic:
     gi: 49
-    gl: 37
+    gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 84
+    measuredGiPct: 85
   nutriScore:
     grade: B
     points: 2
     category: general
     version: "2023"
-    coverage: 0.85
+    coverage: 0.86
   inflammation:
-    score: -0.3
-    band: mildly-anti-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
-    aromaticAdjustment: -0.34
+    aromaticAdjustment: -0.28
   balance:
     score: 5
     band: moderate
-    nrf: 27.3
+    nrf: 27.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 69.3
-    ultraProcessedPct: 13.4
-    band: moderately-processed
+    minimallyProcessedPct: 70.2
+    ultraProcessedPct: 13
+    band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"
   dataSources:

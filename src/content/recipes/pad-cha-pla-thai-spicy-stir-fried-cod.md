@@ -26,13 +26,13 @@ ingredients:
     fdcId: 171955
     matchConfidence: medium
     cooking: fried
-  - raw: 200 g brown jasmine rice, uncooked
+  - raw: 160 g brown jasmine rice, uncooked
     group: Main ingredients
-    quantity: 200
+    quantity: 160
     unit: g
     item: brown jasmine rice
     note: uncooked
-    grams: 200
+    grams: 160
     fdcId: 169703
     matchConfidence: high
     cooking: boiled
@@ -132,24 +132,24 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 763
-    energyKj: 3192
-    protein_g: 55.3
-    fat_g: 19.2
-    satFat_g: 2.5
-    carbs_g: 91
-    fiber_g: 5.7
-    sugar_g: 4.9
-    sodium_mg: 1955
-    availableCarb_g: 85.2
+    energyKcal: 689
+    energyKj: 2884
+    protein_g: 53.8
+    fat_g: 18.6
+    satFat_g: 2.3
+    carbs_g: 75.7
+    fiber_g: 5
+    sugar_g: 4.7
+    sodium_mg: 1954
+    availableCarb_g: 70.7
   glycemic:
-    gi: 63
-    gl: 53
+    gi: 60
+    gl: 42
     giBand: medium
     glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 89
+    measuredGiPct: 86
   nutriScore:
     grade: B
     points: 1
@@ -164,11 +164,11 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 29.6
+    nrf: 30.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 97.6
-    ultraProcessedPct: 1.2
+    minimallyProcessedPct: 97.4
+    ultraProcessedPct: 1.4
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

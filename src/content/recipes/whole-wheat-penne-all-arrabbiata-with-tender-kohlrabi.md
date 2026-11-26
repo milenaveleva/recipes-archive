@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14432-penne-all-arrabbiata-zsenge-karalabeval-pikans-olasz-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -102,19 +102,19 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 551
-    energyKj: 2306
-    protein_g: 21.8
-    fat_g: 17
-    satFat_g: 4.1
-    carbs_g: 86.8
-    fiber_g: 13.8
-    sugar_g: 9
-    sodium_mg: 1010
-    availableCarb_g: 73
+    energyKcal: 441
+    energyKj: 1845
+    protein_g: 17.4
+    fat_g: 13.6
+    satFat_g: 3.3
+    carbs_g: 69.4
+    fiber_g: 11
+    sugar_g: 7.2
+    sodium_mg: 808
+    availableCarb_g: 58.4
   glycemic:
     gi: 47
-    gl: 34
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -127,10 +127,10 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.24
+    aromaticAdjustment: -0.19
   balance:
     score: 6
     band: moderate

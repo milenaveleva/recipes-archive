@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14551-voeroesboros-radicchios-tagliatelle-dioval
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g dried whole-wheat tagliatelle
+  - raw: 320 g dried whole-wheat tagliatelle
     group: Pasta and ragù
-    quantity: 300
+    quantity: 320
     unit: g
     item: dried whole-wheat tagliatelle
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -110,19 +110,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 710
-    energyKj: 2970
-    protein_g: 23
-    fat_g: 36.7
-    satFat_g: 6.5
-    carbs_g: 81.2
-    fiber_g: 11.1
-    sugar_g: 4.1
-    sodium_mg: 1176
-    availableCarb_g: 70.1
+    energyKcal: 550
+    energyKj: 2301
+    protein_g: 17.9
+    fat_g: 27.7
+    satFat_g: 4.9
+    carbs_g: 64.6
+    fiber_g: 8.8
+    sugar_g: 3.2
+    sodium_mg: 882
+    availableCarb_g: 55.8
   glycemic:
     gi: 48
-    gl: 33
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal
@@ -130,22 +130,22 @@ nutrition:
     measuredGiPct: 92
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.2
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.19
+    aromaticAdjustment: -0.14
   balance:
     score: 4
     band: low
-    nrf: 18
+    nrf: 18.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 91.9
+    minimallyProcessedPct: 92.1
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

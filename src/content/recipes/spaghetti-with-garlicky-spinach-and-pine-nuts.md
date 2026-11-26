@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13533-spagetti-fokhagymas-piritott-spenottal-es-fenyomaggal-15-perces-olasz-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT5M
 cookTime: PT10M
 totalTime: PT15M
@@ -113,19 +113,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 597
-    energyKj: 2498
-    protein_g: 21.7
-    fat_g: 25.5
-    satFat_g: 4.9
-    carbs_g: 78.8
-    fiber_g: 11
-    sugar_g: 3.6
-    sodium_mg: 858
-    availableCarb_g: 67.8
+    energyKcal: 478
+    energyKj: 1998
+    protein_g: 17.4
+    fat_g: 20.4
+    satFat_g: 3.9
+    carbs_g: 63
+    fiber_g: 8.8
+    sugar_g: 2.8
+    sodium_mg: 686
+    availableCarb_g: 54.2
   glycemic:
     gi: 49
-    gl: 33
+    gl: 27
     giBand: low
     glBand: medium
     glBasis: meal

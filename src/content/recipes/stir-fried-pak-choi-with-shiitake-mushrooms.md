@@ -7,7 +7,7 @@ imageAlt: Stir-Fried Pak Choi with Shiitake Mushrooms
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12520-piritott-pak-choi-shiitake-gombaval
-  kcalPerServing: 180
+  kcalPerServing: 290
 author: Kifli Kukták
 servings: 4
 prepTime: PT5M
@@ -101,12 +101,12 @@ ingredients:
     fdcId: 170150
     matchConfidence: high
     cooking: raw
-  - raw: 200 g brown jasmine rice, uncooked
-    quantity: 200
+  - raw: 320 g brown jasmine rice, uncooked
+    quantity: 320
     unit: g
     item: brown jasmine rice
     note: uncooked
-    grams: 200
+    grams: 320
     fdcId: 169703
     matchConfidence: high
     cooking: boiled
@@ -121,24 +121,24 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 267
-    energyKj: 1119
-    protein_g: 8.3
-    fat_g: 6.6
-    satFat_g: 1
-    carbs_g: 45.4
-    fiber_g: 4.3
-    sugar_g: 2.9
-    sodium_mg: 1181
-    availableCarb_g: 41.1
+    energyKcal: 378
+    energyKj: 1580
+    protein_g: 10.6
+    fat_g: 7.6
+    satFat_g: 1.2
+    carbs_g: 68.3
+    fiber_g: 5.4
+    sugar_g: 3.1
+    sodium_mg: 1183
+    availableCarb_g: 62.9
   glycemic:
-    gi: 65
-    gl: 27
+    gi: 67
+    gl: 42
     giBand: medium
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 88
+    measuredGiPct: 92
   nutriScore:
     grade: C
     points: 3
@@ -146,17 +146,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.3
-    band: mildly-anti-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
     aromaticAdjustment: -0.22
   balance:
-    score: 7
-    band: high
-    nrf: 46.7
+    score: 6
+    band: moderate
+    nrf: 38.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 96.5
+    minimallyProcessedPct: 97.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

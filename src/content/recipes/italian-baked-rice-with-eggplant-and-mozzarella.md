@@ -25,12 +25,12 @@ ingredients:
     fdcId: 169228
     matchConfidence: high
     cooking: baked
-  - raw: 300 g brown arborio rice, uncooked
-    quantity: 300
+  - raw: 320 g brown arborio rice, uncooked
+    quantity: 320
     unit: g
     item: brown arborio rice
     note: uncooked
-    grams: 300
+    grams: 320
     fdcId: 169706
     matchConfidence: high
     cooking: baked
@@ -128,24 +128,24 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 755
-    energyKj: 3161
-    protein_g: 30
-    fat_g: 33.8
-    satFat_g: 13.3
-    carbs_g: 87.6
-    fiber_g: 11.6
+    energyKcal: 774
+    energyKj: 3237
+    protein_g: 30.4
+    fat_g: 33.9
+    satFat_g: 13.4
+    carbs_g: 91.4
+    fiber_g: 11.7
     sugar_g: 16.8
     sodium_mg: 1972
-    availableCarb_g: 76.1
+    availableCarb_g: 79.7
   glycemic:
-    gi: 55
-    gl: 42
-    giBand: low
+    gi: 56
+    gl: 44
+    giBand: medium
     glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 72
+    measuredGiPct: 73
   nutriScore:
     grade: B
     points: 2
@@ -160,10 +160,10 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 19.7
+    nrf: 19.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 58.8
+    minimallyProcessedPct: 59.8
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

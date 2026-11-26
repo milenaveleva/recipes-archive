@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14442-bun-tom-nuong-vietnami-garnelas-tesztatal
 author: Kifli Kukták
-servings: 2
+servings: 3
 prepTime: PT15M
 cookTime: PT10M
 totalTime: PT25M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 200 g whole-wheat thin noodles (in place of rice noodles), dry
+  - raw: 240 g whole-wheat thin noodles (in place of rice noodles), dry
     group: Noodles and vegetables
-    quantity: 200
+    quantity: 240
     unit: g
     item: whole-wheat thin noodles (in place of rice noodles)
     note: dry
-    grams: 200
+    grams: 240
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -153,24 +153,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 829
-    energyKj: 3467
-    protein_g: 53.5
-    fat_g: 28
-    satFat_g: 3.6
-    carbs_g: 103.4
-    fiber_g: 15.5
-    sugar_g: 17.8
-    sodium_mg: 2373
-    availableCarb_g: 88
+    energyKcal: 599
+    energyKj: 2508
+    protein_g: 37.5
+    fat_g: 19
+    satFat_g: 2.4
+    carbs_g: 78.7
+    fiber_g: 11.5
+    sugar_g: 12.2
+    sodium_mg: 1582
+    availableCarb_g: 67.2
   glycemic:
-    gi: 47
-    gl: 42
+    gi: 48
+    gl: 32
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 85
+    measuredGiPct: 87
   nutriScore:
     grade: B
     points: 2
@@ -181,14 +181,14 @@ nutrition:
     score: -0.3
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.3
+    aromaticAdjustment: -0.27
   balance:
     score: 6
     band: moderate
-    nrf: 33.1
+    nrf: 32.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98.8
+    minimallyProcessedPct: 98.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13664-kremes-porehagymas-penne-olasz-serpenyos-teszta
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -115,21 +115,21 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 651
-    energyKj: 2726
-    protein_g: 22.2
-    fat_g: 27.1
-    satFat_g: 5.7
-    carbs_g: 87.4
-    fiber_g: 10.7
-    sugar_g: 6.8
-    sodium_mg: 875
-    availableCarb_g: 76.7
+    energyKcal: 521
+    energyKj: 2181
+    protein_g: 17.7
+    fat_g: 21.7
+    satFat_g: 4.5
+    carbs_g: 69.9
+    fiber_g: 8.5
+    sugar_g: 5.4
+    sodium_mg: 700
+    availableCarb_g: 61.4
   glycemic:
     gi: 52
-    gl: 40
+    gl: 32
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 84
@@ -140,10 +140,10 @@ nutrition:
     version: "2023"
     coverage: 0.91
   inflammation:
-    score: -0.2
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.21
+    aromaticAdjustment: -0.17
   balance:
     score: 4
     band: low

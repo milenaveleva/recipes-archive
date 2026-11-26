@@ -7,9 +7,9 @@ imageAlt: Cheesy Broccoli Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12555-sajtos-teszta-brokkolival-kremes-egylabas-vacsora
-  kcalPerServing: 829
+  kcalPerServing: 663
 author: Kifli Kukták
-servings: 4
+servings: 5
 cuisine: American
 course: Main Course
 lists:
@@ -129,19 +129,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 711
-    energyKj: 2973
-    protein_g: 28.1
-    fat_g: 31
-    satFat_g: 9.4
-    carbs_g: 87.8
-    fiber_g: 11.9
-    sugar_g: 7.9
-    sodium_mg: 1240
-    availableCarb_g: 76
+    energyKcal: 569
+    energyKj: 2379
+    protein_g: 22.5
+    fat_g: 24.8
+    satFat_g: 7.5
+    carbs_g: 70.3
+    fiber_g: 9.5
+    sugar_g: 6.3
+    sodium_mg: 992
+    availableCarb_g: 60.8
   glycemic:
     gi: 46
-    gl: 35
+    gl: 28
     giBand: low
     glBand: medium
     glBasis: meal
@@ -157,7 +157,7 @@ nutrition:
     score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.37
+    aromaticAdjustment: -0.31
   balance:
     score: 5
     band: moderate

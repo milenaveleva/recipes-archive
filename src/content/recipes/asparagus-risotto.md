@@ -7,7 +7,7 @@ imageAlt: Asparagus Risotto
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10317-spargas-rizotto
-  kcalPerServing: 585
+  kcalPerServing: 648
 author: Kifli Kukták
 servings: 4
 prepTime: PT15M
@@ -25,12 +25,12 @@ ingredients:
     fdcId: 2710823
     matchConfidence: medium
     cooking: boiled
-  - raw: 250 g brown arborio rice, uncooked
-    quantity: 250
+  - raw: 320 g brown arborio rice, uncooked
+    quantity: 320
     unit: g
     item: brown arborio rice
     note: uncooked
-    grams: 250
+    grams: 320
     fdcId: 169706
     matchConfidence: high
     cooking: boiled
@@ -92,27 +92,27 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 727
-    energyKj: 3043
-    protein_g: 12.9
-    fat_g: 53
+    energyKcal: 791
+    energyKj: 3308
+    protein_g: 14.3
+    fat_g: 53.4
     satFat_g: 10.2
-    carbs_g: 51.4
-    fiber_g: 3
-    sugar_g: 1.9
-    sodium_mg: 691
-    availableCarb_g: 48.4
+    carbs_g: 64.7
+    fiber_g: 3.6
+    sugar_g: 2
+    sodium_mg: 692
+    availableCarb_g: 61.1
   glycemic:
     gi: 68
-    gl: 33
+    gl: 42
     giBand: medium
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 94
+    measuredGiPct: 95
   nutriScore:
     grade: C
-    points: 8
+    points: 6
     category: general
     version: "2023"
     coverage: 1
@@ -124,10 +124,10 @@ nutrition:
   balance:
     score: 3
     band: low
-    nrf: 9.8
+    nrf: 10.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88.5
+    minimallyProcessedPct: 89.4
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

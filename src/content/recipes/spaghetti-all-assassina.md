@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13350-spaghetti-all-assassina-ropogos-pikans-olasz-teszta
 author: Kifli Kukták
-servings: 3
+servings: 4
 prepTime: PT5M
 cookTime: PT20M
 totalTime: PT25M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 300 g whole-wheat spaghetti, dry
+  - raw: 320 g whole-wheat spaghetti, dry
     group: Main ingredients
-    quantity: 300
+    quantity: 320
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 300
+    grams: 320
     fdcId: 169738
     matchConfidence: medium
     cooking: fried
@@ -85,24 +85,24 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 594
-    energyKj: 2485
-    protein_g: 17.6
-    fat_g: 21.6
-    satFat_g: 3
-    carbs_g: 92.1
-    fiber_g: 12.9
-    sugar_g: 12.4
-    sodium_mg: 845
-    availableCarb_g: 79.2
+    energyKcal: 463
+    energyKj: 1937
+    protein_g: 13.9
+    fat_g: 16.4
+    satFat_g: 2.3
+    carbs_g: 72.8
+    fiber_g: 10.1
+    sugar_g: 9.5
+    sodium_mg: 634
+    availableCarb_g: 62.6
   glycemic:
     gi: 47
-    gl: 37
+    gl: 30
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 81
+    measuredGiPct: 82
   nutriScore:
     grade: B
     points: 2
@@ -115,12 +115,12 @@ nutrition:
     method: fii v4
     aromaticAdjustment: -0.21
   balance:
-    score: 6
+    score: 5
     band: moderate
-    nrf: 31
+    nrf: 30.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88.2
+    minimallyProcessedPct: 88.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
