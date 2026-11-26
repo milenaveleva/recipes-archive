@@ -7,7 +7,7 @@ imageAlt: Pasta al Tonno
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12152-pasta-al-tonno-gyors-tonhalas-teszta
-  kcalPerServing: 465
+  kcalPerServing: 524
 author: Kifli Kukták
 servings: 3
 prepTime: PT10M
@@ -34,12 +34,12 @@ ingredients:
     fdcId: 170050
     matchConfidence: medium
     cooking: fried
-  - raw: 250 g whole-wheat pasta, dry
-    quantity: 250
+  - raw: 300 g whole-wheat pasta, dry
+    quantity: 300
     unit: g
     item: whole-wheat pasta
     note: dry
-    grams: 250
+    grams: 300
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -116,24 +116,24 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 461
-    energyKj: 1929
-    protein_g: 24.7
-    fat_g: 12.9
-    satFat_g: 1.6
-    carbs_g: 68.2
-    fiber_g: 8.8
-    sugar_g: 4.8
+    energyKcal: 520
+    energyKj: 2175
+    protein_g: 27
+    fat_g: 13.4
+    satFat_g: 1.7
+    carbs_g: 80.4
+    fiber_g: 10.3
+    sugar_g: 5.2
     sodium_mg: 487
-    availableCarb_g: 59.4
+    availableCarb_g: 70.1
   glycemic:
     gi: 49
-    gl: 29
+    gl: 34
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 90
+    measuredGiPct: 92
   nutriScore:
     grade: A
     points: 0
@@ -148,10 +148,10 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 40.3
+    nrf: 39
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 87.9
+    minimallyProcessedPct: 89.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

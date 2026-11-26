@@ -26,13 +26,13 @@ ingredients:
     fdcId: 175179
     matchConfidence: medium
     cooking: fried
-  - raw: 150 g whole-wheat thin noodles (in place of glass noodles), dry
+  - raw: 200 g whole-wheat thin noodles (in place of glass noodles), dry
     group: Main ingredients
-    quantity: 150
+    quantity: 200
     unit: g
     item: whole-wheat thin noodles (in place of glass noodles)
     note: dry
-    grams: 150
+    grams: 200
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -141,27 +141,27 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 606
-    energyKj: 2535
-    protein_g: 45.8
-    fat_g: 19.4
-    satFat_g: 2.3
-    carbs_g: 68.9
-    fiber_g: 10.4
-    sugar_g: 6.4
+    energyKcal: 694
+    energyKj: 2903
+    protein_g: 49.2
+    fat_g: 20.1
+    satFat_g: 2.4
+    carbs_g: 87.3
+    fiber_g: 12.7
+    sugar_g: 7.1
     sodium_mg: 2422
-    availableCarb_g: 58.2
+    availableCarb_g: 74.3
   glycemic:
-    gi: 44
-    gl: 25
+    gi: 46
+    gl: 34
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 86
+    measuredGiPct: 89
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
     coverage: 1
@@ -173,11 +173,11 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 30.7
+    nrf: 30.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 96.4
-    ultraProcessedPct: 1.5
+    minimallyProcessedPct: 96.8
+    ultraProcessedPct: 1.3
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

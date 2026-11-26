@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11713-kremes-mascarpones-spagetti-suelt-koktelparadicsommal
 author: Kifli Kukták
-servings: 4
+servings: 3
 cuisine: Italian
 course: Main Course
 lists:
@@ -120,19 +120,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 594
-    energyKj: 2486
-    protein_g: 16.1
-    fat_g: 33.7
-    satFat_g: 13.6
-    carbs_g: 60.2
-    fiber_g: 5.6
-    sugar_g: 7.8
-    sodium_mg: 332
-    availableCarb_g: 54.7
+    energyKcal: 792
+    energyKj: 3315
+    protein_g: 21.5
+    fat_g: 44.9
+    satFat_g: 18.1
+    carbs_g: 80.3
+    fiber_g: 7.4
+    sugar_g: 10.4
+    sodium_mg: 442
+    availableCarb_g: 72.9
   glycemic:
     gi: 44
-    gl: 24
+    gl: 32
     giBand: low
     glBand: medium
     glBasis: meal
@@ -145,10 +145,10 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.4
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.28
+    aromaticAdjustment: -0.34
   balance:
     score: 3
     band: low

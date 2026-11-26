@@ -7,9 +7,9 @@ imageAlt: Peanut Butter Ginger Noodles
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10566-mogyoros-gyoemberes-teszta
-  kcalPerServing: 585
+  kcalPerServing: 780
 author: Kifli Kukták
-servings: 4
+servings: 3
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -150,19 +150,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 515
-    energyKj: 2154
-    protein_g: 21.6
-    fat_g: 18.1
-    satFat_g: 3.1
-    carbs_g: 76.7
-    fiber_g: 13.1
-    sugar_g: 9.5
-    sodium_mg: 769
-    availableCarb_g: 63.3
+    energyKcal: 686
+    energyKj: 2872
+    protein_g: 28.8
+    fat_g: 24.1
+    satFat_g: 4.1
+    carbs_g: 102.3
+    fiber_g: 17.4
+    sugar_g: 12.6
+    sodium_mg: 1026
+    availableCarb_g: 84.3
   glycemic:
     gi: 43
-    gl: 27
+    gl: 36
     giBand: low
     glBand: medium
     glBasis: meal
@@ -175,10 +175,10 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.4
+    score: -0.5
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.18
+    aromaticAdjustment: -0.24
   balance:
     score: 8
     band: high

@@ -7,9 +7,9 @@ imageAlt: Caprese Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11641-caprese-teszta-gyors-es-egeszseges-olasz-vacsora
-  kcalPerServing: 535
+  kcalPerServing: 713
 author: Kifli Kukták
-servings: 4
+servings: 3
 prepTime: PT5M
 cookTime: PT25M
 totalTime: PT30M
@@ -87,19 +87,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 588
-    energyKj: 2460
-    protein_g: 25.2
-    fat_g: 29.6
-    satFat_g: 10.9
-    carbs_g: 60.5
-    fiber_g: 7.5
-    sugar_g: 3.7
-    sodium_mg: 353
-    availableCarb_g: 53
+    energyKcal: 784
+    energyKj: 3281
+    protein_g: 33.6
+    fat_g: 39.5
+    satFat_g: 14.5
+    carbs_g: 80.6
+    fiber_g: 10
+    sugar_g: 4.9
+    sodium_mg: 470
+    availableCarb_g: 70.7
   glycemic:
     gi: 48
-    gl: 25
+    gl: 34
     giBand: low
     glBand: medium
     glBasis: meal

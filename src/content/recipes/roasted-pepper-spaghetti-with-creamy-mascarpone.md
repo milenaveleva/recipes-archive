@@ -7,9 +7,9 @@ imageAlt: Roasted Pepper Spaghetti with Creamy Mascarpone
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12871-suelt-paprikas-spagetti-kremes-mascarponeval
-  kcalPerServing: 450
+  kcalPerServing: 300
 author: Kifli Kukták
-servings: 2
+servings: 3
 prepTime: PT15M
 cookTime: PT30M
 totalTime: PT45M
@@ -121,19 +121,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 870
-    energyKj: 3641
-    protein_g: 43.6
-    fat_g: 18.1
-    satFat_g: 8.5
-    carbs_g: 146.2
-    fiber_g: 22.6
-    sugar_g: 15
-    sodium_mg: 1981
-    availableCarb_g: 123.6
+    energyKcal: 580
+    energyKj: 2427
+    protein_g: 29.1
+    fat_g: 12.1
+    satFat_g: 5.7
+    carbs_g: 97.5
+    fiber_g: 15.1
+    sugar_g: 10
+    sodium_mg: 1320
+    availableCarb_g: 82.4
   glycemic:
     gi: 50
-    gl: 62
+    gl: 41
     giBand: low
     glBand: high
     glBasis: meal

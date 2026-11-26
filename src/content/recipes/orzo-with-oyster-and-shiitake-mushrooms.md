@@ -7,9 +7,9 @@ imageAlt: Orzo with Oyster and Shiitake Mushrooms
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13000-orzo-laskagombaval-es-shiitake-gombaval
-  kcalPerServing: 580
+  kcalPerServing: 773
 author: Kifli Kukták
-servings: 4
+servings: 3
 prepTime: PT15M
 cookTime: PT15M
 totalTime: PT30M
@@ -112,21 +112,21 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 627
-    energyKj: 2625
-    protein_g: 34.1
-    fat_g: 23.9
-    satFat_g: 10.2
-    carbs_g: 76.6
-    fiber_g: 10.9
-    sugar_g: 8.6
-    sodium_mg: 1421
-    availableCarb_g: 65.7
+    energyKcal: 837
+    energyKj: 3500
+    protein_g: 45.5
+    fat_g: 31.9
+    satFat_g: 13.6
+    carbs_g: 102.1
+    fiber_g: 14.6
+    sugar_g: 11.5
+    sodium_mg: 1895
+    availableCarb_g: 87.6
   glycemic:
     gi: 50
-    gl: 33
+    gl: 43
     giBand: low
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 73
@@ -137,10 +137,10 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.4
+    score: 0.3
     band: mildly-pro-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.39
+    aromaticAdjustment: -0.41
   balance:
     score: 4
     band: low

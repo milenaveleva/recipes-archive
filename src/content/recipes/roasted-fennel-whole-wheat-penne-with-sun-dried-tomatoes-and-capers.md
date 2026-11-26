@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14353-suelt-edeskoemenyes-penne-aszalt-paradicsommal-es-kapribogyoval-sziciliai-serpenyos-teszta
 author: Kifli Kukták
-servings: 4
+servings: 3
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,11 +17,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 320 g dry whole-wheat penne
-    quantity: 320
+  - raw: 300 g dry whole-wheat penne
+    quantity: 300
     unit: g
     item: dry whole-wheat penne
-    grams: 320
+    grams: 300
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -102,24 +102,24 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 503
-    energyKj: 2104
-    protein_g: 20.3
-    fat_g: 15.7
-    satFat_g: 4
-    carbs_g: 78.9
-    fiber_g: 13.2
-    sugar_g: 13.8
-    sodium_mg: 475
-    availableCarb_g: 65.7
+    energyKcal: 647
+    energyKj: 2707
+    protein_g: 26.1
+    fat_g: 20.8
+    satFat_g: 5.3
+    carbs_g: 100.4
+    fiber_g: 17
+    sugar_g: 18.2
+    sodium_mg: 633
+    availableCarb_g: 83.4
   glycemic:
     gi: 50
-    gl: 33
+    gl: 42
     giBand: low
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 78
+    measuredGiPct: 77
   nutriScore:
     grade: B
     points: 1
@@ -134,10 +134,10 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 34.5
+    nrf: 34.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 89.4
+    minimallyProcessedPct: 89
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -156,7 +156,7 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Put a large pot of water on to boil for the pasta. When it is boiling, salt it generously with fine salt, then add the 320 g dry penne and cook for 1 minute less than the package time so it stays perfectly al dente. Before draining, scoop out 1 cup (about 150 ml) of starchy cooking water.
+1. Put a large pot of water on to boil for the pasta. When it is boiling, salt it generously with fine salt, then add the 300 g dry penne and cook for 1 minute less than the package time so it stays perfectly al dente. Before draining, scoop out 1 cup (about 150 ml) of starchy cooking water.
 2. Meanwhile, prepare the vegetables: wash the 2 fennel bulbs and set aside the nice green dill-like fronds for garnish. Halve the bulbs, remove the hard core and slice into thin strips. Slice the 3 cloves of fresh garlic finely, cut the 80 g sun-dried tomatoes into thin strips and drain the 25 g capers.
 3. In a wide frying pan, heat 40 ml extra virgin olive oil over medium heat. Add the sliced fennel, season with salt and pepper to taste and fry for 7-8 minutes until nicely tender and caramelised golden brown at the edges.
 4. Add the thinly sliced garlic, sun-dried tomato strips, rinsed capers and a pinch of chilli flakes to the pan. Fry for another 1-2 minutes, stirring constantly, until the garlic smells fantastic, taking care not to burn it.

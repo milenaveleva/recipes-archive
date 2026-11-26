@@ -12,15 +12,15 @@ totalTime: PT50M
 cuisine: Asian-Inspired
 course: Main Course
 ingredients:
-  - raw: 1 cup brown rice
+  - raw: 1 cup cooked brown rice (≈ 68 g uncooked)
     quantity: 1
     unit: cup
     item: brown rice
-    grams: 185
-    milliliters: 236.588
+    note: cooked (≈ 68 g uncooked)
+    grams: 68
     fdcId: 169703
     matchConfidence: high
-    cooking: baked
+    cooking: boiled
   - raw: 1 tbsp chili oil
     quantity: 1
     unit: tbsp
@@ -213,43 +213,43 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 930
-    energyKj: 3892
-    protein_g: 33.7
-    fat_g: 36.4
-    satFat_g: 5.4
-    carbs_g: 130
-    fiber_g: 23.3
-    sugar_g: 25.4
-    sodium_mg: 926
-    availableCarb_g: 106.7
+    energyKcal: 715
+    energyKj: 2993
+    protein_g: 29.3
+    fat_g: 34.5
+    satFat_g: 5
+    carbs_g: 85.4
+    fiber_g: 21.2
+    sugar_g: 25
+    sodium_mg: 923
+    availableCarb_g: 64.3
   glycemic:
-    gi: 57
-    gl: 61
-    giBand: medium
-    glBand: high
+    gi: 48
+    gl: 30
+    giBand: low
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 77
+    measuredGiPct: 61
   nutriScore:
     grade: A
     points: 0
     category: general
     version: "2023"
-    coverage: 0.97
+    coverage: 0.96
   inflammation:
-    score: -0.4
+    score: -0.6
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.24
   balance:
     score: 5
     band: moderate
-    nrf: 27.8
+    nrf: 30.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88.6
-    ultraProcessedPct: 1.4
+    minimallyProcessedPct: 85.1
+    ultraProcessedPct: 1.8
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-06-30"
@@ -271,6 +271,6 @@ updatedAt: "2026-06-30"
 ## Method
 
 1. Prepare the rice: Preheat the oven to 400°F (200°C) fan-forced. To a large baking tray lined with baking paper, combine the cooked rice and chili oil. Spread into a thin layer. Bake for 30 minutes on the middle rack, stirring halfway. Once the rice has cooled down a bit, fold the baking paper over it and use a jar to crush the rice; this avoids large clumps of crispy rice.
-2. Prepare the Mushrooms: Separate the caps and stems of the king oyster mushrooms. Slice the caps with a knife and shred the stems with a fork. Chop the base of the shimeji mushrooms and ensure they are separated. Marinate the Mushrooms: In a large lidded container, combine 1/2 tbsp gochujang, 2 tsp tamari, 1/2 tbsp maple syrup, and 1 tsp rice vinegar, stirring until a homogenous paste is formed. Add the mushrooms to the container, close the lid, and shake well to coat them evenly.Cook the Mushrooms: In a large pan over medium heat, add the mushrooms and cook for about 10 minutes until they release their juices. Once they start looking dry, add the sesame oil, stir, and cook for 2 minutes without stirring to allow browning. Stir again, then leave them undisturbed for another 2 minutes to brown further.
+2. Prepare the Mushrooms: Separate the caps and stems of the king oyster mushrooms. Slice the caps with a knife and shred the stems with a fork. Chop the base of the shimeji mushrooms and ensure they are separated. Marinate the Mushrooms: In a large lidded container, combine 1/2 tbsp gochujang, 2 tsp tamari, 1/2 tbsp honey, and 1 tsp rice vinegar, stirring until a homogenous paste is formed. Add the mushrooms to the container, close the lid, and shake well to coat them evenly.Cook the Mushrooms: In a large pan over medium heat, add the mushrooms and cook for about 10 minutes until they release their juices. Once they start looking dry, add the sesame oil, stir, and cook for 2 minutes without stirring to allow browning. Stir again, then leave them undisturbed for another 2 minutes to brown further.
 3. Prepare the peanut sauce: In a small blender, add peanut butter, ginger, garlic, lime juice, tamari, honey, oat milk, and gochujang. Blend until smooth.Or mince the ginger and garlic, and whisk together with the rest of the ingredients.
 4. Assemble the salad: Between 2 bowls, divide the edamame, cucumber, spring onion, avocado, mint, mushrooms, and crispy rice. Cover with peanut sauce, and enjoy!

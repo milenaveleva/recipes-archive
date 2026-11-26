@@ -7,9 +7,9 @@ imageAlt: Penne with Roasted Pepper and Tomato Sauce
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12864-penne-paprikas-paradicsomos-martassal
-  kcalPerServing: 385
+  kcalPerServing: 572
 author: Kifli Kukták
-servings: 4
+servings: 3
 prepTime: PT25M
 cookTime: PT20M
 totalTime: PT45M
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g dry whole-wheat penne
+  - raw: 300 g dry whole-wheat penne
     group: Main ingredients
-    quantity: 250
+    quantity: 300
     unit: g
     item: dry whole-wheat penne
-    grams: 250
+    grams: 300
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -123,24 +123,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 358
-    energyKj: 1499
-    protein_g: 10.8
-    fat_g: 12.4
-    satFat_g: 1.8
-    carbs_g: 56.9
-    fiber_g: 8.5
-    sugar_g: 7.8
-    sodium_mg: 423
-    availableCarb_g: 48.4
+    energyKcal: 536
+    energyKj: 2244
+    protein_g: 16.7
+    fat_g: 17
+    satFat_g: 2.4
+    carbs_g: 88
+    fiber_g: 12.8
+    sugar_g: 10.9
+    sodium_mg: 564
+    availableCarb_g: 75.2
   glycemic:
     gi: 45
-    gl: 22
+    gl: 34
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 83
+    measuredGiPct: 85
   nutriScore:
     grade: B
     points: 1
@@ -148,17 +148,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.23
+    aromaticAdjustment: -0.3
   balance:
     score: 7
     band: high
-    nrf: 44.1
+    nrf: 42.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 93.8
+    minimallyProcessedPct: 94.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

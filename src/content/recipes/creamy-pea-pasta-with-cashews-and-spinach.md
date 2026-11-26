@@ -7,9 +7,9 @@ imageAlt: Creamy Pea Pasta with Cashews and Spinach
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12117-kremes-zoeldborsos-teszta-kesudioval-es-spenottal
-  kcalPerServing: 485
+  kcalPerServing: 647
 author: Kifli Kukták
-servings: 4
+servings: 3
 prepTime: PT10M
 cookTime: PT20M
 totalTime: PT30M
@@ -105,19 +105,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 466
-    energyKj: 1950
-    protein_g: 16.5
-    fat_g: 16.5
-    satFat_g: 1.8
-    carbs_g: 69.4
-    fiber_g: 10.1
-    sugar_g: 6.3
-    sodium_mg: 85
-    availableCarb_g: 59.3
+    energyKcal: 621
+    energyKj: 2600
+    protein_g: 22.1
+    fat_g: 22
+    satFat_g: 2.5
+    carbs_g: 92.5
+    fiber_g: 13.4
+    sugar_g: 8.4
+    sodium_mg: 113
+    availableCarb_g: 79.1
   glycemic:
     gi: 49
-    gl: 29
+    gl: 39
     giBand: low
     glBand: medium
     glBasis: meal

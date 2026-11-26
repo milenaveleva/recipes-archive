@@ -17,15 +17,15 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 2 cans chickpeas, drained
+  - raw: 2 cans chickpeas, drained (≈ 173 g uncooked)
     group: For the curry base
     quantity: 2
     unit: cans
     item: chickpeas
-    note: drained
-    grams: 480
-    fdcId: 173800
-    matchConfidence: medium
+    note: drained (≈ 173 g uncooked)
+    grams: 173
+    fdcId: 173756
+    matchConfidence: high
     cooking: boiled
   - raw: 2 fennel bulbs
     group: For the curry base
@@ -161,42 +161,42 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 691
-    energyKj: 2892
-    protein_g: 17.9
-    fat_g: 32.8
+    energyKcal: 688
+    energyKj: 2878
+    protein_g: 18.3
+    fat_g: 32.1
     satFat_g: 24.4
-    carbs_g: 88.7
-    fiber_g: 15.9
-    sugar_g: 15.5
-    sodium_mg: 1143
-    availableCarb_g: 72.8
+    carbs_g: 89
+    fiber_g: 13.5
+    sugar_g: 15.3
+    sodium_mg: 858
+    availableCarb_g: 75.5
   glycemic:
     gi: 51
-    gl: 37
+    gl: 38
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 76
+    measuredGiPct: 77
   nutriScore:
     grade: C
-    points: 5
+    points: 4
     category: general
     version: "2023"
     coverage: 0.84
   inflammation:
-    score: 0.2
+    score: 0.1
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.5
   balance:
     score: 3
     band: low
-    nrf: 10.2
+    nrf: 10.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 44
+    minimallyProcessedPct: 44.2
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

@@ -7,9 +7,9 @@ imageAlt: Whole-Wheat Garganelli with Salmon and Zucchini
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10381-garganelli-lazaccal-es-cukkinivel
-  kcalPerServing: 785
+  kcalPerServing: 628
 author: Pataky Péter
-servings: 4
+servings: 5
 prepTime: PT2H15M
 cookTime: PT15M
 totalTime: PT2H30M
@@ -143,21 +143,21 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 881
-    energyKj: 3687
-    protein_g: 44
-    fat_g: 39.5
-    satFat_g: 8.4
-    carbs_g: 95.1
-    fiber_g: 12.1
-    sugar_g: 4
-    sodium_mg: 637
-    availableCarb_g: 82.9
+    energyKcal: 705
+    energyKj: 2950
+    protein_g: 35.2
+    fat_g: 31.6
+    satFat_g: 6.7
+    carbs_g: 76
+    fiber_g: 9.7
+    sugar_g: 3.2
+    sodium_mg: 510
+    availableCarb_g: 66.3
   glycemic:
     gi: 48
-    gl: 40
+    gl: 32
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 97
@@ -171,7 +171,7 @@ nutrition:
     score: -0.2
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.07
+    aromaticAdjustment: -0.05
   balance:
     score: 5
     band: moderate

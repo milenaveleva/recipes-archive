@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10583-feltuningolt-kezmuves-mac-cheese
 author: Kifli Kukták
-servings: 4
+servings: 3
 prepTime: PT15M
 cookTime: PT25M
 totalTime: PT40M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g whole-wheat macaroni (or any similar whole-wheat pasta), dry
+  - raw: 300 g whole-wheat macaroni (or any similar whole-wheat pasta), dry
     group: Main ingredients
-    quantity: 250
+    quantity: 300
     unit: g
     item: whole-wheat macaroni (or any similar whole-wheat pasta)
     note: dry
-    grams: 250
+    grams: 300
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -135,43 +135,43 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 642
-    energyKj: 2686
-    protein_g: 30.9
-    fat_g: 30.9
-    satFat_g: 12.5
-    carbs_g: 62.7
-    fiber_g: 6.7
-    sugar_g: 9
-    sodium_mg: 836
-    availableCarb_g: 56
+    energyKcal: 914
+    energyKj: 3826
+    protein_g: 43.6
+    fat_g: 41.7
+    satFat_g: 16.8
+    carbs_g: 95.8
+    fiber_g: 10.4
+    sugar_g: 12.4
+    sodium_mg: 1116
+    availableCarb_g: 85.4
   glycemic:
     gi: 52
-    gl: 29
+    gl: 44
     giBand: low
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 93
+    measuredGiPct: 94
   nutriScore:
-    grade: C
-    points: 4
+    grade: B
+    points: 2
     category: general
     version: "2023"
-    coverage: 0.61
+    coverage: 0.64
   inflammation:
-    score: 0.7
+    score: 0.6
     band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.02
   balance:
     score: 3
     band: low
-    nrf: 16.9
+    nrf: 17.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 44
-    ultraProcessedPct: 16.5
+    minimallyProcessedPct: 47.6
+    ultraProcessedPct: 15.4
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

@@ -7,7 +7,7 @@ imageAlt: Spaghetti with Pecorino and Shrimp
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12396-spagetti-pecorinoval-es-garnelaval
-  kcalPerServing: 620
+  kcalPerServing: 655
 author: Kifli Kukták
 servings: 1
 prepTime: PT10M
@@ -18,11 +18,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 90 g dry whole-wheat spaghetti
-    quantity: 90
+  - raw: 100 g dry whole-wheat spaghetti
+    quantity: 100
     unit: g
     item: dry whole-wheat spaghetti
-    grams: 90
+    grams: 100
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -91,19 +91,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 1132
-    energyKj: 4735
-    protein_g: 45.7
-    fat_g: 78.1
-    satFat_g: 16.2
-    carbs_g: 69.6
-    fiber_g: 9.1
-    sugar_g: 2.8
+    energyKcal: 1167
+    energyKj: 4882
+    protein_g: 47.1
+    fat_g: 78.4
+    satFat_g: 16.3
+    carbs_g: 76.9
+    fiber_g: 10
+    sugar_g: 3.1
     sodium_mg: 1472
-    availableCarb_g: 60.4
+    availableCarb_g: 66.9
   glycemic:
-    gi: 45
-    gl: 27
+    gi: 46
+    gl: 31
     giBand: low
     glBand: medium
     glBasis: meal
@@ -123,10 +123,10 @@ nutrition:
   balance:
     score: 3
     band: low
-    nrf: 13.7
+    nrf: 14.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 86.3
+    minimallyProcessedPct: 86.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

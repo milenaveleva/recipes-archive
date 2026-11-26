@@ -7,7 +7,7 @@ imageAlt: Vegan Bolognese with Red Lentils
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11619-vegan-bolognai-martas-voeroeslencsevel
-  kcalPerServing: 485
+  kcalPerServing: 529
 author: Kifli Kukták
 servings: 4
 prepTime: PT20M
@@ -117,12 +117,12 @@ ingredients:
     fdcId: 172232
     matchConfidence: high
     cooking: boiled
-  - raw: 350 g whole-wheat spaghetti, dry
-    quantity: 350
+  - raw: 400 g whole-wheat spaghetti, dry
+    quantity: 400
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 350
+    grams: 400
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -146,30 +146,30 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 581
-    energyKj: 2431
-    protein_g: 25.3
-    fat_g: 15.3
+    energyKcal: 625
+    energyKj: 2615
+    protein_g: 27
+    fat_g: 15.7
     satFat_g: 2.2
-    carbs_g: 96.7
-    fiber_g: 15.2
-    sugar_g: 14.5
+    carbs_g: 105.9
+    fiber_g: 16.3
+    sugar_g: 14.8
     sodium_mg: 347
-    availableCarb_g: 81.5
+    availableCarb_g: 89.6
   glycemic:
-    gi: 42
-    gl: 34
+    gi: 43
+    gl: 38
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 78
+    measuredGiPct: 80
   nutriScore:
     grade: A
     points: -1
     category: general
     version: "2023"
-    coverage: 0.92
+    coverage: 0.93
   inflammation:
     score: -0.4
     band: mildly-anti-inflammatory
@@ -178,10 +178,10 @@ nutrition:
   balance:
     score: 7
     band: high
-    nrf: 47.3
+    nrf: 46
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 74.9
+    minimallyProcessedPct: 76.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

@@ -7,9 +7,9 @@ imageAlt: Creamy Broccoli Pasta with White Beans and Pine Nuts
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11658-kremes-brokkolis-teszta-feherbabbal-es-fenyomaggal
-  kcalPerServing: 580
+  kcalPerServing: 832
 author: Kifli Kukták
-servings: 4
+servings: 3
 prepTime: PT15M
 cookTime: PT25M
 totalTime: PT40M
@@ -36,13 +36,13 @@ ingredients:
     fdcId: 170379
     matchConfidence: high
     cooking: boiled
-  - raw: 250 g whole-wheat pasta (e.g. shells or fusilli), dry
+  - raw: 300 g whole-wheat pasta (e.g. shells or fusilli), dry
     group: Main ingredients
-    quantity: 250
+    quantity: 300
     unit: g
     item: whole-wheat pasta (e.g. shells or fusilli)
     note: dry
-    grams: 250
+    grams: 300
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -142,24 +142,24 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 599
-    energyKj: 2505
-    protein_g: 24.3
-    fat_g: 25.7
-    satFat_g: 3.1
-    carbs_g: 77.5
-    fiber_g: 15.5
-    sugar_g: 6.3
-    sodium_mg: 233
-    availableCarb_g: 62
+    energyKcal: 857
+    energyKj: 3585
+    protein_g: 34.8
+    fat_g: 34.8
+    satFat_g: 4.3
+    carbs_g: 115.6
+    fiber_g: 22.2
+    sugar_g: 8.9
+    sodium_mg: 311
+    availableCarb_g: 93.4
   glycemic:
-    gi: 43
-    gl: 27
+    gi: 44
+    gl: 41
     giBand: low
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 80
+    measuredGiPct: 82
   nutriScore:
     grade: A
     points: -3
@@ -170,14 +170,14 @@ nutrition:
     score: -0.4
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.19
+    aromaticAdjustment: -0.25
   balance:
     score: 7
     band: high
-    nrf: 48
+    nrf: 46.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88.1
+    minimallyProcessedPct: 88.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

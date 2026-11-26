@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14767-spanyol-suegeres-fideua-fokhagymas-aliolival-fideua-de-lubina
 author: Kifli Kukták
-servings: 4
+servings: 3
 prepTime: PT15M
 cookTime: PT25M
 totalTime: PT40M
@@ -137,19 +137,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 565
-    energyKj: 2363
-    protein_g: 38
-    fat_g: 17.8
-    satFat_g: 3.3
-    carbs_g: 68.4
-    fiber_g: 9.2
-    sugar_g: 9.1
-    sodium_mg: 1304
-    availableCarb_g: 58.9
+    energyKcal: 753
+    energyKj: 3151
+    protein_g: 50.6
+    fat_g: 23.8
+    satFat_g: 4.4
+    carbs_g: 91.2
+    fiber_g: 12.2
+    sugar_g: 12.1
+    sodium_mg: 1739
+    availableCarb_g: 78.5
   glycemic:
     gi: 42
-    gl: 25
+    gl: 33
     giBand: low
     glBand: medium
     glBasis: meal
@@ -165,7 +165,7 @@ nutrition:
     score: -0.3
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.33
+    aromaticAdjustment: -0.37
   balance:
     score: 6
     band: moderate

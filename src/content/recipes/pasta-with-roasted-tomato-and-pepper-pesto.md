@@ -7,9 +7,9 @@ imageAlt: Pasta with Roasted Tomato and Pepper Pesto
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11916-teszta-suelt-paradicsomos-es-paprikas-pestoval-egeszseges-es-gyors-vacsora
-  kcalPerServing: 345
+  kcalPerServing: 690
 author: Kifli Kukták
-servings: 4
+servings: 2
 prepTime: PT15M
 cookTime: PT45M
 totalTime: PT1H
@@ -113,21 +113,21 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 334
-    energyKj: 1399
-    protein_g: 9.4
-    fat_g: 13.2
-    satFat_g: 1.2
-    carbs_g: 50
-    fiber_g: 8.2
-    sugar_g: 7.6
-    sodium_mg: 51
-    availableCarb_g: 41.8
+    energyKcal: 669
+    energyKj: 2798
+    protein_g: 18.8
+    fat_g: 26.4
+    satFat_g: 2.3
+    carbs_g: 100
+    fiber_g: 16.5
+    sugar_g: 15.2
+    sodium_mg: 103
+    availableCarb_g: 83.6
   glycemic:
     gi: 45
-    gl: 19
+    gl: 38
     giBand: low
-    glBand: low
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 77
@@ -141,7 +141,7 @@ nutrition:
     score: -0.6
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.39
+    aromaticAdjustment: -0.41
   balance:
     score: 8
     band: high

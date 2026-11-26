@@ -7,9 +7,9 @@ imageAlt: Whole-Wheat Penne with Winter Vegetables and Aged Cheeses
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10378-penne-teli-zoeldsegekkel-erlelt-sajtokkal
-  kcalPerServing: 845
+  kcalPerServing: 676
 author: Pataky Péter
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -143,21 +143,21 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 887
-    energyKj: 3711
-    protein_g: 26.8
-    fat_g: 42.9
-    satFat_g: 7.5
-    carbs_g: 108.7
-    fiber_g: 14.6
-    sugar_g: 8.6
-    sodium_mg: 791
-    availableCarb_g: 94.1
+    energyKcal: 709
+    energyKj: 2968
+    protein_g: 21.5
+    fat_g: 34.4
+    satFat_g: 6
+    carbs_g: 86.9
+    fiber_g: 11.7
+    sugar_g: 6.9
+    sodium_mg: 633
+    availableCarb_g: 75.3
   glycemic:
     gi: 50
-    gl: 47
+    gl: 38
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 85
@@ -171,7 +171,7 @@ nutrition:
     score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.02
+    aromaticAdjustment: -0.01
   balance:
     score: 5
     band: moderate

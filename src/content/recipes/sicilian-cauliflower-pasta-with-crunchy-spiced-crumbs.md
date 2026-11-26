@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13384-sziciliai-karfiolos-teszta-ropogos-fuszeres-morzsaval
 author: Kifli Kukták
-servings: 4
+servings: 3
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -17,13 +17,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 320 g whole-wheat spaghetti, dry
+  - raw: 300 g whole-wheat spaghetti, dry
     group: For the pasta and ragù
-    quantity: 320
+    quantity: 300
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 320
+    grams: 300
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -129,21 +129,21 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 601
-    energyKj: 2513
-    protein_g: 20.9
-    fat_g: 25
-    satFat_g: 4.7
-    carbs_g: 81
-    fiber_g: 11.1
-    sugar_g: 10.6
-    sodium_mg: 304
-    availableCarb_g: 69.8
+    energyKcal: 777
+    energyKj: 3252
+    protein_g: 27
+    fat_g: 33.2
+    satFat_g: 6.3
+    carbs_g: 103.1
+    fiber_g: 14.2
+    sugar_g: 14
+    sodium_mg: 405
+    availableCarb_g: 88.8
   glycemic:
     gi: 51
-    gl: 35
+    gl: 45
     giBand: low
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 91
@@ -161,10 +161,10 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 33.9
+    nrf: 34.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 85.3
+    minimallyProcessedPct: 84.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

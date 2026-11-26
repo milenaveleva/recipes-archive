@@ -7,9 +7,9 @@ imageAlt: Creamy Courgette Spaghetti with Lemon and Parmesan
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12072-kremes-cukkinis-spagetti-citrommal-es-parmezannal
-  kcalPerServing: 385
+  kcalPerServing: 770
 author: Kifli Kukták
-servings: 4
+servings: 2
 prepTime: PT20M
 cookTime: PT5M
 totalTime: PT25M
@@ -130,21 +130,21 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 369
-    energyKj: 1543
-    protein_g: 12.2
-    fat_g: 17.2
-    satFat_g: 2.4
-    carbs_g: 45.8
-    fiber_g: 6.3
-    sugar_g: 6.5
-    sodium_mg: 115
-    availableCarb_g: 39.5
+    energyKcal: 738
+    energyKj: 3087
+    protein_g: 24.5
+    fat_g: 34.3
+    satFat_g: 4.8
+    carbs_g: 91.5
+    fiber_g: 12.6
+    sugar_g: 13
+    sodium_mg: 230
+    availableCarb_g: 78.9
   glycemic:
     gi: 45
-    gl: 18
+    gl: 35
     giBand: low
-    glBand: low
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 82
@@ -155,10 +155,10 @@ nutrition:
     version: "2023"
     coverage: 0.84
   inflammation:
-    score: -0.5
+    score: -0.6
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.3
+    aromaticAdjustment: -0.36
   balance:
     score: 6
     band: moderate

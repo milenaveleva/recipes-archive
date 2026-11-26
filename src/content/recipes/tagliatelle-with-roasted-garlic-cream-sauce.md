@@ -7,9 +7,9 @@ imageAlt: Tagliatelle with Roasted Garlic Cream Sauce
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12958-teszta-suelt-fokhagymas-kremmartassal
-  kcalPerServing: 520
+  kcalPerServing: 1040
 author: Kifli Kukták
-servings: 4
+servings: 2
 prepTime: PT10M
 cookTime: PT50M
 totalTime: PT1H
@@ -121,21 +121,21 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 442
-    energyKj: 1850
-    protein_g: 12.3
-    fat_g: 23
-    satFat_g: 3.9
-    carbs_g: 51
-    fiber_g: 5.7
-    sugar_g: 4.3
-    sodium_mg: 353
-    availableCarb_g: 45.3
+    energyKcal: 884
+    energyKj: 3700
+    protein_g: 24.6
+    fat_g: 45.9
+    satFat_g: 7.9
+    carbs_g: 102.1
+    fiber_g: 11.4
+    sugar_g: 8.7
+    sodium_mg: 706
+    availableCarb_g: 90.6
   glycemic:
     gi: 52
-    gl: 23
+    gl: 47
     giBand: low
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 75
@@ -146,10 +146,10 @@ nutrition:
     version: "2023"
     coverage: 0.77
   inflammation:
-    score: -0.4
+    score: -0.5
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.32
+    aromaticAdjustment: -0.39
   balance:
     score: 4
     band: low

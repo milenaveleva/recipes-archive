@@ -17,11 +17,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 350 g dried whole-wheat penne
-    quantity: 350
+  - raw: 400 g dried whole-wheat penne
+    quantity: 400
     unit: g
     item: dried whole-wheat penne
-    grams: 350
+    grams: 400
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -105,19 +105,19 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 600
-    energyKj: 2509
-    protein_g: 26
-    fat_g: 19.4
-    satFat_g: 4.8
-    carbs_g: 86.8
-    fiber_g: 13.7
-    sugar_g: 3.3
-    sodium_mg: 855
-    availableCarb_g: 73.1
+    energyKcal: 644
+    energyKj: 2694
+    protein_g: 27.8
+    fat_g: 19.8
+    satFat_g: 4.9
+    carbs_g: 96
+    fiber_g: 14.8
+    sugar_g: 3.7
+    sodium_mg: 856
+    availableCarb_g: 81.2
   glycemic:
     gi: 46
-    gl: 34
+    gl: 38
     giBand: low
     glBand: medium
     glBasis: meal
@@ -125,7 +125,7 @@ nutrition:
     measuredGiPct: 98
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
     coverage: 1
@@ -137,10 +137,10 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 27
+    nrf: 27.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 70.9
+    minimallyProcessedPct: 72.9
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

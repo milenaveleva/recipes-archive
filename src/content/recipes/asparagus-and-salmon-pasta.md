@@ -7,9 +7,9 @@ imageAlt: Asparagus and Salmon Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11678-spargas-lazacos-teszta
-  kcalPerServing: 550
+  kcalPerServing: 425
 author: Kifli Kukták
-servings: 2
+servings: 3
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -43,12 +43,12 @@ ingredients:
     fdcId: 82011214
     matchConfidence: medium
     cooking: raw
-  - raw: 250 g whole-wheat spaghetti, dry
-    quantity: 250
+  - raw: 300 g whole-wheat spaghetti, dry
+    quantity: 300
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 250
+    grams: 300
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -80,43 +80,42 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 933
-    energyKj: 3902
-    protein_g: 53.5
-    fat_g: 38.7
-    satFat_g: 6.8
-    carbs_g: 99.8
-    fiber_g: 13.7
-    sugar_g: 7.7
-    sodium_mg: 197
-    availableCarb_g: 86.1
+    energyKcal: 680
+    energyKj: 2847
+    protein_g: 38
+    fat_g: 26.3
+    satFat_g: 4.6
+    carbs_g: 78.7
+    fiber_g: 10.7
+    sugar_g: 5.6
+    sodium_mg: 132
+    availableCarb_g: 68.1
   glycemic:
-    gi: 45
-    gl: 39
+    gi: 47
+    gl: 32
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 93
+    measuredGiPct: 94
   nutriScore:
     grade: A
-    points: -1
+    points: -2
     category: general
     version: "2023"
-    coverage: 0.85
+    coverage: 0.87
   inflammation:
-    score: -0.5
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.01
   balance:
     score: 6
     band: moderate
-    nrf: 34.7
+    nrf: 34.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 83.5
-    ultraProcessedPct: 16.5
+    minimallyProcessedPct: 84.9
+    ultraProcessedPct: 15.1
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"
@@ -127,7 +126,6 @@ nutrition:
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
-    - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-22"

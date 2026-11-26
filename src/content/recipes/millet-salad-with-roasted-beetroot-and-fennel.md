@@ -62,15 +62,15 @@ ingredients:
     fdcId: 171707
     matchConfidence: high
     cooking: raw
-  - raw: 1 can chickpeas, drained
+  - raw: 1 can chickpeas, drained (≈ 87 g uncooked)
     quantity: 1
     unit: can
     item: chickpeas
-    note: drained
-    grams: 240
-    fdcId: 173800
-    matchConfidence: medium
-    cooking: baked
+    note: drained (≈ 87 g uncooked)
+    grams: 87
+    fdcId: 173756
+    matchConfidence: high
+    cooking: boiled
   - raw: 5 ml olive oil
     quantity: 5
     unit: ml
@@ -91,18 +91,18 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 334
-    energyKj: 1396
-    protein_g: 10.9
-    fat_g: 8.5
+    energyKcal: 332
+    energyKj: 1391
+    protein_g: 11.1
+    fat_g: 8.1
     satFat_g: 1.4
-    carbs_g: 56.3
-    fiber_g: 13.3
-    sugar_g: 8
-    sodium_mg: 1179
-    availableCarb_g: 43
+    carbs_g: 56.5
+    fiber_g: 12.1
+    sugar_g: 7.9
+    sodium_mg: 1036
+    availableCarb_g: 44.3
   glycemic:
-    gi: 62
+    gi: 61
     gl: 27
     giBand: medium
     glBand: medium
@@ -110,11 +110,11 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 87
   nutriScore:
-    grade: A
-    points: 0
+    grade: B
+    points: 1
     category: general
     version: "2023"
-    coverage: 0.6
+    coverage: 0.59
   inflammation:
     score: -0.2
     band: neutral
@@ -122,10 +122,10 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 29.4
+    nrf: 30.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 75
+    minimallyProcessedPct: 75.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

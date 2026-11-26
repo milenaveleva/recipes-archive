@@ -46,12 +46,16 @@ ingredients:
     fdcId: 169986
     matchConfidence: high
     cooking: baked
-  - raw: curry sauce
+  - raw: 150 g curry sauce (plant-based cooking cream with curry powder)
     group: For the cauliflower
+    quantity: 150
+    unit: g
     item: curry sauce
+    note: plant-based cooking cream with curry powder
     grams: 150
-    fdcId: 171597
+    fdcId: 82011214
     matchConfidence: medium
+    proxyOk: true
     cooking: baked
   - raw: curry powder (optional)
     group: If making it differently
@@ -71,19 +75,19 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 248
-    energyKj: 1040
-    protein_g: 13
-    fat_g: 5.9
-    satFat_g: 0.9
-    carbs_g: 37.8
-    fiber_g: 8
-    sugar_g: 6.6
-    sodium_mg: 76
-    availableCarb_g: 29.7
+    energyKcal: 287
+    energyKj: 1201
+    protein_g: 13.7
+    fat_g: 10.9
+    satFat_g: 1.4
+    carbs_g: 35.5
+    fiber_g: 7.4
+    sugar_g: 5.1
+    sodium_mg: 74
+    availableCarb_g: 28.1
   glycemic:
-    gi: 50
-    gl: 15
+    gi: 48
+    gl: 14
     giBand: low
     glBand: low
     glBasis: meal
@@ -91,23 +95,23 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: A
-    points: -1
+    points: -2
     category: general
     version: "2023"
-    coverage: 0.91
+    coverage: 0.77
   inflammation:
-    score: -0.4
+    score: -0.6
     band: mildly-anti-inflammatory
     method: fii v4
   balance:
     score: 8
     band: high
-    nrf: 74.3
+    nrf: 64.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 76.8
-    ultraProcessedPct: 15.5
-    band: minimally-processed
+    minimallyProcessedPct: 66.5
+    ultraProcessedPct: 33.5
+    band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:

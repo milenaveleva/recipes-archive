@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11840-paradicsomos-mozzarellas-tonhalas-teszta
 author: Kifli Kukták
-servings: 4
+servings: 2
 cuisine: Italian
 course: Main Course
 lists:
@@ -133,21 +133,21 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 384
-    energyKj: 1608
-    protein_g: 28.8
-    fat_g: 11.2
-    satFat_g: 4.3
-    carbs_g: 46.7
-    fiber_g: 6.8
-    sugar_g: 6.6
-    sodium_mg: 549
-    availableCarb_g: 39.9
+    energyKcal: 769
+    energyKj: 3217
+    protein_g: 57.5
+    fat_g: 22.4
+    satFat_g: 8.5
+    carbs_g: 93.4
+    fiber_g: 13.7
+    sugar_g: 13.1
+    sodium_mg: 1098
+    availableCarb_g: 79.7
   glycemic:
     gi: 42
-    gl: 17
+    gl: 33
     giBand: low
-    glBand: low
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 83
@@ -158,10 +158,10 @@ nutrition:
     version: "2023"
     coverage: 0.94
   inflammation:
-    score: 0.2
+    score: 0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.31
+    aromaticAdjustment: -0.41
   balance:
     score: 6
     band: moderate

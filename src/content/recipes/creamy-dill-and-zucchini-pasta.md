@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/13052-kremes-kapros-cukkinis-teszta
 author: Kifli Kukták
-servings: 2
+servings: 3
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -26,13 +26,13 @@ ingredients:
     fdcId: 168565
     matchConfidence: medium
     cooking: fried
-  - raw: 250 g whole-wheat penne, dry
+  - raw: 300 g whole-wheat penne, dry
     group: Main ingredients
-    quantity: 250
+    quantity: 300
     unit: g
     item: whole-wheat penne
     note: dry
-    grams: 250
+    grams: 300
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -105,43 +105,43 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 864
-    energyKj: 3613
-    protein_g: 35.6
-    fat_g: 39
-    satFat_g: 7.9
-    carbs_g: 102.9
-    fiber_g: 14
-    sugar_g: 5.2
-    sodium_mg: 1520
-    availableCarb_g: 88.9
+    energyKcal: 634
+    energyKj: 2654
+    protein_g: 26.1
+    fat_g: 26.5
+    satFat_g: 5.4
+    carbs_g: 80.8
+    fiber_g: 10.9
+    sugar_g: 3.9
+    sodium_mg: 1014
+    availableCarb_g: 69.9
   glycemic:
-    gi: 47
-    gl: 42
+    gi: 48
+    gl: 33
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 90
+    measuredGiPct: 92
   nutriScore:
     grade: B
     points: 2
     category: general
     version: "2023"
-    coverage: 0.76
+    coverage: 0.78
   inflammation:
-    score: -0.3
-    band: mildly-anti-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
-    aromaticAdjustment: -0.21
+    aromaticAdjustment: -0.19
   balance:
     score: 6
     band: moderate
-    nrf: 34.5
+    nrf: 34
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 70.8
-    ultraProcessedPct: 17.8
+    minimallyProcessedPct: 73.5
+    ultraProcessedPct: 16.2
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

@@ -7,9 +7,9 @@ imageAlt: Vegetable Yaki Udon
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12764-zoeldseges-yaki-udon-gyors-azsiai-vacsora
-  kcalPerServing: 420
+  kcalPerServing: 840
 author: Kifli Kukták
-servings: 2
+servings: 1
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -107,21 +107,21 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 655
-    energyKj: 2741
-    protein_g: 12.5
-    fat_g: 47.8
-    satFat_g: 7.3
-    carbs_g: 51
-    fiber_g: 7.5
-    sugar_g: 11
-    sodium_mg: 1092
-    availableCarb_g: 42.8
+    energyKcal: 1310
+    energyKj: 5482
+    protein_g: 25
+    fat_g: 95.6
+    satFat_g: 14.6
+    carbs_g: 102
+    fiber_g: 15
+    sugar_g: 22
+    sodium_mg: 2184
+    availableCarb_g: 85.7
   glycemic:
     gi: 49
-    gl: 21
+    gl: 41
     giBand: low
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 86
@@ -132,10 +132,10 @@ nutrition:
     version: "2023"
     coverage: 0.99
   inflammation:
-    score: -0.5
+    score: -0.6
     band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.32
+    aromaticAdjustment: -0.43
   balance:
     score: 2
     band: poor

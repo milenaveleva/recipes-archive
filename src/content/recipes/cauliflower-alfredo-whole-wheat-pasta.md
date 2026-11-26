@@ -7,7 +7,7 @@ imageAlt: Cauliflower Alfredo Whole-Wheat Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10565-karfiol-alfredo
-  kcalPerServing: 485
+  kcalPerServing: 529
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
@@ -84,12 +84,12 @@ ingredients:
     fdcId: 82011009
     matchConfidence: medium
     cooking: boiled
-  - raw: 350 g whole-wheat pasta, dry
-    quantity: 350
+  - raw: 400 g whole-wheat pasta, dry
+    quantity: 400
     unit: g
     item: whole-wheat pasta
     note: dry
-    grams: 350
+    grams: 400
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -109,27 +109,27 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 436
-    energyKj: 1826
-    protein_g: 17.1
-    fat_g: 10.3
-    satFat_g: 1.5
-    carbs_g: 76.8
-    fiber_g: 12.2
-    sugar_g: 6.3
-    sodium_mg: 362
-    availableCarb_g: 64.7
+    energyKcal: 480
+    energyKj: 2010
+    protein_g: 18.9
+    fat_g: 10.6
+    satFat_g: 1.6
+    carbs_g: 86
+    fiber_g: 13.3
+    sugar_g: 6.7
+    sodium_mg: 363
+    availableCarb_g: 72.7
   glycemic:
     gi: 47
-    gl: 30
+    gl: 34
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 87
+    measuredGiPct: 88
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: 0
     category: general
     version: "2023"
     coverage: 1
@@ -141,11 +141,11 @@ nutrition:
   balance:
     score: 7
     band: high
-    nrf: 45
+    nrf: 43.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98.8
-    ultraProcessedPct: 1.2
+    minimallyProcessedPct: 98.9
+    ultraProcessedPct: 1.1
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

@@ -7,9 +7,9 @@ imageAlt: Creamy Tomato Rigatoni
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12666-rigatoni-alla-vodka-kremes-olasz-teszta-ropogos-pancettaval
-  kcalPerServing: 540
+  kcalPerServing: 432
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT10M
 cookTime: PT25M
 totalTime: PT35M
@@ -113,21 +113,21 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 767
-    energyKj: 3209
-    protein_g: 32.7
-    fat_g: 25.6
-    satFat_g: 6.7
-    carbs_g: 112.2
-    fiber_g: 15.9
-    sugar_g: 14.7
-    sodium_mg: 858
-    availableCarb_g: 96.3
+    energyKcal: 614
+    energyKj: 2567
+    protein_g: 26.2
+    fat_g: 20.4
+    satFat_g: 5.4
+    carbs_g: 89.8
+    fiber_g: 12.7
+    sugar_g: 11.7
+    sodium_mg: 687
+    availableCarb_g: 77
   glycemic:
     gi: 45
-    gl: 43
+    gl: 34
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 83
@@ -138,10 +138,10 @@ nutrition:
     version: "2023"
     coverage: 0.9
   inflammation:
-    score: -0.2
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.31
+    aromaticAdjustment: -0.25
   balance:
     score: 6
     band: moderate

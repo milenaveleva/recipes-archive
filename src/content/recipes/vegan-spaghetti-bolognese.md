@@ -7,9 +7,9 @@ imageAlt: Vegan Spaghetti Bolognese
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10665-vegan-bolognai-spagetti
-  kcalPerServing: 593
+  kcalPerServing: 474
 author: Kifli Kukták
-servings: 4
+servings: 5
 prepTime: PT15M
 cookTime: PT1H
 totalTime: PT1H15M
@@ -133,21 +133,21 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 647
-    energyKj: 2706
-    protein_g: 26.5
-    fat_g: 12.1
-    satFat_g: 1.7
-    carbs_g: 119.7
-    fiber_g: 19.2
-    sugar_g: 13.7
-    sodium_mg: 340
-    availableCarb_g: 100.5
+    energyKcal: 517
+    energyKj: 2165
+    protein_g: 21.2
+    fat_g: 9.7
+    satFat_g: 1.3
+    carbs_g: 95.8
+    fiber_g: 15.3
+    sugar_g: 10.9
+    sodium_mg: 272
+    availableCarb_g: 80.4
   glycemic:
     gi: 48
-    gl: 49
+    gl: 39
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 90
@@ -158,10 +158,10 @@ nutrition:
     version: "2023"
     coverage: 0.84
   inflammation:
-    score: -0.3
-    band: mildly-anti-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v4
-    aromaticAdjustment: -0.31
+    aromaticAdjustment: -0.26
   balance:
     score: 7
     band: high

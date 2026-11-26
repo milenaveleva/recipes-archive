@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12757-lazac-kokusztejes-martasban-egeszseges-es-egzotikus-vacsora
 author: Kifli Kukták
-servings: 4
+servings: 3
 prepTime: PT10M
 cookTime: PT20M
 totalTime: PT30M
@@ -110,19 +110,19 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 1140
-    energyKj: 4771
-    protein_g: 57.5
-    fat_g: 75.3
-    satFat_g: 44.8
-    carbs_g: 67.9
-    fiber_g: 9
-    sugar_g: 4.2
-    sodium_mg: 577
-    availableCarb_g: 58.9
+    energyKcal: 1520
+    energyKj: 6361
+    protein_g: 76.6
+    fat_g: 100.4
+    satFat_g: 59.7
+    carbs_g: 90.6
+    fiber_g: 12
+    sugar_g: 5.6
+    sodium_mg: 769
+    availableCarb_g: 78.6
   glycemic:
     gi: 41
-    gl: 24
+    gl: 32
     giBand: low
     glBand: medium
     glBasis: meal
@@ -135,10 +135,10 @@ nutrition:
     version: "2023"
     coverage: 0.69
   inflammation:
-    score: 0
+    score: -0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.39
+    aromaticAdjustment: -0.42
   balance:
     score: 3
     band: low

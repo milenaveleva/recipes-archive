@@ -7,7 +7,7 @@ imageAlt: Wild Garlic Pesto Whole-Wheat Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10429-medvehagymas-pestos-teszta
-  kcalPerServing: 1125
+  kcalPerServing: 1169
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
@@ -73,12 +73,12 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: boiled
-  - raw: 350 g dried whole-wheat pasta
+  - raw: 400 g dried whole-wheat pasta
     group: For the pasta
-    quantity: 350
+    quantity: 400
     unit: g
     item: dried whole-wheat pasta
-    grams: 350
+    grams: 400
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -145,30 +145,30 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 1053
-    energyKj: 4405
-    protein_g: 37
-    fat_g: 70
+    energyKcal: 1097
+    energyKj: 4590
+    protein_g: 38.7
+    fat_g: 70.4
     satFat_g: 14.8
-    carbs_g: 78
-    fiber_g: 10.3
-    sugar_g: 7.6
-    sodium_mg: 1130
-    availableCarb_g: 67.6
+    carbs_g: 87.1
+    fiber_g: 11.5
+    sugar_g: 7.9
+    sodium_mg: 1131
+    availableCarb_g: 75.7
   glycemic:
     gi: 47
-    gl: 32
+    gl: 36
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 83
+    measuredGiPct: 85
   nutriScore:
     grade: C
-    points: 5
+    points: 3
     category: general
     version: "2023"
-    coverage: 0.84
+    coverage: 0.85
   inflammation:
     score: -0.2
     band: neutral
@@ -177,11 +177,11 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 21
+    nrf: 21.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 70.3
-    ultraProcessedPct: 11
+    minimallyProcessedPct: 71.5
+    ultraProcessedPct: 10.5
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

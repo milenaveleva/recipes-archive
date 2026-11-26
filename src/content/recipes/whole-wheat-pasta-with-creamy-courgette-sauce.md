@@ -7,9 +7,9 @@ imageAlt: Whole-Wheat Pasta with Creamy Courgette Sauce
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11850-cukkiniszoszos-teszta
-  kcalPerServing: 430
+  kcalPerServing: 573
 author: Kifli Kukták
-servings: 4
+servings: 3
 prepTime: PT15M
 cookTime: PT20M
 totalTime: PT35M
@@ -126,19 +126,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 461
-    energyKj: 1930
-    protein_g: 16.2
-    fat_g: 18.7
-    satFat_g: 3.7
-    carbs_g: 62.4
-    fiber_g: 8.1
-    sugar_g: 5.9
-    sodium_mg: 167
-    availableCarb_g: 54.3
+    energyKcal: 615
+    energyKj: 2573
+    protein_g: 21.7
+    fat_g: 25
+    satFat_g: 4.9
+    carbs_g: 83.2
+    fiber_g: 10.8
+    sugar_g: 7.8
+    sodium_mg: 223
+    availableCarb_g: 72.3
   glycemic:
     gi: 47
-    gl: 26
+    gl: 34
     giBand: low
     glBand: medium
     glBasis: meal
@@ -151,10 +151,10 @@ nutrition:
     version: "2023"
     coverage: 0.93
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.31
+    aromaticAdjustment: -0.35
   balance:
     score: 5
     band: moderate

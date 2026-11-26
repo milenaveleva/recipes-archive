@@ -7,7 +7,7 @@ imageAlt: Creamy Tomato Pasta
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/11108-kremes-paradicsomos-teszta
-  kcalPerServing: 685
+  kcalPerServing: 744
 author: Kifli Kukták
 servings: 3
 prepTime: PT10M
@@ -18,13 +18,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g whole-wheat penne, dry
+  - raw: 300 g whole-wheat penne, dry
     group: Main ingredients
-    quantity: 250
+    quantity: 300
     unit: g
     item: whole-wheat penne
     note: dry
-    grams: 250
+    grams: 300
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -146,30 +146,30 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 705
-    energyKj: 2949
-    protein_g: 25.7
-    fat_g: 36.2
-    satFat_g: 7.8
-    carbs_g: 76
-    fiber_g: 10.3
-    sugar_g: 9.7
-    sodium_mg: 408
-    availableCarb_g: 65.7
+    energyKcal: 763
+    energyKj: 3194
+    protein_g: 28
+    fat_g: 36.7
+    satFat_g: 7.9
+    carbs_g: 88.2
+    fiber_g: 11.8
+    sugar_g: 10.2
+    sodium_mg: 409
+    availableCarb_g: 76.4
   glycemic:
-    gi: 48
-    gl: 32
+    gi: 49
+    gl: 37
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 81
+    measuredGiPct: 84
   nutriScore:
     grade: B
     points: 2
     category: general
     version: "2023"
-    coverage: 0.84
+    coverage: 0.85
   inflammation:
     score: -0.3
     band: mildly-anti-inflammatory
@@ -178,11 +178,11 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 27.2
+    nrf: 27.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 66.7
-    ultraProcessedPct: 14.5
+    minimallyProcessedPct: 69.3
+    ultraProcessedPct: 13.4
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

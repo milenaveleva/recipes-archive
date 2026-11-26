@@ -7,7 +7,7 @@ imageAlt: One-Pot Cheesy Macaroni
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12554-egylabas-sajtos-makaroni
-  kcalPerServing: 755
+  kcalPerServing: 799
 author: Kifli Kukták
 servings: 4
 prepTime: PT5M
@@ -36,12 +36,12 @@ ingredients:
     fdcId: 2257046
     matchConfidence: high
     cooking: boiled
-  - raw: 350 g whole-wheat elbow macaroni, dry
-    quantity: 350
+  - raw: 400 g whole-wheat elbow macaroni, dry
+    quantity: 400
     unit: g
     item: whole-wheat elbow macaroni
     note: dry
-    grams: 350
+    grams: 400
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -74,43 +74,43 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 738
-    energyKj: 3086
-    protein_g: 31.5
-    fat_g: 34.7
+    energyKcal: 782
+    energyKj: 3271
+    protein_g: 33.3
+    fat_g: 35.1
     satFat_g: 14.6
-    carbs_g: 80.6
-    fiber_g: 8.4
-    sugar_g: 8.8
+    carbs_g: 89.7
+    fiber_g: 9.5
+    sugar_g: 9.1
     sodium_mg: 1193
-    availableCarb_g: 72.2
+    availableCarb_g: 80.2
   glycemic:
     gi: 52
-    gl: 38
+    gl: 42
     giBand: low
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 96
+    measuredGiPct: 97
   nutriScore:
     grade: C
     points: 3
     category: general
     version: "2023"
-    coverage: 0.54
+    coverage: 0.57
   inflammation:
     score: 0.8
     band: pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.07
   balance:
-    score: 2
-    band: poor
-    nrf: 8.4
+    score: 3
+    band: low
+    nrf: 10.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 42.2
-    ultraProcessedPct: 16.9
+    minimallyProcessedPct: 45.4
+    ultraProcessedPct: 15.9
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

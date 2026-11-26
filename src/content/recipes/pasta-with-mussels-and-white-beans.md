@@ -7,7 +7,7 @@ imageAlt: Pasta with Mussels and White Beans
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12988-teszta-kagyloval-es-feherbabbal
-  kcalPerServing: 490
+  kcalPerServing: 534
 author: Kifli Kukták
 servings: 4
 prepTime: PT10M
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 350 g whole-wheat pasta (preferably cavatelli or fusilli), dry
-    quantity: 350
+  - raw: 400 g whole-wheat pasta (preferably cavatelli or fusilli), dry
+    quantity: 400
     unit: g
     item: whole-wheat pasta (preferably cavatelli or fusilli)
     note: dry
-    grams: 350
+    grams: 400
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -102,19 +102,19 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 525
-    energyKj: 2195
-    protein_g: 23.1
-    fat_g: 13.9
-    satFat_g: 2
-    carbs_g: 83.1
-    fiber_g: 12.5
-    sugar_g: 3.9
-    sodium_mg: 711
-    availableCarb_g: 70.6
+    energyKcal: 569
+    energyKj: 2379
+    protein_g: 24.8
+    fat_g: 14.2
+    satFat_g: 2.1
+    carbs_g: 92.3
+    fiber_g: 13.7
+    sugar_g: 4.2
+    sodium_mg: 712
+    availableCarb_g: 78.6
   glycemic:
     gi: 46
-    gl: 32
+    gl: 36
     giBand: low
     glBand: medium
     glBasis: meal
@@ -134,7 +134,7 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 33.6
+    nrf: 33.2
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

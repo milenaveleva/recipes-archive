@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14682-kremes-suelt-paprikas-fusilli-ricottaval-es-bazsalikommal
 author: Kifli Kukták
-servings: 2
+servings: 3
 prepTime: PT10M
 cookTime: PT25M
 totalTime: PT35M
@@ -17,11 +17,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g dry whole-wheat fusilli
-    quantity: 250
+  - raw: 300 g dry whole-wheat fusilli
+    quantity: 300
     unit: g
     item: dry whole-wheat fusilli
-    grams: 250
+    grams: 300
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -110,24 +110,24 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 910
-    energyKj: 3809
-    protein_g: 34.7
-    fat_g: 41.1
-    satFat_g: 11.6
-    carbs_g: 112.3
-    fiber_g: 14.4
-    sugar_g: 10.8
-    sodium_mg: 1398
-    availableCarb_g: 96.4
+    energyKcal: 666
+    energyKj: 2785
+    protein_g: 25.5
+    fat_g: 27.9
+    satFat_g: 7.8
+    carbs_g: 87.1
+    fiber_g: 11.2
+    sugar_g: 7.6
+    sodium_mg: 933
+    availableCarb_g: 75
   glycemic:
-    gi: 45
-    gl: 43
+    gi: 46
+    gl: 34
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 83
+    measuredGiPct: 86
   nutriScore:
     grade: B
     points: 2
@@ -135,17 +135,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.27
+    aromaticAdjustment: -0.25
   balance:
     score: 7
     band: high
-    nrf: 45.4
+    nrf: 44
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 78.5
+    minimallyProcessedPct: 80.4
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

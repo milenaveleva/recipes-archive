@@ -26,12 +26,12 @@ ingredients:
     fdcId: 173756
     matchConfidence: medium
     cooking: boiled
-  - raw: 350 g whole-wheat pasta, dry
-    quantity: 350
+  - raw: 400 g whole-wheat pasta, dry
+    quantity: 400
     unit: g
     item: whole-wheat pasta
     note: dry
-    grams: 350
+    grams: 400
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -105,19 +105,19 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 696
-    energyKj: 2911
-    protein_g: 29.7
-    fat_g: 21.2
+    energyKcal: 740
+    energyKj: 3095
+    protein_g: 31.4
+    fat_g: 21.6
     satFat_g: 4.6
-    carbs_g: 104.1
-    fiber_g: 15.8
-    sugar_g: 10.3
-    sodium_mg: 688
-    availableCarb_g: 88.3
+    carbs_g: 113.3
+    fiber_g: 17
+    sugar_g: 10.6
+    sodium_mg: 689
+    availableCarb_g: 96.3
   glycemic:
     gi: 47
-    gl: 41
+    gl: 45
     giBand: low
     glBand: high
     glBasis: meal
@@ -125,7 +125,7 @@ nutrition:
     measuredGiPct: 95
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
     coverage: 1
@@ -137,10 +137,10 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 24.6
+    nrf: 24.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 60
+    minimallyProcessedPct: 62.4
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

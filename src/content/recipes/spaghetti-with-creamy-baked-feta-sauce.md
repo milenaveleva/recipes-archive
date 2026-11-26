@@ -7,9 +7,9 @@ imageAlt: Spaghetti with Creamy Baked Feta Sauce
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/12797-spagetti-kremes-suelt-feta-sajtos-szosszal
-  kcalPerServing: 510
+  kcalPerServing: 985
 author: Kifli Kukták
-servings: 4
+servings: 2
 prepTime: PT10M
 cookTime: PT35M
 totalTime: PT45M
@@ -18,12 +18,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 220 g whole-wheat spaghetti, dry
-    quantity: 220
+  - raw: 200 g whole-wheat spaghetti, dry
+    quantity: 200
     unit: g
     item: whole-wheat spaghetti
     note: dry
-    grams: 220
+    grams: 200
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
@@ -110,24 +110,24 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 456
-    energyKj: 1906
-    protein_g: 16.6
-    fat_g: 22.8
-    satFat_g: 8.3
-    carbs_g: 51.2
-    fiber_g: 7.4
-    sugar_g: 6.2
-    sodium_mg: 708
-    availableCarb_g: 43.8
+    energyKcal: 876
+    energyKj: 3666
+    protein_g: 31.9
+    fat_g: 45.3
+    satFat_g: 16.6
+    carbs_g: 95.1
+    fiber_g: 13.9
+    sugar_g: 12.2
+    sodium_mg: 1416
+    availableCarb_g: 81.2
   glycemic:
     gi: 43
-    gl: 19
+    gl: 35
     giBand: low
-    glBand: low
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 81
+    measuredGiPct: 79
   nutriScore:
     grade: C
     points: 3
@@ -135,17 +135,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.3
-    band: mildly-pro-inflammatory
+    score: 0.2
+    band: neutral
     method: fii v4
-    aromaticAdjustment: -0.1
+    aromaticAdjustment: -0.16
   balance:
     score: 4
     band: low
-    nrf: 23.7
+    nrf: 23.5
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 69.2
+    minimallyProcessedPct: 67.9
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

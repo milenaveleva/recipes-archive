@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14646-pasta-e-fagioli-kremes-toszkan-babos-teszta
 author: Kifli Kukták
-servings: 4
+servings: 3
 prepTime: PT10M
 cookTime: PT15M
 totalTime: PT25M
@@ -27,12 +27,12 @@ ingredients:
     fdcId: 175202
     matchConfidence: medium
     cooking: boiled
-  - raw: 250 g dry whole-wheat short pasta
+  - raw: 300 g dry whole-wheat short pasta
     group: Main ingredients
-    quantity: 250
+    quantity: 300
     unit: g
     item: dry whole-wheat short pasta
-    grams: 250
+    grams: 300
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -139,24 +139,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 512
-    energyKj: 2142
-    protein_g: 22.7
-    fat_g: 16
-    satFat_g: 4
-    carbs_g: 75
-    fiber_g: 12.5
-    sugar_g: 6.4
-    sodium_mg: 1319
-    availableCarb_g: 62.5
+    energyKcal: 741
+    energyKj: 3101
+    protein_g: 32.6
+    fat_g: 21.8
+    satFat_g: 5.4
+    carbs_g: 112.2
+    fiber_g: 18.2
+    sugar_g: 9
+    sodium_mg: 1759
+    availableCarb_g: 94
   glycemic:
-    gi: 43
-    gl: 27
+    gi: 44
+    gl: 41
     giBand: low
-    glBand: medium
+    glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 90
+    measuredGiPct: 91
   nutriScore:
     grade: C
     points: 3
@@ -164,17 +164,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
+    score: 0
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.25
+    aromaticAdjustment: -0.33
   balance:
     score: 5
     band: moderate
-    nrf: 26.9
+    nrf: 27.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 64.9
+    minimallyProcessedPct: 67.7
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

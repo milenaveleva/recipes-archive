@@ -8,7 +8,7 @@ source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/14490-citromos-ricottas-rukkolas-tagliatelle-15-perces-olasz-teszta-piritott-fenyomaggal
 author: Kifli Kukták
-servings: 2
+servings: 3
 prepTime: PT5M
 cookTime: PT10M
 totalTime: PT15M
@@ -17,11 +17,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 250 g dry whole-wheat tagliatelle
-    quantity: 250
+  - raw: 300 g dry whole-wheat tagliatelle
+    quantity: 300
     unit: g
     item: dry whole-wheat tagliatelle
-    grams: 250
+    grams: 300
     fdcId: 169738
     matchConfidence: high
     cooking: boiled
@@ -101,27 +101,27 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 918
-    energyKj: 3841
-    protein_g: 36.1
-    fat_g: 43.7
-    satFat_g: 13.1
-    carbs_g: 106.3
-    fiber_g: 13.2
-    sugar_g: 6
-    sodium_mg: 1439
-    availableCarb_g: 93.1
+    energyKcal: 671
+    energyKj: 2806
+    protein_g: 26.4
+    fat_g: 29.6
+    satFat_g: 8.8
+    carbs_g: 83.1
+    fiber_g: 10.3
+    sugar_g: 4.5
+    sodium_mg: 960
+    availableCarb_g: 72.8
   glycemic:
     gi: 46
-    gl: 43
+    gl: 34
     giBand: low
-    glBand: high
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 86
+    measuredGiPct: 88
   nutriScore:
     grade: C
-    points: 5
+    points: 4
     category: general
     version: "2023"
     coverage: 1
@@ -129,14 +129,14 @@ nutrition:
     score: 0.1
     band: neutral
     method: fii v4
-    aromaticAdjustment: -0.2
+    aromaticAdjustment: -0.16
   balance:
     score: 4
     band: low
-    nrf: 21.6
+    nrf: 22.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 74.6
+    minimallyProcessedPct: 76.8
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
