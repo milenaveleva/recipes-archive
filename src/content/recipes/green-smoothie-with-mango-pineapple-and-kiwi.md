@@ -72,7 +72,6 @@ ingredients:
     milliliters: 250
     fdcId: 174158
     matchConfidence: high
-    excludeFromNutrition: true
     cooking: raw
 nutrition:
   perServing:
@@ -84,7 +83,7 @@ nutrition:
     carbs_g: 34.5
     fiber_g: 4.5
     sugar_g: 25.6
-    sodium_mg: 28
+    sodium_mg: 31
     availableCarb_g: 30
   glycemic:
     gi: 56
@@ -96,7 +95,7 @@ nutrition:
     measuredGiPct: 67
   nutriScore:
     grade: C
-    points: 6
+    points: 4
     category: beverage
     version: "2023"
     coverage: 1
@@ -108,7 +107,7 @@ nutrition:
   balance:
     score: 10
     band: excellent
-    nrf: 122.7
+    nrf: 123.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

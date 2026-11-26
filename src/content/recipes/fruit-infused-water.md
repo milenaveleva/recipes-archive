@@ -16,6 +16,15 @@ course: Drink
 lists:
   - Kifli favourites
 ingredients:
+  - raw: 250 ml water
+    quantity: 250
+    unit: ml
+    item: water
+    grams: 250.4
+    milliliters: 250
+    fdcId: 174158
+    matchConfidence: high
+    cooking: raw
   - raw: 100 g mixed fruit
     quantity: 100
     unit: g
@@ -23,55 +32,30 @@ ingredients:
     grams: 100
     fdcId: 168153
     matchConfidence: high
+    excludeFromNutrition: true
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 61
-    energyKj: 255
-    protein_g: 1.1
-    fat_g: 0.5
+    energyKcal: 0
+    energyKj: 0
+    protein_g: 0
+    fat_g: 0
     satFat_g: 0
-    carbs_g: 14.7
-    fiber_g: 3
-    sugar_g: 9
-    sodium_mg: 3
-    availableCarb_g: 11.7
-  glycemic:
-    gi: 62
-    gl: 7
-    giBand: medium
-    glBand: low
-    glBasis: portion
-    gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 0
+    carbs_g: 0
+    fiber_g: 0
+    sugar_g: 0
+    sodium_mg: 5
+    availableCarb_g: 0
   nutriScore:
-    grade: C
-    points: 6
+    grade: B
+    points: 0
     category: beverage
     version: "2023"
     coverage: 1
-  inflammation:
-    score: -0.6
-    band: mildly-anti-inflammatory
-    method: fii v4
-  balance:
-    score: 10
-    band: excellent
-    nrf: 132.7
-    version: NRF9.3
-  processing:
-    minimallyProcessedPct: 100
-    ultraProcessedPct: 0
-    band: minimally-processed
-    method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
-    - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
-    - Nutrient-Rich Foods Index (NRF9.3)
-    - NOVA food classification (energy-weighted)
 createdAt: "2026-11-14"
 ---
 

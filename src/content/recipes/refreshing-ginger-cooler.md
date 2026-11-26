@@ -26,6 +26,7 @@ ingredients:
     grams: 200
     fdcId: 169231
     matchConfidence: high
+    excludeFromNutrition: true
     cooking: boiled
   - raw: 2 lemons (zest and juice)
     quantity: 2
@@ -50,7 +51,6 @@ ingredients:
     grams: 100
     fdcId: 174158
     matchConfidence: medium
-    excludeFromNutrition: true
     cooking: raw
   - raw: 1000 ml soda water
     quantity: 1000
@@ -60,43 +60,41 @@ ingredients:
     milliliters: 1000
     fdcId: 174158
     matchConfidence: medium
-    excludeFromNutrition: true
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 144
-    energyKj: 601
-    protein_g: 1.1
-    fat_g: 0.4
-    satFat_g: 0.1
-    carbs_g: 37.2
-    fiber_g: 1.1
-    sugar_g: 28.1
-    sodium_mg: 8
-    availableCarb_g: 36.1
+    energyKcal: 104
+    energyKj: 434
+    protein_g: 0.2
+    fat_g: 0.1
+    satFat_g: 0
+    carbs_g: 28.3
+    fiber_g: 0.1
+    sugar_g: 27.2
+    sodium_mg: 7
+    availableCarb_g: 28.2
   glycemic:
-    gi: 61
-    gl: 22
+    gi: 59
+    gl: 17
     giBand: medium
-    glBand: high
+    glBand: medium
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 74
+    measuredGiPct: 95
   nutriScore:
-    grade: E
-    points: 16
+    grade: D
+    points: 9
     category: beverage
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.7
-    band: mildly-pro-inflammatory
+    score: 1.4
+    band: pro-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.23
   balance:
     score: 1
     band: poor
-    nrf: -17.4
+    nrf: -37.2
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
@@ -110,7 +108,6 @@ nutrition:
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
-    - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-14"

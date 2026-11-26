@@ -63,5 +63,6 @@ Per ingredient, `en` is the stored `raw` line and is parsed by the engine. Optio
 - Honey is the only sweetener. Yeast and yeast doughs are allowed.
 - Cooked or canned staples (pasta, rice, pulses) are listed in their raw/dry form at the raw dry-matter weight, with the preparation as the note and the method cooking them from dry, e.g. `168 g dried brown rice, cooked` with `forceGrams: 168`.
 - Spices and salt in tsp/tbsp/pinch, never grams; juices in ml.
-- Water and ice are excluded from nutrition and pinned to `174158`.
+- Water and ice are pinned to plain water (`174158`). In a dish they are excluded from nutrition; in a drink every water, soda-water and ice line that ends up in the glass carries grams and counts, because Nutri-Score profiles a beverage as drunk (ice counts as its melted weight).
+- Drinks list a steeped solid together with its water as the brewed beverage (`250 ml black tea, brewed from 1 tbsp loose leaves` → `173227`; green tea `171917`; coffee `171890`). Whole spices, ginger slices, herb sprigs and fruit that only infuse and are strained out or left behind are `exclude`d; blended or pressed produce that is drunk stays counted.
 - Every ingredient gets an explicit cooking method, read from the method steps.

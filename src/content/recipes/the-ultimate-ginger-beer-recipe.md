@@ -17,6 +17,7 @@ ingredients:
     grams: 17.6
     fdcId: 169231
     matchConfidence: high
+    excludeFromNutrition: true
     cooking: raw
   - raw: 3 tbsp honey
     quantity: 3
@@ -27,9 +28,13 @@ ingredients:
     fdcId: 169640
     matchConfidence: high
     cooking: raw
-  - raw: filtered water (for the ginger bug)
+  - raw: 250 ml filtered water (for the ginger bug)
+    quantity: 250
+    unit: ml
     item: filtered water
     note: for the ginger bug
+    grams: 250
+    milliliters: 250
     fdcId: 175103
     matchConfidence: high
     cooking: raw
@@ -51,24 +56,28 @@ ingredients:
     fdcId: 169231
     matchConfidence: medium
     cooking: raw
-  - raw: filtered water (for the ginger beer)
+  - raw: 5 l filtered water (for the ginger beer)
+    quantity: 5
+    unit: l
     item: filtered water
     note: for the ginger beer
+    grams: 5000
+    milliliters: 5000
     fdcId: 175103
     matchConfidence: high
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 259
-    energyKj: 1085
-    protein_g: 1.5
+    energyKcal: 257
+    energyKj: 1075
+    protein_g: 1.4
     fat_g: 0.5
     satFat_g: 0.1
-    carbs_g: 67.6
+    carbs_g: 67.1
     fiber_g: 1.5
-    sugar_g: 56.2
-    sodium_mg: 12
-    availableCarb_g: 66.1
+    sugar_g: 56.1
+    sodium_mg: 38
+    availableCarb_g: 65.6
   glycemic:
     gi: 63
     gl: 41
@@ -76,10 +85,10 @@ nutrition:
     glBand: high
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 83
+    measuredGiPct: 84
   nutriScore:
-    grade: E
-    points: 18
+    grade: C
+    points: 6
     category: beverage
     version: "2023"
     coverage: 1
@@ -91,7 +100,7 @@ nutrition:
   balance:
     score: 1
     band: poor
-    nrf: -31
+    nrf: -30.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

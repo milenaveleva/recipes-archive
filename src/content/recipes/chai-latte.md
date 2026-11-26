@@ -36,14 +36,15 @@ ingredients:
     fdcId: 169640
     matchConfidence: high
     cooking: boiled
-  - raw: 1 tbsp loose-leaf black tea
-    quantity: 1
-    unit: tbsp
-    item: loose-leaf black tea
-    grams: 6
-    milliliters: 14.7868
+  - raw: 250 ml black tea, brewed from 1 tbsp loose leaves
+    quantity: 250
+    unit: ml
+    item: black tea
+    note: brewed from 1 tbsp loose leaves
+    grams: 250.2
+    milliliters: 250
     fdcId: 173227
-    matchConfidence: medium
+    matchConfidence: high
     cooking: boiled
   - raw: 4 cardamom pods
     quantity: 4
@@ -51,6 +52,7 @@ ingredients:
     grams: 1
     fdcId: 170919
     matchConfidence: medium
+    excludeFromNutrition: true
     cooking: boiled
   - raw: ¼ tsp cinnamon
     quantity: 0.25
@@ -69,6 +71,7 @@ ingredients:
     grams: 5
     fdcId: 169231
     matchConfidence: medium
+    excludeFromNutrition: true
     cooking: boiled
   - raw: 1 pinch ground fennel seed
     quantity: 1
@@ -81,18 +84,18 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 101
-    energyKj: 424
-    protein_g: 1.3
-    fat_g: 3.5
+    energyKcal: 97
+    energyKj: 405
+    protein_g: 1.1
+    fat_g: 3.4
     satFat_g: 0
-    carbs_g: 17.3
-    fiber_g: 0.8
-    sugar_g: 11.7
-    sodium_mg: 54
-    availableCarb_g: 16.5
+    carbs_g: 16.4
+    fiber_g: 0.4
+    sugar_g: 11.6
+    sodium_mg: 60
+    availableCarb_g: 16
   glycemic:
-    gi: 65
+    gi: 62
     gl: 10
     giBand: medium
     glBand: low
@@ -100,34 +103,31 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 95
   nutriScore:
-    grade: E
-    points: 12
+    grade: C
+    points: 4
     category: beverage
     version: "2023"
-    coverage: 0.16
+    coverage: 0.68
   inflammation:
-    score: 1.3
+    score: 1.7
     band: pro-inflammatory
     method: fii v4
-    aromaticAdjustment: -0.23
   balance:
     score: 2
     band: poor
-    nrf: 6
+    nrf: 5.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 40.9
-    ultraProcessedPct: 59.1
+    minimallyProcessedPct: 38.1
+    ultraProcessedPct: 61.9
     band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
-    - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
-    - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-14"

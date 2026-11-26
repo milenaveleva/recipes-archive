@@ -17,13 +17,25 @@ course: Drink
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 85 g whole coffee beans
-    quantity: 85
-    unit: g
-    item: whole coffee beans
-    grams: 85
-    fdcId: 171881
-    matchConfidence: medium
+  - raw: 710 ml cold-brew coffee, from 85 g coarsely ground beans
+    quantity: 710
+    unit: ml
+    item: cold-brew coffee
+    note: from 85 g coarsely ground beans
+    grams: 711.2
+    milliliters: 710
+    fdcId: 171890
+    matchConfidence: high
+    cooking: raw
+  - raw: 710 ml cold water, to serve
+    quantity: 710
+    unit: ml
+    item: cold water
+    note: to serve
+    grams: 711.2
+    milliliters: 710
+    fdcId: 174158
+    matchConfidence: high
     cooking: raw
   - raw: 30 ml unsweetened oat milk, to taste
     group: What else you may need
@@ -36,27 +48,29 @@ ingredients:
     fdcId: 2257046
     matchConfidence: high
     cooking: raw
-  - raw: ice
+  - raw: 500 g ice
     group: What else you may need
+    quantity: 500
+    unit: g
     item: ice
+    grams: 500
     fdcId: 174158
-    matchConfidence: medium
-    excludeFromNutrition: true
+    matchConfidence: high
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 3
-    energyKj: 14
-    protein_g: 0.1
+    energyKcal: 4
+    energyKj: 18
+    protein_g: 0.2
     fat_g: 0.2
     satFat_g: 0
     carbs_g: 0.3
     fiber_g: 0
     sugar_g: 0.1
-    sodium_mg: 3
+    sodium_mg: 10
     availableCarb_g: 0.3
   glycemic:
-    gi: 69
+    gi: 63
     gl: 0
     giBand: medium
     glBand: low
@@ -65,22 +79,22 @@ nutrition:
     measuredGiPct: 100
   nutriScore:
     grade: B
-    points: 2
+    points: 0
     category: beverage
     version: "2023"
-    coverage: 0.74
+    coverage: 0.98
   inflammation:
     score: 2
     band: pro-inflammatory
     method: fii v4
   balance:
-    score: 6
-    band: moderate
-    nrf: 38.1
+    score: 10
+    band: excellent
+    nrf: 154.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 10.5
-    ultraProcessedPct: 89.5
+    minimallyProcessedPct: 32.9
+    ultraProcessedPct: 67.1
     band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

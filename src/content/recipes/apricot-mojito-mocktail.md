@@ -24,6 +24,15 @@ ingredients:
     fdcId: 171697
     matchConfidence: high
     cooking: raw
+  - raw: 1 tbsp water
+    quantity: 1
+    unit: tbsp
+    item: water
+    grams: 14.8
+    milliliters: 14.7868
+    fdcId: 174158
+    matchConfidence: high
+    cooking: raw
   - raw: 1 tsp honey
     quantity: 1
     unit: tsp
@@ -49,17 +58,22 @@ ingredients:
     fdcId: 173475
     matchConfidence: high
     cooking: raw
-  - raw: soda water
+  - raw: 400 ml soda water
+    quantity: 400
+    unit: ml
     item: soda water
+    grams: 400.7
+    milliliters: 400
     fdcId: 174158
-    matchConfidence: medium
-    excludeFromNutrition: true
+    matchConfidence: high
     cooking: raw
-  - raw: ice
+  - raw: 150 g ice
+    quantity: 150
+    unit: g
     item: ice
+    grams: 150
     fdcId: 174158
-    matchConfidence: medium
-    excludeFromNutrition: true
+    matchConfidence: high
     cooking: raw
 nutrition:
   perServing:
@@ -71,7 +85,7 @@ nutrition:
     carbs_g: 16.9
     fiber_g: 2.5
     sugar_g: 13
-    sodium_mg: 3
+    sodium_mg: 9
     availableCarb_g: 14.4
   glycemic:
     gi: 42
@@ -82,11 +96,11 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 87
   nutriScore:
-    grade: D
-    points: 7
+    grade: C
+    points: 3
     category: beverage
     version: "2023"
-    coverage: 0.96
+    coverage: 0.99
   inflammation:
     score: -0.1
     band: neutral
@@ -94,7 +108,7 @@ nutrition:
   balance:
     score: 8
     band: high
-    nrf: 61.6
+    nrf: 67.3
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

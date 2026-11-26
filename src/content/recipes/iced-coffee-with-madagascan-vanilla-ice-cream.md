@@ -18,14 +18,15 @@ course: Drink
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 12 g Arabica coffee beans (brewed as a double espresso)
-    quantity: 12
-    unit: g
-    item: Arabica coffee beans
-    note: brewed as a double espresso
-    grams: 12
-    fdcId: 171881
-    matchConfidence: medium
+  - raw: 60 ml double espresso, from 12 g Arabica beans
+    quantity: 60
+    unit: ml
+    item: double espresso
+    note: from 12 g Arabica beans
+    grams: 60.1
+    milliliters: 60
+    fdcId: 171890
+    matchConfidence: high
     cooking: raw
   - raw: 1 pinch cinnamon
     quantity: 1
@@ -82,9 +83,9 @@ ingredients:
   - raw: 3 ice cubes
     quantity: 3
     item: ice cubes
+    grams: 75
     fdcId: 174158
     matchConfidence: medium
-    excludeFromNutrition: true
     cooking: raw
   - raw: 15 ml no-added-sugar chocolate sauce
     quantity: 15
@@ -106,15 +107,15 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 357
-    energyKj: 1495
+    energyKcal: 358
+    energyKj: 1496
     protein_g: 4
     fat_g: 26.9
     satFat_g: 13.5
     carbs_g: 33.1
     fiber_g: 3.4
     sugar_g: 23.3
-    sodium_mg: 56
+    sodium_mg: 59
     availableCarb_g: 29
   glycemic:
     gi: 57
@@ -126,10 +127,10 @@ nutrition:
     measuredGiPct: 85
   nutriScore:
     grade: E
-    points: 23
+    points: 19
     category: beverage
     version: "2023"
-    coverage: 0.49
+    coverage: 0.68
   inflammation:
     score: 1.4
     band: pro-inflammatory
@@ -137,7 +138,7 @@ nutrition:
   balance:
     score: 1
     band: poor
-    nrf: -26.3
+    nrf: -14.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 82.7

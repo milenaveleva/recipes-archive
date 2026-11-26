@@ -25,12 +25,22 @@ ingredients:
     fdcId: 171688
     matchConfidence: high
     cooking: boiled
+  - raw: 400 ml water
+    quantity: 400
+    unit: ml
+    item: water
+    grams: 400.7
+    milliliters: 400
+    fdcId: 174158
+    matchConfidence: high
+    cooking: boiled
   - raw: 1 cinnamon stick
     quantity: 1
     item: cinnamon stick
     grams: 3
     fdcId: 171320
     matchConfidence: medium
+    excludeFromNutrition: true
     cooking: boiled
   - raw: 5 g ginger
     quantity: 5
@@ -57,39 +67,39 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 125
-    energyKj: 522
+    energyKcal: 121
+    energyKj: 507
     protein_g: 0.6
-    fat_g: 0.4
+    fat_g: 0.3
     satFat_g: 0.1
-    carbs_g: 33.6
-    fiber_g: 5.2
+    carbs_g: 32.4
+    fiber_g: 4.4
     sugar_g: 25.1
-    sodium_mg: 3
-    availableCarb_g: 28.4
+    sodium_mg: 7
+    availableCarb_g: 28
   glycemic:
-    gi: 42
+    gi: 41
     gl: 12
     giBand: low
     glBand: medium
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 94
+    measuredGiPct: 95
   nutriScore:
-    grade: E
-    points: 10
+    grade: C
+    points: 5
     category: beverage
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.3
+    score: 0.4
     band: mildly-pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.11
   balance:
     score: 1
     band: poor
-    nrf: -4.8
+    nrf: -7.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

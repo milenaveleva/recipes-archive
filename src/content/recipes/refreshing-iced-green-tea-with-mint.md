@@ -17,12 +17,15 @@ course: Drink
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 4 green tea bags
-    quantity: 4
-    item: green tea bags
-    grams: 8
+  - raw: 1 l green tea, brewed from 4 tea bags
+    quantity: 1
+    unit: l
+    item: green tea
+    note: brewed from 4 tea bags
+    grams: 1035.5
+    milliliters: 1000
     fdcId: 171917
-    matchConfidence: medium
+    matchConfidence: high
     cooking: boiled
   - raw: 3 sprigs fresh mint (plus extra to garnish)
     quantity: 3
@@ -32,6 +35,7 @@ ingredients:
     grams: 6
     fdcId: 173475
     matchConfidence: high
+    excludeFromNutrition: true
     cooking: boiled
   - raw: 80 g honey
     quantity: 80
@@ -41,11 +45,22 @@ ingredients:
     fdcId: 169640
     matchConfidence: high
     cooking: raw
-  - raw: ice
-    item: ice
+  - raw: 500 ml cold water
+    quantity: 500
+    unit: ml
+    item: cold water
+    grams: 500.9
+    milliliters: 500
     fdcId: 174158
-    matchConfidence: medium
-    excludeFromNutrition: true
+    matchConfidence: high
+    cooking: raw
+  - raw: 140 g ice
+    quantity: 140
+    unit: g
+    item: ice
+    grams: 140
+    fdcId: 174158
+    matchConfidence: high
     cooking: raw
   - raw: lemon (optional)
     group: Optional extras
@@ -65,15 +80,15 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 44
-    energyKj: 182
-    protein_g: 0.1
+    energyKcal: 45
+    energyKj: 188
+    protein_g: 0.5
     fat_g: 0
     satFat_g: 0
     carbs_g: 11.9
     fiber_g: 0.2
     sugar_g: 11.2
-    sodium_mg: 1
+    sodium_mg: 5
     availableCarb_g: 11.7
   glycemic:
     gi: 58
@@ -84,11 +99,11 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 94
   nutriScore:
-    grade: E
-    points: 20
+    grade: C
+    points: 4
     category: beverage
     version: "2023"
-    coverage: 0.96
+    coverage: 1
   inflammation:
     score: 1.3
     band: pro-inflammatory
@@ -96,7 +111,7 @@ nutrition:
   balance:
     score: 1
     band: poor
-    nrf: -35.4
+    nrf: -30
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100
