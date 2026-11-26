@@ -486,3 +486,12 @@ describe('olive oil and state-word display', () => {
     expect(displayItemNote('unsweetened oat milk', 'as needed')).toEqual({ item: 'oat milk', note: 'unsweetened, as needed' });
   });
 });
+
+describe('egg display', () => {
+  it('shows eggs as a count, never by weight', () => {
+    expect(formatIngredientAmount({ quantity: 16, item: 'eggs', grams: 800 })).toBe('16');
+    expect(formatIngredientAmount({ quantity: 2, unit: 'medium', item: 'eggs', grams: 100 })).toBe('2');
+    expect(formatIngredientAmount({ quantity: 3, item: 'egg yolks', grams: 51 })).toBe('3');
+    expect(formatIngredientAmount({ quantity: 200, unit: 'g', item: 'eggplant', grams: 200 })).toBe('200 g');
+  });
+});

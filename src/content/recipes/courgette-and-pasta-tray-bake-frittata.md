@@ -57,11 +57,10 @@ ingredients:
     fdcId: 170416
     matchConfidence: high
     cooking: baked
-  - raw: 16 eggs (size M)
+  - raw: 16 eggs
     group: Main ingredients
     quantity: 16
     item: eggs
-    note: size M
     grams: 800
     fdcId: 171287
     matchConfidence: medium

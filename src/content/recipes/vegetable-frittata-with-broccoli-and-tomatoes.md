@@ -51,9 +51,8 @@ ingredients:
     fdcId: 173419
     matchConfidence: high
     cooking: baked
-  - raw: 8 medium eggs
+  - raw: 8 eggs
     quantity: 8
-    unit: medium
     item: eggs
     grams: 400
     fdcId: 323604

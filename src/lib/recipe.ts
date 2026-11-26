@@ -195,6 +195,8 @@ export function formatQuantity(q: number): string {
 export function formatIngredientAmount(ing: IngredientAmountSource): string | null {
   const olive = oliveOilSpoons(ing);
   if (olive) return olive;
+  // Eggs are counted, never weighed: "16 eggs", not "800 g" (a size word is not a unit).
+  if (isEgg(ing.item) && ing.quantity != null && (!ing.unit || EGG_SIZE.test(ing.unit))) return formatQuantity(ing.quantity);
   const qtyText = () =>
     ing.quantity2 != null
       ? `${formatQuantity(ing.quantity!)}–${formatQuantity(ing.quantity2)}`
@@ -232,6 +234,13 @@ export function formatIngredientAmount(ing: IngredientAmountSource): string | nu
   if (ing.grams != null && ing.grams > 0) return formatGrams(ing.grams);
   return ing.unit ? `${qtyText()} ${ing.unit}` : qtyText();
 }
+
+/** Whole eggs, yolks or whites — counted, never shown by weight. */
+function isEgg(name?: string | null): boolean {
+  return !!name && /^(?:whole |large |medium |small |free-range |organic )*eggs?(?: (?:yolks?|whites?))?$/i.test(name.trim());
+}
+/** Egg size words that parse as a unit ("2 medium eggs") but only describe the count. */
+const EGG_SIZE = /^(?:small|medium|large|extra-large|xl|size [smlx]+)$/i;
 
 /** Grams of olive oil in one tablespoon (15 ml × 0.91 g/ml). */
 const OLIVE_OIL_G_PER_TBSP = 13.5;

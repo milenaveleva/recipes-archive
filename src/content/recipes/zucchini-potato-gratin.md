@@ -78,10 +78,9 @@ ingredients:
     fdcId: 82011214
     matchConfidence: high
     cooking: baked
-  - raw: 2 eggs (size M)
+  - raw: 2 eggs
     quantity: 2
     item: eggs
-    note: size M
     grams: 100
     fdcId: 748967
     matchConfidence: high
