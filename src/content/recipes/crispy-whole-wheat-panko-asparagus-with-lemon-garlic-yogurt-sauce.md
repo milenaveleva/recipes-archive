@@ -102,7 +102,8 @@ ingredients:
   - raw: 15 g fresh parsley
     quantity: 15
     unit: g
-    item: fresh parsley
+    item: parsley
+    note: fresh
     grams: 15
     fdcId: 170416
     matchConfidence: high

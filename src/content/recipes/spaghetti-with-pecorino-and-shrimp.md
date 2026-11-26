@@ -63,7 +63,8 @@ ingredients:
   - raw: 1 tbsp fresh chives
     quantity: 1
     unit: tbsp
-    item: fresh chives
+    item: chives
+    note: fresh
     grams: 3
     milliliters: 14.7868
     fdcId: 169994

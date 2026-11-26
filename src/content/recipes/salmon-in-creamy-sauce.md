@@ -103,8 +103,8 @@ ingredients:
     matchConfidence: high
     cooking: fried
   - raw: fresh basil, a little, to serve
-    item: fresh basil
-    note: a little, to serve
+    item: basil
+    note: fresh, a little, to serve
     grams: 5
     fdcId: 172232
     matchConfidence: medium

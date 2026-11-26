@@ -83,7 +83,8 @@ ingredients:
     matchConfidence: medium
     cooking: boiled
   - raw: fresh parsley
-    item: fresh parsley
+    item: parsley
+    note: fresh
     grams: 5
     fdcId: 170416
     matchConfidence: high

@@ -34,7 +34,8 @@ ingredients:
   - raw: 40 g fresh parsley
     quantity: 40
     unit: g
-    item: fresh parsley
+    item: parsley
+    note: fresh
     grams: 40
     fdcId: 170416
     matchConfidence: high

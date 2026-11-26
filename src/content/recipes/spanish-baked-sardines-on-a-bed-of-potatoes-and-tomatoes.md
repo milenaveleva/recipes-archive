@@ -110,8 +110,8 @@ ingredients:
     cooking: baked
   - raw: fresh parsley, a little
     group: For serving
-    item: fresh parsley
-    note: a little
+    item: parsley
+    note: fresh, a little
     grams: 10
     fdcId: 170416
     matchConfidence: high

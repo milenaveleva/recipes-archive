@@ -97,7 +97,8 @@ ingredients:
     cooking: raw
   - raw: fresh cilantro
     group: For serving
-    item: fresh cilantro
+    item: cilantro
+    note: fresh
     grams: 5
     fdcId: 169997
     matchConfidence: medium

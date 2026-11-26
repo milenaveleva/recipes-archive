@@ -65,8 +65,8 @@ ingredients:
     matchConfidence: high
     cooking: raw
   - raw: fresh dill, a little
-    item: fresh dill
-    note: a little
+    item: dill
+    note: fresh, a little
     grams: 3
     fdcId: 172233
     matchConfidence: medium

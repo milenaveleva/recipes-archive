@@ -43,7 +43,8 @@ ingredients:
   - raw: 10 g fresh mint
     quantity: 10
     unit: g
-    item: fresh mint
+    item: mint
+    note: fresh
     grams: 10
     fdcId: 173475
     matchConfidence: high

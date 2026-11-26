@@ -61,7 +61,8 @@ ingredients:
   - raw: 15 g fresh coriander
     quantity: 15
     unit: g
-    item: fresh coriander
+    item: coriander
+    note: fresh
     grams: 15
     fdcId: 169997
     matchConfidence: medium

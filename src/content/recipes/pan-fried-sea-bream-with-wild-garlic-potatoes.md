@@ -60,7 +60,8 @@ ingredients:
   - raw: 10 g fresh parsley
     quantity: 10
     unit: g
-    item: fresh parsley
+    item: parsley
+    note: fresh
     grams: 10
     fdcId: 170416
     matchConfidence: high
@@ -68,7 +69,8 @@ ingredients:
   - raw: 10 g fresh chives
     quantity: 10
     unit: g
-    item: fresh chives
+    item: chives
+    note: fresh
     grams: 10
     fdcId: 169994
     matchConfidence: high

@@ -76,7 +76,8 @@ ingredients:
     cooking: raw
   - raw: 5 fresh basil leaves
     quantity: 5
-    item: fresh basil leaves
+    item: basil leaves
+    note: fresh
     grams: 3
     fdcId: 172232
     matchConfidence: high

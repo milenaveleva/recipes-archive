@@ -79,7 +79,8 @@ ingredients:
   - raw: 10 g fresh basil
     quantity: 10
     unit: g
-    item: fresh basil
+    item: basil
+    note: fresh
     grams: 10
     fdcId: 172232
     matchConfidence: high
@@ -87,7 +88,8 @@ ingredients:
   - raw: 10 g fresh parsley
     quantity: 10
     unit: g
-    item: fresh parsley
+    item: parsley
+    note: fresh
     grams: 10
     fdcId: 170416
     matchConfidence: high

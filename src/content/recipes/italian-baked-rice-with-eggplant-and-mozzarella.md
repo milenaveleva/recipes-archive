@@ -76,7 +76,8 @@ ingredients:
   - raw: 1 bunch fresh basil
     quantity: 1
     unit: bunch
-    item: fresh basil
+    item: basil
+    note: fresh
     grams: 20
     fdcId: 172232
     matchConfidence: high

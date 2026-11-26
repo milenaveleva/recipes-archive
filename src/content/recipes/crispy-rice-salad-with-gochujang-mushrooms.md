@@ -205,8 +205,8 @@ ingredients:
   - raw: 1/4 cup fresh mint (finely chopped)
     quantity: 0.25
     unit: cup
-    item: fresh mint
-    note: finely chopped
+    item: mint
+    note: fresh, finely chopped
     grams: 6.4
     milliliters: 59.147
     fdcId: 173475

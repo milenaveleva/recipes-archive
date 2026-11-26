@@ -105,7 +105,8 @@ ingredients:
   - raw: 1 sprig fresh rosemary
     quantity: 1
     unit: sprig
-    item: fresh rosemary
+    item: rosemary
+    note: fresh
     grams: 2
     fdcId: 173473
     matchConfidence: high
@@ -113,7 +114,8 @@ ingredients:
   - raw: 10 g fresh basil
     quantity: 10
     unit: g
-    item: fresh basil
+    item: basil
+    note: fresh
     grams: 10
     fdcId: 172232
     matchConfidence: high

@@ -78,7 +78,8 @@ ingredients:
   - raw: ½ bunch fresh cilantro
     quantity: 0.5
     unit: bunch
-    item: fresh cilantro
+    item: cilantro
+    note: fresh
     grams: 15
     fdcId: 169997
     matchConfidence: medium

@@ -53,8 +53,8 @@ ingredients:
     matchConfidence: high
     cooking: fried
   - raw: fresh parsley, to garnish
-    item: fresh parsley
-    note: to garnish
+    item: parsley
+    note: fresh, to garnish
     grams: 5
     fdcId: 170416
     matchConfidence: high

@@ -61,7 +61,8 @@ ingredients:
   - raw: 1 tsp fresh thyme
     quantity: 1
     unit: tsp
-    item: fresh thyme
+    item: thyme
+    note: fresh
     grams: 0.8
     milliliters: 4.92892
     fdcId: 173470
@@ -96,7 +97,8 @@ ingredients:
   - raw: 1 tbsp fresh dill
     quantity: 1
     unit: tbsp
-    item: fresh dill
+    item: dill
+    note: fresh
     grams: 0.6
     milliliters: 14.7868
     fdcId: 172233

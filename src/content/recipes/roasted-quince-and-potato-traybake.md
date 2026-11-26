@@ -97,7 +97,8 @@ ingredients:
     group: For serving
     quantity: 1
     unit: bunch
-    item: fresh parsley
+    item: parsley
+    note: fresh
     grams: 20
     fdcId: 170416
     matchConfidence: high

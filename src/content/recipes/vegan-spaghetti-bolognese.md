@@ -91,7 +91,8 @@ ingredients:
     cooking: fried
   - raw: 10 fresh basil leaves
     quantity: 10
-    item: fresh basil leaves
+    item: basil leaves
+    note: fresh
     grams: 5
     fdcId: 172232
     matchConfidence: high

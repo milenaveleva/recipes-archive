@@ -56,7 +56,8 @@ ingredients:
   - raw: 2 sprigs fresh rosemary
     quantity: 2
     unit: sprigs
-    item: fresh rosemary
+    item: rosemary
+    note: fresh
     grams: 2
     fdcId: 173473
     matchConfidence: high
@@ -64,7 +65,8 @@ ingredients:
   - raw: 2 sprigs fresh thyme
     quantity: 2
     unit: sprigs
-    item: fresh thyme
+    item: thyme
+    note: fresh
     grams: 2
     fdcId: 173470
     matchConfidence: high
@@ -72,7 +74,8 @@ ingredients:
   - raw: 2 sprigs fresh oregano
     quantity: 2
     unit: sprigs
-    item: fresh oregano
+    item: oregano
+    note: fresh
     grams: 2
     fdcId: 171328
     matchConfidence: medium

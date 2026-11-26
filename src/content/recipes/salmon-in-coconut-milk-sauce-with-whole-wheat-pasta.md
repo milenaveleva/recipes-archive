@@ -74,7 +74,8 @@ ingredients:
   - raw: 10 g fresh dill
     quantity: 10
     unit: g
-    item: fresh dill
+    item: dill
+    note: fresh
     grams: 10
     fdcId: 172233
     matchConfidence: medium

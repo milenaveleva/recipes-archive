@@ -103,7 +103,8 @@ ingredients:
     group: For serving
     quantity: 10
     unit: g
-    item: fresh basil
+    item: basil
+    note: fresh
     grams: 10
     fdcId: 172232
     matchConfidence: high

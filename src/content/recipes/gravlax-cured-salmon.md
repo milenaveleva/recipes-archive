@@ -47,8 +47,8 @@ ingredients:
   - raw: 30 g fresh dill (plus extra for garnish)
     quantity: 30
     unit: g
-    item: fresh dill
-    note: plus extra for garnish
+    item: dill
+    note: fresh, plus extra for garnish
     grams: 30
     fdcId: 172233
     matchConfidence: medium

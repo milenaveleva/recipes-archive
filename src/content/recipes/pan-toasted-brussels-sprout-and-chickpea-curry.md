@@ -146,7 +146,8 @@ ingredients:
     group: For serving
     quantity: 1
     unit: bunch
-    item: fresh coriander
+    item: coriander
+    note: fresh
     grams: 20
     fdcId: 169997
     matchConfidence: high

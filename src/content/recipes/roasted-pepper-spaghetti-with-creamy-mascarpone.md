@@ -59,7 +59,8 @@ ingredients:
     group: For the sauce
     quantity: 1
     unit: bunch
-    item: fresh thyme
+    item: thyme
+    note: fresh
     grams: 10
     fdcId: 173470
     matchConfidence: high
@@ -68,7 +69,8 @@ ingredients:
     group: For the sauce
     quantity: 1
     unit: bunch
-    item: fresh oregano
+    item: oregano
+    note: fresh
     grams: 10
     fdcId: 171328
     matchConfidence: medium

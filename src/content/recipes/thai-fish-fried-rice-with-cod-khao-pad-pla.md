@@ -120,8 +120,8 @@ ingredients:
     cooking: raw
   - raw: fresh cilantro, a little
     group: For serving
-    item: fresh cilantro
-    note: a little
+    item: cilantro
+    note: fresh, a little
     grams: 5
     fdcId: 169997
     matchConfidence: high

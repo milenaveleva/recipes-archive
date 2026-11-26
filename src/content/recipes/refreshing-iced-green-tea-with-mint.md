@@ -27,8 +27,8 @@ ingredients:
   - raw: 3 sprigs fresh mint (plus extra to garnish)
     quantity: 3
     unit: sprigs
-    item: fresh mint
-    note: plus extra to garnish
+    item: mint
+    note: fresh, plus extra to garnish
     grams: 6
     fdcId: 173475
     matchConfidence: high

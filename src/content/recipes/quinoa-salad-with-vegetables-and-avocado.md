@@ -67,7 +67,8 @@ ingredients:
   - raw: 15 g fresh herbs
     quantity: 15
     unit: g
-    item: fresh herbs
+    item: herbs
+    note: fresh
     grams: 15
     fdcId: 170416
     matchConfidence: high

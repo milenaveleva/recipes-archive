@@ -145,7 +145,8 @@ ingredients:
     group: For serving
     quantity: 10
     unit: g
-    item: fresh coriander
+    item: coriander
+    note: fresh
     grams: 10
     fdcId: 169997
     matchConfidence: medium

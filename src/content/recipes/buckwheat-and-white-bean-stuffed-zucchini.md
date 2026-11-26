@@ -68,7 +68,8 @@ ingredients:
   - raw: 15 g fresh basil leaves
     quantity: 15
     unit: g
-    item: fresh basil leaves
+    item: basil leaves
+    note: fresh
     grams: 15
     fdcId: 172232
     matchConfidence: high

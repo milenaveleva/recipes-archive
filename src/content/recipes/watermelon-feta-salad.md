@@ -45,7 +45,8 @@ ingredients:
   - raw: 10 g fresh basil
     quantity: 10
     unit: g
-    item: fresh basil
+    item: basil
+    note: fresh
     grams: 10
     fdcId: 172232
     matchConfidence: high
@@ -53,7 +54,8 @@ ingredients:
   - raw: 10 g fresh mint
     quantity: 10
     unit: g
-    item: fresh mint
+    item: mint
+    note: fresh
     grams: 10
     fdcId: 173475
     matchConfidence: high

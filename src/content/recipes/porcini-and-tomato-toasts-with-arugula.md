@@ -75,22 +75,22 @@ ingredients:
     matchConfidence: high
     cooking: boiled
   - raw: fresh basil, a little
-    item: fresh basil
-    note: a little
+    item: basil
+    note: fresh, a little
     grams: 5
     fdcId: 172232
     matchConfidence: high
     cooking: raw
   - raw: fresh thyme, a little
-    item: fresh thyme
-    note: a little
+    item: thyme
+    note: fresh, a little
     grams: 2
     fdcId: 173470
     matchConfidence: high
     cooking: boiled
   - raw: fresh parsley, a little
-    item: fresh parsley
-    note: a little
+    item: parsley
+    note: fresh, a little
     grams: 5
     fdcId: 170416
     matchConfidence: high

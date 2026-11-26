@@ -78,8 +78,8 @@ ingredients:
   - raw: 10 g fresh basil, for garnish
     quantity: 10
     unit: g
-    item: fresh basil
-    note: for garnish
+    item: basil
+    note: fresh, for garnish
     grams: 10
     fdcId: 172232
     matchConfidence: medium

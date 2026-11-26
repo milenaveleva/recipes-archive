@@ -66,8 +66,8 @@ ingredients:
     matchConfidence: high
     cooking: boiled
   - raw: fresh cilantro, a little
-    item: fresh cilantro
-    note: a little
+    item: cilantro
+    note: fresh, a little
     grams: 3
     fdcId: 169997
     matchConfidence: high

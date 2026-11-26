@@ -61,7 +61,8 @@ ingredients:
     cooking: fried
   - raw: 10 fresh sage leaves
     quantity: 10
-    item: fresh sage leaves
+    item: sage leaves
+    note: fresh
     grams: 3
     fdcId: 170935
     matchConfidence: medium

@@ -106,7 +106,8 @@ ingredients:
   - raw: 1 tbsp fresh parsley
     quantity: 1
     unit: tbsp
-    item: fresh parsley
+    item: parsley
+    note: fresh
     grams: 3.8
     milliliters: 14.7868
     fdcId: 170416

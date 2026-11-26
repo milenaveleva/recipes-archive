@@ -38,7 +38,8 @@ ingredients:
   - raw: 15 g fresh sage
     quantity: 15
     unit: g
-    item: fresh sage
+    item: sage
+    note: fresh
     grams: 4
     fdcId: 170935
     matchConfidence: medium

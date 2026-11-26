@@ -97,7 +97,8 @@ ingredients:
     group: To serve
     quantity: 1
     unit: bunch
-    item: fresh basil
+    item: basil
+    note: fresh
     grams: 25
     fdcId: 172232
     matchConfidence: high

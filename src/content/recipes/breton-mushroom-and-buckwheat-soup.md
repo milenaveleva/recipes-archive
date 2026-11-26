@@ -96,7 +96,8 @@ ingredients:
     group: For frying and seasoning
     quantity: 5
     unit: g
-    item: fresh thyme
+    item: thyme
+    note: fresh
     grams: 5
     fdcId: 173470
     matchConfidence: high
@@ -125,7 +126,8 @@ ingredients:
     group: For serving
     quantity: 1
     unit: bunch
-    item: fresh parsley
+    item: parsley
+    note: fresh
     grams: 20
     fdcId: 170416
     matchConfidence: high

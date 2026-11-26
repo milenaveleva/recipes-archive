@@ -95,7 +95,8 @@ ingredients:
     group: Dressing and seasoning
     quantity: 1
     unit: tbsp
-    item: fresh thyme
+    item: thyme
+    note: fresh
     grams: 2.4
     milliliters: 14.7868
     fdcId: 173470

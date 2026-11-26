@@ -65,8 +65,8 @@ ingredients:
     cooking: boiled
   - raw: fresh mint, a few leaves
     group: For the soup
-    item: fresh mint
-    note: a few leaves
+    item: mint
+    note: fresh, a few leaves
     grams: 2
     fdcId: 173475
     matchConfidence: high
@@ -101,7 +101,8 @@ ingredients:
     cooking: boiled
   - raw: fresh mint leaves
     group: For serving
-    item: fresh mint leaves
+    item: mint leaves
+    note: fresh
     grams: 2
     fdcId: 173475
     matchConfidence: high

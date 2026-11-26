@@ -68,7 +68,8 @@ ingredients:
   - raw: 20 g fresh basil
     quantity: 20
     unit: g
-    item: fresh basil
+    item: basil
+    note: fresh
     grams: 20
     fdcId: 172232
     matchConfidence: high

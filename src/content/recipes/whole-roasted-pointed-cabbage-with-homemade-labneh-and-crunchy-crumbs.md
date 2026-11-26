@@ -86,8 +86,8 @@ ingredients:
     matchConfidence: medium
     cooking: raw
   - raw: fresh herbs, a little
-    item: fresh herbs
-    note: a little
+    item: herbs
+    note: fresh, a little
     grams: 5
     fdcId: 170416
     matchConfidence: high

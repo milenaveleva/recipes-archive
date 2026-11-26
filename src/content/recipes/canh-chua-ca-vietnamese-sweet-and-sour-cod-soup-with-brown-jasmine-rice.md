@@ -112,7 +112,8 @@ ingredients:
     group: For serving and garnish
     quantity: 3.75
     unit: tbsp
-    item: fresh coriander
+    item: coriander
+    note: fresh
     grams: 20
     milliliters: 55.4505
     fdcId: 169997

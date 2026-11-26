@@ -54,8 +54,8 @@ ingredients:
     matchConfidence: high
     cooking: boiled
   - raw: fresh thyme, a little
-    item: fresh thyme
-    note: a little
+    item: thyme
+    note: fresh, a little
     grams: 1
     fdcId: 173470
     matchConfidence: high

@@ -105,7 +105,8 @@ ingredients:
     group: Salad base and vegetables
     quantity: 1
     unit: bunch
-    item: fresh mint
+    item: mint
+    note: fresh
     grams: 20
     fdcId: 173475
     matchConfidence: high

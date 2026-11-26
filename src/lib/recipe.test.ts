@@ -481,6 +481,8 @@ describe('olive oil and state-word display', () => {
     expect(displayItemNote('dry whole-wheat penne')).toEqual({ item: 'whole-wheat penne', note: 'dry' });
     expect(displayItemNote('dried oregano')).toEqual({ item: 'dried oregano', note: null });
     expect(displayItemNote('raw honey')).toEqual({ item: 'raw honey', note: null });
+    expect(displayItemNote('fresh basil leaves', 'for garnish')).toEqual({ item: 'basil leaves', note: 'fresh, for garnish' });
+    expect(displayItemNote('fresh garlic')).toEqual({ item: 'fresh garlic', note: null });
     expect(displayItemNote('unsweetened oat milk', 'as needed')).toEqual({ item: 'oat milk', note: 'unsweetened, as needed' });
   });
 });

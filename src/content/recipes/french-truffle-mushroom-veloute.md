@@ -79,7 +79,8 @@ ingredients:
   - raw: 2 sprigs fresh thyme
     quantity: 2
     unit: sprigs
-    item: fresh thyme
+    item: thyme
+    note: fresh
     grams: 2
     fdcId: 173470
     matchConfidence: high

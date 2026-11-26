@@ -54,7 +54,8 @@ ingredients:
   - raw: 10 g fresh cilantro
     quantity: 10
     unit: g
-    item: fresh cilantro
+    item: cilantro
+    note: fresh
     grams: 10
     fdcId: 169997
     matchConfidence: high

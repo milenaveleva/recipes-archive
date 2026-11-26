@@ -95,7 +95,8 @@ ingredients:
   - raw: 1 tsp fresh thyme
     quantity: 1
     unit: tsp
-    item: fresh thyme
+    item: thyme
+    note: fresh
     grams: 0.8
     milliliters: 4.92892
     fdcId: 173470
@@ -114,7 +115,8 @@ ingredients:
     group: For serving
     quantity: 1
     unit: bunch
-    item: fresh parsley
+    item: parsley
+    note: fresh
     grams: 30
     fdcId: 170416
     matchConfidence: high

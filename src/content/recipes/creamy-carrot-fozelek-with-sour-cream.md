@@ -142,7 +142,8 @@ ingredients:
     group: Garnish and serving
     quantity: 1
     unit: bunch
-    item: fresh parsley
+    item: parsley
+    note: fresh
     grams: 25
     fdcId: 170416
     matchConfidence: high

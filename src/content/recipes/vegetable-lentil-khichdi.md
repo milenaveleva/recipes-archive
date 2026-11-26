@@ -164,7 +164,8 @@ ingredients:
     group: For serving
     quantity: 1
     unit: bunch
-    item: fresh cilantro
+    item: cilantro
+    note: fresh
     grams: 20
     fdcId: 169997
     matchConfidence: medium

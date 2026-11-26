@@ -72,8 +72,8 @@ ingredients:
   - raw: 1 bunch fresh dill (or 1 tbsp dried)
     quantity: 1
     unit: bunch
-    item: fresh dill
-    note: or 1 tbsp dried
+    item: dill
+    note: fresh, or 1 tbsp dried
     grams: 20
     fdcId: 172233
     matchConfidence: high

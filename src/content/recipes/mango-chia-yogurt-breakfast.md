@@ -49,7 +49,8 @@ ingredients:
     matchConfidence: high
     cooking: raw
   - raw: a few fresh mint leaves
-    item: a few fresh mint leaves
+    item: mint leaves
+    note: fresh
     grams: 2
     fdcId: 173475
     matchConfidence: high

@@ -68,8 +68,8 @@ ingredients:
     matchConfidence: high
     cooking: raw
   - raw: fresh parsley, a little
-    item: fresh parsley
-    note: a little
+    item: parsley
+    note: fresh, a little
     grams: 10
     fdcId: 170416
     matchConfidence: high

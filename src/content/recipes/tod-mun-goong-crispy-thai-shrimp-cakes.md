@@ -39,7 +39,8 @@ ingredients:
     group: For the shrimp cakes
     quantity: 15
     unit: g
-    item: fresh cilantro
+    item: cilantro
+    note: fresh
     grams: 15
     fdcId: 169997
     matchConfidence: high

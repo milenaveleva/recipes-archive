@@ -49,7 +49,8 @@ ingredients:
     group: Sauce and pasta
     quantity: 30
     unit: g
-    item: fresh basil
+    item: basil
+    note: fresh
     grams: 30
     fdcId: 172232
     matchConfidence: high

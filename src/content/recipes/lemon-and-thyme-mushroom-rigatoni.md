@@ -44,7 +44,8 @@ ingredients:
   - raw: 10 g fresh thyme
     quantity: 10
     unit: g
-    item: fresh thyme
+    item: thyme
+    note: fresh
     grams: 10
     fdcId: 173470
     matchConfidence: high

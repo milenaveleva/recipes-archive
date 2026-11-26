@@ -63,8 +63,8 @@ ingredients:
   - raw: 1 cup fresh basil (or parsley)
     quantity: 1
     unit: cup
-    item: fresh basil
-    note: or parsley
+    item: basil
+    note: fresh, or parsley
     grams: 42.4
     milliliters: 236.588
     fdcId: 172232

@@ -73,7 +73,8 @@ ingredients:
   - raw: 2 tbsp fresh coriander
     quantity: 2
     unit: tbsp
-    item: fresh coriander
+    item: coriander
+    note: fresh
     grams: 2
     milliliters: 29.5736
     fdcId: 169997

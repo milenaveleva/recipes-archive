@@ -59,7 +59,8 @@ ingredients:
     matchConfidence: medium
     cooking: boiled
   - raw: fresh herbs
-    item: fresh herbs
+    item: herbs
+    note: fresh
     grams: 5
     fdcId: 170416
     matchConfidence: high

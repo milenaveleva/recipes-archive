@@ -101,8 +101,8 @@ ingredients:
     matchConfidence: medium
     cooking: fried
   - raw: fresh parsley, chopped
-    item: fresh parsley
-    note: chopped
+    item: parsley
+    note: fresh, chopped
     grams: 10
     fdcId: 170416
     matchConfidence: high

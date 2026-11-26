@@ -63,7 +63,8 @@ ingredients:
   - raw: 2 sprigs fresh rosemary
     quantity: 2
     unit: sprigs
-    item: fresh rosemary
+    item: rosemary
+    note: fresh
     grams: 3
     fdcId: 173473
     matchConfidence: high

@@ -36,7 +36,8 @@ ingredients:
   - raw: 4 g fresh rosemary
     quantity: 4
     unit: g
-    item: fresh rosemary
+    item: rosemary
+    note: fresh
     grams: 4
     fdcId: 173473
     matchConfidence: high

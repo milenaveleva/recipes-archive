@@ -54,7 +54,8 @@ ingredients:
   - raw: 1 bunch fresh dill
     quantity: 1
     unit: bunch
-    item: fresh dill
+    item: dill
+    note: fresh
     grams: 20
     fdcId: 172233
     matchConfidence: high

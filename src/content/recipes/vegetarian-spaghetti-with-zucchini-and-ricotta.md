@@ -66,7 +66,8 @@ ingredients:
   - raw: 1 bunch fresh parsley
     quantity: 1
     unit: bunch
-    item: fresh parsley
+    item: parsley
+    note: fresh
     grams: 30
     fdcId: 170416
     matchConfidence: high
@@ -74,7 +75,8 @@ ingredients:
   - raw: 1 bunch fresh basil
     quantity: 1
     unit: bunch
-    item: fresh basil
+    item: basil
+    note: fresh
     grams: 25
     fdcId: 172232
     matchConfidence: high

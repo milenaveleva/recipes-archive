@@ -262,10 +262,15 @@ const STATE_IN_NAME = /^(dried|dry|raw)\s+(oregano|thyme|basil|parsley|dill|mint
 /**
  * The name and note an ingredient line shows: a leading state word on a staple
  * ("dried chickpeas", "dry penne") moves into the faded note ("chickpeas · dry, soaked
- * and cooked"), so every line reads the same way; product names that carry the word
- * (dried oregano, raw honey) keep it.
+ * and cooked"), and so does "fresh" on a herb ("basil · fresh"), so every line reads the
+ * same way; product names that carry the word (dried oregano, raw honey) keep it.
  */
+/** A fresh herb named with its "fresh" ("fresh basil leaves"), which belongs in the note. */
+const FRESH_HERB = /^fresh\s+((?:flat-leaf |curly |thai |lemon |wild )?(?:parsley|basil|coriander|cilantro|mint|spearmint|peppermint|dill|chives?|thyme|rosemary|sage|oregano|tarragon|marjoram|bay lea(?:f|ves)|chervil|lovage|herbs?|lemon balm|garlic leaves)\b.*)$/i;
+
 export function displayItemNote(item: string, note?: string | null): { item: string; note: string | null } {
+  const herb = FRESH_HERB.exec(item.trim());
+  if (herb) return { item: herb[1], note: note && !/^fresh\b/i.test(note) ? `fresh, ${note}` : note || 'fresh' };
   const m = STATE_PREFIX.exec(item.trim());
   if (!m || STATE_IN_NAME.test(item.trim())) return { item, note: note ?? null };
   // "dried" and "uncooked" read as the one word the lists use: "dry" (raw stays raw).

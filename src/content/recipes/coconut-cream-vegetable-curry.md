@@ -162,8 +162,8 @@ ingredients:
     matchConfidence: high
     cooking: boiled
   - raw: fresh cilantro, chopped (optional)
-    item: fresh cilantro, chopped
-    note: optional
+    item: cilantro, chopped
+    note: fresh, optional
     grams: 5
     fdcId: 169997
     matchConfidence: high

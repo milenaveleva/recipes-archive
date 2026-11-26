@@ -68,7 +68,8 @@ ingredients:
   - raw: 1 tbsp fresh thyme leaves
     quantity: 1
     unit: tbsp
-    item: fresh thyme leaves
+    item: thyme leaves
+    note: fresh
     grams: 2.4
     milliliters: 14.7868
     fdcId: 173470

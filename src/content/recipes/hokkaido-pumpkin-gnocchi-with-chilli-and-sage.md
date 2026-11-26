@@ -79,7 +79,8 @@ ingredients:
   - raw: 40 fresh sage leaves
     group: For serving and frying
     quantity: 40
-    item: fresh sage leaves
+    item: sage leaves
+    note: fresh
     grams: 20
     fdcId: 170935
     matchConfidence: medium
@@ -89,7 +90,8 @@ ingredients:
     group: For serving and frying
     quantity: 8
     unit: sprigs
-    item: fresh thyme
+    item: thyme
+    note: fresh
     grams: 8
     fdcId: 173470
     matchConfidence: high

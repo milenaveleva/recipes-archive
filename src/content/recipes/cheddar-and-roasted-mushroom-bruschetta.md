@@ -76,7 +76,8 @@ ingredients:
     matchConfidence: high
     cooking: fried
   - raw: fresh thyme
-    item: fresh thyme
+    item: thyme
+    note: fresh
     grams: 2
     fdcId: 173470
     matchConfidence: high

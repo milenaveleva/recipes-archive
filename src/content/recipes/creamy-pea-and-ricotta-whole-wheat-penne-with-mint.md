@@ -67,7 +67,8 @@ ingredients:
     group: Main ingredients
     quantity: 1
     unit: bunch
-    item: fresh mint
+    item: mint
+    note: fresh
     grams: 15
     fdcId: 173475
     matchConfidence: high

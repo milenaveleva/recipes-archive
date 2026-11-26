@@ -45,7 +45,8 @@ ingredients:
   - raw: 5 g fresh mint
     quantity: 5
     unit: g
-    item: fresh mint
+    item: mint
+    note: fresh
     grams: 5
     fdcId: 173475
     matchConfidence: high

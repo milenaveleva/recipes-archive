@@ -47,7 +47,8 @@ ingredients:
     group: Noodles and vegetables
     quantity: 20
     unit: g
-    item: fresh mint
+    item: mint
+    note: fresh
     grams: 20
     fdcId: 173475
     matchConfidence: high
@@ -56,7 +57,8 @@ ingredients:
     group: Noodles and vegetables
     quantity: 3.75
     unit: tbsp
-    item: fresh coriander
+    item: coriander
+    note: fresh
     grams: 20
     milliliters: 55.4505
     fdcId: 169997

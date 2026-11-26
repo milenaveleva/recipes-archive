@@ -125,7 +125,8 @@ ingredients:
     group: For serving
     quantity: 10
     unit: g
-    item: fresh parsley
+    item: parsley
+    note: fresh
     grams: 10
     fdcId: 170416
     matchConfidence: high

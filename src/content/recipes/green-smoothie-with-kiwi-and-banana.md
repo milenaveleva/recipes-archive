@@ -60,8 +60,8 @@ ingredients:
   - raw: 1 sprig fresh basil, for garnish
     quantity: 1
     unit: sprig
-    item: fresh basil
-    note: for garnish
+    item: basil
+    note: fresh, for garnish
     grams: 2
     fdcId: 172232
     matchConfidence: high

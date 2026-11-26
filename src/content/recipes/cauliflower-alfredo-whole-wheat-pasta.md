@@ -71,8 +71,8 @@ ingredients:
     matchConfidence: high
     cooking: boiled
   - raw: fresh parsley, for garnish
-    item: fresh parsley
-    note: for garnish
+    item: parsley
+    note: fresh, for garnish
     grams: 3
     fdcId: 170416
     matchConfidence: high

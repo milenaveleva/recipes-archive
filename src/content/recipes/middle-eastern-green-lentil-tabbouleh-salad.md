@@ -57,7 +57,8 @@ ingredients:
     group: For the salad base
     quantity: 2
     unit: bunches
-    item: fresh parsley
+    item: parsley
+    note: fresh
     grams: 80
     fdcId: 170416
     matchConfidence: high
@@ -66,7 +67,8 @@ ingredients:
     group: For the salad base
     quantity: 1
     unit: bunch
-    item: fresh mint
+    item: mint
+    note: fresh
     grams: 30
     fdcId: 173475
     matchConfidence: high

@@ -81,8 +81,8 @@ ingredients:
   - raw: 2 tbsp fresh parsley, chopped
     quantity: 2
     unit: tbsp
-    item: fresh parsley
-    note: chopped
+    item: parsley
+    note: fresh, chopped
     grams: 7.5
     milliliters: 29.5736
     fdcId: 170416

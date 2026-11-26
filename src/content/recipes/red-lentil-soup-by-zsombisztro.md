@@ -100,7 +100,8 @@ ingredients:
     cooking: raw
   - raw: fresh parsley
     group: For serving
-    item: fresh parsley
+    item: parsley
+    note: fresh
     grams: 3
     fdcId: 170416
     matchConfidence: high

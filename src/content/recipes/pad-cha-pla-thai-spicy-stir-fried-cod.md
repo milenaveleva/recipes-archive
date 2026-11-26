@@ -66,7 +66,8 @@ ingredients:
     group: Main ingredients
     quantity: 20
     unit: g
-    item: fresh basil
+    item: basil
+    note: fresh
     grams: 20
     fdcId: 172232
     matchConfidence: high

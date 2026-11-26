@@ -145,8 +145,8 @@ ingredients:
     group: For serving
     quantity: 1
     unit: bunch
-    item: fresh coriander
-    note: cilantro
+    item: coriander
+    note: fresh, cilantro
     grams: 30
     fdcId: 169997
     matchConfidence: high
