@@ -28,7 +28,7 @@ ingredients:
     grams: 1892.7
     milliliters: 1892.704
     fdcId: 175103
-    matchConfidence: low
+    matchConfidence: high
     cooking: raw
   - raw: 2 Medjool dates
     quantity: 2

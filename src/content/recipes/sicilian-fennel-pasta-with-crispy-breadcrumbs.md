@@ -61,7 +61,7 @@ ingredients:
     grams: 93.4
     milliliters: 100
     fdcId: 171583
-    matchConfidence: low
+    matchConfidence: high
     cooking: boiled
   - raw: 30 g pine nuts
     group: Pasta and fennel sauce
@@ -137,8 +137,8 @@ ingredients:
     item: chili flakes
     grams: 0.2
     milliliters: 0.3080575
-    fdcId: 171319
-    matchConfidence: low
+    fdcId: 170932
+    matchConfidence: high
     cooking: fried
 nutrition:
   perServing:
@@ -146,35 +146,35 @@ nutrition:
     energyKj: 2457
     protein_g: 18.8
     fat_g: 17.4
-    satFat_g: 1.9
+    satFat_g: 2.3
     carbs_g: 98.6
     fiber_g: 14.4
-    sugar_g: 13.8
-    sodium_mg: 778
+    sugar_g: 14.1
+    sodium_mg: 777
     availableCarb_g: 84.2
   glycemic:
-    gi: 49
+    gi: 48
     gl: 41
     giBand: low
     glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 82
+    measuredGiPct: 88
   nutriScore:
     grade: B
     points: 1
     category: general
     version: "2023"
-    coverage: 0.98
+    coverage: 1
   inflammation:
-    score: -0.3
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.37
   balance:
     score: 5
     band: moderate
-    nrf: 25.2
+    nrf: 25.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 94.4

@@ -18,7 +18,8 @@
  * (sat fat, sugar, sodium): those read a seen-mass concentration (over only the
  * mass that reported them) so a food omitting a limit datum imputes the typical
  * amount instead of a 0 that would flatter the score. `nutriScore.coverage` records
- * how much of the basis actually reported the profiling nutrients. Foods flagged
+ * how much of the basis actually reported the profiling nutrients, or provably holds
+ * a negligible amount of them (see `negligibleZero`). Foods flagged
  * excludeFromNutrition (water, stock) are left out entirely; this slightly
  * concentrates brothy recipes versus an as-consumed basis, acceptable for an estimate.
  */
@@ -196,12 +197,12 @@ export function computeScores(
     const kcal = energyKcalOf(n);
     if (kcal == null) continue;
     addField(sum, mass, 'energyKcal', kcal, grams, factor);
-    addField(sum, mass, 'sugar', n.sugar_g, grams, factor);
-    addField(sum, mass, 'satFat', n.satFat_g, grams, factor);
+    addField(sum, mass, 'sugar', n.sugar_g ?? negligibleZero(n, 'sugar'), grams, factor);
+    addField(sum, mass, 'satFat', n.satFat_g ?? negligibleZero(n, 'satFat'), grams, factor);
     addField(sum, mass, 'fat', n.fat_g, grams, factor); // total fat → SFA/total-fat ratio (fats category)
     addField(sum, mass, 'salt', saltGrams(n.sodium_mg), grams, factor);
     addField(sum, mass, 'protein', n.protein_g, grams, factor);
-    addField(sum, mass, 'fiber', n.fiber_g, grams, factor);
+    addField(sum, mass, 'fiber', n.fiber_g ?? negligibleZero(n, 'fiber'), grams, factor);
     // Raw sodium + the 7 encouraged micronutrients feed the NRF9.3 balance score.
     addField(sum, mass, 'sodium', n.sodium_mg, grams, factor);
     addField(sum, mass, 'vitA', n.vitA_ug, grams, factor);
@@ -300,6 +301,21 @@ export function computeScores(
   if (processing) result.processing = processing;
 
   return result;
+}
+
+/**
+ * 0 for a field the food omits but a reported parent value caps below the amount EU
+ * labelling lets a producer declare as zero (Regulation (EU) 1169/2011 tolerance
+ * guidance: < 0.5 g sugars or fibre, < 0.1 g saturates per 100 g) — sugars cannot exceed
+ * the available carbohydrate, saturates cannot exceed total fat, and fibre cannot exceed
+ * carbohydrate by difference — else undefined (unknown). The food then counts as
+ * reporting the field, so the score's sums and its `coverage` agree.
+ */
+function negligibleZero(n: NutrientVector, f: 'sugar' | 'satFat' | 'fiber'): number | undefined {
+  const below = (v: number | null | undefined, limit: number) => v != null && Number.isFinite(v) && v >= 0 && v < limit;
+  if (f === 'sugar') return below(availableCarbOf(n), 0.5) ? 0 : undefined;
+  if (f === 'satFat') return below(n.fat_g, 0.1) ? 0 : undefined;
+  return below(n.carbs_g, 0.5) ? 0 : undefined;
 }
 
 /**

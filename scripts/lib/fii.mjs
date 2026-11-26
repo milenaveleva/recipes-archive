@@ -25,6 +25,11 @@ function per100gOf(food, key, polyphenols) {
     if (!Number.isFinite(n.monoFat_g) && !Number.isFinite(n.polyFat_g)) return undefined;
     return (n.monoFat_g || 0) + (n.polyFat_g || 0) - (n.satFat_g || 0) - (n.transFat_g || 0);
   }
+  if (key === 'longChainN3_g') {
+    // EPA + DHA; unknown only when neither is reported (mirror of src/core/fii.ts).
+    if (!Number.isFinite(n.epa_g) && !Number.isFinite(n.dha_g)) return undefined;
+    return (n.epa_g || 0) + (n.dha_g || 0);
+  }
   if (key === 'freeSugar_g') {
     // Free-sugar estimate from the 1:2 fibre:free-sugar dual ratio (mirror of src/core/fii.ts).
     if (!Number.isFinite(n.sugar_g)) return undefined;
@@ -64,6 +69,7 @@ export function rawFII(food, { parameters, paramStats, polyphenols, clampZ }) {
   let sum = 0;
   let wsum = 0;
   let present = 0;
+  let scored = 0;
   for (const p of parameters) {
     const v = valueOf(food, p.nutrient, polyphenols);
     if (v === undefined) continue;
@@ -74,15 +80,21 @@ export function rawFII(food, { parameters, paramStats, polyphenols, clampZ }) {
     const z = (v - r.center) / r.scale;
     const lo = p.oneSided ? 0 : -clampZ;
     const zc = z < lo ? lo : z > clampZ ? clampZ : z;
+    present += 1;
+    // A bonus-only signal (marine omega-3) enters the mean only at a meaningful amount and
+    // never counts toward the quorum (mirror of src/core/fii.ts).
+    if (p.bonusOnly && zc < BONUS_MIN_Z) continue;
     sum += p.dir * p.weight * zc;
     wsum += p.weight;
-    present += 1;
+    scored += 1;
   }
-  return wsum > 0 ? { raw: sum / wsum, present, total: parameters.length } : null;
+  return wsum > 0 ? { raw: sum / wsum, present, scored, total: parameters.length } : null;
 }
 
-/** Coverage at/above which the full ±2 tag range is available (mirror of src/core/fii.ts). */
-export const QUORUM_COVERAGE = 0.5;
+/** Known-parameter count at/above which the full ±2 tag range is available (mirror of src/core/fii.ts). */
+export const QUORUM_PARAMS = 4;
+/** z at/above which a bonus-only parameter enters the mean (mirror of src/core/fii.ts). */
+export const BONUS_MIN_Z = 0.25;
 
 /** Standardised per-food tag in −2 (anti) … +2 (pro), with parameter coverage. */
 export function foodTag(food, ctx) {
@@ -91,8 +103,8 @@ export function foodTag(food, ctx) {
   const std = (r.raw - ctx.fiiRaw.center) / ctx.fiiRaw.scale;
   if (!Number.isFinite(std)) return null;
   const coverage = r.present / r.total;
-  // Shrink data-poor foods toward neutral: ±2 is reachable only at quorum coverage.
-  const bound = 2 * Math.min(1, coverage / QUORUM_COVERAGE);
+  // Shrink data-poor foods toward neutral: ±2 is reachable only at the quorum count.
+  const bound = 2 * Math.min(1, r.scored / QUORUM_PARAMS);
   const tag = Math.max(-bound, Math.min(bound, Math.round(std * 10) / 10));
   return { tag, coverage };
 }

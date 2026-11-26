@@ -90,7 +90,7 @@ nutrition:
     version: "2023"
     coverage: 0.96
   inflammation:
-    score: 1.4
+    score: 1.3
     band: pro-inflammatory
     method: fii v4
   balance:

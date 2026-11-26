@@ -35,7 +35,7 @@ ingredients:
     grams: 265
     milliliters: 709.764
     fdcId: 175202
-    matchConfidence: low
+    matchConfidence: high
     cooking: boiled
   - raw: 2 large potatoes
     quantity: 2
@@ -89,13 +89,13 @@ nutrition:
     sodium_mg: 988
     availableCarb_g: 50.3
   glycemic:
-    gi: 48
-    gl: 24
+    gi: 45
+    gl: 22
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 35
+    measuredGiPct: 94
   nutriScore:
     grade: B
     points: 1

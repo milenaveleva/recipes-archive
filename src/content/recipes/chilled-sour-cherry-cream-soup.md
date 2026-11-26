@@ -92,7 +92,7 @@ nutrition:
     version: "2023"
     coverage: 0.62
   inflammation:
-    score: 0.1
+    score: 0.2
     band: neutral
     method: fii v4
   balance:

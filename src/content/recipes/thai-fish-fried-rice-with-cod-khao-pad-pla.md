@@ -34,7 +34,7 @@ ingredients:
     note: ≈ 101 g uncooked
     grams: 101
     fdcId: 169703
-    matchConfidence: low
+    matchConfidence: high
     cooking: fried
   - raw: 2 eggs
     group: Main ingredients

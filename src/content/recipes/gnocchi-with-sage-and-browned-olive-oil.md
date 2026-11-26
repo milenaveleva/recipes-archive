@@ -50,6 +50,7 @@ ingredients:
     fdcId: 170935
     matchConfidence: low
     cooking: fried
+    proxyOk: true
   - raw: 1 clove garlic
     quantity: 1
     unit: clove

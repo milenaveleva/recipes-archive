@@ -75,7 +75,7 @@ export const FDC_FIELD = {
   315: 'manganese_mg', 317: 'selenium_ug', 320: 'vitA_ug', 401: 'vitC_mg', 328: 'vitD_ug', 323: 'vitE_mg',
   430: 'vitK_ug', 404: 'thiamin_mg', 405: 'riboflavin_mg', 406: 'niacin_mg', 415: 'vitB6_mg',
   417: 'folate_ug', 418: 'vitB12_ug', 410: 'pantothenicAcid_mg', 421: 'choline_mg', 262: 'caffeine_mg',
-  221: 'alcohol_g',
+  221: 'alcohol_g', 629: 'epa_g', 621: 'dha_g',
 };
 
 // Alternate nutrient definitions under which Foundation Foods report the same

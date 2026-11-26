@@ -25,7 +25,7 @@ ingredients:
     note: in shell
     grams: 100
     fdcId: 174216
-    matchConfidence: low
+    matchConfidence: high
     cooking: steamed
   - raw: 200 g whole-wheat spaghetti, dry
     quantity: 200

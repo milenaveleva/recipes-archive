@@ -108,6 +108,7 @@ ingredients:
     fdcId: 171329
     matchConfidence: low
     cooking: boiled
+    proxyOk: true
   - raw: whole-wheat breadcrumbs, a little for the topping
     group: Main ingredients
     item: whole-wheat breadcrumbs
@@ -145,13 +146,13 @@ nutrition:
     sodium_mg: 836
     availableCarb_g: 56
   glycemic:
-    gi: 48
-    gl: 27
+    gi: 52
+    gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 75
+    measuredGiPct: 93
   nutriScore:
     grade: C
     points: 4

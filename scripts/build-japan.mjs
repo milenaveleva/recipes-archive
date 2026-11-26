@@ -7,7 +7,7 @@
  * Inputs (git-ignored local build inputs under scripts/data-raw/, downloaded from
  * mext.go.jp; see src/data/README.md for URLs and licence):
  *   - japan-mext-2023-ch2.xlsx  — main per-100g table (energy, macros, minerals, vitamins)
- *   - japan-mext-2023-_09.xlsx  — fatty-acids supplement (saturated / mono / poly)
+ *   - japan-mext-2023-_09.xlsx  — fatty-acids supplement (saturated / mono / poly, EPA, DHA)
  *   - japan-mext-2023-_13.xlsx  — carbohydrates supplement (component sugars)
  * joined on the 5-digit food number (食品番号).
  *
@@ -78,7 +78,8 @@ const CURATED_EN = {
   '17016': 'Rice vinegar',
   '17015': 'Grain vinegar',
   '04040': 'Tofu, aburaage (deep-fried), raw',
-  '16023': 'Sake, refined (seishu)',
+  '16001': 'Sake, refined (seishu, futsūshu)',
+  '16023': 'Sake, synthetic (gōsei seishu)',
   '17007': 'Soy sauce, koikuchi (dark)',
   '17008': 'Soy sauce, usukuchi (light)',
   '17044': 'Miso, rice, light (shiro)',
@@ -102,12 +103,16 @@ function buildVector(main, fat, carb) {
     const v = pv(main[col]);
     if (v != null) n[field] = v;
   }
-  // Fat breakdown from the fatty-acids supplement (FASAT 8, FAMS 9, FAPU 10).
+  // Fat breakdown from the fatty-acids supplement (FASAT 8, FAMS 9, FAPU 10, g/100 g).
   if (fat) {
     const sat = pv(fat[8]), mono = pv(fat[9]), poly = pv(fat[10]);
     if (sat != null) n.satFat_g = sat;
     if (mono != null) n.monoFat_g = mono;
     if (poly != null) n.polyFat_g = poly;
+    // EPA (F20D5N3, col 54) and DHA (F22D6N3, col 60) are tabulated in mg/100 g.
+    const epa = pv(fat[54]), dha = pv(fat[60]);
+    if (epa != null) n.epa_g = epa / 1000;
+    if (dha != null) n.dha_g = dha / 1000;
   }
   // Total sugars = sum of the component mono/di-saccharides from the carbohydrate
   // supplement (GLUS 7, FRUS 8, GALS 9, SUCS 10, MALS 11, LACS 12, TRES 13);

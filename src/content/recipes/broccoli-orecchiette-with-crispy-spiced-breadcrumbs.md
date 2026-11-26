@@ -34,7 +34,7 @@ ingredients:
     item: broccoli florets
     grams: 500
     fdcId: 170379
-    matchConfidence: low
+    matchConfidence: high
     cooking: boiled
   - raw: 60 ml extra virgin olive oil
     group: Pasta and sauce
@@ -62,8 +62,8 @@ ingredients:
     item: chili flakes
     grams: 2
     milliliters: 4.92892
-    fdcId: 171319
-    matchConfidence: low
+    fdcId: 170932
+    matchConfidence: high
     cooking: fried
   - raw: zest of 1 organic lemon
     group: Pasta and sauce
@@ -114,14 +114,14 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 624
-    energyKj: 2610
+    energyKj: 2611
     protein_g: 25.3
     fat_g: 21.8
     satFat_g: 5.2
-    carbs_g: 90.4
-    fiber_g: 13.8
+    carbs_g: 90.5
+    fiber_g: 13.7
     sugar_g: 5.8
-    sodium_mg: 973
+    sodium_mg: 958
     availableCarb_g: 76.7
   glycemic:
     gi: 49
@@ -138,7 +138,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.2
+    score: -0.1
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.21

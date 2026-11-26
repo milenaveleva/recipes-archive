@@ -18,6 +18,13 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
+  - raw: 6 green asparagus spears
+    quantity: 6
+    item: green asparagus spears
+    grams: 120
+    fdcId: 2710823
+    matchConfidence: medium
+    cooking: boiled
   - raw: 250 g brown arborio rice, uncooked
     quantity: 250
     unit: g
@@ -85,42 +92,42 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 720
-    energyKj: 3014
-    protein_g: 12.5
-    fat_g: 52.9
-    satFat_g: 10.1
-    carbs_g: 49.8
-    fiber_g: 2.4
-    sugar_g: 1.3
+    energyKcal: 727
+    energyKj: 3043
+    protein_g: 12.9
+    fat_g: 53
+    satFat_g: 10.2
+    carbs_g: 51.4
+    fiber_g: 3
+    sugar_g: 1.9
     sodium_mg: 691
-    availableCarb_g: 47.4
+    availableCarb_g: 48.4
   glycemic:
-    gi: 69
+    gi: 68
     gl: 33
     giBand: medium
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 96
+    measuredGiPct: 94
   nutriScore:
     grade: C
-    points: 7
+    points: 8
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: 0
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.04
   balance:
-    score: 2
-    band: poor
-    nrf: 8.3
+    score: 3
+    band: low
+    nrf: 9.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88.3
+    minimallyProcessedPct: 88.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
@@ -141,7 +148,7 @@ createdAt: "2026-11-14"
 
 1. Measure out the olive oil and chop the shallots very finely.
 2. Bring 1.2 litres of water to a boil and set aside.
-3. Cut the tips off the peeled asparagus and set them aside. Trim off and discard the bottom 2 cm of the stalks, then slice the stalks into 0.5 cm rounds.
+3. Cut the tips off the asparagus and set them aside. Trim off and discard the bottom 2 cm of the stalks, then slice the stalks into 0.5 cm rounds.
 4. Heat 3 tablespoons of olive oil and sauté the shallots in it.
 5. Add the brown arborio rice, stirring constantly; if it sticks to the side of the pot, scrape it off with a wooden spoon. Add the first ladle of vegetable broth and bring to a boil, stirring constantly.
 6. Reduce the heat by half, add the asparagus rounds, a little salt and about 100 ml of water, just enough to cover the rice. Stir constantly until it starts to boil.

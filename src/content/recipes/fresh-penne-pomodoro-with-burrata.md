@@ -102,15 +102,15 @@ ingredients:
     fdcId: 170848
     matchConfidence: medium
     cooking: raw
-  - raw: 100 g fresh whole-wheat penne
+  - raw: 100 g fresh whole-wheat penne (≈ 75 g dry)
     quantity: 100
     unit: g
     item: fresh whole-wheat penne
-    grams: 100
-    fdcId: 168910
-    matchConfidence: low
+    note: ≈ 75 g dry
+    grams: 75
+    fdcId: 169738
+    matchConfidence: high
     cooking: boiled
-    proxyOk: true
   - raw: 3 tbsp extra virgin olive oil
     quantity: 3
     unit: tbsp
@@ -131,27 +131,27 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 1032
-    energyKj: 4317
-    protein_g: 36.3
-    fat_g: 78.5
-    satFat_g: 22.8
-    carbs_g: 52.4
-    fiber_g: 8
-    sugar_g: 10.1
-    sodium_mg: 968
-    availableCarb_g: 44.4
+    energyKcal: 1147
+    energyKj: 4798
+    protein_g: 40.8
+    fat_g: 79
+    satFat_g: 22.9
+    carbs_g: 77.3
+    fiber_g: 11
+    sugar_g: 11.4
+    sodium_mg: 966
+    availableCarb_g: 66.3
   glycemic:
-    gi: 35
-    gl: 15
+    gi: 41
+    gl: 27
     giBand: low
-    glBand: low
+    glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 60
+    measuredGiPct: 73
   nutriScore:
     grade: C
-    points: 5
+    points: 3
     category: general
     version: "2023"
     coverage: 1
@@ -163,10 +163,10 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 20.4
+    nrf: 20.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 64.1
+    minimallyProcessedPct: 67.7
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

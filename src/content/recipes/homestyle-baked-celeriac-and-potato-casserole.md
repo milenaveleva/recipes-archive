@@ -161,12 +161,12 @@ nutrition:
     availableCarb_g: 41.8
   glycemic:
     gi: 42
-    gl: 17
+    gl: 18
     giBand: low
     glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 0
+    measuredGiPct: 51
   nutriScore:
     grade: C
     points: 3

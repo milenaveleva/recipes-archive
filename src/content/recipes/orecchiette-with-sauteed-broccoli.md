@@ -34,7 +34,7 @@ ingredients:
     item: broccoli florets
     grams: 500
     fdcId: 170379
-    matchConfidence: low
+    matchConfidence: high
     cooking: boiled
   - raw: 4 cloves fresh garlic
     group: Main ingredients
@@ -119,7 +119,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.2
+    score: -0.1
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.21

@@ -3,6 +3,7 @@
  * Enumerate every public kifli.hu Séf recipe id.
  *
  *   node scripts/kifli/catalog-ids.mjs [--out scripts/data-raw/kifli/catalog-ids.txt] [--max-requests 4000]
+ *                                      [--resume <combos.txt>]
  *
  * The listing https://www.kifli.hu/sef/receptek embeds only the first 100 `recipesIds` of a
  * filter combination in its `__NEXT_DATA__`, together with the filter groups and each
@@ -11,11 +12,15 @@
  * every single option, then, for any combination matching more than 100 recipes, that
  * combination plus one option of another filter group (only options that still match).
  * It stops when the union of ids reaches the catalogue total or the queue is exhausted.
+ * The server intermittently renders a listing without its recipe queries; such a combination
+ * is retried after a back-off and, if it keeps failing, written to <out>.failed.txt.
+ * --resume seeds the union from the existing <out> and starts from the combinations listed
+ * (one `a/b/c` per line, e.g. a previous .failed.txt) instead of the single options.
  *
  * Fetched pages are treated as data only. At most 3 requests run at once, each worker
  * pausing between requests. Progress goes to stderr; stdout gets one summary JSON line.
  */
-import { writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -36,6 +41,8 @@ const arg = (name, def) => {
 };
 const OUT_FILE = path.resolve(ROOT, arg('--out', 'scripts/data-raw/kifli/catalog-ids.txt'));
 const MAX_REQUESTS = Number(arg('--max-requests', 4000));
+const RESUME = arg('--resume', null);
+const FAILED_FILE = OUT_FILE.replace(/\.txt$/, '') + '.failed.txt';
 
 async function getListing(values) {
   const url = `${ORIGIN}/sef/receptek${values.map((v) => `/${encodeURIComponent(v)}`).join('')}`;
@@ -54,8 +61,8 @@ async function getListing(values) {
       if (!filters || !recipes) throw new Error('missing recipeFilters/recipes query');
       return { url, count: filters.recipesCount, ids: recipes.recipesIds ?? [], groups: filters.filterGroups ?? [] };
     } catch (err) {
-      if (attempt >= 3) throw new Error(`${url}: ${err.message}`);
-      await sleep(2000 * attempt);
+      if (attempt >= 4) throw new Error(`${url}: ${err.message}`);
+      await sleep(5000 * attempt);
     }
   }
 }
@@ -81,13 +88,22 @@ async function main() {
     seen.add(k);
     queue.push({ vals: sorted, expected });
   };
-  for (const g of root.groups) for (const o of g.options) if (o.matchingRecipeCount > 0) enqueue([o.value], o.matchingRecipeCount);
+  if (RESUME) {
+    const prior = (await readFile(OUT_FILE, 'utf8')).split(/\s+/).filter(Boolean).map(Number);
+    prior.forEach((id) => union.add(id));
+    const combos = (await readFile(path.resolve(ROOT, RESUME), 'utf8')).split('\n').map((l) => l.trim()).filter(Boolean);
+    combos.forEach((c) => enqueue(c.split('/'), 0));
+    log(`resume: ${prior.length} known ids, ${combos.length} combinations to retry`);
+  } else {
+    for (const g of root.groups) for (const o of g.options) if (o.matchingRecipeCount > 0) enqueue([o.value], o.matchingRecipeCount);
+  }
   // Smaller combinations first; within a level, the biggest first (they unlock the most).
   queue.sort((a, b) => b.expected - a.expected);
 
   let requests = 1;
   let done = 0;
   let failures = 0;
+  const failedCombos = [];
   let lastGrowth = 0;
   const stop = () => union.size >= total || requests >= MAX_REQUESTS;
   const worker = async () => {
@@ -102,7 +118,9 @@ async function main() {
         page = await getListing(item.vals);
       } catch (err) {
         failures++;
+        failedCombos.push(item.vals.join('/'));
         log(`  FAILED ${err.message}`);
+        await sleep(10000);
         continue;
       }
       const before = union.size;
@@ -130,6 +148,7 @@ async function main() {
   const ids = [...union].sort((a, b) => a - b);
   await mkdir(path.dirname(OUT_FILE), { recursive: true });
   await writeFile(OUT_FILE, ids.join('\n') + '\n');
+  await writeFile(FAILED_FILE, failedCombos.join('\n') + (failedCombos.length ? '\n' : ''));
   const secs = Math.round((Date.now() - t0) / 1000);
   log(`done: ${ids.length}/${total} ids (gap ${total - ids.length}) in ${requests} requests, ${failures} failed, ${secs}s → ${path.relative(ROOT, OUT_FILE)}`);
   log(`last growth at request ${lastGrowth}; ${queue.length} combinations left unvisited`);

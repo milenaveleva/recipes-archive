@@ -63,7 +63,7 @@ export const PANEL = [
   'caffeine_mg', 'sodium_mg', 'potassium_mg', 'calcium_mg', 'iron_mg', 'magnesium_mg',
   'phosphorus_mg', 'zinc_mg', 'copper_mg', 'manganese_mg', 'selenium_ug', 'vitA_ug', 'vitC_mg',
   'vitD_ug', 'vitE_mg', 'vitK_ug', 'thiamin_mg', 'riboflavin_mg', 'niacin_mg', 'vitB6_mg',
-  'folate_ug', 'vitB12_ug', 'pantothenicAcid_mg', 'choline_mg',
+  'folate_ug', 'vitB12_ug', 'pantothenicAcid_mg', 'choline_mg', 'epa_g', 'dha_g',
 ];
 const FAT_FRACTIONS = ['satFat_g', 'monoFat_g', 'polyFat_g', 'transFat_g'];
 const CARB_FRACTIONS = ['sugar_g', 'fiber_g', 'polyol_g'];
@@ -124,6 +124,7 @@ export const isPlainAnimal = (f) => ANIMAL_CATS.has(f.category) && !NOT_PLAIN.te
 // Plant foods that can carry B12 (seaweeds, ferments, fortified products) or vitamin D
 // (UV-exposed mushrooms, fortified products) — never zeroed.
 const B12_SOURCE = /\b(seaweed|nori|laver|kelp|wakame|kombu|hijiki|spirulina|alga\w*|tempeh|natto|miso|fermented|fortified|vitamin|yeast|sauerkraut|kimchi|soy sauce|tamari)\b/i;
+const ALGAL_SOURCE = /\b(seaweed|nori|laver|kelp|wakame|kombu|hijiki|spirulina|chlorella|alga\w*)\b/i;
 const VITD_SOURCE = /\b(mushrooms?|shiitake|maitake|chanterelles?|morels?|enoki|shimeji|fortified|vitamin|yeast)\b/i;
 const CAFFEINE_SOURCE = /\b(coffee|espresso|tea|matcha|cocoa|cacao|chocolate|cola|guarana|mate|yerba|kola|energy)\b/i;
 // Ethanol occurs in alcoholic drinks and in fermented foods (yeast/bacterial
@@ -143,6 +144,10 @@ export const ZERO_RULES = {
   monoFat_g: [['fat-free', (f, n) => n.fat_g === 0]],
   polyFat_g: [['fat-free', (f, n) => n.fat_g === 0]],
   transFat_g: [['fat-free', (f, n) => n.fat_g === 0]],
+  // EPA and DHA are made by marine microalgae and reach food through the aquatic food
+  // chain (or animal conversion); land plants lack the desaturases to form them.
+  epa_g: [['fat-free', (f, n) => n.fat_g === 0], ['plant-food', (f) => isPlant(f) && !ALGAL_SOURCE.test(f.description)]],
+  dha_g: [['fat-free', (f, n) => n.fat_g === 0], ['plant-food', (f) => isPlant(f) && !ALGAL_SOURCE.test(f.description)]],
   // Dietary fibre is plant cell-wall carbohydrate (Codex 2009 definition); plain animal
   // foods (fish, shellfish, eggs, unflavoured dairy) carry none.
   fiber_g: [['carb-free', (f, n) => n.carbs_g === 0], ['animal-food', (f) => isPlainAnimal(f)]],

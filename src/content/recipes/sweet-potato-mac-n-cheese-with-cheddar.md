@@ -26,7 +26,7 @@ ingredients:
     note: dry
     grams: 240
     fdcId: 169738
-    matchConfidence: low
+    matchConfidence: high
     cooking: boiled
   - raw: 200 ml plant-based cooking cream (rice-based)
     group: Main ingredients
@@ -104,13 +104,13 @@ nutrition:
     sodium_mg: 249
     availableCarb_g: 61.6
   glycemic:
-    gi: 56
-    gl: 34
-    giBand: medium
+    gi: 48
+    gl: 29
+    giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 63
+    measuredGiPct: 97
   nutriScore:
     grade: B
     points: 1

@@ -23,6 +23,9 @@ export interface NutrientVector {
   satFat_g?: number;
   /** Monounsaturated fat (USDA #645). Anti-inflammatory fat-quality signal (fii.ts). */
   monoFat_g?: number;
+  /** Long-chain omega-3 fatty acids: eicosapentaenoic (EPA, 20:5 n-3) and docosahexaenoic (DHA, 22:6 n-3). */
+  epa_g?: number;
+  dha_g?: number;
   /** Polyunsaturated fat (USDA #646). Anti-inflammatory fat-quality signal (fii.ts). */
   polyFat_g?: number;
   /** Trans fat (USDA #605). Pro-inflammatory fat-quality signal (fii.ts). */

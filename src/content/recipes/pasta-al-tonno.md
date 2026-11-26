@@ -57,7 +57,7 @@ ingredients:
     item: anchovy fillets
     grams: 18
     fdcId: 174183
-    matchConfidence: low
+    matchConfidence: high
     cooking: fried
   - raw: 1 tsp chili flakes
     quantity: 1

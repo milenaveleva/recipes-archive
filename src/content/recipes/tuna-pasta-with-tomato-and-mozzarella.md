@@ -111,7 +111,7 @@ ingredients:
     item: light mozzarella
     grams: 100
     fdcId: 170847
-    matchConfidence: low
+    matchConfidence: high
     cooking: raw
   - raw: 1 pinch black pepper
     quantity: 1

@@ -90,8 +90,8 @@ ingredients:
     item: chili flakes
     grams: 0.2
     milliliters: 0.3080575
-    fdcId: 171319
-    matchConfidence: low
+    fdcId: 170932
+    matchConfidence: high
     cooking: boiled
   - raw: 1 pinch black pepper
     quantity: 1
@@ -121,7 +121,7 @@ nutrition:
     carbs_g: 112.2
     fiber_g: 15.9
     sugar_g: 14.7
-    sodium_mg: 860
+    sodium_mg: 858
     availableCarb_g: 96.3
   glycemic:
     gi: 45
@@ -145,7 +145,7 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 32.2
+    nrf: 32.3
     version: NRF9.3
   processing:
     minimallyProcessedPct: 65.6

@@ -152,16 +152,16 @@ nutrition:
     points: 0
     category: general
     version: "2023"
-    coverage: 0.78
+    coverage: 1
   inflammation:
-    score: -0.9
+    score: -0.8
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.38
   balance:
     score: 8
     band: high
-    nrf: 73.1
+    nrf: 73.8
     version: NRF9.3
   processing:
     minimallyProcessedPct: 34.2

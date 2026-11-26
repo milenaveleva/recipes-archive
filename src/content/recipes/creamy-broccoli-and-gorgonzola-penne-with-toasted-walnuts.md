@@ -34,7 +34,7 @@ ingredients:
     item: broccoli florets
     grams: 300
     fdcId: 170379
-    matchConfidence: low
+    matchConfidence: high
     cooking: boiled
   - raw: 120 g gorgonzola
     group: Creamy gorgonzola sauce

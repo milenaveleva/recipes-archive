@@ -35,6 +35,7 @@ ingredients:
     fdcId: 172241
     matchConfidence: low
     cooking: baked
+    proxyOk: true
   - raw: 3 tbsp olive oil
     quantity: 3
     unit: tbsp
@@ -127,8 +128,8 @@ nutrition:
     version: "2023"
     coverage: 0.99
   inflammation:
-    score: -1
-    band: anti-inflammatory
+    score: -0.9
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.27
   balance:

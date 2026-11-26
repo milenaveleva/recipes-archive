@@ -204,18 +204,19 @@ export default function AddRecipe() {
   const macro = useMemo(() => computeNutrition(rows, form.servings, resolved), [rows, form.servings, resolved]);
   const today = useMemo(() => new Date().toISOString().slice(0, 10), []);
   const draft = useMemo(() => buildDraft(form, rows, macro, today), [form, rows, macro, today]);
-  // Live validation gate (src/core/validate.ts). It reads only the rows and three form
-  // fields, so typing a title or a method step never re-runs it, and it reuses the macros
-  // computed above instead of resolving the recipe again.
+  // Live validation gate (src/core/validate.ts). It reads only the rows and four form
+  // fields (the title decides which ingredient is expected to dominate), so typing a method
+  // step never re-runs it, and it reuses the macros computed above instead of resolving the
+  // recipe again.
   const validation = useMemo(
     () =>
       validateRows(
         rows,
-        { servings: form.servings, course: form.course, sourceKcalPerServing: form.sourceKcalPerServing },
+        { title: form.title, servings: form.servings, course: form.course, sourceKcalPerServing: form.sourceKcalPerServing },
         resolved,
         macro,
       ),
-    [rows, form.servings, form.course, form.sourceKcalPerServing, resolved, macro],
+    [rows, form.title, form.servings, form.course, form.sourceKcalPerServing, resolved, macro],
   );
 
   function setField<K extends keyof FormState>(key: K, value: FormState[K]) {

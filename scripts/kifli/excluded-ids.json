@@ -1,0 +1,16 @@
+{
+  "description": "kifli recipe ids the import must never (re)build: near-duplicates of a recipe already on the site (kifli publishes some dishes twice). Value = the slug of the copy that is kept.",
+  "ids": {
+    "12251": "bruschetta-al-pomodoro",
+    "11551": "asparagus-with-golden-olive-oil-crumbs",
+    "10631": "roasted-butternut-squash-gnocchi-bake",
+    "10686": "vegan-bolognese-with-red-lentils",
+    "13280": "pasta-alla-norma",
+    "12219": "asparagus-risotto",
+    "10525": "fermented-sour-pickles-kovaszos-uborka",
+    "14645": "chinese-tomato-tofu-soup-with-egg-ribbons",
+    "14686": "pan-toasted-brussels-sprout-and-chickpea-curry",
+    "13641": "pumpkin-whole-wheat-rigatoni-with-crispy-sage",
+    "13083": "lemon-and-thyme-mushroom-rigatoni"
+  }
+}

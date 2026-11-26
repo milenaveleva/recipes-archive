@@ -146,10 +146,10 @@ nutrition:
     energyKj: 2505
     protein_g: 24.3
     fat_g: 25.7
-    satFat_g: 2.4
+    satFat_g: 3.1
     carbs_g: 77.5
     fiber_g: 15.5
-    sugar_g: 5.8
+    sugar_g: 6.3
     sodium_mg: 233
     availableCarb_g: 62
   glycemic:
@@ -159,22 +159,22 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 65
+    measuredGiPct: 80
   nutriScore:
     grade: A
     points: -3
     category: general
     version: "2023"
-    coverage: 0.97
+    coverage: 1
   inflammation:
-    score: -0.3
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.19
   balance:
     score: 7
     band: high
-    nrf: 47
+    nrf: 48
     version: NRF9.3
   processing:
     minimallyProcessedPct: 88.1

@@ -67,7 +67,7 @@ ingredients:
     grams: 93.4
     milliliters: 100
     fdcId: 171583
-    matchConfidence: low
+    matchConfidence: high
     cooking: boiled
   - raw: 60 g Parmesan
     quantity: 60

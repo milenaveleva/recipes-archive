@@ -35,8 +35,8 @@ ingredients:
     item: zucchini
     note: about 150 g
     grams: 150
-    fdcId: 168565
-    matchConfidence: low
+    fdcId: 169291
+    matchConfidence: high
     cooking: boiled
   - raw: 1 medium red onion (about 70 g)
     group: Main ingredients
@@ -140,15 +140,15 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 265
-    energyKj: 1108
-    protein_g: 14.5
-    fat_g: 10.2
+    energyKcal: 263
+    energyKj: 1102
+    protein_g: 14
+    fat_g: 10.1
     satFat_g: 4
     carbs_g: 32.1
     fiber_g: 4.3
-    sugar_g: 4.7
-    sodium_mg: 1145
+    sugar_g: 5.7
+    sodium_mg: 1147
     availableCarb_g: 27.8
   glycemic:
     gi: 40
@@ -163,7 +163,7 @@ nutrition:
     points: 2
     category: general
     version: "2023"
-    coverage: 0.92
+    coverage: 1
   inflammation:
     score: 0.5
     band: mildly-pro-inflammatory
@@ -172,10 +172,10 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 29.4
+    nrf: 25.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 64.3
+    minimallyProcessedPct: 64.1
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

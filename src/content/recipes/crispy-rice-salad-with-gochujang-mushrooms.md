@@ -99,7 +99,7 @@ ingredients:
     grams: 24
     milliliters: 22.1802
     fdcId: 2262072
-    matchConfidence: low
+    matchConfidence: high
     cooking: fried
   - raw: 1 tbsp fresh ginger (finely grated)
     quantity: 1
@@ -209,7 +209,7 @@ ingredients:
     grams: 6.4
     milliliters: 59.147
     fdcId: 173475
-    matchConfidence: low
+    matchConfidence: high
     cooking: raw
 nutrition:
   perServing:
@@ -225,12 +225,12 @@ nutrition:
     availableCarb_g: 106.7
   glycemic:
     gi: 57
-    gl: 60
+    gl: 61
     giBand: medium
     glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 75
+    measuredGiPct: 77
   nutriScore:
     grade: A
     points: 0
@@ -238,7 +238,7 @@ nutrition:
     version: "2023"
     coverage: 0.97
   inflammation:
-    score: -0.5
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.24

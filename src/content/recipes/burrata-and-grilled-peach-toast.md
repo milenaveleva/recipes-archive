@@ -67,6 +67,7 @@ ingredients:
     fdcId: 172241
     matchConfidence: low
     cooking: raw
+    proxyOk: true
 nutrition:
   perServing:
     energyKcal: 424
@@ -94,7 +95,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.4
+    score: 0.5
     band: mildly-pro-inflammatory
     method: fii v4
   balance:

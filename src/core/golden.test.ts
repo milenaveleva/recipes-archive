@@ -250,7 +250,8 @@ const CASES: GoldenCase[] = [
   },
   {
     // Whole-fruit sugar is fibre-bound (free sugar = max(0, sugar − 2·fibre)) and yogurt is
-    // fermented dairy → no better than neutral but well short of the honey lemonade.
+    // fermented dairy; whole-milk yogurt's saturated fat and banana's free-sugar excess put it
+    // on the neutral / mildly-pro edge, well short of the honey lemonade.
     name: 'banana-strawberry yogurt smoothie (drink)',
     ingredients: [
       ing(F.bananas, 240, '2 bananas'),
@@ -260,7 +261,7 @@ const CASES: GoldenCase[] = [
     options: { servings: 2, course: 'Drink', nutriCategory: 'beverage' },
     expected: {
       kcal: [190, 240], giBand: ['low'], glBand: ['medium'], glBasis: 'portion',
-      nutri: ['B', 'D'], inflammation: ['mildly-anti-inflammatory', 'neutral'], processing: ['minimally-processed'], balance: [5, 8],
+      nutri: ['B', 'D'], inflammation: ['mildly-anti-inflammatory', 'mildly-pro-inflammatory'], processing: ['minimally-processed'], balance: [5, 8],
     },
   },
   {

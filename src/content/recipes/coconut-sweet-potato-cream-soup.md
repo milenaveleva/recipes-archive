@@ -34,7 +34,7 @@ ingredients:
     grams: 467.1
     milliliters: 500
     fdcId: 171583
-    matchConfidence: low
+    matchConfidence: high
     cooking: boiled
   - raw: 400 ml full-fat coconut milk (canned)
     quantity: 400
@@ -122,13 +122,13 @@ nutrition:
     sodium_mg: 730
     availableCarb_g: 32.5
   glycemic:
-    gi: 60
-    gl: 19
-    giBand: medium
+    gi: 41
+    gl: 13
+    giBand: low
     glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 0
+    measuredGiPct: 79
   nutriScore:
     grade: C
     points: 7
@@ -136,7 +136,7 @@ nutrition:
     version: "2023"
     coverage: 0.77
   inflammation:
-    score: 0.8
+    score: 0.9
     band: pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.21

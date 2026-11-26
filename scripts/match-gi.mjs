@@ -23,7 +23,7 @@
  *   (0)       — no available carbohydrate (oils, water, salt): GI 0 by convention (it
  *               never reaches the composite, which ignores contributions ≤ 0.5 g)
  *
- * Staple starches (pasta, oats, couscous, brown rice), common breads and a few plain foods are first
+ * Staple starches (pasta, oats, couscous, brown rice, potatoes), common breads, dried pulses and a few plain foods are first
  * matched against an as-eaten STAPLES reference — the mean of the Atkinson Table 1
  * entries for the boiled/cooked food (e.g. "White spaghetti, boiled, mean of 11 foods"),
  * since GI is measured on the food as eaten and a dry and a cooked record of the same
@@ -63,14 +63,29 @@ const STOP = new Set(['raw', 'cooked', 'boiled', 'prepared', 'with', 'without', 
   'unenriched', 'enriched', 'regular', 'plain', 'fresh', 'whole', 'generic', 'drained', 'salt', 'added',
   // fat-level qualifiers describe fat content, not food identity — matching on these
   // alone pairs unrelated foods ("low fat yogurt" ↔ "low-fat apricot cake").
-  'low', 'fat', 'reduced', 'skim', 'nonfat', 'lowfat']);
+  'low', 'fat', 'reduced', 'skim', 'nonfat', 'lowfat',
+  // state / trade descriptors that never distinguish one food from another.
+  'unprepared', 'seedless', 'brand']);
+// Strip naming noise before tokenising: USDA's "(Includes foods for USDA's Food
+// Distribution Program)" suffix, and a reference entry's brand / manufacturer / country
+// parenthetical ("(Simplot Australia, Cheltenham, Australia)"). Left in, their tokens
+// dilute the Jaccard score so far that "Sweet potato, raw, unprepared (Includes …)" never
+// meets "Boiled sweet potato".
+const BRAND_PAREN = /\([^()]*(?:™|®|\b(?:ltd|pty|inc|co|llc|gmbh|limited|brand|australia|usa|canada|uk|italy|japan|china|new zealand)\b)[^()]*\)?/gi;
+const denoise = (s) => s.replace(/\(includes foods for usda[^)]*\)?/gi, ' ').replace(BRAND_PAREN, ' ');
 // Plural → singular, so "Mangos"/"mangoes", "tomatoes", "berries" meet the singular
 // reference names.
 const singular = (w) => (w.length > 4 && /ies$/.test(w) ? w.slice(0, -3) + 'y'
   : w.length > 4 && /(oes|ches|shes|sses|xes)$/.test(w) ? w.slice(0, -2)
     : w.length > 3 && /s$/.test(w) && !/(ss|us|is)$/.test(w) ? w.slice(0, -1) : w);
+// British ↔ American spellings of the same word (the table is Australian-edited, USDA is
+// American), folded to one token. "Yoghurt" stays unfolded: the table's only plain-named
+// yoghurt entries are frozen-yoghurt desserts and merged multi-product rows.
+// "Wholemeal" is the British "whole wheat" (USDA's "whole-wheat" tokenises to whole + wheat).
+const SPELLING = new Map([['chilli', ['chili']], ['flavoured', ['flavored']], ['wholemeal', ['whole', 'wheat']], ['wholewheat', ['whole', 'wheat']]]);
 const toks = (s) => new Set(
-  s.toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter((w) => w.length > 2 && !STOP.has(w)).map(singular));
+  denoise(s).toLowerCase().replace(/[^a-z0-9 ]/g, ' ').split(/\s+/).filter((w) => w.length > 2 && !STOP.has(w))
+    .flatMap((w) => SPELLING.get(w) ?? [w]).map(singular));
 const jaccard = (a, b) => {
   let inter = 0;
   for (const t of a) if (b.has(t)) inter++;
@@ -89,7 +104,42 @@ for (const r of reference) (catGis.get(r.category) ?? catGis.set(r.category, [])
 const categoryMedian = new Map([...catGis].map(([c, v]) => [c, median(v)]));
 const globalMedian = median(reference.map((r) => r.gi));
 
-const refToks = reference.map((r) => ({ ...r, t: toks(r.food) }));
+// Token-match candidates. A reference entry flagged as a GI-lowered variant ("low GI",
+// "decreased GI variant") is a reformulated product, never the generic food, so it is
+// kept out of matching (it still counts toward the category medians).
+const GI_VARIANT = /\b(?:low|lower|reduced|decreased)[- ]GI\b|\bGI variant\b/i;
+// Descriptive words that open many reference names ("White spaghetti", "Instant oats",
+// "Baked potato") but are not the food itself; the head food word is the first token
+// after them.
+const NOT_HEAD = new Set(['white', 'wheat', 'instant', 'mixed', 'baked', 'boiled', 'cooked', 'raw', 'fresh',
+  'dried', 'canned', 'frozen', 'brown', 'red', 'green', 'yellow', 'black', 'sweet', 'plain', 'natural', 'organic',
+  'wild', 'large', 'small', 'whole', 'quick', 'rolled', 'steamed', 'roasted', 'toasted', 'light', 'reduced', 'low']);
+// The table's one toasted-loaf study is not a generic value: a toasted record takes its
+// bread's GI through STAPLES instead.
+const refToks = reference.filter((r) => !GI_VARIANT.test(r.food) && !/\btoasted\b/i.test(r.food)).map((r) => {
+  const t = toks(r.food);
+  return { ...r, t, head: [...t].find((w) => !NOT_HEAD.has(w)) };
+});
+
+// Words that mark a different food or form: when one side carries such a word and the
+// other does not, the pair is not the same food however many other tokens agree (an
+// apple ↔ apple juice, blueberries ↔ blueberry jam, gluten-free ↔ wheat bread, snow
+// peas ↔ shelled peas, whole ↔ pearled spelt, juice ↔ segments canned in juice).
+const FORM_WORDS = ['juice', 'segment', 'jam', 'marmalade', 'gluten', 'podded', 'pearled'];
+/**
+ * Whether reference entry `r` can name the same food as `food` (tokens `ft`): the
+ * entry's head food word must appear in the food (a "Peach, canned in heavy syrup" is
+ * not canned apricots), the two must agree on every FORM_WORDS marker, and a USDA
+ * mixture "X and Y, …" matches only an entry naming both X and Y (peas-and-carrots is
+ * neither plain peas nor plain carrots).
+ */
+function sameFood(food, ft, r) {
+  if (r.head && !ft.has(r.head)) return false;
+  if (FORM_WORDS.some((w) => ft.has(w) !== r.t.has(w))) return false;
+  const mix = /^([a-z]+) and ([a-z]+)\b/i.exec(food.description ?? '');
+  if (mix && !mix.slice(1).every((w) => r.t.has(singular(w.toLowerCase())))) return false;
+  return true;
+}
 
 // As-eaten staple references: USDA description pattern → the Atkinson Table 1 entries
 // (category + name pattern) for the food as eaten; the GI is their mean. Ordered — the
@@ -127,6 +177,23 @@ const STAPLES = [
   { food: /^crackers, (rusk toast|melba toast, (plain|wheat))\b/i, cat: 'BREADS', ref: /^Dried wheat bread rusk$/i },
   { food: /^crackers, (saltines\b(?!, whole wheat)|water biscuits)/i, cat: 'CRACKERS', ref: /^(Cracker|Cream cracker\b.*)$/i, label: 'plain / cream cracker', conf: 'medium' },
   { food: /^tortillas\b.*\bcorn\b/i, cat: 'BREADS', ref: /\bCorn tortilla, made from white corn/i, label: 'white corn tortilla' },
+  { food: /^bread, multi-grain\b/i, cat: 'BREADS', ref: /^(Mixed grain or seed bread|Multigrain batch bread)$/i, label: 'mixed-grain bread' },
+  // Potatoes: the table's "Boiled potato, mean of 29 studies" (USDA's flesh-and-skin
+  // records by variety all take the cross-variety mean).
+  { food: /^potatoes, ((white|red|russet), )?flesh and skin, raw\b/i, cat: 'VEGETABLES', ref: /^Boiled potato$/i },
+  { food: /^squash, winter, butternut\b/i, cat: 'VEGETABLES', ref: /\bButternut pumpkin, boiled$/i },
+  { food: /^corn, sweet, (yellow|white), (canned|frozen)\b/i, cat: 'VEGETABLES', ref: /^Sweet corn$/i },
+  { food: /^farro, pearled\b/i, cat: 'CEREAL GRAINS', ref: /^Spelt, pearled \(Farro\b/i },
+  // Dried pulses take the measured canned (cooked, drained) entry for the same bean — a
+  // close proxy for the home-boiled bean, whose own GI the ISO-compliant table lacks.
+  { food: /^beans, white, mature seeds\b/i, cat: 'LEGUMES', ref: /^Cannellini beans, canned, drained/i, conf: 'medium' },
+  { food: /^beans, kidney, red, mature seeds, (raw|cooked)\b/i, cat: 'LEGUMES', ref: /^Red Kidney beans, canned, drained/i, conf: 'medium' },
+  // Oat drink: the one measured oat milk (calcium-enriched, no added sugar declared).
+  { food: /^milk, oat\b/i, cat: 'BEVERAGES', ref: /^Oat milk\b/i, conf: 'medium' },
+  { food: /^grapes, (red or green|american type|muscadine)\b.*\braw\b/i, cat: 'FRUIT AND FRUIT PRODUCTS', ref: /^Grapes, (black|crimson|green)\b/i, label: 'grapes' },
+  { food: /^chocolate, dark, 70-85%/i, cat: 'SNACK FOODS AND CONFECTIONERY', ref: /^Chocolate, dark, 74% Cocoa\b/i, conf: 'medium' },
+  // A whole orange "with peel" is eaten (and was measured) as its flesh.
+  { food: /^oranges, raw, with peel\b/i, cat: 'FRUIT AND FRUIT PRODUCTS', ref: /\bOranges, navel$/i, conf: 'medium' },
 ].map((st) => {
   const refs = reference.filter((r) => r.category === st.cat && st.ref.test(r.food));
   if (!refs.length) throw new Error(`STAPLES reference ${st.ref} matched no ${st.cat} entry — regenerate gi-reference.json`);
@@ -159,7 +226,7 @@ function assign(food) {
   const ft = toks(food.description ?? '');
   let best = null;
   if (refCat) for (const r of refToks) {
-    if (r.category !== refCat) continue;
+    if (r.category !== refCat || !sameFood(food, ft, r)) continue;
     const score = jaccard(ft, r.t);
     const cooked = COOKED_REF.test(r.food);
     const nearTie = best && Math.abs(score - best.score) <= 0.05;

@@ -126,7 +126,7 @@ nutrition:
     glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 57
+    measuredGiPct: 88
   nutriScore:
     grade: A
     points: 0
@@ -134,7 +134,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.8
+    score: -0.7
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.32

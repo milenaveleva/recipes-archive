@@ -58,17 +58,17 @@ describe('foodFII (per-food inflammatory potential)', () => {
   });
 
   it('reports coverage as the fraction of parameters present', () => {
-    const sparse = foodFII({ energyKcal: 200, sugar_g: 50 })!; // 1 of 8 parameters
+    const sparse = foodFII({ energyKcal: 200, sugar_g: 50 })!; // 1 of 9 parameters
     const rich = foodFII({ energyKcal: 150, fiber_g: 5, monoFat_g: 2, satFat_g: 1, vitC_mg: 10, magnesium_mg: 40, sugar_g: 3, sodium_mg: 20 })!;
     expect(sparse.coverage).toBeLessThan(rich.coverage);
-    expect(sparse.coverage).toBeCloseTo(1 / 8, 5);
+    expect(sparse.coverage).toBeCloseTo(1 / 9, 5);
   });
 
   it('shrinks a data-poor food toward neutral: below quorum coverage it can not reach ±2', () => {
-    // Only free-sugar + sodium present → 2/8 params (0.25 coverage); the tag bound is
-    // 2·(0.25/0.5) = 1.0, so even overwhelming pro signals can't pin it to the +2 extreme.
+    // Only free-sugar + sodium present → 2 of 9 params; the tag bound is 2·(2/4) = 1.0
+    // (quorum 4 known parameters), so even overwhelming pro signals can't pin it to +2.
     const sparse = foodFII({ energyKcal: 360, sugar_g: 90, sodium_mg: 5000 })!;
-    expect(sparse.coverage).toBeCloseTo(2 / 8, 5);
+    expect(sparse.coverage).toBeCloseTo(2 / 9, 5);
     expect(sparse.tag).toBeGreaterThan(0);
     expect(sparse.tag).toBeLessThanOrEqual(1.0);
   });
@@ -89,13 +89,16 @@ describe('foodFII (per-food inflammatory potential)', () => {
     expect(tagOf(173410)).toBe(1.7); // butter, salted → pro
     expect(tagOf(170173)).toBe(1.9); // coconut milk (saturated fat) → pro
     expect(tagOf(169655)).toBe(1.5); // granulated sugar (no fibre → all free sugar) → pro
-    expect(tagOf(171413)).toBe(-0.6); // olive oil (MUFA + Phenol-Explorer polyphenol) → anti
+    expect(tagOf(171413)).toBe(-0.5); // olive oil (MUFA + Phenol-Explorer polyphenol) → anti
     expect(tagOf(170187)).toBe(-0.7); // walnuts (PUFA + fibre + Mg + polyphenol, energy-dense) → anti
     expect(tagOf(168462)).toBe(-2); // spinach (nutrient-dense per kcal + polyphenol) → anti
+    expect(tagOf(173686)).toBe(-1.1); // wild salmon (EPA + DHA, unsaturated fat) → anti
   });
 
   it('scores dry and cooked records of the same food alike (energy basis)', () => {
-    expect(tagOf(82009870)).toBe(tagOf(82009871)); // whole-wheat pasta, dry vs cooked
+    // Ciqual's dry and cooked records differ in which minor fields they report, so they
+    // agree within one display step rather than exactly.
+    expect(Math.abs(tagOf(82009870) - tagOf(82009871))).toBeLessThanOrEqual(0.1 + 1e-9); // whole-wheat pasta, dry vs cooked
     expect(tagOf(169738)).toBe(tagOf(168910)); // whole-wheat pasta (FDP), dry vs cooked
   });
 
@@ -103,8 +106,8 @@ describe('foodFII (per-food inflammatory potential)', () => {
     const pasta = tagOf(169738);
     expect(tagOf(170416)).toBeLessThan(pasta); // parsley, fresh
     expect(tagOf(169231)).toBeLessThan(pasta); // ginger root, raw
-    expect(tagOf(170416)).toBe(-1.9);
-    expect(tagOf(169231)).toBe(-0.3);
+    expect(tagOf(170416)).toBe(-1.8);
+    expect(tagOf(169231)).toBe(-0.2);
   });
 
   it('keeps honey pro (free sugar) and salt pro through its sodium', () => {

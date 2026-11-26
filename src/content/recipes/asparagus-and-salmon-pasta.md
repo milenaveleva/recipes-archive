@@ -105,7 +105,7 @@ nutrition:
     version: "2023"
     coverage: 0.85
   inflammation:
-    score: -0.4
+    score: -0.5
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.01

@@ -31,7 +31,7 @@ ingredients:
     item: whole garlic bulb
     grams: 40
     fdcId: 169230
-    matchConfidence: low
+    matchConfidence: high
     cooking: baked
   - raw: 2 tbsp rapeseed oil
     quantity: 2

@@ -159,7 +159,7 @@ nutrition:
     points: 0
     category: general
     version: "2023"
-    coverage: 0.7
+    coverage: 0.99
   inflammation:
     score: -0.8
     band: mildly-anti-inflammatory
@@ -168,7 +168,7 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 33.6
+    nrf: 34.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 69.6

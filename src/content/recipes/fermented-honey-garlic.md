@@ -20,7 +20,7 @@ ingredients:
     grams: 134.4
     milliliters: 236.588
     fdcId: 169230
-    matchConfidence: low
+    matchConfidence: high
     cooking: raw
   - raw: 1 cup raw honey (or more, as needed to cover garlic)
     quantity: 1
@@ -59,7 +59,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 1.1
+    score: 1
     band: pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.21

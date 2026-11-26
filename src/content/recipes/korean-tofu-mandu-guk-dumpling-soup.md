@@ -125,7 +125,7 @@ nutrition:
     points: 3
     category: general
     version: "2023"
-    coverage: 0.75
+    coverage: 0.89
   inflammation:
     score: 0.1
     band: neutral
@@ -134,7 +134,7 @@ nutrition:
   balance:
     score: 4
     band: low
-    nrf: 20.5
+    nrf: 20.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 15.3

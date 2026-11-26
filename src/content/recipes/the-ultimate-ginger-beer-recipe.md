@@ -31,7 +31,7 @@ ingredients:
     item: filtered water
     note: for the ginger bug
     fdcId: 175103
-    matchConfidence: low
+    matchConfidence: high
     cooking: raw
   - raw: 1 cup honey
     quantity: 1
@@ -53,7 +53,7 @@ ingredients:
     item: filtered water
     note: for the ginger beer
     fdcId: 175103
-    matchConfidence: low
+    matchConfidence: high
     cooking: raw
 nutrition:
   perServing:
@@ -82,7 +82,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.9
+    score: 0.8
     band: pro-inflammatory
     method: fii v4
     aromaticAdjustment: -0.23

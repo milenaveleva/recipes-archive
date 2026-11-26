@@ -34,7 +34,7 @@ ingredients:
     note: ≈ 101 g uncooked
     grams: 101
     fdcId: 169703
-    matchConfidence: low
+    matchConfidence: high
     cooking: fried
   - raw: 2 eggs
     group: For the tofu fried rice
@@ -151,16 +151,16 @@ nutrition:
     points: 1
     category: general
     version: "2023"
-    coverage: 0.64
+    coverage: 1
   inflammation:
-    score: -1
-    band: anti-inflammatory
+    score: -0.9
+    band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.43
   balance:
     score: 7
     band: high
-    nrf: 45
+    nrf: 45.8
     version: NRF9.3
   processing:
     minimallyProcessedPct: 66.9

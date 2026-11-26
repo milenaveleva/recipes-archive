@@ -111,6 +111,8 @@ export interface IngredientRow {
    * still selects it.
    */
   proxyFdcId: number | null;
+  /** The fdcId the author picked by hand in the review row (a reviewed match), or null. */
+  userPickedFdcId: number | null;
 }
 
 let rowCounter = 0;
@@ -140,6 +142,7 @@ export function buildRow(raw: string): IngredientRow {
     cooking: parsed.isGroupHeader ? 'raw' : suggestCooking(raw, selectedFood),
     userSetCooking: false,
     proxyFdcId: null,
+    userPickedFdcId: null,
   };
 }
 
@@ -238,16 +241,22 @@ export function selectMatch(row: IngredientRow, fdcId: number | null): Partial<I
   const food = fdcId != null ? FOOD_BY_ID.get(fdcId) ?? null : null;
   const patch: Partial<IngredientRow> = {
     selectedFdcId: fdcId,
+    userPickedFdcId: fdcId,
     grams: initialGrams(estimateMetric(row.parsed), row.parsed, food),
   };
   if (!row.userSetCooking && !row.parsed.isGroupHeader) patch.cooking = suggestCooking(row.raw, food);
   return patch;
 }
 
-/** Confidence of the row's selected match ('none' when unmatched). */
+/**
+ * Confidence of the row's selected match ('none' when unmatched). A match the author
+ * picked by hand counts as reviewed, so it is at least 'medium' (it no longer raises the
+ * gate's low-confidence review warning); the identity and state checks still apply.
+ */
 export function selectedConfidence(row: IngredientRow): MatchConfidence | 'none' {
   if (row.selectedFdcId == null) return 'none';
-  return row.candidates.find((c) => c.food.fdcId === row.selectedFdcId)?.confidence ?? 'medium';
+  const auto = row.candidates.find((c) => c.food.fdcId === row.selectedFdcId)?.confidence ?? 'medium';
+  return auto === 'low' && row.userPickedFdcId === row.selectedFdcId ? 'medium' : auto;
 }
 
 /** Map review rows to the engine's resolved-ingredient shape. */
@@ -282,12 +291,13 @@ export function computeNutrition(
  */
 export function validateRows(
   rows: IngredientRow[],
-  fields: Pick<FormState, 'servings' | 'course' | 'sourceKcalPerServing'>,
+  fields: Pick<FormState, 'title' | 'servings' | 'course' | 'sourceKcalPerServing'>,
   resolved: ResolvedIngredient[],
   macro: MacroComputation,
 ): ValidationResult {
   return validateRecipe(
     {
+      title: fields.title.trim() || undefined,
       servings: clampServings(fields.servings),
       course: fields.course.trim() || undefined,
       source: { kcalPerServing: safeKcal(fields.sourceKcalPerServing) },
@@ -532,6 +542,7 @@ export function rowsFromIngredients(ingredients: StoredIngredient[]): Ingredient
       cooking: isCookingMethod(ing.cooking) ? ing.cooking : 'raw',
       userSetCooking: true,
       proxyFdcId: ing.proxyOk && ing.fdcId != null ? ing.fdcId : null,
+      userPickedFdcId: null,
     };
   });
 }

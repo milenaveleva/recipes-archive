@@ -63,7 +63,7 @@ ingredients:
     item: sake
     grams: 14.6
     milliliters: 14.7868
-    fdcId: 81016023
+    fdcId: 81016001
     matchConfidence: high
     cooking: boiled
   - raw: 1 Tbsp mirin
@@ -91,9 +91,9 @@ nutrition:
     protein_g: 7.6
     fat_g: 4.5
     satFat_g: 0.7
-    carbs_g: 58.2
+    carbs_g: 58.1
     fiber_g: 2.7
-    sugar_g: 1.9
+    sugar_g: 2
     sodium_mg: 408
     availableCarb_g: 55.5
   glycemic:
@@ -109,19 +109,19 @@ nutrition:
     points: 1
     category: general
     version: "2023"
-    coverage: 0.97
+    coverage: 0.98
   inflammation:
-    score: -0.1
+    score: 0
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.23
   balance:
     score: 3
     band: low
-    nrf: 15.7
+    nrf: 15.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 85
+    minimallyProcessedPct: 86.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

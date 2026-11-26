@@ -49,7 +49,7 @@ ingredients:
     item: celery stalks
     grams: 200
     fdcId: 169988
-    matchConfidence: low
+    matchConfidence: high
     cooking: baked
   - raw: 100 g onion
     quantity: 100

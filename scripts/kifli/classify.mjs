@@ -46,16 +46,16 @@ const MEAT = [
   'szalámi', 'salami', 'pancetta', 'prosciutto', 'guanciale', 'chorizo', 'mortadella', 'speck', 'pastrami',
   'párizsi', 'felvágott', 'kenőmájas', 'májkrém', 'pástétom', 'hurka', 'tepertő', 'töpörtyű', 'csülök',
   'oldalas', 'karaj', 'tarja', 'dagadó', 'lapocka', 'szűzpecsenye', 'szűzérme', 'hátszín', 'bélszín',
-  'rostélyos', 'fartő', 'lábszár', 'comb', 'mell', 'szárny', 'zúza', 'máj', 'velő', 'pacal', 'nyelv',
-  'vese', 'csont', 'húsleves', 'csontlé', 'erőleves', 'alaplé', 'leveskocka', 'zselatin', 'zsír', 'faggyú',
+  'rostélyos', 'fartő', 'lábszár', 'zúza', 'máj', 'velő', 'pacal', 'csont', 'húsleves', 'csontlé', 'erőleves', 'alaplé', 'leveskocka', 'zselatin', 'zsír', 'faggyú',
   'hús', 'fasírt', 'steak', 'burger', 'gyros', 'kebab', 'pecsenye', 'darált', 'pulled pork', 'húsgombóc',
-  'kakas', 'gerinc', 'demi-glace', 'fond', 'pörc', 'sertészsír', 'gyomor', 'szív', 'here',
+  'demi-glace', 'fond', 'pörc', 'sertészsír', 'chicken', 'pork', 'beef', 'hot dog', 'hotdog', 'ribeye', 'rib eye',
+  't-bone', 'angus', 'wagyu', 'entrecote', 'sirloin', 'tomahawk', 'hússzelet', 'húspogácsa', 'serrano', 'jamón', 'cecina',
 ];
 
 /** Phrases that contain a meat stem but are not meat; removed before matching. */
 const NOT_MEAT = [
   /halhús\w*/g, /rákhús\w*/g, /kókusz\w*hús\w*/g, /húsos paradicsom\w*/g, /húsparadicsom\w*/g, /\bhús[aá](?:t|val|ból|nak)?\b/g, /szív\s*alak\w*/g, /szív\s*formá?\w*/g,
-  /\bhúsú\b/g, /húsmentes\w*/g, /tökhús\w*/g, /dinnyehús\w*/g, /gyümölcshús\w*/g, /avokádóhús\w*/g, /\w*gomba\w*hús\w*/g,
+  /húsú/g, /tisztított hús/g, /(?:mangó|maracuja|tök|kókusz|dinnye|avokádó|gyümölcs|banán|ananász|papaya|cékla|homoktövis)\S*\s*(?:hús|velő)\S*/g, /húsmentes\w*/g, /tökhús\w*/g, /dinnyehús\w*/g, /gyümölcshús\w*/g, /avokádóhús\w*/g, /\w*gomba\w*hús\w*/g,
   /báránysaláta\w*/g, /bárányhimlő/g, /kecskesajt\w*/g, /kecsketej\w*/g, /kecsketúró\w*/g, /nyúlós\w*/g,
   /fürjtojás\w*/g, /fürj tojás\w*/g, /őzgerinc ?forma\w*/g, /őzgerincforma\w*/g, /vesebab\w*/g, /csonthéjas\w*/g,
   /zsírszegény\w*/g, /zsírtartal\w*/g, /zsírmentes\w*/g, /zsírsav\w*/g, /zsírpapír\w*/g, /\w*zsiradék\w*/g,
@@ -70,6 +70,8 @@ const NOT_MEAT = [
   /\w*(?:zöldség|vega|vegán|hal|lazac|tonhal|gomba|bab|cékla|halloumi|tofu|csicseri\w*|lencse|portobello|rák|garnéla)burger\w*/g,
   /burgonya\w*/g, /burgundi\w*/g, /\bburger ?zsemle\w*/g, /\bburger ?buci\w*/g, /hamburgerzsemle\w*/g,
   /\bherb\w*/g, /herefordi/g, /\bhere\w+/g, /sonkaszirom/g, /gerinces/g, /vaddisznó ?forma/g,
+  /kókusz\w*\s*zsír\w*/g, /\d+(?:[.,]\d+)?\s*%[\s-]*(?:os\s*)?zsír\w*/g, /a húshoz/g, /\bzsíros\b/g, /hús\w*hőmérő\w*/g, /\S+\s*fűszer(?:keverék|só|por)\w*/g, /szarvas\s*alak\w*/g,
+  /\w*tyúk\s*tojás\w*/g, /szarvasgomb\w*/g, /keksz\s*szalámi/g, /csokoládé\w*\s*szalámi/g,
   /fondü\w*/g, /fondant\w*/g, /\bfondue\w*/g, /comb ?forma/g, /szívós\w*/g, /oliva\w*/g,
   /csontozott hal\w*/g, /szálkátlan\w*/g, /máj(?:us|á)\w*/g, /karaj(?:os)? ?(?:alakú|forma)/g,
   /nyelvű/g, /nyelvecsk\w*/g, /tejszín/g, /gerezd\w*/g, /\w*mellé/g, /\bmell\w*ett/g, /zsírosbödön/g,
@@ -83,13 +85,24 @@ const SWAP_FAT = /zsír|faggyú/;
 const SWAP_GEL = /zselatin/;
 const OPTIONAL = /opcionális|elhagyható|ízlés szerint|tetszés szerint|ha van\b|nem kötelező|díszítés|tálalás|a tetejére|feltétnek|feltétként|választható|helyettesíthető/;
 const VEG_ALT = /zöldseg|gomba|vegan|növenyi|tofu|tempeh|seitan|hal|lazac|tonhal|víz|olaj|vaj|agar|sajt|tojas|bab|lencse|csicseri|padlizsan|cukkini/;
-const GROUP_OPTIONAL = /tálal|díszít|opcionális|feltét|topping/;
+const GROUP_OPTIONAL = /tálal|díszít|opcionális|máshogy|variáció|ha szeretnéd/;
 
 /** Hungarian lengthens a stem's final a/e before suffixes (sonka → sonkával), so match on a/e-folded text. */
 const fold = (s) => s.replace(/á/g, 'a').replace(/é/g, 'e');
 const MEAT_F = MEAT.map(fold);
-const strip = (s) => fold(NOT_MEAT.reduce((acc, re) => acc.replace(re, ' '), s.toLowerCase()));
+/** A line naming a plant-based meat substitute is not meat. */
+// A plant-based stand-in ("vegán csirke", "növényi alapú darált hús", "szójakocka") names
+// a meat word that is not meat, so a line, sentence or title carrying such a marker is
+// not scanned. Plain soy (szójás mártás, szójaszósz) is a seasoning, not a marker, so it
+// never hides a real meat word next to it.
+const PLANT_BASED = /vegán|vega\b|növényi|szója(?:kocka|granulátum|hús|darált)|tofu|seitan|tempeh|juicy marbles|beyond meat|mana burger|húsmentes|hús nélkül|húshelyettesít|hús ?pótló|vegetáriánus|vegetarian/;
+const strip = (s) => {
+  const low = s.toLowerCase();
+  if (PLANT_BASED.test(low)) return '';
+  return fold(NOT_MEAT.reduce((acc, re) => acc.replace(re, ' '), low));
+};
 const meatHits = (s) => {
+  if (s.includes('\n')) return [...new Set(s.split('\n').flatMap((part) => meatHits(part)))];
   const t = strip(s);
   return MEAT_F.filter((m) => t.includes(m)).filter((m) => {
     if (m === 'here') return /\bhere\b/.test(t);
@@ -101,9 +114,10 @@ const meatHits = (s) => {
     if (m === 'maj') return /\bmaj\b|\bmajat|\bmajas|majkrem|majpaste|(?:csirke|liba|kacsa|marha|sertes|borju|pulyka|disznó|szarnyas)maj|kenőmaj/.test(t);
     if (m === 'fond') return /\bfond\b/.test(t);
     if (m === 'daralt') return /daralt\s*(?:hús|marha|sertes|pulyka|csirke|borjú|barany|vegyes)/.test(t);
-    if (m === 'nyúl') return /nyúl(?:hús|comb|gerinc|\b)/.test(t);
+    if (m === 'nyúl') return /nyúl(?:hús|comb|gerinc|filé|ragu|(?![a-záéíóöőúüű]))/.test(t);
     if (m === 'felvagott') return true;
     // An unqualified "alaplé" is taken as vegetable stock.
+    if (m === 'leveskocka') return /(?:hús|csirke|marha|tyúk|borjú|szarnyas|kacsa|pulyka|sertes)\S*[\s-]*leveskocka/.test(t);
     if (m === 'alaple') return /(?:hús|csirke|marha|tyúk|borjú|szarnyas|kacsa|pulyka|sertes|csont|liba|barany|vad|nyúl)\S*[\s-]*(?:vagy\s+\S+\s+)?alaple|alaple\s*\((?:hús|csirke|marha|tyúk|borjú|szarnyas)/.test(t);
     if (m === 'liba') return !/libanon/.test(t);
     if (m === 'szív') return /szív\b|szívek|szívet/.test(t);
@@ -148,11 +162,21 @@ function classify(rec) {
     meatLines.push({ ...l, hits, kind, optional, vegAlt, grams: grams(l.text), pieces: pieces(l.text) });
   }
   const nameHits = meatHits(rec.name ?? '');
-  const steps = (rec.directions ?? []).flatMap((d) => d.steps ?? []).join(' ');
-  const stepHits = meatHits(steps).filter((h) => !['comb', 'mell', 'szív', 'here', 'gerinc', 'csont', 'zsír', 'maj', 'vese', 'nyelv', 'fond', 'hús', 'alaple', 'felvagott', 'szarny', 'steak', 'burger', 'pecsenye'].includes(h));
+  // Split into sentences so a plant-based mention elsewhere does not blank the whole method.
+  const steps = (rec.directions ?? []).flatMap((d) => d.steps ?? []).filter(Boolean).join(' ').split(/(?<=[.!?])\s+/).join('\n');
+  const stepHits = meatHits(steps).filter((h) => !['csont', 'zsír', 'maj', 'fond', 'hús', 'alaple', 'felvagott', 'steak', 'burger', 'pecsenye', 'hurka', 'tarja', 'zselatin', 'leveskocka', 'húsleves'].includes(h));
   const ambiguousHus = meatLines.filter((m) => m.kind === 'core' && m.hits.every((h) => ['hús', 'comb', 'mell', 'szív', 'here', 'gerinc', 'csont', 'maj', 'vese', 'nyelv', 'steak', 'burger', 'gyros', 'kebab', 'pecsenye', 'fasírt', 'szarny', 'velő', 'felvagott', 'pastetom'].includes(h)));
 
   const base = { meatLines: meatLines.map((m) => m.text), nameHits, stepHits };
+  // Some unlisted records publish only quantities ("500 g", "1 ks") without ingredient names.
+  const UNIT_ONLY = /^[\s\d.,/½¼¾⅓⅔-]*(?:g|kg|dkg|ml|dl|l|ks|db|ek|tk|evőkanál|teáskanál|csomag|szelet|gerezd|csipet|marék)?\.?\s*$/i;
+  const named = lines.filter((l) => !UNIT_ONLY.test(l.text));
+  if (named.length < Math.max(1, lines.length / 2)) {
+    const hits = [...new Set([...nameHits, ...meatHits(steps)])].filter((h) => !['alaple', 'zsír', 'felvagott', 'hurka'].includes(h));
+    return hits.length
+      ? { ...base, class: 'meat-main', review: true, reason: `no usable ingredient list published; name/steps mention ${hits.join('/')}` }
+      : { ...base, class: 'pescatarian', review: true, reason: 'no usable ingredient list published; name and steps mention no meat' };
+  }
   if (!meatLines.length) {
     if (nameHits.length || stepHits.length)
       return { ...base, class: 'pescatarian', review: true, reason: `no meat ingredient, but ${nameHits.length ? `name mentions ${nameHits.join('/')}` : `steps mention ${stepHits.join('/')}`}` };
@@ -165,7 +189,8 @@ function classify(rec) {
   if (!core.length) {
     const optCore = soft.filter((m) => m.kind === 'core');
     const nameIsMeat = optCore.some((m) => m.hits.some((h) => nameHits.includes(h)));
-    const review = nameIsMeat || optCore.some((m) => (m.grams ?? 0) >= 150);
+    const nameMeatWord = nameHits.some((h) => !['zsír', 'alaple', 'zselatin', 'felvagott', 'hús', 'pastetom'].includes(h));
+    const review = nameIsMeat || nameMeatWord || optCore.some((m) => (m.grams ?? 0) >= 100);
     return { ...base, class: 'optional-meat', review, reason: review ? `rules: ${describeSoft()} — but the title or amount suggests it is central` : `only ${describeSoft()}` };
   }
   const serv = servingsOf(rec) ?? 4;
@@ -176,6 +201,8 @@ function classify(rec) {
     return { ...base, class: 'meat-main', review: true, reason: `ambiguous meat word(s) ${core.flatMap((m) => m.hits).join('/')} — check` };
   if (nameMeat) return { ...base, class: 'meat-main', review: false, reason: `meat in the title (${nameHits.join('/')}) and ingredients` };
   if (totalG >= 150 || totalG / serv >= 40) return { ...base, class: 'meat-main', review: false, reason: `${Math.round(totalG)} g of meat as a main component` };
+  const manyPieces = core.some((m) => m.pieces && ['db', 'darab', 'egész'].includes(m.pieces.unit) && m.pieces.n >= 2 && !m.hits.every((h) => ['velő', 'csont'].includes(h)));
+  if (manyPieces) return { ...base, class: 'meat-main', review: false, reason: 'several whole meat pieces (db) as a main component' };
   if (bigPieces) return { ...base, class: 'meat-main', review: true, reason: 'meat by the piece (db/whole) — likely main, check' };
   return { ...base, class: 'meat-main', review: true, reason: `small or unquantified meat (${Math.round(totalG)} g) not in the title — check whether removable` };
 }

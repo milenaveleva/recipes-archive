@@ -30,6 +30,7 @@ ingredients:
     fdcId: 170182
     matchConfidence: low
     cooking: raw
+    proxyOk: true
   - raw: 100 g feta
     quantity: 100
     unit: g
@@ -86,7 +87,7 @@ ingredients:
     item: leaves fresh mint
     grams: 0.9
     fdcId: 173475
-    matchConfidence: low
+    matchConfidence: high
     cooking: raw
   - raw: 1 teaspoon Dijon mustard
     quantity: 1
@@ -130,7 +131,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0
+    score: 0.1
     band: neutral
     method: fii v4
   balance:

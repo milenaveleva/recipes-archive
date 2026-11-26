@@ -45,7 +45,7 @@ ingredients:
     note: roughly chopped
     grams: 9
     fdcId: 169230
-    matchConfidence: low
+    matchConfidence: high
     cooking: baked
   - raw: 1/2 cup celery (chopped)
     quantity: 0.5
@@ -73,7 +73,7 @@ ingredients:
     grams: 0.9
     milliliters: 2.46446
     fdcId: 170932
-    matchConfidence: low
+    matchConfidence: high
     cooking: baked
   - raw: 11/2 cups water
     quantity: 5.5

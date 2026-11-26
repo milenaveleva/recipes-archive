@@ -55,7 +55,7 @@ export const FIELD = {
   55100: 'vitC_mg', 53100: 'vitE_mg', 54101: 'vitK_ug', 52100: 'vitD_ug',
   56100: 'thiamin_mg', 56200: 'riboflavin_mg', 56310: 'niacin_mg', 56400: 'pantothenicAcid_mg',
   56500: 'vitB6_mg', 56700: 'folate_ug', 56600: 'vitB12_ug', 75100: 'cholesterol_mg',
-  60000: 'alcohol_g',
+  60000: 'alcohol_g', 42053: 'epa_g', 42263: 'dha_g',
 };
 export const GLUCIDES = 31000; // available carbohydrate (sugars + starch + polyols)
 export const ORGANIC_ACIDS = 65000;

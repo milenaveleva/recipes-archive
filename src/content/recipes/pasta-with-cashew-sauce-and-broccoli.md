@@ -74,7 +74,7 @@ ingredients:
     grams: 0.2
     milliliters: 0.3080575
     fdcId: 171325
-    matchConfidence: low
+    matchConfidence: high
     cooking: raw
   - raw: 1 pinch ground black pepper
     quantity: 1
@@ -117,13 +117,13 @@ nutrition:
     sodium_mg: 362
     availableCarb_g: 67
   glycemic:
-    gi: 44
+    gi: 43
     gl: 29
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 77
+    measuredGiPct: 85
   nutriScore:
     grade: A
     points: -2

@@ -43,7 +43,7 @@ ingredients:
     note: dry
     grams: 350
     fdcId: 169738
-    matchConfidence: low
+    matchConfidence: high
     cooking: boiled
   - raw: 1 tsp ground sweet paprika
     quantity: 1
@@ -52,7 +52,7 @@ ingredients:
     grams: 2.3
     milliliters: 4.92892
     fdcId: 171329
-    matchConfidence: low
+    matchConfidence: high
     cooking: boiled
   - raw: 1 tsp salt
     quantity: 1
@@ -85,13 +85,13 @@ nutrition:
     sodium_mg: 1193
     availableCarb_g: 72.2
   glycemic:
-    gi: 42
-    gl: 31
+    gi: 52
+    gl: 38
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 78
+    measuredGiPct: 96
   nutriScore:
     grade: C
     points: 3

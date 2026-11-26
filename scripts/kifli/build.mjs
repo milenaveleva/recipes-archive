@@ -265,9 +265,15 @@ async function main() {
 
     const existing = scanRecipes();
     const today = new Date().toLocaleDateString('en-CA'); // YYYY-MM-DD, local
-    const targets = write && !only ? ids.filter((id) => !existing.byKifliId.has(id)) : ids;
-    if (write && !only && targets.length < ids.length)
-      log(`→ ${ids.length - targets.length} id(s) already imported — skipped (pass --ids to rebuild them)`);
+    // Near-duplicates of a recipe already kept on the site are never rebuilt (excluded-ids.json).
+    const excluded = new Set(Object.keys(readJson(path.join(ROOT, 'scripts/kifli/excluded-ids.json')).ids).map(Number));
+    const targets = write && !only ? ids.filter((id) => !existing.byKifliId.has(id) && !excluded.has(id)) : ids;
+    if (write && !only) {
+      const imported = ids.filter((id) => existing.byKifliId.has(id)).length;
+      const dup = ids.filter((id) => !existing.byKifliId.has(id) && excluded.has(id)).length;
+      if (imported) log(`→ ${imported} id(s) already imported — skipped (pass --ids to rebuild them)`);
+      if (dup) log(`→ ${dup} id(s) listed in excluded-ids.json (near-duplicates) — skipped`);
+    }
     log(`→ ${write ? 'writing' : 'checking'} ${targets.length} recipe(s)…`);
 
     const claimed = new Set();

@@ -41,6 +41,7 @@ export type IssueCode =
   | 'WATER_MATCH'
   | 'FALSE_FRIEND'
   | 'IDENTITY_MISMATCH'
+  | 'LOW_CONFIDENCE_MATCH'
   | 'STATE_MISMATCH'
   | 'GRAMS_PER_UNIT'
   | 'KCAL_PER_SERVING'
@@ -76,10 +77,12 @@ export interface ValidatableIngredient {
   excludeFromNutrition?: boolean;
   cooking?: string | null;
   proxyOk?: boolean;
+  matchConfidence?: string | null;
 }
 
 /** The subset of a stored recipe the validator reads. */
 export interface ValidatableRecipe {
+  title?: string;
   servings?: number;
   course?: string;
   source?: { name?: string; url?: string; kcalPerServing?: number } | null;
@@ -527,6 +530,11 @@ export function isExpectedCarbBase(item: string, food: FoodRecord | undefined, c
   return course !== 'main' && course !== 'soup' && course !== 'side';
 }
 
+/** Above this share of the energy even the dish's staple base is reported (an over-weighed pasta line). */
+const STAPLE_MAX_ENERGY_SHARE = 0.8;
+/** Fats whose dominance is always reported, whatever the title says. */
+const FAT_WORD = /\b(oil|butter|ghee|lard|cream|margarine|mayonnaise|tallow|suet)\b/;
+
 /* -------------------------------------------------------------- validator --- */
 
 const fmt = (n: number) => (Math.abs(n) >= 10 ? Math.round(n).toString() : (Math.round(n * 10) / 10).toString());
@@ -596,6 +604,15 @@ export function validateRecipe(
         const st = stateConflict(ing, food.description);
         if (st) push('error', { code: 'STATE_MISMATCH', ingredientIndex: idx, message: `${label(ing)} → "${food.description}": ${st}` });
       }
+    }
+
+    // a2. a weak automatic match needs a human look before it is trusted
+    if (food && !excluded && !ing.proxyOk && (ing.matchConfidence === 'low' || ing.matchConfidence === 'none')) {
+      push('warn', {
+        code: 'LOW_CONFIDENCE_MATCH',
+        ingredientIndex: idx,
+        message: `${label(ing)} → "${food.description}": ${ing.matchConfidence}-confidence match (review it; mark a reviewed stand-in with proxyOk: true)`,
+      });
     }
 
     // c. grams per unit
@@ -671,12 +688,24 @@ export function validateRecipe(
       });
       const totK = kcalOf.reduce((a, b) => a + b, 0);
       const totC = carbOf.reduce((a, b) => a + b, 0);
+      const course = normalizeCourse(recipe.course);
+      const titleTok = identityTokens(recipe.title ?? '');
       kcalOf.forEach((k, idx) => {
-        if (totK > 0 && k / totK > 0.6) {
+        const share = totK > 0 ? k / totK : 0;
+        if (share > 0.6) {
+          // Expected dominance is not news: the staple a dish is built on (pasta in a pasta
+          // dish) up to STAPLE_MAX_ENERGY_SHARE, or a non-fat ingredient the title names
+          // exactly (camembert in baked camembert). A fat is always reported, since an
+          // over-poured oil or cream is the commonest weighing error.
+          const ing = ings[idx];
+          const food = ing.fdcId != null ? foodById.get(ing.fdcId) : undefined;
+          if (share <= STAPLE_MAX_ENERGY_SHARE && isExpectedCarbBase(ing.item || ing.raw, food, course)) return;
+          const isFat = food?.category === 'Fats and Oils' || FAT_WORD.test(normalize(ing.item || ing.raw));
+          const itemTok = identityTokens(ing.item || ing.raw);
+          if (!isFat && [...itemTok].some((w) => titleTok.has(w))) return;
           push('warn', { code: 'DOMINANT_ENERGY', ingredientIndex: idx, message: `"${ings[idx].raw}" is ${Math.round((k / totK) * 100)} % of the recipe's energy` });
         }
       });
-      const course = normalizeCourse(recipe.course);
       carbOf.forEach((c, idx) => {
         if (totC > 0 && c / totC > 0.7) {
           const ing = ings[idx];

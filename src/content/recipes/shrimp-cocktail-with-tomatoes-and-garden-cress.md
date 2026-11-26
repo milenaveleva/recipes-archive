@@ -24,7 +24,7 @@ ingredients:
     note: ≈ 357 g raw
     grams: 357
     fdcId: 175179
-    matchConfidence: low
+    matchConfidence: high
     cooking: raw
   - raw: 120 g cherry tomatoes
     quantity: 120

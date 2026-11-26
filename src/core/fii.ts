@@ -6,7 +6,8 @@
  * For one food we read a small set of parameters (fii-parameters.json): an anti-
  * inflammatory side — fat quality (MUFA+PUFA − SFA−trans, scored once so a food's
  * saturated and unsaturated fractions don't cancel), fibre, vitamins C and E,
- * magnesium and (when known) total polyphenols — and a pro-inflammatory side, free
+ * magnesium, marine long-chain omega-3 (EPA + DHA) and (when known) total polyphenols —
+ * and a pro-inflammatory side, free
  * sugar and sodium. Every parameter is read PER 100 kcal (energy density, the basis of
  * the energy-adjusted dietary inflammatory index, Hébert 2019, and of the NRF9.3 balance
  * score), so a food's water content neither concentrates nor dilutes its profile: dry
@@ -18,7 +19,7 @@
  * scripts/build-inflammation-reference.mjs) — a robust z-score, clamped — then combined as
  * a direction-weighted mean. That raw score is standardised again against the corpus to
  * land on the −2 (most anti) … +2 (most pro) axis the medallion already uses, with the
- * extreme of that axis reachable only at quorum parameter coverage so a data-poor food is
+ * extreme of that axis reachable only at a quorum count of known parameters so a data-poor food is
  * shrunk toward neutral rather than pinning to ±2.
  *
  * The referent is computed openly from composition data; this is deliberately NOT the
@@ -41,6 +42,8 @@ interface FiiParam {
   weight: number;
   /** A one-sided anti signal (polyphenols): a below-referent value can't read pro. */
   oneSided?: boolean;
+  /** Scored only where the food carries a positive amount; a zero adds no weight (still counts as known). */
+  bonusOnly?: boolean;
 }
 const PARAMS = (paramsData.parameters as FiiParam[]);
 const CLAMP_Z: number = paramsData.clampZ;
@@ -61,12 +64,19 @@ const REF = referenceData as {
 };
 
 /**
- * Below this parameter coverage a per-food tag is shrunk toward neutral (see
- * foodFII): a food that supplies at least this fraction of the FII parameters may
- * earn the full ±2 range, one that supplies fewer cannot, so a data-poor food can't
- * pin to an extreme on a handful of clamped signals.
+ * Below this many known parameters a per-food tag is shrunk toward neutral (see
+ * foodFII): a food that supplies at least this many FII parameters may earn the full
+ * ±2 range, one that supplies fewer cannot, so a data-poor food can't pin to an
+ * extreme on a handful of clamped signals. A count rather than a fraction, so adding
+ * a parameter to the table does not raise the bar for every food.
  */
-const QUORUM_COVERAGE = 0.5;
+const QUORUM_PARAMS = 4;
+/**
+ * A bonus-only parameter enters a food's mean only at or above this z (a quarter of the
+ * typical carrier's content): a trace (DHA in meat or dairy) would otherwise add a
+ * near-zero term that dilutes every other signal.
+ */
+const BONUS_MIN_Z = 0.25;
 
 // Fail loudly at load if the parameter table and its reference distribution have
 // drifted apart (a regenerated reference must cover every parameter and share the
@@ -104,6 +114,12 @@ function per100gOf(n: NutrientVector, key: string): number | undefined {
     // fabricating a pro signal from missing data. Treat it as unknown instead.
     if (!Number.isFinite(n.monoFat_g) && !Number.isFinite(n.polyFat_g)) return undefined;
     return (n.monoFat_g || 0) + (n.polyFat_g || 0) - (n.satFat_g || 0) - (n.transFat_g || 0);
+  }
+  if (key === 'longChainN3_g') {
+    // Marine long-chain omega-3 (EPA + DHA). Unknown only when the food reports
+    // neither; a reported zero (most plant foods) is a measured zero.
+    if (!Number.isFinite(n.epa_g) && !Number.isFinite(n.dha_g)) return undefined;
+    return (n.epa_g || 0) + (n.dha_g || 0);
   }
   if (key === 'freeSugar_g') {
     // Estimate the free (non-intrinsic) sugar from composition: a whole food's
@@ -145,7 +161,8 @@ export function foodFII(n: NutrientVector | null | undefined): FoodFII | null {
   if (kcal < NEUTRAL_MAX_KCAL_PER_100G && !((n.sodium_mg ?? 0) >= NEUTRAL_MAX_SODIUM_MG_PER_100G)) return null;
   let sum = 0;
   let wsum = 0;
-  let present = 0;
+  let present = 0; // parameters the food reports (coverage)
+  let scored = 0; // parameters that entered the weighted mean (quorum)
   for (const p of PARAMS) {
     const v = valueOf(n, p.nutrient, kcal);
     if (v === undefined) continue;
@@ -155,17 +172,22 @@ export function foodFII(n: NutrientVector | null | undefined): FoodFII | null {
     // cannot flip its sign and read pro-inflammatory (e.g. low polyphenols ≠ harmful).
     const lo = p.oneSided ? 0 : -CLAMP_Z;
     const z = clamp((v - ref.center) / ref.scale, lo, CLAMP_Z);
+    present += 1;
+    // A bonus-only signal (marine omega-3) enters the mean only where the food carries a
+    // meaningful amount: most foods hold none or a trace, and counting that would dilute
+    // every other signal. It still counts as known for coverage, never toward the quorum.
+    if (p.bonusOnly && z < BONUS_MIN_Z) continue;
     sum += p.dir * p.weight * z;
     wsum += p.weight;
-    present += 1;
+    scored += 1;
   }
   if (wsum <= 0) return null;
   const standardised = (sum / wsum - REF.fiiRaw.center) / REF.fiiRaw.scale;
   if (!Number.isFinite(standardised)) return null;
   const coverage = present / PARAMS.length;
   // Shrink the extreme toward neutral for data-poor foods: the ±2 range is only
-  // fully available at quorum coverage, so a food scored from a couple of clamped
+  // fully available at the quorum count, so a food scored from a couple of clamped
   // signals can't pin to an extreme it hasn't earned (heavy cream vs butter).
-  const bound = 2 * Math.min(1, coverage / QUORUM_COVERAGE);
+  const bound = 2 * Math.min(1, scored / QUORUM_PARAMS);
   return { tag: clamp(round(standardised, 1), -bound, bound), coverage };
 }

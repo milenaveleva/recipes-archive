@@ -25,7 +25,7 @@ ingredients:
     note: dry
     grams: 350
     fdcId: 169738
-    matchConfidence: low
+    matchConfidence: high
     cooking: boiled
   - raw: 100 g dry white beans, uncooked
     quantity: 100
@@ -41,7 +41,7 @@ ingredients:
     item: fresh black mussels
     grams: 150
     fdcId: 174216
-    matchConfidence: low
+    matchConfidence: high
     cooking: fried
   - raw: 8 cherry tomatoes
     quantity: 8
@@ -113,13 +113,13 @@ nutrition:
     sodium_mg: 711
     availableCarb_g: 70.6
   glycemic:
-    gi: 47
-    gl: 33
+    gi: 46
+    gl: 32
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 80
+    measuredGiPct: 96
   nutriScore:
     grade: A
     points: 0

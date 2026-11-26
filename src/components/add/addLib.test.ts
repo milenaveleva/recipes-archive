@@ -632,7 +632,7 @@ describe('validateRows (the /add live validation gate)', () => {
     const rows = linesToRows('800 g beef mince\n400 g carrots\n200 g onion');
     const resolved = rowsToResolved(rows);
     const fake = { ...computeNutrition(rows, 4, resolved), perServing: { energyKcal: 9000 } } as ReturnType<typeof computeNutrition>;
-    const r = validateRows(rows, { servings: 4, course: 'Main Course', sourceKcalPerServing: null }, resolved, fake);
+    const r = validateRows(rows, { title: '', servings: 4, course: 'Main Course', sourceKcalPerServing: null }, resolved, fake);
     expect(r.errors.map((e) => e.code)).toContain('KCAL_PER_SERVING');
   });
 });

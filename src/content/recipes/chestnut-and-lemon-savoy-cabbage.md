@@ -71,13 +71,13 @@ nutrition:
     fat_g: 14.4
     satFat_g: 2
     carbs_g: 22.5
-    fiber_g: 4
+    fiber_g: 6.2
     sugar_g: 3.2
     sodium_mg: 437
-    availableCarb_g: 18.6
+    availableCarb_g: 16.3
   glycemic:
     gi: 20
-    gl: 4
+    gl: 3
     giBand: low
     glBand: low
     glBasis: portion
@@ -85,19 +85,19 @@ nutrition:
     measuredGiPct: 0
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
     coverage: 0.74
   inflammation:
-    score: -0.8
+    score: -0.7
     band: mildly-anti-inflammatory
     method: fii v4
     aromaticAdjustment: -0.03
   balance:
     score: 7
     band: high
-    nrf: 46.8
+    nrf: 51.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

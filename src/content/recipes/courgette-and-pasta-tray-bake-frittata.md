@@ -83,7 +83,7 @@ ingredients:
     grams: 2.3
     milliliters: 4.92892
     fdcId: 171329
-    matchConfidence: low
+    matchConfidence: high
     cooking: baked
   - raw: 300 g tomatoes
     group: Main ingredients

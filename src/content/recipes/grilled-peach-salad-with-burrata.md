@@ -79,6 +79,7 @@ ingredients:
     fdcId: 172241
     matchConfidence: low
     cooking: raw
+    proxyOk: true
   - raw: 1 pinch salt
     quantity: 1
     unit: pinch

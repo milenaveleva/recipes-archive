@@ -40,8 +40,8 @@ ingredients:
     item: whole shrimp
     note: heads on
     grams: 100
-    fdcId: 175180
-    matchConfidence: low
+    fdcId: 175179
+    matchConfidence: high
     cooking: fried
   - raw: 23 g extra virgin olive oil (in place of cold butter)
     quantity: 23
@@ -91,18 +91,18 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 1146
-    energyKj: 4794
-    protein_g: 49.6
-    fat_g: 77.9
+    energyKcal: 1132
+    energyKj: 4735
+    protein_g: 45.7
+    fat_g: 78.1
     satFat_g: 16.2
-    carbs_g: 69.8
+    carbs_g: 69.6
     fiber_g: 9.1
     sugar_g: 2.8
-    sodium_mg: 1464
-    availableCarb_g: 60.6
+    sodium_mg: 1472
+    availableCarb_g: 60.4
   glycemic:
-    gi: 44
+    gi: 45
     gl: 27
     giBand: low
     glBand: medium
@@ -116,17 +116,17 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
+    score: 0
     band: neutral
     method: fii v4
     aromaticAdjustment: -0.07
   balance:
     score: 3
     band: low
-    nrf: 16.5
+    nrf: 13.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 86.5
+    minimallyProcessedPct: 86.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
