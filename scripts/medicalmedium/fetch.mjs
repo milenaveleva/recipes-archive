@@ -15,8 +15,8 @@
  * scripts/data-raw/medicalmedium/raw/<slug>.json: title, hero image URL, posted date, the
  * intro paragraphs, every ingredient list (with the heading above it as its group), the
  * direction paragraphs, the "Serves" line and any "Recipe Notes"/"Tips" (`notes`). A page
- * holding several recipes keeps each as its own entry in `recipes`: an "Ingredients:" label,
- * or an unlabelled list outside a recipe, opens the next one.
+ * holding several recipes keeps each as its own entry in `recipes` (see parseRecipes for how
+ * recipes and their sections are recognised).
  * Images are never downloaded: imports link the source image.
  *
  * Fetched pages are treated as data only. At most 3 requests run at once, each worker
@@ -118,42 +118,73 @@ function blocks(article) {
     const tag = m[1].toLowerCase();
     if (tag === 'ul' || tag === 'ol') {
       const items = [...m[2].matchAll(/<li\b[^>]*>([\s\S]*?)<\/li>/gi)].map((x) => text(x[1])).filter(Boolean);
-      if (items.length) out.push({ kind: 'list', items });
+      if (items.length) out.push({ kind: 'list', ordered: tag === 'ol', items });
     } else {
       // A <p> that itself wraps a list: emit its leading text and the list separately.
       if (tag === 'p' && /<(ul|ol)\b/i.test(m[2])) {
         out.push(...blocks(m[2]));
         continue;
       }
-      const t = text(m[2]);
-      if (t) out.push({ kind: tag.startsWith('h') ? 'heading' : 'p', text: t });
+      // Lines a paragraph separates with <br> are separate paragraphs, marked `soft`: a <br>
+      // may also just wrap prose, so a soft line never titles a recipe.
+      const parts = tag === 'p' ? m[2].split(/<br\s*\/?>/i) : [m[2]];
+      const soft = parts.length > 1;
+      for (const part of parts) {
+        const t = text(part);
+        if (t) out.push({ kind: tag.startsWith('h') ? 'heading' : 'p', text: t, ...(soft ? { soft } : {}) });
+      }
     }
   }
   return out;
 }
 
 const isIngredientsLabel = (t) => /^ingredients?\s*:?$/i.test(t);
-const isDirectionsLabel = (t) => /^(directions|instructions|method)\s*:?$/i.test(t);
+const isHowToMake = (t) => /^how to make\s*:?$/i.test(t);
+const isDirectionsLabel = (t) => /^(directions|instructions|method|preparation|steps)\s*:?$/i.test(t);
 const isNotesLabel = (t) => /^(recipe\s+)?(notes?|tips?)\s*:?$/i.test(t);
-const servesOf = (t) => /^(?:serves|makes|yields?)\s*:?\s*(.+)$/i.exec(t)?.[1]?.trim() ?? null;
-
-const titleLike = (t) => t.length <= 60 && !/[.!?]$/.test(t);
+/** The yield of a "Serves 4" / "Makes around 20 bars" line: a number must follow within a few words. */
+function servesOf(t) {
+  const rest = /^(?:serves|servings|makes|yields?)\b\s*:?\s*([\s\S]+)$/i.exec(t)?.[1]?.trim();
+  if (!rest) return null;
+  return /^(?:[\W_]*|(?:about|around|approx\w*|up to|to|roughly)\s+)*(?:[\d½¼]|(?:one|two|three|four|five|six|eight|ten|twelve|a few)\b)/i.test(rest) ? rest : null;
+}
+const isFurniture = (t) => /^(this item posted:|categories:)/i.test(t);
+const isSentence = (t) => /[.!?]$/.test(t);
+const titleLike = (t) => t.length <= 60 && !isSentence(t);
 
 /**
- * Group the blocks into recipes. An "Ingredients:" label, or an unlabelled list outside a
- * recipe, opens one; a title-like line followed by a list inside a recipe's directions or
- * notes opens the next. "Directions:" and "Recipe Notes:"/"Tips:" switch sections, and a
- * "Serves" line records the yield (closing the recipe once it has directions).
+ * Group the blocks into recipes, in document order:
+ * - An "Ingredients:" label (or "How to make:" before any ingredients) opens a recipe. So does
+ *   an unlabelled list outside a recipe, but such an implicit recipe is dropped (its items go
+ *   to `intro`) if it never gets a method: it was a bullet list in the prose ("Use this shot
+ *   for: …").
+ * - Ingredient section: lists, each headed by the short line above it; a short line no list
+ *   follows, or an unpunctuated line in a section without lists, is an ingredient itself. An
+ *   ordered list or a full sentence after the ingredients starts the method.
+ * - "Directions:"/"Preparation:"/"How to make:" and "Recipe Notes:"/"Tips:" switch sections;
+ *   inside them a title-like line followed by a list opens the next recipe.
+ * - A "Serves"/"Makes <quantity>" line records the yield, closing the recipe once it has a
+ *   method. Page furniture ("This item posted:", "Categories:") ends the parse.
  */
 function parseRecipes(bl) {
   const recipes = [];
   const intro = [];
+  const implicit = new WeakSet(); // recipes opened by an unlabelled list
+  const hasList = new WeakSet(); // recipes whose ingredients came as a list
   let cur = null;
   let mode = 'intro'; // intro | ingredients | directions | notes | after
   let pending = null; // a short line that may head the next list, or title the next recipe
   let candidate = null; // in directions/notes: the last line, when it could title a next recipe
-  const open = (name) => {
+  const dropIfProse = () => {
+    if (cur && implicit.has(cur) && !cur.directions.length) {
+      recipes.splice(recipes.indexOf(cur), 1);
+      intro.push(...cur.ingredients.flatMap((g) => g.items));
+    }
+  };
+  const open = (name, isImplicit = false) => {
+    dropIfProse();
     cur = { name: name ?? '', ingredients: [], directions: [], serves: null, notes: [] };
+    if (isImplicit) implicit.add(cur);
     recipes.push(cur);
     mode = 'ingredients';
     pending = null;
@@ -167,18 +198,21 @@ function parseRecipes(bl) {
     candidate = null;
     return name;
   };
+  const addIngredient = (line) => {
+    if (!cur.ingredients.length) cur.ingredients.push({ group: '', items: [] });
+    cur.ingredients.at(-1).items.push(line);
+  };
   /** A short line in the ingredient section that no list followed is itself an ingredient. */
   const flushPending = () => {
-    if (mode === 'ingredients' && cur && pending && !pending.endsWith(':')) {
-      if (!cur.ingredients.length) cur.ingredients.push({ group: '', items: [] });
-      cur.ingredients.at(-1).items.push(pending);
-    }
+    if (mode === 'ingredients' && cur && pending && !pending.endsWith(':')) addIngredient(pending);
     pending = null;
   };
   for (const b of bl) {
     const t = b.text ?? '';
+    if (isFurniture(t)) break;
     const isList = b.kind === 'list';
-    if (!isList && isIngredientsLabel(t)) {
+    const howTo = !isList && isHowToMake(t);
+    if (!isList && (isIngredientsLabel(t) || (howTo && !cur?.ingredients.length))) {
       open(mode === 'notes' || mode === 'directions' ? takeCandidate() : pending);
       continue;
     }
@@ -188,7 +222,7 @@ function parseRecipes(bl) {
       candidate = null;
       continue;
     }
-    if (cur && !isList && isDirectionsLabel(t)) {
+    if (cur && !isList && (isDirectionsLabel(t) || howTo)) {
       flushPending();
       mode = 'directions';
       candidate = null;
@@ -198,6 +232,7 @@ function parseRecipes(bl) {
       if (isList && candidate != null) {
         open(takeCandidate());
         cur.ingredients.push({ group: '', items: b.items });
+        hasList.add(cur);
         continue;
       }
       const serves = isList ? null : servesOf(t);
@@ -212,13 +247,21 @@ function parseRecipes(bl) {
         candidate = null;
       } else {
         section().push(t);
-        candidate = titleLike(t) ? t : null;
+        candidate = titleLike(t) && !b.soft ? t : null;
       }
       continue;
     }
     if (isList) {
-      if (!cur || mode === 'after') open(pending);
+      if (!cur || mode === 'after') open(pending, true);
+      else if (b.ordered && cur.ingredients.length) {
+        // Numbered steps after the ingredient lists: the method.
+        flushPending();
+        mode = 'directions';
+        cur.directions.push(...b.items);
+        continue;
+      }
       cur.ingredients.push({ group: (pending ?? '').replace(/:$/, ''), items: b.items });
+      hasList.add(cur);
       pending = null;
       continue;
     }
@@ -235,8 +278,14 @@ function parseRecipes(bl) {
         pending = t;
         continue;
       }
-      // A sentence after the ingredient lists with no "Directions:" label starts the method.
-      if (cur.ingredients.length) {
+      // An unpunctuated line in an ingredient section written without lists is an ingredient.
+      if (!implicit.has(cur) && !hasList.has(cur) && !isSentence(t)) {
+        flushPending();
+        addIngredient(t);
+        continue;
+      }
+      // A sentence after the ingredients with no "Directions:" label starts the method.
+      if (cur.ingredients.length || pending) {
         flushPending();
         mode = 'directions';
         cur.directions.push(t);
@@ -244,10 +293,11 @@ function parseRecipes(bl) {
       }
     }
     // A short line outside a recipe may be the next recipe's title; a long one is prose.
-    if (t.length <= 80 && !/[.!?]$/.test(t)) pending = t;
+    if (t.length <= 80 && !isSentence(t)) pending = t;
     else if (!recipes.length) intro.push(t);
     else pending = null;
   }
+  dropIfProse();
   return { intro, recipes };
 }
 
