@@ -42,4 +42,5 @@ The kifli ingredient rules apply unchanged (`scripts/kifli/README.md` § Ingredi
 - Maple syrup, coconut sugar and other sweeteners → raw honey at the same volume (vegan dishes may use Medjool dates instead).
 - "Gluten-free" grains keep their type and use the whole-grain form (gluten-free rolled oats stay rolled oats; rice is brown rice).
 - An "optional: sub …" or "… or …" alternative keeps the first-named ingredient only; the alternative may become a tip.
+- The "Brain Shot Therapy" juice shots (pages named "… Shifter", "… Stabilizer", "… Exposure", and the cilantro, parsley and turmeric-ginger shots) are imported as drinks titled by their main ingredients, e.g. "Mint, Sage & Mango Juice Shot"; the source's name and its claim of what the shot is for are left out.
 - Supplements and powders sold by the source (e.g. "barley grass juice powder", "spirulina") stay when they are a real ingredient of the dish.
