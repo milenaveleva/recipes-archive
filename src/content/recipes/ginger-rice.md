@@ -11,7 +11,7 @@ prepTime: PT10M
 cookTime: PT40M
 totalTime: PT50M
 cuisine: Japanese
-course: Side Dish
+course: Condiment
 ingredients:
   - raw: 1½ cups Japanese short-grain brown rice (dry)
     quantity: 1.5

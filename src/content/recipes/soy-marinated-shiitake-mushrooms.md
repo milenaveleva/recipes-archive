@@ -11,7 +11,7 @@ prepTime: PT5M
 cookTime: PT25M
 totalTime: PT30M
 cuisine: Asian
-course: Side Dish
+course: Condiment
 ingredients:
   - raw: 8 oz shiitake mushrooms, sliced (about 3 cups sliced)
     quantity: 8

@@ -1,9 +1,9 @@
 ---
-title: Fermented Sour Pickles (Kovászos Uborka)
+title: Fermented Sour Pickles
 description: Classic Hungarian summer pickles, naturally fermented in the sun-warmed jar with fresh dill, garlic and a slice of stale whole-wheat bread.
 image: ./images/fermented-sour-pickles-kovaszos-uborka.jpg
 imageUrl: https://cdn.kifli.hu/images/meals/large/recipe_10323_1787927533921_hungarian-fermented-pickles_8bc0c06a.jpg
-imageAlt: Fermented Sour Pickles (Kovászos Uborka)
+imageAlt: Fermented Sour Pickles
 source:
   name: kifli.hu
   url: https://www.kifli.hu/sef/10323-kovaszos-uborka
@@ -13,7 +13,7 @@ servings: 1
 prepTime: PT30M
 totalTime: PT30M
 cuisine: Hungarian
-course: Side Dish
+course: Condiment
 lists:
   - Kifli favourites
 ingredients:

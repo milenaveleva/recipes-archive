@@ -13,7 +13,7 @@ servings: 2
 prepTime: PT10M
 totalTime: PT10M
 cuisine: Middle Eastern
-course: Appetizer
+course: Sauce
 lists:
   - Kifli favourites
 ingredients:

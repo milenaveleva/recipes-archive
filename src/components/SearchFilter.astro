@@ -22,8 +22,8 @@ interface Props {
 const { docs, facets } = Astro.props;
 const primary = facets.filter((g) => g.primary);
 const more = facets.filter((g) => !g.primary);
-// The compact rail mirrors every facet group as an icon-only toggle; groups
-// without a glyph are skipped (their chips still appear in the expanded card).
+// The compact bar mirrors every facet group as an icon button; groups without a
+// glyph are skipped (their chips still appear in the full card).
 const railGroups = facets
   .map((g) => ({ group: g, icon: facetIconName(g.key) }))
   .filter((r): r is { group: FacetGroup; icon: NonNullable<typeof r.icon> } => r.icon != null);
@@ -39,7 +39,7 @@ const docsJson = JSON.stringify(docs)
 <section
   data-search-root
   style="display:none"
-  class="sticky top-[var(--nav-h,4.5rem)] z-30 mx-auto max-w-6xl px-5 sm:px-8 pb-8"
+  class="mx-auto max-w-6xl px-5 sm:px-8 pb-8"
   aria-label="Search and filter recipes"
 >
   <div
@@ -73,26 +73,6 @@ const docsJson = JSON.stringify(docs)
         Clear
       </button>
 
-      {railGroups.length > 0 && (
-        <div data-facet-rail role="group" aria-label="Filters" class="flex-wrap items-center gap-0.5">
-          {railGroups.map(({ group, icon }) => (
-            <button
-              type="button"
-              data-rail-group={group.key}
-              aria-label={`${group.label} filters`}
-              class="group/rail relative inline-flex h-7 w-7 items-center justify-center rounded-full text-ink-faint transition-colors hover:bg-paper hover:text-spice [&[data-active]]:text-spice"
-            >
-              <Icon name={icon} class="h-4 w-4" />
-              <span
-                data-rail-count
-                hidden
-                aria-hidden="true"
-                class="absolute -right-0.5 -top-0.5 min-w-3.5 rounded-full bg-spice px-1 text-center font-ui text-[0.6rem] font-semibold leading-[0.875rem] text-paper"
-              ></span>
-            </button>
-          ))}
-        </div>
-      )}
     </div>
 
     <div data-search-facets class="flex flex-col gap-4">
@@ -117,8 +97,6 @@ const docsJson = JSON.stringify(docs)
       )}
     </div>
 
-    <!-- Outside [data-search-facets] so the collapsed bar keeps this live region
-         in the a11y tree (clipped, not display:none) and still announces counts. -->
     <p data-search-count aria-live="polite" class="font-ui text-xs text-ink-faint"></p>
   </div>
 
@@ -131,6 +109,66 @@ const docsJson = JSON.stringify(docs)
     <p class="mx-auto mt-2 max-w-sm font-body text-ink-soft">
       Try fewer filters or a different search term.
     </p>
+  </div>
+
+  <!-- Compact bar: fixed under the header, shown (transform/opacity only) once the
+       full card above has scrolled out of view. Its search box mirrors the card's;
+       each icon scrolls back to the card and opens that filter group. -->
+  <div
+    data-search-compact
+    role="search"
+    aria-label="Search and filter recipes, compact bar"
+    class="fixed inset-x-0 top-[var(--nav-h,4.5rem)] z-30"
+  >
+    <div class="mx-auto max-w-6xl px-5 pt-2 sm:px-8">
+      <div class="flex items-center gap-3 rounded-2xl border border-line bg-card/90 px-3 py-2 shadow-sm backdrop-blur-sm">
+        <div class="relative min-w-[8rem] flex-1">
+          <svg
+            class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-faint"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input
+            data-compact-input
+            type="search"
+            placeholder="Search recipes…"
+            autocomplete="off"
+            aria-label="Search recipes (compact bar)"
+            class="w-full rounded-lg border border-line-strong bg-paper py-1.5 pl-9 pr-3 font-ui text-sm text-ink outline-none transition-colors focus:border-spice"
+          />
+        </div>
+        <button
+          data-compact-clear
+          type="button"
+          style="display:none"
+          class="shrink-0 rounded-full border border-line bg-paper px-2.5 py-1 font-ui text-xs text-ink-soft transition-colors hover:border-spice hover:text-spice"
+        >
+          Clear
+        </button>
+        {railGroups.length > 0 && (
+          <div role="group" aria-label="Filters" class="flex shrink-0 flex-wrap items-center gap-0.5">
+            {railGroups.map(({ group, icon }) => (
+              <button
+                type="button"
+                data-rail-group={group.key}
+                aria-label={`${group.label} filters`}
+                class="group/rail relative inline-flex h-7 w-7 items-center justify-center rounded-full text-ink-faint transition-colors hover:bg-paper hover:text-spice [&[data-active]]:text-spice"
+              >
+                <Icon name={icon} class="h-4 w-4" />
+                <span
+                  data-rail-count
+                  hidden
+                  aria-hidden="true"
+                  class="absolute -right-0.5 -top-0.5 min-w-3.5 rounded-full bg-spice px-1 text-center font-ui text-[0.6rem] font-semibold leading-[0.875rem] text-paper"
+                ></span>
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
   </div>
 
   <script is:inline type="application/json" data-search-docs set:html={docsJson}></script>
@@ -160,11 +198,9 @@ const docsJson = JSON.stringify(docs)
     const emptyEl = root.querySelector<HTMLElement>('[data-search-empty]');
     const divider = document.querySelector<HTMLElement>('[data-collection-divider]');
     const chips = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-facet-value]'));
-    // The compact icon rail: each button expands the toolbar for its group and
-    // carries a badge of that group's active selections. `details` is the
-    // secondary-facet disclosure a rail click needs to open.
+    // The compact bar's filter icons: each scrolls back to its group and carries a
+    // badge of that group's active selections.
     const railBtns = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-rail-group]'));
-    const details = root.querySelector<HTMLDetailsElement>('details');
 
     // The cards are rendered by Astro (RecipeCard) and tagged with their slug.
     // Rebuilt from the live DOM (not snapshotted) so the optimistic overlay's
@@ -221,12 +257,19 @@ const docsJson = JSON.stringify(docs)
       show(emptyEl, shown === 0);
       show(divider, shown > 0); // hide the "The Collection" rule when nothing shows
       show(clearBtn, q !== '' || facetCount() > 0);
+      show(compactClear, q !== '' || facetCount() > 0);
       updateRail();
     }
 
     // Reflect each group's active-selection count on its rail icon, so the
-    // collapsed bar still shows where filters are applied.
+    // compact bar still shows where filters are applied.
     function updateRail() {
+      // A closed course/cuisine group shows how many of its values are selected.
+      for (const el of root.querySelectorAll<HTMLElement>('[data-summary-count]')) {
+        const n = selected[el.dataset.summaryCount ?? '']?.length ?? 0;
+        el.textContent = n ? String(n) : '';
+        el.hidden = n === 0;
+      }
       for (const btn of railBtns) {
         const key = btn.dataset.railGroup;
         const n = key ? selected[key]?.length ?? 0 : 0;
@@ -239,54 +282,75 @@ const docsJson = JSON.stringify(docs)
       }
     }
 
-    // Expansion: focusing the search or tapping a rail icon restores the full
-    // toolbar; Escape or any interaction outside collapses it back to the rail.
-    const setExpanded = (on: boolean) => root.toggleAttribute('data-expanded', on);
+    // Compact bar: shown once the full card has scrolled above the header. The
+    // observer fires only at the crossing, so scrolling itself does no work.
+    const card = root.querySelector<HTMLElement>('[data-search-card]');
+    const compact = root.querySelector<HTMLElement>('[data-search-compact]');
+    const compactInput = root.querySelector<HTMLInputElement>('[data-compact-input]');
+    const compactClear = root.querySelector<HTMLButtonElement>('[data-compact-clear]');
+    const navH = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 72;
+    if (card && compact && 'IntersectionObserver' in window) {
+      let io: IntersectionObserver | null = null;
+      const observe = () => {
+        io?.disconnect();
+        io = new IntersectionObserver(
+          ([e]) => {
+            const above = !e.isIntersecting && e.boundingClientRect.top < navH();
+            compact.toggleAttribute('data-visible', above);
+            // A hidden bar must not keep focus. Typing can shrink the grid enough to
+            // bring the full card back; hand the caret to its search box so the
+            // query keeps taking keystrokes.
+            if (!above && compact.contains(document.activeElement)) {
+              if (document.activeElement === compactInput && input) {
+                input.focus({ preventScroll: true });
+                input.setSelectionRange(input.value.length, input.value.length);
+              } else (document.activeElement as HTMLElement).blur();
+            }
+          },
+          { rootMargin: `-${navH()}px 0px 0px 0px` },
+        );
+        io.observe(card);
+      };
+      observe();
+      window.addEventListener('resize', observe, { passive: true });
+      // The header can change height without a resize (the web-font swap); its
+      // height sets the observer's margin, so rebuild on any change.
+      const header = document.querySelector('[data-site-header]');
+      if (header && 'ResizeObserver' in window) new ResizeObserver(() => observe()).observe(header);
+    }
+
+    // Scroll back to the full card (just under the header), then act on it.
+    function toCard(then: () => void) {
+      if (!card) return then();
+      const top = card.getBoundingClientRect().top + window.scrollY - navH() - 12;
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top, behavior: reduce ? 'auto' : 'smooth' });
+      then();
+    }
     for (const btn of railBtns) {
       btn.addEventListener('click', () => {
-        setExpanded(true);
         const key = btn.dataset.railGroup;
-        const target = key
-          ? root.querySelector<HTMLButtonElement>(`[data-facet-group="${key}"]`)
-          : null;
-        // Open the disclosure first if this group lives inside it, else the
-        // focus below can't land on a display:none chip.
-        if (details && target && details.contains(target)) details.open = true;
-        target?.focus();
+        const target = key ? root.querySelector<HTMLButtonElement>(`[data-facet-group="${key}"]`) : null;
+        // Open every disclosure around the target (the Filters panel and any
+        // collapsible group), else the focus can't land on a hidden chip.
+        for (let el = target?.parentElement; el && el !== root; el = el.parentElement) {
+          if (el instanceof HTMLDetailsElement) el.open = true;
+        }
+        toCard(() => target?.focus({ preventScroll: true }));
       });
     }
-    input?.addEventListener('focus', () => setExpanded(true));
-    root.addEventListener('keydown', (e) => {
-      if (e.key !== 'Escape') return;
-      const compact = document.documentElement.hasAttribute('data-scrolled');
-      const active = document.activeElement as HTMLElement | null;
-      setExpanded(false);
-      // Collapsing while scrolled sends [data-search-facets] to display:none; if
-      // a chip inside it held focus it would drop to <body>, so hand focus to
-      // that group's rail button, which stays visible on the collapsed bar.
-      if (!compact) return;
-      if (input && active === input) {
-        input.blur();
-        return;
-      }
-      const group = active?.closest<HTMLElement>('[data-facet-group]')?.dataset.facetGroup;
-      const railBtn = group
-        ? root.querySelector<HTMLButtonElement>(`[data-rail-group="${group}"]`)
-        : null;
-      railBtn?.focus();
+
+    // The two search boxes are one query.
+    compactInput?.addEventListener('input', () => {
+      if (input) input.value = compactInput.value;
+      recompute();
     });
-    for (const evt of ['pointerdown', 'focusin'] as const) {
-      document.addEventListener(evt, (e) => {
-        if (!root.contains(e.target as Node)) setExpanded(false);
-      });
-    }
-    // `data-expanded` is only meaningful while scrolled (the compact bar). When
-    // the page returns to the top, the scroll script drops `data-scrolled`;
-    // clear the now-inert expanded flag too, so the next scroll-down collapses
-    // to the rail instead of staying stuck open.
-    new MutationObserver(() => {
-      if (!document.documentElement.hasAttribute('data-scrolled')) setExpanded(false);
-    }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-scrolled'] });
+    input?.addEventListener('input', () => {
+      if (compactInput) compactInput.value = input.value;
+    });
+    compactInput?.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') compactInput.blur();
+    });
 
     input?.addEventListener('input', recompute);
 
@@ -305,8 +369,18 @@ const docsJson = JSON.stringify(docs)
       });
     }
 
+    compactClear?.addEventListener('click', () => {
+      if (input) input.value = '';
+      if (compactInput) compactInput.value = '';
+      for (const key of Object.keys(selected)) delete selected[key];
+      for (const chip of chips) chip.setAttribute('aria-pressed', 'false');
+      recompute();
+      compactInput?.focus();
+    });
+
     clearBtn?.addEventListener('click', () => {
       if (input) input.value = '';
+      if (compactInput) compactInput.value = '';
       for (const key of Object.keys(selected)) delete selected[key];
       for (const chip of chips) chip.setAttribute('aria-pressed', 'false');
       recompute();

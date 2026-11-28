@@ -9,6 +9,7 @@ source:
 servings: 6
 prepTime: PT40M
 totalTime: PT40M
+course: Drink
 ingredients:
   - raw: 18 g fresh ginger
     quantity: 18
@@ -56,6 +57,7 @@ ingredients:
     fdcId: 169231
     matchConfidence: medium
     cooking: raw
+    prep: juiced
   - raw: 5 l filtered water (for the ginger beer)
     quantity: 5
     unit: l

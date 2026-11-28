@@ -8,7 +8,7 @@ source:
   url: https://www.medicalmedium.com/blog/mango-salsa
 servings: 4
 cuisine: Mexican
-course: Sauce
+course: Salad
 lists:
   - Medical Medium
 ingredients:
@@ -134,7 +134,7 @@ nutrition:
     gl: 7
     giBand: low
     glBand: low
-    glBasis: portion
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 67
   nutriScore:
