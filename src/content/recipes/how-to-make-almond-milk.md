@@ -10,6 +10,7 @@ servings: 1
 prepTime: PT12H
 cookTime: PT15M
 totalTime: PT12H15M
+course: Drink
 ingredients:
   - raw: 2 cups raw almonds (soaked overnight and rinsed)
     quantity: 2
@@ -37,6 +38,7 @@ ingredients:
     fdcId: 168191
     matchConfidence: high
     cooking: raw
+    prep: juiced
   - raw: pinch of sea salt
     quantity: 1
     unit: pinch
@@ -73,8 +75,8 @@ nutrition:
     version: "2023"
     coverage: 0.98
   inflammation:
-    score: -1.1
-    band: anti-inflammatory
+    score: -0.7
+    band: mildly-anti-inflammatory
     method: fii v5
   balance:
     score: 7

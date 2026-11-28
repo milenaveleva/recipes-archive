@@ -35,11 +35,6 @@ describe('facetsOf', () => {
     expect(keys).not.toContain('cuisine');
   });
 
-  it('marks only course collapsible', () => {
-    const groups = facetsOf([doc('a', { course: 'Soup', giBand: 'low' })]);
-    expect(groups.filter((g) => g.collapsible).map((g) => g.key)).toEqual(['course']);
-  });
-
   it('collapses values by slug and counts each recipe once', () => {
     const groups = facetsOf([doc('a', { course: 'Main Course' }), doc('b', { course: 'main course' }), doc('c', { course: 'Soup' })]);
     const course = groups.find((g) => g.key === 'course')!;

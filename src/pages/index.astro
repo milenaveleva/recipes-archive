@@ -47,6 +47,11 @@ const facets = facetsOf(docs);
           <RecipeGrid recipes={recipes} />
         )
       }
+      {count > 0 && (
+        <!-- The search script keeps this count current ("Showing N of M recipes"); it is
+             an aria-live region, so screen readers hear each settled total. -->
+        <p data-search-count aria-live="polite" class="mt-10 text-center font-ui text-xs text-ink-faint"></p>
+      )}
     </section>
   </div>
 

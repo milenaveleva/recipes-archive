@@ -115,11 +115,12 @@ const bodyHasMethodHeading = /^##\s+Method\b/im.test(recipe.body ?? '');
     </a>
 
     <header class="mt-6 reveal">
+      {data.course && <p class="eyebrow !text-spice">{data.course}</p>}
       {
         data.category && (
           <a
             href={withBase(`/categories/${slugifyTerm(data.category)}`)}
-            class="eyebrow !text-spice no-underline"
+            class={`eyebrow !text-spice no-underline${data.course ? ' ml-3' : ''}`}
           >
             {data.category}
           </a>

@@ -311,7 +311,21 @@ h1, h2, h3, h4 {
   transition: transform 0.22s ease, opacity 0.18s ease, visibility 0s;
 }
 
+/* A filter group's panel slides open by animating its single grid row from 0fr to
+   1fr (the content's natural height), so no height needs measuring in script. */
+.facet-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.28s ease, opacity 0.2s ease;
+}
+.facet-panel[data-open] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .facet-panel,
   [data-search-compact],
   [data-search-compact][data-visible] {
     transition: none;

@@ -10,6 +10,7 @@ servings: 4
 prepTime: PT20M
 cookTime: PT25M
 totalTime: PT45M
+course: Soup
 category: Soups
 ingredients:
   - raw: 1 lb red bell peppers (roughly chopped)
@@ -108,7 +109,7 @@ nutrition:
     gl: 3
     giBand: low
     glBand: low
-    glBasis: portion
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 30
   nutriScore:

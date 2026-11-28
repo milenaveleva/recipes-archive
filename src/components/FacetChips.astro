@@ -1,10 +1,9 @@
 ---
 /**
- * One facet group rendered as a row of toggle chips. The bundled script in
- * SearchFilter.astro wires clicks via the data attributes and reflects state in
- * `aria-pressed`; styling keys off that attribute so the chips need no JS to
- * look right and stay accessible. A collapsible group (long value lists such as
- * course) renders as its own <details>, closed by default.
+ * One facet group's values as a row of toggle chips (the group's name lives on its
+ * tab in SearchFilter.astro). The bundled script in SearchFilter.astro wires clicks
+ * via the data attributes and reflects state in `aria-pressed`; styling keys off
+ * that attribute so the chips need no JS to look right and stay accessible.
  */
 import type { FacetGroup } from '../lib/search';
 import { facetIconName } from '../lib/icons';
@@ -17,53 +16,7 @@ const { group } = Astro.props;
 const icon = facetIconName(group.key);
 ---
 
-{group.collapsible ? (
-  <details data-facet-disclosure class="group/facet">
-    <summary class="flex cursor-pointer list-none items-center gap-1.5 [&::-webkit-details-marker]:hidden">
-      <span class="eyebrow flex shrink-0 items-center gap-1.5 transition-colors hover:text-spice">
-        {icon && <Icon name={icon} class="h-3.5 w-3.5 text-ink-faint" />}
-        {group.label}
-      </span>
-      <span class="text-ink-faint transition-transform group-open/facet:rotate-90" aria-hidden="true">›</span>
-      <span
-        data-summary-count={group.key}
-        hidden
-        class="min-w-4 rounded-full bg-spice px-1.5 text-center font-ui text-[0.65rem] font-semibold leading-4 text-paper"
-        aria-label="selected"
-      ></span>
-    </summary>
-    <div role="group" aria-label={group.label} class="mt-2 flex flex-wrap items-center gap-1.5">
-  {
-        group.values.map((v) => (
-          <button
-            type="button"
-            data-facet-group={group.key}
-            data-facet-value={v.value}
-            aria-pressed="false"
-            aria-label={`${v.label}, ${v.count} ${v.count === 1 ? 'recipe' : 'recipes'}`}
-            class="group/chip inline-flex items-center gap-1.5 rounded-full border border-line bg-card px-3 py-1 font-ui text-sm text-ink-soft transition-colors hover:border-spice hover:text-spice aria-pressed:border-spice aria-pressed:bg-spice aria-pressed:text-paper"
-          >
-            {icon && (
-              <Icon
-                name={icon}
-                class="h-3 w-3 shrink-0 text-ink-faint group-aria-pressed/chip:text-paper/75"
-              />
-            )}
-            {v.label}
-            <span aria-hidden="true" class="font-ui text-xs text-ink-faint tabular-nums group-aria-pressed/chip:text-paper/75">
-              {v.count}
-            </span>
-          </button>
-        ))
-      }
-    </div>
-  </details>
-) : (
 <div role="group" aria-label={group.label} class="flex flex-wrap items-center gap-1.5">
-  <span class="eyebrow mr-1 flex shrink-0 items-center gap-1.5">
-    {icon && <Icon name={icon} class="h-3.5 w-3.5 text-ink-faint" />}
-    {group.label}
-  </span>
   {
     group.values.map((v) => (
       <button
@@ -88,4 +41,3 @@ const icon = facetIconName(group.key);
     ))
   }
 </div>
-)}

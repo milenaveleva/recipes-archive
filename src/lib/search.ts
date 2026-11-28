@@ -51,8 +51,6 @@ export interface FacetGroup {
   label: string;
   /** Primary groups show inline; the rest collapse under the "Filters" disclosure. */
   primary: boolean;
-  /** Long groups render as their own disclosure, closed by default. */
-  collapsible: boolean;
   values: FacetValue[];
 }
 
@@ -96,8 +94,7 @@ interface FacetDef {
   key: string;
   label: string;
   primary: boolean;
-  /** Render as its own disclosure, closed by default (long value lists). */
-  collapsible?: boolean;
+
   /** All values this recipe contributes to the facet (raw, pre-slug). */
   pick: (d: SearchDoc) => string[];
   /** Optional display transform for a raw value. */
@@ -107,13 +104,12 @@ interface FacetDef {
 }
 
 /**
- * The facet groups, in display order: the long course list first (its own collapsible
- * disclosure), then the rest alphabetically. A group is only rendered when at least
+ * The facet groups, in display order: course first, then the rest alphabetically. A group is only rendered when at least
  * one recipe carries a value for it, so the toolbar stays clean as the archive
  * grows into (or out of) using a given field.
  */
 export const FACET_DEFS: FacetDef[] = [
-  { key: 'course', label: 'Course', primary: false, collapsible: true, pick: (d) => (d.course ? [d.course] : []), labelOf: titleCase },
+  { key: 'course', label: 'Course', primary: false, pick: (d) => (d.course ? [d.course] : []), labelOf: titleCase },
   { key: 'difficulty', label: 'Difficulty', primary: false, pick: (d) => (d.difficulty ? [d.difficulty] : []), labelOf: titleCase, order: ['easy', 'medium', 'hard'] },
   { key: 'gi', label: 'Glycemic index', primary: false, pick: (d) => (d.giBand ? [d.giBand] : []), labelOf: bandLabel, order: ['low', 'medium', 'high'] },
   // Each recipe's GL level is relative to its course (glLevelOf), so the label says so.
@@ -155,7 +151,7 @@ export function facetsOf(docs: SearchDoc[]): FacetGroup[] {
     } else {
       values.sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
     }
-    groups.push({ key: def.key, label: def.label, primary: def.primary, collapsible: def.collapsible ?? false, values });
+    groups.push({ key: def.key, label: def.label, primary: def.primary, values });
   }
   return groups;
 }
