@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 135 g dry white beans, soaked and cooked
+  - raw: 135 g white beans, dry
     group: Main ingredients
     quantity: 135
     unit: g
     item: white beans
-    note: dry, soaked and cooked
+    note: dry
     grams: 135
     fdcId: 175202
     matchConfidence: medium

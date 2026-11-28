@@ -84,9 +84,9 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 1 piece fresh ginger
-    quantity: 1
-    unit: piece
+  - raw: 10 g fresh ginger
+    quantity: 10
+    unit: g
     item: fresh ginger
     grams: 10
     fdcId: 169231
@@ -195,8 +195,8 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.3
-    band: mildly-anti-inflammatory
+    score: -0.2
+    band: neutral
     method: fii v5
     aromaticAdjustment: -0.33
   balance:

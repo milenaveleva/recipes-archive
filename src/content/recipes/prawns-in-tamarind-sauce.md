@@ -27,9 +27,10 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 2 slices ginger, finely chopped
-    quantity: 2
-    item: slices ginger
+  - raw: 10 g ginger, finely chopped
+    quantity: 10
+    unit: g
+    item: ginger
     note: finely chopped
     grams: 10
     fdcId: 169231
@@ -87,11 +88,11 @@ ingredients:
     fdcId: 172370
     matchConfidence: high
     cooking: fried
-  - raw: 320 g dry brown rice, cooked, for serving
+  - raw: 320 g brown rice, dry, for serving
     quantity: 320
     unit: g
     item: brown rice
-    note: dry, cooked, for serving
+    note: dry, for serving
     grams: 320
     fdcId: 169703
     matchConfidence: high
@@ -123,7 +124,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
+    score: 0
     band: neutral
     method: fii v5
     aromaticAdjustment: -0.22

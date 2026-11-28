@@ -63,12 +63,11 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 2 tbsp grated fresh ginger
-    quantity: 2
-    unit: tbsp
+  - raw: 12 g grated fresh ginger
+    quantity: 12
+    unit: g
     item: grated fresh ginger
     grams: 12
-    milliliters: 29.5736
     fdcId: 169231
     matchConfidence: high
     cooking: fried
@@ -171,7 +170,7 @@ nutrition:
     version: "2023"
     coverage: 0.82
   inflammation:
-    score: -0.4
+    score: -0.3
     band: mildly-anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.45

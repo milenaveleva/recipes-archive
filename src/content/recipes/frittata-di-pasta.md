@@ -18,11 +18,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 110 g dry whole-wheat pasta (spaghetti, penne or any short pasta), cooked and cooled
+  - raw: 110 g whole-wheat pasta (spaghetti, penne or any short pasta), dry
     quantity: 110
     unit: g
     item: whole-wheat pasta
-    note: dry, cooked and cooled
+    note: dry
     group: Main ingredients
     grams: 110
     fdcId: 82009870

@@ -53,9 +53,9 @@ ingredients:
     matchConfidence: high
     cooking: raw
     prep: blended
-  - raw: 5 cm fresh ginger
-    quantity: 5
-    unit: cm
+  - raw: 15 g fresh ginger
+    quantity: 15
+    unit: g
     item: fresh ginger
     grams: 15
     fdcId: 169231
@@ -106,7 +106,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -1.8
+    score: -1.7
     band: anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.23

@@ -46,12 +46,12 @@ ingredients:
     fdcId: 169738
     matchConfidence: medium
     cooking: boiled
-  - raw: 83 g dry white beans, soaked and cooked
+  - raw: 83 g white beans, dry
     group: Main ingredients
     quantity: 83
     unit: g
     item: white beans
-    note: dry, soaked and cooked
+    note: dry
     grams: 83
     fdcId: 175202
     matchConfidence: medium
@@ -167,7 +167,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.8
+    score: -0.9
     band: mildly-anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.19

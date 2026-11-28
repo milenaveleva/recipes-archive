@@ -192,3 +192,21 @@ describe('food classes cover the recipes', () => {
     expect([...missing]).toEqual([]);
   });
 });
+
+describe('zero point', () => {
+  it('reads the average diet (Shivappa 2014 Table 2 global means) as neutral to mildly pro', () => {
+    // A day's intake as one composition: 2,056 kcal with the table's global mean fibre,
+    // vitamins C and E, magnesium, saturated and trans fat and n-3 (as ALA). Free sugar,
+    // sodium and carotenoids are not in the table, so they are left unknown.
+    const day: NutrientVector = {
+      energyKcal: 2056, fiber_g: 18.8, vitC_mg: 118.2, vitE_mg: 8.73, magnesium_mg: 310.1,
+      satFat_g: 28.6, transFat_g: 3.15, ala_g: 1.06,
+    };
+    const s = scoreComposition([{ grams: 100, nutrients: day }])!;
+    // The zero point holds protective nutrients at the average diet's density with NO limit
+    // nutrients; the average diet exceeds the WHO saturated- and trans-fat limits (12.5 % and
+    // 1.4 % of energy), so it lands on the mildly pro side, not at zero.
+    expect(s.tag).toBeGreaterThan(PARAMS.bands.mildlyAntiMax);
+    expect(s.tag).toBeLessThanOrEqual(PARAMS.bands.mildlyProMax);
+  });
+});

@@ -53,9 +53,11 @@ interface FiiParam {
   scale: Scale;
   /** Source field → weight within the parameter (a carrier's evidence grade per component). */
   fields: Record<string, number>;
+  /** Carrier components read in a fixed intake unit instead of the carrier median. */
+  units?: Record<string, number>;
   /** DII overall effect score (Shivappa 2014), read only by the sensitivity analysis. */
   dii?: number;
-  /** Corpus parameters: global mean daily intake (Shivappa 2014), the average-diet zero point. */
+  /** Corpus parameters: global mean daily intake (Shivappa 2014), the protective-nutrient zero point. */
   dietMean?: number;
 }
 interface MatrixDelta {
@@ -72,6 +74,8 @@ export interface FiiParameters {
   pureeFreeSugarFraction: number;
   juicedFreeSugarFraction: number;
   matrixDeltas: Record<string, MatrixDelta>;
+  ageAdjustment: { max: number; saturation: number; index: Record<string, Record<string, number>> };
+  upfAdjustment: { max: number; from: number; to: number };
   bands: { antiMax: number; mildlyAntiMax: number; neutralMax: number; mildlyProMax: number };
   dietEnergyKcal: number;
   parameters: FiiParam[];
@@ -86,6 +90,8 @@ export interface FiiReference {
   fiiRaw: { center: number; scale: number };
 }
 interface FoodClass {
+  age?: string;
+  ageCooked?: string;
   fs?: number;
   trans?: 'industrial' | 'natural';
   fv?: boolean;
@@ -154,6 +160,10 @@ export interface FiiItem {
   nutrients: NutrientVector | null | undefined;
   fdcId?: number | null;
   prep?: Prep | null;
+  /** Cooking method (cooking.ts), read by the dietary-AGE adjustment. */
+  cooking?: string | null;
+  /** NOVA group (raised by the line's processing markers), read by the ultra-processing adjustment. */
+  nova?: number | null;
 }
 
 /** The WHO free-sugar fraction of an ingredient's sugars, after its `prep`. */
@@ -409,4 +419,54 @@ export interface FoodFII {
 export function foodFII(n: NutrientVector | null | undefined, fdcId?: number | null, prep?: Prep | null): FoodFII | null {
   const s = scoreComposition([{ grams: 100, nutrients: n, fdcId, prep }]);
   return s ? { tag: s.tag, coverage: s.coverage } : null;
+}
+
+/** An ingredient's absolute energy (kcal) in the dish, or 0 when unknown. */
+function energyOf(it: FiiItem): number {
+  if (!it || !(it.grams > 0) || !it.nutrients) return 0;
+  const k = energyKcalOf(it.nutrients);
+  return k != null && k > 0 ? (k * it.grams) / 100 : 0;
+}
+
+const METHOD_ORDER = ['raw', 'blanched', 'boiled', 'steamed', 'microwaved', 'baked', 'grilled', 'fried'];
+
+/**
+ * Dietary-AGE adjustment (score units, ≥ 0): the energy-share-weighted AGE index of the
+ * ingredients' food class × cooking method (the method floored at the dry heat the food record
+ * already carries), saturating at `saturation` and capped at `max` (fii-parameters.json).
+ */
+export function ageAdjustment(items: FiiItem[], params: FiiParameters = PARAMS): number {
+  const a = params.ageAdjustment;
+  let total = 0;
+  let load = 0;
+  for (const it of items) {
+    const e = energyOf(it);
+    if (e <= 0) continue;
+    total += e;
+    const c = foodClassOf(it.fdcId);
+    if (!c?.age) continue;
+    const own = it.cooking ?? 'raw';
+    const method = c.ageCooked && METHOD_ORDER.indexOf(c.ageCooked) > METHOD_ORDER.indexOf(own) ? c.ageCooked : own;
+    load += e * (a.index[c.age]?.[method] ?? 0);
+  }
+  if (!(total > 0)) return 0;
+  return a.max * Math.min(1, load / total / a.saturation);
+}
+
+/**
+ * Ultra-processing adjustment (score units, ≥ 0): rises linearly with the dish's NOVA 4 energy
+ * share from `from` to `to`, capped at `max` (fii-parameters.json).
+ */
+export function upfAdjustment(items: FiiItem[], params: FiiParameters = PARAMS): number {
+  const u = params.upfAdjustment;
+  let total = 0;
+  let upf = 0;
+  for (const it of items) {
+    const e = energyOf(it);
+    if (e <= 0) continue;
+    total += e;
+    if (it.nova === 4) upf += e;
+  }
+  if (!(total > 0)) return 0;
+  return u.max * clamp((upf / total - u.from) / (u.to - u.from), 0, 1);
 }

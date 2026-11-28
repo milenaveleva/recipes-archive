@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 173 g dry chickpeas, soaked and cooked
+  - raw: 173 g chickpeas, dry
     group: For the curry base
     quantity: 173
     unit: g
     item: chickpeas
-    note: dry, soaked and cooked
+    note: dry
     grams: 173
     fdcId: 173756
     matchConfidence: high

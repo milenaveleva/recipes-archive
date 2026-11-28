@@ -12,11 +12,11 @@ totalTime: PT50M
 cuisine: Asian-Inspired
 course: Main Course
 ingredients:
-  - raw: 160 g dry brown rice, cooked
+  - raw: 160 g brown rice, dry
     quantity: 160
     unit: g
     item: brown rice
-    note: dry, cooked
+    note: dry
     grams: 160
     fdcId: 169703
     matchConfidence: high
@@ -101,13 +101,12 @@ ingredients:
     fdcId: 2262072
     matchConfidence: high
     cooking: fried
-  - raw: 1 tbsp fresh ginger (finely grated)
-    quantity: 1
-    unit: tbsp
+  - raw: 6 g fresh ginger, finely grated
+    quantity: 6
+    unit: g
     item: fresh ginger
     note: finely grated
     grams: 6
-    milliliters: 14.7868
     fdcId: 169231
     matchConfidence: high
     cooking: raw

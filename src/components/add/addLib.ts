@@ -427,6 +427,7 @@ export function rowsToScored(rows: IngredientRow[]): ScoredIngredient[] {
         excludeFromNutrition: r.excludeFromNutrition,
         fdcId: r.selectedFdcId,
         prep: r.prep,
+        cooking: r.cooking,
         nutrients: cooked.nutrients,
         gi: giFor(s, r.starchForm).gi,
         giMeasured: giFor(s, r.starchForm).measured,

@@ -54,6 +54,8 @@ export interface ScoredIngredient {
   fdcId?: number | null;
   /** Whether the fruit or vegetable is blended or juiced (re-classifies its sugars as free). */
   prep?: Prep | null;
+  /** Cooking method, read by the inflammation score's dietary-AGE adjustment. */
+  cooking?: string | null;
   /** Published GI of the matched food, or null when unknown. */
   gi?: number | null;
   /** Whether that GI is a measured table match (giConfidence high|medium), not an estimate. */
@@ -165,13 +167,14 @@ export function computeScores(
     const kcalPer100 = ing.nutrients ? energyKcalOf(ing.nutrients) : null;
     const energyKcal = kcalPer100 != null ? (kcalPer100 * grams) / 100 : null;
 
+    // Processing: the food's NOVA group (raised by explicit markers in the original
+    // line, e.g. "puff pastry"), energy-weighted into the recipe distribution and read by
+    // the inflammation score's ultra-processing adjustment.
+    const nova = promoteNova(ing.nova, ing.raw);
     // Inflammation: the dish's pooled cooked composition, read per 100 kcal (fii.ts) — the
     // per-kcal basis cancels the cooking water, so only retention losses move it.
-    if (ing.nutrients) inflammationItems.push({ grams, nutrients: ing.nutrients, fdcId: ing.fdcId, prep: ing.prep });
+    if (ing.nutrients) inflammationItems.push({ grams, nutrients: ing.nutrients, fdcId: ing.fdcId, prep: ing.prep, cooking: ing.cooking, nova });
 
-    // Processing: the food's NOVA group (raised by explicit markers in the original
-    // line, e.g. "puff pastry"), energy-weighted into the recipe distribution.
-    const nova = promoteNova(ing.nova, ing.raw);
     if (nova != null) processingItems.push({ energyKcal, nova });
 
     const n = ing.nutrients;

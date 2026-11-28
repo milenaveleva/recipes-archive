@@ -1,5 +1,5 @@
 {
-  "_doc": "Parameter table of the inflammatory-potential score (src/core/fii.ts): which composition signals enter it, each one's direction, weight and standardisation. Every signal is read PER 100 kcal of the pooled, cooked composition (energy-adjusted, as in the E-DII, Hébert 2019, and Food Compass, O'Hearn 2022). Standardisation is by parameter type. `corpus`: for the protective nutrients every food carries a value of, a z-score centred on the AVERAGE DIET — the global mean daily intake of Shivappa 2014 Table 2 (`dietMean`) over its global mean energy (`dietEnergyKcal`, 2,056 kcal), the energy-adjusted zero point of the E-DII — and scaled by the robust spread (IQR/1.349) of the USDA per-food densities, so a food richer than the average diet per kcal reads anti and an energy source without the nutrient (oil, sugar) reads pro by its dilution of the diet. `carrier`: one-sided, centred at 0 (absence is the baseline, never pro), each component divided by its median content among the foods that carry it and weighted by its evidence grade, so the typical carrier reads ≈ 1 unit. `limit`: one-sided pro, in multiples of the WHO intake limit expressed as a density (free sugars and saturated fat < 10 % of energy, WHO 2015 and WHO 2023; industrial trans fat < 1 %, WHO 2018; sodium < 2 g/day at a 2,000 kcal reference, WHO 2012), so a food at the limit density reads 1 unit and a dose-graded penalty replaces the narrow food-corpus scale that made every sweet or fat food saturate. Both one-sided types enter the weighted mean only at z ≥ `bonusMinZ` (0.25): absence is their baseline, and counting a zero would dilute the signals a food does carry. `weight` is the evidence grade for the direction of the parameter's effect on CRP/IL-6/TNF-α in human RCT meta-analyses (1 = consistent across markers, 0.75 = moderate, one marker, 0.5 = weak or heterogeneous, 0.25 = no RCT pool, a null pool, or a cardiometabolic proxy), not a fitted coefficient; equal weights and weights proportional to the DII overall effect scores (Shivappa 2014) are the sensitivity variants scripts/fii-sensitivity.mjs reports. Monounsaturated fat (DII −0.009), linoleic acid (Clemente-Suárez 2026) and alpha-linolenic acid (Su 2018, 25 RCTs null) are deliberately not scored; neither is retinol (vitamin A supplementation raised CRP, Gholizadeh 2022) or dietary cholesterol (egg RCTs null). `mediumChainSfaFactor` scales the 4:0–12:0 saturated fatty acids (coconut and palm-kernel lauric fat) in the saturated-fat signal: coconut oil does not raise CRP against other oils (Neelakantan 2020; Zhang 2025), while no trial isolates lauric acid, so the factor is a bounded judgment (0.25–0.5; sensitivity-tested). `pureeFreeSugarFraction` is the free-sugar fraction of fruit and vegetables whose structure is broken down (an ingredient marked `prep: blended`, purées and pastes): WHO-as-operationalised (Wanselius 2019) counts 0, UK SACN (Swan 2018) counts 1, intact cell clusters survive blending (Chu 2017) and a 16-week smoothie RCT left hs-CRP unchanged (Thomassen 2026), so a small fraction is used. `juicedFreeSugarFraction` applies to an ingredient marked `prep: juiced` (WHO: juice sugars are free). `matrixDeltas` are the composition-blind food-matrix corrections per food class (scripts/build-fii-food-classes.mjs), added to the score on the −2…+2 axis by energy share: plain dairy is neutral to beneficial in RCTs (Moosavian 2020; Nieman 2021), fermented dairy lowers CRP (Zhang 2023), and soy foods lower CRP where isolated isoflavones do not (Bajerska 2021; Gholami 2023); each direction is cited; each dairy magnitude is calibrated so the class's median food lands at its `target` (milk and cheese neutral, yogurt and kefir slightly anti, as the RCT pools read), and soy carries a fixed small credit. `minKcalPer100g` floors the dish's energy density (a near-energy-free dish such as tea is read against 20 kcal/100 g); `minCoverage` is the energy share of a dish that must report a corpus or limit parameter for it to be scored; `quorum` is the number of scored parameters at which the full ±2 range is available. `bands` are fixed edges on the score axis, symmetric about its zero point (the average diet's protective-nutrient density with no limit nutrients): neutral within ±0.3, mildly anti/pro to ±1, anti/pro beyond — so a band reads against the average diet, not against a food corpus whose vegetables would make a lentil dish look worse than typical.",
+  "_doc": "Parameter table of the inflammatory-potential score (src/core/fii.ts): which composition signals enter it, each one's direction, weight and standardisation. Every signal is read PER 100 kcal of the pooled, cooked composition (energy-adjusted, as in the E-DII, Hébert 2019, and Food Compass, O'Hearn 2022). Standardisation is by parameter type. `corpus`: for the protective nutrients every food carries a value of, a z-score centred on an approximation of the average diet's density — the global mean daily intake of Shivappa 2014 Table 2 (`dietMean`, an unweighted mean of 11 populations) over its global mean energy (`dietEnergyKcal`, 2,056 kcal), a ratio of means; the E-DII's own energy-adjusted reference is not published — and scaled by the robust spread (IQR/1.349) of the USDA per-food densities, so a food richer than the average diet per kcal reads anti and an energy source without the nutrient (oil, sugar) reads pro by its dilution of the diet. `carrier`: one-sided, centred at 0 (absence is the baseline, never pro), each component divided by its median content among the foods that carry it (or by a fixed intake unit in `units` for a component nearly every food carries in trace amounts) and weighted by its evidence grade, so the typical carrier reads ≈ 1 unit. `limit`: one-sided pro, in multiples of the WHO intake limit expressed as a density (free sugars and saturated fat < 10 % of energy, WHO 2015 and WHO 2023; industrial trans fat < 1 %, WHO 2018; sodium < 2 g/day at a 2,000 kcal reference, WHO 2012), so a food at the limit density reads 1 unit and a dose-graded penalty replaces the narrow food-corpus scale that made every sweet or fat food saturate. Both one-sided types enter the weighted mean only at z ≥ `bonusMinZ` (0.25): absence is their baseline, and counting a zero would dilute the signals a food does carry. `weight` is the evidence grade for the direction of the parameter's effect on CRP/IL-6/TNF-α in human RCT meta-analyses (1 = consistent across markers, 0.75 = moderate, one marker, 0.5 = weak or heterogeneous, 0.25 = no RCT pool, a null pool, or a cardiometabolic proxy), not a fitted coefficient; equal weights and weights proportional to the DII overall effect scores (Shivappa 2014) are the sensitivity variants scripts/fii-sensitivity.mjs reports. Deliberately not scored: monounsaturated fat — a 31-RCT pool found only a small CRP reduction with oleic acid and no IL-6 or TNF-α effect (Wang 2022), olive-oil benefits track phenolics rather than oleic acid (Damasceno 2026), and the saturated-fat penalty already rewards a MUFA-for-SFA swap; linoleic acid — RCT pools show no effect on CRP, IL-6 or TNF-α (Clemente-Suárez 2026); retinol — high-dose vitamin A supplements raised CRP in trials of mostly infected or deficient participants, and no trial tests food doses (Gholizadeh 2022); dietary cholesterol — nine egg RCTs found no effect, at low precision (Sajadi Hezaveh 2019). `mediumChainSfaFactor` scales the 4:0–12:0 saturated fatty acids (coconut and palm-kernel lauric fat) in the saturated-fat signal: coconut oil does not raise CRP against other oils (Neelakantan 2020; Zhang 2025), while no trial isolates lauric acid, so the factor is a bounded judgment (0.25–0.5; sensitivity-tested). `pureeFreeSugarFraction` is the free-sugar fraction of fruit and vegetables whose structure is broken down (an ingredient marked `prep: blended`, purées and pastes): WHO-as-operationalised (Wanselius 2019) counts 0, UK SACN (Swan 2018) counts 1, intact cell clusters survive blending (Chu 2017) and a 16-week smoothie RCT left hs-CRP unchanged (Thomassen 2026), so a small fraction is used. `juicedFreeSugarFraction` applies to an ingredient marked `prep: juiced` (WHO: juice sugars are free). `matrixDeltas` are the composition-blind food-matrix corrections per food class (scripts/build-fii-food-classes.mjs), added to the score on the −2…+2 axis by energy share: plain dairy is neutral to beneficial in RCTs (Moosavian 2020; Nieman 2021), fermented dairy lowers CRP (Zhang 2023), and soy foods lower CRP where isolated isoflavones do not (Bajerska 2021; Gholami 2023); each direction is cited; each dairy magnitude is calibrated so the class's median food lands at its `target` (milk and cheese neutral, yogurt and kefir slightly anti, as the RCT pools read), and soy carries a fixed small credit. `minKcalPer100g` floors the dish's energy density (a near-energy-free dish such as tea is read against 20 kcal/100 g); `minCoverage` is the energy share of a dish that must report a corpus or limit parameter for it to be scored; `quorum` is the number of scored parameters at which the full ±2 range is available. `bands` are fixed edges on the score axis, symmetric about zero (fixed reference-anchored cut-points, as Food Compass and Nutri-Score use, rather than quantiles of a food corpus that is nearly half fruit and vegetables): neutral within ±0.3, mildly anti/pro to ±1, anti/pro beyond. The edges are a judgment in units of the corpus spread of raw scores; the zero point is the average diet's protective-nutrient density with no limit nutrients, so the average diet itself (Shivappa 2014 Table 2 means) reads mildly pro, about +0.5, because it exceeds the WHO saturated- and trans-fat limits (src/core/fii.test.ts), and scripts/fii-sensitivity.mjs reports how the band shares move with the edges. `ageAdjustment` and `upfAdjustment` are small, capped, one-sided dish-level penalties for what composition cannot see, each graded weak: dietary AGEs (Δ = max · min(1, A / saturation), A = the energy-share-weighted AGE index of the ingredients' food class × cooking method — the method floored at the dry heat a record already carries) and ultra-processing (Δ = max · clamp((NOVA 4 energy share − from) / (to − from), 0, 1)). Each cap is the weak grade (0.25) times the aromatic cap (0.5), so together they stay below the half-width of the neutral band.",
   "version": "fii v5",
   "basis": "per100kcal",
   "minKcalPer100g": 20,
@@ -82,16 +82,20 @@
       "dietMean": 310.1
     },
     {
-      "key": "longChainN3",
+      "key": "omega3",
       "dir": -1,
       "weight": 1,
       "scale": "carrier",
       "fields": {
         "epa_g": 1,
-        "dha_g": 1
+        "dha_g": 1,
+        "ala_g": 0.25
       },
       "dii": -0.436,
-      "cite": "EPA + DHA lower CRP, IL-6 and TNF-α (Kavyani 2022 umbrella) — consistent"
+      "cite": "omega-3 fatty acids: EPA + DHA lower CRP, IL-6 and TNF-α (Kavyani 2022 umbrella) — consistent; plant alpha-linolenic acid at a quarter of that weight: isolated ALA was null across 25 RCTs (Su 2018), but flaxseed-oil and chia trials lowered CRP or IL-6 in overweight, dyslipidaemic and kidney-disease populations with high heterogeneity (Yang 2021; Pam 2024) — weak; ALA, present in trace amounts in nearly every food, is read in units of its adequate intake density (1.1–1.6 g/day, mean 1.35 g per 2,000 kcal; Institute of Medicine 2005), not the median of carriers, so a trace earns no credit",
+      "units": {
+        "ala_g": 0.0675
+      }
     },
     {
       "key": "carotenoids",
@@ -179,5 +183,68 @@
     "mildlyAntiMax": -0.3,
     "neutralMax": 0.3,
     "mildlyProMax": 1
+  },
+  "ageAdjustment": {
+    "max": 0.125,
+    "saturation": 0.5,
+    "index": {
+      "meat": {
+        "raw": 0,
+        "boiled": 0.25,
+        "steamed": 0.25,
+        "blanched": 0.25,
+        "microwaved": 0.3,
+        "baked": 0.4,
+        "grilled": 0.5,
+        "fried": 0.5
+      },
+      "egg": {
+        "raw": 0,
+        "boiled": 0.1,
+        "steamed": 0.1,
+        "blanched": 0.1,
+        "microwaved": 0.15,
+        "baked": 0.2,
+        "grilled": 0.25,
+        "fried": 0.25
+      },
+      "starch": {
+        "raw": 0,
+        "boiled": 0.02,
+        "steamed": 0.02,
+        "blanched": 0.02,
+        "microwaved": 0.05,
+        "baked": 0.25,
+        "grilled": 0.3,
+        "fried": 0.3
+      },
+      "nut": {
+        "raw": 0,
+        "boiled": 0,
+        "steamed": 0,
+        "blanched": 0,
+        "microwaved": 0.5,
+        "baked": 1,
+        "grilled": 1,
+        "fried": 1
+      },
+      "produce": {
+        "raw": 0,
+        "boiled": 0.02,
+        "steamed": 0.02,
+        "blanched": 0.02,
+        "microwaved": 0.02,
+        "baked": 0.05,
+        "grilled": 0.05,
+        "fried": 0.05
+      }
+    },
+    "cite": "dietary AGEs: low-AGE diets lowered leukocyte TNF-α and VCAM-1 but not CRP across 17 RCTs, mostly unblinded and in diabetes (Baye 2017); a double-blind 2.7–5.3-fold AGE contrast left inflammation unchanged (Linkens 2022); low-AGE cooking methods lowered serum AGEs and improved lipids in a crossover trial (Wellens 2025); no convincing causal evidence (Hellwig 2024) — weak, so a small capped penalty. The index ranks food class × cooking method by the mass-spectrometry dry- vs moist-heat ratios (about 1–2× for meat, about 14× fried vs boiled rice), not by ELISA values, and is ordinal, not a measured per-food content"
+  },
+  "upfAdjustment": {
+    "max": 0.125,
+    "from": 0.25,
+    "to": 0.55,
+    "cite": "ultra-processed (NOVA 4) energy share: higher CRP in 11 of 17 adult analyses (Ciaffi 2025), largely mediated by adiposity, with the CRP association lost after BMI adjustment (Millar 2025); an 8-week RCT found no CRP difference (Dicken 2025) — weak, so a small capped penalty rising from Millar's lowest- to highest-quartile mean share (≈25 % to ≈55 % of energy)"
   }
 }

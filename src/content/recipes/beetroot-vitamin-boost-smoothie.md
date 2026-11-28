@@ -34,9 +34,9 @@ ingredients:
     matchConfidence: high
     cooking: raw
     prep: blended
-  - raw: 5 cm ginger
-    quantity: 5
-    unit: cm
+  - raw: 12 g ginger
+    quantity: 12
+    unit: g
     item: ginger
     grams: 12
     fdcId: 169231

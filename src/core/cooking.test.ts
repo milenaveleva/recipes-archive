@@ -241,3 +241,21 @@ describe('dataSourcesFor', () => {
     expect(out.slice(0, 3)).toEqual(['USDA FoodData Central', NATIONAL_TABLE_CREDITS['JP-MEXT'], NATIONAL_TABLE_CREDITS['FR-CIQUAL']]);
   });
 });
+
+describe('polyphenol retention (Phenol-Explorer tiers)', () => {
+  it('is full when raw, and the generic midpoint where nothing was measured', async () => {
+    const { polyphenolRetention } = await import('./cooking');
+    expect(polyphenolRetention(null, 'flavonols_mg', 'raw')).toBe(1);
+    expect(polyphenolRetention(null, 'flavanones_mg', 'grilled')).toBe(0.575);
+  });
+
+  it('uses the subclass × method median where enough foods back it', async () => {
+    const { polyphenolRetention } = await import('./cooking');
+    const data = (await import('../data/polyphenol-retention.json')).default as unknown as {
+      classMethod: Record<string, Record<string, { rf: number }>>;
+    };
+    expect(polyphenolRetention(123, 'flavonols_mg', 'boiled')).toBe(data.classMethod.flavonols_mg.boiled.rf);
+    // Boiling loses more flavonols than steaming (water leaching).
+    expect(data.classMethod.flavonols_mg.boiled.rf).toBeLessThan(data.classMethod.flavonols_mg.steamed.rf);
+  });
+});

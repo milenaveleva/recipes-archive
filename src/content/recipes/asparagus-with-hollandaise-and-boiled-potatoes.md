@@ -147,7 +147,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -1.2
+    score: -1.6
     band: anti-inflammatory
     method: fii v5
   balance:

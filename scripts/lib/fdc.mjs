@@ -80,12 +80,14 @@ export const FDC_FIELD = {
   // chain-length-weighted saturated-fat term, and the three carotenoids it credits.
   607: 'fa4_0_g', 608: 'fa6_0_g', 609: 'fa8_0_g', 610: 'fa10_0_g', 611: 'fa12_0_g',
   334: 'betaCryptoxanthin_ug', 337: 'lycopene_ug', 338: 'luteinZeaxanthin_ug',
+  // Alpha-linolenic acid (18:3 n-3 c,c,c); the undifferentiated 18:3 (619) is the alternate.
+  851: 'ala_g',
 };
 
 // Alternate nutrient definitions under which Foundation Foods report the same
 // analyte: total sugars as "Sugars, Total" (269.3) and total dietary fibre by AOAC
 // 2011.25 (293). Consulted only when the primary number is absent.
-export const FDC_ALT_FIELD = { '269.3': 'sugar_g', 293: 'fiber_g' };
+export const FDC_ALT_FIELD = { '269.3': 'sugar_g', 293: 'fiber_g', 619: 'ala_g' };
 
 /** A record's per-100g values on our field names (primary numbers, then alternates). */
 export function fdcVector(rec) {

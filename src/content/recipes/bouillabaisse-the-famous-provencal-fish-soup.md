@@ -173,7 +173,7 @@ nutrition:
     nrf: 54
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 99.5
+    minimallyProcessedPct: 87.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

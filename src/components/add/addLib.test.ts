@@ -660,7 +660,7 @@ describe('normalizeRows (house-rule auto-fixes on /add import, paste and manual 
       '1 tbsp lemon juice',
       '10 g parsley',
       '320 g whole-wheat penne, dry',
-      '82 g chickpeas, dry, soaked and cooked',
+      '82 g chickpeas, dry',
     ]);
     expect(fixed.rows[0].selectedFdcId).toBe(171413);
     expect(fixed.rows[0].grams).toBe(27);

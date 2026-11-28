@@ -1,0 +1,11 @@
+{
+  "_doc": "Whole citrus fruit → its fresh-juice record, with the juice yield from USDA's own portions (grams of juice a fruit yields ÷ that fruit's edible weight, the same fruit size on both sides). An ingredient marked `prep: juiced` whose whole-fruit record is listed here is re-pointed to the juice record by scripts/set-produce-prep.mjs, its grams scaled by the yield, so the strained-off pulp's fibre is not credited. Only pairs where USDA tabulates a fresh juice and a 'fruit yields' portion are listed; juiced apples, carrots, celery and ginger have no such pair and stay on the whole-food record (a validation warning flags them).",
+  "167746": { "juice": 167747, "yield": 0.571, "basis": "1 lemon (2-3/8\" dia, 84 g without peel) yields 48 g juice" },
+  "169097": { "juice": 169098, "yield": 0.656, "basis": "1 orange (2-5/8\" dia, 131 g) yields 86 g juice" },
+  "169919": { "juice": 169098, "yield": 0.541, "peeledYield": 0.656, "basis": "1 orange with peel (159 g) yields 86 g juice; a peeled weight takes the 131 g edible-fruit basis" },
+  "169917": { "juice": 169098, "yield": 0.614, "basis": "1 navel orange (2-7/8\" dia, 140 g) yields 86 g juice (the all-varieties juice record)" },
+  "168155": { "juice": 168156, "yield": 0.657, "basis": "1 lime (2\" dia, 67 g) yields 44 g juice" },
+  "173033": { "juice": 173039, "yield": 0.766, "basis": "1 medium grapefruit (2 × 128 g) yields 196 g juice" },
+  "174676": { "juice": 173039, "yield": 0.831, "basis": "1 white grapefruit (2 × 118 g) yields 196 g juice" },
+  "174673": { "juice": 167774, "yield": 0.797, "basis": "1 pink grapefruit (2 × 123 g) yields 196 g juice" }
+}

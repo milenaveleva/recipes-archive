@@ -34,7 +34,8 @@ export type NovaGroup = 1 | 2 | 3 | 4;
  * Ingredient-text markers of ultra-processed (NOVA 4) products, following the NOVA
  * definition of industrial formulations (Monteiro 2019): ready-made pastry and
  * biscuits, wrappers, stock cubes/powders, commercial curry pastes, instant
- * products, flavoured products, margarine, and reconstituted meat (sausages, hot dogs).
+ * products, flavoured products (truffle oil), margarine, dairy analogues, gluten-free
+ * bread and flour blends, and reconstituted meat (sausages, hot dogs).
  */
 const NOVA4_MARKERS: RegExp[] = [
   /\blady ?fingers?\b/i,
@@ -47,12 +48,21 @@ const NOVA4_MARKERS: RegExp[] = [
   // A flavoured product, not a quality adjective ("well-flavoured stock", "full-flavoured").
   /(?<!\b(?:well|full|richly|highly|strongly|deeply|nicely|delicately|mildly|lightly|subtly)[- ])\bflavou?red\b/i,
   /\bmargarine\b/i,
+  // Dairy analogues are industrial formulations (Monteiro 2019): a vegan / plant-based /
+  // dairy-free cheese, cream, butter, yogurt or mayonnaise is NOVA 4 even when matched to a
+  // whole-food proxy (coconut cream for a "vegan mascarpone-style cream").
+  /\b(?:vegan|plant[- ]based|dairy[- ]free|non[- ]dairy)\s+(?:[a-z]+[- ])?(?:mascarpone|cheese|cream cheese|feta|parmesan|mozzarella|ricotta|butter|mayo(?:nnaise)?|yogh?urt|cream|cr[eè]me fra[iî]che|sour cream)\b/i,
+  // Truffle oil is olive oil flavoured with a synthetic aroma (2,4-dithiapentane).
+  /\btruffle\s+oil\b/i,
+  // A gluten-free bread or flour blend is a formulation of starches with hydrocolloid gums;
+  // a single gluten-free grain or flour ("gluten-free oat flour") is not.
+  /\bgluten[- ]free\s+(?:bread|flour|flour blend|baking mix|wraps?|crackers?|tortillas?)\b/i,
   /\b(?:sausages?|hot ?dogs?|frankfurters?|wieners?|bratwurst|chipolatas?)\b/i,
 ];
 
 /**
  * Ingredient-text markers of processed (NOVA 3) foods (Monteiro 2019): cured meats,
- * canned foods and cheeses; cured / smoked / salted / pickled foods are matched by
+ * canned foods, cheeses and ready-made spreads (pesto, hummus); cured / smoked / salted / pickled foods are matched by
  * PRESERVED_MARKERS, which exempt preserved seasonings (smoked paprika, smoked salt) and
  * salted butter (a NOVA 2 culinary fat).
  */
@@ -62,6 +72,8 @@ const NOVA3_MARKERS: RegExp[] = [
   /\b\d+(?:[.,]\d+)?\s*(?:x\s*)?(?:cans?|tins?)\b/i,
   /\b(?:cans?|tins?)\s+of\b/i,
   /\bin\s+(?:brine|syrup)\b/i,
+  // Ready-made spreads and sauces bought as one ingredient: jarred pesto, hummus.
+  /\b(?:pesto|hummus|houmous)\b/i,
   /\bcheese\b/i,
   /\b(?:parmesan|parmigiano|pecorino|grana padano|feta|mozzarella|cheddar|gouda|halloumi|gruy[eè]re|emmental|brie|camembert|mascarpone|ricotta|manchego|roquefort|gorgonzola)\b/i,
 ];

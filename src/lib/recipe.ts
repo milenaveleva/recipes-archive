@@ -222,7 +222,12 @@ export function formatIngredientAmount(ing: IngredientAmountSource): string | nu
     const ml = ing.milliliters != null && ing.milliliters > 0 ? ing.milliliters : ing.grams;
     if (ml != null && ml > 0) return formatMilliliters(ml);
   }
-  if (ing.quantity == null) return null;
+  if (ing.quantity == null) {
+    // A line the source wrote without an amount ("red onion, sliced") shows the weight it is
+    // scored with, unless it is to taste, optional or a garnish (no amount is the right read).
+    if (ing.grams != null && ing.grams > 0 && !NO_AMOUNT.test(`${ing.raw ?? ''} ${ing.note ?? ''}`)) return formatGrams(ing.grams);
+    return null;
+  }
   // Liquids (recognised by name) and anything written in a metric volume show
   // ml/L; a cup of a dry good is NOT a liquid and falls through to weight.
   const metricVolume =
@@ -291,10 +296,20 @@ export function displayItemNote(item: string, note?: string | null): { item: str
   return { item: m[2], note: rest };
 }
 
-/** Whether to show the original line beside an ingredient that has no displayed amount:
- *  never for a seasoning, whose original line may carry a gram weight. */
+/** Lines whose missing amount is deliberate: to taste, optional, a garnish or a serving extra. */
+const NO_AMOUNT = /\b(to taste|optional|to serve|for serving|to garnish|for garnish|garnish|as needed|if needed|for frying|for deep frying|for greasing|for dusting|for sprinkling|for drizzling|for topping|to top|to finish|to decorate|for decoration|extra|a little|a pinch|pinch)\b/i;
+
+/**
+ * Whether to show the original line beside an ingredient that has no displayed amount: only
+ * when the line says something the item and note don't ("lime (optional)", "juice of ½
+ * lemon"), so a line that merely restates them ("spring onions, sliced") is not printed
+ * twice; never for a seasoning, whose original line may carry a gram weight.
+ */
 export function showRawFallback(ing: IngredientAmountSource, amount: string | null): boolean {
-  return amount == null && !!ing.raw && !isSeasoning(ing.item);
+  if (amount != null || !ing.raw || isSeasoning(ing.item)) return false;
+  const words = (t?: string | null) => (t ?? '').toLowerCase().match(/[\p{L}\p{N}½¼¾⅓⅔⅛]+/gu) ?? [];
+  const known = new Set([...words(ing.item), ...words(ing.note)]);
+  return words(ing.raw).some((w) => !known.has(w));
 }
 
 /* ---- number formatting ---- */
@@ -660,8 +675,8 @@ export function buildScoreDials(nutrition: NutritionLike, course?: string | null
       key: 'inflam',
       label: 'Inflammation',
       blurb:
-        'Inflammatory potential (our own estimate, native −2 anti to +2 pro): the whole dish’s cooked composition per 100 kcal — fibre, vitamins C and E, magnesium, marine omega-3, carotenoids and flavonoids against free sugars, saturated and industrial trans fat and sodium — weighted by the strength of the trial evidence for each. Zero is the nutrient density of an average diet; “anti-inflammatory” means clearly better than that, never a clinical claim. Shown as 1 (most anti-inflammatory) to 10 — lower is better. An estimate, not a clinical measure.',
-      ...dial(inf, inflamBand ? `${inflammationCaptionBand(inflamBand)} vs an average diet` : undefined),
+        'Inflammatory potential (our own estimate, native −2 anti to +2 pro): the whole dish’s cooked composition per 100 kcal — fibre, vitamins C and E, magnesium, omega-3, carotenoids and flavonoids against free sugars, saturated and industrial trans fat and sodium — each weighted by the strength of the trial evidence for it. Zero means the protective nutrients of an average diet with none of the limited ones; an average diet itself reads mildly pro. “Anti-inflammatory” means clearly better than that reference, never a clinical claim. Shown as 1 (most anti-inflammatory) to 10 — lower is better. An estimate, not a clinical measure.',
+      ...dial(inf, inflamBand ? inflammationCaptionBand(inflamBand) : undefined),
     },
     {
       key: 'processing',

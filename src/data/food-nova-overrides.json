@@ -24,5 +24,7 @@
   "174529": { "nova": 4, "reason": "oyster sauce, ready-to-serve — industrial formulation (modified starch, caramel colour, flavour enhancer)" },
   "171186": { "nova": 4, "reason": "sriracha — formulated hot sauce with thickener (xanthan gum) and preservatives" },
   "171595": { "nova": 4, "reason": "tomato chili sauce, bottled — ketchup-type formulation (glucose-fructose syrup, flavourings), like catsup" },
+  "321358": { "nova": 3, "reason": "hummus, commercial — chickpeas preserved with oil, tahini, salt and acid (processed); the rules read it as a whole legume" },
+  "171606": { "nova": 3, "reason": "fish broth — ready-to-serve processed cooking liquid, as the vegetable broth" },
   "172802": { "nova": 3, "reason": "wonton/egg-roll wrappers — flour-egg-salt dough sheets (processed, like fresh pasta with salt)" }
 }

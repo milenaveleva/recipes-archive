@@ -75,11 +75,11 @@ ingredients:
     fdcId: 167747
     matchConfidence: high
     cooking: raw
-  - raw: 129 g dry chickpeas, soaked and cooked
+  - raw: 129 g chickpeas, dry
     quantity: 129
     unit: g
     item: chickpeas
-    note: dry, soaked and cooked
+    note: dry
     grams: 129
     fdcId: 173756
     matchConfidence: medium
@@ -129,7 +129,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.8
+    score: -0.9
     band: mildly-anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.07

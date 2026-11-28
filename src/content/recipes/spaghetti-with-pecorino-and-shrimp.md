@@ -116,7 +116,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0
+    score: -0.1
     band: neutral
     method: fii v5
     aromaticAdjustment: -0.07

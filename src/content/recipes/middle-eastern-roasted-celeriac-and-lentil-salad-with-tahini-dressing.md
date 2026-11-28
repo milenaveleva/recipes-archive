@@ -25,11 +25,11 @@ ingredients:
     fdcId: 170400
     matchConfidence: high
     cooking: baked
-  - raw: 159 g dry lentils, cooked
+  - raw: 159 g lentils, dry
     quantity: 159
     unit: g
     item: lentils
-    note: dry, cooked
+    note: dry
     grams: 159
     fdcId: 172420
     matchConfidence: medium

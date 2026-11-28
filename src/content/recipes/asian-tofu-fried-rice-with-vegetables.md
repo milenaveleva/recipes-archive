@@ -26,11 +26,11 @@ ingredients:
     fdcId: 172475
     matchConfidence: high
     cooking: fried
-  - raw: 160 g dry brown rice, cooked and chilled
+  - raw: 160 g brown rice, dry
     quantity: 160
     unit: g
     item: brown rice
-    note: dry, cooked and chilled
+    note: dry
     group: For the tofu fried rice
     grams: 160
     fdcId: 169703

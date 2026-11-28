@@ -57,11 +57,11 @@ ingredients:
     fdcId: 170527
     matchConfidence: high
     cooking: raw
-  - raw: 82 g dry chickpeas, soaked and cooked (keep 120 ml of the cooking liquid)
+  - raw: 82 g chickpeas, dry, keep 120 ml of the cooking liquid
     quantity: 82
     unit: g
     item: chickpeas
-    note: dry, soaked and cooked (keep 120 ml of the cooking liquid)
+    note: dry, keep 120 ml of the cooking liquid
     grams: 82
     fdcId: 173756
     matchConfidence: medium

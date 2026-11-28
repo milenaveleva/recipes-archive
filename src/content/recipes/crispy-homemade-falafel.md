@@ -14,11 +14,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 400 g dry chickpeas, soaked
+  - raw: 400 g chickpeas, dry
     quantity: 400
     unit: g
     item: chickpeas
-    note: dry, soaked
+    note: dry
     grams: 400
     fdcId: 173756
     matchConfidence: high

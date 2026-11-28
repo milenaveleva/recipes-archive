@@ -63,11 +63,11 @@ ingredients:
     fdcId: 171707
     matchConfidence: high
     cooking: raw
-  - raw: 87 g dry chickpeas, soaked and cooked
+  - raw: 87 g chickpeas, dry
     quantity: 87
     unit: g
     item: chickpeas
-    note: dry, soaked and cooked
+    note: dry
     grams: 87
     fdcId: 173756
     matchConfidence: high

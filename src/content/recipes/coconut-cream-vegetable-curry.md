@@ -62,11 +62,11 @@ ingredients:
     fdcId: 1999632
     matchConfidence: high
     cooking: boiled
-  - raw: 56 g dry chickpeas, soaked and cooked
+  - raw: 56 g chickpeas, dry
     quantity: 56
     unit: g
     item: chickpeas
-    note: dry, soaked and cooked
+    note: dry
     grams: 56
     fdcId: 173756
     matchConfidence: medium
@@ -106,13 +106,12 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: 1 tbsp fresh ginger, grated
-    quantity: 1
-    unit: tbsp
+  - raw: 6 g fresh ginger, grated
+    quantity: 6
+    unit: g
     item: fresh ginger
     note: grated
     grams: 6
-    milliliters: 14.7868
     fdcId: 169231
     matchConfidence: high
     cooking: boiled

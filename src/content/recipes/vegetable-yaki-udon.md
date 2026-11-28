@@ -18,11 +18,11 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 160 g dry whole-wheat udon noodles, cooked
+  - raw: 160 g whole-wheat udon noodles, dry
     quantity: 160
     unit: g
     item: whole-wheat udon noodles
-    note: dry, cooked
+    note: dry
     grams: 160
     fdcId: 169738
     matchConfidence: high
@@ -60,9 +60,9 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 1 cm ginger
-    quantity: 1
-    unit: cm
+  - raw: 5 g ginger
+    quantity: 5
+    unit: g
     item: ginger
     grams: 5
     fdcId: 169231
@@ -132,8 +132,8 @@ nutrition:
     version: "2023"
     coverage: 0.99
   inflammation:
-    score: 0
-    band: neutral
+    score: -0.4
+    band: mildly-anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.32
   balance:

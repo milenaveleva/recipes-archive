@@ -62,12 +62,11 @@ ingredients:
     fdcId: 2262072
     matchConfidence: medium
     cooking: raw
-  - raw: 2½ tsp finely chopped ginger
-    quantity: 2.5
-    unit: tsp
+  - raw: 5 g finely chopped ginger
+    quantity: 5
+    unit: g
     item: finely chopped ginger
     grams: 5
-    milliliters: 12.322299999999998
     fdcId: 169231
     matchConfidence: high
     cooking: raw

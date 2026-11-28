@@ -1,19 +1,22 @@
 /**
  * Recipe inflammatory-potential estimate: the score of the dish's pooled, cooked composition
  * (fii.ts scoreComposition — every ingredient's nutrients summed and read per 100 kcal, the
- * way the energy-adjusted DII scores a whole diet), plus a bounded aromatic adjustment
- * (aromatics.ts) for the spices whose bioactives no composition column carries.
+ * way the energy-adjusted DII scores a whole diet), plus a bounded aromatic credit
+ * (aromatics.ts) for the spices whose bioactives no composition column carries, and small
+ * capped penalties for dietary AGEs and ultra-processing (fii.ts ageAdjustment, upfAdjustment).
  *
  * The five bands are fixed edges on the score axis (fii-parameters.json `bands`, copied into
- * inflammation-reference.json), symmetric about its zero point — the average diet's
- * protective-nutrient density with no free sugar, saturated or trans fat, or sodium. Labels
- * are relative — "anti-inflammatory" means more anti than the average diet's profile, never
- * a clinical category. Diet-level inflammation
- * scores explain at most ~2 % of biomarker variance (Lécuyer 2023), so this is an estimate
- * for comparing dishes, not a prediction of anyone's CRP.
+ * inflammation-reference.json), symmetric about its zero point: protective nutrients at the
+ * average diet's density (Shivappa 2014 global means, approximated per kcal) and no free
+ * sugar, saturated or industrial trans fat or sodium. The average diet itself reads about
+ * +0.5 (mildly pro), because it exceeds the WHO saturated- and trans-fat limits. Labels are
+ * relative — "anti-inflammatory" means a clearly better profile than that reference, never a
+ * clinical category. Diet-level inflammation scores explain at most ~2 % of biomarker
+ * variance (Lécuyer 2023), so this is an estimate for comparing dishes, not a prediction of
+ * anyone's CRP.
  */
 import { round, clamp } from './num';
-import { scoreComposition, type FiiItem, type ParamContribution } from './fii';
+import { scoreComposition, ageAdjustment, upfAdjustment, type FiiItem, type ParamContribution } from './fii';
 import referenceData from '../data/inflammation-reference.json';
 
 /** The five band edges on the score axis, from inflammation-reference.json. */
@@ -53,6 +56,10 @@ export interface Inflammation {
 export interface InflammationDetail extends Inflammation {
   contributions: ParamContribution[];
   matrixDelta: number;
+  /** Dietary-AGE penalty included in `score` (fii.ts ageAdjustment). */
+  ageAdjustment: number;
+  /** Ultra-processing penalty included in `score` (fii.ts upfAdjustment). */
+  upfAdjustment: number;
   coverage: number;
 }
 
@@ -76,12 +83,16 @@ export function computeInflammationDetail(items: FiiItem[], aromaticAdjustment =
   const s = scoreComposition(items);
   if (!s) return null;
   const adj = Number.isFinite(aromaticAdjustment) && aromaticAdjustment < 0 ? aromaticAdjustment : 0;
-  const score = clamp(round(s.composition + s.matrixDelta + adj, 1), -2, 2) || 0;
+  const age = ageAdjustment(items);
+  const upf = upfAdjustment(items);
+  const score = clamp(round(s.composition + s.matrixDelta + age + upf + adj, 1), -2, 2) || 0;
   const result: InflammationDetail = {
     score,
     band: inflammationBandOf(score),
     contributions: s.contributions,
     matrixDelta: s.matrixDelta,
+    ageAdjustment: age,
+    upfAdjustment: upf,
     coverage: s.coverage,
   };
   if (adj < 0) result.aromaticAdjustment = adj;

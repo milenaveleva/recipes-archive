@@ -51,12 +51,11 @@ ingredients:
     fdcId: 790577
     matchConfidence: high
     cooking: fried
-  - raw: 2 tbsp finely chopped fresh ginger
-    quantity: 2
-    unit: tbsp
+  - raw: 12 g finely chopped fresh ginger
+    quantity: 12
+    unit: g
     item: finely chopped fresh ginger
     grams: 12
-    milliliters: 29.5736
     fdcId: 169231
     matchConfidence: high
     cooking: fried
@@ -78,11 +77,11 @@ ingredients:
     fdcId: 170580
     matchConfidence: high
     cooking: boiled
-  - raw: 160 g dry brown rice, cooked
+  - raw: 160 g brown rice, dry
     quantity: 160
     unit: g
     item: brown rice
-    note: dry, cooked
+    note: dry
     group: For serving
     grams: 160
     fdcId: 169703
@@ -130,7 +129,7 @@ nutrition:
     version: "2023"
     coverage: 0.8
   inflammation:
-    score: -0.4
+    score: -0.3
     band: mildly-anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.5

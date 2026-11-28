@@ -40,11 +40,10 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 1 piece ginger (about 2 cm)
-    quantity: 1
-    unit: piece
+  - raw: 10 g ginger
+    quantity: 10
+    unit: g
     item: ginger
-    note: about 2 cm
     grams: 10
     fdcId: 169231
     matchConfidence: medium

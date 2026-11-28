@@ -136,6 +136,13 @@ describe('formatIngredientAmount (display unit ≠ calc basis)', () => {
     expect(showRawFallback({ item: 'lime', raw: 'lime (optional)' }, null)).toBe(true);
     expect(showRawFallback({ item: 'cumin', raw: '5 g cumin' }, null)).toBe(false);
     expect(showRawFallback({ item: 'lime', raw: 'lime' }, '30 g')).toBe(false);
+    // A line that only restates its item and note is not printed twice.
+    expect(showRawFallback({ item: 'spring onions', note: 'sliced', raw: 'spring onions, sliced' }, null)).toBe(false);
+  });
+
+  it('shows the stored weight of a line written without an amount, unless it is to taste or optional', () => {
+    expect(formatIngredientAmount({ item: 'red onion', note: 'sliced', raw: 'red onion, sliced', grams: 30 })).toBe('30 g');
+    expect(formatIngredientAmount({ item: 'lime', raw: 'lime (optional)', grams: 30 })).toBeNull();
   });
 
   it('falls back to quantity+unit, then null', () => {
@@ -374,9 +381,9 @@ describe('buildScoreDials', () => {
     expect(NUTRI_LOW_DATA_COVERAGE).toBe(0.9);
   });
 
-  it('captions inflammation vs an average diet, and omits captions for absent scores', () => {
+  it('captions inflammation by its band, and omits captions for absent scores', () => {
     const [, , , , inflam] = buildScoreDials({ inflammation: { score: -0.5, band: 'mildly-anti-inflammatory' } });
-    expect(inflam.caption).toBe('Mildly anti-inflammatory vs an average diet');
+    expect(inflam.caption).toBe('Mildly anti-inflammatory');
     const [gi] = buildScoreDials(undefined);
     expect(gi.caption).toBeUndefined();
   });

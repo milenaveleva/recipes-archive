@@ -82,6 +82,12 @@ describe('NOVA text markers', () => {
       '150 g strawberry-flavoured yoghurt',
       '50 g margarine',
       '4 pork sausages',
+      '400 g vegan mascarpone-style cream',
+      '100 g plant-based cheese',
+      '2 tbsp dairy-free butter',
+      '2 tbsp truffle oil or truffle paste',
+      '150 g gluten-free flour',
+      '4 slices whole-grain gluten-free bread, toasted',
     ]) {
       expect(novaFromText(line), line).toBe(4);
     }
@@ -99,6 +105,8 @@ describe('NOVA text markers', () => {
       '200 g feta cheese',
       '3 cloves pickled garlic',
       '1 handful roasted salted pistachios',
+      '1 tbsp basil pesto',
+      '2 tbsp hummus',
     ]) {
       expect(novaFromText(line), line).toBe(3);
     }
@@ -110,6 +118,8 @@ describe('NOVA text markers', () => {
       'paprika, to taste (can be smoked)',
       '20 g salted butter',
       '1 tsp instant yeast',
+      '125 g gluten-free oat flour', // a single gluten-free grain, not a blend
+      'yoghurt (optional; a plant-based alternative works too)',
       '1500 ml fish stock',
       '200 g cheesecake base', // "cheese" only as part of another word
       '2 graham crackers',

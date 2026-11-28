@@ -63,11 +63,10 @@ ingredients:
     fdcId: 171320
     matchConfidence: medium
     cooking: boiled
-  - raw: 1 piece ginger (2 cm)
-    quantity: 1
-    unit: piece
+  - raw: 5 g ginger
+    quantity: 5
+    unit: g
     item: ginger
-    note: 2 cm
     grams: 5
     fdcId: 169231
     matchConfidence: medium
@@ -109,8 +108,8 @@ nutrition:
     version: "2023"
     coverage: 0.68
   inflammation:
-    score: -0.3
-    band: mildly-anti-inflammatory
+    score: -0.1
+    band: neutral
     method: fii v5
   balance:
     score: 2

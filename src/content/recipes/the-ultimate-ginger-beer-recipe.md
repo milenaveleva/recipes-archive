@@ -10,11 +10,11 @@ servings: 6
 prepTime: PT40M
 totalTime: PT40M
 ingredients:
-  - raw: 8 cm fresh ginger
-    quantity: 8
-    unit: cm
+  - raw: 18 g fresh ginger
+    quantity: 18
+    unit: g
     item: fresh ginger
-    grams: 17.6
+    grams: 18
     fdcId: 169231
     matchConfidence: high
     excludeFromNutrition: true
@@ -93,7 +93,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.6
+    score: 0.7
     band: mildly-pro-inflammatory
     method: fii v5
     aromaticAdjustment: -0.23

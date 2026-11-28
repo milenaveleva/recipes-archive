@@ -164,6 +164,7 @@ export function toScored(
     excludeFromNutrition: ing.excludeFromNutrition,
     fdcId: ing.fdcId ?? null,
     prep: ing.prep ?? null,
+    cooking: ing.cooking ?? null,
     nutrients: cooked.nutrients,
     gi: g.gi,
     giMeasured: g.measured,

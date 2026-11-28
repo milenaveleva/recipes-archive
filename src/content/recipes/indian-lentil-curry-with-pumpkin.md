@@ -17,12 +17,12 @@ course: Main Course
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 166 g dry lentils, cooked
+  - raw: 166 g lentils, dry
     group: Main ingredients
     quantity: 166
     unit: g
     item: lentils
-    note: dry, cooked
+    note: dry
     grams: 166
     fdcId: 172420
     matchConfidence: medium

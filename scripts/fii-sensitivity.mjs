@@ -15,7 +15,9 @@
  * spread its own weights imply; the per-parameter referents are shared.
  *
  * The aromatic term is left out (it is identical across variants); the matrix correction is
- * kept. Report only: it never writes files.
+ * kept. A second table shows the share of recipes in each band, on those composition scores,
+ * under alternative band edges.
+ * Report only: it never writes files.
  *
  * Usage: node scripts/fii-sensitivity.mjs
  *   Progress goes to stderr; the table goes to stdout.
@@ -156,6 +158,16 @@ function run(fii, rs) {
   process.stdout.write('| Variant | Kendall τ-b vs shipped | Recipes changing band | Evidence pairs in order | Median recipe score |\n|---|---|---|---|---|\n');
   for (const r of rows) {
     process.stdout.write(`| ${r.name} | ${r.tau.toFixed(3)} | ${(r.moved * 100).toFixed(1)} % | ${r.pairs}/${PAIRS.length} | ${r.median.toFixed(1)} |\n`);
+  }
+  // Band shares of the shipped composition scores (before the aromatic, AGE and
+  // ultra-processing adjustments) under alternative band edges (the edges are a judgment).
+  const shipped = baseline.recipe.filter((x) => x != null);
+  const edgeSets = [['±0.2 / ±0.8', 0.2, 0.8], ['±0.3 / ±1 (shipped edges)', 0.3, 1], ['±0.4 / ±1.2', 0.4, 1.2], ['±0.5 / ±1.5', 0.5, 1.5]];
+  process.stdout.write('\n| Band edges (neutral / mildly), composition scores | Anti | Mildly anti | Neutral | Mildly pro | Pro |\n|---|---|---|---|---|---|\n');
+  for (const [name, n, m] of edgeSets) {
+    const c = [0, 0, 0, 0, 0];
+    for (const s of shipped) c[s <= -m ? 0 : s <= -n ? 1 : s <= n ? 2 : s <= m ? 3 : 4]++;
+    process.stdout.write(`| ${name} | ${c.map((x) => `${((100 * x) / shipped.length).toFixed(0)} %`).join(' | ')} |\n`);
   }
   log('✓ done');
 }

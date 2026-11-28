@@ -17,12 +17,12 @@ course: Salad
 lists:
   - Kifli favourites
 ingredients:
-  - raw: 93 g dry chickpeas, soaked and cooked
+  - raw: 93 g chickpeas, dry
     group: Salad base
     quantity: 93
     unit: g
     item: chickpeas
-    note: dry, soaked and cooked
+    note: dry
     grams: 93
     fdcId: 173756
     matchConfidence: medium
@@ -192,7 +192,7 @@ nutrition:
     version: "2023"
     coverage: 0.97
   inflammation:
-    score: -0.6
+    score: -0.5
     band: mildly-anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.18

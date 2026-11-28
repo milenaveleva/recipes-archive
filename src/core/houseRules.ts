@@ -15,11 +15,13 @@
  *     ("in place of", "instead of", …), and "dried"/"uncooked" on a staple (the lists say "dry").
  *   - MEAT_SUGGESTION [error]: the method or tips suggest adding meat.
  *   - NOT_DRY_STAPLE [error]: a grain, pasta or pulse listed canned/cooked instead of as the
- *     dry record with the preparation as the note ("82 g chickpeas, dry, soaked and cooked").
+ *     dry record, its note just "dry" and its soaking and cooking a method step
+ *     ("82 g chickpeas, dry" + "Soak the chickpeas … simmer until tender").
  *   - PORTION_80 [error]: a main course's single pasta/grain line is not 80 g dry per serving.
  *   - DRINK_WATER [error; warn for a drink with no liquid]: in a drink the water and ice
  *     that are drunk count, and tea leaves / coffee are the brewed record.
- *   - OLIVE_OIL_UNIT, EGG_COUNT [warn]: olive oil stored in another unit than tbsp/tsp, eggs stored
+ *   - OLIVE_OIL_UNIT, GINGER_UNIT, EGG_COUNT [warn]: olive oil stored in another unit than tbsp/tsp,
+ *     fresh ginger in another unit than grams, eggs stored
  *     by weight or with a size word ("large").
  *   - DUPLICATE_RECIPE [warn]: `findDuplicateRecipes`, which needs the whole corpus: a near-identical
  *     pair, or a kifli id excluded-ids.json lists as a near-duplicate or as removed by the owner.
@@ -289,6 +291,9 @@ export function checkHouseRules(recipe: ValidatableRecipe, foodById: Map<number,
         out.push({ severity: 'warn', code: 'OLIVE_OIL_UNIT', ingredientIndex: idx, message: `${label(ing)}: olive oil is stored in tbsp/tsp` });
       }
     }
+    if (isFreshGinger(item, ing.note, ing.unit) && ing.quantity != null && canonicalUnit(ing.unit) !== 'gram') {
+      out.push({ severity: 'warn', code: 'GINGER_UNIT', ingredientIndex: idx, message: `${label(ing)}: fresh ginger is stored in grams` });
+    }
     if (isEggItem(item) && ing.quantity != null) {
       const dim = classifyUnit(ing.unit);
       if (dim === 'mass' || dim === 'volume' || EGG_SIZE_WORD.test(`${ing.unit ?? ''} ${item}`)) {
@@ -355,9 +360,9 @@ export function notDryStaple(ing: ValidatableIngredient, food?: FoodRecord): str
   const saysDry = /\b(dry|raw)\b/.test(text);
   const cookedWord = COOKED_WORD.exec(text) ?? (isCanned(ing.raw, ing.unit) ? ['can', 'canned'] : null);
   const foodCooked = food ? FOOD_COOKED_STATE.test(fold(food.description)) && !/\b(raw|dry|uncooked)\b/.test(fold(food.description)) : false;
-  if (foodCooked) return `matched the cooked/canned record "${food!.description}" — store the dry record at its dry weight with the preparation as the note ("82 g chickpeas, dry, soaked and cooked")`;
-  if (cookedWord && !saysDry) return `says "${cookedWord[1]}" — store the dry weight with the preparation as the note ("82 g chickpeas, dry, soaked and cooked")`;
-  if (isFreshPasta(item) && !saysDry) return 'fresh pasta — store the dry pasta at its dry-matter weight with the note "dry, cooked"';
+  if (foodCooked) return `matched the cooked/canned record "${food!.description}" — store the dry record at its dry weight, note "dry", with the soaking and cooking as a method step ("82 g chickpeas, dry")`;
+  if (cookedWord && !saysDry) return `says "${cookedWord[1]}" — store the dry weight, note "dry", with the soaking and cooking as a method step ("82 g chickpeas, dry")`;
+  if (isFreshPasta(item) && !saysDry) return 'fresh pasta — store the dry pasta at its dry-matter weight with the note "dry" and the cooking as a method step';
   return null;
 }
 
@@ -615,6 +620,18 @@ function lineText(amount: string | null, item: string, note?: string | null): st
   return `${amount ? `${amount} ` : ''}${item}${n ? `, ${n}` : ''}`.replace(/\s+/g, ' ').trim();
 }
 
+/** Fresh ginger root (not ground ginger, a spice measured by the spoon). */
+export function isFreshGinger(item?: string | null, note?: string | null, unit?: string | null): boolean {
+  if (!item || !/\bginger\b/i.test(item)) return false;
+  if (/\b(ground|powder(ed)?|dried|crystalli[sz]ed|candied|pickled|syrup|ale|beer|juice|tea|paste|biscuits?|snaps|cookies?|bread)\b/i.test(item)) return false;
+  // A bare "ginger" in spoons is the ground spice in most recipes; only call it fresh when the
+  // line says so (fresh, grated, root, piece, slice, knob, thumb) or measures it by length.
+  return /\b(fresh|freshly|grated|root|piece|pieces|slices?|knob|thumb|minced|chopped|young)\b/i.test(`${item} ${note ?? ''} ${unit ?? ''}`) || /^(cm|inch(es)?|in)$/i.test(unit ?? '');
+}
+
+/** Lines whose missing amount is deliberate (to taste, optional, a garnish). */
+const NO_AMOUNT_LINE = /\b(to taste|optional|to serve|for serving|garnish|as needed|if needed|a little|a pinch)\b/i;
+
 /** Grams of olive oil per tablespoon. */
 export const OLIVE_OIL_G_PER_TBSP = 13.5;
 
@@ -746,10 +763,10 @@ export function normalizeIngredient(
       if (dryG != null) {
         const g = Math.round(dryG);
         const name = cleanStapleName(p.item, rec);
-        const note = rec.legume && !rec.noSoak ? 'dry, soaked and cooked' : 'dry, cooked';
+        const soak = rec.legume && !rec.noSoak;
         const fdcId = rec.otherVariety?.test(fold(name)) ? null : rec.dryId;
         set(
-          { raw: lineText(`${g} g`, name, note), fdcId, grams: g, cooking: 'boiled', proxyOk: undefined, step: stapleStep(name, rec, note) },
+          { raw: lineText(`${g} g`, name, 'dry'), fdcId, grams: g, cooking: 'boiled', proxyOk: undefined, step: stapleStep(name, rec, soak) },
           'cooked staple → dry weight by dry matter',
         );
         p = parseIngredientLine(cur.raw);
@@ -782,6 +799,13 @@ export function normalizeIngredient(
         p = parseIngredientLine(cur.raw);
       }
     }
+  }
+
+  // Fresh ginger → grams (a spoon of grated ginger or "5 cm" is no measure; ground ginger is a spice).
+  if (p.quantity != null && isFreshGinger(p.item, p.note, p.unit) && !NO_AMOUNT_LINE.test(cur.raw) && canonicalUnit(p.unitId ?? p.unit) !== 'gram' && cur.grams != null && cur.grams > 0) {
+    const g = cur.grams >= 5 ? Math.round(cur.grams) : Math.round(cur.grams * 10) / 10;
+    set({ raw: lineText(`${g} g`, p.item, p.note), grams: g }, 'fresh ginger in grams');
+    p = parseIngredientLine(cur.raw);
   }
 
   // Eggs → a count without size words.
@@ -821,8 +845,9 @@ function cleanStapleName(item: string, rec: StapleRecord): string {
   return name || rec.name;
 }
 
-function stapleStep(name: string, rec: StapleRecord, note: string): string {
-  if (rec.legume && note.includes('soaked')) {
+/** The method step that cooks a dry staple (the line itself says only "dry"). */
+export function stapleStep(name: string, rec: Pick<StapleRecord, 'legume'>, soak: boolean): string {
+  if (rec.legume && soak) {
     return `Soak the ${name} in plenty of cold water overnight, then drain, cover with fresh water and simmer until tender, about 1–1½ hours; drain.`;
   }
   if (rec.legume) return `Simmer the ${name} in plenty of water until tender, about 20–30 minutes; drain.`;

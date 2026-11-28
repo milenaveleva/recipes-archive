@@ -145,7 +145,7 @@ nutrition:
     version: NRF9.3
   processing:
     minimallyProcessedPct: 63
-    ultraProcessedPct: 0
+    ultraProcessedPct: 4.1
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

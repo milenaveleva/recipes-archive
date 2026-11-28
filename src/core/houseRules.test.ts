@@ -107,7 +107,7 @@ describe('house rules: each mistake the owner caught is flagged and auto-fixed',
     const r = main([{ raw: '240 g canned chickpeas (≈ 82 g uncooked)', fdcId: 173756, grams: 82 }]);
     expect(errorCodes(recipeOf(r))).toEqual(expect.arrayContaining(['FORBIDDEN_WORDING', 'NOT_DRY_STAPLE']));
     const fixed = normalizeRecipe(r, foodById);
-    expect(fixed.value.ingredients[0]).toMatchObject({ raw: '82 g chickpeas, dry, soaked and cooked', fdcId: 173756, grams: 82 });
+    expect(fixed.value.ingredients[0]).toMatchObject({ raw: '82 g chickpeas, dry', fdcId: 173756, grams: 82 });
     expect(fixed.value.steps?.[0]).toMatch(/^Soak the chickpeas/);
     expect(errorCodes(recipeOf(fixed.value))).toEqual([]);
   });
@@ -116,7 +116,7 @@ describe('house rules: each mistake the owner caught is flagged and auto-fixed',
     const { value } = normalizeIngredient({ raw: '400 g canned chickpeas, drained and rinsed' }, { foodById });
     // 400 g × (100 − 66.9) / (100 − 11.5) dry matter of canned-drained vs raw chickpeas
     const dry = Math.round((400 * (100 - foodById.get(173801)!.n.water_g!)) / (100 - foodById.get(173756)!.n.water_g!));
-    expect(value.raw).toBe(`${dry} g chickpeas, dry, soaked and cooked`);
+    expect(value.raw).toBe(`${dry} g chickpeas, dry`);
   });
 
   it('"(in place of butter)" annotation is removed', () => {
@@ -270,9 +270,9 @@ describe('review regressions', () => {
       '400 g canned adzuki beans', '400 g canned flageolet beans', '400 g canned great northern beans', '400 g canned navy beans',
     ]) {
       const { value } = normalizeIngredient({ raw }, { foodById });
-      expect(value.raw, raw).toMatch(/, dry, (soaked and )?cooked$/);
+      expect(value.raw, raw).toMatch(/, dry$/);
     }
-    expect(normalizeIngredient({ raw: '250 g cooked split peas' }, { foodById }).value.raw).toMatch(/dry, cooked$/);
+    expect(normalizeIngredient({ raw: '250 g cooked split peas' }, { foodById }).value.raw).toMatch(/dry$/);
   });
 
   it('treats a can or tin unit as canned (flagged and converted)', () => {
@@ -280,11 +280,11 @@ describe('review regressions', () => {
       const r = main([{ raw }]);
       expect(errorCodes(recipeOf(r)), raw).toContain('NOT_DRY_STAPLE');
       const fixed = normalizeRecipe(r, foodById);
-      expect(fixed.value.ingredients[0].raw, raw).toMatch(/^\d+ g (chickpeas|cannellini beans), dry, soaked and cooked$/);
+      expect(fixed.value.ingredients[0].raw, raw).toMatch(/^\d+ g (chickpeas|cannellini beans), dry$/);
     }
     // 1 can drains to 240 g of chickpeas
     const dry = Math.round((240 * (100 - foodById.get(173801)!.n.water_g!)) / (100 - foodById.get(173756)!.n.water_g!));
-    expect(normalizeIngredient({ raw: '1 can chickpeas' }, { foodById }).value.raw).toBe(`${dry} g chickpeas, dry, soaked and cooked`);
+    expect(normalizeIngredient({ raw: '1 can chickpeas' }, { foodById }).value.raw).toBe(`${dry} g chickpeas, dry`);
   });
 
   it('does not read steaks or cutlets as meat on their own', () => {
@@ -304,7 +304,7 @@ describe('review regressions', () => {
   it('leaves another variety unpinned after the dry conversion', () => {
     const conv = (raw: string) => normalizeIngredient({ raw }, { foodById }).value;
     expect(conv('300 g cooked brown rice').fdcId).toBe(169703);
-    expect(conv('300 g cooked brown basmati rice')).toMatchObject({ raw: expect.stringMatching(/^\d+ g brown basmati rice, dry, cooked$/), fdcId: null });
+    expect(conv('300 g cooked brown basmati rice')).toMatchObject({ raw: expect.stringMatching(/^\d+ g brown basmati rice, dry$/), fdcId: null });
     expect(conv('300 g cooked wild rice').fdcId).toBe(169726);
     expect(conv('300 g cooked soba noodles').fdcId).toBe(168906);
     expect(conv('300 g cooked whole-wheat udon').fdcId).toBeNull();
@@ -333,5 +333,19 @@ describe('findDuplicateRecipes: removed ids', () => {
   it('says the owner removed the recipe', () => {
     const found = findDuplicateRecipes([{ slug: 'x', kifliId: 7, ingredients: [] }], [], { 7: 'removed: Nutri-Score E (fig-jam)' });
     expect(found[0].issue.message).toBe('kifli id 7 was removed by the owner (Nutri-Score E (fig-jam)) — listed in excluded-ids.json');
+  });
+});
+
+describe('fresh ginger is stored in grams', () => {
+  it('converts a spoon or length of fresh ginger to its grams, and leaves ground ginger in spoons', async () => {
+    const { normalizeIngredient, isFreshGinger } = await import('./houseRules');
+    expect(normalizeIngredient({ raw: '½ tbsp freshly grated ginger', grams: 3 }).value.raw).toBe('3 g freshly grated ginger');
+    expect(normalizeIngredient({ raw: '5 cm fresh ginger', grams: 15 }).value.raw).toBe('15 g fresh ginger');
+    expect(isFreshGinger('ground ginger')).toBe(false);
+    expect(normalizeIngredient({ raw: '1 tsp ground ginger', grams: 1.7 }).value.raw).toBe('1 tsp ground ginger');
+    // A bare "ginger" in spoons is the ground spice; to-taste lines and ginger tea are left alone.
+    expect(normalizeIngredient({ raw: '1 tsp ginger', grams: 2 }).value.raw).toBe('1 tsp ginger');
+    expect(normalizeIngredient({ raw: 'fresh ginger, to taste', grams: 5 }).value.raw).toBe('fresh ginger, to taste');
+    expect(normalizeIngredient({ raw: '1 tbsp ginger tea', grams: 2 }).value.raw).toBe('1 tbsp ginger tea');
   });
 });

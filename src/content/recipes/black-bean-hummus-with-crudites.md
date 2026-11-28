@@ -14,12 +14,12 @@ course: Snack
 lists:
   - Medical Medium
 ingredients:
-  - raw: 95 g black beans, dry, soaked overnight
+  - raw: 95 g black beans, dry
     group: Hummus
     quantity: 95
     unit: g
     item: black beans
-    note: dry, soaked overnight
+    note: dry
     grams: 95
     fdcId: 175186
     matchConfidence: medium

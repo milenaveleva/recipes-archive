@@ -59,6 +59,8 @@ export interface NutrientVector {
   betaCryptoxanthin_ug?: number;
   lycopene_ug?: number;
   luteinZeaxanthin_ug?: number;
+  /** Alpha-linolenic acid (18:3 n-3, USDA #851, else #619), the plant omega-3 the inflammation score credits at low weight. */
+  ala_g?: number;
   /* Micronutrients to encourage, read by the NRF9.3 nutrient-balance score
    * (src/core/balance.ts). Units match the USDA data and the FDA 2016 Daily
    * Values (vitamin A as µg RAE, vitamin E as mg α-tocopherol). */

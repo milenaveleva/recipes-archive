@@ -12,9 +12,9 @@
  *     folding + synonyms), or hits a known false friend (ice → ice-cream cones,
  *     pumpkin → pumpkin leaves, walnut oil → walnuts, …);
  *   - state: the item says cooked/canned/drained but the food is raw/dry (or the item
- *     says raw/dried/uncooked and the food is cooked). A line listed in its raw/dry form
- *     with the preparation as the note ("82 g dried chickpeas, soaked and cooked") names
- *     both states and passes;
+ *     says raw/dried/uncooked and the food is cooked). A staple listed in its dry form
+ *     ("82 g chickpeas, dry", cooked in a method step) passes; a line whose note names both
+ *     states passes too;
  *   - grams per unit: tsp/tbsp/clove/cup/pinch and counted items weighed outside a
  *     plausible range (warning), or beyond 3× that range (error);
  *   - per serving: kcal outside the course's range, sodium above 2,300 mg, one
@@ -38,6 +38,7 @@ import { canonicalUnit } from './units';
 import type { MacroComputation } from './nutrition';
 import type { ResolvedIngredient } from './types';
 import { checkHouseRules, isPlainWater, isWaterLike } from './houseRules';
+import JUICE_YIELDS from '../data/juice-yields.json';
 
 export { isPlainWater, isWaterLike };
 
@@ -65,7 +66,9 @@ export type IssueCode =
   | 'DRINK_WATER'
   | 'DUPLICATE_RECIPE'
   | 'OLIVE_OIL_UNIT'
-  | 'EGG_COUNT';
+  | 'EGG_COUNT'
+  | 'JUICED_WHOLE_FOOD'
+  | 'GINGER_UNIT';
 
 export interface Issue {
   code: IssueCode;
@@ -94,6 +97,8 @@ export interface ValidatableIngredient {
   cooking?: string | null;
   proxyOk?: boolean;
   matchConfidence?: string | null;
+  /** Blended or juiced fruit/vegetable (the inflammation score's free-sugar re-classification). */
+  prep?: string | null;
 }
 
 /** The subset of a stored recipe the validator reads. */
@@ -329,7 +334,7 @@ export function stateConflict(ing: ValidatableIngredient, description: string): 
   const itemRaw = ITEM_RAW.exec(text);
   if (itemCooked && itemRaw) return null; // "raw or pre-cooked": either state is fine
   if (itemCooked && foodRaw) {
-    return `item says "${itemCooked[1]}" but the food is raw/dry — list it in its raw/dry form, e.g. "82 g dried chickpeas, soaked and cooked"`;
+    return `item says "${itemCooked[1]}" but the food is raw/dry — list it in its raw/dry form, e.g. "82 g chickpeas, dry" with the soaking and cooking as a method step`;
   }
   if (itemRaw && foodCooked) return `item says "${itemRaw[1]}" but the food is cooked`;
   return null;
@@ -614,6 +619,17 @@ export function validateRecipe(
         const st = stateConflict(ing, food.description);
         if (st && !notDry.has(idx)) push('error', { code: 'STATE_MISMATCH', ingredientIndex: idx, message: `${label(ing)} → "${food.description}": ${st}` });
       }
+    }
+
+    // a1. a juiced fruit or vegetable should be matched to its juice: the whole-food record
+    // still carries the pulp's fibre, which straining removes.
+    if (food && !excluded && ing.prep === 'juiced' && /^(Fruits|Vegetables)/.test(food.category ?? '') && !/\bjuice\b/i.test(food.description)) {
+      const mapped = (JUICE_YIELDS as Record<string, unknown>)[String(ing.fdcId)] != null;
+      push('warn', {
+        code: 'JUICED_WHOLE_FOOD',
+        ingredientIndex: idx,
+        message: `${label(ing)} → "${food.description}": juiced but matched to the whole food${mapped ? ' — re-point it to its fresh-juice record (scripts/set-produce-prep.mjs does this at the USDA juice yield)' : ' (no USDA fresh-juice record with a yield; the pulp fibre is still counted)'}`,
+      });
     }
 
     // a2. a weak automatic match needs a human look before it is trusted

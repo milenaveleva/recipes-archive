@@ -45,13 +45,12 @@ ingredients:
     fdcId: 170000
     matchConfidence: high
     cooking: fried
-  - raw: 1 tsp finely chopped fresh ginger
+  - raw: 2 g finely chopped fresh ginger
     group: Filling
-    quantity: 1
-    unit: tsp
+    quantity: 2
+    unit: g
     item: finely chopped fresh ginger
     grams: 2
-    milliliters: 4.92892
     fdcId: 169231
     matchConfidence: high
     cooking: boiled

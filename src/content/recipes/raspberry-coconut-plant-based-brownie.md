@@ -166,8 +166,8 @@ nutrition:
     version: "2023"
     coverage: 0.83
   inflammation:
-    score: -0.7
-    band: mildly-anti-inflammatory
+    score: -1.1
+    band: anti-inflammatory
     method: fii v5
   balance:
     score: 6

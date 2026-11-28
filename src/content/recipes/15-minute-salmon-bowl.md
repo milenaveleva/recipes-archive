@@ -48,13 +48,12 @@ ingredients:
     fdcId: 174277
     matchConfidence: high
     cooking: fried
-  - raw: ½ tbsp freshly grated ginger
+  - raw: 3 g freshly grated ginger
     group: For the salmon
-    quantity: 0.5
-    unit: tbsp
+    quantity: 3
+    unit: g
     item: freshly grated ginger
     grams: 3
-    milliliters: 7.3934
     fdcId: 169231
     matchConfidence: high
     cooking: fried
@@ -68,11 +67,11 @@ ingredients:
     fdcId: 171413
     matchConfidence: high
     cooking: fried
-  - raw: 320 g dry brown rice, cooked
+  - raw: 320 g brown rice, dry
     quantity: 320
     unit: g
     item: brown rice
-    note: dry, cooked
+    note: dry
     group: For assembling the bowl
     grams: 320
     fdcId: 169703
@@ -201,7 +200,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.7
+    score: -0.8
     band: mildly-anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.2
@@ -230,7 +229,8 @@ createdAt: "2026-11-14"
 
 ## Method
 
-1. Heat the olive oil in a large frying pan over medium-high heat. Sear the salmon for 3 minutes on each side, or until golden brown. When done, remove from the pan and set aside.
-2. In a large bowl, mix together all the seasonings.
-3. Add the salmon and gently toss so it doesn't break up.
-4. Assemble the bowls: divide the rice, avocado, cucumber, edamame, red onion and mango among four bowls. Top each with the salmon, drizzle with spicy yogurt sauce, then sprinkle with sesame seeds and sliced spring onions to garnish.
+1. Cook the brown rice in plenty of boiling salted water until tender; drain.
+2. Heat the olive oil in a large frying pan over medium-high heat. Sear the salmon for 3 minutes on each side, or until golden brown. When done, remove from the pan and set aside.
+3. In a large bowl, mix together all the seasonings.
+4. Add the salmon and gently toss so it doesn't break up.
+5. Assemble the bowls: divide the rice, avocado, cucumber, edamame, red onion and mango among four bowls. Top each with the salmon, drizzle with spicy yogurt sauce, then sprinkle with sesame seeds and sliced spring onions to garnish.

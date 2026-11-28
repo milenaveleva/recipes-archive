@@ -58,10 +58,12 @@ ingredients:
     fdcId: 174158
     matchConfidence: high
     cooking: boiled
-  - raw: 4 slices fresh ginger
-    quantity: 4
-    item: slices fresh ginger
-    grams: 8.8
+  - raw: 9 g fresh ginger, sliced
+    quantity: 9
+    unit: g
+    item: fresh ginger
+    note: sliced
+    grams: 9
     fdcId: 169231
     matchConfidence: medium
     cooking: boiled
@@ -99,7 +101,7 @@ nutrition:
   balance:
     score: 1
     band: poor
-    nrf: -56.1
+    nrf: -56
     version: NRF9.3
   processing:
     minimallyProcessedPct: 79.6

@@ -58,9 +58,10 @@ ingredients:
     fdcId: 173414
     matchConfidence: high
     cooking: raw
-  - raw: ginger, a little
+  - raw: 3 g ginger
+    quantity: 3
+    unit: g
     item: ginger
-    note: a little
     grams: 3
     fdcId: 169231
     matchConfidence: high
@@ -106,7 +107,7 @@ nutrition:
     version: "2023"
     coverage: 0.88
   inflammation:
-    score: -0.5
+    score: -0.4
     band: mildly-anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.31

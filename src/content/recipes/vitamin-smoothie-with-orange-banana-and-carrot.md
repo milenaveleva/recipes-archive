@@ -45,12 +45,11 @@ ingredients:
     quantity: 1.5
     unit: tsp
     item: ground ginger
-    grams: 3
+    grams: 2.6
     milliliters: 7.39338
-    fdcId: 169231
+    fdcId: 170926
     matchConfidence: high
     cooking: raw
-    prep: blended
   - raw: ½ tsp ground turmeric
     quantity: 0.5
     unit: tsp
@@ -62,24 +61,24 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 220
-    energyKj: 922
-    protein_g: 3.8
-    fat_g: 1
-    satFat_g: 0.2
-    carbs_g: 54.8
-    fiber_g: 11.1
+    energyKcal: 227
+    energyKj: 948
+    protein_g: 3.9
+    fat_g: 1.1
+    satFat_g: 0.3
+    carbs_g: 56.1
+    fiber_g: 11.4
     sugar_g: 17.6
     sodium_mg: 46
-    availableCarb_g: 43.7
+    availableCarb_g: 44.8
   glycemic:
     gi: 48
-    gl: 21
+    gl: 22
     giBand: low
     glBand: high
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 98
+    measuredGiPct: 95
   nutriScore:
     grade: C
     points: 3
@@ -87,14 +86,14 @@ nutrition:
     version: "2023"
     coverage: 0.59
   inflammation:
-    score: -1.1
+    score: -1.2
     band: anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.5
   balance:
-    score: 10
+    score: 9
     band: excellent
-    nrf: 100.2
+    nrf: 99.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

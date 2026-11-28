@@ -10,7 +10,7 @@ const BANDS = (referenceData as unknown as {
 const VEG: FiiItem = { grams: 300, nutrients: { energyKcal: 25, fiber_g: 2.5, vitC_mg: 40, vitE_mg: 1.5, magnesium_mg: 30, sugar_g: 2, satFat_g: 0.05, sodium_mg: 20, luteinZeaxanthin_ug: 2000 } };
 const SUGAR: FiiItem = { grams: 50, nutrients: { energyKcal: 387, sugar_g: 99.8, fiber_g: 0, vitC_mg: 0, vitE_mg: 0, magnesium_mg: 0, satFat_g: 0, sodium_mg: 1 }, fdcId: 169655 };
 
-describe('inflammationBandOf (fixed bands about the average-diet zero point)', () => {
+describe('inflammationBandOf (fixed bands about the reference zero point)', () => {
   it('copies the fixed band edges from the parameter table', () => {
     expect(BANDS).toEqual(PARAMS.bands);
     expect(BANDS).toEqual({ antiMax: -1, mildlyAntiMax: -0.3, neutralMax: 0.3, mildlyProMax: 1 });
@@ -56,5 +56,24 @@ describe('computeInflammation (pooled dish composition)', () => {
     const d = computeInflammationDetail([VEG, SUGAR])!;
     expect(d.contributions.map((c) => c.key)).toContain('freeSugar');
     expect(d.contributions.find((c) => c.key === 'freeSugar')!.push).toBeGreaterThan(0);
+  });
+});
+
+describe('dietary-AGE and ultra-processing adjustments', () => {
+  const SALMON = { energyKcal: 120, satFat_g: 1, sodium_mg: 60, vitE_mg: 0.2, magnesium_mg: 25, fiber_g: 0, vitC_mg: 0 };
+  it('penalises dry-heat cooking of fish more than boiling, within its cap', async () => {
+    const { ageAdjustment, PARAMS: P } = await import('./fii');
+    const salmon = 175167; // Atlantic salmon, farmed, raw (fish takes the meat class)
+    const boiled = ageAdjustment([{ grams: 200, nutrients: SALMON, fdcId: salmon, cooking: 'boiled' }]);
+    const fried = ageAdjustment([{ grams: 200, nutrients: SALMON, fdcId: salmon, cooking: 'fried' }]);
+    expect(fried).toBeGreaterThan(boiled);
+    expect(fried).toBeLessThanOrEqual(P.ageAdjustment.max);
+  });
+
+  it('rises with the ultra-processed energy share, and is zero below its floor', async () => {
+    const { upfAdjustment, PARAMS: P } = await import('./fii');
+    const N = { energyKcal: 200 };
+    expect(upfAdjustment([{ grams: 100, nutrients: N, nova: 1 }])).toBe(0);
+    expect(upfAdjustment([{ grams: 100, nutrients: N, nova: 4 }])).toBe(P.upfAdjustment.max);
   });
 });

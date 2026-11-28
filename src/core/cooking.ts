@@ -12,8 +12,8 @@
  * trace minerals Release 6 does not tabulate; yield factors (src/data/cooking-yields.json)
  * from Bognár 2002 weight-yield tables or USDA raw/cooked record pairs. Both are built by
  * scripts/build-retention.mjs. Energy, macronutrients and fat fractions are not in either
- * retention table and are retained in full, and polyphenols take a generic retention
- * (POLYPHENOL_RETENTION, Rothwell 2015); the mass change is booked as
+ * retention table and are retained in full, and polyphenols take the Phenol-Explorer
+ * retention factors (polyphenolRetention); the mass change is booked as
  * water.
  *
  * Fat uptake during frying is not modelled: the cooking fat is its own recipe ingredient
@@ -26,6 +26,7 @@
  * Every figure is an estimate.
  */
 import retentionData from '../data/retention-factors.json';
+import polyphenolRetentionData from '../data/polyphenol-retention.json';
 import yieldData from '../data/cooking-yields.json';
 import type { NutrientVector } from './types';
 
@@ -71,6 +72,7 @@ export type CookingGroup =
 
 /** The food fields the group lookup reads (a FoodRecord satisfies this). */
 export interface CookableFood {
+  fdcId?: number | null;
   description: string;
   category?: string;
   n?: NutrientVector | null;
@@ -169,19 +171,30 @@ const OVERRIDES = ((yieldData as unknown as { overrides: YieldOverride[] }).over
 /** Retention factor per nutrient for a group × method ({} = full retention). */
 export function retentionFor(group: CookingGroup, method: CookingMethod): Partial<Record<RetainedField, number>> {
   if (method === 'raw' || group === 'none') return {};
-  return { ...POLYPHENOL_RF, ...(RETENTION[group]?.methods[method]?.rf ?? {}) };
+  return RETENTION[group]?.methods[method]?.rf ?? {};
 }
 
+/** The polyphenol subclass fields that take a cooking retention factor. */
+export const POLYPHENOL_FIELDS = ['anthocyanidins_mg', 'flavan3ols_mg', 'flavanones_mg', 'flavones_mg', 'flavonols_mg', 'tyrosols_mg'] as const;
+type PolyRetention = {
+  fallback: number;
+  classMethod: Record<string, Record<string, { rf: number; foods: number }>>;
+  foods: Record<string, Record<string, Record<string, number>>>;
+};
+const POLY_RF = polyphenolRetentionData as unknown as PolyRetention;
+
 /**
- * Polyphenol retention in domestic cooking. Neither retention table covers polyphenols;
- * Rothwell 2015 (Phenol-Explorer retention factors) reports median retention 0.45–0.70
- * across domestic cooking, with food identity mattering more than the method, so every
- * cooked subclass takes the midpoint of that range rather than full retention.
+ * Retention of one polyphenol subclass when a food is cooked by a method, in the tiers
+ * Rothwell 2015 recommends (src/data/polyphenol-retention.json, from the Phenol-Explorer
+ * retention-factor tables): the factor measured for this food, else the subclass × method
+ * median across foods, else the median domestic-cooking retention (0.45–0.70, midpoint).
  */
-export const POLYPHENOL_RETENTION = 0.575;
-const POLYPHENOL_RF: Partial<Record<RetainedField, number>> = Object.fromEntries(
-  ['anthocyanidins_mg', 'flavan3ols_mg', 'flavanones_mg', 'flavones_mg', 'flavonols_mg', 'tyrosols_mg'].map((k) => [k, POLYPHENOL_RETENTION]),
-);
+export function polyphenolRetention(fdcId: number | null | undefined, field: string, method: CookingMethod): number {
+  if (method === 'raw') return 1;
+  const food = fdcId != null ? POLY_RF.foods[String(fdcId)]?.[field]?.[method] : undefined;
+  if (food != null) return food;
+  return POLY_RF.classMethod[field]?.[method]?.rf ?? POLY_RF.fallback;
+}
 
 /** Cooked mass ÷ raw mass for a food × method (1 = no change); name overrides win. */
 export function yieldFor(food: CookableFood | null | undefined, group: CookingGroup, method: CookingMethod): number {
@@ -234,7 +247,10 @@ export function applyCooking(
 ): CookedIngredient {
   const m: CookingMethod = method ?? 'raw';
   const group: CookingGroup = cookingApplies(food, m) ? cookingGroupOf(food) : 'none';
-  const rf = retentionFor(group, m);
+  const rf: Partial<Record<RetainedField, number>> = { ...retentionFor(group, m) };
+  if (m !== 'raw' && group !== 'none') {
+    for (const f of POLYPHENOL_FIELDS) if (per100Raw[f] != null) rf[f] = polyphenolRetention(food?.fdcId, f, m);
+  }
   const yieldFactor = yieldFor(food, group, m);
   const cookedGrams = grams * yieldFactor;
 

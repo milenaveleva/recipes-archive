@@ -22,8 +22,8 @@ ingredients:
     unit: large
     item: lemons
     note: peeled
-    grams: 300
-    fdcId: 167746
+    grams: 171
+    fdcId: 167747
     matchConfidence: high
     cooking: raw
     prep: juiced
@@ -32,8 +32,8 @@ ingredients:
     unit: medium
     item: orange
     note: peeled
-    grams: 130
-    fdcId: 169919
+    grams: 85
+    fdcId: 169098
     matchConfidence: high
     cooking: raw
     prep: juiced
@@ -56,39 +56,39 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 48
-    energyKj: 201
-    protein_g: 0.9
-    fat_g: 0.3
-    satFat_g: 0.1
-    carbs_g: 12.5
-    fiber_g: 1.8
-    sugar_g: 5.2
-    sodium_mg: 4
-    availableCarb_g: 10.7
+    energyKcal: 39
+    energyKj: 162
+    protein_g: 0.5
+    fat_g: 0.2
+    satFat_g: 0
+    carbs_g: 9.7
+    fiber_g: 0.5
+    sugar_g: 5.6
+    sodium_mg: 3
+    availableCarb_g: 9.3
   glycemic:
-    gi: 53
-    gl: 6
-    giBand: low
+    gi: 58
+    gl: 5
+    giBand: medium
     glBand: low
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 52
+    measuredGiPct: 54
   nutriScore:
-    grade: C
-    points: 5
+    grade: E
+    points: 11
     category: beverage
     version: "2023"
-    coverage: 0.81
+    coverage: 1
   inflammation:
-    score: -0.7
+    score: -0.6
     band: mildly-anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.23
   balance:
-    score: 8
-    band: high
-    nrf: 73.2
+    score: 5
+    band: moderate
+    nrf: 29.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 100

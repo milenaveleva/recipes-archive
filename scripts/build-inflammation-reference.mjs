@@ -7,7 +7,7 @@
  *
  * Over every USDA food (src/data/usda-foods.json, polyphenol subclasses merged in), each
  * scored as a one-item dish of 100 g:
- *   - `corpus` parameters: centred on the average diet per kcal (fii-parameters.json
+ *   - `corpus` parameters: centred on an approximation of the average diet's density per kcal (fii-parameters.json
  *     dietMean ÷ dietEnergyKcal, Shivappa 2014) and scaled by the robust spread (IQR/1.349)
  *     of the per-food per-100-kcal densities;
  *   - `carrier` components: the median per-100-kcal density among the foods that carry the
@@ -82,7 +82,8 @@ function build({ PARAMS, pooledDensities, rawScore, scoreComposition }, { nutrie
     if (p.scale === 'corpus') {
       const vals = pooled.map((d) => d?.densities.find((x) => x.key === p.key)).filter((d) => d?.present && d.density !== undefined).map((d) => d.density);
       const { scale, n } = robustStats(vals);
-      // Zero point = the average diet per kcal (Shivappa 2014 global mean intake ÷ mean energy).
+      // Zero point ≈ the average diet's density: Shivappa 2014 global mean intake ÷ its mean
+      // energy (a ratio of means; the E-DII's own energy-adjusted reference is unpublished).
       if (!(p.dietMean > 0) || !(PARAMS.dietEnergyKcal > 0)) throw new Error(`${p.key}: corpus parameters need dietMean and dietEnergyKcal`);
       const center = (p.dietMean / PARAMS.dietEnergyKcal) * 100;
       corpus[p.key] = { center, scale, n };
@@ -91,6 +92,12 @@ function build({ PARAMS, pooledDensities, rawScore, scoreComposition }, { nutrie
       for (const f of Object.keys(p.fields)) {
         const vals = pooled.map((d) => d?.densities.find((x) => x.key === p.key)?.components?.[f]).filter((v) => v > 0);
         const { center, n } = robustStats(vals);
+        if (p.units?.[f] > 0) {
+          // A component nearly every food carries in trace amounts takes a fixed intake unit.
+          carrier[f] = { median: p.units[f], n, unit: 'fixed' };
+          log(`  ${`${p.key}.${f}`.padEnd(34)} carrier n=${String(n).padStart(4)} unit=${p.units[f]} (fixed)`);
+          continue;
+        }
         if (!(center > 0)) throw new Error(`no food carries ${p.key}.${f} — the carrier scale is undefined`);
         // A sparsely measured component still takes its measured median (flagged), never a
         // fixed constant: the scale stays tied to real content.
@@ -105,7 +112,7 @@ function build({ PARAMS, pooledDensities, rawScore, scoreComposition }, { nutrie
   log('→ corpus distribution of the raw score…');
   const provisional = { corpus, carrier, fiiRaw: { center: 0, scale: 1 } };
   const raws = pooled.map((d) => (d ? rawScore(d, provisional) : null)).filter(Boolean).map((r) => r.raw);
-  // The zero point stays the parameters' own (the average diet for protective nutrients, no
+  // The zero point stays the parameters' own (the average diet's density for protective nutrients, no
   // intake for limits); only the spread of the raw score is read from the corpus, so a
   // corpus dominated by vegetables does not move a lentil or an oat toward pro.
   const { scale, n } = robustStats(raws);

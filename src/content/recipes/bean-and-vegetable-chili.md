@@ -68,11 +68,11 @@ ingredients:
     fdcId: 170459
     matchConfidence: medium
     cooking: boiled
-  - raw: 210 g kidney beans, dry, soaked and cooked
+  - raw: 210 g kidney beans, dry
     quantity: 210
     unit: g
     item: kidney beans
-    note: dry, soaked and cooked
+    note: dry
     grams: 210
     fdcId: 175193
     matchConfidence: medium
@@ -187,7 +187,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -1.7
+    score: -1.5
     band: anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.39

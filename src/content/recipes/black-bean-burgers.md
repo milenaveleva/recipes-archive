@@ -14,11 +14,11 @@ course: Main Course
 lists:
   - Medical Medium
 ingredients:
-  - raw: 140 g black beans, dry, soaked and cooked
+  - raw: 140 g black beans, dry
     quantity: 140
     unit: g
     item: black beans
-    note: dry, soaked and cooked
+    note: dry
     grams: 140
     fdcId: 173734
     matchConfidence: medium
@@ -218,7 +218,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -1.3
+    score: -1.8
     band: anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.39
@@ -228,7 +228,7 @@ nutrition:
     nrf: 48.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 100
+    minimallyProcessedPct: 94.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

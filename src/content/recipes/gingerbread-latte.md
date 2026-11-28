@@ -57,9 +57,9 @@ ingredients:
     quantity: 1
     unit: tsp
     item: ground ginger
-    grams: 2
+    grams: 1.7
     milliliters: 4.92892
-    fdcId: 169231
+    fdcId: 170926
     matchConfidence: high
     cooking: boiled
   - raw: 1 tsp ground cloves
@@ -82,16 +82,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 72
-    energyKj: 301
-    protein_g: 1.2
+    energyKcal: 74
+    energyKj: 310
+    protein_g: 1.3
     fat_g: 3
-    satFat_g: 0
-    carbs_g: 11.1
-    fiber_g: 1.5
+    satFat_g: 0.1
+    carbs_g: 11.5
+    fiber_g: 1.6
     sugar_g: 5.4
     sodium_mg: 47
-    availableCarb_g: 9.6
+    availableCarb_g: 9.9
   glycemic:
     gi: 64
     gl: 6
@@ -99,7 +99,7 @@ nutrition:
     glBand: low
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 92
+    measuredGiPct: 88
   nutriScore:
     grade: C
     points: 5
@@ -110,15 +110,15 @@ nutrition:
     score: 0.5
     band: mildly-pro-inflammatory
     method: fii v5
-    aromaticAdjustment: -0.05
+    aromaticAdjustment: -0.16
   balance:
     score: 6
     band: moderate
-    nrf: 33.8
+    nrf: 35.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 30.9
-    ultraProcessedPct: 69.1
+    minimallyProcessedPct: 32.8
+    ultraProcessedPct: 67.2
     band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

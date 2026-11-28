@@ -110,7 +110,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.8
+    score: -0.9
     band: mildly-anti-inflammatory
     method: fii v5
   balance:
@@ -120,7 +120,7 @@ nutrition:
     version: NRF9.3
   processing:
     minimallyProcessedPct: 63.4
-    ultraProcessedPct: 0
+    ultraProcessedPct: 10.2
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

@@ -83,11 +83,11 @@ ingredients:
     fdcId: 171329
     matchConfidence: medium
     cooking: boiled
-  - raw: 84 g dry brown rice, cooked
+  - raw: 84 g brown rice, dry
     quantity: 84
     unit: g
     item: brown rice
-    note: dry, cooked
+    note: dry
     group: For the filling
     grams: 84
     fdcId: 169703
@@ -310,7 +310,7 @@ nutrition:
     version: NRF9.3
   processing:
     minimallyProcessedPct: 49.8
-    ultraProcessedPct: 0
+    ultraProcessedPct: 1.4
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

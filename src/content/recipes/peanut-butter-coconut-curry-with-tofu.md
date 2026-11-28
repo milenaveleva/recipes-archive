@@ -51,13 +51,12 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: 1 tbsp fresh ginger, grated
-    quantity: 1
-    unit: tbsp
+  - raw: 6 g fresh ginger, grated
+    quantity: 6
+    unit: g
     item: fresh ginger
     note: grated
     grams: 6
-    milliliters: 14.7868
     fdcId: 169231
     matchConfidence: high
     cooking: boiled

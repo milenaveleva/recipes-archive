@@ -48,11 +48,11 @@ ingredients:
     matchConfidence: high
     cooking: raw
     proxyOk: true
-  - raw: 160 g dry brown rice, cooked
+  - raw: 160 g brown rice, dry
     quantity: 160
     unit: g
     item: brown rice
-    note: dry, cooked
+    note: dry
     grams: 160
     fdcId: 169703
     matchConfidence: high
@@ -107,7 +107,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -1
+    score: -1.2
     band: anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.03

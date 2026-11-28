@@ -151,7 +151,7 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -1.1
+    score: -1.2
     band: anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.21
@@ -162,7 +162,7 @@ nutrition:
     version: NRF9.3
   processing:
     minimallyProcessedPct: 66.3
-    ultraProcessedPct: 18.1
+    ultraProcessedPct: 18.9
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
