@@ -88,11 +88,11 @@ ingredients:
     fdcId: 169698
     matchConfidence: high
     cooking: boiled
-  - raw: 20 ml reduced-salt soy sauce
+  - raw: 20 ml low-sodium soy sauce
     group: Seasonings and flavourings
     quantity: 20
     unit: ml
-    item: reduced-salt soy sauce
+    item: low-sodium soy sauce
     grams: 21.6
     milliliters: 20
     fdcId: 172473

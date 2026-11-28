@@ -55,10 +55,10 @@ ingredients:
     fdcId: 9000002
     matchConfidence: high
     cooking: fried
-  - raw: 2 tsp reduced-salt tamari, for the mushroom marinade
+  - raw: 2 tsp low-sodium soy sauce, for the mushroom marinade
     quantity: 2
     unit: tsp
-    item: reduced-salt tamari
+    item: low-sodium soy sauce
     note: for the mushroom marinade
     grams: 12
     milliliters: 9.85784
@@ -128,10 +128,10 @@ ingredients:
     fdcId: 168156
     matchConfidence: high
     cooking: raw
-  - raw: 2 tsp reduced-salt tamari, for the peanut sauce
+  - raw: 2 tsp low-sodium soy sauce, for the peanut sauce
     quantity: 2
     unit: tsp
-    item: reduced-salt tamari
+    item: low-sodium soy sauce
     note: for the peanut sauce
     grams: 12
     milliliters: 9.85784

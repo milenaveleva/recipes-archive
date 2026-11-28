@@ -80,11 +80,11 @@ ingredients:
     fdcId: 171025
     matchConfidence: high
     cooking: fried
-  - raw: 30 ml reduced-salt soy sauce
+  - raw: 30 ml low-sodium soy sauce
     group: Sauce and serving
     quantity: 30
     unit: ml
-    item: reduced-salt soy sauce
+    item: low-sodium soy sauce
     grams: 32
     milliliters: 30
     fdcId: 172473

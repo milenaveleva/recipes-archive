@@ -93,11 +93,11 @@ ingredients:
     fdcId: 169703
     matchConfidence: medium
     cooking: boiled
-  - raw: 2 tsp reduced-salt soy sauce
+  - raw: 2 tsp low-sodium soy sauce
     group: For the filling
     quantity: 2
     unit: tsp
-    item: reduced-salt soy sauce
+    item: low-sodium soy sauce
     grams: 10.7
     milliliters: 9.85784
     fdcId: 172473

@@ -144,8 +144,8 @@ describe('formatIngredientAmount (display unit ≠ calc basis)', () => {
     expect(formatIngredientAmount({ item: 'lime', raw: 'lime (optional)', grams: 30 })).toBeNull();
   });
 
-  it('shows a reduced-salt sauce by its volume, not as a seasoning', () => {
-    expect(formatIngredientAmount({ quantity: 60, unit: 'ml', item: 'reduced-salt soy sauce', milliliters: 60, grams: 64 })).toBe('60 ml');
+  it('shows a low-sodium sauce by its volume, not as a seasoning', () => {
+    expect(formatIngredientAmount({ quantity: 60, unit: 'ml', item: 'low-sodium soy sauce', milliliters: 60, grams: 64 })).toBe('60 ml');
   });
 
   it('falls back to quantity+unit, then null', () => {

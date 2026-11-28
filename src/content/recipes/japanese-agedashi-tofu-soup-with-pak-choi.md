@@ -53,11 +53,11 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 40 ml reduced-salt soy sauce
+  - raw: 40 ml low-sodium soy sauce
     group: Flavourings and frying
     quantity: 40
     unit: ml
-    item: reduced-salt soy sauce
+    item: low-sodium soy sauce
     grams: 43.3
     milliliters: 40
     fdcId: 172473

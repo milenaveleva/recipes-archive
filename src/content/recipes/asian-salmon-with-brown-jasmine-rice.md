@@ -26,10 +26,10 @@ ingredients:
     fdcId: 175167
     matchConfidence: high
     cooking: baked
-  - raw: 40 g reduced-salt soy sauce
+  - raw: 40 g low-sodium soy sauce
     quantity: 40
     unit: g
-    item: reduced-salt soy sauce
+    item: low-sodium soy sauce
     note: marinade; about 40 % clings to the fish
     grams: 16
     fdcId: 172473

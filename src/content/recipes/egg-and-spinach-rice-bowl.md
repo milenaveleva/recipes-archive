@@ -74,10 +74,10 @@ ingredients:
     fdcId: 169703
     matchConfidence: high
     cooking: boiled
-  - raw: 15 g reduced-salt soy sauce
+  - raw: 15 g low-sodium soy sauce
     quantity: 15
     unit: g
-    item: reduced-salt soy sauce
+    item: low-sodium soy sauce
     grams: 15
     fdcId: 172473
     matchConfidence: medium

@@ -38,11 +38,11 @@ ingredients:
     fdcId: 171325
     matchConfidence: medium
     cooking: fried
-  - raw: 60 ml reduced-salt soy sauce
+  - raw: 60 ml low-sodium soy sauce
     group: For the salmon
     quantity: 60
     unit: ml
-    item: reduced-salt soy sauce
+    item: low-sodium soy sauce
     grams: 64.9
     milliliters: 60
     fdcId: 172473

@@ -112,11 +112,11 @@ ingredients:
     fdcId: 174531
     matchConfidence: high
     cooking: fried
-  - raw: 1 tbsp reduced-salt soy sauce
+  - raw: 1 tbsp low-sodium soy sauce
     group: Lemongrass-chilli stir-fried prawns
     quantity: 1
     unit: tbsp
-    item: reduced-salt soy sauce
+    item: low-sodium soy sauce
     grams: 16
     milliliters: 14.7868
     fdcId: 172473

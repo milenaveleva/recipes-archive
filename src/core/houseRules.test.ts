@@ -350,13 +350,13 @@ describe('fresh ginger is stored in grams', () => {
   });
 });
 
-describe('soy sauce is the reduced-salt kind', () => {
-  it('rewrites soy sauce and tamari to the reduced-salt record, keeping the amount', async () => {
+describe('soy sauce is low-sodium soy sauce', () => {
+  it('rewrites soy sauce and tamari to low-sodium soy sauce, keeping the amount', async () => {
     const { normalizeIngredient, HOUSE_FOODS } = await import('./houseRules');
     const a = normalizeIngredient({ raw: '2 tbsp soy sauce', fdcId: 174277, grams: 32 }).value;
-    expect(a).toMatchObject({ raw: '2 tbsp reduced-salt soy sauce', fdcId: HOUSE_FOODS.reducedSaltSoySauce });
+    expect(a).toMatchObject({ raw: '2 tbsp low-sodium soy sauce', fdcId: HOUSE_FOODS.lowSodiumSoySauce });
     const b = normalizeIngredient({ raw: '2 tsp tamari (low sodium preferred), for the peanut sauce', fdcId: 174278, grams: 11 }).value;
-    expect(b.raw).toBe('2 tsp reduced-salt tamari, for the peanut sauce');
+    expect(b.raw).toBe('2 tsp low-sodium soy sauce, for the peanut sauce');
     expect(normalizeIngredient({ raw: '1 tbsp kecap manis (sweet soy sauce)', grams: 18 }).value.raw).toBe('1 tbsp kecap manis (sweet soy sauce)');
     const again = normalizeIngredient(a).value;
     expect(again.raw).toBe(a.raw);

@@ -70,10 +70,10 @@ ingredients:
     fdcId: 170572
     matchConfidence: high
     cooking: fried
-  - raw: 100 g reduced-salt soy sauce
+  - raw: 100 g low-sodium soy sauce
     quantity: 100
     unit: g
-    item: reduced-salt soy sauce
+    item: low-sodium soy sauce
     grams: 100
     fdcId: 172473
     matchConfidence: high

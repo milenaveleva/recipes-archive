@@ -78,11 +78,11 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 3 tbsp reduced-salt soy sauce
+  - raw: 3 tbsp low-sodium soy sauce
     group: Seasonings and broth
     quantity: 3
     unit: tbsp
-    item: reduced-salt soy sauce
+    item: low-sodium soy sauce
     grams: 48
     milliliters: 44.3604
     fdcId: 172473
