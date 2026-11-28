@@ -264,7 +264,7 @@ describe('buildScoreDials', () => {
     expect(balance.fill).toBeCloseTo(0.3);
 
     expect(inflam.value).toBe('4'); // −0.8 on the straight line → 3.7, rounded
-    expect(inflam.tone).toBe('mid');
+    expect(inflam.tone).toBe('good'); // coloured by its band, mildly anti-inflammatory
   });
 
   it('shows an em-dash balance dial with empty fill when absent', () => {

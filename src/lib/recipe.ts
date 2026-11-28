@@ -406,15 +406,23 @@ export function glBasisOf(basis?: string | null, course?: string | null): GlBasi
 /**
  * Inflammation score (−2 anti … +2 pro) → 1–10 on one straight line (−2 → 1, 0 → 5.5,
  * +2 → 10), so every change in the score moves the dial by the same amount
- * (rounded to a whole point like every dial, ≈ 0.44 score per point). The dial colour
- * follows the shared 1–10 tone bands, not the inflammation band word: a mildly
- * anti-inflammatory score near its neutral edge reads amber. The band argument is accepted
- * for call-site symmetry and ignored.
+ * (rounded to a whole point like every dial, ≈ 0.44 score per point). The dial's colour
+ * comes from the band instead (`inflammationBandTone`), so it agrees with the band word
+ * even where the number alone would tone differently. The band argument is accepted for
+ * call-site symmetry and ignored.
  */
 export function inflammationRating(score?: number | null, _band?: string | null): number | null {
   if (score == null) return null;
   const x = Math.min(2, Math.max(-2, score));
   return clampRating(1 + ((x + 2) * 9) / 4);
+}
+
+/** The dial colour of an inflammation band: anti and mildly anti good, neutral mid, pro bad. */
+export function inflammationBandTone(band: string): Tone {
+  if (band === 'anti-inflammatory' || band === 'mildly-anti-inflammatory') return 'good';
+  if (band === 'neutral') return 'mid';
+  if (band === 'mildly-pro-inflammatory' || band === 'pro-inflammatory') return 'bad';
+  return 'unknown';
 }
 
 /** Nutrient balance (NRF 1–10, higher better) → 1–10 concern, inverted so denser = better. */
@@ -657,6 +665,9 @@ export function buildScoreDials(nutrition: NutritionLike, course?: string | null
       blurb:
         'Inflammatory potential (our own estimate, native −2 anti to +2 pro): the whole dish’s cooked composition per 100 kcal — fibre, vitamins C and E, magnesium, omega-3, carotenoids and flavonoids against free sugars, saturated and industrial trans fat and sodium — each weighted by the strength of the trial evidence for it. Zero means the protective nutrients of an average diet with none of the limited ones; an average diet itself reads mildly pro. “Anti-inflammatory” means clearly better than that reference, never a clinical claim. Shown as 1 (most anti-inflammatory) to 10 — lower is better. An estimate, not a clinical measure.',
       ...dial(inf, inflamBand ? inflammationCaptionBand(inflamBand) : undefined),
+      // The ring sits on the straight-line rating, but its colour is the band's, so it
+      // always agrees with the band word beneath it.
+      ...(inf != null && inflamBand && inflammationBandTone(inflamBand) !== 'unknown' ? { tone: inflammationBandTone(inflamBand) } : {}),
     },
     {
       key: 'processing',
