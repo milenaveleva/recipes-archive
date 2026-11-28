@@ -91,14 +91,14 @@ ingredients:
     fdcId: 174529
     matchConfidence: high
     cooking: fried
-  - raw: 20 ml soy sauce
+  - raw: 20 ml reduced-salt soy sauce
     group: Sauce and frying
     quantity: 20
     unit: ml
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 21.6
     milliliters: 20
-    fdcId: 174277
+    fdcId: 172473
     matchConfidence: high
     cooking: fried
   - raw: 15 ml fish sauce
@@ -133,16 +133,16 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 689
-    energyKj: 2884
-    protein_g: 53.8
-    fat_g: 18.6
+    energyKcal: 690
+    energyKj: 2886
+    protein_g: 53.9
+    fat_g: 18.5
     satFat_g: 2.3
-    carbs_g: 75.7
+    carbs_g: 75.8
     fiber_g: 5
     sugar_g: 4.7
-    sodium_mg: 1954
-    availableCarb_g: 70.7
+    sodium_mg: 1750
+    availableCarb_g: 70.8
   glycemic:
     gi: 60
     gl: 42
@@ -163,13 +163,13 @@ nutrition:
     method: fii v5
     aromaticAdjustment: -0.5
   balance:
-    score: 5
+    score: 6
     band: moderate
-    nrf: 30.7
+    nrf: 32
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 97.4
-    ultraProcessedPct: 1.4
+    minimallyProcessedPct: 97.3
+    ultraProcessedPct: 1.3
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"

@@ -77,13 +77,13 @@ ingredients:
     fdcId: 169640
     matchConfidence: high
     cooking: fried
-  - raw: 2 tbsp soy sauce
+  - raw: 2 tbsp reduced-salt soy sauce
     quantity: 2
     unit: tbsp
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 32
     milliliters: 29.5736
-    fdcId: 81017008
+    fdcId: 172473
     matchConfidence: medium
     cooking: fried
   - raw: 1 tsp rice vinegar
@@ -108,15 +108,15 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 769
-    energyKj: 3220
-    protein_g: 17
-    fat_g: 48.7
+    energyKj: 3218
+    protein_g: 17.6
+    fat_g: 48.8
     satFat_g: 7.4
     carbs_g: 74.8
-    fiber_g: 10.5
-    sugar_g: 11.9
-    sodium_mg: 1093
-    availableCarb_g: 63.7
+    fiber_g: 10.6
+    sugar_g: 11.6
+    sodium_mg: 661
+    availableCarb_g: 63.6
   glycemic:
     gi: 49
     gl: 31
@@ -124,10 +124,10 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 90
+    measuredGiPct: 91
   nutriScore:
     grade: C
-    points: 5
+    points: 3
     category: general
     version: "2023"
     coverage: 0.99
@@ -137,12 +137,12 @@ nutrition:
     method: fii v5
     aromaticAdjustment: -0.32
   balance:
-    score: 2
-    band: poor
-    nrf: 8.3
+    score: 3
+    band: low
+    nrf: 11.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98.6
+    minimallyProcessedPct: 98.7
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

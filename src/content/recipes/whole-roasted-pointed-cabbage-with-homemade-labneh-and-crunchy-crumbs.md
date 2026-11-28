@@ -70,12 +70,12 @@ ingredients:
     fdcId: 170572
     matchConfidence: high
     cooking: fried
-  - raw: 100 g soy sauce
+  - raw: 100 g reduced-salt soy sauce
     quantity: 100
     unit: g
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 100
-    fdcId: 174277
+    fdcId: 172473
     matchConfidence: high
     cooking: raw
   - raw: lemon juice, a few drops
@@ -109,16 +109,16 @@ ingredients:
     cooking: baked
 nutrition:
   perServing:
-    energyKcal: 557
-    energyKj: 2330
-    protein_g: 21.1
-    fat_g: 42.3
+    energyKcal: 558
+    energyKj: 2334
+    protein_g: 21.3
+    fat_g: 42.2
     satFat_g: 6
-    carbs_g: 27.6
-    fiber_g: 8.9
+    carbs_g: 27.8
+    fiber_g: 8.8
     sugar_g: 14.1
-    sodium_mg: 1800
-    availableCarb_g: 18.8
+    sodium_mg: 1328
+    availableCarb_g: 19
   glycemic:
     gi: 15
     gl: 3
@@ -128,23 +128,23 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 4
   nutriScore:
-    grade: C
-    points: 4
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0
+    score: -0.1
     band: neutral
     method: fii v5
     aromaticAdjustment: -0.02
   balance:
     score: 5
     band: moderate
-    nrf: 26.4
+    nrf: 30.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 84.2
+    minimallyProcessedPct: 84
     ultraProcessedPct: 9.2
     band: minimally-processed
     method: NOVA (energy-weighted)

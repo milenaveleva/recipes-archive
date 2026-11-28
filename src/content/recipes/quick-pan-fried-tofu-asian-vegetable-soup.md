@@ -83,13 +83,13 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 30 ml soy sauce
+  - raw: 30 ml reduced-salt soy sauce
     quantity: 30
     unit: ml
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 32.5
     milliliters: 30
-    fdcId: 174277
+    fdcId: 172473
     matchConfidence: high
     cooking: boiled
   - raw: 40 g spring onions
@@ -103,16 +103,16 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 424
-    energyKj: 1776
-    protein_g: 34
+    energyKcal: 425
+    energyKj: 1779
+    protein_g: 34.1
     fat_g: 23.6
     satFat_g: 3.1
-    carbs_g: 29.4
+    carbs_g: 29.5
     fiber_g: 10.2
     sugar_g: 8.6
-    sodium_mg: 2095
-    availableCarb_g: 19.2
+    sodium_mg: 1788
+    availableCarb_g: 19.3
   glycemic:
     gi: 19
     gl: 4
@@ -122,8 +122,8 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 18
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: 0
     category: general
     version: "2023"
     coverage: 1
@@ -135,10 +135,10 @@ nutrition:
   balance:
     score: 9
     band: excellent
-    nrf: 79.3
+    nrf: 82.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 42.7
+    minimallyProcessedPct: 42.6
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

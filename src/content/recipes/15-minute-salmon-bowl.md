@@ -38,14 +38,14 @@ ingredients:
     fdcId: 171325
     matchConfidence: medium
     cooking: fried
-  - raw: 60 ml soy sauce
+  - raw: 60 ml reduced-salt soy sauce
     group: For the salmon
     quantity: 60
     unit: ml
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 64.9
     milliliters: 60
-    fdcId: 174277
+    fdcId: 172473
     matchConfidence: high
     cooking: fried
   - raw: 3 g freshly grated ginger
@@ -175,18 +175,18 @@ ingredients:
     cooking: fried
 nutrition:
   perServing:
-    energyKcal: 570
-    energyKj: 2386
-    protein_g: 25.2
+    energyKcal: 571
+    energyKj: 2389
+    protein_g: 25.3
     fat_g: 18.8
     satFat_g: 3.7
-    carbs_g: 76.8
+    carbs_g: 76.9
     fiber_g: 8.5
     sugar_g: 8.4
-    sodium_mg: 1237
-    availableCarb_g: 68.3
+    sodium_mg: 930
+    availableCarb_g: 68.4
   glycemic:
-    gi: 65
+    gi: 64
     gl: 44
     giBand: medium
     glBand: high
@@ -195,7 +195,7 @@ nutrition:
     measuredGiPct: 93
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
     coverage: 1
@@ -207,10 +207,10 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 25.9
+    nrf: 28.2
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98.5
+    minimallyProcessedPct: 98.4
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

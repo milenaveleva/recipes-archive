@@ -79,14 +79,14 @@ ingredients:
     fdcId: 174531
     matchConfidence: high
     cooking: fried
-  - raw: 15 ml soy sauce
+  - raw: 15 ml reduced-salt soy sauce
     group: Seasonings and flavourings
     quantity: 15
     unit: ml
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 16.2
     milliliters: 15
-    fdcId: 174277
+    fdcId: 172473
     matchConfidence: high
     cooking: fried
   - raw: 1 tsp honey
@@ -138,15 +138,15 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 706
-    energyKj: 2952
-    protein_g: 51
+    energyKj: 2953
+    protein_g: 51.1
     fat_g: 22.8
     satFat_g: 3.8
     carbs_g: 73.8
     fiber_g: 5.1
     sugar_g: 6.7
-    sodium_mg: 2069
-    availableCarb_g: 68.6
+    sodium_mg: 1915
+    availableCarb_g: 68.7
   glycemic:
     gi: 58
     gl: 40
@@ -157,7 +157,7 @@ nutrition:
     measuredGiPct: 89
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
     coverage: 1
@@ -169,10 +169,10 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 29.2
+    nrf: 30.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98.5
+    minimallyProcessedPct: 98.4
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

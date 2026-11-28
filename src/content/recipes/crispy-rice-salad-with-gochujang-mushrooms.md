@@ -55,14 +55,14 @@ ingredients:
     fdcId: 9000002
     matchConfidence: high
     cooking: fried
-  - raw: 2 tsp tamari (low sodium preferred), for the mushroom marinade
+  - raw: 2 tsp reduced-salt tamari, for the mushroom marinade
     quantity: 2
     unit: tsp
-    item: tamari
-    note: low sodium preferred
+    item: reduced-salt tamari
+    note: for the mushroom marinade
     grams: 12
     milliliters: 9.85784
-    fdcId: 174278
+    fdcId: 172473
     matchConfidence: medium
     cooking: fried
   - raw: 1/2 tbsp honey
@@ -128,14 +128,14 @@ ingredients:
     fdcId: 168156
     matchConfidence: high
     cooking: raw
-  - raw: 2 tsp tamari (low sodium preferred), for the peanut sauce
+  - raw: 2 tsp reduced-salt tamari, for the peanut sauce
     quantity: 2
     unit: tsp
-    item: tamari
-    note: low sodium preferred
+    item: reduced-salt tamari
+    note: for the peanut sauce
     grams: 12
     milliliters: 9.85784
-    fdcId: 174278
+    fdcId: 172473
     matchConfidence: medium
     cooking: raw
   - raw: 2 tsp honey
@@ -214,14 +214,14 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 884
-    energyKj: 3700
-    protein_g: 32.7
+    energyKj: 3698
+    protein_g: 32.6
     fat_g: 36
     satFat_g: 5.3
     carbs_g: 120.5
     fiber_g: 22.8
-    sugar_g: 25.3
-    sodium_mg: 926
+    sugar_g: 25.2
+    sodium_mg: 687
     availableCarb_g: 97.7
   glycemic:
     gi: 56
@@ -245,7 +245,7 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 28.2
+    nrf: 29.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 88

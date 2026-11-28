@@ -93,14 +93,14 @@ ingredients:
     fdcId: 169703
     matchConfidence: medium
     cooking: boiled
-  - raw: 2 tsp soy sauce
+  - raw: 2 tsp reduced-salt soy sauce
     group: For the filling
     quantity: 2
     unit: tsp
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 10.7
     milliliters: 9.85784
-    fdcId: 174277
+    fdcId: 172473
     matchConfidence: high
     cooking: boiled
   - raw: 2 tbsp oil
@@ -275,15 +275,15 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 567
-    energyKj: 2373
+    energyKj: 2374
     protein_g: 30.7
     fat_g: 27.4
     satFat_g: 4.5
-    carbs_g: 58.2
+    carbs_g: 58.3
     fiber_g: 17.5
     sugar_g: 9.7
-    sodium_mg: 3037
-    availableCarb_g: 40.6
+    sodium_mg: 2986
+    availableCarb_g: 40.7
   glycemic:
     gi: 51
     gl: 21
@@ -291,7 +291,7 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 66
+    measuredGiPct: 65
   nutriScore:
     grade: C
     points: 3
@@ -306,7 +306,7 @@ nutrition:
   balance:
     score: 7
     band: high
-    nrf: 42.4
+    nrf: 42.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 49.8

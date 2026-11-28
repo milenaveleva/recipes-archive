@@ -53,14 +53,14 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 40 ml soy sauce
+  - raw: 40 ml reduced-salt soy sauce
     group: Flavourings and frying
     quantity: 40
     unit: ml
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 43.3
     milliliters: 40
-    fdcId: 174277
+    fdcId: 172473
     matchConfidence: high
     cooking: boiled
   - raw: 15 g ginger
@@ -112,15 +112,15 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 715
-    energyKj: 2990
-    protein_g: 40.3
-    fat_g: 48.3
+    energyKj: 2993
+    protein_g: 40.5
+    fat_g: 48.2
     satFat_g: 6.1
-    carbs_g: 39.6
+    carbs_g: 39.7
     fiber_g: 7.1
     sugar_g: 4.3
-    sodium_mg: 2667
-    availableCarb_g: 32.5
+    sodium_mg: 2258
+    availableCarb_g: 32.6
   glycemic:
     gi: 35
     gl: 11
@@ -143,7 +143,7 @@ nutrition:
   balance:
     score: 7
     band: high
-    nrf: 43.1
+    nrf: 45.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 54.8

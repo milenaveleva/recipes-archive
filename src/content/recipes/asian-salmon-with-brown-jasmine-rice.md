@@ -26,13 +26,13 @@ ingredients:
     fdcId: 175167
     matchConfidence: high
     cooking: baked
-  - raw: 40 g soy sauce
+  - raw: 40 g reduced-salt soy sauce
     quantity: 40
     unit: g
-    item: soy sauce
+    item: reduced-salt soy sauce
     note: marinade; about 40 % clings to the fish
     grams: 16
-    fdcId: 174277
+    fdcId: 172473
     matchConfidence: high
     cooking: baked
   - raw: 40 g sesame oil
@@ -104,15 +104,15 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 814
-    energyKj: 3404
-    protein_g: 48.5
-    fat_g: 38.3
+    energyKj: 3406
+    protein_g: 48.6
+    fat_g: 38.2
     satFat_g: 7.8
     carbs_g: 66.6
     fiber_g: 3.6
     sugar_g: 1.3
-    sodium_mg: 565
-    availableCarb_g: 62.9
+    sodium_mg: 413
+    availableCarb_g: 63
   glycemic:
     gi: 61
     gl: 38
@@ -135,10 +135,10 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 24.1
+    nrf: 24.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 99.5
+    minimallyProcessedPct: 99.4
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

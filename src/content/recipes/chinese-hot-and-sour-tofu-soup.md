@@ -78,14 +78,14 @@ ingredients:
     fdcId: 171583
     matchConfidence: medium
     cooking: boiled
-  - raw: 3 tbsp soy sauce
+  - raw: 3 tbsp reduced-salt soy sauce
     group: Seasonings and broth
     quantity: 3
     unit: tbsp
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 48
     milliliters: 44.3604
-    fdcId: 81017008
+    fdcId: 172473
     matchConfidence: medium
     cooking: boiled
   - raw: 3 tbsp rice vinegar
@@ -131,15 +131,15 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 240
-    energyKj: 1006
-    protein_g: 18.6
+    energyKj: 1004
+    protein_g: 19
     fat_g: 12.9
     satFat_g: 2.3
     carbs_g: 15.3
-    fiber_g: 3.5
-    sugar_g: 3.5
-    sodium_mg: 1506
-    availableCarb_g: 11.7
+    fiber_g: 3.6
+    sugar_g: 3.2
+    sodium_mg: 1182
+    availableCarb_g: 11.6
   glycemic:
     gi: 24
     gl: 3
@@ -149,8 +149,8 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 9
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 0.97
@@ -162,10 +162,10 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 32.7
+    nrf: 39.7
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 47.2
+    minimallyProcessedPct: 47.3
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

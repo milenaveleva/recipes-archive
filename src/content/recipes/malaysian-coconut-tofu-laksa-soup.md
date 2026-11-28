@@ -94,14 +94,14 @@ ingredients:
     fdcId: 171025
     matchConfidence: high
     cooking: fried
-  - raw: 2 tbsp soy sauce
+  - raw: 2 tbsp reduced-salt soy sauce
     group: Seasonings
     quantity: 2
     unit: tbsp
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 32
     milliliters: 29.5736
-    fdcId: 81017008
+    fdcId: 172473
     matchConfidence: medium
     cooking: boiled
   - raw: 1 lime
@@ -151,17 +151,17 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 1139
-    energyKj: 4766
-    protein_g: 47.3
-    fat_g: 71.5
-    satFat_g: 40
+    energyKj: 4764
+    protein_g: 47.9
+    fat_g: 71.6
+    satFat_g: 40.1
     carbs_g: 97.4
-    fiber_g: 16.9
-    sugar_g: 6.2
-    sodium_mg: 1975
-    availableCarb_g: 80.5
+    fiber_g: 17
+    sugar_g: 5.9
+    sodium_mg: 1543
+    availableCarb_g: 80.3
   glycemic:
-    gi: 45
+    gi: 44
     gl: 36
     giBand: low
     glBand: medium
@@ -170,19 +170,19 @@ nutrition:
     measuredGiPct: 80
   nutriScore:
     grade: C
-    points: 5
+    points: 4
     category: general
     version: "2023"
     coverage: 0.81
   inflammation:
-    score: -0.2
-    band: neutral
+    score: -0.3
+    band: mildly-anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.43
   balance:
     score: 4
     band: low
-    nrf: 19.2
+    nrf: 21.2
     version: NRF9.3
   processing:
     minimallyProcessedPct: 44.2
@@ -192,7 +192,6 @@ nutrition:
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
-    - MEXT Standard Tables of Food Composition in Japan 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

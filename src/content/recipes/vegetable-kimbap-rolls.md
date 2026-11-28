@@ -82,13 +82,13 @@ ingredients:
     fdcId: 173468
     matchConfidence: high
     cooking: raw
-  - raw: 2 tbsp soy sauce
+  - raw: 2 tbsp reduced-salt soy sauce
     quantity: 2
     unit: tbsp
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 32
     milliliters: 29.5736
-    fdcId: 81017008
+    fdcId: 172473
     matchConfidence: medium
     cooking: raw
   - raw: 1 tsp mustard
@@ -102,18 +102,18 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 449
-    energyKj: 1877
-    protein_g: 10.2
+    energyKcal: 448
+    energyKj: 1875
+    protein_g: 10.8
     fat_g: 8.4
     satFat_g: 1.4
     carbs_g: 83.3
-    fiber_g: 5.6
-    sugar_g: 4
-    sodium_mg: 1154
-    availableCarb_g: 77.8
+    fiber_g: 5.7
+    sugar_g: 3.6
+    sodium_mg: 722
+    availableCarb_g: 77.6
   glycemic:
-    gi: 67
+    gi: 68
     gl: 52
     giBand: medium
     glBand: high
@@ -121,29 +121,28 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 97
   nutriScore:
-    grade: C
-    points: 4
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.6
+    score: -0.7
     band: mildly-anti-inflammatory
     method: fii v5
   balance:
-    score: 4
-    band: low
-    nrf: 23.9
+    score: 5
+    band: moderate
+    nrf: 28.9
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 97.5
+    minimallyProcessedPct: 97.6
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
-    - MEXT Standard Tables of Food Composition in Japan 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

@@ -35,13 +35,13 @@ ingredients:
     fdcId: 170496
     matchConfidence: high
     cooking: boiled
-  - raw: 30 ml soy sauce
+  - raw: 30 ml reduced-salt soy sauce
     quantity: 30
     unit: ml
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 32
     milliliters: 30
-    fdcId: 81017008
+    fdcId: 172473
     matchConfidence: medium
     cooking: boiled
   - raw: 2 spring onions
@@ -90,15 +90,15 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 245
-    energyKj: 1027
-    protein_g: 23.2
-    fat_g: 12.8
+    energyKj: 1025
+    protein_g: 23.8
+    fat_g: 12.9
     satFat_g: 1.9
-    carbs_g: 13.8
-    fiber_g: 4.9
-    sugar_g: 2.7
-    sodium_mg: 2166
-    availableCarb_g: 8.9
+    carbs_g: 13.7
+    fiber_g: 5
+    sugar_g: 2.3
+    sodium_mg: 1734
+    availableCarb_g: 8.7
   glycemic:
     gi: 25
     gl: 2
@@ -108,8 +108,8 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
-    grade: D
-    points: 13
+    grade: C
+    points: 9
     category: general
     version: "2023"
     coverage: 1
@@ -120,7 +120,7 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 31.7
+    nrf: 40.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 13.2
@@ -130,7 +130,6 @@ nutrition:
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
-    - MEXT Standard Tables of Food Composition in Japan 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

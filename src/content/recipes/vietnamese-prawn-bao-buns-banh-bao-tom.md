@@ -112,14 +112,14 @@ ingredients:
     fdcId: 174531
     matchConfidence: high
     cooking: fried
-  - raw: 1 tbsp soy sauce
+  - raw: 1 tbsp reduced-salt soy sauce
     group: Lemongrass-chilli stir-fried prawns
     quantity: 1
     unit: tbsp
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 16
     milliliters: 14.7868
-    fdcId: 81017008
+    fdcId: 172473
     matchConfidence: medium
     cooking: fried
   - raw: 1 tsp sesame oil
@@ -210,13 +210,13 @@ nutrition:
   perServing:
     energyKcal: 495
     energyKj: 2070
-    protein_g: 33.9
+    protein_g: 34.1
     fat_g: 11.3
     satFat_g: 1.6
     carbs_g: 65.4
     fiber_g: 9.2
-    sugar_g: 7.8
-    sodium_mg: 889
+    sugar_g: 7.7
+    sodium_mg: 781
     availableCarb_g: 56.2
   glycemic:
     gi: 64
@@ -225,7 +225,7 @@ nutrition:
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 90
+    measuredGiPct: 91
   nutriScore:
     grade: A
     points: -1
@@ -240,7 +240,7 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 37.3
+    nrf: 38.4
     version: NRF9.3
   processing:
     minimallyProcessedPct: 98.3

@@ -48,13 +48,13 @@ ingredients:
     fdcId: 174158
     matchConfidence: high
     cooking: boiled
-  - raw: 1 Tbsp soy sauce
+  - raw: 1 Tbsp reduced-salt soy sauce
     quantity: 1
     unit: Tbsp
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 18
     milliliters: 14.7868
-    fdcId: 81017007
+    fdcId: 172473
     matchConfidence: high
     cooking: boiled
   - raw: 1 Tbsp sake
@@ -87,15 +87,15 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 310
-    energyKj: 1299
-    protein_g: 7.6
-    fat_g: 4.5
+    energyKj: 1295
+    protein_g: 7.7
+    fat_g: 4.6
     satFat_g: 0.7
-    carbs_g: 58.1
+    carbs_g: 58
     fiber_g: 2.7
-    sugar_g: 2
-    sodium_mg: 408
-    availableCarb_g: 55.5
+    sugar_g: 1.9
+    sodium_mg: 313
+    availableCarb_g: 55.4
   glycemic:
     gi: 69
     gl: 38
@@ -103,7 +103,7 @@ nutrition:
     glBand: high
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 93
+    measuredGiPct: 94
   nutriScore:
     grade: B
     points: 1
@@ -118,10 +118,10 @@ nutrition:
   balance:
     score: 3
     band: low
-    nrf: 15.6
+    nrf: 17.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 86.3
+    minimallyProcessedPct: 86.5
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

@@ -70,14 +70,14 @@ ingredients:
     fdcId: 170005
     matchConfidence: high
     cooking: fried
-  - raw: 2 tbsp soy sauce
+  - raw: 2 tbsp reduced-salt soy sauce
     group: Sauce and spices
     quantity: 2
     unit: tbsp
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 32
     milliliters: 29.5736
-    fdcId: 81017008
+    fdcId: 172473
     matchConfidence: medium
     cooking: fried
   - raw: 2 tbsp oyster sauce
@@ -143,15 +143,15 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 623
-    energyKj: 2608
-    protein_g: 46.5
-    fat_g: 19.5
+    energyKj: 2606
+    protein_g: 47
+    fat_g: 19.6
     satFat_g: 2.3
     carbs_g: 72.6
-    fiber_g: 10.8
-    sugar_g: 6.5
-    sodium_mg: 2422
-    availableCarb_g: 61.4
+    fiber_g: 10.9
+    sugar_g: 6.2
+    sodium_mg: 1990
+    availableCarb_g: 61.3
   glycemic:
     gi: 44
     gl: 27
@@ -161,8 +161,8 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 87
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 1
@@ -172,19 +172,18 @@ nutrition:
     method: fii v5
     aromaticAdjustment: -0.27
   balance:
-    score: 5
+    score: 6
     band: moderate
-    nrf: 30.6
+    nrf: 34.3
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 96.5
+    minimallyProcessedPct: 96.6
     ultraProcessedPct: 1.5
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
-    - MEXT Standard Tables of Food Composition in Japan 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

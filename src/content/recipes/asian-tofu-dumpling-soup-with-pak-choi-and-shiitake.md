@@ -88,14 +88,14 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: boiled
-  - raw: 30 ml soy sauce
+  - raw: 30 ml reduced-salt soy sauce
     group: Flavourings and spices
     quantity: 30
     unit: ml
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 32.5
     milliliters: 30
-    fdcId: 174277
+    fdcId: 172473
     matchConfidence: high
     cooking: boiled
   - raw: 15 ml sesame oil
@@ -128,14 +128,14 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 271
-    energyKj: 1132
-    protein_g: 21.4
-    fat_g: 14.1
+    energyKj: 1134
+    protein_g: 21.5
+    fat_g: 14
     satFat_g: 2.1
-    carbs_g: 20.3
+    carbs_g: 20.4
     fiber_g: 5.2
     sugar_g: 4.1
-    sodium_mg: 1214
+    sodium_mg: 1060
     availableCarb_g: 15.2
   glycemic:
     gi: 29
@@ -146,8 +146,8 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 7
   nutriScore:
-    grade: B
-    points: 1
+    grade: A
+    points: 0
     category: general
     version: "2023"
     coverage: 1
@@ -159,10 +159,10 @@ nutrition:
   balance:
     score: 8
     band: high
-    nrf: 65.2
+    nrf: 67.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 40.9
+    minimallyProcessedPct: 40.8
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)

@@ -75,13 +75,13 @@ ingredients:
     fdcId: 170924
     matchConfidence: high
     cooking: boiled
-  - raw: 5 ml soy sauce
+  - raw: 5 ml reduced-salt soy sauce
     quantity: 5
     unit: ml
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 5
     milliliters: 5
-    fdcId: 81017008
+    fdcId: 172473
     matchConfidence: medium
     cooking: boiled
   - raw: 10 g Thai basil
@@ -138,8 +138,8 @@ nutrition:
     carbs_g: 82.5
     fiber_g: 7.5
     sugar_g: 7.7
-    sodium_mg: 595
-    availableCarb_g: 75.1
+    sodium_mg: 561
+    availableCarb_g: 75
   glycemic:
     gi: 65
     gl: 49
@@ -162,7 +162,7 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 40.4
+    nrf: 40.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 66.4
@@ -172,7 +172,6 @@ nutrition:
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
-    - MEXT Standard Tables of Food Composition in Japan 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

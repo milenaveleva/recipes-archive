@@ -20,7 +20,8 @@
  *   - PORTION_80 [error]: a main course's single pasta/grain line is not 80 g dry per serving.
  *   - DRINK_WATER [error; warn for a drink with no liquid]: in a drink the water and ice
  *     that are drunk count, and tea leaves / coffee are the brewed record.
- *   - OLIVE_OIL_UNIT, GINGER_UNIT, EGG_COUNT [warn]: olive oil stored in another unit than tbsp/tsp,
+ *   - OLIVE_OIL_UNIT, GINGER_UNIT, SOY_SAUCE_SALT, EGG_COUNT [warn]: olive oil stored in another unit than tbsp/tsp,
+ *     soy sauce that is not the reduced-salt kind,
  *     fresh ginger in another unit than grams, eggs stored
  *     by weight or with a size word ("large").
  *   - DUPLICATE_RECIPE [warn]: `findDuplicateRecipes`, which needs the whole corpus: a near-identical
@@ -291,6 +292,9 @@ export function checkHouseRules(recipe: ValidatableRecipe, foodById: Map<number,
         out.push({ severity: 'warn', code: 'OLIVE_OIL_UNIT', ingredientIndex: idx, message: `${label(ing)}: olive oil is stored in tbsp/tsp` });
       }
     }
+    if (isSoySauce(item) && (ing.fdcId !== HOUSE_FOODS.reducedSaltSoySauce || !REDUCED_SALT.test(item))) {
+      out.push({ severity: 'warn', code: 'SOY_SAUCE_SALT', ingredientIndex: idx, message: `${label(ing)}: soy sauce is the reduced-salt kind (fdcId ${HOUSE_FOODS.reducedSaltSoySauce})` });
+    }
     if (isFreshGinger(item, ing.note, ing.unit) && ing.quantity != null && canonicalUnit(ing.unit) !== 'gram') {
       out.push({ severity: 'warn', code: 'GINGER_UNIT', ingredientIndex: idx, message: `${label(ing)}: fresh ginger is stored in grams` });
     }
@@ -531,6 +535,7 @@ export const HOUSE_FOODS = {
   wholeWheatBread: 172688,
   lemonJuice: 167747,
   redWineVinegar: 172240,
+  reducedSaltSoySauce: 172473,
 } as const;
 
 /** Dry/raw record and its cooked or canned counterpart, for converting a cooked staple to dry by dry matter. */
@@ -619,6 +624,13 @@ function lineText(amount: string | null, item: string, note?: string | null): st
   const n = note?.trim();
   return `${amount ? `${amount} ` : ''}${item}${n ? `, ${n}` : ''}`.replace(/\s+/g, ' ').trim();
 }
+
+/** Soy sauce, tamari or shoyu (not a soy-sauce-based product such as a marinade or kecap manis). */
+export function isSoySauce(item?: string | null): boolean {
+  return !!item && /\b(soy sauce|soya sauce|tamari|shoyu)\b/i.test(item) && !/\b(sweet|kecap|manis|marinade|glaze|dressing|mushroom)\b/i.test(item);
+}
+/** A soy sauce line already named as the reduced-salt kind. */
+const REDUCED_SALT = /\b(reduced[- ](salt|sodium)|low[- ](salt|sodium)|less[- ](salt|sodium)|lite)\b/i;
 
 /** Fresh ginger root (not ground ginger, a spice measured by the spoon). */
 export function isFreshGinger(item?: string | null, note?: string | null, unit?: string | null): boolean {
@@ -799,6 +811,15 @@ export function normalizeIngredient(
         p = parseIngredientLine(cur.raw);
       }
     }
+  }
+
+  // Soy sauce → the reduced-salt kind (≈ 35 % less sodium), on its record.
+  if (isSoySauce(p.item) && (cur.fdcId !== HOUSE_FOODS.reducedSaltSoySauce || !REDUCED_SALT.test(p.item))) {
+    const kind = /\btamari\b/i.test(p.item) ? 'tamari' : 'soy sauce';
+    const note = p.note?.replace(/\(?\s*(low[- ]sodium|reduced[- ]salt)( preferred)?\s*\)?,?\s*/gi, '').replace(/^,\s*|,\s*$/g, '').trim() || null;
+    const amount = p.quantity != null ? `${qty(p.quantity)}${p.quantity2 != null ? `–${qty(p.quantity2)}` : ''}${p.unit ? ` ${p.unit}` : ''}` : null;
+    set({ raw: lineText(amount, `reduced-salt ${kind}`, note), fdcId: HOUSE_FOODS.reducedSaltSoySauce, proxyOk: undefined }, 'soy sauce → reduced-salt');
+    p = parseIngredientLine(cur.raw);
   }
 
   // Fresh ginger → grams (a spoon of grated ginger or "5 cm" is no measure; ground ginger is a spice).

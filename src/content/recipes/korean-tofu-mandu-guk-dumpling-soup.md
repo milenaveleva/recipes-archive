@@ -64,13 +64,13 @@ ingredients:
     fdcId: 169231
     matchConfidence: high
     cooking: boiled
-  - raw: 2 tbsp soy sauce
+  - raw: 2 tbsp reduced-salt soy sauce
     quantity: 2
     unit: tbsp
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 32
     milliliters: 29.5736
-    fdcId: 81017008
+    fdcId: 172473
     matchConfidence: medium
     cooking: boiled
   - raw: 1 tbsp sesame oil
@@ -103,15 +103,15 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 300
-    energyKj: 1257
-    protein_g: 17.7
-    fat_g: 9.9
+    energyKj: 1256
+    protein_g: 18
+    fat_g: 10
     satFat_g: 1.5
     carbs_g: 37.2
-    fiber_g: 3.2
-    sugar_g: 2.6
-    sodium_mg: 1634
-    availableCarb_g: 34
+    fiber_g: 3.3
+    sugar_g: 2.5
+    sodium_mg: 1418
+    availableCarb_g: 33.9
   glycemic:
     gi: 46
     gl: 16
@@ -121,8 +121,8 @@ nutrition:
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 0
   nutriScore:
-    grade: C
-    points: 3
+    grade: B
+    points: 2
     category: general
     version: "2023"
     coverage: 0.89
@@ -132,19 +132,18 @@ nutrition:
     method: fii v5
     aromaticAdjustment: -0.33
   balance:
-    score: 4
-    band: low
-    nrf: 20.9
+    score: 5
+    band: moderate
+    nrf: 24.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 15.3
-    ultraProcessedPct: 48.4
+    ultraProcessedPct: 48.5
     band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
-    - MEXT Standard Tables of Food Composition in Japan 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

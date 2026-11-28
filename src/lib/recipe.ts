@@ -160,7 +160,8 @@ const SEASONING_PATTERNS: RegExp[] = [
 /** Whether an ingredient name is a seasoning (shown by spoon/pinch, never grams). */
 export function isSeasoning(name?: string | null): boolean {
   if (!name) return false;
-  const n = name.toLowerCase().trim();
+  // "Reduced-salt soy sauce" is a sauce measured by volume, not a seasoning.
+  const n = name.toLowerCase().trim().replace(/\b(reduced|low|less)[- ](salt|sodium)\b/g, '');
   return SEASONING_PATTERNS.some((re) => re.test(n));
 }
 

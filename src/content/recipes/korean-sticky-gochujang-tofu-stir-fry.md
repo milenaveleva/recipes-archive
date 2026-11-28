@@ -54,14 +54,14 @@ ingredients:
     fdcId: 171186
     matchConfidence: high
     cooking: fried
-  - raw: 2 tbsp soy sauce
+  - raw: 2 tbsp reduced-salt soy sauce
     group: Gochujang glaze and frying
     quantity: 2
     unit: tbsp
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 32
     milliliters: 29.5736
-    fdcId: 81017008
+    fdcId: 172473
     matchConfidence: medium
     cooking: fried
   - raw: 15 g honey
@@ -143,18 +143,18 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 902
-    energyKj: 3775
-    protein_g: 43.7
+    energyKj: 3773
+    protein_g: 44.2
     fat_g: 43.5
     satFat_g: 5.8
     carbs_g: 92.2
-    fiber_g: 9.4
-    sugar_g: 10.8
-    sodium_mg: 1471
-    availableCarb_g: 82.8
+    fiber_g: 9.6
+    sugar_g: 10.5
+    sodium_mg: 1039
+    availableCarb_g: 82.7
   glycemic:
     gi: 62
-    gl: 52
+    gl: 51
     giBand: medium
     glBand: high
     glBasis: meal
@@ -162,19 +162,19 @@ nutrition:
     measuredGiPct: 78
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
     coverage: 0.96
   inflammation:
-    score: -0.7
+    score: -0.8
     band: mildly-anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.43
   balance:
     score: 6
     band: moderate
-    nrf: 33.8
+    nrf: 36.3
     version: NRF9.3
   processing:
     minimallyProcessedPct: 65
@@ -184,7 +184,6 @@ nutrition:
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
-    - MEXT Standard Tables of Food Composition in Japan 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

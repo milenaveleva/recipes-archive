@@ -101,14 +101,14 @@ ingredients:
     fdcId: 173469
     matchConfidence: high
     cooking: raw
-  - raw: 3 tbsp soy sauce
+  - raw: 3 tbsp reduced-salt soy sauce
     group: For the dressing
     quantity: 3
     unit: tbsp
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 48
     milliliters: 44.3604
-    fdcId: 174277
+    fdcId: 172473
     matchConfidence: high
     cooking: raw
   - raw: 1 tbsp fish sauce
@@ -170,16 +170,16 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 631
-    energyKj: 2640
-    protein_g: 33.8
-    fat_g: 23.9
+    energyKcal: 632
+    energyKj: 2644
+    protein_g: 34
+    fat_g: 23.8
     satFat_g: 3.5
-    carbs_g: 79
+    carbs_g: 79.1
     fiber_g: 11.1
     sugar_g: 16.2
-    sodium_mg: 2151
-    availableCarb_g: 67.9
+    sodium_mg: 1698
+    availableCarb_g: 68.1
   glycemic:
     gi: 48
     gl: 33
@@ -190,7 +190,7 @@ nutrition:
     measuredGiPct: 88
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
     coverage: 1
@@ -200,12 +200,12 @@ nutrition:
     method: fii v5
     aromaticAdjustment: -0.33
   balance:
-    score: 4
-    band: low
-    nrf: 22
+    score: 5
+    band: moderate
+    nrf: 25.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 97.5
+    minimallyProcessedPct: 97.3
     ultraProcessedPct: 0
     band: minimally-processed
     method: NOVA (energy-weighted)

@@ -68,7 +68,8 @@ export type IssueCode =
   | 'OLIVE_OIL_UNIT'
   | 'EGG_COUNT'
   | 'JUICED_WHOLE_FOOD'
-  | 'GINGER_UNIT';
+  | 'GINGER_UNIT'
+  | 'SOY_SAUCE_SALT';
 
 export interface Issue {
   code: IssueCode;

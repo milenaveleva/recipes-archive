@@ -45,14 +45,14 @@ ingredients:
     fdcId: 169997
     matchConfidence: high
     cooking: fried
-  - raw: 1 tbsp soy sauce
+  - raw: 1 tbsp reduced-salt soy sauce
     group: For the shrimp cakes
     quantity: 1
     unit: tbsp
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 16
     milliliters: 14.7868
-    fdcId: 174277
+    fdcId: 172473
     matchConfidence: high
     cooking: fried
   - raw: 1 tsp sesame oil
@@ -139,14 +139,14 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 880
-    energyKj: 3681
-    protein_g: 60.1
+    energyKj: 3682
+    protein_g: 60.2
     fat_g: 25.7
     satFat_g: 3.9
-    carbs_g: 103
+    carbs_g: 103.1
     fiber_g: 8.6
     sugar_g: 9.8
-    sodium_mg: 1460
+    sodium_mg: 1309
     availableCarb_g: 94.4
   glycemic:
     gi: 63
@@ -170,10 +170,10 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 29.7
+    nrf: 30.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 78.6
+    minimallyProcessedPct: 78.5
     ultraProcessedPct: 21
     band: minimally-processed
     method: NOVA (energy-weighted)

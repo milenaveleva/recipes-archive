@@ -48,13 +48,13 @@ ingredients:
     fdcId: 169230
     matchConfidence: high
     cooking: fried
-  - raw: 45 ml soy sauce
+  - raw: 45 ml reduced-salt soy sauce
     quantity: 45
     unit: ml
-    item: soy sauce
+    item: reduced-salt soy sauce
     grams: 48
     milliliters: 45
-    fdcId: 81017008
+    fdcId: 172473
     matchConfidence: medium
     cooking: fried
   - raw: 15 ml sesame oil
@@ -103,26 +103,26 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 895
-    energyKj: 3746
-    protein_g: 44.1
-    fat_g: 43.4
+    energyKj: 3743
+    protein_g: 44.9
+    fat_g: 43.5
     satFat_g: 5.8
     carbs_g: 89.6
-    fiber_g: 9.4
-    sugar_g: 2.2
-    sodium_mg: 1554
-    availableCarb_g: 80.2
+    fiber_g: 9.6
+    sugar_g: 1.7
+    sodium_mg: 906
+    availableCarb_g: 80
   glycemic:
-    gi: 62
-    gl: 50
+    gi: 61
+    gl: 49
     giBand: medium
     glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 72
+    measuredGiPct: 73
   nutriScore:
     grade: B
-    points: 2
+    points: 1
     category: general
     version: "2023"
     coverage: 1
@@ -134,17 +134,16 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 34.6
+    nrf: 38.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 66.2
+    minimallyProcessedPct: 66.3
     ultraProcessedPct: 0
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
-    - MEXT Standard Tables of Food Composition in Japan 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
