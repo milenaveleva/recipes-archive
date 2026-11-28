@@ -14,7 +14,7 @@ prepTime: PT10M
 cookTime: PT1H35M
 totalTime: PT1H45M
 cuisine: Middle Eastern
-course: Appetizer
+course: Sauce
 lists:
   - Kifli favourites
 ingredients:
