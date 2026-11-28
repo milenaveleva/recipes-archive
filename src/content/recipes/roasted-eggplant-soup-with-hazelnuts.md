@@ -75,7 +75,7 @@ ingredients:
     note: unsweetened
     grams: 515
     milliliters: 500
-    fdcId: 2257046
+    fdcId: 9000103
     matchConfidence: high
     cooking: boiled
   - raw: 2 tbsp fresh parsley, chopped
@@ -146,9 +146,9 @@ nutrition:
     method: fii v5
     aromaticAdjustment: -0.28
   balance:
-    score: 5
-    band: moderate
-    nrf: 24
+    score: 4
+    band: low
+    nrf: 20.4
     version: NRF9.3
   processing:
     minimallyProcessedPct: 87.4

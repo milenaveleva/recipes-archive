@@ -53,7 +53,7 @@ ingredients:
     item: almond milk
     grams: 110.7
     milliliters: 100
-    fdcId: 174832
+    fdcId: 9000101
     matchConfidence: high
     cooking: baked
   - raw: 80 g Medjool dates, pitted
@@ -124,7 +124,7 @@ ingredients:
     item: almond milk
     grams: 44.3
     milliliters: 40
-    fdcId: 174832
+    fdcId: 9000101
     matchConfidence: high
     cooking: raw
   - raw: ¼ tsp vanilla flavouring
@@ -199,7 +199,7 @@ nutrition:
   balance:
     score: 1
     band: poor
-    nrf: -7.4
+    nrf: -9.4
     version: NRF9.3
   processing:
     minimallyProcessedPct: 41.4

@@ -23,7 +23,7 @@ ingredients:
     item: almond drink
     grams: 221.5
     milliliters: 200
-    fdcId: 174832
+    fdcId: 9000101
     matchConfidence: high
     cooking: raw
   - raw: 85 g mango
@@ -89,13 +89,13 @@ nutrition:
     version: "2023"
     coverage: 0.99
   inflammation:
-    score: -0.8
+    score: -0.5
     band: mildly-anti-inflammatory
     method: fii v5
   balance:
-    score: 10
-    band: excellent
-    nrf: 125.3
+    score: 6
+    band: moderate
+    nrf: 40.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 76.4

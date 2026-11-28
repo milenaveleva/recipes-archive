@@ -69,7 +69,8 @@ export type IssueCode =
   | 'EGG_COUNT'
   | 'JUICED_WHOLE_FOOD'
   | 'GINGER_UNIT'
-  | 'SOY_SAUCE_SALT';
+  | 'SOY_SAUCE_SALT'
+  | 'FORTIFIED_PLANT_MILK';
 
 export interface Issue {
   code: IssueCode;

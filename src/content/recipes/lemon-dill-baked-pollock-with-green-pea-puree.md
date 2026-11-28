@@ -49,7 +49,7 @@ ingredients:
     item: plant-based cooking cream
     note: to taste
     grams: 100
-    fdcId: 1999630
+    fdcId: 9000102
     matchConfidence: high
     cooking: raw
     proxyOk: true
@@ -147,7 +147,7 @@ nutrition:
   balance:
     score: 7
     band: high
-    nrf: 48.9
+    nrf: 47.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 96.8

@@ -31,7 +31,7 @@ ingredients:
     item: almond milk
     grams: 260.2
     milliliters: 235
-    fdcId: 174832
+    fdcId: 9000101
     matchConfidence: high
     cooking: raw
   - raw: 1 tsp honey
@@ -87,13 +87,13 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -1.9
+    score: -1.4
     band: anti-inflammatory
     method: fii v5
   balance:
-    score: 9
-    band: excellent
-    nrf: 82.4
+    score: 7
+    band: high
+    nrf: 43
     version: NRF9.3
   processing:
     minimallyProcessedPct: 89

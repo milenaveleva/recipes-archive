@@ -30,7 +30,7 @@ ingredients:
     note: unsweetened
     grams: 60
     milliliters: 59.147
-    fdcId: 1999631
+    fdcId: 9000101
     matchConfidence: high
     cooking: fried
   - raw: 1 ripe banana, plus extra slices to serve
@@ -93,15 +93,15 @@ ingredients:
 nutrition:
   perServing:
     energyKcal: 536
-    energyKj: 2242
-    protein_g: 13.9
-    fat_g: 6.5
+    energyKj: 2243
+    protein_g: 13.8
+    fat_g: 6.3
     satFat_g: 1.3
-    carbs_g: 108.3
-    fiber_g: 13.2
-    sugar_g: 33.4
-    sodium_mg: 39
-    availableCarb_g: 95.1
+    carbs_g: 108.9
+    fiber_g: 13.3
+    sugar_g: 33.8
+    sodium_mg: 46
+    availableCarb_g: 95.6
   glycemic:
     gi: 57
     gl: 54
@@ -112,22 +112,22 @@ nutrition:
     measuredGiPct: 99
   nutriScore:
     grade: B
-    points: 1
+    points: 2
     category: general
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.1
+    score: 0.2
     band: neutral
     method: fii v5
   balance:
     score: 4
     band: low
-    nrf: 22.4
+    nrf: 18
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 98.4
-    ultraProcessedPct: 1.6
+    minimallyProcessedPct: 98.3
+    ultraProcessedPct: 1.7
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-26"

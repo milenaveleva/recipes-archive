@@ -34,7 +34,7 @@ ingredients:
     note: unsweetened
     grams: 1030
     milliliters: 1000
-    fdcId: 2257046
+    fdcId: 9000103
     matchConfidence: high
     cooking: boiled
   - raw: 320 g whole-wheat elbow macaroni, dry
@@ -107,7 +107,7 @@ nutrition:
   balance:
     score: 2
     band: poor
-    nrf: 7
+    nrf: 2
     version: NRF9.3
   processing:
     minimallyProcessedPct: 40

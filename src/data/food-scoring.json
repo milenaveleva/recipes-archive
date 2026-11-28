@@ -2370,5 +2370,8 @@
   "82011214": { "gi": 15, "giSource": "non-starchy / minor carb source (nominal)", "giConfidence": "low" },
   "82018905": { "gi": 69, "giSource": "Atkinson 2021 (Oat milk, calcium enriched, Vitasoy® (National Foods Ltd, Au)", "giConfidence": "medium" },
   "82019693": { "gi": 15, "giSource": "non-starchy / minor carb source (nominal)", "giConfidence": "low" },
-  "82025510": { "gi": 59, "giSource": "predicted (sugar + CEREAL GRAINS starch proxy)", "giConfidence": "predicted" }
+  "82025510": { "gi": 59, "giSource": "predicted (sugar + CEREAL GRAINS starch proxy)", "giConfidence": "predicted" },
+  "9000101": { "gi": 15, "giSource": "non-starchy / minor carb source (nominal)", "giConfidence": "low" },
+  "9000102": { "gi": 15, "giSource": "non-starchy / minor carb source (nominal)", "giConfidence": "low" },
+  "9000103": { "gi": 69, "giSource": "Atkinson 2021 (Oat milk, calcium enriched, Vitasoy® (National Foods Ltd, Au)", "giConfidence": "medium" }
 }

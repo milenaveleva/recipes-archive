@@ -75,7 +75,7 @@ ingredients:
     note: unsweetened
     grams: 258
     milliliters: 250
-    fdcId: 2257046
+    fdcId: 9000103
     matchConfidence: high
     cooking: raw
   - raw: 2 tbsp nutritional yeast flakes
@@ -139,7 +139,7 @@ nutrition:
   balance:
     score: 6
     band: moderate
-    nrf: 33
+    nrf: 31.2
     version: NRF9.3
   processing:
     minimallyProcessedPct: 93.6

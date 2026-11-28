@@ -91,7 +91,7 @@ ingredients:
     note: unsweetened
     grams: 515
     milliliters: 500
-    fdcId: 2257046
+    fdcId: 9000103
     matchConfidence: high
     cooking: boiled
   - raw: 250 g plant-based cooking cream
@@ -154,7 +154,7 @@ nutrition:
   balance:
     score: 7
     band: high
-    nrf: 46.9
+    nrf: 43.1
     version: NRF9.3
   processing:
     minimallyProcessedPct: 31.7

@@ -53,7 +53,7 @@ ingredients:
     note: unsweetened
     grams: 166.1
     milliliters: 150
-    fdcId: 174832
+    fdcId: 9000101
     matchConfidence: high
     cooking: raw
   - raw: 30 g coconut flour
@@ -109,7 +109,7 @@ ingredients:
     item: almond milk
     note: unsweetened
     grams: 80
-    fdcId: 174832
+    fdcId: 9000101
     matchConfidence: high
     cooking: boiled
   - raw: 100 g plant-based vanilla dessert
@@ -118,7 +118,7 @@ ingredients:
     unit: g
     item: plant-based vanilla dessert
     grams: 100
-    fdcId: 1999630
+    fdcId: 9000102
     matchConfidence: high
     cooking: boiled
     proxyOk: true
@@ -166,13 +166,13 @@ nutrition:
     version: "2023"
     coverage: 0.83
   inflammation:
-    score: -1.1
-    band: anti-inflammatory
+    score: -0.9
+    band: mildly-anti-inflammatory
     method: fii v5
   balance:
-    score: 6
+    score: 5
     band: moderate
-    nrf: 35.6
+    nrf: 28.6
     version: NRF9.3
   processing:
     minimallyProcessedPct: 93.5

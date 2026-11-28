@@ -22,7 +22,7 @@ ingredients:
     unit: g
     item: almond milk
     grams: 120
-    fdcId: 174832
+    fdcId: 9000101
     matchConfidence: high
     cooking: raw
   - raw: 45 g fine rolled oats
@@ -120,13 +120,13 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -1
-    band: anti-inflammatory
+    score: -0.7
+    band: mildly-anti-inflammatory
     method: fii v5
   balance:
-    score: 7
-    band: high
-    nrf: 47.5
+    score: 6
+    band: moderate
+    nrf: 36.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 96.9

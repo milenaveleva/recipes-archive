@@ -72,7 +72,7 @@ ingredients:
     item: almond milk
     grams: 166.1
     milliliters: 150
-    fdcId: 174832
+    fdcId: 9000101
     matchConfidence: high
     cooking: boiled
   - raw: 1 leek
@@ -188,14 +188,14 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -1.2
+    score: -1
     band: anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.27
   balance:
     score: 7
     band: high
-    nrf: 51.7
+    nrf: 45.1
     version: NRF9.3
   processing:
     minimallyProcessedPct: 78.1

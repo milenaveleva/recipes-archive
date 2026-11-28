@@ -24,7 +24,7 @@ ingredients:
     note: unsweetened
     grams: 124
     milliliters: 120
-    fdcId: 2257046
+    fdcId: 9000103
     matchConfidence: high
     cooking: boiled
   - raw: 1½ tsp honey
@@ -112,9 +112,9 @@ nutrition:
     band: neutral
     method: fii v5
   balance:
-    score: 2
+    score: 1
     band: poor
-    nrf: 5.7
+    nrf: -12.2
     version: NRF9.3
   processing:
     minimallyProcessedPct: 38.1

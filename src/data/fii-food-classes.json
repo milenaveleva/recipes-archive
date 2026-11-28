@@ -10664,6 +10664,20 @@
    "fsRule": "last-resort",
    "trans": "industrial"
   },
+  "9000101": {
+   "fs": 0,
+   "fsRule": "plant-milk-unsweetened"
+  },
+  "9000102": {
+   "fs": 0,
+   "fsRule": "intact-plant",
+   "matrix": "soy",
+   "age": "starch"
+  },
+  "9000103": {
+   "fs": 0,
+   "fsRule": "plant-milk-unsweetened"
+  },
   "81001001": {
    "fs": 0.5,
    "fsRule": "step5:grain",

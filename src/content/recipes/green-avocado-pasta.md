@@ -71,7 +71,7 @@ ingredients:
     note: unsweetened
     grams: 206
     milliliters: 200
-    fdcId: 2257046
+    fdcId: 9000103
     matchConfidence: high
     cooking: raw
   - raw: 15 g fresh parsley
@@ -141,9 +141,9 @@ nutrition:
     band: anti-inflammatory
     method: fii v5
   balance:
-    score: 7
-    band: high
-    nrf: 41.2
+    score: 6
+    band: moderate
+    nrf: 39.3
     version: NRF9.3
   processing:
     minimallyProcessedPct: 76.5

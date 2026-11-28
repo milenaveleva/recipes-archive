@@ -33,7 +33,7 @@ ingredients:
     note: unsweetened
     grams: 412
     milliliters: 400
-    fdcId: 2257046
+    fdcId: 9000103
     matchConfidence: high
     cooking: raw
   - raw: cinnamon, a little
@@ -81,9 +81,9 @@ nutrition:
     band: neutral
     method: fii v5
   balance:
-    score: 4
-    band: low
-    nrf: 19.4
+    score: 2
+    band: poor
+    nrf: 5.8
     version: NRF9.3
   processing:
     minimallyProcessedPct: 52.9

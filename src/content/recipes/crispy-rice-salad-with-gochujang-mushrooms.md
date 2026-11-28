@@ -154,7 +154,7 @@ ingredients:
     note: unsweetened
     grams: 60
     milliliters: 59.147
-    fdcId: 82018905
+    fdcId: 9000103
     matchConfidence: high
     cooking: raw
   - raw: 1 tsp gochujang paste
@@ -213,16 +213,16 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 884
-    energyKj: 3698
-    protein_g: 32.6
-    fat_g: 36
+    energyKcal: 886
+    energyKj: 3705
+    protein_g: 32.8
+    fat_g: 36.5
     satFat_g: 5.3
-    carbs_g: 120.5
+    carbs_g: 119.7
     fiber_g: 22.8
-    sugar_g: 25.2
-    sodium_mg: 687
-    availableCarb_g: 97.7
+    sugar_g: 24.4
+    sodium_mg: 692
+    availableCarb_g: 96.9
   glycemic:
     gi: 56
     gl: 54
@@ -230,7 +230,7 @@ nutrition:
     glBand: high
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 75
+    measuredGiPct: 74
   nutriScore:
     grade: A
     points: 0
@@ -245,18 +245,17 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 29.5
+    nrf: 29.6
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 88
-    ultraProcessedPct: 1.4
+    minimallyProcessedPct: 87.8
+    ultraProcessedPct: 1.6
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-06-30"
   dataSources:
     - USDA FoodData Central
     - MEXT Standard Tables of Food Composition in Japan 2020
-    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

@@ -75,24 +75,24 @@ ingredients:
     note: unsweetened, as needed
     grams: 60
     milliliters: 60
-    fdcId: 82018905
+    fdcId: 9000103
     matchConfidence: high
     cooking: boiled
 nutrition:
   perServing:
     energyKcal: 462
-    energyKj: 1931
-    protein_g: 8.5
-    fat_g: 31.8
+    energyKj: 1935
+    protein_g: 8.6
+    fat_g: 32.1
     satFat_g: 20.5
-    carbs_g: 40.6
+    carbs_g: 40.2
     fiber_g: 3.4
-    sugar_g: 3.8
-    sodium_mg: 20
-    availableCarb_g: 37.2
+    sugar_g: 3.4
+    sodium_mg: 22
+    availableCarb_g: 36.8
   glycemic:
     gi: 61
-    gl: 23
+    gl: 22
     giBand: medium
     glBand: high
     glBasis: portion
@@ -103,7 +103,7 @@ nutrition:
     points: 9
     category: general
     version: "2023"
-    coverage: 0.55
+    coverage: 0.61
   inflammation:
     score: -0.2
     band: neutral
@@ -111,17 +111,16 @@ nutrition:
   balance:
     score: 2
     band: poor
-    nrf: 4.5
+    nrf: 3.4
     version: NRF9.3
   processing:
     minimallyProcessedPct: 36.9
-    ultraProcessedPct: 1.4
+    ultraProcessedPct: 1.6
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
-    - ANSES Ciqual French food composition table 2020
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023

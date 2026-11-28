@@ -26,5 +26,8 @@
   "171595": { "nova": 4, "reason": "tomato chili sauce, bottled — ketchup-type formulation (glucose-fructose syrup, flavourings), like catsup" },
   "321358": { "nova": 3, "reason": "hummus, commercial — chickpeas preserved with oil, tahini, salt and acid (processed); the rules read it as a whole legume" },
   "171606": { "nova": 3, "reason": "fish broth — ready-to-serve processed cooking liquid, as the vegetable broth" },
-  "172802": { "nova": 3, "reason": "wonton/egg-roll wrappers — flour-egg-salt dough sheets (processed, like fresh pasta with salt)" }
+  "172802": { "nova": 3, "reason": "wonton/egg-roll wrappers — flour-egg-salt dough sheets (processed, like fresh pasta with salt)" },
+  "9000101": { "nova": 4, "reason": "almond drink, unsweetened, unfortified — formulated plant-milk substitute (ultra-processed), as USDA 174832" },
+  "9000102": { "nova": 4, "reason": "soy drink, unsweetened, unfortified — formulated plant-milk substitute (ultra-processed), as USDA 1999630" },
+  "9000103": { "nova": 4, "reason": "oat drink, unsweetened, unfortified — formulated plant-milk substitute (ultra-processed), as USDA 2257046" }
 }

@@ -47,7 +47,7 @@ ingredients:
     note: unsweetened
     grams: 258
     milliliters: 250
-    fdcId: 2257046
+    fdcId: 9000103
     matchConfidence: high
     cooking: baked
   - raw: 80 g whole-wheat flour
@@ -136,7 +136,7 @@ nutrition:
   balance:
     score: 7
     band: high
-    nrf: 48.5
+    nrf: 46.1
     version: NRF9.3
   processing:
     minimallyProcessedPct: 64.1

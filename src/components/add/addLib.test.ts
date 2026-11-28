@@ -664,7 +664,7 @@ describe('normalizeRows (house-rule auto-fixes on /add import, paste and manual 
     ]);
     expect(fixed.rows[0].selectedFdcId).toBe(171413);
     expect(fixed.rows[0].grams).toBe(27);
-    expect(fixed.rows[1].selectedFdcId).toBe(82018905);
+    expect(fixed.rows[1].selectedFdcId).toBe(9000103); // the unfortified house oat milk
     expect(fixed.rows[6]).toMatchObject({ selectedFdcId: 173756, grams: 82, cooking: 'boiled' });
     expect(fixed.instructions.split('\n')).toEqual([
       expect.stringMatching(/^Soak the chickpeas/),

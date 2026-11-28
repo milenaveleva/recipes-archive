@@ -58,7 +58,7 @@ ingredients:
     note: unsweetened
     grams: 138.4
     milliliters: 125
-    fdcId: 174832
+    fdcId: 9000101
     matchConfidence: high
     cooking: boiled
   - raw: 15 ml lemon juice
@@ -135,14 +135,14 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.6
+    score: -0.5
     band: mildly-anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.33
   balance:
     score: 7
     band: high
-    nrf: 46.1
+    nrf: 41.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 98.7

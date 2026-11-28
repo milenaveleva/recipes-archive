@@ -28,7 +28,7 @@ ingredients:
     note: unsweetened
     grams: 360
     milliliters: 354.882
-    fdcId: 174832
+    fdcId: 9000101
     matchConfidence: high
     cooking: raw
   - raw: 1/2 tsp chipotle seasoning
@@ -138,14 +138,14 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -1.7
+    score: -1.5
     band: anti-inflammatory
     method: fii v5
     aromaticAdjustment: -0.21
   balance:
-    score: 10
+    score: 9
     band: excellent
-    nrf: 149.3
+    nrf: 94.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 73.9

@@ -42,7 +42,7 @@ ingredients:
     note: unsweetened, room temperature
     grams: 180
     milliliters: 175
-    fdcId: 82018905
+    fdcId: 9000103
     matchConfidence: high
     cooking: raw
   - raw: 6 pitted dates
@@ -96,30 +96,30 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 380
-    energyKj: 1589
-    protein_g: 4.9
-    fat_g: 22.4
-    satFat_g: 8.6
-    carbs_g: 44
+    energyKcal: 382
+    energyKj: 1600
+    protein_g: 5.3
+    fat_g: 23.2
+    satFat_g: 8.5
+    carbs_g: 42.8
     fiber_g: 9.8
-    sugar_g: 29.1
-    sodium_mg: 20
-    availableCarb_g: 34.3
+    sugar_g: 27.9
+    sodium_mg: 27
+    availableCarb_g: 33.1
   glycemic:
-    gi: 51
+    gi: 50
     gl: 17
     giBand: low
     glBand: medium
     glBasis: portion
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
-    measuredGiPct: 82
+    measuredGiPct: 81
   nutriScore:
     grade: C
-    points: 4
+    points: 3
     category: general
     version: "2023"
-    coverage: 0.79
+    coverage: 0.74
   inflammation:
     score: 0.1
     band: neutral
@@ -127,17 +127,16 @@ nutrition:
   balance:
     score: 3
     band: low
-    nrf: 15.4
+    nrf: 12.8
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 50.9
-    ultraProcessedPct: 49.1
+    minimallyProcessedPct: 50.5
+    ultraProcessedPct: 49.5
     band: highly-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
-    - ANSES Ciqual French food composition table 2020
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Inflammatory potential (estimate; pooled composition per 100 kcal); USDA Flavonoid Database R3.3; Phenol-Explorer

@@ -50,7 +50,7 @@ ingredients:
     note: unsweetened, enough for a creamy texture
     grams: 103
     milliliters: 100
-    fdcId: 82018905
+    fdcId: 9000103
     matchConfidence: high
     cooking: raw
   - raw: a few nuts, finely chopped (walnuts, hazelnuts, almonds, etc.)
@@ -79,48 +79,47 @@ ingredients:
     cooking: raw
 nutrition:
   perServing:
-    energyKcal: 426
-    energyKj: 1783
-    protein_g: 12
-    fat_g: 22.1
-    satFat_g: 5.8
-    carbs_g: 49
+    energyKcal: 432
+    energyKj: 1808
+    protein_g: 12.9
+    fat_g: 23.8
+    satFat_g: 5.6
+    carbs_g: 46.2
     fiber_g: 11
-    sugar_g: 10.7
-    sodium_mg: 33
-    availableCarb_g: 38
+    sugar_g: 7.9
+    sodium_mg: 49
+    availableCarb_g: 35.2
   glycemic:
-    gi: 54
-    gl: 20
+    gi: 52
+    gl: 18
     giBand: low
-    glBand: medium
+    glBand: low
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 96
   nutriScore:
-    grade: B
-    points: 2
+    grade: A
+    points: 0
     category: general
     version: "2023"
     coverage: 0.59
   inflammation:
-    score: -0.8
+    score: -0.7
     band: mildly-anti-inflammatory
     method: fii v5
   balance:
     score: 6
     band: moderate
-    nrf: 37.7
+    nrf: 34.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 75.3
-    ultraProcessedPct: 10.3
+    minimallyProcessedPct: 74.3
+    ultraProcessedPct: 11.5
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-14"
   dataSources:
     - USDA FoodData Central
-    - ANSES Ciqual French food composition table 2020
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
     - Inflammatory potential (estimate; pooled composition per 100 kcal); USDA Flavonoid Database R3.3; Phenol-Explorer

@@ -36,7 +36,7 @@ ingredients:
     note: unsweetened
     grams: 82
     milliliters: 80
-    fdcId: 82018905
+    fdcId: 9000103
     matchConfidence: high
     cooking: boiled
   - raw: 30 g Parmesan, finely grated
@@ -122,16 +122,16 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 548
-    energyKj: 2292
-    protein_g: 16.5
-    fat_g: 23.9
-    satFat_g: 4.1
-    carbs_g: 73.1
+    energyKcal: 549
+    energyKj: 2297
+    protein_g: 16.6
+    fat_g: 24.2
+    satFat_g: 4
+    carbs_g: 72.5
     fiber_g: 8.5
-    sugar_g: 5.2
-    sodium_mg: 354
-    availableCarb_g: 64.6
+    sugar_g: 4.6
+    sodium_mg: 357
+    availableCarb_g: 64
   glycemic:
     gi: 51
     gl: 33
@@ -145,7 +145,7 @@ nutrition:
     points: 2
     category: general
     version: "2023"
-    coverage: 0.83
+    coverage: 0.89
   inflammation:
     score: -0.6
     band: mildly-anti-inflammatory
@@ -157,8 +157,8 @@ nutrition:
     nrf: 23.1
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 82.1
-    ultraProcessedPct: 12.1
+    minimallyProcessedPct: 82
+    ultraProcessedPct: 12.3
     band: minimally-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

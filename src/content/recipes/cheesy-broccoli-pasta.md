@@ -90,7 +90,7 @@ ingredients:
     note: unsweetened
     grams: 103
     milliliters: 100
-    fdcId: 2257046
+    fdcId: 9000103
     matchConfidence: high
     cooking: boiled
   - raw: 150 g cheddar cheese
@@ -162,7 +162,7 @@ nutrition:
   balance:
     score: 5
     band: moderate
-    nrf: 28.5
+    nrf: 27.9
     version: NRF9.3
   processing:
     minimallyProcessedPct: 55.5

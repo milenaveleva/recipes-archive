@@ -65,7 +65,7 @@ ingredients:
     note: unsweetened
     grams: 206
     milliliters: 200
-    fdcId: 2257046
+    fdcId: 9000103
     matchConfidence: high
     cooking: baked
   - raw: 10 g chives
@@ -126,9 +126,9 @@ nutrition:
     band: mildly-anti-inflammatory
     method: fii v5
   balance:
-    score: 7
-    band: high
-    nrf: 41.7
+    score: 6
+    band: moderate
+    nrf: 39.5
     version: NRF9.3
   processing:
     minimallyProcessedPct: 64.9

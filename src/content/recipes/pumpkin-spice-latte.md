@@ -49,7 +49,7 @@ ingredients:
     note: unsweetened
     grams: 155
     milliliters: 150
-    fdcId: 2257046
+    fdcId: 9000103
     matchConfidence: high
     cooking: boiled
 nutrition:
@@ -83,9 +83,9 @@ nutrition:
     band: neutral
     method: fii v5
   balance:
-    score: 9
-    band: excellent
-    nrf: 81.3
+    score: 7
+    band: high
+    nrf: 58.1
     version: NRF9.3
   processing:
     minimallyProcessedPct: 0.9

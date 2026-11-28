@@ -16,6 +16,10 @@ The script downloads both bulk datasets and prunes them to the fields above. Ene
 
 To re-apply the brand filter to the committed file without re-downloading (e.g. after editing the filter, its denylist `usda-exclude.json`, or its keep-list, or to cut a food via `usda-curation-drop.json`), run `node scripts/old/prune-branded.mjs` (`--dry-run` to preview). Both entry points refuse to write if filtering would orphan a `food-scoring.json` entry.
 
+### Unfortified plant milks
+
+The house plant milks carry no added vitamins or minerals, but USDA's unsweetened almond, soy and oat drinks are fortified. `scripts/build-unfortified-plant-milks.mjs` writes three curated records into `custom-foods.json` and appends them to `usda-foods.json`: `9000101` almond, `9000102` soy and `9000103` oat milk, unsweetened and unfortified. Each copies its USDA drink (174832, 1999630, 2257046) and replaces each fortificant (calcium, phosphorus, potassium, vitamins A, D, E and B12, riboflavin) with the content of the drink's own almonds, soybeans or oats: the drink's protein ÷ the source's protein gives its share, the estimate never exceeds the measured value, and a fortificant the drink was not analysed for stays blank. The house rules re-point every fortified plant drink, and the Ciqual oat drink 82018905 (which lacks protein and most micronutrients), to these records (`UNFORTIFIED_PLANT_MILK`, gate `FORTIFIED_PLANT_MILK`).
+
 ### Nutrient gap fills
 
 USDA leaves many fields blank (sugars, fatty-acid fractions, vitamins E and K, choline, polyols…), and a blank field is not a zero, so `scripts/fill-nutrient-gaps.mjs` fills a missing field only with a value of known quality, following the FAO/INFOODS compilation guidelines' preference for analytical data over estimates (Greenfield & Southgate 2003; FAO/INFOODS 2012). Nothing is imputed from a merely similar food: a field with no such value stays missing, so the engine can surface the gap honestly. A measured USDA value is never overwritten. Each filled field is recorded on the food as `gapFill: { field: "<METHOD>:<source>" }`, with one of four methods, tried in this order:

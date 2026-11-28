@@ -75,7 +75,7 @@ ingredients:
     note: unsweetened
     grams: 515
     milliliters: 500
-    fdcId: 82018905
+    fdcId: 9000103
     matchConfidence: high
     cooking: boiled
   - raw: 100 ml plant-based cooking cream
@@ -136,43 +136,43 @@ ingredients:
     cooking: boiled
 nutrition:
   perServing:
-    energyKcal: 703
-    energyKj: 2943
-    protein_g: 33.4
-    fat_g: 31.4
-    satFat_g: 12.6
-    carbs_g: 75.5
+    energyKcal: 711
+    energyKj: 2974
+    protein_g: 34.4
+    fat_g: 33.5
+    satFat_g: 12.3
+    carbs_g: 72
     fiber_g: 8.3
-    sugar_g: 9.5
-    sodium_mg: 837
-    availableCarb_g: 67.2
+    sugar_g: 6
+    sodium_mg: 857
+    availableCarb_g: 63.8
   glycemic:
-    gi: 52
-    gl: 35
+    gi: 51
+    gl: 33
     giBand: low
     glBand: medium
     glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 98
   nutriScore:
-    grade: B
-    points: 2
+    grade: C
+    points: 3
     category: general
     version: "2023"
-    coverage: 0.65
+    coverage: 0.71
   inflammation:
-    score: -0.1
+    score: 0
     band: neutral
     method: fii v5
     aromaticAdjustment: -0.02
   balance:
     score: 3
     band: low
-    nrf: 17.9
+    nrf: 15.4
     version: NRF9.3
   processing:
-    minimallyProcessedPct: 48.9
-    ultraProcessedPct: 15.1
+    minimallyProcessedPct: 48.4
+    ultraProcessedPct: 15.9
     band: moderately-processed
     method: NOVA (energy-weighted)
   computedAt: "2026-11-22"

@@ -24,7 +24,7 @@ ingredients:
     note: unsweetened
     grams: 1030
     milliliters: 1000
-    fdcId: 2257046
+    fdcId: 9000103
     matchConfidence: high
     cooking: raw
   - raw: 4 kiwis
@@ -100,9 +100,9 @@ nutrition:
     band: mildly-anti-inflammatory
     method: fii v5
   balance:
-    score: 6
+    score: 5
     band: moderate
-    nrf: 40.4
+    nrf: 28
     version: NRF9.3
   processing:
     minimallyProcessedPct: 57

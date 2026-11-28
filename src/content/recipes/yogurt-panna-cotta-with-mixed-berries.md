@@ -61,7 +61,7 @@ ingredients:
     note: unsweetened
     grams: 103
     milliliters: 100
-    fdcId: 2257046
+    fdcId: 9000103
     matchConfidence: high
     cooking: boiled
   - raw: 65 ml water
@@ -107,7 +107,7 @@ nutrition:
   balance:
     score: 1
     band: poor
-    nrf: -9.1
+    nrf: -11.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 90.9

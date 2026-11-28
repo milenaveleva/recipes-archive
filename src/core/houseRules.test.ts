@@ -362,3 +362,19 @@ describe('soy sauce is low-sodium soy sauce', () => {
     expect(again.raw).toBe(a.raw);
   });
 });
+
+describe('plant milks are unfortified', () => {
+  it('re-points a fortified plant drink to its unfortified record', async () => {
+    const { normalizeIngredient, HOUSE_FOODS } = await import('./houseRules');
+    expect(normalizeIngredient({ raw: '250 ml unsweetened almond milk', fdcId: 174832, grams: 250 }).value.fdcId).toBe(HOUSE_FOODS.almondMilk);
+    expect(normalizeIngredient({ raw: '200 ml unsweetened oat milk', fdcId: 2257046, grams: 200 }).value.fdcId).toBe(HOUSE_FOODS.oatMilk);    expect(normalizeIngredient({ raw: '200 ml soy milk', fdcId: 1999630, grams: 200 }).value.fdcId).toBe(HOUSE_FOODS.soyMilk);
+    // The re-point keeps a reviewed proxy flag: the food is the same, only unfortified.
+    expect(normalizeIngredient({ raw: '100 ml plant-based cooking cream', fdcId: 1999630, grams: 100, proxyOk: true }).value.proxyOk).toBe(true);
+  });
+
+  it('warns about a plant drink left on a fortified record', async () => {
+    const { checkHouseRules } = await import('./houseRules');
+    const issues = checkHouseRules({ ingredients: [{ raw: '250 ml almond milk', item: 'almond milk', fdcId: 174832, grams: 250 }] } as never, new Map());
+    expect(issues.map((i) => i.code)).toContain('FORTIFIED_PLANT_MILK');
+  });
+});

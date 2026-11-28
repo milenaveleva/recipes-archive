@@ -25,7 +25,7 @@ ingredients:
     note: unsweetened
     grams: 206
     milliliters: 200
-    fdcId: 2257046
+    fdcId: 9000103
     matchConfidence: high
     cooking: boiled
   - raw: 125 ml black coffee
@@ -112,9 +112,9 @@ nutrition:
     method: fii v5
     aromaticAdjustment: -0.16
   balance:
-    score: 6
-    band: moderate
-    nrf: 35.1
+    score: 3
+    band: low
+    nrf: 15.7
     version: NRF9.3
   processing:
     minimallyProcessedPct: 32.8

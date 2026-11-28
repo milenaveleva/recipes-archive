@@ -45,7 +45,7 @@ ingredients:
     note: unsweetened, to taste
     grams: 30
     milliliters: 30
-    fdcId: 2257046
+    fdcId: 9000103
     matchConfidence: high
     cooking: raw
   - raw: 500 g ice
@@ -90,7 +90,7 @@ nutrition:
   balance:
     score: 10
     band: excellent
-    nrf: 154.3
+    nrf: 135
     version: NRF9.3
   processing:
     minimallyProcessedPct: 32.9

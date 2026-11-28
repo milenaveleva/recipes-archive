@@ -20,8 +20,9 @@
  *   - PORTION_80 [error]: a main course's single pasta/grain line is not 80 g dry per serving.
  *   - DRINK_WATER [error; warn for a drink with no liquid]: in a drink the water and ice
  *     that are drunk count, and tea leaves / coffee are the brewed record.
- *   - OLIVE_OIL_UNIT, GINGER_UNIT, SOY_SAUCE_SALT, EGG_COUNT [warn]: olive oil stored in another unit than tbsp/tsp,
- *     soy sauce or tamari that is not low-sodium soy sauce,
+ *   - OLIVE_OIL_UNIT, GINGER_UNIT, SOY_SAUCE_SALT, FORTIFIED_PLANT_MILK, EGG_COUNT [warn]: olive oil stored in another unit than tbsp/tsp,
+ *     soy sauce or tamari that is not low-sodium soy sauce, FORTIFIED_PLANT_MILK a plant drink on a
+ *     fortified record,
  *     fresh ginger in another unit than grams, eggs stored
  *     by weight or with a size word ("large").
  *   - DUPLICATE_RECIPE [warn]: `findDuplicateRecipes`, which needs the whole corpus: a near-identical
@@ -292,6 +293,9 @@ export function checkHouseRules(recipe: ValidatableRecipe, foodById: Map<number,
         out.push({ severity: 'warn', code: 'OLIVE_OIL_UNIT', ingredientIndex: idx, message: `${label(ing)}: olive oil is stored in tbsp/tsp` });
       }
     }
+    if (ing.fdcId != null && UNFORTIFIED_PLANT_MILK[ing.fdcId] != null) {
+      out.push({ severity: 'warn', code: 'FORTIFIED_PLANT_MILK', ingredientIndex: idx, message: `${label(ing)}: plant milks are unfortified (fdcId ${UNFORTIFIED_PLANT_MILK[ing.fdcId]})` });
+    }
     if (isSoySauce(item) && (ing.fdcId !== HOUSE_FOODS.lowSodiumSoySauce || !/^low-sodium soy sauce$/i.test(item.trim()))) {
       out.push({ severity: 'warn', code: 'SOY_SAUCE_SALT', ingredientIndex: idx, message: `${label(ing)}: soy sauce is low-sodium soy sauce (fdcId ${HOUSE_FOODS.lowSodiumSoySauce})` });
     }
@@ -518,7 +522,7 @@ export interface NormalizeResult<T> {
 /** Foods the auto-fixes pin. */
 export const HOUSE_FOODS = {
   oliveOil: 171413,
-  oatMilk: 82018905,
+  oatMilk: 9000103,
   plantCream: 82011214,
   plantSourCream: 82019693,
   greekYogurt: 171304,
@@ -536,7 +540,23 @@ export const HOUSE_FOODS = {
   lemonJuice: 167747,
   redWineVinegar: 172240,
   lowSodiumSoySauce: 172473,
+  almondMilk: 9000101,
+  soyMilk: 9000102,
 } as const;
+
+/**
+ * Fortified USDA plant drinks → the unfortified record the house milks match: the house plant
+ * milks carry no added vitamins or minerals (scripts/build-unfortified-plant-milks.mjs).
+ * 82018905, the Ciqual oat drink, maps too: its record lacks protein and most micronutrients.
+ */
+export const UNFORTIFIED_PLANT_MILK: Readonly<Record<number, number>> = {
+  174832: HOUSE_FOODS.almondMilk,
+  1999631: HOUSE_FOODS.almondMilk,
+  2257045: HOUSE_FOODS.almondMilk,
+  1999630: HOUSE_FOODS.soyMilk,
+  2257046: HOUSE_FOODS.oatMilk,
+  82018905: HOUSE_FOODS.oatMilk,
+};
 
 /** Dry/raw record and its cooked or canned counterpart, for converting a cooked staple to dry by dry matter. */
 interface StapleRecord {
@@ -809,6 +829,12 @@ export function normalizeIngredient(
         p = parseIngredientLine(cur.raw);
       }
     }
+  }
+
+  // A fortified plant drink → its unfortified record.
+  if (cur.fdcId != null && UNFORTIFIED_PLANT_MILK[cur.fdcId] != null) {
+    // Same food without its fortificants, so a reviewed proxyOk carries over.
+    set({ fdcId: UNFORTIFIED_PLANT_MILK[cur.fdcId] }, 'plant milk → unfortified record');
   }
 
   // Soy sauce and tamari → low-sodium soy sauce (≈ 35 % less sodium), on its record.
