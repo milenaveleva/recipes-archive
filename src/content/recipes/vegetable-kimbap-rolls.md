@@ -13,7 +13,7 @@ prepTime: PT20M
 cookTime: PT15M
 totalTime: PT35M
 cuisine: Korean
-course: Snack
+course: Appetizer
 lists:
   - Kifli favourites
 ingredients:

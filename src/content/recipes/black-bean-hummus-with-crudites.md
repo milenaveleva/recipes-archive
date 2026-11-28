@@ -10,7 +10,7 @@ servings: 4
 cookTime: PT45M
 totalTime: PT45M
 cuisine: Mexican
-course: Snack
+course: Sauce
 lists:
   - Medical Medium
 ingredients:

@@ -14,7 +14,7 @@ prepTime: PT15M
 cookTime: PT35M
 totalTime: PT50M
 cuisine: American
-course: Snack
+course: Appetizer
 lists:
   - Kifli favourites
 ingredients:

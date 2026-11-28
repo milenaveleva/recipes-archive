@@ -10,7 +10,7 @@ servings: 8
 cookTime: PT45M
 totalTime: PT45M
 cuisine: Indian
-course: Snack
+course: Side Dish
 lists:
   - Medical Medium
 ingredients:
