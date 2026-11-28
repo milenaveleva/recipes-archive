@@ -50,6 +50,9 @@ const PROXY_CHAIN = {
 const USDA_NUTRIENTS = {
   vitA_ug: ['392', '318'], // vitamin A RE, else IU
   vitC_mg: ['401'],
+  betaCryptoxanthin_ug: ['334'],
+  lycopene_ug: ['337'],
+  luteinZeaxanthin_ug: ['338'],
   thiamin_mg: ['404'],
   riboflavin_mg: ['405'],
   niacin_mg: ['406'],

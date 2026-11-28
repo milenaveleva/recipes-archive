@@ -23,6 +23,7 @@ import { parse as parseYaml } from 'yaml';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const log = (...a) => process.stderr.write(a.join(' ') + '\n');
 const read = (p) => JSON.parse(readFileSync(join(ROOT, p), 'utf8'));
+const FII_VERSION = read('src/data/fii-parameters.json').version;
 
 // ---- compile the core to CommonJS in a temp dir ----
 log('→ compiling compute engine (src/core) to CommonJS…');
@@ -127,7 +128,7 @@ function serializeNutrition(macro, scores, computedAt, sources, nutriInputs = {}
     L.push('  inflammation:');
     kv(4, 'score', scores.inflammation.score);
     kv(4, 'band', scores.inflammation.band);
-    kv(4, 'method', 'fii v4');
+    kv(4, 'method', FII_VERSION);
     if (scores.inflammation.aromaticAdjustment != null) kv(4, 'aromaticAdjustment', scores.inflammation.aromaticAdjustment);
   }
   if (scores.balance) {

@@ -7,6 +7,7 @@
  * titles/notes containing colons, quotes, or ampersands. Pure + isomorphic, so
  * it is unit-testable and runs in the authoring island.
  */
+import type { Prep } from './fii';
 import { Document, isScalar } from 'yaml';
 import type { PerServingMacros } from './types';
 import type { CookingMethod } from './cooking';
@@ -30,6 +31,8 @@ export interface DraftIngredient {
   proxyOk?: boolean;
   /** The flour is eaten as boiled pasta dough (GI from the food's `giDough`). */
   starchForm?: 'dough';
+  /** The fruit or vegetable is blended or juiced (re-classifies its sugars as free). */
+  prep?: Prep;
 }
 
 export interface DraftNutrition {
@@ -179,6 +182,7 @@ function cleanIngredient(ing: DraftIngredient): Record<string, unknown> {
   if (ing.cooking) out.cooking = ing.cooking;
   if (ing.proxyOk) out.proxyOk = true;
   if (ing.starchForm) out.starchForm = ing.starchForm;
+  if (ing.prep) out.prep = ing.prep;
   return out;
 }
 

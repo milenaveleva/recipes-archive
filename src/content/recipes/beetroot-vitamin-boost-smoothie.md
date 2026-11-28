@@ -25,6 +25,7 @@ ingredients:
     fdcId: 169145
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 2 carrots
     quantity: 2
     item: carrots
@@ -32,6 +33,7 @@ ingredients:
     fdcId: 170393
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 5 cm ginger
     quantity: 5
     unit: cm
@@ -40,6 +42,7 @@ ingredients:
     fdcId: 169231
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 1 apple
     quantity: 1
     item: apple
@@ -47,12 +50,14 @@ ingredients:
     fdcId: 171688
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: juice of ½ orange
     item: juice of ½ orange
     grams: 50
     fdcId: 169098
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: juice of 1 lime
     quantity: 1
     item: juice of lime
@@ -60,6 +65,7 @@ ingredients:
     fdcId: 168156
     matchConfidence: high
     cooking: raw
+    prep: blended
 nutrition:
   perServing:
     energyKcal: 123
@@ -87,9 +93,9 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.1
-    band: neutral
-    method: fii v4
+    score: -1.1
+    band: anti-inflammatory
+    method: fii v5
     aromaticAdjustment: -0.23
   balance:
     score: 9
@@ -106,7 +112,7 @@ nutrition:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
+    - Inflammatory potential (estimate; pooled composition per 100 kcal); USDA Flavonoid Database R3.3; Phenol-Explorer
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)

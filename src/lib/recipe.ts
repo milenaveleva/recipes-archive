@@ -397,8 +397,8 @@ const INFLAMMATION_BANDS: readonly InflammationBand[] = [
 ];
 
 /**
- * Inflammation index (−2 anti … +2 pro) → 1–10, anchored to the FII band edges (the
- * quintiles of single foods, inflammation-reference.json) rather than a linear map, so the
+ * Inflammation score (−2 anti … +2 pro) → 1–10, anchored to the band edges
+ * (inflammation-reference.json) rather than a linear map, so the
  * colour always agrees with the band word: anti → 1–2, mildly anti → 2–3 (both good),
  * neutral → 4–6, mildly pro → 7–8, pro → 8–10. The stored band decides the segment; the
  * score positions the rating within it. Without a valid band the score's own band is used.
@@ -660,8 +660,8 @@ export function buildScoreDials(nutrition: NutritionLike, course?: string | null
       key: 'inflam',
       label: 'Inflammation',
       blurb:
-        'Food Inflammation Index (native −2 anti to +2 pro): inflammatory potential from fat quality, fibre, antioxidants and polyphenols, energy-weighted across the dish. The rating and colour follow its band relative to single foods — “anti-inflammatory” means more anti than a typical food. Shown as 1 (most anti-inflammatory) to 10 — lower is better. An estimate, not a clinical measure.',
-      ...dial(inf, inflamBand ? `${inflammationCaptionBand(inflamBand)} relative to foods` : undefined),
+        'Inflammatory potential (our own estimate, native −2 anti to +2 pro): the whole dish’s cooked composition per 100 kcal — fibre, vitamins C and E, magnesium, marine omega-3, carotenoids and flavonoids against free sugars, saturated and industrial trans fat and sodium — weighted by the strength of the trial evidence for each. Zero is the nutrient density of an average diet; “anti-inflammatory” means clearly better than that, never a clinical claim. Shown as 1 (most anti-inflammatory) to 10 — lower is better. An estimate, not a clinical measure.',
+      ...dial(inf, inflamBand ? `${inflammationCaptionBand(inflamBand)} vs an average diet` : undefined),
     },
     {
       key: 'processing',

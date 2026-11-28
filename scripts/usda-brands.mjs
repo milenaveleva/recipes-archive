@@ -333,7 +333,7 @@ export function curatedIds() {
     }
   };
   add(SCORING_PATH, false);    // keys: fdcId → { gi, fvl }
-  add(POLYPHENOL_PATH, false); // keys: fdcId → { polyphenol_mg }
+  add(POLYPHENOL_PATH, false); // keys: fdcId → { polyphenol subclasses }
   add(CROSSWALK_PATH, true);   // values: Phenol-Explorer name → fdcId | [fdcId]
   return ids;
 }

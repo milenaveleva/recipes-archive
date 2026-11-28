@@ -1,1318 +1,2287 @@
 {
-  "167746": {
-    "polyphenol_mg": 59.8,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Lemon)",
-    "confidence": "high"
-  },
-  "167755": {
-    "polyphenol_mg": 154.6,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Red raspberry, raw)",
-    "confidence": "high"
-  },
-  "167762": {
-    "polyphenol_mg": 289.2,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Strawberry, raw)",
-    "confidence": "high"
-  },
-  "167765": {
-    "polyphenol_mg": 51.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Watermelon)",
-    "confidence": "high"
-  },
-  "168156": {
-    "polyphenol_mg": 183,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Lime, pure juice)",
-    "confidence": "high"
-  },
-  "168165": {
-    "polyphenol_mg": 1065,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Grape, raisin)",
-    "confidence": "high"
-  },
-  "168166": {
-    "polyphenol_mg": 1065,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Grape, raisin)",
-    "confidence": "high"
-  },
-  "168191": {
-    "polyphenol_mg": 61.3,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Date, fresh)",
-    "confidence": "high"
-  },
-  "168389": {
-    "polyphenol_mg": 75.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Asparagus, raw)",
-    "confidence": "high"
-  },
-  "168409": {
-    "polyphenol_mg": 20.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Cucumber, raw)",
-    "confidence": "high"
-  },
-  "168421": {
-    "polyphenol_mg": 176.7,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Kale, raw)",
-    "confidence": "high"
-  },
-  "168424": {
-    "polyphenol_mg": 168,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Kohlrabi, raw)",
-    "confidence": "high"
-  },
-  "168448": {
-    "polyphenol_mg": 110,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Pumpkin, raw)",
-    "confidence": "high"
-  },
-  "168462": {
-    "polyphenol_mg": 248.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Spinach, raw)",
-    "confidence": "high"
-  },
-  "168482": {
-    "polyphenol_mg": 74,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Sweet potato, raw)",
-    "confidence": "high"
-  },
-  "168564": {
-    "polyphenol_mg": 129.5,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Chicory [Red], raw)",
-    "confidence": "high"
-  },
-  "168565": {
-    "polyphenol_mg": 30.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Zucchini, raw)",
-    "confidence": "high"
-  },
-  "168573": {
-    "polyphenol_mg": 662,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Lemon grass, fresh)",
-    "confidence": "high"
-  },
-  "169089": {
-    "polyphenol_mg": 15.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Longan)",
-    "confidence": "high"
-  },
-  "169092": {
-    "polyphenol_mg": 109.6,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Cantaloupe)",
-    "confidence": "high"
-  },
-  "169098": {
-    "polyphenol_mg": 48.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Orange [Blond], pure juice)",
-    "confidence": "high"
-  },
-  "169105": {
-    "polyphenol_mg": 192,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Tangerine)",
-    "confidence": "high"
-  },
-  "169108": {
-    "polyphenol_mg": 57.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Passion fruit)",
-    "confidence": "high"
-  },
-  "169118": {
-    "polyphenol_mg": 107.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Pear, whole)",
-    "confidence": "high"
-  },
-  "169145": {
-    "polyphenol_mg": 164.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Red beetroot, raw)",
-    "confidence": "high"
-  },
-  "169205": {
-    "polyphenol_mg": 1142.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Globe artichoke, heads, raw)",
-    "confidence": "high"
-  },
-  "169226": {
-    "polyphenol_mg": 385.5,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Dandelion, raw)",
-    "confidence": "high"
-  },
-  "169228": {
-    "polyphenol_mg": 61.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Eggplant [Purple], whole, raw)",
-    "confidence": "high"
-  },
-  "169230": {
-    "polyphenol_mg": 87,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Garlic, fresh)",
-    "confidence": "high"
-  },
-  "169231": {
-    "polyphenol_mg": 204.7,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Ginger, fresh)",
-    "confidence": "high"
-  },
-  "169247": {
-    "polyphenol_mg": 65.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Lettuce [Green], raw)",
-    "confidence": "high"
-  },
-  "169249": {
-    "polyphenol_mg": 65.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Lettuce [Green], raw)",
-    "confidence": "high"
-  },
-  "169276": {
-    "polyphenol_mg": 44.3,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Radish, raw)",
-    "confidence": "high"
-  },
-  "169279": {
-    "polyphenol_mg": 67,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Sauerkraut)",
-    "confidence": "high"
-  },
-  "169336": {
-    "polyphenol_mg": 88.6,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Common cabbage [Green], raw)",
-    "confidence": "high"
-  },
-  "169385": {
-    "polyphenol_mg": 27.5,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Fennel)",
-    "confidence": "high"
-  },
-  "169387": {
-    "polyphenol_mg": 136.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Arugula, raw)",
-    "confidence": "high"
-  },
-  "169395": {
-    "polyphenol_mg": 243.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Chilli pepper [Green], raw)",
-    "confidence": "high"
-  },
-  "169593": {
-    "polyphenol_mg": 5624.2,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Cocoa, powder)",
-    "confidence": "high"
-  },
-  "169703": {
-    "polyphenol_mg": 94.5,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Rice, whole grain)",
-    "confidence": "high"
-  },
-  "169705": {
-    "polyphenol_mg": 26.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Oat, rolled)",
-    "confidence": "high"
-  },
-  "169706": {
-    "polyphenol_mg": 94.5,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Rice, whole grain)",
-    "confidence": "high"
-  },
-  "169716": {
-    "polyphenol_mg": 412.8,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Sorghum, whole grain)",
-    "confidence": "high"
-  },
-  "169908": {
-    "polyphenol_mg": 116,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Loquat)",
-    "confidence": "high"
-  },
-  "169910": {
-    "polyphenol_mg": 144.8,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Mango)",
-    "confidence": "high"
-  },
-  "169911": {
-    "polyphenol_mg": 59.3,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Honeydew melon)",
-    "confidence": "high"
-  },
-  "169914": {
-    "polyphenol_mg": 55.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Nectarine, whole)",
-    "confidence": "high"
-  },
-  "169926": {
-    "polyphenol_mg": 57.6,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Papaya)",
-    "confidence": "high"
-  },
-  "169928": {
-    "polyphenol_mg": 279.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Peach, whole)",
-    "confidence": "high"
-  },
-  "169949": {
-    "polyphenol_mg": 409.8,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Plum, fresh)",
-    "confidence": "high"
-  },
-  "169961": {
-    "polyphenol_mg": 31.7,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Green bean, raw)",
-    "confidence": "high"
-  },
-  "169974": {
-    "polyphenol_mg": 141.2,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Burdock root, raw)",
-    "confidence": "high"
-  },
-  "169975": {
-    "polyphenol_mg": 88.6,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Common cabbage [Green], raw)",
-    "confidence": "high"
-  },
-  "169977": {
-    "polyphenol_mg": 451,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Common cabbage [Red], raw)",
-    "confidence": "high"
-  },
-  "169986": {
-    "polyphenol_mg": 81.7,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Cauliflower, raw)",
-    "confidence": "high"
-  },
-  "169988": {
-    "polyphenol_mg": 13.6,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Celery stalks, raw)",
-    "confidence": "high"
-  },
-  "169992": {
-    "polyphenol_mg": 129.5,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Chicory [Red], raw)",
-    "confidence": "high"
-  },
-  "169994": {
-    "polyphenol_mg": 80.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Chives, fresh)",
-    "confidence": "high"
-  },
-  "169997": {
-    "polyphenol_mg": 158.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Coriander, fresh)",
-    "confidence": "high"
-  },
-  "170000": {
-    "polyphenol_mg": 60.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Onion [Yellow], raw)",
-    "confidence": "high"
-  },
-  "170026": {
-    "polyphenol_mg": 70.2,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Potato, raw)",
-    "confidence": "high"
-  },
-  "170027": {
-    "polyphenol_mg": 70.2,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Potato, raw)",
-    "confidence": "high"
-  },
-  "170028": {
-    "polyphenol_mg": 70.2,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Potato, raw)",
-    "confidence": "high"
-  },
-  "170029": {
-    "polyphenol_mg": 70.2,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Potato, raw)",
-    "confidence": "high"
-  },
-  "170106": {
-    "polyphenol_mg": 326.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Chilli pepper [Red], raw)",
-    "confidence": "high"
-  },
-  "170108": {
-    "polyphenol_mg": 229,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Sweet pepper [Red], raw)",
-    "confidence": "high"
-  },
-  "170162": {
-    "polyphenol_mg": 232.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Cashew nut, raw)",
-    "confidence": "high"
-  },
-  "170178": {
-    "polyphenol_mg": 126,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Macadamia nut)",
-    "confidence": "high"
-  },
-  "170182": {
-    "polyphenol_mg": 1284,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Pecan nut)",
-    "confidence": "high"
-  },
-  "170184": {
-    "polyphenol_mg": 1420,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Pistachio)",
-    "confidence": "high"
-  },
-  "170187": {
-    "polyphenol_mg": 1574.8,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Walnut)",
-    "confidence": "high"
-  },
-  "170271": {
-    "polyphenol_mg": 1859.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Chocolate, dark)",
-    "confidence": "high"
-  },
-  "170273": {
-    "polyphenol_mg": 1859.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Chocolate, dark)",
-    "confidence": "high"
-  },
-  "170375": {
-    "polyphenol_mg": 61.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Beet greens, raw)",
-    "confidence": "high"
-  },
-  "170379": {
-    "polyphenol_mg": 198.6,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Broccoli, raw)",
-    "confidence": "high"
-  },
-  "170383": {
-    "polyphenol_mg": 220.8,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Brussel sprouts, raw)",
-    "confidence": "high"
-  },
-  "170388": {
-    "polyphenol_mg": 119.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Savoy cabbage, raw)",
-    "confidence": "high"
-  },
-  "170390": {
-    "polyphenol_mg": 193.5,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Pak choy, raw)",
-    "confidence": "high"
-  },
-  "170393": {
-    "polyphenol_mg": 57.8,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Carrot, raw)",
-    "confidence": "high"
-  },
-  "170400": {
-    "polyphenol_mg": 59,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Celeriac, raw)",
-    "confidence": "high"
-  },
-  "170416": {
-    "polyphenol_mg": 89.3,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Parsley, fresh)",
-    "confidence": "high"
-  },
-  "170427": {
-    "polyphenol_mg": 181.5,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Sweet pepper [Green], raw)",
-    "confidence": "high"
-  },
-  "170465": {
-    "polyphenol_mg": 54.5,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Turnip root, raw)",
-    "confidence": "high"
-  },
-  "170497": {
-    "polyphenol_mg": 243.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Chilli pepper [Green], raw)",
-    "confidence": "high"
-  },
-  "170499": {
-    "polyphenol_mg": 114.7,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Shallot [Pink], raw)",
-    "confidence": "high"
-  },
-  "170567": {
-    "polyphenol_mg": 287.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Almond)",
-    "confidence": "high"
-  },
-  "170568": {
-    "polyphenol_mg": 61.8,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Almond, dehulled)",
-    "confidence": "high"
-  },
-  "170581": {
-    "polyphenol_mg": 671.8,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Hazelnut, raw)",
-    "confidence": "high"
-  },
-  "170591": {
-    "polyphenol_mg": 58.2,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Pines)",
-    "confidence": "high"
-  },
-  "170845": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "170846": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "170851": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "170858": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "170859": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "170886": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "170917": {
-    "polyphenol_mg": 4170,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Sweet bay, dried)",
-    "confidence": "high"
-  },
-  "170918": {
-    "polyphenol_mg": 2913.3,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Caraway)",
-    "confidence": "high"
-  },
-  "170919": {
-    "polyphenol_mg": 602.6,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Cardamom)",
-    "confidence": "high"
-  },
-  "170922": {
-    "polyphenol_mg": 357.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Coriander seed)",
-    "confidence": "high"
-  },
-  "170923": {
-    "polyphenol_mg": 2038.3,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Cumin)",
-    "confidence": "high"
-  },
-  "170924": {
-    "polyphenol_mg": 1075,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Curry, powder)",
-    "confidence": "high"
-  },
-  "170928": {
-    "polyphenol_mg": 3846,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Marjoram, dried)",
-    "confidence": "high"
-  },
-  "170930": {
-    "polyphenol_mg": 1584.7,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Parsley, dried)",
-    "confidence": "high"
-  },
-  "170931": {
-    "polyphenol_mg": 1000,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Pepper spice [Black])",
-    "confidence": "high"
-  },
-  "170933": {
-    "polyphenol_mg": 780,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Pepper spice [White])",
-    "confidence": "high"
-  },
-  "170935": {
-    "polyphenol_mg": 2919.7,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Common sage, dried)",
-    "confidence": "high"
-  },
-  "170938": {
-    "polyphenol_mg": 1815,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Common thyme, dried)",
-    "confidence": "high"
-  },
-  "171016": {
-    "polyphenol_mg": 2.3,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Sesame seed, oil)",
-    "confidence": "high"
-  },
-  "171025": {
-    "polyphenol_mg": 1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Sunflower seed, oil)",
-    "confidence": "high"
-  },
-  "171241": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "171244": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "171249": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "171257": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "171284": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "171287": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "171304": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "171317": {
-    "polyphenol_mg": 4317.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Sweet basil, dried)",
-    "confidence": "high"
-  },
-  "171320": {
-    "polyphenol_mg": 9700,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Ceylan cinnamon)",
-    "confidence": "high"
-  },
-  "171321": {
-    "polyphenol_mg": 16047.5,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Cloves)",
-    "confidence": "high"
-  },
-  "171324": {
-    "polyphenol_mg": 830,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Fenugreek seed)",
-    "confidence": "high"
-  },
-  "171326": {
-    "polyphenol_mg": 1905,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Nutmeg)",
-    "confidence": "high"
-  },
-  "171328": {
-    "polyphenol_mg": 3117,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Oregano, dried (wild marjoram))",
-    "confidence": "high"
-  },
-  "171333": {
-    "polyphenol_mg": 2518.7,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Rosemary, dried)",
-    "confidence": "high"
-  },
-  "171413": {
-    "polyphenol_mg": 55.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Olive, oil, extra virgin)",
-    "confidence": "high"
-  },
-  "171688": {
-    "polyphenol_mg": 201,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Apple [Dessert], whole, raw)",
-    "confidence": "high"
-  },
-  "171697": {
-    "polyphenol_mg": 133,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Apricot, raw)",
-    "confidence": "high"
-  },
-  "171705": {
-    "polyphenol_mg": 152.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Avocado, raw)",
-    "confidence": "high"
-  },
-  "171706": {
-    "polyphenol_mg": 152.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Avocado, raw)",
-    "confidence": "high"
-  },
-  "171707": {
-    "polyphenol_mg": 152.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Avocado, raw)",
-    "confidence": "high"
-  },
-  "171711": {
-    "polyphenol_mg": 223.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Highbush blueberry, raw)",
-    "confidence": "high"
-  },
-  "171719": {
-    "polyphenol_mg": 174.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Sweet cherry, raw)",
-    "confidence": "high"
-  },
-  "171722": {
-    "polyphenol_mg": 315,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (American cranberry)",
-    "confidence": "high"
-  },
-  "171881": {
-    "polyphenol_mg": 266.7,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Coffee beverage [Filter])",
-    "confidence": "high"
-  },
-  "171890": {
-    "polyphenol_mg": 266.7,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Coffee beverage [Filter])",
-    "confidence": "high"
-  },
-  "171917": {
-    "polyphenol_mg": 61.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Tea [Green], infusion)",
-    "confidence": "high"
-  },
-  "171955": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "172015": {
-    "polyphenol_mg": 102,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Maize, refined flour)",
-    "confidence": "high"
-  },
-  "172175": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "172177": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "172178": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "172184": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "172231": {
-    "polyphenol_mg": 2117,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Turmeric, dried)",
-    "confidence": "high"
-  },
-  "172232": {
-    "polyphenol_mg": 231.8,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Sweet basil, fresh)",
-    "confidence": "high"
-  },
-  "172233": {
-    "polyphenol_mg": 208.2,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Dill, fresh)",
-    "confidence": "high"
-  },
-  "172239": {
-    "polyphenol_mg": 6575,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Spearmint, dried)",
-    "confidence": "high"
-  },
-  "172336": {
-    "polyphenol_mg": 18.3,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Rape seed, oil)",
-    "confidence": "high"
-  },
-  "172370": {
-    "polyphenol_mg": 0.7,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Soy, oil)",
-    "confidence": "high"
-  },
-  "172420": {
-    "polyphenol_mg": 3697.3,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Lentils, whole, raw)",
-    "confidence": "high"
-  },
-  "172430": {
-    "polyphenol_mg": 406.3,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Peanut)",
-    "confidence": "high"
-  },
-  "172436": {
-    "polyphenol_mg": 185.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Pigeon pea, whole, raw)",
-    "confidence": "high"
-  },
-  "172688": {
-    "polyphenol_mg": 215.8,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Bread, common wheat, whole grain flour)",
-    "confidence": "high"
-  },
-  "173021": {
-    "polyphenol_mg": 95.7,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Fig, whole, fresh)",
-    "confidence": "high"
-  },
-  "173044": {
-    "polyphenol_mg": 126.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Guava)",
-    "confidence": "high"
-  },
-  "173227": {
-    "polyphenol_mg": 104.5,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Tea [Black], infusion)",
-    "confidence": "high"
-  },
-  "173414": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "173417": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "173418": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "173419": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "173420": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "173430": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "173431": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "173435": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "173468": {
-    "polyphenol_mg": 0,
-    "basis": "absent:mineral",
-    "source": "Rule: mineral — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "173470": {
-    "polyphenol_mg": 1173.3,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Common thyme, fresh)",
-    "confidence": "high"
-  },
-  "173473": {
-    "polyphenol_mg": 1082.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Rosemary, fresh)",
-    "confidence": "high"
-  },
-  "173474": {
-    "polyphenol_mg": 980.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Peppermint, fresh)",
-    "confidence": "high"
-  },
-  "173475": {
-    "polyphenol_mg": 246.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Spearmint, fresh)",
-    "confidence": "high"
-  },
-  "173687": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "173709": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "173727": {
-    "polyphenol_mg": 8970,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Adzuki bean, whole, raw)",
-    "confidence": "high"
-  },
-  "173744": {
-    "polyphenol_mg": 1234.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Common bean [Others], whole, raw)",
-    "confidence": "high"
-  },
-  "173944": {
-    "polyphenol_mg": 154.7,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Banana, raw)",
-    "confidence": "high"
-  },
-  "173946": {
-    "polyphenol_mg": 569.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Blackberry, raw)",
-    "confidence": "high"
-  },
-  "173954": {
-    "polyphenol_mg": 352.2,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Sour cherry)",
-    "confidence": "high"
-  },
-  "173963": {
-    "polyphenol_mg": 820.6,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Blackcurrant, raw)",
-    "confidence": "high"
-  },
-  "173964": {
-    "polyphenol_mg": 448.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Redcurrant, raw)",
-    "confidence": "high"
-  },
-  "174091": {
-    "polyphenol_mg": 215.8,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Bread, common wheat, whole grain flour)",
-    "confidence": "high"
-  },
-  "174158": {
-    "polyphenol_mg": 0,
-    "basis": "absent:mineral",
-    "source": "Rule: mineral — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "174182": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "174216": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "174263": {
-    "polyphenol_mg": 406.3,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Peanut)",
-    "confidence": "high"
-  },
-  "174837": {
-    "polyphenol_mg": 32.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Wine [White])",
-    "confidence": "high"
-  },
-  "174916": {
-    "polyphenol_mg": 215.8,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Bread, common wheat, whole grain flour)",
-    "confidence": "high"
-  },
-  "175103": {
-    "polyphenol_mg": 0,
-    "basis": "absent:mineral",
-    "source": "Rule: mineral — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "175141": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "175142": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "175154": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "175165": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "175167": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "175179": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "175189": {
-    "polyphenol_mg": 1234.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Common bean [Others], whole, raw)",
-    "confidence": "high"
-  },
-  "175202": {
-    "polyphenol_mg": 137.8,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Common bean [White], whole, raw)",
-    "confidence": "high"
-  },
-  "175205": {
-    "polyphenol_mg": 1039,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Broad bean seed, whole, raw)",
-    "confidence": "high"
-  },
-  "321360": {
-    "polyphenol_mg": 45.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Tomato, whole, raw)",
-    "confidence": "high"
-  },
-  "323604": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "330137": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "333476": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "748236": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "748967": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "790085": {
-    "polyphenol_mg": 90.5,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Common wheat, whole grain flour)",
-    "confidence": "high"
-  },
-  "790577": {
-    "polyphenol_mg": 102.8,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Onion [Red], raw)",
-    "confidence": "high"
-  },
-  "1999632": {
-    "polyphenol_mg": 248.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Spinach, raw)",
-    "confidence": "high"
-  },
-  "2258589": {
-    "polyphenol_mg": 214.2,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Sweet pepper [Yellow], raw)",
-    "confidence": "high"
-  },
-  "2258590": {
-    "polyphenol_mg": 229,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Sweet pepper [Red], raw)",
-    "confidence": "high"
-  },
-  "2261421": {
-    "polyphenol_mg": 82.2,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Oat, whole grain flour)",
-    "confidence": "high"
-  },
-  "2262072": {
-    "polyphenol_mg": 183,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Peanut, butter)",
-    "confidence": "high"
-  },
-  "2346386": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "2346392": {
-    "polyphenol_mg": 58.2,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Pines)",
-    "confidence": "high"
-  },
-  "2346393": {
-    "polyphenol_mg": 287.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Almond)",
-    "confidence": "high"
-  },
-  "2346396": {
-    "polyphenol_mg": 26.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Oat, rolled)",
-    "confidence": "high"
-  },
-  "2346398": {
-    "polyphenol_mg": 147.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Pineapple)",
-    "confidence": "high"
-  },
-  "2512374": {
-    "polyphenol_mg": 791.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Buckwheat, whole grain flour)",
-    "confidence": "high"
-  },
-  "2512375": {
-    "polyphenol_mg": 72,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Rye, whole grain flour)",
-    "confidence": "high"
-  },
-  "2512376": {
-    "polyphenol_mg": 72.9,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Barley, whole grain flour)",
-    "confidence": "high"
-  },
-  "2515376": {
-    "polyphenol_mg": 406.3,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Peanut)",
-    "confidence": "high"
-  },
-  "2644283": {
-    "polyphenol_mg": 3697.3,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Lentils, whole, raw)",
-    "confidence": "high"
-  },
-  "2647437": {
-    "polyphenol_mg": 0,
-    "basis": "absent:animal-product",
-    "source": "Rule: animal-product — no plant matter, so no polyphenols (not a Phenol-Explorer value)",
-    "confidence": "rule"
-  },
-  "2685568": {
-    "polyphenol_mg": 30.4,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Zucchini, raw)",
-    "confidence": "high"
-  },
-  "2710823": {
-    "polyphenol_mg": 75.1,
-    "basis": "analysed:folin",
-    "source": "Phenol-Explorer Folin total (Asparagus, raw)",
-    "confidence": "high"
-  },
-  "_doc": "Total polyphenol content (mg/100g) per USDA fdcId, merged into NutrientVector.polyphenol_mg and read by the FII (src/core/fii.ts). GENERATED by scripts/build-phenol-explorer.mjs from a Phenol-Explorer \"Complete composition data\" export — the Folin-Ciocalteu \"Polyphenols, total\" value per food (basis \"analysed:folin\"), joined to USDA via a hand-maintained crosswalk, plus rule-based zeros for food classes with no plant matter (basis \"absent:<rule>\"). Re-run to refresh.",
-  "_source": "Phenol-Explorer (Folin total polyphenols), joined to USDA fdcId via src/data/phenol-crosswalk.json."
+ "167568": {
+  "flavan3ols_mg": 206.16,
+  "source": "USDA Flavonoid R3.3 NDB 19078 (Baking chocolate, unsweetened, squares)"
+ },
+ "167746": {
+  "flavanones_mg": 49.81,
+  "flavones_mg": 1.9,
+  "flavonols_mg": 1.67,
+  "source": "USDA Flavonoid R3.3 NDB 09150 (Lemons, raw, without peel)"
+ },
+ "167747": {
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 20.73,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.39,
+  "source": "USDA Flavonoid R3.3 NDB 09152 (Juice, lemon, raw)"
+ },
+ "167748": {
+  "flavanones_mg": 23.99,
+  "flavones_mg": 1.83,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 09153 (Juice, lemon, canned or bottled)"
+ },
+ "167750": {
+  "flavonols_mg": 5.69,
+  "source": "USDA Flavonoid R3.3 NDB 09287 (Prickly pears, raw)"
+ },
+ "167754": {
+  "flavanones_mg": 33.12,
+  "source": "USDA Flavonoid R3.3 NDB 09295 (Pummelo, raw)"
+ },
+ "167755": {
+  "anthocyanidins_mg": 48.63,
+  "flavan3ols_mg": 5.83,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 1.11,
+  "source": "USDA Flavonoid R3.3 NDB 09302 (Raspberries, raw)"
+ },
+ "167758": {
+  "flavan3ols_mg": 3.28,
+  "source": "USDA Flavonoid R3.3 NDB 09307 (Rhubarb, raw)"
+ },
+ "167761": {
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 09315 (Soursop, raw)"
+ },
+ "167762": {
+  "anthocyanidins_mg": 27.01,
+  "flavan3ols_mg": 4.6,
+  "flavanones_mg": 0.26,
+  "flavones_mg": 0,
+  "flavonols_mg": 1.65,
+  "source": "USDA Flavonoid R3.3 NDB 09316 (Strawberries, raw)"
+ },
+ "167765": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.46,
+  "flavonols_mg": 0.45,
+  "source": "USDA Flavonoid R3.3 NDB 09326 (Watermelon, raw)"
+ },
+ "167774": {
+  "flavanones_mg": 17.97,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 09404 (Juice, grapefruit, pink, raw)"
+ },
+ "167787": {
+  "anthocyanidins_mg": 3.3,
+  "flavan3ols_mg": 0,
+  "flavonols_mg": 1.11,
+  "source": "USDA Flavonoid R3.3 NDB 09442 (Juice, pomegranate, bottled)"
+ },
+ "167793": {
+  "anthocyanidins_mg": 0.81,
+  "flavan3ols_mg": 9.37,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.01,
+  "flavonols_mg": 2.36,
+  "source": "USDA Flavonoid R3.3 NDB 09504 (Apples, Fuji, raw, with skin)"
+ },
+ "167808": {
+  "anthocyanidins_mg": 17.69,
+  "source": "USDA Flavonoid R3.3 NDB 09552 (Raspberries, puree, seedless)"
+ },
+ "167809": {
+  "anthocyanidins_mg": 19.98,
+  "source": "USDA Flavonoid R3.3 NDB 09553 (Raspberries, puree, with seeds)"
+ },
+ "168151": {
+  "flavan3ols_mg": 3.52,
+  "flavonols_mg": 1.26,
+  "source": "USDA Flavonoid R3.3 NDB 09146 (Jujube, raw)"
+ },
+ "168153": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0.37,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.74,
+  "flavonols_mg": 1.07,
+  "source": "USDA Flavonoid R3.3 NDB 09148 (Kiwifruit, green, raw)"
+ },
+ "168154": {
+  "flavanones_mg": 57.39,
+  "flavones_mg": 21.87,
+  "source": "USDA Flavonoid R3.3 NDB 09149 (Kumquats, raw)"
+ },
+ "168155": {
+  "flavanones_mg": 46.4,
+  "flavonols_mg": 0.4,
+  "source": "USDA Flavonoid R3.3 NDB 09159 (Limes, raw)"
+ },
+ "168156": {
+  "flavanones_mg": 11.54,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.51,
+  "source": "USDA Flavonoid R3.3 NDB 09160 (Juice, lime, raw)"
+ },
+ "168162": {
+  "anthocyanidins_mg": 0.75,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.01,
+  "flavonols_mg": 1.82,
+  "source": "USDA Flavonoid R3.3 NDB 09291 (Plums, dried (prunes), uncooked)"
+ },
+ "168163": {
+  "flavan3ols_mg": 1.42,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 09296 (Quinces, raw)"
+ },
+ "168164": {
+  "flavonols_mg": 5.11,
+  "source": "USDA Flavonoid R3.3 NDB 09297 (Raisins, golden seedless)"
+ },
+ "168165": {
+  "anthocyanidins_mg": 0.05,
+  "flavan3ols_mg": 0.52,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.01,
+  "flavonols_mg": 0.27,
+  "source": "USDA Flavonoid R3.3 NDB 09298 (Raisins, seedless)"
+ },
+ "168166": {
+  "anthocyanidins_mg": 0.05,
+  "flavan3ols_mg": 0.52,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.01,
+  "flavonols_mg": 0.27,
+  "source": "USDA Flavonoid R3.3 NDB 09298 (Raisins, seedless; reviewed: seeded raisins → seedless raisins)"
+ },
+ "168173": {
+  "anthocyanidins_mg": 20.61,
+  "flavones_mg": 0.03,
+  "flavonols_mg": 1.3,
+  "source": "USDA Flavonoid R3.3 NDB 09318 (Strawberries, frozen, unsweetened)"
+ },
+ "168181": {
+  "flavan3ols_mg": 1.87,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 09370 (Peaches, canned, heavy syrup, drained)"
+ },
+ "168191": {
+  "anthocyanidins_mg": 1.7,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.93,
+  "source": "USDA Flavonoid R3.3 NDB 09087 (Dates, deglet noor; reviewed: Medjool → Deglet Noor dates (cultivar))"
+ },
+ "168194": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 09430 (Pineapple, raw, extra sweet variety)"
+ },
+ "168201": {
+  "anthocyanidins_mg": 5,
+  "flavan3ols_mg": 12.33,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.01,
+  "flavonols_mg": 3.87,
+  "source": "USDA Flavonoid R3.3 NDB 09500 (Apples, Red Delicious, raw. with skin)"
+ },
+ "168202": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 6.64,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 3.69,
+  "source": "USDA Flavonoid R3.3 NDB 09501 (Apples, Golden Delicious, raw, with skin)"
+ },
+ "168203": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 9.94,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 2.54,
+  "source": "USDA Flavonoid R3.3 NDB 09502 (Apples, Granny Smith, raw, with skin)"
+ },
+ "168204": {
+  "anthocyanidins_mg": 1.22,
+  "flavan3ols_mg": 8.21,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 3.8,
+  "source": "USDA Flavonoid R3.3 NDB 09503 (Apples, Gala, raw, with skin)"
+ },
+ "168209": {
+  "flavones_mg": 0.03,
+  "anthocyanidins_mg": 22.84,
+  "flavonols_mg": 1.14,
+  "source": "USDA Flavonoid R3.3 NDB 09518 (Raspberries, frozen, red, unsweetened)"
+ },
+ "168217": {
+  "anthocyanidins_mg": 48.53,
+  "source": "USDA Flavonoid R3.3 NDB 09554 (Raspberry juice concentrate)"
+ },
+ "168384": {
+  "flavones_mg": 0,
+  "flavonols_mg": 1.7,
+  "source": "USDA Flavonoid R3.3 NDB 11001 (Alfalfa seeds, sprouted, raw)"
+ },
+ "168386": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 99362 (Artichokes, Ocean Mist, boiled; reviewed: globe artichoke, boiled → artichokes, boiled)"
+ },
+ "168389": {
+  "flavonols_mg": 21.07,
+  "source": "USDA Flavonoid R3.3 NDB 11011 (Asparagus, raw)"
+ },
+ "168390": {
+  "flavonols_mg": 15.16,
+  "source": "USDA Flavonoid R3.3 NDB 11012 (Asparagus, cooked, boiled, drained)"
+ },
+ "168394": {
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11025 (Balsam-pear (bitter gourd), pods, cooked, boiled, drained, without salt)"
+ },
+ "168396": {
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11031 (Lima beans, immature seeds, raw)"
+ },
+ "168407": {
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 14,
+  "source": "USDA Flavonoid R3.3 NDB 11203 (Cress, garden, raw)"
+ },
+ "168408": {
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11204 (Cress, garden, cooked, boiled, drained, without salt)"
+ },
+ "168409": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.17,
+  "source": "USDA Flavonoid R3.3 NDB 11205 (Cucumber, with peel, raw)"
+ },
+ "168412": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 10.1,
+  "source": "USDA Flavonoid R3.3 NDB 11213 (Endive, raw)"
+ },
+ "168414": {
+  "flavones_mg": 0.01,
+  "flavonols_mg": 0.16,
+  "source": "USDA Flavonoid R3.3 NDB 11220 (Gourd, dishcloth (towelgourd), raw)"
+ },
+ "168416": {
+  "flavonols_mg": 23.04,
+  "source": "USDA Flavonoid R3.3 NDB 11222 (Drumstick (horseradish tree) leaves, raw)"
+ },
+ "168421": {
+  "flavones_mg": 0,
+  "flavonols_mg": 92.98,
+  "source": "USDA Flavonoid R3.3 NDB 11233 (Kale, raw)"
+ },
+ "168424": {
+  "flavones_mg": 1.3,
+  "flavonols_mg": 2.83,
+  "source": "USDA Flavonoid R3.3 NDB 11241 (Kohlrabi, raw)"
+ },
+ "168429": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 2.75,
+  "source": "USDA Flavonoid R3.3 NDB 11250 (Lettuce, butterhead (includes boston and bibb types), raw)"
+ },
+ "168431": {
+  "anthocyanidins_mg": 3.14,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.95,
+  "flavonols_mg": 7.63,
+  "source": "USDA Flavonoid R3.3 NDB 11257 (Lettuce, red leaf, raw)"
+ },
+ "168440": {
+  "flavones_mg": 0,
+  "flavonols_mg": 21.5,
+  "source": "USDA Flavonoid R3.3 NDB 11276 (New Zealand spinach, raw)"
+ },
+ "168448": {
+  "flavones_mg": 1.63,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11422 (Pumpkin, raw)"
+ },
+ "168451": {
+  "flavones_mg": 0,
+  "flavonols_mg": 0.34,
+  "source": "USDA Flavonoid R3.3 NDB 11430 (Radishes, oriental, raw)"
+ },
+ "168454": {
+  "flavones_mg": 3.85,
+  "flavonols_mg": 2.5,
+  "source": "USDA Flavonoid R3.3 NDB 11435 (Rutabagas, raw)"
+ },
+ "168462": {
+  "flavones_mg": 0.74,
+  "flavonols_mg": 10.7,
+  "source": "USDA Flavonoid R3.3 NDB 11457 (Spinach, raw)"
+ },
+ "168482": {
+  "flavones_mg": 0.03,
+  "flavonols_mg": 0.05,
+  "source": "USDA Flavonoid R3.3 NDB 11507 (Sweet potato, raw, unprepared)"
+ },
+ "168484": {
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11510 (Sweet potato, cooked, boiled, without skin)"
+ },
+ "168486": {
+  "flavonols_mg": 0.34,
+  "source": "USDA Flavonoid R3.3 NDB 11519 (Taro, cooked, without salt)"
+ },
+ "168487": {
+  "flavones_mg": 0.03,
+  "flavonols_mg": 0.05,
+  "source": "USDA Flavonoid R3.3 NDB 11520 (Taro leaves, raw)"
+ },
+ "168488": {
+  "anthocyanidins_mg": 0.06,
+  "flavonols_mg": 0.42,
+  "source": "USDA Flavonoid R3.3 NDB 11521 (Taro leaves, cooked, steamed, without salt)"
+ },
+ "168556": {
+  "flavonols_mg": 0.87,
+  "source": "USDA Flavonoid R3.3 NDB 11935 (Catsup)"
+ },
+ "168564": {
+  "anthocyanidins_mg": 134.67,
+  "flavones_mg": 37.98,
+  "flavonols_mg": 31.51,
+  "source": "USDA Flavonoid R3.3 NDB 11952 (Radicchio, raw)"
+ },
+ "168565": {
+  "flavan3ols_mg": 0,
+  "flavonols_mg": 0.66,
+  "source": "USDA Flavonoid R3.3 NDB 11477 (Squash, summer, zucchini, includes skin, raw; reviewed: baby zucchini, raw → zucchini with skin, raw)"
+ },
+ "168568": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11960 (Carrots, baby, raw)"
+ },
+ "168576": {
+  "flavones_mg": 1.34,
+  "flavonols_mg": 5.07,
+  "source": "USDA Flavonoid R3.3 NDB 11979 (Peppers, jalapeno, raw)"
+ },
+ "169092": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.64,
+  "flavonols_mg": 0.08,
+  "source": "USDA Flavonoid R3.3 NDB 09181 (Melons, cantaloupe, raw)"
+ },
+ "169094": {
+  "flavones_mg": 2.8,
+  "source": "USDA Flavonoid R3.3 NDB 09193 (Olives, ripe, canned (small-extra large))"
+ },
+ "169096": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0.56,
+  "source": "USDA Flavonoid R3.3 NDB 09195 (Olives, pickled, canned or bottled, green)"
+ },
+ "169097": {
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 42.57,
+  "flavones_mg": 0.19,
+  "flavonols_mg": 0.73,
+  "source": "USDA Flavonoid R3.3 NDB 09200 (Oranges, raw, all commercial varieties)"
+ },
+ "169098": {
+  "anthocyanidins_mg": 0,
+  "flavanones_mg": 14.26,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.3,
+  "source": "USDA Flavonoid R3.3 NDB 09206 (Juice, orange, raw)"
+ },
+ "169100": {
+  "anthocyanidins_mg": 0,
+  "flavanones_mg": 18.99,
+  "flavonols_mg": 0.4,
+  "source": "USDA Flavonoid R3.3 NDB 09209 (Juice, orange, chilled, includes from concentrate)"
+ },
+ "169102": {
+  "flavanones_mg": 29.48,
+  "source": "USDA Flavonoid R3.3 NDB 09215 (Juice, orange, frozen concentrate, unsweetened, diluted with 3 volume water)"
+ },
+ "169105": {
+  "flavanones_mg": 17.96,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 09218 (Tangerines, (mandarin oranges), raw)"
+ },
+ "169118": {
+  "anthocyanidins_mg": 2.06,
+  "flavan3ols_mg": 4.81,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 1.14,
+  "source": "USDA Flavonoid R3.3 NDB 09252 (Pears, raw)"
+ },
+ "169124": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.01,
+  "flavonols_mg": 0.15,
+  "source": "USDA Flavonoid R3.3 NDB 09266 (Pineapple, raw, all varieties)"
+ },
+ "169129": {
+  "flavones_mg": 0,
+  "flavonols_mg": 9.56,
+  "source": "USDA Flavonoid R3.3 NDB 09276 (Pitanga, (surinam-cherry), raw)"
+ },
+ "169134": {
+  "flavan3ols_mg": 0.81,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 09286 (Pomegranates, raw)"
+ },
+ "169141": {
+  "anthocyanidins_mg": 0.06,
+  "flavonols_mg": 2.92,
+  "source": "USDA Flavonoid R3.3 NDB 11053 (Beans, snap, green, cooked, boiled, drained, without salt)"
+ },
+ "169143": {
+  "flavones_mg": 0,
+  "flavonols_mg": 1.51,
+  "source": "USDA Flavonoid R3.3 NDB 11056 (Beans, snap, green, canned, regular pack, drained solids)"
+ },
+ "169145": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0.37,
+  "flavonols_mg": 0.13,
+  "source": "USDA Flavonoid R3.3 NDB 11080 (Beets, raw)"
+ },
+ "169202": {
+  "flavonols_mg": 1.43,
+  "source": "USDA Flavonoid R3.3 NDB 11004 (Amaranth leaves, cooked, boiled, drained, without salt)"
+ },
+ "169204": {
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11006 (Arrowhead, cooked, boiled, drained, without salt)"
+ },
+ "169205": {
+  "flavanones_mg": 12.5,
+  "flavones_mg": 9.78,
+  "source": "USDA Flavonoid R3.3 NDB 11007 (Artichokes, (globe or french), raw)"
+ },
+ "169220": {
+  "flavonols_mg": 5.5,
+  "source": "USDA Flavonoid R3.3 NDB 11191 (Cowpeas (blackeyes), immature seeds, raw)"
+ },
+ "169223": {
+  "anthocyanidins_mg": 1.14,
+  "flavones_mg": 0.03,
+  "flavonols_mg": 5.83,
+  "source": "USDA Flavonoid R3.3 NDB 11200 (Yardlong bean, cooked, boiled, drained, without salt)"
+ },
+ "169228": {
+  "anthocyanidins_mg": 85.69,
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.04,
+  "source": "USDA Flavonoid R3.3 NDB 11209 (Eggplant, raw)"
+ },
+ "169230": {
+  "flavonols_mg": 3.61,
+  "source": "USDA Flavonoid R3.3 NDB 11215 (Garlic, raw)"
+ },
+ "169246": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 2.98,
+  "source": "USDA Flavonoid R3.3 NDB 11246 (Leeks, (bulb and lower leaf-portion), raw)"
+ },
+ "169247": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.05,
+  "flavonols_mg": 2.22,
+  "source": "USDA Flavonoid R3.3 NDB 11251 (Lettuce, cos or romaine, raw)"
+ },
+ "169248": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.16,
+  "flavonols_mg": 1.63,
+  "source": "USDA Flavonoid R3.3 NDB 11252 (Lettuce, iceberg (includes crisphead types), raw)"
+ },
+ "169249": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.39,
+  "flavonols_mg": 4.24,
+  "source": "USDA Flavonoid R3.3 NDB 11253 (Lettuce, green leaf, raw)"
+ },
+ "169250": {
+  "flavones_mg": 0.36,
+  "flavonols_mg": 1.79,
+  "source": "USDA Flavonoid R3.3 NDB 11254 (Lotus root, raw)"
+ },
+ "169251": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11260 (Mushrooms, white, raw)"
+ },
+ "169254": {
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11264 (Mushrooms, canned, drained solids)"
+ },
+ "169256": {
+  "flavonols_mg": 63.3,
+  "source": "USDA Flavonoid R3.3 NDB 11270 (Mustard greens, raw)"
+ },
+ "169260": {
+  "flavonols_mg": 20.97,
+  "source": "USDA Flavonoid R3.3 NDB 11278 (Okra, raw)"
+ },
+ "169274": {
+  "flavones_mg": 0,
+  "flavonols_mg": 4.24,
+  "source": "USDA Flavonoid R3.3 NDB 11427 (Purslane, raw)"
+ },
+ "169276": {
+  "anthocyanidins_mg": 63.13,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.86,
+  "source": "USDA Flavonoid R3.3 NDB 11429 (Radishes, raw)"
+ },
+ "169279": {
+  "flavones_mg": 0.02,
+  "flavonols_mg": 0.05,
+  "source": "USDA Flavonoid R3.3 NDB 11439 (Sauerkraut, canned, solids and liquids)"
+ },
+ "169282": {
+  "flavones_mg": 0,
+  "flavonols_mg": 1.26,
+  "source": "USDA Flavonoid R3.3 NDB 11450 (Soybeans, green, raw)"
+ },
+ "169287": {
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11463 (Spinach, frozen, chopped or leaf, unprepared)"
+ },
+ "169291": {
+  "flavan3ols_mg": 0,
+  "flavonols_mg": 0.66,
+  "source": "USDA Flavonoid R3.3 NDB 11477 (Squash, summer, zucchini, includes skin, raw)"
+ },
+ "169292": {
+  "flavonols_mg": 0.47,
+  "source": "USDA Flavonoid R3.3 NDB 11478 (Squash, summer, zucchini, includes skin, cooked, boiled, drained, without salt)"
+ },
+ "169303": {
+  "flavones_mg": 0.17,
+  "flavonols_mg": 23.45,
+  "source": "USDA Flavonoid R3.3 NDB 11505 (Sweet potato leaves, raw)"
+ },
+ "169304": {
+  "flavonols_mg": 13.64,
+  "source": "USDA Flavonoid R3.3 NDB 11506 (Sweet potato leaves, cooked, steamed, without salt)"
+ },
+ "169308": {
+  "flavonols_mg": 2.87,
+  "source": "USDA Flavonoid R3.3 NDB 11518 (Taro, raw)"
+ },
+ "169320": {
+  "flavonols_mg": 3.45,
+  "source": "USDA Flavonoid R3.3 NDB 11722 (Beans, snap, yellow, raw)"
+ },
+ "169322": {
+  "flavonols_mg": 0.2,
+  "source": "USDA Flavonoid R3.3 NDB 11724 (Beans, snap, yellow, cooked, boiled, drained, without salt)"
+ },
+ "169336": {
+  "flavones_mg": 0.18,
+  "flavonols_mg": 0.46,
+  "source": "USDA Flavonoid R3.3 NDB 11109 (Cabbage, raw; reviewed: stored cabbage, raw → cabbage, raw)"
+ },
+ "169383": {
+  "anthocyanidins_mg": 0,
+  "flavones_mg": 1.02,
+  "flavonols_mg": 1.27,
+  "source": "USDA Flavonoid R3.3 NDB 11951 (Peppers, sweet, yellow, raw)"
+ },
+ "169385": {
+  "flavanones_mg": 1.08,
+  "flavonols_mg": 0.23,
+  "source": "USDA Flavonoid R3.3 NDB 11957 (Fennel, bulb, raw)"
+ },
+ "169387": {
+  "anthocyanidins_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 47.11,
+  "source": "USDA Flavonoid R3.3 NDB 11959 (Arugula, raw)"
+ },
+ "169395": {
+  "flavones_mg": 4.14,
+  "flavonols_mg": 15.98,
+  "source": "USDA Flavonoid R3.3 NDB 11977 (Peppers, serrano, raw)"
+ },
+ "169593": {
+  "flavan3ols_mg": 261.25,
+  "flavonols_mg": 10,
+  "source": "USDA Flavonoid R3.3 NDB 19165 (Cocoa, dry powder, unsweetened)"
+ },
+ "169594": {
+  "flavan3ols_mg": 93.31,
+  "flavonols_mg": 3.37,
+  "source": "USDA Flavonoid R3.3 NDB 19166 (Cocoa, dry powder, unsweetened, processed with alkali)"
+ },
+ "169910": {
+  "anthocyanidins_mg": 0.14,
+  "flavan3ols_mg": 1.72,
+  "flavones_mg": 0.03,
+  "flavonols_mg": 0.11,
+  "source": "USDA Flavonoid R3.3 NDB 09176 (Mangos, raw)"
+ },
+ "169911": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0.05,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 09184 (Melons, honeydew, raw)"
+ },
+ "169913": {
+  "flavones_mg": 0,
+  "flavonols_mg": 2.47,
+  "source": "USDA Flavonoid R3.3 NDB 09190 (Mulberries, raw)"
+ },
+ "169914": {
+  "anthocyanidins_mg": 2.13,
+  "flavan3ols_mg": 5.52,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.69,
+  "source": "USDA Flavonoid R3.3 NDB 09191 (Nectarines, raw)"
+ },
+ "169917": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 28.97,
+  "flavones_mg": 0.7,
+  "flavonols_mg": 0.22,
+  "source": "USDA Flavonoid R3.3 NDB 09202 (Oranges, raw, navels)"
+ },
+ "169925": {
+  "flavanones_mg": 18.5,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.29,
+  "source": "USDA Flavonoid R3.3 NDB 09221 (Juice, tangerine, raw)"
+ },
+ "169926": {
+  "flavones_mg": 0.03,
+  "flavonols_mg": 0.03,
+  "source": "USDA Flavonoid R3.3 NDB 09226 (Papayas, raw)"
+ },
+ "169928": {
+  "anthocyanidins_mg": 1.92,
+  "flavan3ols_mg": 8.6,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.88,
+  "source": "USDA Flavonoid R3.3 NDB 09236 (Peaches, raw)"
+ },
+ "169947": {
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 09273 (Pineapple juice, canned, unsweetened, without added ascorbic acid)"
+ },
+ "169949": {
+  "anthocyanidins_mg": 5.94,
+  "flavan3ols_mg": 7.58,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.9,
+  "source": "USDA Flavonoid R3.3 NDB 09279 (Plums, raw)"
+ },
+ "169957": {
+  "flavones_mg": 0,
+  "flavonols_mg": 0.48,
+  "source": "USDA Flavonoid R3.3 NDB 11043 (Mung beans, mature seeds, sprouted, raw)"
+ },
+ "169961": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0.13,
+  "flavonols_mg": 3.31,
+  "source": "USDA Flavonoid R3.3 NDB 11052 (Beans, snap, green, raw)"
+ },
+ "169962": {
+  "flavonols_mg": 1.54,
+  "source": "USDA Flavonoid R3.3 NDB 11060 (Beans, snap, green, frozen, all styles, unprepared)"
+ },
+ "169963": {
+  "flavonols_mg": 1.51,
+  "source": "USDA Flavonoid R3.3 NDB 11061 (Beans, snap, green, frozen, cooked, boiled, drained without salt)"
+ },
+ "169967": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 2.39,
+  "source": "USDA Flavonoid R3.3 NDB 11091 (Broccoli, cooked, boiled, drained, without salt)"
+ },
+ "169968": {
+  "flavonols_mg": 4.89,
+  "source": "USDA Flavonoid R3.3 NDB 11092 (Broccoli, frozen, chopped, unprepared)"
+ },
+ "169971": {
+  "flavanones_mg": 1.94,
+  "flavones_mg": 0.5,
+  "flavonols_mg": 5.24,
+  "source": "USDA Flavonoid R3.3 NDB 11099 (Brussels sprouts, cooked, boiled, drained, without salt)"
+ },
+ "169975": {
+  "flavones_mg": 0.18,
+  "flavonols_mg": 0.46,
+  "source": "USDA Flavonoid R3.3 NDB 11109 (Cabbage, raw)"
+ },
+ "169976": {
+  "flavones_mg": 0.03,
+  "flavonols_mg": 0.05,
+  "source": "USDA Flavonoid R3.3 NDB 11110 (Cabbage, cooked, boiled, drained, without salt)"
+ },
+ "169977": {
+  "anthocyanidins_mg": 209.95,
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0.16,
+  "flavonols_mg": 0.56,
+  "source": "USDA Flavonoid R3.3 NDB 11112 (Cabbage, red, raw)"
+ },
+ "169978": {
+  "anthocyanidins_mg": 39.38,
+  "source": "USDA Flavonoid R3.3 NDB 11113 (Cabbage, red, cooked, boiled, drained, without salt)"
+ },
+ "169979": {
+  "flavones_mg": 0.03,
+  "flavonols_mg": 0.14,
+  "source": "USDA Flavonoid R3.3 NDB 11119 (Cabbage, chinese (pe-tsai), raw)"
+ },
+ "169986": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0.12,
+  "flavonols_mg": 0.9,
+  "source": "USDA Flavonoid R3.3 NDB 11135 (Cauliflower, raw)"
+ },
+ "169988": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 3.9,
+  "flavonols_mg": 0.61,
+  "source": "USDA Flavonoid R3.3 NDB 11143 (Celery, raw)"
+ },
+ "169991": {
+  "flavan3ols_mg": 1.5,
+  "flavonols_mg": 11.1,
+  "source": "USDA Flavonoid R3.3 NDB 11147 (Chard, swiss, white leaf, raw)"
+ },
+ "169992": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavones_mg": 2.85,
+  "flavonols_mg": 8.94,
+  "source": "USDA Flavonoid R3.3 NDB 11152 (Chicory greens, raw)"
+ },
+ "169994": {
+  "flavanones_mg": 0,
+  "flavones_mg": 0.15,
+  "flavonols_mg": 21.52,
+  "source": "USDA Flavonoid R3.3 NDB 11156 (Chives, raw)"
+ },
+ "169997": {
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 52.9,
+  "source": "USDA Flavonoid R3.3 NDB 11165 (Coriander (cilantro) leaves, raw)"
+ },
+ "169998": {
+  "flavan3ols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11167 (Corn, sweet, yellow, raw)"
+ },
+ "170000": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0.03,
+  "flavonols_mg": 25.99,
+  "source": "USDA Flavonoid R3.3 NDB 11282 (Onions, raw)"
+ },
+ "170001": {
+  "flavonols_mg": 24.7,
+  "source": "USDA Flavonoid R3.3 NDB 11283 (Onions, cooked, boiled, drained, without salt)"
+ },
+ "170005": {
+  "flavones_mg": 0,
+  "flavonols_mg": 12.04,
+  "source": "USDA Flavonoid R3.3 NDB 11291 (Onions, spring or scallions (includes tops and bulb), raw)"
+ },
+ "170006": {
+  "flavones_mg": 0.03,
+  "flavonols_mg": 3.63,
+  "source": "USDA Flavonoid R3.3 NDB 11292 (Onions, young green, tops only)"
+ },
+ "170007": {
+  "flavonols_mg": 24.95,
+  "source": "USDA Flavonoid R3.3 NDB 11293 (Onions, welsh, raw)"
+ },
+ "170008": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0.08,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.01,
+  "flavonols_mg": 16.8,
+  "source": "USDA Flavonoid R3.3 NDB 11294 (Onions, sweet, raw)"
+ },
+ "170010": {
+  "flavan3ols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11300 (Peas, edible-podded, raw)"
+ },
+ "170013": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.11,
+  "source": "USDA Flavonoid R3.3 NDB 11308 (Peas, green (includes baby and lesuer types), canned, drained solids, unprepared)"
+ },
+ "170016": {
+  "flavonols_mg": 0.15,
+  "source": "USDA Flavonoid R3.3 NDB 11312 (Peas, green, frozen, unprepared)"
+ },
+ "170017": {
+  "anthocyanidins_mg": 0.08,
+  "flavones_mg": 0.41,
+  "flavonols_mg": 0.22,
+  "source": "USDA Flavonoid R3.3 NDB 11313 (Peas, green, frozen, cooked, boiled, drained, without salt)"
+ },
+ "170026": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 1.5,
+  "source": "USDA Flavonoid R3.3 NDB 11352 (Potato, flesh and skin, raw)"
+ },
+ "170027": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.49,
+  "source": "USDA Flavonoid R3.3 NDB 11354 (Potatoes, white, flesh and skin, raw; reviewed: russet potatoes, flesh and skin, raw → white potatoes, flesh and skin, raw (cultivar))"
+ },
+ "170028": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.49,
+  "source": "USDA Flavonoid R3.3 NDB 11354 (Potatoes, white, flesh and skin, raw)"
+ },
+ "170029": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.65,
+  "source": "USDA Flavonoid R3.3 NDB 11355 (Potatoes, red, flesh and skin, raw)"
+ },
+ "170030": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.73,
+  "source": "USDA Flavonoid R3.3 NDB 11356 (Potatoes, Russet, flesh and skin, baked)"
+ },
+ "170050": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.01,
+  "flavonols_mg": 0.72,
+  "source": "USDA Flavonoid R3.3 NDB 11530 (Tomatoes, red, ripe, cooked)"
+ },
+ "170051": {
+  "flavones_mg": 0.03,
+  "flavonols_mg": 0.54,
+  "source": "USDA Flavonoid R3.3 NDB 11531 (Tomatoes, red, ripe, canned, packed in tomato juice)"
+ },
+ "170061": {
+  "flavones_mg": 0,
+  "flavonols_mg": 12.6,
+  "source": "USDA Flavonoid R3.3 NDB 11568 (Turnip greens, raw)"
+ },
+ "170068": {
+  "flavanones_mg": 0,
+  "flavones_mg": 0.03,
+  "flavonols_mg": 53.22,
+  "source": "USDA Flavonoid R3.3 NDB 11591 (Watercress, raw)"
+ },
+ "170072": {
+  "flavonols_mg": 0.25,
+  "source": "USDA Flavonoid R3.3 NDB 11602 (Yam, cooked, boiled, drained, or baked, without salt)"
+ },
+ "170076": {
+  "flavones_mg": 0,
+  "flavonols_mg": 102.2,
+  "source": "USDA Flavonoid R3.3 NDB 11616 (Dock, raw)"
+ },
+ "170095": {
+  "flavonols_mg": 21.85,
+  "source": "USDA Flavonoid R3.3 NDB 11676 (Radish seeds, sprouted, raw)"
+ },
+ "170096": {
+  "flavonols_mg": 0.25,
+  "source": "USDA Flavonoid R3.3 NDB 11696 (Tomatoes, yellow, raw)"
+ },
+ "170108": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0.61,
+  "flavonols_mg": 0.25,
+  "source": "USDA Flavonoid R3.3 NDB 11821 (Peppers, sweet, red, raw)"
+ },
+ "170174": {
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 12119 (Nuts, coconut water (liquid from coconuts))"
+ },
+ "170178": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 12131 (Nuts, macadamia nuts, raw)"
+ },
+ "170182": {
+  "anthocyanidins_mg": 18.02,
+  "flavan3ols_mg": 15.99,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 12142 (Nuts, pecans)"
+ },
+ "170184": {
+  "anthocyanidins_mg": 7.33,
+  "flavan3ols_mg": 6.85,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 1.46,
+  "source": "USDA Flavonoid R3.3 NDB 12151 (Nuts, pistachio nuts, raw)"
+ },
+ "170187": {
+  "anthocyanidins_mg": 2.71,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 12155 (Nuts, walnuts, english)"
+ },
+ "170283": {
+  "flavan3ols_mg": 2.39,
+  "source": "USDA Flavonoid R3.3 NDB 20004 (Barley, hulled)"
+ },
+ "170286": {
+  "flavonols_mg": 15.38,
+  "source": "USDA Flavonoid R3.3 NDB 20008 (Buckwheat)"
+ },
+ "170377": {
+  "flavan3ols_mg": 62.87,
+  "flavones_mg": 0,
+  "flavonols_mg": 4.6,
+  "source": "USDA Flavonoid R3.3 NDB 11088 (Broadbeans, immature seeds, raw)"
+ },
+ "170378": {
+  "flavan3ols_mg": 20.63,
+  "source": "USDA Flavonoid R3.3 NDB 11089 (Broadbeans, immature seeds, cooked, boiled, drained, without salt)"
+ },
+ "170379": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.8,
+  "flavonols_mg": 11.16,
+  "source": "USDA Flavonoid R3.3 NDB 11090 (Broccoli, raw)"
+ },
+ "170381": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 2.25,
+  "source": "USDA Flavonoid R3.3 NDB 11096 (Broccoli raab, raw)"
+ },
+ "170382": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 1.05,
+  "source": "USDA Flavonoid R3.3 NDB 11097 (Broccoli raab, cooked)"
+ },
+ "170383": {
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 3.29,
+  "flavones_mg": 0.33,
+  "flavonols_mg": 2.78,
+  "source": "USDA Flavonoid R3.3 NDB 11098 (Brussels sprouts, raw)"
+ },
+ "170388": {
+  "flavones_mg": 0.87,
+  "flavonols_mg": 1.23,
+  "source": "USDA Flavonoid R3.3 NDB 11114 (Cabbage, savoy, raw)"
+ },
+ "170389": {
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11115 (Cabbage, savoy, cooked, boiled, drained, without salt)"
+ },
+ "170390": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0.33,
+  "flavonols_mg": 6.42,
+  "source": "USDA Flavonoid R3.3 NDB 11116 (Cabbage, chinese (pak-choi), raw)"
+ },
+ "170391": {
+  "anthocyanidins_mg": 0.06,
+  "flavones_mg": 0.03,
+  "flavonols_mg": 1.88,
+  "source": "USDA Flavonoid R3.3 NDB 11117 (Cabbage, chinese (pak-choi), cooked, boiled, drained, without salt)"
+ },
+ "170393": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0.11,
+  "flavonols_mg": 0.49,
+  "source": "USDA Flavonoid R3.3 NDB 11124 (Carrots, raw)"
+ },
+ "170394": {
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11125 (Carrots, cooked, boiled, drained, without salt)"
+ },
+ "170396": {
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11128 (Carrots, canned, regular pack, drained solids)"
+ },
+ "170397": {
+  "flavones_mg": 0.27,
+  "flavonols_mg": 0.87,
+  "source": "USDA Flavonoid R3.3 NDB 11136 (Cauliflower, cooked, boiled, drained, without salt)"
+ },
+ "170398": {
+  "flavones_mg": 0.29,
+  "flavonols_mg": 0.85,
+  "source": "USDA Flavonoid R3.3 NDB 11137 (Cauliflower, frozen, unprepared)"
+ },
+ "170399": {
+  "flavones_mg": 0.24,
+  "flavonols_mg": 0.58,
+  "source": "USDA Flavonoid R3.3 NDB 11138 (Cauliflower, frozen, cooked, boiled, drained, without salt)"
+ },
+ "170400": {
+  "flavones_mg": 2.41,
+  "flavonols_mg": 0.18,
+  "source": "USDA Flavonoid R3.3 NDB 11141 (Celeriac, raw)"
+ },
+ "170406": {
+  "flavones_mg": 0.08,
+  "flavonols_mg": 11.31,
+  "source": "USDA Flavonoid R3.3 NDB 11161 (Collards, raw)"
+ },
+ "170416": {
+  "flavanones_mg": 0,
+  "flavones_mg": 216.55,
+  "flavonols_mg": 16.61,
+  "source": "USDA Flavonoid R3.3 NDB 11297 (Parsley, fresh)"
+ },
+ "170417": {
+  "flavones_mg": 0,
+  "flavonols_mg": 0.99,
+  "source": "USDA Flavonoid R3.3 NDB 11298 (Parsnips, raw)"
+ },
+ "170419": {
+  "flavan3ols_mg": 0.02,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11304 (Peas, green, raw)"
+ },
+ "170427": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavones_mg": 4.71,
+  "flavonols_mg": 2.27,
+  "source": "USDA Flavonoid R3.3 NDB 11333 (Peppers, sweet, green, raw)"
+ },
+ "170434": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 1.19,
+  "source": "USDA Flavonoid R3.3 NDB 11357 (Potatoes, white, flesh and skin, baked)"
+ },
+ "170435": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 1.43,
+  "source": "USDA Flavonoid R3.3 NDB 11358 (Potatoes, red, flesh and skin, baked)"
+ },
+ "170457": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0.68,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.8,
+  "source": "USDA Flavonoid R3.3 NDB 11529 (Tomatoes, red, ripe, raw, year round average)"
+ },
+ "170460": {
+  "flavonols_mg": 4.2,
+  "source": "USDA Flavonoid R3.3 NDB 11547 (Tomato products, canned, puree, without salt added)"
+ },
+ "170474": {
+  "flavones_mg": 62.2,
+  "source": "USDA Flavonoid R3.3 NDB 11587 (Vinespinach, (basella), raw)"
+ },
+ "170497": {
+  "flavones_mg": 5.27,
+  "flavonols_mg": 15.9,
+  "source": "USDA Flavonoid R3.3 NDB 11670 (Peppers, hot chili, green, raw)"
+ },
+ "170501": {
+  "flavones_mg": 0.03,
+  "flavonols_mg": 0.54,
+  "source": "USDA Flavonoid R3.3 NDB 11531 (Tomatoes, red, ripe, canned, packed in tomato juice; reviewed: crushed canned tomatoes → canned tomatoes packed in tomato juice)"
+ },
+ "170545": {
+  "flavones_mg": 0,
+  "flavonols_mg": 1.3,
+  "source": "USDA Flavonoid R3.3 NDB 11886 (Juice, tomato, canned, without salt added)"
+ },
+ "170567": {
+  "anthocyanidins_mg": 2.46,
+  "flavan3ols_mg": 4.47,
+  "flavanones_mg": 0.68,
+  "flavones_mg": 0,
+  "flavonols_mg": 3.39,
+  "source": "USDA Flavonoid R3.3 NDB 12061 (Nuts, almonds)"
+ },
+ "170569": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 12078 (Nuts, brazilnuts, dried, unblanched)"
+ },
+ "170572": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 1.98,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 12086 (Nuts, cashew nuts, oil roasted, without salt added)"
+ },
+ "170575": {
+  "flavan3ols_mg": 0.02,
+  "source": "USDA Flavonoid R3.3 NDB 12098 (Nuts, chestnuts, european, raw, peeled)"
+ },
+ "170581": {
+  "anthocyanidins_mg": 6.71,
+  "flavan3ols_mg": 5.25,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 12120 (Nuts, hazelnuts or filberts)"
+ },
+ "170592": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0.49,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 12149 (Nuts, pine nuts, pinyon, dried)"
+ },
+ "170645": {
+  "flavan3ols_mg": 0.59,
+  "flavonols_mg": 0.37,
+  "source": "USDA Flavonoid R3.3 NDB 19719 (Jams and preserves, apricot)"
+ },
+ "170685": {
+  "flavones_mg": 0.28,
+  "flavonols_mg": 7.09,
+  "source": "USDA Flavonoid R3.3 NDB 20009 (Buckwheat groats, roasted, dry)"
+ },
+ "170687": {
+  "flavan3ols_mg": 3.8,
+  "flavonols_mg": 3.47,
+  "source": "USDA Flavonoid R3.3 NDB 20011 (Buckwheat flour, whole-groat)"
+ },
+ "170845": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "170846": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "170851": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "170858": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "170859": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "170886": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "170920": {
+  "flavones_mg": 841.05,
+  "source": "USDA Flavonoid R3.3 NDB 02007 (Spices, celery seed)"
+ },
+ "170928": {
+  "flavanones_mg": 0,
+  "flavones_mg": 3.5,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 02023 (Spices, marjoram, dried)"
+ },
+ "170930": {
+  "flavones_mg": 4523.25,
+  "flavonols_mg": 331.24,
+  "source": "USDA Flavonoid R3.3 NDB 02029 (Spices, parsley, dried)"
+ },
+ "170934": {
+  "flavonols_mg": 205.48,
+  "source": "USDA Flavonoid R3.3 NDB 02037 (Spices, saffron)"
+ },
+ "171241": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "171244": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "171249": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "171257": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "171284": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "171287": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "171304": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "171413": {
+  "flavones_mg": 0.21,
+  "source": "USDA Flavonoid R3.3 NDB 04053 (Oil, olive, salad or cooking)"
+ },
+ "171686": {
+  "anthocyanidins_mg": 22.55,
+  "flavones_mg": 0,
+  "flavonols_mg": 5.79,
+  "source": "USDA Flavonoid R3.3 NDB 09001 (Acerola, (west indian cherry), raw)"
+ },
+ "171688": {
+  "anthocyanidins_mg": 1.59,
+  "flavan3ols_mg": 9.29,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.12,
+  "flavonols_mg": 4.15,
+  "source": "USDA Flavonoid R3.3 NDB 09003 (Apples, raw, with skin)"
+ },
+ "171689": {
+  "anthocyanidins_mg": 2.19,
+  "flavan3ols_mg": 7.65,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.01,
+  "flavonols_mg": 1.07,
+  "source": "USDA Flavonoid R3.3 NDB 09004 (Apples, raw, without skin)"
+ },
+ "171695": {
+  "flavan3ols_mg": 6.1,
+  "flavones_mg": 0,
+  "flavonols_mg": 2,
+  "source": "USDA Flavonoid R3.3 NDB 09019 (Applesauce, canned, unsweetened, without added ascorbic acid (includes USDA commodity))"
+ },
+ "171697": {
+  "flavan3ols_mg": 8.41,
+  "flavones_mg": 0,
+  "flavonols_mg": 2.26,
+  "source": "USDA Flavonoid R3.3 NDB 09021 (Apricots, raw)"
+ },
+ "171705": {
+  "anthocyanidins_mg": 0.33,
+  "flavan3ols_mg": 0.52,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 09037 (Avocados, raw, all commercial varieties)"
+ },
+ "171706": {
+  "anthocyanidins_mg": 0.33,
+  "flavan3ols_mg": 0.52,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 09037 (Avocados, raw, all commercial varieties; reviewed: California avocado → avocados, all commercial varieties)"
+ },
+ "171707": {
+  "anthocyanidins_mg": 0.33,
+  "flavan3ols_mg": 0.52,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 09037 (Avocados, raw, all commercial varieties; reviewed: Florida avocado → avocados, all commercial varieties)"
+ },
+ "171711": {
+  "anthocyanidins_mg": 163.3,
+  "flavan3ols_mg": 6.69,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.2,
+  "flavonols_mg": 10.63,
+  "source": "USDA Flavonoid R3.3 NDB 09050 (Blueberries, cultivated (highbush), raw)"
+ },
+ "171718": {
+  "anthocyanidins_mg": 11.24,
+  "flavonols_mg": 2.92,
+  "source": "USDA Flavonoid R3.3 NDB 09068 (Cherries, sour, red, frozen, unsweetened)"
+ },
+ "171719": {
+  "anthocyanidins_mg": 31.98,
+  "flavan3ols_mg": 9.75,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 2.63,
+  "source": "USDA Flavonoid R3.3 NDB 09070 (Cherries, sweet, raw)"
+ },
+ "171722": {
+  "flavan3ols_mg": 6.47,
+  "flavones_mg": 0,
+  "anthocyanidins_mg": 68.38,
+  "flavanones_mg": 0,
+  "flavonols_mg": 23.76,
+  "source": "USDA Flavonoid R3.3 NDB 09078 (Cranberries, raw)"
+ },
+ "171725": {
+  "flavan3ols_mg": 6.25,
+  "source": "USDA Flavonoid R3.3 NDB 09086 (Custard-apple, (bullock's-heart), raw)"
+ },
+ "171726": {
+  "anthocyanidins_mg": 1.7,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.93,
+  "source": "USDA Flavonoid R3.3 NDB 09087 (Dates, deglet noor)"
+ },
+ "171727": {
+  "anthocyanidins_mg": 485.28,
+  "flavonols_mg": 32.77,
+  "source": "USDA Flavonoid R3.3 NDB 09088 (Elderberries, raw)"
+ },
+ "171890": {
+  "flavan3ols_mg": 0.08,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.1,
+  "source": "USDA Flavonoid R3.3 NDB 14209 (Coffee, brewed from grounds, prepared with tap water)"
+ },
+ "171955": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "172175": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "172177": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "172178": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "172184": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "172232": {
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 02044 (Basil, fresh)"
+ },
+ "172233": {
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 112.68,
+  "source": "USDA Flavonoid R3.3 NDB 02045 (Dill weed, fresh)"
+ },
+ "172238": {
+  "flavonols_mg": 303.89,
+  "source": "USDA Flavonoid R3.3 NDB 02054 (Capers, canned)"
+ },
+ "172240": {
+  "anthocyanidins_mg": 0.66,
+  "flavan3ols_mg": 2.2,
+  "source": "USDA Flavonoid R3.3 NDB 99109 (Vinegar, wine, red; reviewed: red wine vinegar)"
+ },
+ "172336": {
+  "tyrosols_mg": 0,
+  "source": "Phenol-Explorer tyrosols (Rape seed, oil)"
+ },
+ "172420": {
+  "flavan3ols_mg": 0.49,
+  "source": "USDA Flavonoid R3.3 NDB 16069 (Lentils, raw)"
+ },
+ "172448": {
+  "flavones_mg": 0,
+  "flavonols_mg": 1.19,
+  "source": "USDA Flavonoid R3.3 NDB 16126 (Tofu, firm, prepared with calcium sulfate and magnesium chloride (nigari))"
+ },
+ "172475": {
+  "flavones_mg": 0,
+  "flavonols_mg": 1.19,
+  "source": "USDA Flavonoid R3.3 NDB 16126 (Tofu, firm, prepared with calcium sulfate and magnesium chloride (nigari); reviewed: firm tofu (calcium sulfate) → firm tofu (calcium sulfate and nigari))"
+ },
+ "172688": {
+  "flavan3ols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 18075 (Bread, whole-wheat, commercially prepared)"
+ },
+ "173021": {
+  "anthocyanidins_mg": 0.51,
+  "flavan3ols_mg": 2.09,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 5.47,
+  "source": "USDA Flavonoid R3.3 NDB 09089 (Figs, raw)"
+ },
+ "173030": {
+  "anthocyanidins_mg": 9.51,
+  "flavan3ols_mg": 2.11,
+  "flavones_mg": 0,
+  "flavonols_mg": 2.11,
+  "source": "USDA Flavonoid R3.3 NDB 09107 (Gooseberries, raw)"
+ },
+ "173039": {
+  "flavanones_mg": 21.23,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.45,
+  "source": "USDA Flavonoid R3.3 NDB 09128 (Juice, grapefruit, white, raw)"
+ },
+ "173042": {
+  "anthocyanidins_mg": 16.08,
+  "flavan3ols_mg": 1.38,
+  "flavones_mg": 0.02,
+  "flavonols_mg": 1.43,
+  "source": "USDA Flavonoid R3.3 NDB 09135 (Juice, grape, canned or bottled, unsweetened, without added ascorbic acid)"
+ },
+ "173176": {
+  "anthocyanidins_mg": 109.29,
+  "flavan3ols_mg": 17.42,
+  "flavonols_mg": 1.94,
+  "source": "USDA Flavonoid R3.3 NDB 14057 (Alcoholic beverage, wine, dessert, sweet)"
+ },
+ "173190": {
+  "anthocyanidins_mg": 19.27,
+  "flavan3ols_mg": 11.08,
+  "flavanones_mg": 2.4,
+  "flavones_mg": 0.17,
+  "flavonols_mg": 1.57,
+  "source": "USDA Flavonoid R3.3 NDB 14096 (Alcoholic beverage, wine, table, red)"
+ },
+ "173227": {
+  "flavan3ols_mg": 114.3,
+  "flavones_mg": 0,
+  "flavonols_mg": 4.05,
+  "source": "USDA Flavonoid R3.3 NDB 14355 (Tea, black, brewed, prepared with tap water)"
+ },
+ "173414": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "173417": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "173418": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "173419": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "173420": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "173430": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "173431": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "173435": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "173468": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: mineral — no plant matter, so no polyphenols"
+ },
+ "173470": {
+  "flavanones_mg": 0,
+  "flavones_mg": 47.75,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 02049 (Thyme, fresh)"
+ },
+ "173473": {
+  "flavanones_mg": 24.86,
+  "flavones_mg": 2.55,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 02063 (Rosemary, fresh)"
+ },
+ "173474": {
+  "flavanones_mg": 41.08,
+  "flavones_mg": 18.05,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 02064 (Peppermint, fresh)"
+ },
+ "173687": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "173709": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "173734": {
+  "anthocyanidins_mg": 44.52,
+  "source": "USDA Flavonoid R3.3 NDB 16014 (Beans, black, mature seeds, raw)"
+ },
+ "173741": {
+  "flavan3ols_mg": 2.01,
+  "source": "USDA Flavonoid R3.3 NDB 16029 (Beans, kidney, all types, mature seeds, canned)"
+ },
+ "173744": {
+  "anthocyanidins_mg": 6.68,
+  "source": "USDA Flavonoid R3.3 NDB 16032 (Beans, kidney, red, mature seeds, raw)"
+ },
+ "173754": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.9,
+  "source": "USDA Flavonoid R3.3 NDB 16054 (Broadbeans (fava beans), mature seeds, canned)"
+ },
+ "173755": {
+  "flavan3ols_mg": 190.27,
+  "flavonols_mg": 45.95,
+  "source": "USDA Flavonoid R3.3 NDB 16055 (Carob flour)"
+ },
+ "173756": {
+  "flavan3ols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 16056 (Chickpeas (garbanzo beans, bengal gram), mature seeds, raw)"
+ },
+ "173933": {
+  "anthocyanidins_mg": 0.02,
+  "flavan3ols_mg": 5.96,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.59,
+  "source": "USDA Flavonoid R3.3 NDB 09016 (Juice, apple, canned or bottled, unsweetened, without added ascorbic acid)"
+ },
+ "173936": {
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 09023 (Apricots, canned, water pack, without skin, solids and liquids)"
+ },
+ "173944": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 6.12,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.18,
+  "source": "USDA Flavonoid R3.3 NDB 09040 (Bananas, raw)"
+ },
+ "173946": {
+  "anthocyanidins_mg": 100.61,
+  "flavan3ols_mg": 42.5,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 4.52,
+  "source": "USDA Flavonoid R3.3 NDB 09042 (Blackberries, raw)"
+ },
+ "173950": {
+  "anthocyanidins_mg": 94.25,
+  "flavones_mg": 1.81,
+  "flavonols_mg": 7.5,
+  "source": "USDA Flavonoid R3.3 NDB 09054 (Blueberries, frozen, unsweetened)"
+ },
+ "173954": {
+  "anthocyanidins_mg": 33.44,
+  "flavan3ols_mg": 4.13,
+  "flavones_mg": 0,
+  "flavonols_mg": 2.43,
+  "source": "USDA Flavonoid R3.3 NDB 09063 (Cherries, sour, red, raw)"
+ },
+ "173963": {
+  "anthocyanidins_mg": 157.78,
+  "flavan3ols_mg": 1.17,
+  "flavones_mg": 0,
+  "flavonols_mg": 11.46,
+  "source": "USDA Flavonoid R3.3 NDB 09083 (Currants, european black, raw)"
+ },
+ "174158": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: mineral — no plant matter, so no polyphenols"
+ },
+ "174182": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "174216": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "174261": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0.66,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 16089 (Peanuts, all types, oil-roasted, with salt)"
+ },
+ "174284": {
+  "flavan3ols_mg": 0.49,
+  "source": "USDA Flavonoid R3.3 NDB 16069 (Lentils, raw; reviewed: red lentils, raw → lentils, raw)"
+ },
+ "174673": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 32.99,
+  "flavones_mg": 0.6,
+  "flavonols_mg": 0.35,
+  "source": "USDA Flavonoid R3.3 NDB 09112 (Grapefruit, raw, pink and red, all areas)"
+ },
+ "174676": {
+  "flavanones_mg": 21.98,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 09116 (Grapefruit, raw, white, all areas)"
+ },
+ "174678": {
+  "anthocyanidins_mg": 0,
+  "flavanones_mg": 18.98,
+  "flavonols_mg": 0.36,
+  "source": "USDA Flavonoid R3.3 NDB 09123 (Juice, grapefruit, white, canned, unsweetened)"
+ },
+ "174681": {
+  "flavanones_mg": 31.18,
+  "source": "USDA Flavonoid R3.3 NDB 09126 (Juice, grapefruit concentrate, white, frozen, unsweetened, diluted with 3 volume water)"
+ },
+ "174833": {
+  "anthocyanidins_mg": 35.59,
+  "flavan3ols_mg": 18.36,
+  "flavones_mg": 0.04,
+  "flavonols_mg": 0.89,
+  "source": "USDA Flavonoid R3.3 NDB 14097 (Alcoholic beverage, wine, table, red, Cabernet Sauvignon)"
+ },
+ "174834": {
+  "anthocyanidins_mg": 55.09,
+  "flavan3ols_mg": 15.41,
+  "flavones_mg": 0.06,
+  "flavonols_mg": 0.77,
+  "source": "USDA Flavonoid R3.3 NDB 14098 (Alcoholic beverage, wine, table, red, Cabernet Franc)"
+ },
+ "174836": {
+  "anthocyanidins_mg": 152.98,
+  "flavan3ols_mg": 16.79,
+  "flavonols_mg": 2.11,
+  "source": "USDA Flavonoid R3.3 NDB 14100 (Alcoholic beverage, wine, table, red, Syrah or Shiraz)"
+ },
+ "174837": {
+  "anthocyanidins_mg": 0.06,
+  "flavan3ols_mg": 1.32,
+  "flavanones_mg": 0.78,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.06,
+  "source": "USDA Flavonoid R3.3 NDB 14106 (Alcoholic beverage, wine, table, white); Phenol-Explorer tyrosols (Wine [White])",
+  "tyrosols_mg": 0.42
+ },
+ "174871": {
+  "flavan3ols_mg": 52.68,
+  "flavones_mg": 0,
+  "flavonols_mg": 4.51,
+  "source": "USDA Flavonoid R3.3 NDB 14352 (Tea, black, brewed, prepared with tap water, decaffeinated)"
+ },
+ "175103": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: mineral — no plant matter, so no polyphenols"
+ },
+ "175141": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "175142": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "175154": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "175165": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "175167": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "175179": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "175186": {
+  "anthocyanidins_mg": 44.52,
+  "source": "USDA Flavonoid R3.3 NDB 16014 (Beans, black, mature seeds, raw; reviewed: black turtle beans, mature seeds, raw → black beans, mature seeds, raw)"
+ },
+ "175193": {
+  "anthocyanidins_mg": 6.68,
+  "source": "USDA Flavonoid R3.3 NDB 16032 (Beans, kidney, red, mature seeds, raw; reviewed: kidney beans, mature seeds, raw → red kidney beans, mature seeds, raw)"
+ },
+ "175194": {
+  "flavonols_mg": 7.26,
+  "source": "USDA Flavonoid R3.3 NDB 16033 (Beans, kidney, red, mature seeds, cooked, boiled, without salt)"
+ },
+ "175199": {
+  "flavan3ols_mg": 5.26,
+  "flavonols_mg": 2.58,
+  "source": "USDA Flavonoid R3.3 NDB 16042 (Beans, pinto, mature seeds, raw)"
+ },
+ "175202": {
+  "flavan3ols_mg": 0.1,
+  "flavonols_mg": 3.4,
+  "source": "USDA Flavonoid R3.3 NDB 16049 (Beans, white, mature seeds, raw)"
+ },
+ "321360": {
+  "flavanones_mg": 3.19,
+  "flavones_mg": 0,
+  "flavonols_mg": 2.86,
+  "source": "USDA Flavonoid R3.3 NDB 99011 (Tomatoes, cherry, raw; reviewed: grape tomatoes → cherry tomatoes, raw (small-fruited cultivars))"
+ },
+ "323604": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "330137": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "332791": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0.56,
+  "source": "USDA Flavonoid R3.3 NDB 09195 (Olives, pickled, canned or bottled, green; reviewed: green olives, stuffed → green olives, pickled)"
+ },
+ "333476": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "746771": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 28.97,
+  "flavones_mg": 0.7,
+  "flavonols_mg": 0.22,
+  "source": "USDA Flavonoid R3.3 NDB 09202 (Oranges, raw, navels)"
+ },
+ "748236": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "748967": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "790577": {
+  "anthocyanidins_mg": 9.56,
+  "flavones_mg": 0.45,
+  "flavonols_mg": 47.19,
+  "source": "USDA Flavonoid R3.3 NDB 99055 (identical description)"
+ },
+ "1104962": {
+  "anthocyanidins_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 6.66,
+  "source": "USDA Flavonoid R3.3 NDB 99056 (identical description)"
+ },
+ "1105314": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 6.12,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.18,
+  "source": "USDA Flavonoid R3.3 NDB 09040 (Bananas, raw)"
+ },
+ "1750343": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 6.64,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 3.69,
+  "source": "USDA Flavonoid R3.3 NDB 09501 (Apples, Golden Delicious, raw, with skin)"
+ },
+ "1999629": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 11260 (Mushrooms, white, raw)"
+ },
+ "1999632": {
+  "flavones_mg": 0.74,
+  "flavonols_mg": 10.7,
+  "source": "USDA Flavonoid R3.3 NDB 11457 (Spinach, raw; reviewed: baby spinach → spinach, raw)"
+ },
+ "1999633": {
+  "flavones_mg": 0.74,
+  "flavonols_mg": 10.7,
+  "source": "USDA Flavonoid R3.3 NDB 11457 (Spinach, raw)"
+ },
+ "2003591": {
+  "anthocyanidins_mg": 0,
+  "flavanones_mg": 18.99,
+  "flavonols_mg": 0.4,
+  "source": "USDA Flavonoid R3.3 NDB 09209 (Juice, orange, chilled, includes from concentrate)"
+ },
+ "2003597": {
+  "anthocyanidins_mg": 0,
+  "flavanones_mg": 14.26,
+  "flavones_mg": 0,
+  "flavonols_mg": 0.3,
+  "source": "USDA Flavonoid R3.3 NDB 09206 (Juice, orange, raw)"
+ },
+ "2258586": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0.11,
+  "flavonols_mg": 0.49,
+  "source": "USDA Flavonoid R3.3 NDB 11124 (Carrots, raw)"
+ },
+ "2258588": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavones_mg": 4.71,
+  "flavonols_mg": 2.27,
+  "source": "USDA Flavonoid R3.3 NDB 11333 (Peppers, sweet, green, raw)"
+ },
+ "2258589": {
+  "anthocyanidins_mg": 0,
+  "flavones_mg": 1.02,
+  "flavonols_mg": 1.27,
+  "source": "USDA Flavonoid R3.3 NDB 11951 (Peppers, sweet, yellow, raw)"
+ },
+ "2258590": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0.61,
+  "flavonols_mg": 0.25,
+  "source": "USDA Flavonoid R3.3 NDB 11821 (Peppers, sweet, red, raw)"
+ },
+ "2346386": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "2346393": {
+  "anthocyanidins_mg": 2.46,
+  "flavan3ols_mg": 4.47,
+  "flavanones_mg": 0.68,
+  "flavones_mg": 0,
+  "flavonols_mg": 3.39,
+  "source": "USDA Flavonoid R3.3 NDB 12061 (Nuts, almonds)"
+ },
+ "2346394": {
+  "anthocyanidins_mg": 2.71,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 12155 (Nuts, walnuts, english)"
+ },
+ "2346395": {
+  "anthocyanidins_mg": 18.02,
+  "flavan3ols_mg": 15.99,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 12142 (Nuts, pecans)"
+ },
+ "2346398": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.01,
+  "flavonols_mg": 0.15,
+  "source": "USDA Flavonoid R3.3 NDB 09266 (Pineapple, raw, all varieties)"
+ },
+ "2346399": {
+  "anthocyanidins_mg": 31.98,
+  "flavan3ols_mg": 9.75,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 2.63,
+  "source": "USDA Flavonoid R3.3 NDB 09070 (Cherries, sweet, raw)"
+ },
+ "2346407": {
+  "flavones_mg": 0.18,
+  "flavonols_mg": 0.46,
+  "source": "USDA Flavonoid R3.3 NDB 11109 (Cabbage, raw)"
+ },
+ "2346414": {
+  "flavan3ols_mg": 6.1,
+  "flavones_mg": 0,
+  "flavonols_mg": 2,
+  "source": "USDA Flavonoid R3.3 NDB 09019 (Applesauce, canned, unsweetened, without added ascorbic acid (includes USDA commodity); reviewed: unsweetened applesauce)"
+ },
+ "2512374": {
+  "flavan3ols_mg": 3.8,
+  "flavonols_mg": 3.47,
+  "source": "USDA Flavonoid R3.3 NDB 20011 (Buckwheat flour, whole-groat)"
+ },
+ "2512378": {
+  "flavonols_mg": 15.38,
+  "source": "USDA Flavonoid R3.3 NDB 20008 (Buckwheat)"
+ },
+ "2515375": {
+  "anthocyanidins_mg": 6.71,
+  "flavan3ols_mg": 5.25,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "source": "USDA Flavonoid R3.3 NDB 12120 (Nuts, hazelnuts or filberts)"
+ },
+ "2644283": {
+  "flavan3ols_mg": 0.49,
+  "source": "USDA Flavonoid R3.3 NDB 16069 (Lentils, raw; reviewed: lentils, dry → lentils, raw)"
+ },
+ "2647437": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0,
+  "flavanones_mg": 0,
+  "flavones_mg": 0,
+  "flavonols_mg": 0,
+  "tyrosols_mg": 0,
+  "source": "Rule: animal-product — no plant matter, so no polyphenols"
+ },
+ "2685568": {
+  "flavan3ols_mg": 0,
+  "flavonols_mg": 0.66,
+  "source": "USDA Flavonoid R3.3 NDB 11477 (Squash, summer, zucchini, includes skin, raw; reviewed: zucchini with skin, raw)"
+ },
+ "2685572": {
+  "flavan3ols_mg": 0,
+  "flavones_mg": 0.33,
+  "flavonols_mg": 6.42,
+  "source": "USDA Flavonoid R3.3 NDB 11116 (Cabbage, chinese (pak-choi), raw)"
+ },
+ "2685578": {
+  "flavones_mg": 0.03,
+  "flavonols_mg": 0.54,
+  "source": "USDA Flavonoid R3.3 NDB 11531 (Tomatoes, red, ripe, canned, packed in tomato juice; reviewed: whole canned tomatoes → canned tomatoes packed in tomato juice)"
+ },
+ "2685582": {
+  "flavonols_mg": 4.2,
+  "source": "USDA Flavonoid R3.3 NDB 11547 (Tomato products, canned, puree, without salt added; reviewed: tomato purée, canned)"
+ },
+ "2710815": {
+  "flavan3ols_mg": 8.41,
+  "flavones_mg": 0,
+  "flavonols_mg": 2.26,
+  "source": "USDA Flavonoid R3.3 NDB 09021 (Apricots, raw)"
+ },
+ "2710823": {
+  "flavonols_mg": 21.07,
+  "source": "USDA Flavonoid R3.3 NDB 11011 (Asparagus, raw; reviewed: green asparagus, raw → asparagus, raw)"
+ },
+ "2710831": {
+  "anthocyanidins_mg": 0,
+  "flavan3ols_mg": 0.37,
+  "flavanones_mg": 0,
+  "flavones_mg": 0.74,
+  "flavonols_mg": 1.07,
+  "source": "USDA Flavonoid R3.3 NDB 09148 (Kiwifruit, green, raw; reviewed: green kiwifruit, peeled, raw → kiwifruit, green, raw (SR flesh))"
+ },
+ "_doc": "GENERATED by scripts/build-polyphenols.mjs — do not hand-edit. Polyphenol subclass contents (mg aglycone per 100 g) per USDA fdcId, merged into the nutrient vector and read by the inflammation score (src/core/fii.ts): anthocyanidins, flavan-3-ols, flavanones, flavones and flavonols from the USDA Flavonoid Database R3.3, tyrosols (olive phenolics) from Phenol-Explorer, and rule-based zeros for foods with no plant matter."
 }

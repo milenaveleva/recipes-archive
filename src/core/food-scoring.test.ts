@@ -9,12 +9,12 @@ type Scoring = { gi?: number; giConfidence?: string; fvl?: boolean };
 
 const FOODS = foods as Food[];
 const SCORING = scoring as Record<string, Scoring>;
-const POLYPHENOLS = polyphenols as Record<string, { polyphenol_mg?: number; basis?: string; source?: string }>;
+const POLYPHENOLS = polyphenols as unknown as Record<string, Record<string, number | undefined> & { source?: string }>;
 
 describe('food-scoring.json integrity', () => {
   // Scoring is curated + cited per food, so it covers a subset of the full USDA
   // dataset (foods without an entry still contribute nutrients, and inflammation is
-  // computed from composition by the FII regardless). Each entry must still point at a
+  // computed from composition regardless). Each entry must still point at a
   // real food and carry valid, cited values.
   it('has no orphan keys — every key is a real food fdcId', () => {
     const ids = new Set(FOODS.map((f) => String(f.fdcId)));
@@ -46,22 +46,25 @@ describe('food-scoring.json integrity', () => {
 
 describe('polyphenols.json integrity', () => {
   const entries = Object.entries(POLYPHENOLS).filter(([k]) => !k.startsWith('_'));
+  const FIELDS = ['anthocyanidins_mg', 'flavan3ols_mg', 'flavanones_mg', 'flavones_mg', 'flavonols_mg', 'tyrosols_mg'];
 
-  it('keys every value to a real food fdcId with a positive, cited content', () => {
+  it('keys every value to a real food fdcId with non-negative, sourced subclass contents', () => {
     const ids = new Set(FOODS.map((f) => String(f.fdcId)));
+    expect(entries.length).toBeGreaterThan(300);
     for (const [id, p] of entries) {
       expect(ids.has(id), `orphan fdcId ${id}`).toBe(true);
-      // 0 only for a rule-documented absence (basis "absent:<rule>"); an analysed value is positive.
-      if (p.basis?.startsWith('absent:')) expect(p.polyphenol_mg, `polyphenol_mg ${id}`).toBe(0);
-      else expect(p.polyphenol_mg, `polyphenol_mg ${id}`).toBeGreaterThan(0);
+      const vals = FIELDS.map((k) => p[k]).filter((v) => v !== undefined);
+      expect(vals.length, `subclass values ${id}`).toBeGreaterThan(0);
+      for (const v of vals) expect(v, `${id}`).toBeGreaterThanOrEqual(0);
       expect(p.source, `source ${id}`).toBeTruthy();
     }
   });
 });
 
 describe('phenol-crosswalk.json integrity', () => {
-  // The crosswalk (Phenol-Explorer name → fdcId) generates polyphenols.json. Guard it so a
-  // typo or a USDA re-ingest that drops a food can't silently orphan a polyphenol mapping.
+  // The crosswalk (Phenol-Explorer name → fdcId) places the tyrosols and the rule-based zeros
+  // in polyphenols.json. Guard it so a typo or a USDA re-ingest that drops a food can't
+  // silently orphan a mapping.
   // A name maps to one fdcId or a list of them (several USDA records of the same food);
   // the `_absent` rule lists join the same pool, so every placed fdcId is checked once.
   const raw = crosswalk as Record<string, unknown>;

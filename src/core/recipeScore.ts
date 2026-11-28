@@ -21,6 +21,9 @@ import { computeScores, type ScoredIngredient, type ScoreResult, type ScoreOptio
 import type { FoodRecord } from './match';
 import { applyCooking, cookingApplies, isCookingMethod, type CookingMethod } from './cooking';
 import type { NutrientVector, ResolvedIngredient } from './types';
+import { PREPS, type Prep } from './fii';
+
+const isPrep = (v: unknown): v is Prep => typeof v === 'string' && (PREPS as readonly string[]).includes(v);
 
 /** Curated per-food scoring metadata (GI + FVL); inflammation is composition-derived. */
 export interface FoodScoring {
@@ -48,14 +51,22 @@ export function isMeasuredGi(scoring: FoodScoring | undefined): boolean {
   return scoring?.giConfidence === 'high' || scoring?.giConfidence === 'medium';
 }
 
-/** Per-100g nutrients for a matched food, with the merged polyphenol value (FII input). */
-export function nutrientsFor(
-  food: FoodRecord | undefined,
-  polyphenols: Record<string, { polyphenol_mg?: number }>,
-): NutrientVector | null {
+/** One food's polyphenol subclass contents (src/data/polyphenols.json). */
+export type PolyphenolEntry = Partial<Record<(typeof POLYPHENOL_FIELDS)[number], number>> & { source?: string };
+/** The polyphenol subclass fields merged into a food's nutrient vector. */
+export const POLYPHENOL_FIELDS = [
+  'anthocyanidins_mg', 'flavan3ols_mg', 'flavanones_mg', 'flavones_mg', 'flavonols_mg', 'tyrosols_mg',
+] as const;
+export type PolyphenolTable = Record<string, PolyphenolEntry | string>;
+
+/** Per-100g nutrients for a matched food, with its polyphenol subclasses merged in (inflammation input). */
+export function nutrientsFor(food: FoodRecord | undefined, polyphenols: PolyphenolTable): NutrientVector | null {
   if (!food?.n) return null;
   const poly = food.fdcId != null ? polyphenols[String(food.fdcId)] : undefined;
-  return poly?.polyphenol_mg != null ? { ...food.n, polyphenol_mg: poly.polyphenol_mg } : food.n;
+  if (!poly || typeof poly !== 'object') return food.n;
+  const extra: Partial<NutrientVector> = {};
+  for (const f of POLYPHENOL_FIELDS) if (Number.isFinite(poly[f])) extra[f] = poly[f];
+  return { ...food.n, ...extra };
 }
 
 /** USDA categories whose foods count toward the Nutri-Score fruit/veg/legume share. */
@@ -90,6 +101,8 @@ export interface StoredScoringIngredient {
   cooking?: CookingMethod | null;
   /** 'dough': the starch is eaten as shaped, boiled dough (selects the food's `giDough`). */
   starchForm?: string | null;
+  /** Whether the fruit or vegetable is blended or juiced (re-classifies its sugars as free). */
+  prep?: Prep | null;
 }
 
 /** Pick the scoring fields from a stored frontmatter ingredient — shared by the
@@ -103,6 +116,7 @@ export function storedScoringFields(ing: Record<string, unknown>): StoredScoring
     item: ing.item as string | null | undefined,
     cooking: isCookingMethod(ing.cooking) ? ing.cooking : undefined,
     starchForm: ing.starchForm === 'dough' ? 'dough' : undefined,
+    prep: isPrep(ing.prep) ? ing.prep : undefined,
   };
 }
 
@@ -138,7 +152,7 @@ export function toScored(
   ing: StoredScoringIngredient,
   foodById: Map<number, FoodRecord>,
   foodScoring: Record<string, FoodScoring>,
-  polyphenols: Record<string, { polyphenol_mg?: number }>,
+  polyphenols: PolyphenolTable,
 ): ScoredIngredient {
   const food = ing.fdcId != null ? foodById.get(ing.fdcId) : undefined;
   const s = ing.fdcId != null ? foodScoring[String(ing.fdcId)] : undefined;
@@ -149,6 +163,7 @@ export function toScored(
     rawGrams: ing.grams ?? null,
     excludeFromNutrition: ing.excludeFromNutrition,
     fdcId: ing.fdcId ?? null,
+    prep: ing.prep ?? null,
     nutrients: cooked.nutrients,
     gi: g.gi,
     giMeasured: g.measured,
@@ -183,7 +198,7 @@ export function scoreRecipe(
   options: RecipeScoringOptions,
   foodById: Map<number, FoodRecord>,
   foodScoring: Record<string, FoodScoring>,
-  polyphenols: Record<string, { polyphenol_mg?: number }>,
+  polyphenols: PolyphenolTable,
 ): RecipeScore {
   const { servings, ...scoreOptions } = options;
   const macro = computeMacros(
@@ -206,8 +221,8 @@ export const NATIONAL_TABLE_CREDITS: Record<string, string> = {
   'FR-CIQUAL': 'ANSES Ciqual French food composition table 2020',
 };
 
-/** Credit line for the inflammation score (the composition FII). */
-export const INFLAMMATION_CREDIT = 'Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols';
+/** Credit line for the inflammation score (inflammatory-potential estimate). */
+export const INFLAMMATION_CREDIT = 'Inflammatory potential (estimate; pooled composition per 100 kcal); USDA Flavonoid Database R3.3; Phenol-Explorer';
 /** Credit line for the aromatic adjustment, emitted only when it applies. */
 export const AROMATIC_CREDIT = 'Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)';
 

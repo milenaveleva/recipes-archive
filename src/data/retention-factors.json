@@ -23,6 +23,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.6,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.9,
@@ -48,6 +51,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -78,6 +84,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -103,6 +112,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -132,6 +144,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.7,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -157,6 +172,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -188,6 +206,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.7,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -213,6 +234,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -242,6 +266,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -267,6 +294,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -298,6 +328,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.6,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.9,
@@ -323,6 +356,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -355,6 +391,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -380,6 +419,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -414,6 +456,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.7,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -439,6 +484,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -468,6 +516,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -493,6 +544,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -522,6 +576,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -547,6 +604,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -578,6 +638,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -603,6 +666,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -632,6 +698,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -657,6 +726,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -688,6 +760,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.7,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -713,6 +788,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -744,6 +822,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -769,6 +850,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -803,6 +887,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.9,
@@ -828,6 +915,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -857,6 +947,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -882,6 +975,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -911,6 +1007,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -936,6 +1035,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -967,6 +1069,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -992,6 +1097,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1021,6 +1129,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.9,
@@ -1046,6 +1157,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1077,6 +1191,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.9,
@@ -1102,6 +1219,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1133,6 +1253,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -1158,6 +1281,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1192,6 +1318,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.95,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -1217,6 +1346,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1247,6 +1379,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.95,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -1272,6 +1407,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1301,6 +1439,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.95,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -1326,6 +1467,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1356,6 +1500,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.95,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -1381,6 +1528,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1410,6 +1560,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.95,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -1435,6 +1588,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1466,6 +1622,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.95,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -1491,6 +1650,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1522,6 +1684,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.95,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -1547,6 +1712,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1581,6 +1749,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -1606,6 +1777,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1636,6 +1810,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -1661,6 +1838,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1690,6 +1870,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -1715,6 +1898,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1746,6 +1932,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -1771,6 +1960,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1800,6 +1992,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -1825,6 +2020,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1856,6 +2054,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -1881,6 +2082,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1913,6 +2117,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -1938,6 +2145,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -1972,6 +2182,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -1997,6 +2210,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2027,6 +2243,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -2052,6 +2271,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2081,6 +2303,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -2106,6 +2331,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2137,6 +2365,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -2162,6 +2393,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2191,6 +2425,9 @@
      "rf": {
       "vitA_ug": 0.8,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.8,
+      "lycopene_ug": 0.8,
+      "luteinZeaxanthin_ug": 0.8,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -2216,6 +2453,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2247,6 +2487,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -2272,6 +2515,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2304,6 +2550,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -2329,6 +2578,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2364,6 +2616,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.9,
@@ -2389,6 +2644,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2419,6 +2677,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -2444,6 +2705,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2474,6 +2738,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -2499,6 +2766,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2531,6 +2801,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -2556,6 +2829,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2586,6 +2862,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.9,
@@ -2611,6 +2890,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2643,6 +2925,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.9,
@@ -2668,6 +2953,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2700,6 +2988,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -2725,6 +3016,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2760,6 +3054,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.65,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.6,
       "riboflavin_mg": 0.7,
       "niacin_mg": 0.65,
@@ -2785,6 +3082,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2817,6 +3117,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.65,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.6,
       "riboflavin_mg": 0.7,
       "niacin_mg": 0.65,
@@ -2842,6 +3145,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2873,6 +3179,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.65,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.6,
       "riboflavin_mg": 0.7,
       "niacin_mg": 0.65,
@@ -2898,6 +3207,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2930,6 +3242,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.65,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.6,
       "riboflavin_mg": 0.7,
       "niacin_mg": 0.65,
@@ -2955,6 +3270,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -2986,6 +3304,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.65,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.6,
       "riboflavin_mg": 0.7,
       "niacin_mg": 0.65,
@@ -3011,6 +3332,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3043,6 +3367,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.65,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.6,
       "riboflavin_mg": 0.7,
       "niacin_mg": 0.65,
@@ -3068,6 +3395,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3100,6 +3430,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.65,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.6,
       "riboflavin_mg": 0.7,
       "niacin_mg": 0.65,
@@ -3125,6 +3458,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3160,6 +3496,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 1,
@@ -3185,6 +3524,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3217,6 +3559,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 1,
@@ -3242,6 +3587,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3274,6 +3622,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.7,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.75,
       "riboflavin_mg": 0.85,
       "niacin_mg": 1,
@@ -3299,6 +3650,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3331,6 +3685,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.7,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.75,
       "riboflavin_mg": 0.85,
       "niacin_mg": 1,
@@ -3356,6 +3713,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3387,6 +3747,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.7,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.75,
       "riboflavin_mg": 0.85,
       "niacin_mg": 1,
@@ -3412,6 +3775,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3443,6 +3809,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.75,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.95,
@@ -3468,6 +3837,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3500,6 +3872,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 1,
@@ -3525,6 +3900,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3559,6 +3937,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -3584,6 +3965,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3615,6 +3999,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -3640,6 +4027,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3671,6 +4061,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -3696,6 +4089,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3727,6 +4123,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -3752,6 +4151,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3783,6 +4185,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -3808,6 +4213,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3839,6 +4247,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -3864,6 +4275,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3895,6 +4309,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -3920,6 +4337,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -3954,6 +4374,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.7,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.65,
       "riboflavin_mg": 0.75,
       "niacin_mg": 0.65,
@@ -3979,6 +4402,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4010,6 +4436,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.7,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.65,
       "riboflavin_mg": 0.75,
       "niacin_mg": 0.65,
@@ -4035,6 +4464,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4066,6 +4498,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.6,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.55,
       "riboflavin_mg": 0.75,
       "niacin_mg": 0.6,
@@ -4091,6 +4526,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4123,6 +4561,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.6,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.55,
       "riboflavin_mg": 0.75,
       "niacin_mg": 0.6,
@@ -4148,6 +4589,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4180,6 +4624,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.6,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.55,
       "riboflavin_mg": 0.75,
       "niacin_mg": 0.6,
@@ -4205,6 +4652,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4236,6 +4686,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.7,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.65,
       "riboflavin_mg": 0.75,
       "niacin_mg": 0.65,
@@ -4261,6 +4714,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4292,6 +4748,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.7,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.65,
       "riboflavin_mg": 0.75,
       "niacin_mg": 0.65,
@@ -4317,6 +4776,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4351,6 +4813,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -4376,6 +4841,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4406,6 +4874,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -4431,6 +4902,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4460,6 +4934,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -4485,6 +4962,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4515,6 +4995,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -4540,6 +5023,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4569,6 +5055,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.75,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -4594,6 +5083,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4625,6 +5117,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -4650,6 +5145,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4681,6 +5179,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -4706,6 +5207,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4740,6 +5244,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -4765,6 +5272,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4796,6 +5306,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.85,
       "niacin_mg": 0.85,
@@ -4821,6 +5334,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4851,6 +5367,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.9,
@@ -4876,6 +5395,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4907,6 +5429,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.9,
@@ -4932,6 +5457,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -4961,6 +5489,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -4986,6 +5517,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5017,6 +5551,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -5042,6 +5579,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5074,6 +5614,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.85,
       "niacin_mg": 0.85,
@@ -5099,6 +5642,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5134,6 +5680,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -5159,6 +5708,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5191,6 +5743,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -5216,6 +5771,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5247,6 +5805,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -5272,6 +5833,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5304,6 +5868,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -5329,6 +5896,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5361,6 +5931,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -5386,6 +5959,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5418,6 +5994,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -5443,6 +6022,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5475,6 +6057,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -5500,6 +6085,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5534,6 +6122,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.65,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.75,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -5559,6 +6150,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5590,6 +6184,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.65,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.75,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -5615,6 +6212,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5644,6 +6244,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.65,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.75,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -5669,6 +6272,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5699,6 +6305,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.65,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.75,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -5724,6 +6333,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5755,6 +6367,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.65,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.75,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -5780,6 +6395,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5811,6 +6429,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.65,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.75,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -5836,6 +6457,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5867,6 +6491,9 @@
      "rf": {
       "vitA_ug": 1,
       "vitC_mg": 0.65,
+      "betaCryptoxanthin_ug": 1,
+      "lycopene_ug": 1,
+      "luteinZeaxanthin_ug": 1,
       "thiamin_mg": 0.75,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -5892,6 +6519,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5927,6 +6557,9 @@
      "rf": {
       "vitA_ug": 0.8,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.8,
+      "lycopene_ug": 0.8,
+      "luteinZeaxanthin_ug": 0.8,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.85,
@@ -5952,6 +6585,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -5983,6 +6619,9 @@
      "rf": {
       "vitA_ug": 0.8,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.8,
+      "lycopene_ug": 0.8,
+      "luteinZeaxanthin_ug": 0.8,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.85,
@@ -6008,6 +6647,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6037,6 +6679,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -6062,6 +6707,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6092,6 +6740,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -6117,6 +6768,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6146,6 +6800,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 1,
@@ -6171,6 +6828,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6203,6 +6863,9 @@
      "rf": {
       "vitA_ug": 0.8,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.8,
+      "lycopene_ug": 0.8,
+      "luteinZeaxanthin_ug": 0.8,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.85,
@@ -6228,6 +6891,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6260,6 +6926,9 @@
      "rf": {
       "vitA_ug": 0.8,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.8,
+      "lycopene_ug": 0.8,
+      "luteinZeaxanthin_ug": 0.8,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.85,
@@ -6285,6 +6954,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6320,6 +6992,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.85,
@@ -6345,6 +7020,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6376,6 +7054,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.85,
@@ -6401,6 +7082,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6430,6 +7114,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -6455,6 +7142,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6485,6 +7175,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -6510,6 +7203,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6539,6 +7235,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 1,
       "niacin_mg": 1,
@@ -6564,6 +7263,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6596,6 +7298,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.85,
@@ -6621,6 +7326,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6653,6 +7361,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.85,
@@ -6678,6 +7389,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6712,6 +7426,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.75,
       "niacin_mg": 0.75,
@@ -6737,6 +7454,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6766,6 +7486,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.9,
@@ -6791,6 +7514,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6820,6 +7546,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.85,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 1,
       "niacin_mg": 0.95,
@@ -6845,6 +7574,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6875,6 +7607,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.95,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.8,
       "niacin_mg": 0.95,
@@ -6900,6 +7635,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6929,6 +7667,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -6954,6 +7695,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -6985,6 +7729,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.75,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.9,
       "riboflavin_mg": 0.75,
       "niacin_mg": 0.75,
@@ -7010,6 +7757,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7041,6 +7791,9 @@
      "rf": {
       "vitA_ug": 0.9,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.9,
+      "lycopene_ug": 0.9,
+      "luteinZeaxanthin_ug": 0.9,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.9,
@@ -7066,6 +7819,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7101,6 +7857,9 @@
      "rf": {
       "vitA_ug": 0.75,
       "vitC_mg": 0.7,
+      "betaCryptoxanthin_ug": 0.75,
+      "lycopene_ug": 0.75,
+      "luteinZeaxanthin_ug": 0.75,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -7126,6 +7885,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7158,6 +7920,9 @@
      "rf": {
       "vitA_ug": 0.75,
       "vitC_mg": 0.7,
+      "betaCryptoxanthin_ug": 0.75,
+      "lycopene_ug": 0.75,
+      "luteinZeaxanthin_ug": 0.75,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -7183,6 +7948,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7212,6 +7980,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.9,
@@ -7237,6 +8008,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7267,6 +8041,9 @@
      "rf": {
       "vitA_ug": 0.85,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.85,
+      "lycopene_ug": 0.85,
+      "luteinZeaxanthin_ug": 0.85,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.9,
@@ -7292,6 +8069,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7322,6 +8102,9 @@
      "rf": {
       "vitA_ug": 0.75,
       "vitC_mg": 0.7,
+      "betaCryptoxanthin_ug": 0.75,
+      "lycopene_ug": 0.75,
+      "luteinZeaxanthin_ug": 0.75,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -7347,6 +8130,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7379,6 +8165,9 @@
      "rf": {
       "vitA_ug": 0.75,
       "vitC_mg": 0.7,
+      "betaCryptoxanthin_ug": 0.75,
+      "lycopene_ug": 0.75,
+      "luteinZeaxanthin_ug": 0.75,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -7404,6 +8193,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7436,6 +8228,9 @@
      "rf": {
       "vitA_ug": 0.75,
       "vitC_mg": 0.7,
+      "betaCryptoxanthin_ug": 0.75,
+      "lycopene_ug": 0.75,
+      "luteinZeaxanthin_ug": 0.75,
       "thiamin_mg": 0.8,
       "riboflavin_mg": 0.9,
       "niacin_mg": 0.9,
@@ -7461,6 +8256,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7496,6 +8294,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.95,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -7521,6 +8322,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7552,6 +8356,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.95,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -7577,6 +8384,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7607,6 +8417,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.95,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -7632,6 +8445,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7663,6 +8479,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.95,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -7688,6 +8507,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7719,6 +8541,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.95,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -7744,6 +8569,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7776,6 +8604,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.95,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -7801,6 +8632,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7833,6 +8667,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.95,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.95,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -7858,6 +8695,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7892,6 +8732,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -7917,6 +8760,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -7947,6 +8793,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -7972,6 +8821,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -8001,6 +8853,9 @@
      "rf": {
       "vitA_ug": 0.8,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.8,
+      "lycopene_ug": 0.8,
+      "luteinZeaxanthin_ug": 0.8,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -8026,6 +8881,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -8055,6 +8913,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -8080,6 +8941,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -8110,6 +8974,9 @@
      "rf": {
       "vitA_ug": 0.8,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.8,
+      "lycopene_ug": 0.8,
+      "luteinZeaxanthin_ug": 0.8,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -8135,6 +9002,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -8165,6 +9035,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -8190,6 +9063,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",
@@ -8220,6 +9096,9 @@
      "rf": {
       "vitA_ug": 0.95,
       "vitC_mg": 0.8,
+      "betaCryptoxanthin_ug": 0.95,
+      "lycopene_ug": 0.95,
+      "luteinZeaxanthin_ug": 0.95,
       "thiamin_mg": 0.85,
       "riboflavin_mg": 0.95,
       "niacin_mg": 0.95,
@@ -8245,6 +9124,9 @@
      "from": {
       "vitA_ug": "usda",
       "vitC_mg": "usda",
+      "betaCryptoxanthin_ug": "usda",
+      "lycopene_ug": "usda",
+      "luteinZeaxanthin_ug": "usda",
       "thiamin_mg": "usda",
       "riboflavin_mg": "usda",
       "niacin_mg": "usda",

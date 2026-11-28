@@ -12,11 +12,14 @@ import { computeMacros, type MacroComputation } from '../../core/nutrition';
 import { computeScores, type ScoredIngredient, type ScoreResult, type ScoreOptions } from '../../core/score';
 import {
   nutrientsFor as nutrientsForShared,
+  type PolyphenolTable,
   fvlFromCategory,
   giFor,
   cookIngredient,
   dataSourcesFor as dataSourcesForShared,
 } from '../../core/recipeScore';
+import { PARAMS, type Prep } from '../../core/fii';
+import { recipePrep, takesPrep } from '../../core/prep';
 import { suggestCooking, isCookingMethod, type CookingMethod } from '../../core/cooking';
 import { validateRecipe, type ValidationResult } from '../../core/validate';
 import { normalizeRecipe, methodIssues, type NormalizableLine } from '../../core/houseRules';
@@ -60,7 +63,7 @@ export function loadFoods(): Promise<void> {
 }
 
 /** Hand-curated, cited scoring metadata per USDA food (GI, FVL). Inflammation is
- *  computed from composition by the FII (src/core/fii.ts), not curated here. */
+ *  computed from composition (src/core/fii.ts), not curated here. */
 interface FoodScoring {
   gi?: number;
   giSource?: string;
@@ -71,13 +74,10 @@ interface FoodScoring {
 }
 const FOOD_SCORING = foodScoringData as Record<string, FoodScoring>;
 
-/** Total polyphenols (mg/100g) per fdcId, merged into nutrients for the FII. */
-interface PolyphenolEntry {
-  polyphenol_mg?: number;
-}
-const POLYPHENOLS = polyphenolData as Record<string, PolyphenolEntry>;
+/** Polyphenol subclasses (mg/100g) per fdcId, merged into nutrients for the inflammation score. */
+const POLYPHENOLS = polyphenolData as unknown as PolyphenolTable;
 
-/** Per-100g nutrients for a matched food, with the merged polyphenol value (FII input).
+/** Per-100g nutrients for a matched food, with its polyphenol subclasses merged in.
  *  The FVL heuristic + polyphenol merge live in core/recipeScore.ts so the authoring
  *  island and the rescorer/reproducibility check assemble every score identically. */
 function nutrientsFor(food: FoodRecord | undefined): NutrientVector | null {
@@ -123,6 +123,11 @@ export interface IngredientRow {
   userPickedFdcId: number | null;
   /** 'dough': the flour is rolled into homemade pasta or noodles and boiled. */
   starchForm: 'dough' | null;
+  /**
+   * Blended or juiced fruit/vegetable (re-classifies its sugars). A stored value is kept;
+   * null lets the draft infer it from the course and method (core/prep.ts).
+   */
+  prep: Prep | null;
 }
 
 let rowCounter = 0;
@@ -154,7 +159,23 @@ export function buildRow(raw: string): IngredientRow {
     proxyFdcId: null,
     userPickedFdcId: null,
     starchForm: null,
+    prep: null,
   };
+}
+
+/**
+ * Rows with their `prep` filled from the course and method (core/prep.ts) where the row has
+ * none: the fruit (in a drink, the fruit and vegetables) a blending step blends.
+ */
+export function withInferredPrep(rows: IngredientRow[], course: string, method: string): IngredientRow[] {
+  const r = recipePrep(course, method);
+  if (!r) return rows;
+  return rows.map((row) => {
+    if (row.prep || row.parsed.isGroupHeader || row.excludeFromNutrition || row.selectedFdcId == null) return row;
+    const food = FOOD_BY_ID.get(row.selectedFdcId);
+    if (/\b(to serve|for serving|garnish|topping|to decorate)\b/i.test(`${row.raw} ${row.parsed.note ?? ''}`)) return row;
+    return takesPrep(course, food?.category, row.parsed.item, r.steps) ? { ...row, prep: r.prep } : row;
+  });
 }
 
 /** Split a textarea into rows, dropping blank lines. */
@@ -391,7 +412,7 @@ function rowRaw(r: IngredientRow): string {
 }
 
 /** Map review rows to the scoring engine's shape (adds GI, measured-GI flag, FVL and the
- *  NOVA marker text per match; the inflammation tag is computed from nutrients by the FII). */
+ *  NOVA marker text per match; the inflammation score is computed from nutrients). */
 export function rowsToScored(rows: IngredientRow[]): ScoredIngredient[] {
   return rows
     .filter((r) => !r.parsed.isGroupHeader)
@@ -405,6 +426,7 @@ export function rowsToScored(rows: IngredientRow[]): ScoredIngredient[] {
         rawGrams: safeGrams(r.grams),
         excludeFromNutrition: r.excludeFromNutrition,
         fdcId: r.selectedFdcId,
+        prep: r.prep,
         nutrients: cooked.nutrients,
         gi: giFor(s, r.starchForm).gi,
         giMeasured: giFor(s, r.starchForm).measured,
@@ -442,6 +464,7 @@ function rowToDraftIngredient(row: IngredientRow): DraftIngredient {
     cooking: row.cooking,
     proxyOk: row.proxyFdcId != null && row.proxyFdcId === row.selectedFdcId ? true : undefined,
     starchForm: row.starchForm ?? undefined,
+    prep: row.prep ?? undefined,
   };
 }
 
@@ -539,6 +562,7 @@ export interface StoredIngredient {
   cooking?: CookingMethod;
   proxyOk?: boolean;
   starchForm?: string;
+  prep?: string;
 }
 
 /** The stored recipe frontmatter fields the editor re-seeds the form from. */
@@ -623,6 +647,7 @@ export function rowsFromIngredients(ingredients: StoredIngredient[]): Ingredient
       proxyFdcId: ing.proxyOk && ing.fdcId != null ? ing.fdcId : null,
       userPickedFdcId: null,
       starchForm: ing.starchForm === 'dough' ? 'dough' : null,
+      prep: ing.prep === 'blended' || ing.prep === 'juiced' ? ing.prep : null,
     };
   });
 }
@@ -711,6 +736,8 @@ export function buildDraft(
 ): RecipeDraft {
   const totalMin = (form.prepMin ?? 0) + (form.cookMin ?? 0);
   const sourceUrl = safeUrl(form.sourceUrl);
+  // Blended or juiced produce, inferred from the course and method where not stored.
+  rows = withInferredPrep(rows, form.course, form.instructions);
   // Only score when a nutrition block will actually be emitted.
   const scores: ScoreResult = macro.contributingCount
     ? computeRecipeScores(rows, form.servings, {
@@ -774,7 +801,7 @@ export function buildDraft(
             ? {
                 score: scores.inflammation.score,
                 band: scores.inflammation.band,
-                method: 'fii v4',
+                method: PARAMS.version,
                 // Same key order as the rescorer's serializer (scripts/rescore-recipes.mjs).
                 ...(scores.inflammation.aromaticAdjustment != null
                   ? { aromaticAdjustment: scores.inflammation.aromaticAdjustment }

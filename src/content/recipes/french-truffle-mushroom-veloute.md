@@ -148,9 +148,9 @@ nutrition:
     version: "2023"
     coverage: 0.92
   inflammation:
-    score: -0.2
+    score: 0
     band: neutral
-    method: fii v4
+    method: fii v5
     aromaticAdjustment: -0.23
   balance:
     score: 2
@@ -169,7 +169,7 @@ nutrition:
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
+    - Inflammatory potential (estimate; pooled composition per 100 kcal); USDA Flavonoid Database R3.3; Phenol-Explorer
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)

@@ -69,6 +69,7 @@ ingredients:
     fdcId: 167747
     matchConfidence: high
     cooking: fried
+    prep: blended
   - raw: 1 tsp alcohol-free vanilla extract
     quantity: 1
     unit: tsp
@@ -116,9 +117,9 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.2
+    score: 0.1
     band: neutral
-    method: fii v4
+    method: fii v5
   balance:
     score: 4
     band: low
@@ -135,7 +136,7 @@ nutrition:
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
+    - Inflammatory potential (estimate; pooled composition per 100 kcal); USDA Flavonoid Database R3.3; Phenol-Explorer
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-26"

@@ -219,7 +219,7 @@ describe('score rating normalization (1–10, 1 = healthiest)', () => {
     expect(balanceRating(null)).toBeNull();
   });
 
-  it('maps inflammation onto 1…10 by the FII band edges, so colour agrees with the band word', () => {
+  it('maps inflammation onto 1…10 by the band edges, so colour agrees with the band word', () => {
     const e = INFLAMMATION_BAND_EDGES;
     expect(inflammationRating(-2)).toBe(1);
     expect(inflammationRating(e.antiMax)).toBe(2); // top of "anti" → good
@@ -374,9 +374,9 @@ describe('buildScoreDials', () => {
     expect(NUTRI_LOW_DATA_COVERAGE).toBe(0.9);
   });
 
-  it('captions inflammation relative to foods, and omits captions for absent scores', () => {
+  it('captions inflammation vs an average diet, and omits captions for absent scores', () => {
     const [, , , , inflam] = buildScoreDials({ inflammation: { score: -0.5, band: 'mildly-anti-inflammatory' } });
-    expect(inflam.caption).toBe('Mildly anti-inflammatory relative to foods');
+    expect(inflam.caption).toBe('Mildly anti-inflammatory vs an average diet');
     const [gi] = buildScoreDials(undefined);
     expect(gi.caption).toBeUndefined();
   });

@@ -1,6 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { COOKING_METHODS } from './core/cooking';
+import { PREPS, type Prep } from './core/fii';
 
 /**
  * The recipe archive's single source of truth.
@@ -87,6 +88,12 @@ const ingredient = z.object({
    * value, the bread it would become (src/data/food-scoring.json).
    */
   starchForm: z.enum(['dough']).optional(),
+  /**
+   * The fruit or vegetable is blended (smoothie, purée) or juiced before eating: its sugars
+   * then count partly (blended) or wholly (juiced) as free sugars in the inflammation score
+   * (src/core/fii.ts; WHO 2015 free-sugar definition).
+   */
+  prep: z.enum(PREPS as unknown as [Prep, ...Prep[]]).optional(),
 });
 
 const perServing = z
@@ -144,7 +151,7 @@ const nutrition = z.object({
     .object({
       score: z.number(),
       band: inflammationBand,
-      method: z.string().default('fii v4'),
+      method: z.string().default('fii v5'),
       /** The aromatic adjustment included in `score` (src/core/aromatics.ts); absent when none applies. */
       aromaticAdjustment: z.number().optional(),
     })

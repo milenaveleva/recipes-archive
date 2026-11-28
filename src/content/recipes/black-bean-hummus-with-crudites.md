@@ -34,6 +34,7 @@ ingredients:
     fdcId: 171705
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 4 g cilantro leaves, fresh, plus extra to garnish
     group: Hummus
     quantity: 4
@@ -63,6 +64,7 @@ ingredients:
     fdcId: 168156
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 1/2 tbsp finely chopped garlic
     group: Hummus
     quantity: 0.5
@@ -199,9 +201,9 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: -0.4
-    band: mildly-anti-inflammatory
-    method: fii v4
+    score: -1.7
+    band: anti-inflammatory
+    method: fii v5
     aromaticAdjustment: -0.08
   balance:
     score: 10
@@ -219,7 +221,7 @@ nutrition:
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
+    - Inflammatory potential (estimate; pooled composition per 100 kcal); USDA Flavonoid Database R3.3; Phenol-Explorer
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)

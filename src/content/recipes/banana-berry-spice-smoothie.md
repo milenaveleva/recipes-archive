@@ -19,6 +19,7 @@ ingredients:
     fdcId: 173944
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 125 g frozen raspberries
     quantity: 125
     unit: g
@@ -27,6 +28,7 @@ ingredients:
     fdcId: 168209
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 150 g frozen strawberries
     quantity: 150
     unit: g
@@ -35,6 +37,7 @@ ingredients:
     fdcId: 168173
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 1½ cups coconut water
     quantity: 1.5
     unit: cups
@@ -91,9 +94,9 @@ nutrition:
     version: "2023"
     coverage: 1
   inflammation:
-    score: 0.4
-    band: mildly-pro-inflammatory
-    method: fii v4
+    score: -0.9
+    band: mildly-anti-inflammatory
+    method: fii v5
   balance:
     score: 7
     band: high
@@ -109,7 +112,7 @@ nutrition:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
+    - Inflammatory potential (estimate; pooled composition per 100 kcal); USDA Flavonoid Database R3.3; Phenol-Explorer
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-26"

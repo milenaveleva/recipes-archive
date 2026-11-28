@@ -109,9 +109,9 @@ nutrition:
     version: "2023"
     coverage: 0.68
   inflammation:
-    score: 1.7
-    band: pro-inflammatory
-    method: fii v4
+    score: -0.3
+    band: mildly-anti-inflammatory
+    method: fii v5
   balance:
     score: 2
     band: poor
@@ -127,7 +127,7 @@ nutrition:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
+    - Inflammatory potential (estimate; pooled composition per 100 kcal); USDA Flavonoid Database R3.3; Phenol-Explorer
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-14"

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { computeScores, type ScoredIngredient } from './score';
-import { foodFormAdjustment } from './foodAdjust';
+import { foodClassOf } from './fii';
 
 const INFLAMMATION_BANDS = [
   'anti-inflammatory', 'mildly-anti-inflammatory', 'neutral',
@@ -30,7 +30,7 @@ describe('computeScores (orchestration)', () => {
     expect(r.nutriScore?.points).toBe(-9); // pinned so a basis-math regression can't hide in grade A
     expect(r.nutriScore?.category).toBe('general');
 
-    // Inflammation: computed per-food by the FII (fii.ts) and energy-weighted — present,
+    // Inflammation: the pooled composition score (fii.ts) — present,
     // on the −2..+2 axis, with a valid band (exact values are pinned in fii.test.ts /
     // inflammation.test.ts; here we assert the block is produced alongside the others).
     expect(r.inflammation).toBeDefined();
@@ -53,19 +53,15 @@ describe('computeScores (orchestration)', () => {
     expect(r.inflammation).toBeDefined();
   });
 
-  it('applies the composition-blind food-form adjustment when the ingredient carries an adjusted fdcId', () => {
-    // A yogurt-like vector reads pro-inflammatory by composition (saturated fat + sodium +
-    // lactose-as-free-sugar); fdcId 171284 (plain whole-milk yogurt) carries a −1.3 delta.
+  it('reads the matched food’s class: plain yogurt’s lactose is not free sugar and its matrix correction applies', () => {
+    // Without an fdcId the sugar is unclassified (Louie step 10: half free) and no matrix
+    // correction applies; as fdcId 171284 (plain whole-milk yogurt) the lactose is intrinsic
+    // and the fermented-milk correction applies, so the score moves anti.
     const YOGURT = { energyKcal: 61, protein_g: 3.5, fat_g: 3.25, satFat_g: 2.1, monoFat_g: 0.9, polyFat_g: 0.1, carbs_g: 4.66, sugar_g: 4.66, sodium_mg: 46 };
     const plain = computeScores([{ grams: 150, nutrients: YOGURT, gi: null }], 1);
-    const adjusted = computeScores([{ grams: 150, nutrients: YOGURT, gi: null, fdcId: 171284 }], 1);
-    expect(foodFormAdjustment(171284)).toBe(-1.3);
-    // One ingredient → the recipe score is its (adjusted) per-food tag, so the wiring +
-    // sign + clamp are pinned without hard-coding the composition tag (which fii.test pins).
-    const clamp = (n: number) => Math.max(-2, Math.min(2, n));
-    const expected = clamp(Math.round((plain.inflammation!.score - 1.3) * 10) / 10);
-    expect(adjusted.inflammation!.score).toBe(expected);
-    expect(adjusted.inflammation!.score).toBeLessThan(plain.inflammation!.score); // nudged anti
+    const classified = computeScores([{ grams: 150, nutrients: YOGURT, gi: null, fdcId: 171284 }], 1);
+    expect(foodClassOf(171284)).toMatchObject({ fs: 0, matrix: 'fermented-milk' });
+    expect(classified.inflammation!.score).toBeLessThan(plain.inflammation!.score);
   });
 
   it('skips excluded ingredients (e.g. water) from every score', () => {

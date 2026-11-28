@@ -1,82 +1,60 @@
 import { describe, it, expect } from 'vitest';
-import { computeInflammation, inflammationBandOf, FLOOR_KCAL_PER_G } from './inflammation';
-import { MIN_KCAL_PER_100G } from './fii';
+import { computeInflammation, computeInflammationDetail, inflammationBandOf } from './inflammation';
+import { PARAMS, type FiiItem } from './fii';
 import referenceData from '../data/inflammation-reference.json';
 
-const BANDS = (referenceData as {
+const BANDS = (referenceData as unknown as {
   bands: { antiMax: number; mildlyAntiMax: number; neutralMax: number; mildlyProMax: number };
 }).bands;
 
-describe('inflammationBandOf (corpus-quantile bands)', () => {
-  // The band edges are the quintile cut-points of the USDA per-food tag distribution,
-  // generated into inflammation-reference.json. Pin them so a parameter/reference change
-  // that shifts the bands is caught (and the recipes get rescored to match).
-  it('pins the generated quintile band edges', () => {
-    expect(BANDS).toEqual({ antiMax: -1, mildlyAntiMax: -0.3, neutralMax: 0.2, mildlyProMax: 0.7 });
+const VEG: FiiItem = { grams: 300, nutrients: { energyKcal: 25, fiber_g: 2.5, vitC_mg: 40, vitE_mg: 1.5, magnesium_mg: 30, sugar_g: 2, satFat_g: 0.05, sodium_mg: 20, luteinZeaxanthin_ug: 2000 } };
+const SUGAR: FiiItem = { grams: 50, nutrients: { energyKcal: 387, sugar_g: 99.8, fiber_g: 0, vitC_mg: 0, vitE_mg: 0, magnesium_mg: 0, satFat_g: 0, sodium_mg: 1 }, fdcId: 169655 };
+
+describe('inflammationBandOf (fixed bands about the average-diet zero point)', () => {
+  it('copies the fixed band edges from the parameter table', () => {
+    expect(BANDS).toEqual(PARAMS.bands);
+    expect(BANDS).toEqual({ antiMax: -1, mildlyAntiMax: -0.3, neutralMax: 0.3, mildlyProMax: 1 });
   });
 
-  it('maps a score to the band whose quintile it falls in', () => {
-    expect(inflammationBandOf(BANDS.antiMax - 0.5)).toBe('anti-inflammatory');
-    expect(inflammationBandOf(BANDS.antiMax)).toBe('anti-inflammatory');
-    expect(inflammationBandOf(BANDS.mildlyAntiMax)).toBe('mildly-anti-inflammatory');
+  it('maps a score to its band', () => {
+    expect(inflammationBandOf(-1.5)).toBe('anti-inflammatory');
+    expect(inflammationBandOf(-1)).toBe('anti-inflammatory');
+    expect(inflammationBandOf(-0.3)).toBe('mildly-anti-inflammatory');
     expect(inflammationBandOf(0)).toBe('neutral');
-    expect(inflammationBandOf(BANDS.neutralMax)).toBe('neutral');
-    expect(inflammationBandOf(BANDS.mildlyProMax)).toBe('mildly-pro-inflammatory');
-    expect(inflammationBandOf(BANDS.mildlyProMax + 0.1)).toBe('pro-inflammatory');
-    expect(inflammationBandOf(2)).toBe('pro-inflammatory');
+    expect(inflammationBandOf(0.3)).toBe('neutral');
+    expect(inflammationBandOf(1)).toBe('mildly-pro-inflammatory');
+    expect(inflammationBandOf(1.1)).toBe('pro-inflammatory');
   });
 });
 
-describe('computeInflammation (energy-weighted)', () => {
-  it('weights equal-energy items as a simple mean', () => {
-    const r = computeInflammation([
-      { grams: 100, energyKcal: 100, tag: -2 },
-      { grams: 100, energyKcal: 100, tag: 0 },
-    ])!;
-    expect(r.score).toBe(-1.0);
-    expect(r.band).toBe('anti-inflammatory');
-  });
-
-  it('weights by energy, not mass: a small energy-dense pro item outweighs a bulky low-energy anti one', () => {
-    const r = computeInflammation([
-      { grams: 200, energyKcal: 20, tag: -2 }, // bulky watery veg
-      { grams: 50, energyKcal: 400, tag: 2 }, // a splash of fat
-    ])!;
-    // weights: max(20, 0.2·200)=40 vs max(400, 0.2·50)=400 → (−2·40 + 2·400)/440 = +1.64
-    expect(r.score).toBeCloseTo(1.6, 5);
-    expect(r.band).toBe('pro-inflammatory');
-  });
-
-  it('floors weight by mass so a near-zero-calorie anti food still counts', () => {
-    const r = computeInflammation([{ grams: 100, energyKcal: 0, tag: -2 }])!;
-    expect(r.score).toBe(-2); // weight = max(0, 0.2·100) = 20
-  });
-
-  it('uses the weight floor when a food’s energy is unknown (null)', () => {
-    const r = computeInflammation([{ grams: 80, energyKcal: null, tag: 1 }])!;
-    expect(r.score).toBe(1);
-  });
-
-  it('returns null when no item carries weight', () => {
+describe('computeInflammation (pooled dish composition)', () => {
+  it('returns null when nothing can be scored', () => {
     expect(computeInflammation([])).toBeNull();
-    expect(computeInflammation([{ grams: 0, energyKcal: 0, tag: -2 }])).toBeNull();
+    expect(computeInflammation([{ grams: 500, nutrients: { energyKcal: 0, sodium_mg: 2 } }])).toBeNull(); // water
   });
 
-  it('weights by the per-kcal conversion floor, per gram', () => {
-    expect(FLOOR_KCAL_PER_G).toBe(MIN_KCAL_PER_100G / 100);
-    expect(FLOOR_KCAL_PER_G).toBe(0.2);
+  it('ignores water: diluting a dish with water leaves its score unchanged', () => {
+    const water: FiiItem = { grams: 1000, nutrients: { energyKcal: 0, sodium_mg: 2, magnesium_mg: 1 } };
+    expect(computeInflammation([VEG, SUGAR, water])!.score).toBe(computeInflammation([VEG, SUGAR])!.score);
   });
 
-  it('adds the aromatic adjustment to the energy-weighted mean and reports it', () => {
-    const items = [{ grams: 100, energyKcal: 300, tag: 1.0 }];
-    const r = computeInflammation(items, -0.23)!;
-    expect(r.score).toBe(0.8); // round(1.0 − 0.23, 1)
-    expect(r.aromaticAdjustment).toBe(-0.23);
-    expect(computeInflammation(items)!.aromaticAdjustment).toBeUndefined();
+  it('moves a dish pro as its free sugar rises', () => {
+    const a = computeInflammation([VEG, { ...SUGAR, grams: 5 }])!.score;
+    const b = computeInflammation([VEG, { ...SUGAR, grams: 50 }])!.score;
+    expect(b).toBeGreaterThan(a);
   });
 
-  it('keeps the adjusted score on the −2…+2 axis and ignores a non-negative adjustment', () => {
-    expect(computeInflammation([{ grams: 100, energyKcal: 100, tag: -1.9 }], -0.5)!.score).toBe(-2);
-    expect(computeInflammation([{ grams: 100, energyKcal: 100, tag: 0.5 }], 0.4)!.score).toBe(0.5);
+  it('adds the aromatic adjustment and reports it; a non-negative adjustment is ignored', () => {
+    const base = computeInflammation([VEG, SUGAR])!.score;
+    const adj = computeInflammation([VEG, SUGAR], -0.3)!;
+    expect(adj.aromaticAdjustment).toBe(-0.3);
+    expect(adj.score).toBeCloseTo(Math.max(-2, base - 0.3), 1);
+    expect(computeInflammation([VEG, SUGAR], 0.4)!.score).toBe(base);
+  });
+
+  it('exposes the per-parameter breakdown behind a score', () => {
+    const d = computeInflammationDetail([VEG, SUGAR])!;
+    expect(d.contributions.map((c) => c.key)).toContain('freeSugar');
+    expect(d.contributions.find((c) => c.key === 'freeSugar')!.push).toBeGreaterThan(0);
   });
 });

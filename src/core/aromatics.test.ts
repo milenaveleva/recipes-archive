@@ -59,7 +59,7 @@ describe('aromaticAdjustment', () => {
 
   it('credits a ginger-sweetened drink without erasing its free-sugar load', () => {
     const HONEY = { energyKcal: 304, sugar_g: 82.1, fiber_g: 0.2, sodium_mg: 4, magnesium_mg: 2, vitC_mg: 0.5, vitE_mg: 0, monoFat_g: 0, polyFat_g: 0, satFat_g: 0 };
-    const GINGER_N = { energyKcal: 80, sugar_g: 1.7, fiber_g: 2, sodium_mg: 13, magnesium_mg: 43, vitC_mg: 5, vitE_mg: 0.26, monoFat_g: 0.15, polyFat_g: 0.15, satFat_g: 0.2, polyphenol_mg: 204.7 };
+    const GINGER_N = { energyKcal: 80, sugar_g: 1.7, fiber_g: 2, sodium_mg: 13, magnesium_mg: 43, vitC_mg: 5, vitE_mg: 0.26, monoFat_g: 0.15, polyFat_g: 0.15, satFat_g: 0.2 };
     const drink = [
       { grams: 130, nutrients: HONEY, gi: null },
       { grams: 200, nutrients: GINGER_N, fdcId: GINGER, gi: null },

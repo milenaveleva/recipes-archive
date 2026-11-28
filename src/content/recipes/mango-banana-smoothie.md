@@ -34,6 +34,7 @@ ingredients:
     fdcId: 169910
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 60 g ripe banana
     quantity: 60
     unit: g
@@ -42,6 +43,7 @@ ingredients:
     fdcId: 173944
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 5 g fresh mint
     quantity: 5
     unit: g
@@ -87,9 +89,9 @@ nutrition:
     version: "2023"
     coverage: 0.99
   inflammation:
-    score: 0.1
-    band: neutral
-    method: fii v4
+    score: -0.9
+    band: mildly-anti-inflammatory
+    method: fii v5
   balance:
     score: 10
     band: excellent
@@ -105,7 +107,7 @@ nutrition:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
+    - Inflammatory potential (estimate; pooled composition per 100 kcal); USDA Flavonoid Database R3.3; Phenol-Explorer
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-14"

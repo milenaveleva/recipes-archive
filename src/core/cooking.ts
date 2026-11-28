@@ -11,8 +11,9 @@
  * Nutrient Retention Factors Release 6 (2007), with Bognár 2002 for the vitamins and
  * trace minerals Release 6 does not tabulate; yield factors (src/data/cooking-yields.json)
  * from Bognár 2002 weight-yield tables or USDA raw/cooked record pairs. Both are built by
- * scripts/build-retention.mjs. Energy, macronutrients, fat fractions and polyphenols are
- * not in either retention table and are retained in full; the mass change is booked as
+ * scripts/build-retention.mjs. Energy, macronutrients and fat fractions are not in either
+ * retention table and are retained in full, and polyphenols take a generic retention
+ * (POLYPHENOL_RETENTION, Rothwell 2015); the mass change is booked as
  * water.
  *
  * Fat uptake during frying is not modelled: the cooking fat is its own recipe ingredient
@@ -168,8 +169,19 @@ const OVERRIDES = ((yieldData as unknown as { overrides: YieldOverride[] }).over
 /** Retention factor per nutrient for a group × method ({} = full retention). */
 export function retentionFor(group: CookingGroup, method: CookingMethod): Partial<Record<RetainedField, number>> {
   if (method === 'raw' || group === 'none') return {};
-  return RETENTION[group]?.methods[method]?.rf ?? {};
+  return { ...POLYPHENOL_RF, ...(RETENTION[group]?.methods[method]?.rf ?? {}) };
 }
+
+/**
+ * Polyphenol retention in domestic cooking. Neither retention table covers polyphenols;
+ * Rothwell 2015 (Phenol-Explorer retention factors) reports median retention 0.45–0.70
+ * across domestic cooking, with food identity mattering more than the method, so every
+ * cooked subclass takes the midpoint of that range rather than full retention.
+ */
+export const POLYPHENOL_RETENTION = 0.575;
+const POLYPHENOL_RF: Partial<Record<RetainedField, number>> = Object.fromEntries(
+  ['anthocyanidins_mg', 'flavan3ols_mg', 'flavanones_mg', 'flavones_mg', 'flavonols_mg', 'tyrosols_mg'].map((k) => [k, POLYPHENOL_RETENTION]),
+);
 
 /** Cooked mass ÷ raw mass for a food × method (1 = no change); name overrides win. */
 export function yieldFor(food: CookableFood | null | undefined, group: CookingGroup, method: CookingMethod): number {

@@ -25,6 +25,7 @@ ingredients:
     fdcId: 168163
     matchConfidence: high
     cooking: boiled
+    prep: blended
   - raw: 250 g plant-based whipping cream
     quantity: 250
     unit: g
@@ -57,6 +58,7 @@ ingredients:
     fdcId: 167747
     matchConfidence: high
     cooking: boiled
+    prep: blended
   - raw: 1 tsp ground cinnamon
     quantity: 1
     unit: tsp
@@ -110,9 +112,9 @@ nutrition:
     version: "2023"
     coverage: 0.78
   inflammation:
-    score: -0.2
+    score: 0
     band: neutral
-    method: fii v4
+    method: fii v5
   balance:
     score: 3
     band: low
@@ -130,7 +132,7 @@ nutrition:
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
+    - Inflammatory potential (estimate; pooled composition per 100 kcal); USDA Flavonoid Database R3.3; Phenol-Explorer
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-14"

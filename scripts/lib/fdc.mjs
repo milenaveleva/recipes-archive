@@ -76,6 +76,10 @@ export const FDC_FIELD = {
   430: 'vitK_ug', 404: 'thiamin_mg', 405: 'riboflavin_mg', 406: 'niacin_mg', 415: 'vitB6_mg',
   417: 'folate_ug', 418: 'vitB12_ug', 410: 'pantothenicAcid_mg', 421: 'choline_mg', 262: 'caffeine_mg',
   221: 'alcohol_g', 629: 'epa_g', 621: 'dha_g',
+  // Medium-chain saturated fatty acids (4:0–12:0), read by the inflammation score's
+  // chain-length-weighted saturated-fat term, and the three carotenoids it credits.
+  607: 'fa4_0_g', 608: 'fa6_0_g', 609: 'fa8_0_g', 610: 'fa10_0_g', 611: 'fa12_0_g',
+  334: 'betaCryptoxanthin_ug', 337: 'lycopene_ug', 338: 'luteinZeaxanthin_ug',
 };
 
 // Alternate nutrient definitions under which Foundation Foods report the same

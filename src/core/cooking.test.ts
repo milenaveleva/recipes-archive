@@ -159,7 +159,7 @@ describe('scores read the cooked state', () => {
     expect(boiled.scores.nutriScore!.points).not.toBe(asRaw.scores.nutriScore!.points);
   });
 
-  it('the FII reads the cooked composition per kcal: the water change cancels, losses remain', () => {
+  it('the inflammation score reads the cooked composition per kcal: the water change cancels, losses remain', () => {
     const s = toScored({ grams: 100, fdcId: BROCCOLI, cooking: 'boiled' }, foodById, noScoring, {});
     const b = food(BROCCOLI);
     expect(s.grams).toBeCloseTo(111, 5);
@@ -170,7 +170,7 @@ describe('scores read the cooked state', () => {
     expect(s.nutrients!.fiber_g).toBeCloseTo(b.n.fiber_g! / 1.11, 10);
   });
 
-  it('boiling dry pasta leaves its FII at the dry record\'s value up to retention losses', () => {
+  it('boiling dry pasta leaves its inflammation score at the dry record\'s value up to retention losses', () => {
     const dry = toScored({ grams: 100, fdcId: PASTA_DRY }, foodById, noScoring, {});
     const boiled = toScored({ grams: 100, fdcId: PASTA_DRY, cooking: 'boiled' }, foodById, noScoring, {});
     expect(boiled.grams).toBeCloseTo(210, 5);

@@ -1,13 +1,12 @@
 /**
  * Orchestrates the recipe scoring engines: from resolved ingredients (cooked, as-eaten metric
- * weight + per-100g nutrients + a GI value, inflammation tag and FVL flag for
- * the matched food) it produces the glycemic, Nutri-Score and inflammation
+ * weight + per-100g nutrients + a GI value and FVL flag for the matched food) it produces the glycemic, Nutri-Score and inflammation
  * block stored in recipe frontmatter and shown by the score medallions.
  *
  * GI/GL is carb-weighted and protein-adjusted, with GL banded on the course's basis
- * (gi.ts, course.ts); Nutri-Score is the general-foods 2023 algorithm computed per 100 g (nutriscore.ts); inflammation is the energy-weighted
- * mean of per-food Food Inflammation Index scores (fii.ts + inflammation.ts) plus a
- * bounded aromatic adjustment (aromatics.ts). All figures are estimates.
+ * (gi.ts, course.ts); Nutri-Score is the general-foods 2023 algorithm computed per 100 g (nutriscore.ts); inflammation scores the dish's
+ * pooled cooked composition per 100 kcal (fii.ts + inflammation.ts) plus a bounded
+ * aromatic adjustment (aromatics.ts). All figures are estimates.
  *
  * Nutri-Score and NRF9.3 both profile the finished dish as one per-100 g
  * composition over the full nutrition-contributing mass (`basisGrams`, the cooked,
@@ -28,10 +27,9 @@ import { round } from './num';
 import { computeGlycemics, CARB_EPSILON_G, type Glycemics, type GiCarbSource } from './gi';
 import { glBasisForCourse } from './course';
 import { computeNutriScore, type NutriResult, type NutriCategory } from './nutriscore';
-import { computeInflammation, type Inflammation, type InflammationItem } from './inflammation';
-import { foodFII } from './fii';
+import { computeInflammation, type Inflammation } from './inflammation';
+import type { FiiItem, Prep } from './fii';
 import { aromaticAdjustment } from './aromatics';
-import { applyFoodForm } from './foodAdjust';
 import { computeBalance, type BalanceResult } from './balance';
 import { computeProcessing, promoteNova, type ProcessingItem, type ProcessingResult, type NovaGroup } from './processing';
 import type { NutrientVector } from './types';
@@ -45,16 +43,17 @@ export const GI_SOURCE = 'Atkinson 2021 GI tables; carb-weighted composite, prot
 /**
  * One recipe ingredient resolved for scoring: metric weight, the matched food's
  * per-100g nutrients, its published GI, and whether it counts toward Nutri-Score's
- * fruit/vegetables/legumes share. The inflammation tag is computed from `nutrients`
- * by the Food Inflammation Index (fii.ts), not carried here; `fdcId` lets the
- * composition-blind food-form adjustment (foodAdjust.ts) find the matched food.
+ * fruit/vegetables/legumes share. The inflammation score is computed from `nutrients`
+ * (fii.ts), not carried here; `fdcId` lets it find the matched food's class (free sugar, trans origin, matrix).
  */
 export interface ScoredIngredient {
   grams: number | null;
   excludeFromNutrition?: boolean;
   nutrients?: NutrientVector | null;
-  /** USDA fdcId of the matched food, for the food-form inflammation adjustment. */
+  /** USDA fdcId of the matched food: its free-sugar, trans-origin and matrix class (fii.ts). */
   fdcId?: number | null;
+  /** Whether the fruit or vegetable is blended or juiced (re-classifies its sugars as free). */
+  prep?: Prep | null;
   /** Published GI of the matched food, or null when unknown. */
   gi?: number | null;
   /** Whether that GI is a measured table match (giConfidence high|medium), not an estimate. */
@@ -145,7 +144,7 @@ export function computeScores(
   options: ScoreOptions = {},
 ): ScoreResult {
   const carbSources: GiCarbSource[] = [];
-  const inflammationItems: InflammationItem[] = [];
+  const inflammationItems: FiiItem[] = [];
   const processingItems: ProcessingItem[] = [];
 
   // Per-nutrient sums and the mass of foods that reported each (so a missing
@@ -166,14 +165,9 @@ export function computeScores(
     const kcalPer100 = ing.nutrients ? energyKcalOf(ing.nutrients) : null;
     const energyKcal = kcalPer100 != null ? (kcalPer100 * grams) / 100 : null;
 
-    // Inflammation: a per-food FII computed per 100 kcal from the cooked composition
-    // (fii.ts) — the per-kcal basis cancels the cooking water, so only retention losses
-    // move it — energy-weighted at the recipe level by the food's absolute energy.
-    const fii = foodFII(ing.nutrients);
-    if (fii) {
-      const tag = applyFoodForm(fii.tag, ing.fdcId);
-      inflammationItems.push({ grams, energyKcal, tag });
-    }
+    // Inflammation: the dish's pooled cooked composition, read per 100 kcal (fii.ts) — the
+    // per-kcal basis cancels the cooking water, so only retention losses move it.
+    if (ing.nutrients) inflammationItems.push({ grams, nutrients: ing.nutrients, fdcId: ing.fdcId, prep: ing.prep });
 
     // Processing: the food's NOVA group (raised by explicit markers in the original
     // line, e.g. "puff pastry"), energy-weighted into the recipe distribution.

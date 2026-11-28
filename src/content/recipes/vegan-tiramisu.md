@@ -66,6 +66,7 @@ ingredients:
     fdcId: 168191
     matchConfidence: high
     cooking: baked
+    prep: blended
   - raw: 1 tsp baking powder
     group: For the sponge
     quantity: 1
@@ -104,6 +105,7 @@ ingredients:
     fdcId: 168191
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 400 g vegan mascarpone-style cream (VeganChef)
     group: For the cream
     quantity: 400
@@ -191,9 +193,9 @@ nutrition:
     version: "2023"
     coverage: 0.69
   inflammation:
-    score: 0.9
-    band: pro-inflammatory
-    method: fii v4
+    score: 0.8
+    band: mildly-pro-inflammatory
+    method: fii v5
   balance:
     score: 1
     band: poor
@@ -210,7 +212,7 @@ nutrition:
     - USDA Nutrient Retention Factors Release 6 (2007); Bognár 2002 cooking yields
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
+    - Inflammatory potential (estimate; pooled composition per 100 kcal); USDA Flavonoid Database R3.3; Phenol-Explorer
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-14"

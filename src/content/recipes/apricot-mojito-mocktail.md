@@ -24,6 +24,7 @@ ingredients:
     fdcId: 171697
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 1 tbsp water
     quantity: 1
     unit: tbsp
@@ -49,6 +50,7 @@ ingredients:
     fdcId: 168156
     matchConfidence: medium
     cooking: raw
+    prep: blended
   - raw: 10 g fresh mint
     quantity: 10
     unit: g
@@ -102,9 +104,9 @@ nutrition:
     version: "2023"
     coverage: 0.99
   inflammation:
-    score: -0.1
-    band: neutral
-    method: fii v4
+    score: -1
+    band: anti-inflammatory
+    method: fii v5
   balance:
     score: 8
     band: high
@@ -120,7 +122,7 @@ nutrition:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
+    - Inflammatory potential (estimate; pooled composition per 100 kcal); USDA Flavonoid Database R3.3; Phenol-Explorer
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-14"

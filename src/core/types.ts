@@ -37,12 +37,28 @@ export interface NutrientVector {
   /** Sugar alcohols / polyols; subtracted from available carbohydrate when present. */
   polyol_g?: number;
   sodium_mg?: number;
-  /**
-   * Total polyphenols (mg/100g), merged from Phenol-Explorer by fdcId — NOT a USDA
-   * datum. Absent for most foods; when present it adds an anti-inflammatory term in
-   * the FII (fii.ts) and raises the per-food confidence.
+  /*
+   * Polyphenol subclasses (mg aglycone/100g), merged by fdcId from src/data/polyphenols.json
+   * (USDA Flavonoid Database R3.3; olive tyrosols from Phenol-Explorer) — NOT USDA nutrient
+   * columns. Read by the inflammation score's carrier parameter (fii.ts).
    */
-  polyphenol_mg?: number;
+  anthocyanidins_mg?: number;
+  flavan3ols_mg?: number;
+  flavanones_mg?: number;
+  flavones_mg?: number;
+  flavonols_mg?: number;
+  tyrosols_mg?: number;
+  /* Medium-chain saturated fatty acids (USDA #607–611), read by the inflammation score's
+   * chain-length-weighted saturated-fat signal (fii.ts). */
+  fa4_0_g?: number;
+  fa6_0_g?: number;
+  fa8_0_g?: number;
+  fa10_0_g?: number;
+  fa12_0_g?: number;
+  /* The carotenoids the inflammation score credits (USDA #334, #337, #338). */
+  betaCryptoxanthin_ug?: number;
+  lycopene_ug?: number;
+  luteinZeaxanthin_ug?: number;
   /* Micronutrients to encourage, read by the NRF9.3 nutrient-balance score
    * (src/core/balance.ts). Units match the USDA data and the FDA 2016 Daily
    * Values (vitamin A as µg RAE, vitamin E as mg α-tocopherol). */

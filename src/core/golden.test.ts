@@ -2,7 +2,7 @@
 /**
  * Golden reference set: hand-checked synthetic recipes built from real bundled foods
  * (src/data/usda-foods.json fdcIds), scored through the full pipeline
- * (recipeScore.scoreRecipe: cooking → macros → GI/GL → Nutri-Score → FII → NRF9.3 → NOVA).
+ * (recipeScore.scoreRecipe: cooking → macros → GI/GL → Nutri-Score → inflammation → NRF9.3 → NOVA).
  *
  * Each case asserts RANGES a nutrition-literate reader would sign off on, not the exact
  * engine output, so a deliberate engine or data change that keeps a dish's verdict passes
@@ -16,6 +16,7 @@ import {
   type RecipeScoringOptions,
   type StoredScoringIngredient,
   type RecipeScore,
+  type PolyphenolTable,
 } from './recipeScore';
 import type { FoodRecord } from './match';
 import type { CookingMethod } from './cooking';
@@ -28,7 +29,7 @@ import polyphenolData from '../data/polyphenols.json';
 
 const foodById = new Map((usdaFoods as FoodRecord[]).map((f) => [f.fdcId as number, f]));
 const foodScoring = foodScoringData as Record<string, FoodScoring>;
-const polyphenols = polyphenolData as Record<string, { polyphenol_mg?: number }>;
+const polyphenols = polyphenolData as unknown as PolyphenolTable;
 
 /** Bundled foods the set is built from (fdcId → USDA description). */
 const F = {
@@ -149,6 +150,8 @@ const LENTIL_SOUP = [
 const CASES: GoldenCase[] = [
   {
     // Fruit + honey is mostly free sugar at GI ~58; a generous ~60 g spread is a medium-GL portion.
+    // Inflammation: honey's free sugar is offset by the cooked berries' anthocyanins and vitamin
+    // C, so the jam reads neutral to mildly pro, not pro.
     name: 'strawberry jam with honey (condiment)',
     ingredients: [
       ing(F.strawberries, 500, '500 g strawberries', 'boiled'),
@@ -158,37 +161,41 @@ const CASES: GoldenCase[] = [
     options: { servings: 12, course: 'Condiment' },
     expected: {
       kcal: [65, 90], giBand: ['medium'], glBand: ['medium', 'high'], glBasis: 'portion',
-      nutri: ['C', 'E'], inflammation: ['mildly-pro-inflammatory', 'pro-inflammatory'], balance: [1, 2],
+      nutri: ['C', 'E'], inflammation: ['neutral', 'mildly-pro-inflammatory'], balance: [1, 2],
     },
   },
   {
-    // Honey lemonade: almost all energy is free sugar → pro-inflammatory, poor beverage grade.
+    // Honey lemonade: almost all energy is free sugar → on the pro side (free sugar is the
+    // strongest pro signal, graded below the protective nutrients), poor beverage grade.
     name: 'honey-sweetened lemonade (drink)',
     ingredients: [water(1000), ing(F.lemonJuice, 100, '100 ml lemon juice'), ing(F.honey, 120, '120 g honey')],
     options: { servings: 4, course: 'Drink', nutriCategory: 'beverage' },
     expected: {
       kcal: [80, 115], giBand: ['medium'], glBand: ['medium', 'high'], glBasis: 'portion',
-      nutri: ['D', 'E'], inflammation: ['pro-inflammatory', 'pro-inflammatory'], processing: ['minimally-processed'], balance: [1, 2],
+      nutri: ['D', 'E'], inflammation: ['mildly-pro-inflammatory', 'pro-inflammatory'], processing: ['minimally-processed'], balance: [1, 2],
     },
   },
   {
-    // 30 g butter per serving: saturated fat dominates the energy → pro side.
+    // 30 g butter per serving: saturated fat dominates the energy, but the vegetables keep their
+    // protective density → neutral to mildly pro (saturated fat is a modest, mixed-evidence signal).
     name: 'butter-heavy vegetable stew (main)',
     ingredients: [...STEW_VEG, ing(F.butter, 120, '120 g butter')],
     options: { servings: 4, course: 'Main Course' },
     expected: {
       kcal: [300, 380], giBand: ['low', 'medium'], glBand: ['low'], glBasis: 'meal',
-      nutri: ['B', 'D'], inflammation: ['mildly-pro-inflammatory', 'pro-inflammatory'], balance: [2, 4],
+      nutri: ['B', 'D'], inflammation: ['neutral', 'mildly-pro-inflammatory'], balance: [2, 4],
     },
   },
   {
-    // Same stew with olive oil: MUFA fat quality flips it to the anti side and lifts the grade.
+    // Same stew with olive oil: far less saturated fat than butter moves it to neutral or the
+    // anti side and lifts the grade (monounsaturated fat itself is not scored, DII −0.009, and
+    // the USDA record is generic olive oil, so extra-virgin phenolics are not credited).
     name: 'olive-oil vegetable stew (main)',
     ingredients: [...STEW_VEG, ing(F.oliveOil, 120, '120 g extra virgin olive oil')],
     options: { servings: 4, course: 'Main Course' },
     expected: {
       kcal: [350, 430], giBand: ['low', 'medium'], glBand: ['low'], glBasis: 'meal',
-      nutri: ['A', 'C'], inflammation: ['anti-inflammatory', 'mildly-anti-inflammatory'], balance: [4, 6],
+      nutri: ['A', 'C'], inflammation: ['mildly-anti-inflammatory', 'neutral'], balance: [4, 6],
     },
   },
   {
@@ -249,9 +256,9 @@ const CASES: GoldenCase[] = [
     },
   },
   {
-    // Whole-fruit sugar is fibre-bound (free sugar = max(0, sugar − 2·fibre)) and yogurt is
-    // fermented dairy; whole-milk yogurt's saturated fat and banana's free-sugar excess put it
-    // on the neutral / mildly-pro edge, well short of the honey lemonade.
+    // Whole fruit carries no free sugar (WHO; Wanselius 2019) and yogurt is fermented dairy;
+    // the strawberries' anthocyanins and vitamin C put the smoothie on the anti side, far from
+    // the honey lemonade.
     name: 'banana-strawberry yogurt smoothie (drink)',
     ingredients: [
       ing(F.bananas, 240, '2 bananas'),
@@ -261,11 +268,11 @@ const CASES: GoldenCase[] = [
     options: { servings: 2, course: 'Drink', nutriCategory: 'beverage' },
     expected: {
       kcal: [190, 240], giBand: ['low'], glBand: ['medium'], glBasis: 'portion',
-      nutri: ['B', 'D'], inflammation: ['mildly-anti-inflammatory', 'mildly-pro-inflammatory'], processing: ['minimally-processed'], balance: [5, 8],
+      nutri: ['B', 'D'], inflammation: ['anti-inflammatory', 'neutral'], processing: ['minimally-processed'], balance: [5, 8],
     },
   },
   {
-    // 15 g added salt on top of a salted broth: salt dominates → pro-inflammatory, poor balance.
+    // 15 g added salt on top of a salted broth: sodium is scored as a weak, cardiometabolic-proxy signal (a 20-week RCT left 45 cytokines unchanged), so the vegetables' carotenoids keep the soup mildly anti to neutral; poor balance.
     name: 'salt-heavy vegetable broth (soup)',
     ingredients: [
       ing(F.carrots, 200, '2 carrots', 'boiled'),
@@ -277,7 +284,7 @@ const CASES: GoldenCase[] = [
     options: { servings: 4, course: 'Soup' },
     expected: {
       kcal: [35, 70], giBand: ['low'], glBand: ['low'], glBasis: 'meal',
-      nutri: ['C', 'E'], inflammation: ['mildly-pro-inflammatory', 'pro-inflammatory'], balance: [1, 2],
+      nutri: ['C', 'E'], inflammation: ['mildly-anti-inflammatory', 'neutral'], balance: [1, 2],
     },
   },
   {
@@ -314,7 +321,8 @@ const CASES: GoldenCase[] = [
   },
   {
     // Three cheeses + crackers + grapes, scored as cheese (protein kept) and not red meat:
-    // sat fat and salt dominate → poor grade, pro side; cheese is NOVA 3 (processed, not
+    // sat fat and salt dominate → poor grade; cheese's matrix correction (dairy RCTs read
+    // neutral, Moosavian 2020) keeps inflammation neutral to mildly pro; cheese is NOVA 3 (processed, not
     // ultra-processed), so the board reads moderately processed.
     name: 'cheese board (appetizer)',
     ingredients: [
@@ -327,7 +335,7 @@ const CASES: GoldenCase[] = [
     options: { servings: 6, course: 'Appetizer', isCheese: true, redMeat: false },
     expected: {
       kcal: [200, 270], giBand: ['low', 'medium'], glBand: ['low'], glBasis: 'portion',
-      nutri: ['D', 'E'], inflammation: ['mildly-pro-inflammatory', 'pro-inflammatory'], processing: ['moderately-processed'], balance: [1, 3],
+      nutri: ['D', 'E'], inflammation: ['neutral', 'mildly-pro-inflammatory'], processing: ['moderately-processed'], balance: [1, 3],
     },
   },
   {
@@ -342,7 +350,7 @@ const CASES: GoldenCase[] = [
     options: { servings: 2, course: 'Breakfast' },
     expected: {
       kcal: [200, 260], giBand: ['low', 'medium'], glBand: ['low', 'medium'], glBasis: 'meal',
-      nutri: ['A', 'B'], inflammation: ['mildly-anti-inflammatory', 'neutral'], processing: ['minimally-processed'], balance: [4, 6],
+      nutri: ['A', 'B'], inflammation: ['anti-inflammatory', 'mildly-anti-inflammatory'], processing: ['minimally-processed'], balance: [4, 6],
     },
   },
   {
@@ -398,11 +406,11 @@ const CASES: GoldenCase[] = [
     options: { servings: 20, course: 'Sauce' },
     expected: {
       kcal: [35, 45], giBand: ['medium'], glBand: ['low'], glBasis: 'portion',
-      nutri: ['E', 'E'], inflammation: ['pro-inflammatory', 'pro-inflammatory'], balance: [1, 1],
+      nutri: ['E', 'E'], inflammation: ['mildly-pro-inflammatory', 'pro-inflammatory'], balance: [1, 1],
     },
   },
   {
-    // Plain water declared as water: Nutri-Score A by rule; no energy → no GI, FII or balance.
+    // Plain water declared as water: Nutri-Score A by rule; no energy → no GI, inflammation or balance.
     name: 'plain water (drink)',
     ingredients: [ing(F.water, 500, '500 ml water')],
     options: { servings: 2, course: 'Drink', nutriCategory: 'beverage', isWater: true },
@@ -546,7 +554,7 @@ describe('golden reference pairs', () => {
     expect(asRedMeat.points).toBeGreaterThanOrEqual(plain.points);
   });
 
-  it('butter vs olive oil flips the same stew from the pro to the anti side', () => {
+  it('butter vs olive oil moves the same stew from the pro to the anti side', () => {
     const butter = CASES.find((c) => c.name.startsWith('butter-heavy'))!;
     const olive = CASES.find((c) => c.name.startsWith('olive-oil'))!;
     const b = score(butter.ingredients, butter.options).scores;

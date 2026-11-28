@@ -32,6 +32,7 @@ ingredients:
     fdcId: 170527
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 1 pinch ground nutmeg
     quantity: 1
     unit: pinch
@@ -78,9 +79,9 @@ nutrition:
     version: "2023"
     coverage: 0.34
   inflammation:
-    score: 1.6
-    band: pro-inflammatory
-    method: fii v4
+    score: 0.1
+    band: neutral
+    method: fii v5
   balance:
     score: 9
     band: excellent
@@ -96,7 +97,7 @@ nutrition:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
+    - Inflammatory potential (estimate; pooled composition per 100 kcal); USDA Flavonoid Database R3.3; Phenol-Explorer
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-14"

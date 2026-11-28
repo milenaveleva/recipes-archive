@@ -24,6 +24,7 @@ ingredients:
     fdcId: 169919
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 1 banana
     quantity: 1
     item: banana
@@ -31,6 +32,7 @@ ingredients:
     fdcId: 173944
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 1 carrot
     quantity: 1
     item: carrot
@@ -38,6 +40,7 @@ ingredients:
     fdcId: 170393
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 1½ tsp ground ginger
     quantity: 1.5
     unit: tsp
@@ -47,6 +50,7 @@ ingredients:
     fdcId: 169231
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: ½ tsp ground turmeric
     quantity: 0.5
     unit: tsp
@@ -83,9 +87,9 @@ nutrition:
     version: "2023"
     coverage: 0.59
   inflammation:
-    score: -0.6
-    band: mildly-anti-inflammatory
-    method: fii v4
+    score: -1.1
+    band: anti-inflammatory
+    method: fii v5
     aromaticAdjustment: -0.5
   balance:
     score: 10
@@ -102,7 +106,7 @@ nutrition:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
+    - Inflammatory potential (estimate; pooled composition per 100 kcal); USDA Flavonoid Database R3.3; Phenol-Explorer
     - Aromatic adjustment (Shivappa 2014 effect scores, direction and relative size)
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)

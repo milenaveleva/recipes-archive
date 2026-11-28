@@ -34,6 +34,7 @@ ingredients:
     fdcId: 2710831
     matchConfidence: medium
     cooking: raw
+    prep: blended
   - raw: 2 ripe bananas
     quantity: 2
     item: ripe bananas
@@ -41,6 +42,7 @@ ingredients:
     fdcId: 173944
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 40 g walnuts
     quantity: 40
     unit: g
@@ -57,6 +59,7 @@ ingredients:
     fdcId: 1999632
     matchConfidence: high
     cooking: raw
+    prep: blended
   - raw: 1 sprig fresh basil, for garnish
     quantity: 1
     unit: sprig
@@ -93,9 +96,9 @@ nutrition:
     version: "2023"
     coverage: 0.38
   inflammation:
-    score: 0.7
-    band: mildly-pro-inflammatory
-    method: fii v4
+    score: -0.7
+    band: mildly-anti-inflammatory
+    method: fii v5
   balance:
     score: 6
     band: moderate
@@ -111,7 +114,7 @@ nutrition:
     - USDA FoodData Central
     - Atkinson 2021 GI tables
     - Nutri-Score 2023
-    - Food Inflammation Index (composition-derived, per 100 kcal, energy-weighted); Phenol-Explorer polyphenols
+    - Inflammatory potential (estimate; pooled composition per 100 kcal); USDA Flavonoid Database R3.3; Phenol-Explorer
     - Nutrient-Rich Foods Index (NRF9.3)
     - NOVA food classification (energy-weighted)
 createdAt: "2026-11-14"

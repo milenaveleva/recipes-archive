@@ -1,10 +1,9 @@
 {
-  "_doc": "Hand-audited crosswalk from Phenol-Explorer food name → USDA fdcId, the join scripts/build-phenol-explorer.mjs uses to key Folin total-polyphenol values to our foods. Each entry was verified by eye: the USDA record must be the same food in the same state (raw vs cooked/processed, whole vs peeled/dehulled, fresh vs dried). A value is one fdcId or a list of fdcIds when several USDA records are that same food (e.g. avocado varieties); an fdcId may appear under only one name. Foods our recipes use map to the recipe's own fdcId. Phenol-Explorer foods not listed here are simply not placed (reported as unmatched on a run) — extend as new recipes need them. Raw export CSVs are local build inputs, not committed.",
+  "_doc": "Hand-audited crosswalk from Phenol-Explorer food name → USDA fdcId, the join scripts/build-polyphenols.mjs uses to place Phenol-Explorer's olive tyrosols on our foods. Each entry was verified by eye: the USDA record must be the same food in the same state (raw vs cooked/processed, whole vs peeled/dehulled, fresh vs dried). A value is one fdcId or a list of fdcIds when several USDA records are that same food (e.g. avocado varieties); an fdcId may appear under only one name.",
 
   "Pear, whole": 169118,
   "Arugula, raw": 169387,
   "Spinach, raw": [168462, 1999632],
-  "Olive, oil, extra virgin": 171413,
   "Spearmint, fresh": 173475,
   "Garlic, fresh": 169230,
   "Chives, fresh": 169994,
@@ -156,7 +155,7 @@
   "Wine [White]": 174837,
 
   "_absent": {
-    "_doc": "fdcIds stored as polyphenol_mg 0 by rule (basis \"absent:<rule>\"), never by imputation. Polyphenols are plant secondary metabolites, so a food class with no plant matter carries none. Each list is hand-reviewed; only plain single-ingredient foods qualify (no fruit/flavoured dairy, no sauces, broths or mixed dishes).",
+    "_doc": "fdcIds stored as zero for every polyphenol subclass by rule, never by imputation. Polyphenols are plant secondary metabolites, so a food class with no plant matter carries none. Each list is hand-reviewed; only plain single-ingredient foods qualify (no fruit/flavoured dairy, no sauces, broths or mixed dishes).",
     "animal-product": [173430, 175167, 173431, 2346386, 170845, 173418, 175179, 171257, 173420, 171287, 170859, 173414, 170851, 172178, 171955, 172175, 170858, 170846, 330137, 748967, 175142, 173435, 174216, 173687, 171241, 171304, 172177, 323604, 175154, 171249, 173419, 175165, 173417, 333476, 171284, 171244, 175141, 748236, 172184, 173709, 2647437, 170886, 174182],
     "mineral": [173468, 174158, 175103]
   }

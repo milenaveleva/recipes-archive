@@ -71,6 +71,8 @@ export const PANEL = [
   'phosphorus_mg', 'zinc_mg', 'copper_mg', 'manganese_mg', 'selenium_ug', 'vitA_ug', 'vitC_mg',
   'vitD_ug', 'vitE_mg', 'vitK_ug', 'thiamin_mg', 'riboflavin_mg', 'niacin_mg', 'vitB6_mg',
   'folate_ug', 'vitB12_ug', 'pantothenicAcid_mg', 'choline_mg', 'epa_g', 'dha_g',
+  'fa4_0_g', 'fa6_0_g', 'fa8_0_g', 'fa10_0_g', 'fa12_0_g',
+  'betaCryptoxanthin_ug', 'lycopene_ug', 'luteinZeaxanthin_ug',
 ];
 const FAT_FRACTIONS = ['satFat_g', 'monoFat_g', 'polyFat_g', 'transFat_g'];
 const CARB_FRACTIONS = ['sugar_g', 'fiber_g', 'polyol_g'];
@@ -151,6 +153,11 @@ export const ZERO_RULES = {
   monoFat_g: [['fat-free', (f, n) => n.fat_g === 0]],
   polyFat_g: [['fat-free', (f, n) => n.fat_g === 0]],
   transFat_g: [['fat-free', (f, n) => n.fat_g === 0]],
+  fa4_0_g: [['fat-free', (f, n) => n.fat_g === 0]],
+  fa6_0_g: [['fat-free', (f, n) => n.fat_g === 0]],
+  fa8_0_g: [['fat-free', (f, n) => n.fat_g === 0]],
+  fa10_0_g: [['fat-free', (f, n) => n.fat_g === 0]],
+  fa12_0_g: [['fat-free', (f, n) => n.fat_g === 0]],
   // EPA and DHA are made by marine microalgae and reach food through the aquatic food
   // chain (or animal conversion); land plants lack the desaturases to form them.
   epa_g: [['fat-free', (f, n) => n.fat_g === 0], ['plant-food', (f) => isPlant(f) && !ALGAL_SOURCE.test(f.description)]],

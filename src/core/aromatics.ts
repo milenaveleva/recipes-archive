@@ -1,8 +1,7 @@
 /**
- * Aromatic bioactive adjustment to a recipe's Food Inflammation Index.
+ * Aromatic bioactive adjustment to a recipe's inflammatory-potential score.
  *
- * The FII (fii.ts) scores a food from its composition columns, and the recipe aggregate
- * (inflammation.ts) weights each food by energy — so ginger, turmeric, garlic, onion,
+ * The score (fii.ts) reads the dish's pooled composition per 100 kcal — so ginger, turmeric, garlic, onion,
  * saffron, black pepper, thyme/oregano and rosemary, whose anti-inflammatory bioactives
  * are not composition columns and whose culinary amounts carry almost no energy, are
  * barely seen. This module adds a bounded, recipe-level credit for them
@@ -32,9 +31,9 @@ interface Aromatic {
 }
 const DATA = aromaticsData as { k: number; maxTotal: number; aromatics: Record<string, Aromatic> };
 
-/** Scale from Shivappa 2014 effect-score units onto the −2…+2 FII axis. */
+/** Scale from Shivappa 2014 effect-score units onto the −2…+2 score axis. */
 export const AROMATIC_K: number = DATA.k;
-/** Largest total credit (FII units) the aromatic term may apply to one recipe. */
+/** Largest total credit (score units) the aromatic term may apply to one recipe. */
 export const AROMATIC_MAX_TOTAL: number = DATA.maxTotal;
 
 interface AromaticMatch {
@@ -66,7 +65,7 @@ export interface AromaticItem {
 }
 
 /**
- * The recipe's aromatic adjustment in FII units: ≤ 0, ≥ −AROMATIC_MAX_TOTAL, rounded to
+ * The recipe's aromatic adjustment in score units: ≤ 0, ≥ −AROMATIC_MAX_TOTAL, rounded to
  * 0.01; 0 when the recipe uses none of the listed aromatics.
  */
 export function aromaticAdjustment(items: AromaticItem[], servings: number): number {

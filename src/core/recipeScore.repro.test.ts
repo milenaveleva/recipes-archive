@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 import { describe, it, expect } from 'vitest';
 import { parse as parseYaml } from 'yaml';
-import { scoreRecipe, storedScoringFields, type FoodScoring } from './recipeScore';
+import { scoreRecipe, storedScoringFields, type FoodScoring, type PolyphenolTable } from './recipeScore';
 import type { FoodRecord } from './match';
 import usdaFoods from '../data/usda-foods.json';
 import foodScoringData from '../data/food-scoring.json';
@@ -26,7 +26,7 @@ const RECIPE_FILES = import.meta.glob('../content/recipes/*.md', {
 const foods = usdaFoods as FoodRecord[];
 const foodById = new Map(foods.map((f) => [f.fdcId as number, f]));
 const foodScoring = foodScoringData as Record<string, FoodScoring>;
-const polyphenols = polyphenolData as Record<string, { polyphenol_mg?: number }>;
+const polyphenols = polyphenolData as unknown as PolyphenolTable;
 
 interface Frontmatter {
   servings?: number;
