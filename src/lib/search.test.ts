@@ -172,11 +172,11 @@ describe('GL facet (basis-aware)', () => {
     expect(glLevelOf(null, 'meal')).toBeNull();
   });
 
-  it('labels the group as relative to the course', () => {
+  it('labels the group Glycemic load', () => {
     const [gl] = facetsOf([doc('a', { glBand: glLevelOf(25, 'meal') }), doc('b', { glBand: glLevelOf(25, 'portion') })]).filter(
       (g) => g.key === 'gl',
     );
-    expect(gl.label).toBe('Glycemic load (for its course)');
+    expect(gl.label).toBe('Glycemic load');
     expect(gl.values.map((v) => [v.value, v.count])).toEqual([
       ['medium', 1],
       ['high', 1],

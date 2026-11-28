@@ -112,8 +112,7 @@ export const FACET_DEFS: FacetDef[] = [
   { key: 'course', label: 'Course', primary: false, pick: (d) => (d.course ? [d.course] : []), labelOf: titleCase },
   { key: 'difficulty', label: 'Difficulty', primary: false, pick: (d) => (d.difficulty ? [d.difficulty] : []), labelOf: titleCase, order: ['easy', 'medium', 'hard'] },
   { key: 'gi', label: 'Glycemic index', primary: false, pick: (d) => (d.giBand ? [d.giBand] : []), labelOf: bandLabel, order: ['low', 'medium', 'high'] },
-  // Each recipe's GL level is relative to its course (glLevelOf), so the label says so.
-  { key: 'gl', label: 'Glycemic load (for its course)', primary: false, pick: (d) => (d.glBand ? [d.glBand] : []), labelOf: bandLabel, order: ['low', 'medium', 'high'] },
+  { key: 'gl', label: 'Glycemic load', primary: false, pick: (d) => (d.glBand ? [d.glBand] : []), labelOf: bandLabel, order: ['low', 'medium', 'high'] },
   { key: 'inflammation', label: 'Inflammation', primary: false, pick: (d) => (d.inflammationBand ? [d.inflammationBand] : []), labelOf: inflammationLabel, order: ['anti-inflammatory', 'mildly-anti-inflammatory', 'neutral', 'mildly-pro-inflammatory', 'pro-inflammatory'] },
   { key: 'nutri', label: 'Nutri-Score', primary: false, pick: (d) => (d.nutriGrade ? [d.nutriGrade] : []), order: ['a', 'b', 'c', 'd', 'e'] },
   { key: 'balance', label: 'Nutrient balance', primary: false, pick: (d) => (d.balanceBand ? [d.balanceBand] : []), labelOf: titleCase, order: ['excellent', 'high', 'moderate', 'low', 'poor'] },
