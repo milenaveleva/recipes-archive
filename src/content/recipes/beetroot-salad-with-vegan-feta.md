@@ -11,7 +11,7 @@ prepTime: PT10M
 cookTime: PT1H
 totalTime: PT1H10M
 cuisine: American
-course: Side Dish
+course: Salad
 ingredients:
   - raw: 3 beetroots, raw
     quantity: 3
@@ -123,7 +123,7 @@ nutrition:
     gl: 6
     giBand: low
     glBand: low
-    glBasis: portion
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 34
   nutriScore:

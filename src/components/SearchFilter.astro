@@ -264,7 +264,7 @@ const docsJson = JSON.stringify(docs)
     // Reflect each group's active-selection count on its rail icon, so the
     // compact bar still shows where filters are applied.
     function updateRail() {
-      // A closed course/cuisine group shows how many of its values are selected.
+      // A closed collapsible group shows how many of its values are selected.
       for (const el of root.querySelectorAll<HTMLElement>('[data-summary-count]')) {
         const n = selected[el.dataset.summaryCount ?? '']?.length ?? 0;
         el.textContent = n ? String(n) : '';

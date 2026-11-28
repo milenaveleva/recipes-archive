@@ -8,8 +8,7 @@ export const GITHUB_MARK_PATH =
 /** Lucide glyphs (ISC) for the recipe meta summary — the inner SVG markup for a
  * 24×24 viewBox with `fill="none" stroke="currentColor"`. Render via Icon.astro.
  * Keys are RecipeMetaItem.icon values, each drawn with the like-named Lucide
- * glyph: prep→timer, cook→flame, total→clock, serves→users, difficulty→gauge,
- * cuisine→globe. */
+ * glyph: prep→timer, cook→flame, total→clock, serves→users, difficulty→gauge. */
 export const META_ICONS = {
   prep: '<line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/>',
   cook: '<path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/>',
@@ -17,21 +16,17 @@ export const META_ICONS = {
   serves:
     '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/>',
   difficulty: '<path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/>',
-  cuisine:
-    '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>',
 } as const;
 
 /** Lucide glyphs (ISC) keyed by search facet-group key, so every filter group,
  * its chips and the compact icon rail draw the same mark from one source. Same
  * 24×24 `fill=none stroke=currentColor` convention as META_ICONS; render via
- * Icon.astro. Keyed to `FACET_DEFS` in search.ts: course→utensils, cuisine/difficulty reuse the like-named META glyph (globe,
- * gauge), list→list, gi→activity, gl→trending-up, nutri→award,
+ * Icon.astro. Keyed to `FACET_DEFS` in search.ts: course→utensils, difficulty reuses the
+ * like-named META glyph (gauge), gi→activity, gl→trending-up, nutri→award,
  * inflammation→flame (the cook glyph), balance→scale. */
 export const FACET_ICONS = {
   course:
     '<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/>',
-  cuisine: META_ICONS.cuisine,
-  list: '<path d="M3 12h.01"/><path d="M3 18h.01"/><path d="M3 6h.01"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M8 6h13"/>',
   difficulty: META_ICONS.difficulty,
   gi: '<path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>',
   gl: '<path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/>',

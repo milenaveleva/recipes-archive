@@ -40,7 +40,7 @@ export function formatDuration(iso?: string): string | null {
 
 export interface RecipeMetaItem {
   /** Lucide glyph key in META_ICONS (src/lib/icons.ts). */
-  icon: 'prep' | 'cook' | 'total' | 'serves' | 'difficulty' | 'cuisine';
+  icon: 'prep' | 'cook' | 'total' | 'serves' | 'difficulty';
   /** Accessible name for the value (the icon itself is decorative). */
   label: string;
   value: string;
@@ -54,12 +54,11 @@ export interface RecipeMetaSource {
   totalTime?: string;
   servings: number;
   difficulty?: string | null;
-  cuisine?: string | null;
 }
 
-/** The prep/cook/total/serves/difficulty/cuisine summary shown as a Lucide
+/** The prep/cook/total/serves/difficulty summary shown as a Lucide
  * icon + value on the detail page and recipe cards. Times and the optional
- * difficulty/cuisine appear only when set; Serves is always present. Values are
+ * difficulty appear only when set; Serves is always present. Values are
  * display-ready (difficulty is capitalised) so no CSS text-transform is needed. */
 export function buildRecipeMeta(data: RecipeMetaSource): RecipeMetaItem[] {
   const prep = formatDuration(data.prepTime);
@@ -75,7 +74,6 @@ export function buildRecipeMeta(data: RecipeMetaSource): RecipeMetaItem[] {
       label: 'Difficulty',
       value: data.difficulty[0].toUpperCase() + data.difficulty.slice(1),
     },
-    data.cuisine && { icon: 'cuisine', label: 'Cuisine', value: data.cuisine },
   ].filter(Boolean) as RecipeMetaItem[];
 }
 

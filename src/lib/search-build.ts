@@ -19,7 +19,6 @@ export function buildSearchDoc(entry: Recipe): SearchDoc {
     ingredients: data.ingredients.map((i) => i.item || i.raw).filter(Boolean),
     steps: extractSteps(entry.body),
     lists: data.lists,
-    cuisine: data.cuisine ?? null,
     course: data.course ?? null,
     difficulty: data.difficulty ?? null,
     giBand: n?.glycemic?.giBand ?? null,

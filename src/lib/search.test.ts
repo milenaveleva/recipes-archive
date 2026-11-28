@@ -10,7 +10,6 @@ function doc(slug: string, over: Partial<SearchDoc> = {}): SearchDoc {
     ingredients: [],
     steps: [],
     lists: [],
-    cuisine: null,
     course: null,
     difficulty: null,
     giBand: null,
@@ -24,38 +23,40 @@ function doc(slug: string, over: Partial<SearchDoc> = {}): SearchDoc {
 
 describe('facetsOf', () => {
   it('only includes groups that at least one recipe carries', () => {
-    const groups = facetsOf([doc('a', { cuisine: 'Thai' })]);
+    const groups = facetsOf([doc('a', { course: 'Soup' })]);
     const keys = groups.map((g) => g.key);
-    expect(keys).toContain('cuisine');
-    expect(keys).not.toContain('course');
+    expect(keys).toContain('course');
+    expect(keys).not.toContain('gi');
   });
 
-  it('offers no Lists facet', () => {
-    expect(facetsOf([doc('a', { lists: ['Kifli favourites'] })]).map((g) => g.key)).not.toContain('list');
+  it('offers no Lists or Cuisine facet', () => {
+    const keys = facetsOf([doc('a', { lists: ['Kifli favourites'], course: 'Soup' })]).map((g) => g.key);
+    expect(keys).not.toContain('list');
+    expect(keys).not.toContain('cuisine');
   });
 
-  it('marks course and cuisine collapsible, the rest not', () => {
-    const groups = facetsOf([doc('a', { cuisine: 'Thai', course: 'Soup', giBand: 'low' })]);
-    expect(groups.filter((g) => g.collapsible).map((g) => g.key)).toEqual(['course', 'cuisine']);
+  it('marks only course collapsible', () => {
+    const groups = facetsOf([doc('a', { course: 'Soup', giBand: 'low' })]);
+    expect(groups.filter((g) => g.collapsible).map((g) => g.key)).toEqual(['course']);
   });
 
   it('collapses values by slug and counts each recipe once', () => {
-    const groups = facetsOf([doc('a', { cuisine: 'Middle Eastern' }), doc('b', { cuisine: 'middle eastern' }), doc('c', { cuisine: 'Thai' })]);
-    const cuisine = groups.find((g) => g.key === 'cuisine')!;
-    const me = cuisine.values.find((v) => v.value === 'middle-eastern')!;
-    expect(me.count).toBe(2);
-    expect(me.label).toBe('Middle Eastern'); // first original term seen for the slug
-    expect(cuisine.values.find((v) => v.value === 'thai')!.count).toBe(1);
+    const groups = facetsOf([doc('a', { course: 'Main Course' }), doc('b', { course: 'main course' }), doc('c', { course: 'Soup' })]);
+    const course = groups.find((g) => g.key === 'course')!;
+    const main = course.values.find((v) => v.value === 'main-course')!;
+    expect(main.count).toBe(2);
+    expect(main.label).toBe('Main Course'); // first original term seen for the slug
+    expect(course.values.find((v) => v.value === 'soup')!.count).toBe(1);
   });
 
   it('sorts values by count desc then label', () => {
-    const cuisine = facetsOf([
-      doc('a', { cuisine: 'Thai' }),
-      doc('b', { cuisine: 'Italian' }),
-      doc('c', { cuisine: 'Italian' }),
-      doc('d', { cuisine: 'Greek' }),
-    ]).find((g) => g.key === 'cuisine')!;
-    expect(cuisine.values.map((v) => v.value)).toEqual(['italian', 'greek', 'thai']);
+    const course = facetsOf([
+      doc('a', { course: 'Soup' }),
+      doc('b', { course: 'Drink' }),
+      doc('c', { course: 'Drink' }),
+      doc('d', { course: 'Dessert' }),
+    ]).find((g) => g.key === 'course')!;
+    expect(course.values.map((v) => v.value)).toEqual(['drink', 'dessert', 'soup']);
   });
 
   it('labels score-band and difficulty values for display', () => {
@@ -92,21 +93,21 @@ describe('facetsOf', () => {
 });
 
 describe('matchesFacets', () => {
-  const d = doc('a', { cuisine: 'Thai', course: 'Main Course', giBand: 'low' });
+  const d = doc('a', { course: 'Main Course', giBand: 'low' });
 
   it('matches everything when nothing is selected', () => {
     expect(matchesFacets(d, {})).toBe(true);
-    expect(matchesFacets(d, { cuisine: [] })).toBe(true);
+    expect(matchesFacets(d, { course: [] })).toBe(true);
   });
 
   it('ORs within a group', () => {
-    expect(matchesFacets(d, { cuisine: ['italian', 'thai'] })).toBe(true); // has one of the two
-    expect(matchesFacets(d, { cuisine: ['italian', 'greek'] })).toBe(false);
+    expect(matchesFacets(d, { course: ['soup', 'main-course'] })).toBe(true); // has one of the two
+    expect(matchesFacets(d, { course: ['soup', 'dessert'] })).toBe(false);
   });
 
   it('ANDs across groups', () => {
-    expect(matchesFacets(d, { cuisine: ['thai'], course: ['main-course'] })).toBe(true);
-    expect(matchesFacets(d, { cuisine: ['thai'], course: ['dessert'] })).toBe(false);
+    expect(matchesFacets(d, { gi: ['low'], course: ['main-course'] })).toBe(true);
+    expect(matchesFacets(d, { gi: ['low'], course: ['dessert'] })).toBe(false);
   });
 
   it('normalizes the doc side to slugs before comparing', () => {
@@ -116,9 +117,9 @@ describe('matchesFacets', () => {
 
 describe('visibleSlugs', () => {
   const docs = [
-    doc('a', { cuisine: 'Thai', giBand: 'low' }),
-    doc('b', { cuisine: 'Thai', giBand: 'high' }),
-    doc('c', { cuisine: 'Greek', giBand: 'low' }),
+    doc('a', { course: 'Soup', giBand: 'low' }),
+    doc('b', { course: 'Soup', giBand: 'high' }),
+    doc('c', { course: 'Salad', giBand: 'low' }),
   ];
 
   it('applies no text constraint when textSlugs is null', () => {
@@ -135,7 +136,7 @@ describe('visibleSlugs', () => {
   });
 
   it('filters by facet alone', () => {
-    expect(visibleSlugs(docs, null, { cuisine: ['thai'] })).toEqual(['a', 'b']);
+    expect(visibleSlugs(docs, null, { course: ['soup'] })).toEqual(['a', 'b']);
   });
 });
 

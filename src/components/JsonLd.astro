@@ -26,7 +26,6 @@ const jsonLd: Record<string, unknown> = {
   author: data.author ? { '@type': 'Person', name: data.author } : undefined,
   recipeYield: data.yield ?? `${data.servings} servings`,
   recipeCategory: data.category,
-  recipeCuisine: data.cuisine,
   prepTime: data.prepTime,
   cookTime: data.cookTime,
   totalTime: data.totalTime,

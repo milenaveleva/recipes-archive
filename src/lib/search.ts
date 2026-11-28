@@ -24,7 +24,6 @@ export interface SearchDoc {
   steps: string[];
   // Facet fields.
   lists: string[];
-  cuisine: string | null;
   course: string | null;
   difficulty: string | null;
   giBand: string | null;
@@ -62,7 +61,6 @@ export const FUSE_KEYS = [
   { name: 'title', weight: 3 },
   { name: 'description', weight: 1.6 },
   { name: 'ingredients', weight: 1.2 },
-  { name: 'cuisine', weight: 0.8 },
   { name: 'course', weight: 0.8 },
   { name: 'lists', weight: 0.6 },
   { name: 'steps', weight: 0.5 },
@@ -109,14 +107,13 @@ interface FacetDef {
 }
 
 /**
- * The facet groups, in display order: the long course and cuisine lists first (each its
- * own collapsible disclosure), then the rest alphabetically. A group is only rendered when at least
+ * The facet groups, in display order: the long course list first (its own collapsible
+ * disclosure), then the rest alphabetically. A group is only rendered when at least
  * one recipe carries a value for it, so the toolbar stays clean as the archive
  * grows into (or out of) using a given field.
  */
 export const FACET_DEFS: FacetDef[] = [
   { key: 'course', label: 'Course', primary: false, collapsible: true, pick: (d) => (d.course ? [d.course] : []), labelOf: titleCase },
-  { key: 'cuisine', label: 'Cuisine', primary: false, collapsible: true, pick: (d) => (d.cuisine ? [d.cuisine] : []), labelOf: titleCase },
   { key: 'difficulty', label: 'Difficulty', primary: false, pick: (d) => (d.difficulty ? [d.difficulty] : []), labelOf: titleCase, order: ['easy', 'medium', 'hard'] },
   { key: 'gi', label: 'Glycemic index', primary: false, pick: (d) => (d.giBand ? [d.giBand] : []), labelOf: bandLabel, order: ['low', 'medium', 'high'] },
   // Each recipe's GL level is relative to its course (glLevelOf), so the label says so.
