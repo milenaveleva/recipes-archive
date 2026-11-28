@@ -13,7 +13,7 @@ prepTime: PT10M
 cookTime: PT10M
 totalTime: PT20M
 cuisine: Mediterranean
-course: Side Dish
+course: Appetizer
 lists:
   - Kifli favourites
 ingredients:

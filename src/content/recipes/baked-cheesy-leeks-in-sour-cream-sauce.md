@@ -13,7 +13,7 @@ prepTime: PT15M
 cookTime: PT30M
 totalTime: PT45M
 cuisine: Hungarian
-course: Side Dish
+course: Appetizer
 lists:
   - Kifli favourites
 ingredients:

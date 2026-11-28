@@ -14,7 +14,7 @@ prepTime: PT15M
 cookTime: PT10M
 totalTime: PT25M
 cuisine: International
-course: Side Dish
+course: Main Course
 lists:
   - Kifli favourites
 ingredients:
@@ -142,7 +142,7 @@ nutrition:
     gl: 2
     giBand: low
     glBand: low
-    glBasis: portion
+    glBasis: meal
     gi_source: Atkinson 2021 GI tables; carb-weighted composite, protein-adjusted (estimate)
     measuredGiPct: 55
   nutriScore:
