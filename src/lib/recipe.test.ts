@@ -20,7 +20,6 @@ import {
   giEstimateLabel,
   NUTRI_LOW_DATA_COVERAGE,
 } from './recipe';
-import { INFLAMMATION_BAND_EDGES, inflammationBandOf } from '../core/inflammation';
 import { glBandOf, DEFAULT_GL_BASIS } from '../core/gi';
 
 describe('formatIngredientAmount (display unit ≠ calc basis)', () => {
@@ -226,34 +225,15 @@ describe('score rating normalization (1–10, 1 = healthiest)', () => {
     expect(balanceRating(null)).toBeNull();
   });
 
-  it('maps inflammation onto 1…10 by the band edges, so colour agrees with the band word', () => {
-    const e = INFLAMMATION_BAND_EDGES;
+  it('maps inflammation onto 1…10 on one straight line', () => {
     expect(inflammationRating(-2)).toBe(1);
-    expect(inflammationRating(e.antiMax)).toBe(2); // top of "anti" → good
-    expect(inflammationRating(e.mildlyAntiMax)).toBe(3); // top of "mildly anti" → still good
-    expect(inflammationRating(e.neutralMax)).toBe(6); // top of "neutral" → mid
-    expect(inflammationRating(e.mildlyProMax)).toBe(8); // top of "mildly pro" → bad
+    expect(inflammationRating(0)).toBe(6); // 5.5, rounded like every dial
     expect(inflammationRating(2)).toBe(10);
+    expect(inflammationRating(-3)).toBe(1); // clamped
     expect(inflammationRating(null)).toBeNull();
-    const toneOf: Record<string, string> = {
-      'anti-inflammatory': 'good',
-      'mildly-anti-inflammatory': 'good',
-      neutral: 'mid',
-      'mildly-pro-inflammatory': 'bad',
-      'pro-inflammatory': 'bad',
-    };
-    for (let x = -2; x <= 2.0001; x += 0.05) {
-      const score = Math.round(x * 100) / 100;
-      expect(ratingTone(inflammationRating(score)), `score ${score}`).toBe(toneOf[inflammationBandOf(score)]);
-    }
-  });
-
-  it('positions inflammation by the stored band, clamping a score outside it', () => {
-    // The stored band decides the colour segment even if the score sits past its edge.
-    expect(ratingTone(inflammationRating(1.2, 'mildly-pro-inflammatory'))).toBe('bad');
-    expect(inflammationRating(1.2, 'mildly-pro-inflammatory')).toBe(8);
-    expect(ratingTone(inflammationRating(0, 'neutral'))).toBe('mid');
-    expect(inflammationRating(0, 'bogus')).toBe(inflammationRating(0)); // invalid band → score's band
+    // A move inside one band shows on the dial (−1.8 and −1.3 are both "anti-inflammatory").
+    expect(inflammationRating(-1.8)).toBe(1);
+    expect(inflammationRating(-1.3)).toBe(3);
   });
 });
 
@@ -283,8 +263,8 @@ describe('buildScoreDials', () => {
     expect(balance.tone).toBe('good');
     expect(balance.fill).toBeCloseTo(0.3);
 
-    expect(inflam.value).toBe('2'); // −0.8, low in the mildly-anti band → 2 (good, agreeing with the band)
-    expect(inflam.tone).toBe('good');
+    expect(inflam.value).toBe('4'); // −0.8 on the straight line → 3.7, rounded
+    expect(inflam.tone).toBe('mid');
   });
 
   it('shows an em-dash balance dial with empty fill when absent', () => {

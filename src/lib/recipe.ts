@@ -1,6 +1,6 @@
 import type { CollectionEntry } from 'astro:content';
 import { canonicalUnit, classifyUnit } from '../core/units';
-import { INFLAMMATION_BAND_EDGES, inflammationBandOf, type InflammationBand } from '../core/inflammation';
+import { inflammationBandOf } from '../core/inflammation';
 import { DEFAULT_GL_BASIS, type GlBasis } from '../core/gi';
 import { resolveGlBasis } from '../core/course';
 import { MINIMAL_GOOD, UPF_HIGH_PCT } from '../core/processing';
@@ -403,38 +403,18 @@ export function glBasisOf(basis?: string | null, course?: string | null): GlBasi
   return resolveGlBasis(basis, course);
 }
 
-const INFLAMMATION_BANDS: readonly InflammationBand[] = [
-  'anti-inflammatory',
-  'mildly-anti-inflammatory',
-  'neutral',
-  'mildly-pro-inflammatory',
-  'pro-inflammatory',
-];
-
 /**
- * Inflammation score (−2 anti … +2 pro) → 1–10, anchored to the band edges
- * (inflammation-reference.json) rather than a linear map, so the
- * colour always agrees with the band word: anti → 1–2, mildly anti → 2–3 (both good),
- * neutral → 4–6, mildly pro → 7–8, pro → 8–10. The stored band decides the segment; the
- * score positions the rating within it. Without a valid band the score's own band is used.
+ * Inflammation score (−2 anti … +2 pro) → 1–10 on one straight line (−2 → 1, 0 → 5.5,
+ * +2 → 10), so every change in the score moves the dial by the same amount
+ * (rounded to a whole point like every dial, ≈ 0.44 score per point). The dial colour
+ * follows the shared 1–10 tone bands, not the inflammation band word: a mildly
+ * anti-inflammatory score near its neutral edge reads amber. The band argument is accepted
+ * for call-site symmetry and ignored.
  */
-export function inflammationRating(score?: number | null, band?: string | null): number | null {
+export function inflammationRating(score?: number | null, _band?: string | null): number | null {
   if (score == null) return null;
-  const b = INFLAMMATION_BANDS.includes(band as InflammationBand)
-    ? (band as InflammationBand)
-    : inflammationBandOf(score);
-  const e = INFLAMMATION_BAND_EDGES;
-  // [score low, score high, rating low, rating high] for each band.
-  const seg: Record<InflammationBand, [number, number, number, number]> = {
-    'anti-inflammatory': [-2, e.antiMax, 1, 2],
-    'mildly-anti-inflammatory': [e.antiMax, e.mildlyAntiMax, 2, 3],
-    neutral: [e.mildlyAntiMax, e.neutralMax, 4, 6],
-    'mildly-pro-inflammatory': [e.neutralMax, e.mildlyProMax, 7, 8],
-    'pro-inflammatory': [e.mildlyProMax, 2, 8, 10],
-  };
-  const [lo, hi, rLo, rHi] = seg[b];
-  const t = hi > lo ? Math.min(1, Math.max(0, (score - lo) / (hi - lo))) : 0;
-  return clampRating(rLo + t * (rHi - rLo));
+  const x = Math.min(2, Math.max(-2, score));
+  return clampRating(1 + ((x + 2) * 9) / 4);
 }
 
 /** Nutrient balance (NRF 1–10, higher better) → 1–10 concern, inverted so denser = better. */
